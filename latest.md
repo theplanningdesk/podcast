@@ -1,5 +1,5 @@
-# Source digest, fetched 2026-10-31 08:50 UTC
-67 of 72 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
+# Source digest, fetched 2026-11-01 09:41 UTC
+66 of 72 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
 
 # Logistics, trade, AI and tech sources
 
@@ -26,6 +26,24 @@
   The artificial intelligence chipmaker signed deals with six suppliers to scale production of certain components by as much as fifteenfold.
 
 ## SupplyChainBrain
+- 2026-11-01 06:00 | Comarch Named a Leader in the 2026 IDC MarketScape for Worldwide E-Invoicing Compliance Solutions | https://www.supplychainbrain.com/articles/45109-comarch-named-a-leader-in-the-2026-idc-marketscape-for-worldwide-e-invoicing-compliance-solutions
+  Comarch has been named a Leader in the IDC MarketScape: Worldwide Compliant E-Invoicing Solutions 2026 Vendor Assessment. The report evaluates worldwide technology providers on both their current capabilities and their long‑term strategy for helping enterprises manage compliance across multiple jurisdictions.
+- 2026-11-01 06:00 | 10 Questions to Ask Before Choosing an e-Invoicing System Provider | https://www.supplychainbrain.com/articles/45107-10-questions-to-ask-before-choosing-an-e-invoicing-system-provider
+  Find out how to choose an e-invoicing partner that keeps you compliant, connected, and ready for what’s next.
+- 2026-11-01 06:00 | How L’Oréal Strengthens Global Demand Forecasting in a Volatile Beauty Market | https://www.supplychainbrain.com/articles/45106-how-loreal-strengthens-global-demand-forecasting-in-a-volatile-beauty-market
+  How do you forecast demand for hundreds of luxury beauty brands across 150 countries when consumer behavior changes month to month? That's the problem L'Oréal's Luxury Division faces every planning cycle.
+- 2026-11-01 06:00 | Handling Supply Chain Change: SAP's Road Map for AI-Enabled Transformation | https://www.supplychainbrain.com/articles/45097-handling-supply-chain-change-saps-road-map-for-ai-enabled-transformation
+  As global supply chains face mounting complexity, AI is evolving from a tool that informs to one that acts — and that shift is happening faster than most anticipated. In this session from SAP Connect Virtual, Koen Jacobs, Global CRO for Supply Chain Management at SAP, and SangJoon Kim, Director of Next Generation Supply Chain Management at LG Innotek, explore what the autonomous supply chain…
+- 2026-11-01 06:00 | When IBP Falls Short, Industrial Planning Steps Forward | https://www.supplychainbrain.com/articles/45095-when-ibp-falls-short-industrial-planning-steps-forward
+  In this panel discussion, top FMCG industry leaders speak of how Industrial Planning, a reshaped supply chain mechanics, helps businesses to be closer to production execution with a concurrent and collaborative approach powered by Virtual Twin technology.
+- 2026-11-01 06:00 | Retail Compliance Guide for CPG Brands | https://www.supplychainbrain.com/articles/45094-retail-compliance-guide-for-cpg-brands
+  Retail compliance has become a growing challenge for CPG brands selling through major retailers. From OTIF requirements and routing guides to EDI, ASNs, labeling, pallet standards, and appointment scheduling, every retailer brings its own set of requirements, and every compliance failure can impact margins and operations.
+- 2026-11-01 06:00 | Intelligent Automation in Warehousing: An AI Roadmap | https://www.supplychainbrain.com/articles/45093-intelligent-automation-in-warehousing-an-ai-roadmap
+  Artificial intelligence is rapidly reshaping warehouse operations, offering new opportunities to improve efficiency, optimize decision-making, and increase performance. Yet while many organizations are investing in AI, adoption alone does not guarantee confidence or long-term success.
+- 2026-11-01 06:00 | The Supply Chain Decision Gap: Improving Decision-Making through Continuous Optimization | https://www.supplychainbrain.com/articles/45010-the-supply-chain-decision-gap-improving-decision-making-through-continuous-optimization
+  In this eBook, you'll discover why supply chain leaders are rethinking how decisions are made across planning, logistics and operations. Learn how optimization can help teams evaluate trade-offs more effectively, respond earlier to changing conditions and improve performance without replacing existing systems and enabling better coordination between planning and execution when disruption occurs.
+- 2026-10-31 18:32 | Japan’s Omron Targets India for Manufacturing, Exports Push | https://www.supplychainbrain.com/articles/45133-japans-omron-targets-india-for-manufacturing-exports-push
+  Omron expects India’s rapid economic growth and rising manufacturing activity to fuel demand for its factory automation products.
 - 2026-10-30 17:29 | The Trouble with Surveillance Pricing | https://www.supplychainbrain.com/articles/45126-the-trouble-with-surveillance-pricing
   AI’s power to harness the vast amount of consumers’ personal data in myriad ways to make supply chains more efficient is undeniable. But it can lead to illegal price-fixing.
 - 2026-10-30 15:39 | The Connected Factory: Building Real-Time Visibility | https://www.supplychainbrain.com/articles/45130-the-connected-factory-building-real-time-visibility
@@ -67,24 +85,6 @@
   Tesla CEO Elon Musk noted that the ramp-up process could be "somewhat bumpy," given that the bot represents a radically new product for the company.
 - 2026-10-28 16:32 | UAE Shuts More Beaches as It Deals with Oil Spill in Gulf | https://www.supplychainbrain.com/articles/45113-uae-shuts-more-beaches-as-it-deals-with-oil-spill-in-gulf
   The UAE’s climate ministry first detected the spill off the coast Umm Al Quwain on October 23.
-- 2026-10-28 16:22 | U.S. Tells Ships to Avoid Unnecessary Transits Through Hormuz | https://www.supplychainbrain.com/articles/45112-us-tells-ships-to-avoid-unnecessary-transits-through-hormuz
-  The U.S. military last publicly issued a similar notice in mid-July, when it began its blockade of Iranian shipping.
-- 2026-10-28 13:55 | U.S. Hits Chinese Trailers With Tariffs to Aid Domestic Producers | https://www.supplychainbrain.com/articles/45103-us-hits-chinese-trailers-with-tariffs-to-aid-domestic-producers
-  A preliminary ruling outlined the move months ago, just as the U.S. and China were in talks to extend a trade truce.
-- 2026-10-28 04:00 | How the GLP-1 Trend Is Impacting Retail Returns and Inventory | https://www.supplychainbrain.com/blogs/1-think-tank/post/45099-how-the-glp-1-trend-is-impacting-retail-returns-and-inventory
-  Data analysis can help retailers better forecast how GLP-1 consumers are impacting their business.
-- 2026-10-28 04:00 | South African Company Tests World's Longest Freight Train | https://www.supplychainbrain.com/articles/45098-south-african-company-tests-worlds-longest-freight-train
-  The 4.7-mile train was said to have completed a 534-mile test run on October 17, from Saldanha Bay on South Africa's western coast, to an inland ore mine.
-- 2026-10-28 04:00 | Scary Rise in U.S. Halloween Candy Prices | https://www.supplychainbrain.com/articles/45092-us-candy-prices-climb-ahead-of-halloween
-  This all comes in a year where cocoa prices have actually fallen by more than half from their 2024 peak.
-- 2026-10-28 04:00 | Your Supply Chain Has an Enterprise Debt Problem | https://www.supplychainbrain.com/blogs/1-think-tank/post/45091-your-supply-chain-has-an-enterprise-debt-problem
-  Systems got added region by region, asset by asset, usually to solve whatever problem was in front of someone at the time.
-- 2026-10-28 04:00 | The Quest for Supply Chain Resilience Remains Challenging | https://www.supplychainbrain.com/blogs/1-think-tank/post/45090-the-quest-for-supply-chain-resilience-remains-challenging
-  Incidents on factory floors across the globe today can quickly turn into tomorrow’s delays, missing items, and wasted material at home.
-- 2026-10-28 04:00 | Watch: Closing the Skills Gap in Supply Chain Talent | https://www.supplychainbrain.com/articles/45087-watch-closing-the-skills-gap-in-supply-chain-talent
-  Supply chain leaders complain of a lack of qualified talent, while job-seekers say they can't find employment. Where's the disconnect? Mia Mazal, co-founder and chief operating officer of Talento, explains.
-- 2026-10-27 21:07 | Staying Ahead of Cargo Theft: Building a More Secure Supply Chain | https://www.supplychainbrain.com/articles/44754-staying-ahead-of-cargo-theft-building-a-more-secure-supply-chain
-  Cargo theft is becoming more organized, more sophisticated and more difficult to prevent. Criminals are increasingly using identity fraud, strategic deception and coordinated theft rings to target high-value shipments, forcing shippers, logistics providers and carriers to rethink how they protect freight.
 
 ## SCMR
 - 2026-10-30 14:27 | Reducing costs and staying productive in the VUCA world | https://www.scmr.com/article/five-priorities-reducing-supply-chain-costs
@@ -107,10 +107,6 @@
   Adaptive inventory segmentation combines current SKU classifications with predicted changes in demand to help supply chain managers evaluate replenishment decisions before existing categories catch up.
 - 2026-10-26 13:54 | Bottlenecks, tariffs and freight costs reset the operating outlook | https://www.scmr.com/article/bottlenecks-tariffs-and-freight-costs-reset-the-operating-outlook
   Supplier delays and energy risks lead a briefing on Canada tariffs, parcel and trucking costs, drone regulation, medtech resilience, container rates and the workforce barriers slowing supply chain AI.
-- 2026-10-23 13:37 | Cisco’s supply chain AI gains start with the work behind the workflow | https://www.scmr.com/article/ciscos-supply-chain-ai-gains-start-with-the-work-behind-the-workflow
-  Cisco’s experience with supply chain AI agents shows how automating demand-planning analysis can free employee time while leaving business leaders responsible for adoption, data gaps and measurable operating improvements.
-- 2026-10-23 12:09 | A supplier is flagged: Is your product exposed? | https://www.scmr.com/article/a-supplier-is-flagged-is-your-product-exposed
-  A product-specific supplier investigation separates potential exposure from evidence availability, helping procurement and compliance teams assess upstream alerts, target information requests and escalate unresolved concerns.
 
 ## The Loadstar
 - 2026-10-30 21:56 | CNBC: Stock market rocked as investors dump tech shares | https://theloadstar.com/cnbc-stock-market-rocked-as-investors-dump-tech-shares/
@@ -135,6 +131,8 @@
   A threatened Sunday walkout at Los Angeles and Long Beach may be delayed until Wednesday. The real danger is the reach of a small union local, with 35,688 containers already waiting for rail service. It takes a special kind of labor dispute to put half a port complex at risk with a workforce smaller than the guest list at a medium-sized wedding. At Los Angeles and Long Beach, some 250 security…
 
 ## FreightWaves
+- 2026-11-01 00:30 | Freight cycles are anything but regular | https://www.freightwaves.com/news/freight-cycles-are-anything-but-regular
+  We call them freight cycles, but the term implies a regularity the data doesn’t support. Since 2000, the domestic transportation market’s turns have looked less like clockwork and more like a series of random shocks The post Freight cycles are anything but regular appeared first on FreightWaves .
 - 2026-10-30 18:42 | Rail Rivalry: Schneider’s Bold Move to Norfolk Southern from CSX | https://www.freightwaves.com/news/rail-rivalry-schneiders-bold-move-to-norfolk-southern-from-csx
   Schneider is making a monumental shift in its intermodal operations, moving all eastern rail business from CSX to Norfolk Southern. This strategic partnership aims to unlock significant growth, enhance capacity flexibility, and drive more freight off the roads and onto rail. Discover the full implications of this major move and what it means for the […] The post Rail Rivalry: Schneider’s Bold…
 - 2026-10-30 18:40 | Unexpected Boom: Trailer Leasing Demand Hits Record Highs | https://www.freightwaves.com/news/unexpected-boom-trailer-leasing-demand-hits-record-highs
@@ -213,21 +211,21 @@
   A new Sparq report reveals a surprising trend: most transportation and logistics leaders are satisfied with their AI and technology investments, with 90% reporting met or exceeded ROI expectations. Yet, a significant 62% are pushing vendors for faster payback. This raises a critical question about the future of tech adoption in the industry. Scott Monnig, […] The post AI ROI: Why 90%…
 - 2026-10-29 00:07 | Scan Global Logistics to acquire Oregon-based OIA Global | https://www.freightwaves.com/news/scan-global-logistics-to-acquire-oregon-based-oia-global
   Scan Global Logistics has agreed to acquire OIA Global, based in Portland, Oregon. The post Scan Global Logistics to acquire Oregon-based OIA Global appeared first on FreightWaves .
-- 2026-10-28 21:50 | Aurora adds 500-truck Charger MOU toward 30,000-truck goal | https://www.freightwaves.com/news/aurora-charger-logistics-500-driverless-trucks-mou
-  Aurora Innovation signed a nonbinding MOU with Charger Logistics for up to 500 driverless trucks, adding to a carrier-owned pipeline Aurora needs to hit its 2030 targets. The post Aurora adds 500-truck Charger MOU toward 30,000-truck goal appeared first on FreightWaves .
 
 ## SupplyChain247
 (failed: https://www.supplychain247.com/: ReadTimeout: HTTPSConnectionPool(host='www.supplychain247.com', port=443): Read timed out. (read timeout=25))
 
 ## Supply Chain Digital
+- 2026-10-28 17:17 | Deloitte & Sirion: Providing Visibility for Supply Chains | https://supplychaindigital.com/news/deloitte-sirion-providing-visibility-for-supply-chains
+  Kanti Prabha, President, Chief Product & Technology Officer at Sirion, explores how a new partnership is helping transform supply chain planning Deloitte has formed an alliance with Sirion to deploy AI contract lifecycle management tools for supply chain operations. The partnership targets supply chain teams working with enterprise resource planning systems. The collaboration brings together Deloitte's consulting services and Sirion's AI platform to automate contract processes across supplier…
 - 2026-10-28 15:08 | ImportGenius: AI, Trade Intelligence and Supply Chain Risk | https://supplychaindigital.com/news/ai-trade-intelligence-and-supply-chain-risk
   ImportGenius executives James Orr and Daniel Mikhail explain how AI, customs data and global supply chain visibility are reshaping trade intelligence The pressures for supply chain leaders to identify potential supply chain risks, whether those are from geopolitical disruption or shifts in the competitiveness of individual suppliers, have never been greater than at present. Data has become an increasingly important element of competitive advantage. But supply chain leaders understand that the…
 - 2026-10-28 09:19 | The Returns Value Gap: ReBound’s Circularity Concerns | https://supplychaindigital.com/news/the-returns-value-gap-rebounds-circularity-concerns
   Though circularity is becoming more of a sustainability strategy, ReBound explores the returns value gap and how to protect operational margins As customers are buying online more and more, the returns and recommerce markets are growing. With this comes a particular challenge for retailers, as they need to find value from returned stock – can it be resold, can it be recycled, does it need to be written off? ReBound is a global returns management specialist, helping brands as they simplify the…
 - 2026-10-27 12:11 | GXO to Deploy Digit 5 Robots in E-Commerce Fulfilment Sites | https://supplychaindigital.com/news/gxo-to-deploy-agility-robotics-in-two-e-commerce-fulfilment
   GXO Logistics and Agility Robotics are rolling out Digit 4 humanoid robots to two US e-commerce fulfilment sites from early 2027 followed by Digit 5 units GXO Logistics is expanding its partnership with Agility Robotics to deploy Digit humanoid robots at two additional US e-commerce fulfilment sites. The deployments are expected to begin in early 2027 at facilities in Statesville, North Carolina, and Lebanon, Tennessee. GXO will initially use Digit 4 units before transitioning to Digit 5…
-- 2026-10-27 10:26 | WCS & Hershey: Establishing Sustainable Cocoa Supply Chains | https://supplychaindigital.com/news/wcs-and-hershey-establishing-sustainable-cocoa-supply-chains
-  Hershey is committing to US$2.5m to Wildlife Conservation Society for sustainable cocoa project in Nigeria's Cross River State rainforest region The Hershey Company has committed US$2.5m to the Wildlife Conservation Society as part of a four-year project in Cross River State, Nigeria. The partnership aims to strengthen supply chain resilience in a region where more than 100,000 households depend on cocoa farming for their livelihoods. According to the Wildlife Conservation Society, the area…
+- 2026-10-31 09:00 | This Week's Top Five Stories in Supply Chain | https://supplychaindigital.com/news/this-weeks-top-five-stories-in-supply-chain-october-31
+  Supply Chain Digital explores the top five stories from the past week, including people moves, robotics deployment and sustainability initiatives GXO Logistics is expanding its partnership with Agility Robotics to deploy Digit humanoid robots at two additional US e-commerce fulfilment sites. The deployments are expected to begin in early 2027 at facilities in Statesville, North Carolina, and Lebanon, Tennessee. GXO will initially use Digit 4 units before transitioning to Digit 5 robots when…
 - 2026-10-30 16:29 | Sphera AI Introduces Agentic AI Supply Chain Risk Tools | https://supplychaindigital.com/news/sphera-ai-introduces-agentic-ai-supply-chain-risk-tools
   Sphera CEO Paul Marushka outlines AI-powered supply chain risk management for faster supplier, product and operations decisions Sphera has launched new AI capabilities for Supply Chain Risk Management (SCRM), designed to connect external risk signals with the suppliers, products and operations they could affect. The new capabilities include agentic AI tools, conversational AI features and a Model Context Protocol (MCP), which allows organisations to pull insights directly from SCRM into…
 - 2026-10-30 14:13 | RELEX Solutions: Can Retailers Connect End-to-End Planning? | https://supplychaindigital.com/news/relex-solutions-can-retailers-connect-end-to-end-planning
@@ -244,12 +242,10 @@
   The latest guests on Supply Chain UNCUT included Amy Augustine from Champro, Negodiuk’s Dima Negodiuk and Mars’ James Rosengren Guest name: James Rosengren Title & company: Global Supply Chain – Value Creation and Sustainability at Mars Snacking “I see AI as a tool that enables our team to move away from value execution and spend more time in value creation.” Dima explores how AI can support across fulfilment, order processing and finance in order to help teams become more productive.
 - 2026-10-28 17:25 | DHL Group Strengthens Asia Pacific Healthcare Supply Chains | https://supplychaindigital.com/news/dhl-group-strengthens-asia-pacific-healthcare-supply-chains
   As demand for reliable healthcare logistics increases, DHL is investing in its Asia Pacific operations to increase compliance and efficiency DHL Group is strengthening its Life Sciences and Healthcare (LSHC) capabilities in Singapore , following the opening of its Pharma Hub in 2025. As the company continues to grow its investments , the region will see expanded capacity across its medical supply chains, driving greater efficiency and security across the industry. Through these investments,…
-- 2026-10-28 17:17 | Deloitte & Sirion: Providing Visibility for Supply Chains | https://supplychaindigital.com/news/deloitte-sirion-providing-visibility-for-supply-chains
-  Kanti Prabha, President, Chief Product & Technology Officer at Sirion, explores how a new partnership is helping transform supply chain planning Deloitte has formed an alliance with Sirion to deploy AI contract lifecycle management tools for supply chain operations. The partnership targets supply chain teams working with enterprise resource planning systems. The collaboration brings together Deloitte's consulting services and Sirion's AI platform to automate contract processes across supplier…
+- 2026-10-27 10:26 | WCS & Hershey: Establishing Sustainable Cocoa Supply Chains | https://supplychaindigital.com/news/wcs-and-hershey-establishing-sustainable-cocoa-supply-chains
+  Hershey is committing to US$2.5m to Wildlife Conservation Society for sustainable cocoa project in Nigeria's Cross River State rainforest region The Hershey Company has committed US$2.5m to the Wildlife Conservation Society as part of a four-year project in Cross River State, Nigeria. The partnership aims to strengthen supply chain resilience in a region where more than 100,000 households depend on cocoa farming for their livelihoods. According to the Wildlife Conservation Society, the area…
 - 2026-10-27 08:59 | How Manufacturers are Automating Procurement with AI and EDI | https://supplychaindigital.com/news/how-manufacturers-are-automating-procurement-with-ai-and-edi
   JAGGAER, GDP and Groves explore how manufacturers can use AI and EDI to reduce manual procurement work and progress toward greater autonomy In today's market, procurement and supply chain operations are changing. Manufacturing leaders have moved away from manual processes in order to begin the integration of autonomous tools and AI. As demand and risk increase, modern tools help create greater efficiency and productivity throughout processes. With increased visibility and resilience,…
-- 2026-10-26 16:25 | Culina Announces New CEO After Brand Unification | https://supplychaindigital.com/news/culina-announces-new-ceo-after-brand-unification
-  Liam McElroy set to be replaced as Culina Group CEO shortly after announcing unification of subsidiaries under Culina branding Culina Group has announced that current Chief Executive Officer Liam McElroy will be succeeded by Fabian Koehler, the Deputy CEO, with effect from 1 February 2027. The announcement of the executive appointment follows shortly after Culina group announced that it was unifying its subsidiaries under a single brand: Culina. The announcement in mid October affected…
 
 ## Logistics Management
 (failed: https://www.logisticsmgmt.com/: HTTPError: 403 Client Error: Forbidden for url: https://www.logisticsmgmt.com/)
@@ -295,8 +291,6 @@
   The Ontario, Canada-based truck transportation provider Charger Logistics intends to purchase up to 500 autonomous trucks controlled by technology from self-driving platform provider Aurora, the companies said today. The agreement builds upon Charger’s existing contract with Aurora signed in July, underscoring the carrier’s belief that the technology—called the Aurora Driver—will be critical to…
 - 2026-10-26 15:14 | Reusable packaging gets smart | https://www.dcvelocity.com/material-handling/reusable-packaging-gets-smart
   Recent research predicts a shift in the asset-tracking technology market, which has been a game-changer in logistics for its ability to provide visibility into transportation and freight movement. Vehicle-tracking devices have been the primary drivers of market growth, but analysts at global research firm Counterpoint Research are predicting a different scenario by 2032, when they say the…
-- 2026-10-23 15:52 | Ready for peak? | https://www.dcvelocity.com/transportation/ready-for-peak
-  Fall is in full swing, and for supply chains that means it will soon be time to test whether or not all those peak-shipping season preparations of the past few months were up to snuff. This will be felt acutely in the final mile, as holiday orders make their way from distribution centers to doorsteps across the country. Last-mile delivery is often considered the most difficult part of the…
 
 ## Splash247
 - 2026-10-30 10:30 | Swedish owner Veritas books up to six chemical tankers in China | https://splash247.com/swedish-owner-veritas-books-up-to-six-chemical-tankers-in-china/
@@ -357,8 +351,6 @@
   Wer im Unternehmen viel unterwegs ist, muss gerade im Hinblick auf steigende Spritkosten seine Fahrzeugausgaben im Blick behalten. Kraftstoff und Wartung sind teuer, doch auch Verwaltung und Abrechnung verursachen laufende Ausgaben. Mit einer guten Organisation lassen sich unnötige Kosten oft vermeiden. In kleinen Betrieben ist die Geschäftsführung oft für mehrere Aufgaben gleichzeitig…
 
 ## BVL
-- 2026-10-23 09:01 | Dritte Ausgabe der BVL Supply Chain CX begrüßte rund 1.800 Teilnehmende | https://cx.bvl.de/programm
-  Die dritte Ausgabe der BVL Supply Chain CX als Leitevent für Logistik und Supply Chain-Management im Estrel Berlin ist erfolgreich gelaufen. Rund 1.800 Teilnehmende erlebten an zwei Veranstaltungstagen über 160 Speaker und eine ausgebuchte Expo-Area mit rund 130 Ausstellern und Partnern. Netzwerkmöglichkeiten, viele Mitmachaktionen und Karaoke rundeten das Angebot ab. Das traditionelle Highlight…
 - 2026-10-28 09:27 | Zivil-militärische Zusammenarbeit als Säule der Verteidigungsfähigkeit | https://www.bvl.de/schriften/studien-zum-download-fuer-mitglieder
   Rund 60 Prozent der Transport- und Logistikunternehmen sind bereits im Verteidigungssektor aktiv. Davon 34 Prozent für öffentliche Auftraggeber, 24 Prozent für die Rüstungsindustrie und 42 Prozent für beide Kundengruppen. Das ist ein zentrales Ergebnis der Studie „Defense Logistics“, die die Bundesvereinigung Logistik (BVL) gemeinsam mit Strategy&, der globalen Strategieberatung von PwC,…
 
@@ -482,12 +474,6 @@
   Flere danske erhvervshavne er begyndt at afvise kunder og virksomheder, fordi kapaciteten i elnettet er utilstrækkelig. Det advarer Danske Havne om i et nyt høringssvar.
 - 2026-10-26 07:00 | Körber investerer i leverandøruafhængig flådestyring til intralogistik | https://www.scm.dk/korber-investerer-i-leverandoruafhaengig-fladestyring-til-intralogistik
   Körber køber en ejerandel i softwarevirksomheden NAiSE for at styrke koordineringen af blandede robotflåder og skabe bedre integration mellem automatiserede lager- og produktionssystemer.
-- 2026-10-23 09:27 | MSC meldes på vej med ordre på 20 megacontainerskibe | https://www.scm.dk/msc-meldes-pa-vej-med-ordre-pa-20-megacontainerskibe
-  Verdens største containerrederi, MSC, har ifølge analysefirmaet Linerlytica bestilt yderligere 20 containerskibe med en kapacitet på 24.000 teu hver hos kinesiske Hengli Heavy Industries. Ordren er endnu ikke officielt bekræftet.
-- 2026-10-23 09:25 | Over 500 containerskibe og bilskibe sejler nu med dual-fuel | https://www.scm.dk/over-500-containerskibe-og-bilskibe-sejler-nu-med-dual-fuel
-  Antallet af containerskibe og bilskibe, der kan sejle på både konventionelle og alternative brændstoffer, er steget med 41 procent på et år, viser nye tal fra WSC.
-- 2026-10-23 08:51 | Permobil sparer næsten tre timers transportadministration hver produktionsdag med nShift TMS | https://www.scm.dk/permobil-sparer-naesten-tre-timers-transportadministration-hver-produktionsdag-med-nshift-tms
-  Den svenske producent af avancerede mobilitetsløsninger, Permobil, har automatiseret transportbooking og udskrivning af fragtlabels med nShift TMS. Det sparer i gennemsnit fem minutter pr. kørestol og sikrer samtidig bedre datakvalitet og mere ensartede forsendelsesoplysninger.
 
 ## SC Effect
 - no date | Warehouse robotics company Exotec forms a European management team | https://sceffect.se/en/lagerrobotbolaget-exotec-bildar-europeisk-ledningsgrupp/
@@ -558,16 +544,13 @@
   ​Sea-Intelligence has published issue 182 of the Global Liner Performance (GLP) report , with schedule reliability figures up to and including September 2026. As the 120-page report is quite comprehensive and covers schedule reliability across 34 different trade lanes and 60+ carriers, this press release will only cover highlights from the full report. Schedule reliability improved by 0.9…
 
 ## Xeneta
-- 2026-10-23 16:00 | XENETA WEEKLY OCEAN CONTAINER SHIPPING MARKET UPDATE – 23.10.26 | https://www.xeneta.com/news/xeneta-weekly-ocean-container-shipping-market-update-23.10.26
-  The Xeneta Weekly Ocean Container Shipping Market Update provides data and intelligence including the latest freight rate and capacity movements across global trades with supporting insight from Peter Sand, Xeneta Chief Analyst.
+(failed: no article links after filtering)
 
 ## Talking Logistics
 - 2026-10-30 12:42 | Above the Fold: Supply Chain Logistics News (October 30, 2026) | https://talkinglogistics.com/2026/10/30/above-the-fold-supply-chain-logistics-news-october-30-2026/
   The first time I visited Barcelona, I lost my ability to sleep. The sun went down, it got late, I went to bed, but I never got sleepy. I was up all night. One night of insomnia. It happens. It’s normal. Two nights later, the sun went down again, and once again, sleep never came. ... Read more The post Above the Fold: Supply Chain Logistics News (October 30, 2026) appeared first on Talking…
 - 2026-10-26 11:01 | Descartes: From the Dot-Com Era to the AI Era | https://talkinglogistics.com/2026/10/26/descartes-from-the-dot-com-era-to-the-ai-era/
   The opening keynote session at the recent Descartes Innovation Forum featured CEO Ed Ryan, President and COO Scott Pagan, and EVP of Product Management Ken Wood. In his remarks, Scott mentioned how all three of them started working at Descartes 25 years ago, which is a very long time in the software industry. It’s like ... Read more The post Descartes: From the Dot-Com Era to the AI Era appeared…
-- 2026-10-23 12:48 | Above the Fold: Supply Chain Logistics News (October 23, 2026) | https://talkinglogistics.com/2026/10/23/above-the-fold-supply-chain-logistics-news-october-23-2026/
-  Every once in a while, it hits me: I am kept alive by a little pink pill. I take it every morning, the first thing I do when I get out of bed. Without it, my metabolism would eventually go to zero and I would die. I take this pill because I don’t have a ... Read more The post Above the Fold: Supply Chain Logistics News (October 23, 2026) appeared first on Talking Logistics with Adrian Gonzalez .
 
 ## Supply Chain Shaman
 - 2026-10-26 16:54 | AI Defining a Middle Ground Between Custom and Packaged Applications in Supply Chain Planning | https://www.supplychainshaman.com/ai-defining-a-middle-ground-between-custom-and-packaged-applications-in-supply-chain-planning/
@@ -594,8 +577,6 @@
   AI has gone from insight to action. With physical AI, it comes into the physical world.
 - 2026-10-26 20:50 | AI Release Highlights Q3 2026 | https://news.sap.com/2026/10/ai-release-highlights-q3-2026/
   The quarter marks a major step in delivering on our promise of the Autonomous Enterprise.
-- 2026-10-23 11:15 | For the 12th Time, SAP Named a Leader in Gartner® Magic Quadrant™ for Digital Commerce Platforms | https://news.sap.com/2026/10/sap-a-leader-in-gartner-magic-quadrant-digital-commerce-platform-12th-time/
-  SAP helps customers simplify complex commerce and prepare for what come next.
 
 ## Gartner Newsroom
 (failed: https://www.gartner.com/en/newsroom: HTTPError: 403 Client Error: Forbidden for url: https://www.gartner.com/en/newsroom)
@@ -799,8 +780,8 @@
 
 ## Rhine gauges (Pegelonline, live)
 Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.
-- MAXAU (Rhine km 362.327): 303.0 cm, measured 2026-10-31T09:45:00+01:00
-- KAUB (Rhine km 546.23): 32.0 cm, measured 2026-10-31T09:45:00+01:00
-- KÖLN (Rhine km 688.0): 96.0 cm, measured 2026-10-31T09:45:00+01:00
-- DUISBURG-RUHRORT (Rhine km 780.8): 196.0 cm, measured 2026-10-31T09:45:00+01:00
-- EMMERICH (Rhine km 851.9): 47.0 cm, measured 2026-10-31T09:45:00+01:00
+- MAXAU (Rhine km 362.327): 306.0 cm, measured 2026-11-01T10:30:00+01:00
+- KAUB (Rhine km 546.23): 24.0 cm, measured 2026-11-01T10:30:00+01:00
+- KÖLN (Rhine km 688.0): 87.0 cm, measured 2026-11-01T10:30:00+01:00
+- DUISBURG-RUHRORT (Rhine km 780.8): 182.0 cm, measured 2026-11-01T10:30:00+01:00
+- EMMERICH (Rhine km 851.9): 35.0 cm, measured 2026-11-01T10:30:00+01:00

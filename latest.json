@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-10-31T08:50:51.639942+00:00",
+ "fetched_at": "2026-11-01T09:41:26.808332+00:00",
  "window_days": 8,
- "sources_ok": 67,
+ "sources_ok": 66,
  "sources_total": 72,
  "items": [
   {
@@ -91,6 +91,87 @@
    "link": "https://www.supplychaindive.com/news/nvidia-forges-supplier-agreements-to-expand-capacity-for-ai/872780/",
    "published": "2026-10-28T14:20:20+00:00",
    "summary": "The artificial intelligence chipmaker signed deals with six suppliers to scale production of certain components by as much as fifteenfold.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Comarch Named a Leader in the 2026 IDC MarketScape for Worldwide E-Invoicing Compliance Solutions",
+   "link": "https://www.supplychainbrain.com/articles/45109-comarch-named-a-leader-in-the-2026-idc-marketscape-for-worldwide-e-invoicing-compliance-solutions",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "Comarch has been named a Leader in the IDC MarketScape: Worldwide Compliant E-Invoicing Solutions 2026 Vendor Assessment. The report evaluates worldwide technology providers on both their current capabilities and their long‑term strategy for helping enterprises manage compliance across multiple jurisdictions.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "10 Questions to Ask Before Choosing an e-Invoicing System Provider",
+   "link": "https://www.supplychainbrain.com/articles/45107-10-questions-to-ask-before-choosing-an-e-invoicing-system-provider",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "Find out how to choose an e-invoicing partner that keeps you compliant, connected, and ready for what’s next.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "How L’Oréal Strengthens Global Demand Forecasting in a Volatile Beauty Market",
+   "link": "https://www.supplychainbrain.com/articles/45106-how-loreal-strengthens-global-demand-forecasting-in-a-volatile-beauty-market",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "How do you forecast demand for hundreds of luxury beauty brands across 150 countries when consumer behavior changes month to month? That's the problem L'Oréal's Luxury Division faces every planning cycle.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Handling Supply Chain Change: SAP's Road Map for AI-Enabled Transformation",
+   "link": "https://www.supplychainbrain.com/articles/45097-handling-supply-chain-change-saps-road-map-for-ai-enabled-transformation",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "As global supply chains face mounting complexity, AI is evolving from a tool that informs to one that acts — and that shift is happening faster than most anticipated. In this session from SAP Connect Virtual, Koen Jacobs, Global CRO for Supply Chain Management at SAP, and SangJoon Kim, Director of Next Generation Supply Chain Management at LG Innotek, explore what the autonomous supply chain…",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "When IBP Falls Short, Industrial Planning Steps Forward",
+   "link": "https://www.supplychainbrain.com/articles/45095-when-ibp-falls-short-industrial-planning-steps-forward",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "In this panel discussion, top FMCG industry leaders speak of how Industrial Planning, a reshaped supply chain mechanics, helps businesses to be closer to production execution with a concurrent and collaborative approach powered by Virtual Twin technology.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Retail Compliance Guide for CPG Brands",
+   "link": "https://www.supplychainbrain.com/articles/45094-retail-compliance-guide-for-cpg-brands",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "Retail compliance has become a growing challenge for CPG brands selling through major retailers. From OTIF requirements and routing guides to EDI, ASNs, labeling, pallet standards, and appointment scheduling, every retailer brings its own set of requirements, and every compliance failure can impact margins and operations.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Intelligent Automation in Warehousing: An AI Roadmap",
+   "link": "https://www.supplychainbrain.com/articles/45093-intelligent-automation-in-warehousing-an-ai-roadmap",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "Artificial intelligence is rapidly reshaping warehouse operations, offering new opportunities to improve efficiency, optimize decision-making, and increase performance. Yet while many organizations are investing in AI, adoption alone does not guarantee confidence or long-term success.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "The Supply Chain Decision Gap: Improving Decision-Making through Continuous Optimization",
+   "link": "https://www.supplychainbrain.com/articles/45010-the-supply-chain-decision-gap-improving-decision-making-through-continuous-optimization",
+   "published": "2026-11-01T06:00:00+00:00",
+   "summary": "In this eBook, you'll discover why supply chain leaders are rethinking how decisions are made across planning, logistics and operations. Learn how optimization can help teams evaluate trade-offs more effectively, respond earlier to changing conditions and improve performance without replacing existing systems and enabling better coordination between planning and execution when disruption occurs.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Japan’s Omron Targets India for Manufacturing, Exports Push",
+   "link": "https://www.supplychainbrain.com/articles/45133-japans-omron-targets-india-for-manufacturing-exports-push",
+   "published": "2026-10-31T18:32:58+00:00",
+   "summary": "Omron expects India’s rapid economic growth and rising manufacturing activity to fuel demand for its factory automation products.",
    "via": "feed",
    "lane": "logistics"
   },
@@ -284,87 +365,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SupplyChainBrain",
-   "title": "U.S. Tells Ships to Avoid Unnecessary Transits Through Hormuz",
-   "link": "https://www.supplychainbrain.com/articles/45112-us-tells-ships-to-avoid-unnecessary-transits-through-hormuz",
-   "published": "2026-10-28T16:22:27+00:00",
-   "summary": "The U.S. military last publicly issued a similar notice in mid-July, when it began its blockade of Iranian shipping.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "U.S. Hits Chinese Trailers With Tariffs to Aid Domestic Producers",
-   "link": "https://www.supplychainbrain.com/articles/45103-us-hits-chinese-trailers-with-tariffs-to-aid-domestic-producers",
-   "published": "2026-10-28T13:55:31+00:00",
-   "summary": "A preliminary ruling outlined the move months ago, just as the U.S. and China were in talks to extend a trade truce.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "How the GLP-1 Trend Is Impacting Retail Returns and Inventory",
-   "link": "https://www.supplychainbrain.com/blogs/1-think-tank/post/45099-how-the-glp-1-trend-is-impacting-retail-returns-and-inventory",
-   "published": "2026-10-28T04:00:00+00:00",
-   "summary": "Data analysis can help retailers better forecast how GLP-1 consumers are impacting their business.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "South African Company Tests World's Longest Freight Train",
-   "link": "https://www.supplychainbrain.com/articles/45098-south-african-company-tests-worlds-longest-freight-train",
-   "published": "2026-10-28T04:00:00+00:00",
-   "summary": "The 4.7-mile train was said to have completed a 534-mile test run on October 17, from Saldanha Bay on South Africa's western coast, to an inland ore mine.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "Scary Rise in U.S. Halloween Candy Prices",
-   "link": "https://www.supplychainbrain.com/articles/45092-us-candy-prices-climb-ahead-of-halloween",
-   "published": "2026-10-28T04:00:00+00:00",
-   "summary": "This all comes in a year where cocoa prices have actually fallen by more than half from their 2024 peak.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "Your Supply Chain Has an Enterprise Debt Problem",
-   "link": "https://www.supplychainbrain.com/blogs/1-think-tank/post/45091-your-supply-chain-has-an-enterprise-debt-problem",
-   "published": "2026-10-28T04:00:00+00:00",
-   "summary": "Systems got added region by region, asset by asset, usually to solve whatever problem was in front of someone at the time.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "The Quest for Supply Chain Resilience Remains Challenging",
-   "link": "https://www.supplychainbrain.com/blogs/1-think-tank/post/45090-the-quest-for-supply-chain-resilience-remains-challenging",
-   "published": "2026-10-28T04:00:00+00:00",
-   "summary": "Incidents on factory floors across the globe today can quickly turn into tomorrow’s delays, missing items, and wasted material at home.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "Watch: Closing the Skills Gap in Supply Chain Talent",
-   "link": "https://www.supplychainbrain.com/articles/45087-watch-closing-the-skills-gap-in-supply-chain-talent",
-   "published": "2026-10-28T04:00:00+00:00",
-   "summary": "Supply chain leaders complain of a lack of qualified talent, while job-seekers say they can't find employment. Where's the disconnect? Mia Mazal, co-founder and chief operating officer of Talento, explains.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "Staying Ahead of Cargo Theft: Building a More Secure Supply Chain",
-   "link": "https://www.supplychainbrain.com/articles/44754-staying-ahead-of-cargo-theft-building-a-more-secure-supply-chain",
-   "published": "2026-10-27T21:07:10+00:00",
-   "summary": "Cargo theft is becoming more organized, more sophisticated and more difficult to prevent. Criminals are increasingly using identity fraud, strategic deception and coordinated theft rings to target high-value shipments, forcing shippers, logistics providers and carriers to rethink how they protect freight.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "SCMR",
    "title": "Reducing costs and staying productive in the VUCA world",
    "link": "https://www.scmr.com/article/five-priorities-reducing-supply-chain-costs",
@@ -455,24 +455,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SCMR",
-   "title": "Cisco’s supply chain AI gains start with the work behind the workflow",
-   "link": "https://www.scmr.com/article/ciscos-supply-chain-ai-gains-start-with-the-work-behind-the-workflow",
-   "published": "2026-10-23T13:37:00+00:00",
-   "summary": "Cisco’s experience with supply chain AI agents shows how automating demand-planning analysis can free employee time while leaving business leaders responsible for adoption, data gaps and measurable operating improvements.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SCMR",
-   "title": "A supplier is flagged: Is your product exposed?",
-   "link": "https://www.scmr.com/article/a-supplier-is-flagged-is-your-product-exposed",
-   "published": "2026-10-23T12:09:00+00:00",
-   "summary": "A product-specific supplier investigation separates potential exposure from evidence availability, helping procurement and compliance teams assess upstream alerts, target information requests and escalate unresolved concerns.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "The Loadstar",
    "title": "CNBC: Stock market rocked as investors dump tech shares",
    "link": "https://theloadstar.com/cnbc-stock-market-rocked-as-investors-dump-tech-shares/",
@@ -559,6 +541,15 @@
    "link": "https://theloadstar.com/250-watchmen-one-picket-line-and-half-of-americas-busiest-port-complex/",
    "published": "2026-10-30T10:26:57+00:00",
    "summary": "A threatened Sunday walkout at Los Angeles and Long Beach may be delayed until Wednesday. The real danger is the reach of a small union local, with 35,688 containers already waiting for rail service. It takes a special kind of labor dispute to put half a port complex at risk with a workforce smaller than the guest list at a medium-sized wedding. At Los Angeles and Long Beach, some 250 security…",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "FreightWaves",
+   "title": "Freight cycles are anything but regular",
+   "link": "https://www.freightwaves.com/news/freight-cycles-are-anything-but-regular",
+   "published": "2026-11-01T00:30:00+00:00",
+   "summary": "We call them freight cycles, but the term implies a regularity the data doesn’t support. Since 2000, the domestic transportation market’s turns have looked less like clockwork and more like a series of random shocks The post Freight cycles are anything but regular appeared first on FreightWaves .",
    "via": "feed",
    "lane": "logistics"
   },
@@ -914,12 +905,12 @@
    "lane": "logistics"
   },
   {
-   "source": "FreightWaves",
-   "title": "Aurora adds 500-truck Charger MOU toward 30,000-truck goal",
-   "link": "https://www.freightwaves.com/news/aurora-charger-logistics-500-driverless-trucks-mou",
-   "published": "2026-10-28T21:50:06+00:00",
-   "summary": "Aurora Innovation signed a nonbinding MOU with Charger Logistics for up to 500 driverless trucks, adding to a carrier-owned pipeline Aurora needs to hit its 2030 targets. The post Aurora adds 500-truck Charger MOU toward 30,000-truck goal appeared first on FreightWaves .",
-   "via": "feed",
+   "source": "Supply Chain Digital",
+   "title": "Deloitte & Sirion: Providing Visibility for Supply Chains",
+   "link": "https://supplychaindigital.com/news/deloitte-sirion-providing-visibility-for-supply-chains",
+   "published": "2026-10-28T17:17:00+00:00",
+   "summary": "Kanti Prabha, President, Chief Product & Technology Officer at Sirion, explores how a new partnership is helping transform supply chain planning Deloitte has formed an alliance with Sirion to deploy AI contract lifecycle management tools for supply chain operations. The partnership targets supply chain teams working with enterprise resource planning systems. The collaboration brings together Deloitte's consulting services and Sirion's AI platform to automate contract processes across supplier…",
+   "via": "page links, article read",
    "lane": "logistics"
   },
   {
@@ -951,10 +942,10 @@
   },
   {
    "source": "Supply Chain Digital",
-   "title": "WCS & Hershey: Establishing Sustainable Cocoa Supply Chains",
-   "link": "https://supplychaindigital.com/news/wcs-and-hershey-establishing-sustainable-cocoa-supply-chains",
-   "published": "2026-10-27T10:26:00+00:00",
-   "summary": "Hershey is committing to US$2.5m to Wildlife Conservation Society for sustainable cocoa project in Nigeria's Cross River State rainforest region The Hershey Company has committed US$2.5m to the Wildlife Conservation Society as part of a four-year project in Cross River State, Nigeria. The partnership aims to strengthen supply chain resilience in a region where more than 100,000 households depend on cocoa farming for their livelihoods. According to the Wildlife Conservation Society, the area…",
+   "title": "This Week's Top Five Stories in Supply Chain",
+   "link": "https://supplychaindigital.com/news/this-weeks-top-five-stories-in-supply-chain-october-31",
+   "published": "2026-10-31T09:00:00+00:00",
+   "summary": "Supply Chain Digital explores the top five stories from the past week, including people moves, robotics deployment and sustainability initiatives GXO Logistics is expanding its partnership with Agility Robotics to deploy Digit humanoid robots at two additional US e-commerce fulfilment sites. The deployments are expected to begin in early 2027 at facilities in Statesville, North Carolina, and Lebanon, Tennessee. GXO will initially use Digit 4 units before transitioning to Digit 5 robots when…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1032,10 +1023,10 @@
   },
   {
    "source": "Supply Chain Digital",
-   "title": "Deloitte & Sirion: Providing Visibility for Supply Chains",
-   "link": "https://supplychaindigital.com/news/deloitte-sirion-providing-visibility-for-supply-chains",
-   "published": "2026-10-28T17:17:00+00:00",
-   "summary": "Kanti Prabha, President, Chief Product & Technology Officer at Sirion, explores how a new partnership is helping transform supply chain planning Deloitte has formed an alliance with Sirion to deploy AI contract lifecycle management tools for supply chain operations. The partnership targets supply chain teams working with enterprise resource planning systems. The collaboration brings together Deloitte's consulting services and Sirion's AI platform to automate contract processes across supplier…",
+   "title": "WCS & Hershey: Establishing Sustainable Cocoa Supply Chains",
+   "link": "https://supplychaindigital.com/news/wcs-and-hershey-establishing-sustainable-cocoa-supply-chains",
+   "published": "2026-10-27T10:26:00+00:00",
+   "summary": "Hershey is committing to US$2.5m to Wildlife Conservation Society for sustainable cocoa project in Nigeria's Cross River State rainforest region The Hershey Company has committed US$2.5m to the Wildlife Conservation Society as part of a four-year project in Cross River State, Nigeria. The partnership aims to strengthen supply chain resilience in a region where more than 100,000 households depend on cocoa farming for their livelihoods. According to the Wildlife Conservation Society, the area…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1045,15 +1036,6 @@
    "link": "https://supplychaindigital.com/news/how-manufacturers-are-automating-procurement-with-ai-and-edi",
    "published": "2026-10-27T08:59:00+00:00",
    "summary": "JAGGAER, GDP and Groves explore how manufacturers can use AI and EDI to reduce manual procurement work and progress toward greater autonomy In today's market, procurement and supply chain operations are changing. Manufacturing leaders have moved away from manual processes in order to begin the integration of autonomous tools and AI. As demand and risk increase, modern tools help create greater efficiency and productivity throughout processes. With increased visibility and resilience,…",
-   "via": "page links, article read",
-   "lane": "logistics"
-  },
-  {
-   "source": "Supply Chain Digital",
-   "title": "Culina Announces New CEO After Brand Unification",
-   "link": "https://supplychaindigital.com/news/culina-announces-new-ceo-after-brand-unification",
-   "published": "2026-10-26T16:25:00+00:00",
-   "summary": "Liam McElroy set to be replaced as Culina Group CEO shortly after announcing unification of subsidiaries under Culina branding Culina Group has announced that current Chief Executive Officer Liam McElroy will be succeeded by Fabian Koehler, the Deputy CEO, with effect from 1 February 2027. The announcement of the executive appointment follows shortly after Culina group announced that it was unifying its subsidiaries under a single brand: Culina. The announcement in mid October affected…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1234,15 +1216,6 @@
    "link": "https://www.dcvelocity.com/material-handling/reusable-packaging-gets-smart",
    "published": "2026-10-26T15:14:57+00:00",
    "summary": "Recent research predicts a shift in the asset-tracking technology market, which has been a game-changer in logistics for its ability to provide visibility into transportation and freight movement. Vehicle-tracking devices have been the primary drivers of market growth, but analysts at global research firm Counterpoint Research are predicting a different scenario by 2032, when they say the…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "DC Velocity",
-   "title": "Ready for peak?",
-   "link": "https://www.dcvelocity.com/transportation/ready-for-peak",
-   "published": "2026-10-23T15:52:47+00:00",
-   "summary": "Fall is in full swing, and for supply chains that means it will soon be time to test whether or not all those peak-shipping season preparations of the past few months were up to snuff. This will be felt acutely in the final mile, as holiday orders make their way from distribution centers to doorsteps across the country. Last-mile delivery is often considered the most difficult part of the…",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1477,15 +1450,6 @@
    "link": "https://www.logistik-journal.de/fahrzeugkosten-im-unternehmen-senken/",
    "published": "2026-10-26T08:52:31+00:00",
    "summary": "Wer im Unternehmen viel unterwegs ist, muss gerade im Hinblick auf steigende Spritkosten seine Fahrzeugausgaben im Blick behalten. Kraftstoff und Wartung sind teuer, doch auch Verwaltung und Abrechnung verursachen laufende Ausgaben. Mit einer guten Organisation lassen sich unnötige Kosten oft vermeiden. In kleinen Betrieben ist die Geschäftsführung oft für mehrere Aufgaben gleichzeitig…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "BVL",
-   "title": "Dritte Ausgabe der BVL Supply Chain CX begrüßte rund 1.800 Teilnehmende",
-   "link": "https://cx.bvl.de/programm",
-   "published": "2026-10-23T09:01:00+00:00",
-   "summary": "Die dritte Ausgabe der BVL Supply Chain CX als Leitevent für Logistik und Supply Chain-Management im Estrel Berlin ist erfolgreich gelaufen. Rund 1.800 Teilnehmende erlebten an zwei Veranstaltungstagen über 160 Speaker und eine ausgebuchte Expo-Area mit rund 130 Ausstellern und Partnern. Netzwerkmöglichkeiten, viele Mitmachaktionen und Karaoke rundeten das Angebot ab. Das traditionelle Highlight…",
    "via": "feed",
    "lane": "logistics"
   },
@@ -2003,33 +1967,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SCM.dk",
-   "title": "MSC meldes på vej med ordre på 20 megacontainerskibe",
-   "link": "https://www.scm.dk/msc-meldes-pa-vej-med-ordre-pa-20-megacontainerskibe",
-   "published": "2026-10-23T09:27:00+00:00",
-   "summary": "Verdens største containerrederi, MSC, har ifølge analysefirmaet Linerlytica bestilt yderligere 20 containerskibe med en kapacitet på 24.000 teu hver hos kinesiske Hengli Heavy Industries. Ordren er endnu ikke officielt bekræftet.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Over 500 containerskibe og bilskibe sejler nu med dual-fuel",
-   "link": "https://www.scm.dk/over-500-containerskibe-og-bilskibe-sejler-nu-med-dual-fuel",
-   "published": "2026-10-23T09:25:00+00:00",
-   "summary": "Antallet af containerskibe og bilskibe, der kan sejle på både konventionelle og alternative brændstoffer, er steget med 41 procent på et år, viser nye tal fra WSC.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Permobil sparer næsten tre timers transportadministration hver produktionsdag med nShift TMS",
-   "link": "https://www.scm.dk/permobil-sparer-naesten-tre-timers-transportadministration-hver-produktionsdag-med-nshift-tms",
-   "published": "2026-10-23T08:51:00+00:00",
-   "summary": "Den svenske producent af avancerede mobilitetsløsninger, Permobil, har automatiseret transportbooking og udskrivning af fragtlabels med nShift TMS. Det sparer i gennemsnit fem minutter pr. kørestol og sikrer samtidig bedre datakvalitet og mere ensartede forsendelsesoplysninger.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "SC Effect",
    "title": "Warehouse robotics company Exotec forms a European management team",
    "link": "https://sceffect.se/en/lagerrobotbolaget-exotec-bildar-europeisk-ledningsgrupp/",
@@ -2273,15 +2210,6 @@
    "lane": "logistics"
   },
   {
-   "source": "Xeneta",
-   "title": "XENETA WEEKLY OCEAN CONTAINER SHIPPING MARKET UPDATE – 23.10.26",
-   "link": "https://www.xeneta.com/news/xeneta-weekly-ocean-container-shipping-market-update-23.10.26",
-   "published": "2026-10-23T16:00:29+00:00",
-   "summary": "The Xeneta Weekly Ocean Container Shipping Market Update provides data and intelligence including the latest freight rate and capacity movements across global trades with supporting insight from Peter Sand, Xeneta Chief Analyst.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "Talking Logistics",
    "title": "Above the Fold: Supply Chain Logistics News (October 30, 2026)",
    "link": "https://talkinglogistics.com/2026/10/30/above-the-fold-supply-chain-logistics-news-october-30-2026/",
@@ -2296,15 +2224,6 @@
    "link": "https://talkinglogistics.com/2026/10/26/descartes-from-the-dot-com-era-to-the-ai-era/",
    "published": "2026-10-26T11:01:00+00:00",
    "summary": "The opening keynote session at the recent Descartes Innovation Forum featured CEO Ed Ryan, President and COO Scott Pagan, and EVP of Product Management Ken Wood. In his remarks, Scott mentioned how all three of them started working at Descartes 25 years ago, which is a very long time in the software industry. It’s like ... Read more The post Descartes: From the Dot-Com Era to the AI Era appeared…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Talking Logistics",
-   "title": "Above the Fold: Supply Chain Logistics News (October 23, 2026)",
-   "link": "https://talkinglogistics.com/2026/10/23/above-the-fold-supply-chain-logistics-news-october-23-2026/",
-   "published": "2026-10-23T12:48:43+00:00",
-   "summary": "Every once in a while, it hits me: I am kept alive by a little pink pill. I take it every morning, the first thing I do when I get out of bed. Without it, my metabolism would eventually go to zero and I would die. I take this pill because I don’t have a ... Read more The post Above the Fold: Supply Chain Logistics News (October 23, 2026) appeared first on Talking Logistics with Adrian Gonzalez .",
    "via": "feed",
    "lane": "logistics"
   },
@@ -2404,15 +2323,6 @@
    "link": "https://news.sap.com/2026/10/ai-release-highlights-q3-2026/",
    "published": "2026-10-26T20:50:00+00:00",
    "summary": "The quarter marks a major step in delivering on our promise of the Autonomous Enterprise.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SAP News",
-   "title": "For the 12th Time, SAP Named a Leader in Gartner® Magic Quadrant™ for Digital Commerce Platforms",
-   "link": "https://news.sap.com/2026/10/sap-a-leader-in-gartner-magic-quadrant-digital-commerce-platform-12th-time/",
-   "published": "2026-10-23T11:15:00+00:00",
-   "summary": "SAP helps customers simplify complex commerce and prepare for what come next.",
    "via": "feed",
    "lane": "logistics"
   },
@@ -2871,41 +2781,41 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 303.0,
+   "level_cm": 306.0,
    "trend": null,
-   "measured_at": "2026-10-31T09:45:00+01:00",
+   "measured_at": "2026-11-01T10:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 32.0,
+   "level_cm": 24.0,
    "trend": null,
-   "measured_at": "2026-10-31T09:45:00+01:00",
+   "measured_at": "2026-11-01T10:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 96.0,
+   "level_cm": 87.0,
    "trend": null,
-   "measured_at": "2026-10-31T09:45:00+01:00",
+   "measured_at": "2026-11-01T10:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 196.0,
+   "level_cm": 182.0,
    "trend": null,
-   "measured_at": "2026-10-31T09:45:00+01:00",
+   "measured_at": "2026-11-01T10:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 47.0,
+   "level_cm": 35.0,
    "trend": null,
-   "measured_at": "2026-10-31T09:45:00+01:00",
+   "measured_at": "2026-11-01T10:30:00+01:00",
    "unit": "cm"
   }
  ]

@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-10-31T08:50:51.639942+00:00",
+ "fetched_at": "2026-11-01T09:41:26.808332+00:00",
  "window_days": 8,
- "sources_ok": 67,
+ "sources_ok": 66,
  "sources_total": 72,
  "sources": [
   {
@@ -27,7 +27,7 @@
    "url": "https://www.scmr.com/",
    "ok": true,
    "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 12,
+   "items": 10,
    "error": null,
    "lane": "logistics"
   },
@@ -81,7 +81,7 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 21,
+   "items": 20,
    "error": null,
    "lane": "logistics"
   },
@@ -117,7 +117,7 @@
    "url": "https://www.bvl.de/",
    "ok": true,
    "method": "feed https://www.bvl.de/presse/rss/bvl-news",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "logistics"
   },
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 35,
+   "items": 32,
    "error": null,
    "lane": "logistics"
   },
@@ -214,10 +214,10 @@
   {
    "source": "Xeneta",
    "url": "https://www.xeneta.com/news",
-   "ok": true,
+   "ok": false,
    "method": "feed https://www.xeneta.com/news/rss.xml",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no article links after filtering",
    "lane": "logistics"
   },
   {
@@ -225,7 +225,7 @@
    "url": "https://talkinglogistics.com/",
    "ok": true,
    "method": "feed https://talkinglogistics.com/feed/",
-   "items": 3,
+   "items": 2,
    "error": null,
    "lane": "logistics"
   },
@@ -243,7 +243,7 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 11,
+   "items": 10,
    "error": null,
    "lane": "logistics"
   },
