@@ -1,0 +1,559 @@
+{
+  "show": "The Planning Desk",
+  "episode_title": "AI Agents, Suez Freight Rates, Rhine Low Water",
+  "week": "2026-W44",
+  "run_date": "2026-11-01",
+  "brief_file": "news-brief-2026-11-01.md",
+  "target_runtime_sec": 900,
+  "word_count": 2589,
+  "hosts": {
+    "F": {
+      "name": "Anna",
+      "voice": "female, senior news anchor, calm, quick, warm"
+    },
+    "M": {
+      "name": "Erik",
+      "voice": "male, senior news anchor, calm, quick, dry"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 10
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-W44-01",
+        "2026-W44-09"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Ninety-three percent of German logistics firms now use A I, and when an agent gets it wrong, the company carries the blame."
+        },
+        {
+          "speaker": "M",
+          "text": "The question this week moved from whether to automate to who signs off. You're listening to The Planning Desk, the week in review."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-W44-T1",
+        "2026-W44-T2",
+        "2026-W44-T3",
+        "2026-W44-T4"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, this is The Planning Desk, your week in supply chain planning and design, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic. Three threads ran through the week, and the first is on the water."
+        },
+        {
+          "speaker": "M",
+          "text": "Suez reopened and freight rates rose anyway, while Hormuz got more dangerous. The Rhine came back for four days and sank again. And European industry answered United States tariffs with factories, while A I agents moved into the planning system with humans still signing off."
+        }
+      ]
+    },
+    {
+      "id": "week_threads",
+      "type": "speech",
+      "items": [
+        "2026-W44-T1",
+        "2026-W44-25",
+        "2026-W44-T2",
+        "2026-W44-26",
+        "2026-W44-T3",
+        "2026-W44-22",
+        "2026-W44-27",
+        "2026-W44-23"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "We start with the Suez Canal. The Gemini alliance of Maersk and Hapag-Lloyd now targets a near full return through Suez early next year, and you'd expect that to pull freight rates down."
+        },
+        {
+          "speaker": "M",
+          "text": "Instead they went up. Asia to North Europe spot rates rose six percent in the week to last Monday, to about three thousand four hundred and forty dollars per forty foot container."
+        },
+        {
+          "speaker": "F",
+          "text": "Xeneta and Drewry data then showed almost seven percent more by Wednesday, because blank sailings outweighed the ships coming back."
+        },
+        {
+          "speaker": "M",
+          "text": "Then the picture turned. Sea-Intelligence reported record capacity deployed on every East West lane, in October and November."
+        },
+        {
+          "speaker": "F",
+          "text": "On Thursday Drewry's World Container Index fell three percent, on weakness across the Pacific. Shanghai to Rotterdam rose only one percent, and Shanghai to Genoa was flat."
+        },
+        {
+          "speaker": "M",
+          "text": "Drewry expects Asia to Europe rates to stay stable, because carriers' November increases are meeting weak demand."
+        },
+        {
+          "speaker": "F",
+          "text": "Analysts quoted by The Loadstar called the carriers' November rate hikes doomed, because demand has gone flat. In the Gulf, the news went the other way."
+        },
+        {
+          "speaker": "M",
+          "text": "On Wednesday the United States military again told ships to avoid unnecessary transits through the Strait of Hormuz. The next night attackers fixed explosives to the hull of a Panama flagged tanker, the Louise 1, and set it ablaze about twenty-five nautical miles northeast of Khasab in Oman."
+        },
+        {
+          "speaker": "F",
+          "text": "Two lanes now pull in opposite directions. Asia to Europe planners should carry a falling rate Suez scenario for 2027 and a separate Gulf disruption scenario, because one blended number would hide both risks."
+        },
+        {
+          "speaker": "M",
+          "text": "Second thread, the Rhine bump that didn't last. Early in October the gauge at Kaub hit a record low of minus six centimetres. Storm rain lifted it to twenty-seven last Sunday, and forecasts promised about sixty-six by midweek."
+        },
+        {
+          "speaker": "F",
+          "text": "It reached sixty centimetres late on Wednesday, still short of the roughly seventy-seven centimetres needed for a channel depth of one metre ninety and full barge loads. North Rhine-Westphalia suspended its Sunday truck ban to the end of October to add road capacity."
+        },
+        {
+          "speaker": "M",
+          "text": "By Saturday morning Kaub was back at thirty-two centimetres, as forecasters had warned once dry high pressure returned. Cologne read ninety-six centimetres and Emmerich forty-seven. The window for fuller loads lasted about four days."
+        },
+        {
+          "speaker": "F",
+          "text": "DACH networks should treat Rhine low water as the base case into winter, not as a passing event, and keep road and rail fallback booked."
+        },
+        {
+          "speaker": "M",
+          "text": "Third thread, tariffs turning into factories, and it ran all week. Audi committed four billion dollars to its first United States plant, on the Middle Georgia Mega Site in Peach County, near Macon."
+        },
+        {
+          "speaker": "F",
+          "text": "The plant will build up to two hundred thousand vehicles a year and employ about four thousand five hundred people. Construction starts in 2027, and the first cars, premium S U Vs for North America, follow in the early 2030s. That leaves European suppliers a few years to decide where their North American volume gets built."
+        },
+        {
+          "speaker": "M",
+          "text": "Audi says the plant cuts its exposure to trade and currency risk, including the fifteen percent tariff on European car imports. North America becomes a third production pillar next to Europe and China, and Germany stays the industrial core, according to the company."
+        },
+        {
+          "speaker": "F",
+          "text": "Two days later Washington chose trade talks over tariffs on robotics and industrial machinery, after a Section two thirty-two probe. It's the second probe this month to end that way."
+        },
+        {
+          "speaker": "M",
+          "text": "For machinery exporters in the Nordics and DACH that's a delay, not a decision, so keep a tariff scenario in 2027 plans. And on Friday Atlas Copco marked an expansion week of United States investments that it says shorten lead times and move production closer to customers."
+        },
+        {
+          "speaker": "F",
+          "text": "The company says one site, running on hydroelectric power, should employ up to six hundred people and support the American semiconductor supply chain. Its gas and process division is also expanding in Voorheesville, New York."
+        },
+        {
+          "speaker": "M",
+          "text": "Swedish capital goods makers are localising for lead time as much as for tariffs, and that shifts where European component suppliers' volume ends up."
+        },
+        {
+          "speaker": "F",
+          "text": "European makers are answering tariff risk with local footprint whether or not the tariff lands. Suppliers should plan for part of their North American volume to be sourced locally within the decade. Erik, the A I desk is yours."
+        }
+      ]
+    },
+    {
+      "id": "ai_tech",
+      "type": "speech",
+      "items": [
+        "2026-W44-T4",
+        "2026-W44-01",
+        "2026-W44-09",
+        "2026-W44-02",
+        "2026-W44-04",
+        "2026-W44-03",
+        "2026-W44-07"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "The A I thread started in Berlin. At the congress of the German logistics association B V L, a study of around sixty experts found ninety-three percent of companies already use A I in concrete applications."
+        },
+        {
+          "speaker": "F",
+          "text": "Speakers framed it as decision support. Lawyer Oliver Peltzer said that when an agent errs, the company using it carries the responsibility, not the A I or its provider."
+        },
+        {
+          "speaker": "M",
+          "text": "That makes sign off a question for sales and operations planning, S and OP, which needs an explicit rule for which agent decisions a person approves."
+        },
+        {
+          "speaker": "F",
+          "text": "Researchers from Kühne Logistics University, T U Eindhoven and Emory put a number on the middle path. They studied more than four hundred and seventy-five thousand ordering decisions over four years at a large commercial vehicle maker."
+        },
+        {
+          "speaker": "M",
+          "text": "Machine learning predicts when a planner will improve the system's order recommendation. Those cases go to the planner, and the rest run automatically."
+        },
+        {
+          "speaker": "F",
+          "text": "About eighty-four percent of recommendations ended up automated. The method kept roughly three times as many useful planner corrections as random selection would, and held its accuracy over time."
+        },
+        {
+          "speaker": "M",
+          "text": "That's a design rule you can use. Automate where planners rarely add value, route the rest to them, and the system keeps learning from the people it replaces."
+        },
+        {
+          "speaker": "F",
+          "text": "The software makers are moving the same way. At Oracle A I World in Las Vegas, Oracle launched Fusion Claw, governed agents it says can run simulation and continuous replanning inside existing controls."
+        },
+        {
+          "speaker": "M",
+          "text": "Oracle cites a shipping customer it says saved fifty-eight thousand dollars in transport costs. At TechEd, S A P pitched what it calls the autonomous enterprise, plus a lakehouse in its Business Data Cloud as the data base for agents."
+        },
+        {
+          "speaker": "F",
+          "text": "Most planning A I pilots stall on data. The useful test for S A P shops is whether forecasting and agents can now read data from outside S A P where it sits."
+        },
+        {
+          "speaker": "M",
+          "text": "Consultancy Horváth asked transport and logistics bosses in thirty-two countries, and eighty percent say the industry adopts A I too slowly, in planning and dispatch among other areas."
+        },
+        {
+          "speaker": "F",
+          "text": "Ninety percent say reliability now matters more to customers than speed. Shippers should ask how carriers' new booking and data interfaces will connect to their own plans."
+        },
+        {
+          "speaker": "M",
+          "text": "In retail, Kroger says it shares computer vision shelf data with its suppliers, and its R F I D pilot in bakeries across about fifteen hundred stores cut waste by half."
+        },
+        {
+          "speaker": "F",
+          "text": "When a retailer hands suppliers shelf level signals, demand planners get a feed closer to the consumer than orders, and that belongs in short term forecasting."
+        },
+        {
+          "speaker": "M",
+          "text": "One security note to finish. Kaspersky found a flaw that lets an attacker within Bluetooth range type commands into a warehouse P C through its barcode scanner. Execution data starts at the scanner, so those devices belong on the same risk list as E R P access."
+        }
+      ]
+    },
+    {
+      "id": "management",
+      "type": "speech",
+      "items": [
+        "2026-W44-10",
+        "2026-W44-11",
+        "2026-W44-12",
+        "2026-W44-13",
+        "2026-W44-15",
+        "2026-W44-17",
+        "2026-W44-14"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "In management and operations, two Nordic reports moved working capital in opposite directions. Epiroc's third quarter orders rose fifteen percent, but operating cash flow fell forty-two percent."
+        },
+        {
+          "speaker": "M",
+          "text": "According to its report, more inventory got tied up after a stretch of strong equipment orders. Cash conversion over twelve months dropped to seventy-eight percent, from a hundred and five. Epiroc is also moving tools production from Langley in Canada to Matehuala in Mexico, on plan."
+        },
+        {
+          "speaker": "F",
+          "text": "Capital goods makers need inventory targets that move with the order book, not with last year's sales. U P M went the other way."
+        },
+        {
+          "speaker": "M",
+          "text": "U P M almost doubled operating cash flow, to about four hundred and twenty million euros, and credits working capital actions. Customers destocked heavily in adhesive materials and label papers, which the company calls temporary."
+        },
+        {
+          "speaker": "F",
+          "text": "It curtailed the Kaukas pulp mill for eight weeks and pushed the Leuna biorefinery back about six months. Suppliers in labels and packaging should plan capacity on sell through, not on orders."
+        },
+        {
+          "speaker": "M",
+          "text": "Swiss group Oerlikon says shortages of tungsten and yttrium pushed customers to lock in supply of production critical materials. Read that as forward buying."
+        },
+        {
+          "speaker": "F",
+          "text": "If you run tungsten carbide tooling or yttrium coatings, check lead times and safety stocks before the first quarter. Volkswagen posted a quarterly loss of about five point eight billion euros, on Porsche write downs, a weak China business and restructuring."
+        },
+        {
+          "speaker": "M",
+          "text": "Its finance chief called the underlying margin too low to fund the company's future. Volkswagen cost cuts land on suppliers first, so expect harder price talks and possible volume moves between plants in 2027."
+        },
+        {
+          "speaker": "F",
+          "text": "Credit insurer Allianz Trade expects about twenty-six thousand German company insolvencies this year and again next year, with transport and logistics among the hardest hit. Galeria shows how that spreads."
+        },
+        {
+          "speaker": "M",
+          "text": "The department store chain's fourth insolvency pulled the operator of its logistics site in Unna down too, and Fiege's Unna site is filing in self administration. One dominant customer can take a dedicated site with it."
+        },
+        {
+          "speaker": "F",
+          "text": "And Assa Abloy will launch its eleventh manufacturing footprint programme this quarter, which shows plant network redesign as a standing process rather than a project. Erik, over to the Nordics."
+        }
+      ]
+    },
+    {
+      "id": "nordics_dach",
+      "type": "speech",
+      "items": [
+        "2026-W44-18",
+        "2026-W44-19",
+        "2026-W44-20",
+        "2026-W44-21"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Sea freight between Norway and the continent is consolidating fast. Stena has agreed to buy Color Line from the Sunde family."
+        },
+        {
+          "speaker": "F",
+          "text": "Color Line runs five ships, including Oslo to Kiel, and carried about a hundred and fifty thousand freight units last year. Stena Line already runs about forty ships on nineteen routes."
+        },
+        {
+          "speaker": "M",
+          "text": "The deal needs regulatory approval and should close in the first half of 2027. Color Line keeps its brand and Norwegian fleet, schedules and bookings stay the same for now, and Stena says it will invest in freight logistics."
+        },
+        {
+          "speaker": "F",
+          "text": "The same week, Spain's Boluda Shipping agreed to buy Samskip, and MT Logistikk reports the deal includes Norwegian coastal carrier Nor Lines."
+        },
+        {
+          "speaker": "M",
+          "text": "Together that's thirty-two vessels on eighteen routes across Northern Europe, Iberia, the Canary Islands and West Africa. It's due to complete on New Year's Day, subject to approval."
+        },
+        {
+          "speaker": "F",
+          "text": "Danish forwarder Scan Global Logistics also agreed its largest takeover, the American forwarder O I A Global. New owners tend to re-cut networks in their first year."
+        },
+        {
+          "speaker": "M",
+          "text": "Shippers on Oslo to Kiel, Skagerrak trailer routes or Nordic short sea lanes should put a carrier and contract review into their 2027 plans. On land, Bring is bracing for peak."
+        },
+        {
+          "speaker": "F",
+          "text": "Bring expects about three times a normal day's parcels after Black Week, with its Swedish parcel volumes already up eighty-four percent this year. It opened terminals in Jönköping and Örebro and is finishing one in northern Stockholm."
+        },
+        {
+          "speaker": "M",
+          "text": "More carrier capacity is good news, but with that growth, confirm cut offs and pickup capacity before Black Week. And wholesaler Dahl has leased twenty-five thousand square metres in Enköping, next to its automated hub in Bålsta."
+        },
+        {
+          "speaker": "F",
+          "text": "A year after automating one hub, Dahl chose a second nearby site over stretching one building. That two site design is worth a look for Mälardalen distributors weighing capacity against risk."
+        }
+      ]
+    },
+    {
+      "id": "voices",
+      "type": "speech",
+      "items": [
+        "2026-W44-V1",
+        "2026-W44-01",
+        "2026-W44-V2",
+        "2026-W44-09"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Two voices from the week, both on where the human sits. Peter Maly, Rewe's chief operating officer for logistics and supply chain management, spoke at the B V L congress in Berlin last Monday."
+        },
+        {
+          "speaker": "M",
+          "text": "What did he tell the room?"
+        },
+        {
+          "speaker": "F",
+          "text": "He said the supply chain of the future is networked and digital, but also human, and he argued that technology should not take command."
+        },
+        {
+          "speaker": "M",
+          "text": "That fits the liability point from the same congress. If the company carries the risk when an agent errs, a person in the company has to own the decision."
+        },
+        {
+          "speaker": "F",
+          "text": "Kai Hoberg, professor of supply chain and operations strategy at Kühne Logistics University, said in eurotransport on Thursday that his research shows companies should be selective about automation."
+        },
+        {
+          "speaker": "M",
+          "text": "He co-wrote the ordering study we covered, with Christina Imdahl of T U Eindhoven and William Schmidt of Emory, published in Production and Operations Management. His point was that human expertise stays valuable in the cases where planners can improve on the algorithm."
+        },
+        {
+          "speaker": "F",
+          "text": "That's a researcher arguing for selective automation, backed by four years of real ordering decisions at one manufacturer."
+        },
+        {
+          "speaker": "M",
+          "text": "And it gives planning teams a practical brief. Find the decisions where your planners beat the system, keep those with people, and let the rest run."
+        },
+        {
+          "speaker": "F",
+          "text": "Both voices land in the same place. Automate where the planner rarely adds value, and design the hand over to the planner on purpose."
+        }
+      ]
+    },
+    {
+      "id": "market_moves",
+      "type": "speech",
+      "items": [
+        "2026-W44-24"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "In market moves, Finnish automation supplier Valmet agreed to buy Tieto's manufacturing execution system business. It includes TIPS, a production planning and execution system installed at about three hundred pulp and paper sites."
+        },
+        {
+          "speaker": "M",
+          "text": "The business brings in about thirty-two million euros a year, the price wasn't disclosed, and closing is expected in the second quarter of 2027."
+        },
+        {
+          "speaker": "F",
+          "text": "Valmet says the software will connect customer demand, planning, execution and real time process control. For buyers, production planning is being pulled into the control system, which changes who owns scheduling in pulp and paper."
+        }
+      ]
+    },
+    {
+      "id": "week_ahead",
+      "type": "speech",
+      "items": [
+        "2026-W44-E1",
+        "2026-W44-E2",
+        "2026-W44-E3",
+        "2026-W44-E4",
+        "2026-W44-E5",
+        "2026-W44-26",
+        "2026-W44-25"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "The week ahead starts today. The E U's two euro handling fee on small parcels kicks in, on top of the three euro customs surcharge from July."
+        },
+        {
+          "speaker": "M",
+          "text": "That changes the economics of low value cross border e-commerce into the E U, so check what it does to your parcel cost per order."
+        },
+        {
+          "speaker": "F",
+          "text": "On Monday and Tuesday, Gartner's Supply Chain Planning Summit runs in Denver, the main analyst event for heads of planning and S and OP leads, with A I in planning on the agenda. Final October manufacturing purchasing managers' index numbers for Germany and Sweden also land on Monday."
+        },
+        {
+          "speaker": "M",
+          "text": "Both were heading up in the latest readings. On Tuesday and Wednesday it's Logistik and Transport in Gothenburg, Sweden's main logistics fair this autumn."
+        },
+        {
+          "speaker": "F",
+          "text": "The New York Fed's supply chain pressure index for October is due in early November, after it rose in September."
+        },
+        {
+          "speaker": "M",
+          "text": "On the tenth, Teknikföretagen and Industriarbetsgivarna publish their report on Swedish industry, a read on how broad and lasting the upturn is, useful for 2027 volume assumptions."
+        },
+        {
+          "speaker": "F",
+          "text": "And on the fifteenth, a consultation closes in China on adding forty technologies to its restricted export list, twenty-three of them related to A I."
+        },
+        {
+          "speaker": "M",
+          "text": "The one thing to watch is whether the carriers' November rate hikes on Asia to Europe stick. If they fail, the falling rate Suez scenario belongs in your 2027 plan sooner rather than later."
+        },
+        {
+          "speaker": "F",
+          "text": "And keep an eye on Kaub. It sat at thirty-two centimetres on Saturday morning with dry weather back, so keep your fallback booked."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-W44-T1",
+        "2026-W44-T4"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the week on The Planning Desk. The daily briefing is back tomorrow morning, and the week in review returns next Sunday."
+        },
+        {
+          "speaker": "M",
+          "text": "Thanks for listening, and have a good week."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 10
+    }
+  ],
+  "linkedin": {
+    "page_post": "93% of German logistics firms now use AI, and when an agent errs, the company carries the liability.\n\nAt BVL's congress in Berlin, speakers framed AI as decision support, and a Kühne Logistics University study showed where to draw the line: about 84% of order recommendations automated, while keeping three times more useful planner corrections than random selection. For planners, sign-off rules for agent decisions now belong in S&OP.\n\nSuez is reopening, yet Asia to North Europe spot rates rose before Drewry's index fell 3% on Thursday. Hormuz got worse, with a new US warning and a tanker attack. 2027 budgets need a falling-rate Suez case and a separate Gulf disruption case, not one blended number.\n\nAudi committed $4bn to its first US plant to get under the 15% EU car tariff, and Atlas Copco is expanding US production for shorter lead times. European suppliers should plan for part of their North American volume to move to local sourcing.\n\nWhich decisions in your plan would you let an agent take without a planner signing off?\n\nWatch or listen: The Planning Desk, the week in review every Sunday.\n\n#supplychain #ai #demandplanning",
+    "tags": [
+      "BVL",
+      "Audi",
+      "Drewry"
+    ]
+  },
+  "newsletter": {
+    "subject": "AI Agents in Planning, Suez Rates and the Rhine: Week 44",
+    "body_md": "AI agents moved deeper into planning systems this week, while the physical network kept shifting under them. Suez reopened without cheaper freight, the Rhine sank back, and tariffs turned into factories.\n\n**Agents in the system, humans on top**\nAt [BVL's Supply Chain CX congress](https://verkehrsrundschau.de/nachrichten/transport-logistik/bvl-supply-chain-cx-2026-logistik-sucht-ausweg-aus-krise-3926789), a study found 93% of German logistics firms use AI, and a lawyer reminded the room that the company, not the AI, carries the liability. A [Kühne Logistics University study](https://www.eurotransport.de/logistik/it-und-telematik/ki-automatisierung-studie-fachwissen-mensch-entscheidungen/) of more than 475,000 ordering decisions automated about 84% of recommendations while keeping three times more useful planner corrections than random selection. For planners, the question is now which decisions an agent may take alone, and this gives a measurable way to draw that line.\n\n**Suez opens, rates wobble, Hormuz worsens**\nAsia to North Europe spot rates rose twice before [Drewry's World Container Index](https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry) fell 3% on 29 October, as record capacity met flat demand. In the Gulf, the US warned ships again and a [tanker was set ablaze](https://splash247.com/tanker-targeted-with-hull-mounted-explosives-in-hormuz/). Keep a falling-rate Suez case and a separate Gulf disruption case in 2027 budgets.\n\n**The Rhine bump that didn't last**\nKaub rose to 60 cm midweek, short of the roughly 77 cm needed for full loads, then fell back to 32 cm by Saturday, as [forecasters had warned](https://www.wetter.net/wetter-news/rhein-steigt-nach-sturmregen-engpass-kaub-bleibt-zu-flach). Treat low water as the base case into winter.\n\n**Tariffs turn into factories**\n[Audi is investing $4bn](https://www.supplychaindive.com/news/audi-investing-4b-to-build-its-first-us-plant-in-georgia/872866/) in its first US plant, citing the 15% tariff on European cars, and the US [chose talks over tariffs](https://www.supplychaindive.com/news/trump-opts-for-trade-talks-over-tariffs-for-robotics-industrial-machinery/873166/) on robotics and machinery, for now. Suppliers should expect part of their North American volume to move to local sourcing.\n\n**Working capital and Nordic sea freight**\n[Epiroc's](https://www.finanznachrichten.de/nachrichten-2026-10/69959883-epiroc-aktiebolag-epiroc-interim-report-q3-2026-399.htm) strong orders tied up inventory and cut cash flow 42%, while [UPM](https://mb.cision.com/Main/23100/4416385/4342561.pdf) doubled cash flow as customers destocked. [Stena is buying Color Line](https://gcaptain.com/stena-agrees-to-acquire-norwegian-ferry-operator-color-line-in-major-european-ferry-deal/) and [Boluda is buying Samskip](https://theloadstar.com/boluda-to-acquire-samskip-a-combination-to-lead-european-shortsea-shipping/), so Norway to continent shippers should plan a carrier and contract review for 2027.\n\n**Next week:** Gartner's Supply Chain Planning Summit in Denver on 2 and 3 November, and Logistik & Transport in Gothenburg on 3 and 4 November."
+  },
+  "show_notes": {
+    "summary": "AI agents in supply chain planning: BVL finds 93% of German logistics firms use AI, and a KLU study automates 84% of orders. Suez reopens while container rates wobble and Hormuz worsens, the Rhine sinks back to 32 cm, and Audi answers US tariffs with a $4bn Georgia plant. Plus Epiroc, UPM and Oerlikon on working capital, Stena, Color Line and Boluda, Samskip in Nordic sea freight, and the week ahead.",
+    "sources": [
+      {"title": "Drewry: World Container Index", "url": "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"},
+      {"title": "Intelligent Audit: IA Insights, October 26, 2026", "url": "https://www.intelligentaudit.com/blog/ia-insights-october-26-2026"},
+      {"title": "Dagens Logistik: Containerpriserna vänder uppåt trots att Röda havet öppnas", "url": "https://dagenslogistik.se/containerpriserna-vander-uppat-trots-att-roda-havet-oppnas/"},
+      {"title": "Sea-Intelligence: Unprecedented capacity levels in Oct-Nov", "url": "https://www.sea-intelligence.com/press-room/416-unprecedented-capacity-levels-in-oct-nov"},
+      {"title": "SupplyChainBrain: US tells ships to avoid unnecessary transits through Hormuz", "url": "https://www.supplychainbrain.com/articles/45112-us-tells-ships-to-avoid-unnecessary-transits-through-hormuz"},
+      {"title": "Splash247: Tanker targeted with hull-mounted explosives in Hormuz", "url": "https://splash247.com/tanker-targeted-with-hull-mounted-explosives-in-hormuz/"},
+      {"title": "wetter.net: Rhein steigt nach Sturmregen, Engpass Kaub bleibt zu flach", "url": "https://www.wetter.net/wetter-news/rhein-steigt-nach-sturmregen-engpass-kaub-bleibt-zu-flach"},
+      {"title": "t-online Köln: Rheinpegel in Köln knackt die Ein-Meter-Marke", "url": "https://koeln.t-online.de/region/koeln/id_101494462/rheinpegel-in-koeln-knackt-am-sonntag-die-ein-meter-marke-neue-prognose.html"},
+      {"title": "Supply Chain Dive: Audi investing $4B to build its first US plant in Georgia", "url": "https://www.supplychaindive.com/news/audi-investing-4b-to-build-its-first-us-plant-in-georgia/872866/"},
+      {"title": "Supply Chain Dive: Trump opts for trade talks over tariffs for robotics, industrial machinery", "url": "https://www.supplychaindive.com/news/trump-opts-for-trade-talks-over-tariffs-for-robotics-industrial-machinery/873166/"},
+      {"title": "SCMR First Shift: Robotics tariffs, maritime risk and port congestion", "url": "https://www.scmr.com/article/first-shift-robotics-tariffs-maritime-risk-and-port-congestion-reshape-supply-chain-decisions"},
+      {"title": "Atlas Copco: Group celebrates expansion week in the United States", "url": "https://mfn.se/one/a/atlas-copco/atlas-copco-group-celebrates-expansion-week-in-the-united-states-02b88352"},
+      {"title": "VerkehrsRundschau: BVL Supply Chain CX 2026, Logistik sucht Ausweg aus Krise", "url": "https://verkehrsrundschau.de/nachrichten/transport-logistik/bvl-supply-chain-cx-2026-logistik-sucht-ausweg-aus-krise-3926789"},
+      {"title": "eurotransport: KI-Automatisierung, Studie zu Fachwissen und menschlichen Entscheidungen", "url": "https://www.eurotransport.de/logistik/it-und-telematik/ki-automatisierung-studie-fachwissen-mensch-entscheidungen/"},
+      {"title": "SUFE academic newsletter: KLU paper details", "url": "https://academicnewsletter.sufe.edu.cn/info/403732"},
+      {"title": "The National: Oracle launches new agentic AI for complex tasks such as supply chains", "url": "https://thenationalnews.com/future/technology/2026/10/26/oracle-launches-new-agentic-ai-to-take-on-complex-tasks-such-as-supply-chains"},
+      {"title": "SAP News: SAP TechEd, developers can build the autonomous enterprise", "url": "https://news.sap.com/2026/10/sap-teched-developers-you-can-build-autonomous-enterprise/"},
+      {"title": "SAP News: SAP lakehouse and data fabric innovations in SAP BDC", "url": "https://news.sap.com/2026/10/sap-lakehouse-new-data-fabric-innovations-sap-bdc-autonomous-enterprise/"},
+      {"title": "VerkehrsRundschau: KI in der Logistik wird wichtiger, Cyberrisiken nehmen zu", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/ki-in-der-logistik-wird-wichtiger-cyberrisiken-nehmen-zu-3927532"},
+      {"title": "retail-news.de: Kaspersky findet Sicherheitslücke in Barcodescannern", "url": "https://retail-news.de/kaspersky-sicherheitsluecke-barcodescanner-logistik"},
+      {"title": "Epiroc: Interim report Q3 2026", "url": "https://www.finanznachrichten.de/nachrichten-2026-10/69959883-epiroc-aktiebolag-epiroc-interim-report-q3-2026-399.htm"},
+      {"title": "UPM: Interim report Q3 2026", "url": "https://mb.cision.com/Main/23100/4416385/4342561.pdf"},
+      {"title": "OC Oerlikon: Trading update Q3 2026", "url": "https://www.finanznachrichten.de/nachrichten-2026-10/69968247-adhoc-oc-oerlikon-handelsupdate-3-quartal-2026-starker-bestellungseingang-und-umsatz-im-dritten-quartal-bestaetigen-die-positive-geschaeftsentwickl-022.htm"},
+      {"title": "VerkehrsRundschau: Volkswagen 5,82 Milliarden Euro Verlust im dritten Quartal", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/volkswagen-5-82-milliarden-euro-verlust-im-dritten-quartal-3928760"},
+      {"title": "SupplyChainBrain: VW makes a loss in China, sparking urgent call for cost cuts", "url": "https://www.supplychainbrain.com/articles/45115-vw-makes-a-loss-in-china-sparking-urgent-call-for-cost-cuts"},
+      {"title": "VerkehrsRundschau: Unternehmensinsolvenzen bleiben 2027 auf hohem Niveau", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/unternehmensinsolvenzen-bleiben-2027-auf-hohem-niveau-3927247"},
+      {"title": "TextilWirtschaft: Galeria, jetzt ist auch das Joint Venture für Logistik insolvent", "url": "https://www.textilwirtschaft.de/retail/galeria-jetzt-ist-auch-das-joint-venture-fuer-logistik-insolvent-436590"},
+      {"title": "VerkehrsRundschau: Galeria-Insolvenz bringt Logistiker Fiege in Not", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/galeria-insolvenz-bringt-logistiker-fiege-in-not-3929444"},
+      {"title": "ASSA ABLOY: Quarterly report Q3 2026", "url": "https://www.finanznachrichten.de/nachrichten-2026-10/69943530-assa-abloy-ab-quarterly-report-q3-2026-399.htm"},
+      {"title": "gCaptain: Stena agrees to acquire Norwegian ferry operator Color Line", "url": "https://gcaptain.com/stena-agrees-to-acquire-norwegian-ferry-operator-color-line-in-major-european-ferry-deal/"},
+      {"title": "The Loadstar: Boluda to acquire Samskip", "url": "https://theloadstar.com/boluda-to-acquire-samskip-a-combination-to-lead-european-shortsea-shipping/"},
+      {"title": "MT Logistikk: Nor Lines får spansk eier", "url": "https://www.mtlogistikk.no/mergers-and-acquisitions-nor-lines-nytt-om-navn/nor-lines-far-spansk-eier/1351105"},
+      {"title": "The Loadstar: Scan Global Logistics to acquire US forwarder OIA Global", "url": "https://theloadstar.com/scan-global-logistics-to-acquire-us-forwarder-oia-global/"},
+      {"title": "Dagens Infrastruktur: Bring inför julhandeln, kapacitetsförstärkningar", "url": "https://dagensinfrastruktur.se/2026/10/26/bring-infor-julhandeln-kapacitetsforstarkningar-i-hela-sitt-svenska-logistiknatverk"},
+      {"title": "Dagens Logistik: Dahl etablerar nytt lager i Enköping", "url": "https://dagenslogistik.se/dahl-etablerar-nytt-lager-i-enkoping/"},
+      {"title": "BeBeez: Valmet to acquire MES business from Tieto", "url": "https://bebeez.eu/2026/10/27/valmet-to-acquire-leading-manufacturing-execution-system-mes-business-from-tieto-to-accelerate-industrial-transition-towards-autonomous-operations/"},
+      {"title": "Freightos: Red Sea container traffic set for full return in Q1 (EU parcel fee)", "url": "https://www.freightos.com/freight-resources/red-sea-container-traffic-set-for-full-return-in-q1-october-20-2026-update/"},
+      {"title": "Gartner: Supply Chain Planning Summit 2026 in Denver", "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-10-gartner-announces-gartner-supply-chain-planning-summit-2026-in-denver"},
+      {"title": "Net Zero Compare: Logistik & Transport 2026", "url": "https://netzerocompare.com/events/logistik-transport-2026"},
+      {"title": "TT: Pressinbjudan, ny konjunkturrapport från Teknikföretagen och Industriarbetsgivarna", "url": "https://via.tt.se/pressmeddelande/4620869/pressinbjudan-ny-konjunkturrapport-fran-teknikforetagen-och-industriarbetsgivarna-1011?lang=sv"},
+      {"title": "MERICS: EU-China economic relations enter a new phase", "url": "https://mericseu.substack.com/p/eu-china-economic-relations-enter"}
+    ]
+  }
+}
