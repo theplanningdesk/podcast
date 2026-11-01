@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-01T09:41:26.808332+00:00",
+ "fetched_at": "2026-11-01T11:31:43.167949+00:00",
  "window_days": 8,
  "sources_ok": 66,
  "sources_total": 72,
@@ -144,7 +144,7 @@
    "url": "https://www.mtlogistikk.no/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 14,
+   "items": 15,
    "error": null,
    "lane": "logistics"
   },
