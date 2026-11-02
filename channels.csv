@@ -41,3 +41,17 @@ date,channel,metric,value
 2026-11-01,newsletter,last_email_unsubscriptions,0
 2026-11-01,newsletter,last_email_open_rate_pct,0.0
 2026-11-01,podcast,github_mp3_fetches_all_episodes,119.0
+2026-11-02,youtube,subscribers,3
+2026-11-02,youtube,total_views,112
+2026-11-02,youtube,videos,10
+2026-11-02,instagram,followers,2
+2026-11-02,instagram,posts,7
+2026-11-02,newsletter,subscribers,2
+2026-11-02,newsletter,last_email,"AI Agents in Planning, Suez Rates and the Rhine: Week 44"
+2026-11-02,newsletter,last_email_recipients,2
+2026-11-02,newsletter,last_email_deliveries,2
+2026-11-02,newsletter,last_email_opens,0
+2026-11-02,newsletter,last_email_clicks,1
+2026-11-02,newsletter,last_email_unsubscriptions,0
+2026-11-02,newsletter,last_email_open_rate_pct,0.0
+2026-11-02,podcast,github_mp3_fetches_all_episodes,143.0
