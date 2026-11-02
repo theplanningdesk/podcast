@@ -1,0 +1,337 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "German Road Logistics: LIT Buys Duvenbeck",
+  "week": "2026-W45",
+  "run_date": "2026-11-02",
+  "brief_file": "news-brief-daily-2026-11-02.md",
+  "target_runtime_sec": 266,
+  "word_count": 769,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-02-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Two German road hauliers are becoming one, with about ten thousand four hundred people and more than a hundred and eighty sites."
+        },
+        {
+          "speaker": "M",
+          "text": "The prize is automotive logistics, and this is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-02-01",
+        "2026-11-02-02",
+        "2026-11-02-03",
+        "2026-11-02-05"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Monday the second of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, a German logistics merger, a six billion dollar warehouse bet from Walmart, Stora Enso holding back on spending, and a memory chip squeeze that runs to twenty twenty-eight."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-02-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "On Friday the L I T Group of Brake, in Lower Saxony, signed to buy all shares in Duvenbeck, the road logistics group from Bocholt, from Waterland Private Equity."
+        },
+        {
+          "speaker": "M",
+          "text": "Waterland has held a stake since twenty twenty-two. The price wasn't disclosed, and the deal still needs competition clearance, with closing expected later this year."
+        },
+        {
+          "speaker": "F",
+          "text": "Duvenbeck brings about five thousand staff and more than fifty European sites. L I T has about five thousand four hundred staff and more than a hundred and thirty sites in twenty-two countries."
+        },
+        {
+          "speaker": "M",
+          "text": "L I T says it wants to grow in automotive logistics and in southern and eastern Europe, and that Duvenbeck's restructuring will carry on. How the two networks fit together is still open."
+        },
+        {
+          "speaker": "F",
+          "text": "It comes only a week after Boluda agreed to buy Samskip, another European carrier changing hands."
+        },
+        {
+          "speaker": "M",
+          "text": "For automotive shippers and suppliers, expect site and lane consolidation once the deal closes. If you use either carrier, put a capacity and contract review into the twenty twenty-seven transport plan now."
+        },
+        {
+          "speaker": "F",
+          "text": "Ask both carriers which sites serve your lanes today, because the integration plan isn't written yet."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-02-02",
+        "2026-11-02-03",
+        "2026-11-02-04",
+        "2026-11-02-05"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "To the U S, where Walmart has expanded its deal with automation supplier Symbotic, with an initial commitment of about six billion dollars over several years."
+        },
+        {
+          "speaker": "F",
+          "text": "That covers twenty-five regional distribution centres, with each-picking, micro-fulfilment for online orders and A I software that coordinates millions of cases a day."
+        },
+        {
+          "speaker": "M",
+          "text": "Walmart says it expects better upstream inventory for e-commerce, more storage, a wider range and steadier replenishment, but it gave no start or finish dates."
+        },
+        {
+          "speaker": "F",
+          "text": "When the warehouse runs on software, replenishment can run on tighter and more frequent cycles, so suppliers into those centres should revisit their order-pattern assumptions."
+        },
+        {
+          "speaker": "M",
+          "text": "Over to the Nordics, where Stora Enso is spending less and warning on costs."
+        },
+        {
+          "speaker": "F",
+          "text": "The packaging group cut this year's capital spending plan to about five hundred million euros, and the lower investment lifted its quarterly cash flow."
+        },
+        {
+          "speaker": "M",
+          "text": "For the fourth quarter it expects demand to stay subdued, while costs for energy, logistics, chemicals and wood rise, according to its interim report."
+        },
+        {
+          "speaker": "F",
+          "text": "Consumer packaging was also hit by planned maintenance and lower volumes, and the ramp-up of its Oulu line runs into twenty twenty-seven."
+        },
+        {
+          "speaker": "M",
+          "text": "So weak demand won't mean cheap board. If you buy packaging, plan for firm prices on some grades."
+        },
+        {
+          "speaker": "F",
+          "text": "In Germany, two industrial suppliers cut their outlooks on Friday."
+        },
+        {
+          "speaker": "M",
+          "text": "Power supply and drive systems maker FRIWO lowered its forecast again, citing lower call-off volumes from customers and more low-cost competition from Asia, especially in robotic mowers and e-mobility."
+        },
+        {
+          "speaker": "F",
+          "text": "MAX Automation adjusted its guidance too, because its Vecoplan group is behind plan on orders, and restructuring at Vecoplan and N S M plus Jücker costs more."
+        },
+        {
+          "speaker": "M",
+          "text": "Falling call-offs against framework orders mean customers are running down stock. If you supply German industry, plan first-quarter production on call-off trends, not order books."
+        },
+        {
+          "speaker": "F",
+          "text": "And memory chips are turning into an allocation market."
+        },
+        {
+          "speaker": "M",
+          "text": "SupplyChainBrain reports a price of up to eighteen hundred dollars is being discussed for Microsoft's next Xbox, Project Helix, though that's far from certain."
+        },
+        {
+          "speaker": "F",
+          "text": "Earlier in October, Micron's chief executive said memory demand would exceed supply in both twenty twenty-seven and twenty twenty-eight, with no balance in sight."
+        },
+        {
+          "speaker": "M",
+          "text": "If your bill of materials has D RAM or flash in it, plan twenty twenty-seven on allocated volumes and long-term agreements, not spot buys."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-02-06",
+        "2026-11-02-07",
+        "2026-11-02-E1"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Global sales of mobile warehouse robots rose nineteen percent last year, Industriemagazin reports, and the German engineering association V D M A warns European makers are falling behind Asia."
+        },
+        {
+          "speaker": "F",
+          "text": "Brussels has cleared twenty-nine point three million euros of German state aid for a new road and rail freight terminal at Stolberg, near Aachen."
+        },
+        {
+          "speaker": "M",
+          "text": "That's another intermodal option on the Aachen corridor, useful while low water on the Rhine keeps barges short."
+        },
+        {
+          "speaker": "F",
+          "text": "And October factory surveys for Sweden and Germany are out today, so watch Sweden's inventory and delivery times after September's reading of fifty-eight point one."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-02-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Monday, thanks for starting the week with us."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "LIT Group Buys Duvenbeck in German Road Logistics Deal",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Two German hauliers become one, with ten thousand four hundred staff."
+      },
+      {
+        "speaker": "M",
+        "text": "The L I T Group of Lower Saxony has signed to buy Duvenbeck of Bocholt from Waterland Private Equity, and the price wasn't disclosed."
+      },
+      {
+        "speaker": "F",
+        "text": "Together they'll have more than a hundred and eighty sites, and L I T wants to grow in automotive logistics and in southern and eastern Europe."
+      },
+      {
+        "speaker": "M",
+        "text": "The deal still needs competition clearance, with closing expected later this year, and how the networks merge is still open."
+      },
+      {
+        "speaker": "F",
+        "text": "It follows Boluda's deal for Samskip a week earlier."
+      },
+      {
+        "speaker": "M",
+        "text": "If you ship automotive freight with either carrier, put a capacity and contract review into your twenty twenty-seven plan now."
+      },
+      {
+        "speaker": "F",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "German road logistics group L.I.T. has agreed to buy Duvenbeck from Waterland Private Equity, creating a group with about 10,400 staff and more than 180 sites, with automotive logistics as the growth target. Closing is expected later in 2026, subject to competition clearance. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "logistics",
+      "automotive",
+      "trucking"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Germany's L.I.T. Group is buying Duvenbeck, and automotive shippers should expect their lanes to be redrawn.\n\nL.I.T. Group of Brake has signed to buy all shares in Bocholt-based Duvenbeck from Waterland Private Equity. Together they have about 10,400 employees and more than 180 sites, according to eurotransport. Closing is expected later in 2026, subject to competition clearance.\n\nFor automotive shippers and suppliers using either carrier, expect site and lane consolidation once the deal closes. Put a carrier-capacity and contract review into the 2027 transport plan now.\n\nAlso on today's desk:\nStora Enso cut its 2026 capex to about €500m and expects energy, logistics and wood costs to rise in Q4.\nMicron sees memory demand outrunning supply through 2028, so plan DRAM on allocation.\n\nWhich of your 2027 lanes run on a carrier that changed owner this year?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #logistics #automotive",
+    "tags": [
+      "Duvenbeck",
+      "L.I.T. Group",
+      "Stora Enso"
+    ]
+  },
+  "show_notes": {
+    "summary": "German road logistics: L.I.T. Group agrees to buy Duvenbeck, creating a group with about 10,400 staff and more than 180 sites. Also: Walmart's $6bn automation commitment with Symbotic, Stora Enso's capex cut and cost warning, guidance cuts at FRIWO and MAX Automation, the multi-year memory chip squeeze, mobile robot sales, EU aid for a Stolberg rail terminal and October PMIs.",
+    "sources": [
+      {
+        "title": "eurotransport: LIT übernimmt Duvenbeck",
+        "url": "https://www.eurotransport.de/logistik/spedition-und-logistik/lit-uebernimmt-duvenbeck-waterland-restrukturierung/"
+      },
+      {
+        "title": "VerkehrsRundschau: LIT-Gruppe übernimmt Duvenbeck",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/lit-gruppe-uebernimmt-duvenbeck-3929311"
+      },
+      {
+        "title": "Robotics & Automation News: Walmart expands Symbotic warehouse automation deal",
+        "url": "https://roboticsandautomationnews.com/2026/10/30/walmart-expands-symbotic-warehouse-automation-deal-with-6-billion-commitment/106538/"
+      },
+      {
+        "title": "Placera: Stora Ensos justerade rörelseresultat något högre än väntat",
+        "url": "https://placera.se/nyheter/stora-ensos-justerade-rorelseresultat-nagot-hogre-an-vantat-2026-10-30"
+      },
+      {
+        "title": "Stora Enso: Interim report January to September 2026",
+        "url": "https://mfn.se/cis/a/stora-enso/stora-enso-interim-report-january-september-2026-introducing-bergslagets-skogar-while-building-a-stronger-stora-enso-78166a1b"
+      },
+      {
+        "title": "FRIWO: Ad hoc release, 2026 forecast lowered",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-10/69988599-eqs-adhoc-friwo-ag-friwo-passt-prognose-fuer-2026-aufgrund-anhaltender-marktschwaeche-nach-unten-an-wachstumsimpulse-aus-auftragsbestand-und-projekt-022.htm"
+      },
+      {
+        "title": "MAX Automation: Ad hoc release, 2026 guidance adjusted",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-10/69993121-eqs-adhoc-max-automation-se-max-automation-se-praezisiert-und-passt-prognose-fuer-geschaeftsjahr-2026-an-022.htm"
+      },
+      {
+        "title": "SupplyChainBrain: Chip crisis puts next generation of gaming consoles to the test",
+        "url": "https://www.supplychainbrain.com/articles/45117-chip-crisis-puts-next-generation-of-gaming-consoles-to-the-test"
+      },
+      {
+        "title": "Pure Xbox: Project Helix faces more challenges as Micron warns of RAM shortages into 2028",
+        "url": "https://www.purexbox.com/news/2026/10/xbox-project-helix-faces-more-challenges-as-micron-warns-of-ram-shortages-into-2028"
+      },
+      {
+        "title": "Industriemagazin: Intralogistikroboter, Europa fällt zurück",
+        "url": "https://industriemagazin.at/logistik/intralogistikroboter-europa-faellt-zurueck/"
+      },
+      {
+        "title": "VerkehrsRundschau: EU genehmigt Millionen für Güterterminal in NRW",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/eu-genehmigt-millionen-fuer-gueterterminal-in-nrw-3929399"
+      },
+      {
+        "title": "Inderes: PMI steg till 58,1 i september",
+        "url": "https://www.inderes.se/releases/pmi-steg-till-581-i-september-bred-uppgang-i-industrin"
+      }
+    ]
+  }
+}

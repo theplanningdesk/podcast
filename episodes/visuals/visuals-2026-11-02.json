@@ -1,0 +1,146 @@
+{
+  "stem": "2026-11-02",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "title": "Two German hauliers become one",
+        "kicker": "German road logistics",
+        "source": "eurotransport"
+      }
+    },
+    {
+      "line": 0,
+      "at": "ten thousand four hundred staff",
+      "template": "stat",
+      "props": {
+        "kicker": "L.I.T. and Duvenbeck",
+        "value": 10400,
+        "prefix": "about ",
+        "label": "staff combined",
+        "source": "eurotransport"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Brake buys Bocholt",
+        "title": "L.I.T. Group buys Duvenbeck",
+        "points": [
+          {
+            "name": "Brake",
+            "lat": 53.33,
+            "lon": 8.48
+          },
+          {
+            "name": "Bocholt",
+            "lat": 51.84,
+            "lon": 6.61,
+            "alert": true
+          }
+        ],
+        "pad": 2,
+        "source": "eurotransport"
+      }
+    },
+    {
+      "line": 1,
+      "at": "Waterland Private Equity",
+      "template": "headline",
+      "props": {
+        "title": "Seller: Waterland Private Equity",
+        "kicker": "Price undisclosed",
+        "detail": "Waterland has held a stake since 2022",
+        "source": "eurotransport"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Combined network",
+        "value": 180,
+        "prefix": "more than ",
+        "label": "sites",
+        "source": "eurotransport"
+      }
+    },
+    {
+      "line": 2,
+      "at": "automotive logistics",
+      "template": "list",
+      "props": {
+        "kicker": "Where L.I.T. wants to grow",
+        "items": [
+          {
+            "label": "Automotive logistics",
+            "say": "automotive logistics"
+          },
+          {
+            "label": "Southern Europe",
+            "say": "southern"
+          },
+          {
+            "label": "Eastern Europe",
+            "say": "eastern Europe"
+          }
+        ]
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "title": "Needs competition clearance",
+        "kicker": "Closing later in 2026",
+        "detail": "How the networks merge is still open",
+        "source": "eurotransport"
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "title": "Boluda agreed to buy Samskip",
+        "kicker": "A week earlier"
+      }
+    },
+    {
+      "line": 5,
+      "template": "list",
+      "props": {
+        "kicker": "Put in the 2027 plan",
+        "items": [
+          {
+            "label": "Capacity review",
+            "say": "capacity"
+          },
+          {
+            "label": "Contract review",
+            "say": "contract review"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "at": "twenty twenty-seven plan",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "New owner, new network. Review carriers and contracts for 2027."
+      }
+    },
+    {
+      "line": 6,
+      "template": "headline",
+      "props": {
+        "title": "Supply chain news every weekday",
+        "kicker": "The Planning Desk"
+      }
+    }
+  ]
+}
