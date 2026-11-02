@@ -191,8 +191,8 @@ def op3(eps: list[dict], pod: dict) -> dict:
         show = op3_by_feed(feed, auth)
     if show is None:
         STATUS["op3"] = ("waiting: OP3 doesn't know the show yet, by Podcast GUID or by feed URL. OP3 matches shows "
-                         "through Podcast Index: if this still says waiting a week after launch, check the show is "
-                         "listed at podcastindex.org and submit the feed at podcastindex.org/add if it isn't")
+                         "through Podcast Index, which restored feed 8086454 on 2 Nov 2026; give it a few days to recrawl. "
+                         "If this still says waiting after 9 Nov, reply to the Podcast Index thread in the show's Gmail")
         return {}
     uuid = show["showUuid"]
     try:
