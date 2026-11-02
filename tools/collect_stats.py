@@ -26,6 +26,7 @@ Sources and the secrets they use:
 """
 from __future__ import annotations
 
+import base64
 import csv
 import json
 import os
@@ -173,16 +174,25 @@ def op3(eps: list[dict], pod: dict) -> dict:
     auth = {"Authorization": f"Bearer {tok}"}
     feed = (pod["base_url"].rstrip("/") + "/feed.xml").split("://", 1)[-1]
     guid = pod.get("podcast_guid") or str(uuid5(UUID("ead4c236-bf58-58c6-a2c6-a6b28d128cb6"), feed))
+    show = None
     try:
         show = http_json(f"https://op3.dev/api/1/shows/{guid}", auth)
     except urllib.error.HTTPError as e:
-        if e.code == 404:
-            STATUS["op3"] = "waiting: OP3 hasn't seen downloads for this show yet (normal for the first few days)"
-        elif e.code in (401, 403):
-            hint = op3_token_hint(tok, guid)
-            STATUS["op3"] = f"error: OP3 refused the OP3_API_TOKEN secret (HTTP {e.code}). {hint}"
-        else:
+        if e.code in (401, 403):
+            STATUS["op3"] = f"error: OP3 refused the OP3_API_TOKEN secret (HTTP {e.code}). {op3_token_hint(tok, guid)}"
+            return {}
+        if e.code != 404:
             STATUS["op3"] = f"error: {err_text(e)}"
+            return {}
+    except Exception as e:  # noqa: BLE001
+        STATUS["op3"] = f"error: {err_text(e)}"
+        return {}
+    if show is None:
+        show = op3_by_feed(feed, auth)
+    if show is None:
+        STATUS["op3"] = ("waiting: OP3 doesn't know the show yet, by Podcast GUID or by feed URL. OP3 matches shows "
+                         "through Podcast Index: if this still says waiting a week after launch, check the show is "
+                         "listed at podcastindex.org and submit the feed at podcastindex.org/add if it isn't")
         return {}
     uuid = show["showUuid"]
     try:
@@ -200,6 +210,15 @@ def op3(eps: list[dict], pod: dict) -> dict:
                     e["op3_" + k.replace("downloads", "d").replace("dAll", "all")] = x[k]
     STATUS["op3"] = "ok"
     return {"op3_stats_page": show.get("statsPageUrl", "")}
+
+
+def op3_by_feed(feed: str, auth: dict) -> dict | None:
+    """Second lookup: OP3 also finds shows by their feed URL in urlsafe base64."""
+    b64 = base64.urlsafe_b64encode(("https://" + feed).encode()).decode().rstrip("=")
+    try:
+        return http_json(f"https://op3.dev/api/1/shows/{b64}", auth)
+    except Exception:  # noqa: BLE001
+        return None
 
 
 def op3_token_hint(tok: str, guid: str) -> str:
