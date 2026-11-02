@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-01T11:31:43.167949+00:00",
+ "fetched_at": "2026-11-02T09:56:26.214595+00:00",
  "window_days": 8,
- "sources_ok": 66,
+ "sources_ok": 65,
  "sources_total": 72,
  "sources": [
   {
@@ -99,7 +99,7 @@
    "url": "https://www.verkehrsrundschau.de/nachrichten",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 12,
+   "items": 15,
    "error": null,
    "lane": "logistics"
   },
@@ -144,7 +144,7 @@
    "url": "https://www.mtlogistikk.no/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 15,
+   "items": 14,
    "error": null,
    "lane": "logistics"
   },
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 32,
+   "items": 33,
    "error": null,
    "lane": "logistics"
   },
@@ -223,10 +223,10 @@
   {
    "source": "Talking Logistics",
    "url": "https://talkinglogistics.com/",
-   "ok": true,
-   "method": "feed https://talkinglogistics.com/feed/",
-   "items": 2,
-   "error": null,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://talkinglogistics.com/: ConnectionError: HTTPSConnectionPool(host='talkinglogistics.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='talki",
    "lane": "logistics"
   },
   {
@@ -243,7 +243,7 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 10,
+   "items": 11,
    "error": null,
    "lane": "logistics"
   },
@@ -306,7 +306,7 @@
    "url": "https://www.klu.org/newsroom",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 2,
+   "items": 3,
    "error": null,
    "lane": "management"
   },
@@ -351,8 +351,8 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 2,
+   "error": null,
    "lane": "management"
   },
   {
@@ -369,8 +369,8 @@
    "url": "https://mfn.se/all/a/swedbank.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/swedbank.rss",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "lane": "management"
   },
   {
@@ -387,7 +387,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 9,
+   "items": 6,
    "error": null,
    "lane": "management"
   },
