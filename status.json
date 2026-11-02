@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T21:03:37+00:00",
+  "updated": "2026-11-02T21:33:00+00:00",
   "sources": {
     "github": "ok",
     "op3": "waiting: OP3 doesn't know the show yet, by Podcast GUID or by feed URL. OP3 matches shows through Podcast Index: if this still says waiting a week after launch, check the show is listed at podcastindex.org and submit the feed at podcastindex.org/add if it isn't",
