@@ -114,5 +114,18 @@
     "duration_sec": 274,
     "pub_date": "2026-11-02T06:30:00+01:00",
     "transcript_lines": 36
+  },
+  {
+    "guid": "planning-desk-2026-11-03",
+    "stem": "2026-11-03",
+    "number": 10,
+    "format": "daily",
+    "title": "Manufacturing PMI: Factories Start Stocking Up",
+    "summary": "Manufacturing PMI: Sweden hits 60.5, a four-year high, and German factories build purchase stocks as lead times stretch. Also: Hormuz attacks spreading into the Gulf, PostNord Norway pruning business lines, the Balder Bulk bankruptcy and a record shipbuilding orderbook from Clarksons.",
+    "notes_html": "<p>Manufacturing PMI: Sweden hits 60.5, a four-year high, and German factories build purchase stocks as lead times stretch. Also: Hormuz attacks spreading into the Gulf, PostNord Norway pruning business lines, the Balder Bulk bankruptcy and a record shipbuilding orderbook from Clarksons.</p><p>Sources:</p><ul><li><a href=\"https://mfn.se/cis/a/swedbank/pmi-okade-till-60-5-i-oktober-hogtryck-i-industrin-59a89fe9\">Swedbank: PMI ökade till 60,5 i oktober, högtryck i industrin</a></li><li><a href=\"https://sceffect.se/en/hogtryck-i-industrin-pmi-stiger-till-605-i-oktober/\">SC Effect: Högtryck i industrin, PMI stiger till 60,5 i oktober</a></li><li><a href=\"https://1027wbow.com/2026/11/02/german-factory-activity-expands-steadily-in-october-pmi-shows/\">Reuters via WBOW: German factory activity expands steadily in October, PMI shows</a></li><li><a href=\"https://splash247.com/hormuz-attacks-spread-deeper-into-the-gulf/\">Splash247: Hormuz attacks spread deeper into the Gulf</a></li><li><a href=\"https://www.supplychainbrain.com/articles/45134-pakistan-lng-cargo-attacked-near-hormuz-had-iranian-approval\">SupplyChainBrain: Pakistan LNG cargo attacked near Hormuz had Iranian approval</a></li><li><a href=\"https://www.mtlogistikk.no/jan-volsdal-kunstlig-intelligens-pakke-og-godstransport/kuttet-en-halv-milliard-vokser-likevel/1352956\">MT Logistikk: Kuttet en halv milliard, vokser likevel</a></li><li><a href=\"https://www.mtlogistikk.no/balder-bulk-konkurs-litra/balder-bulk-konkurs-154-ansatte-berort/1352996\">MT Logistikk: Balder Bulk konkurs, 154 ansatte berørt</a></li><li><a href=\"https://splash247.com/global-shipbuilding-orderbook-breaks-2008-record-with-output-heading-for-new-peak/\">Splash247: Global shipbuilding orderbook breaks 2008 record</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-03.html\">https://theplanningdesk.github.io/podcast/e/2026-11-03.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3661134,
+    "duration_sec": 229,
+    "pub_date": "2026-11-03T06:30:00+01:00",
+    "transcript_lines": 30
   }
 ]
