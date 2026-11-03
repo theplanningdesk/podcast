@@ -1,0 +1,145 @@
+{
+  "stem": "2026-11-03",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Swedish manufacturing",
+        "title": "Swedish factories hit a four-year high",
+        "source": "Swedbank/Silf"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Sweden PMI, October",
+        "value": 60.5,
+        "decimals": 1,
+        "label": "highest since January 2022",
+        "source": "Swedbank/Silf"
+      }
+    },
+    {
+      "line": 1,
+      "at": "January twenty twenty-two",
+      "template": "bars",
+      "props": {
+        "kicker": "Manufacturing PMI, October",
+        "items": [
+          {
+            "label": "Sweden",
+            "value": 60.5,
+            "highlight": true
+          },
+          {
+            "label": "Germany",
+            "value": 54.2
+          },
+          {
+            "label": "Sweden avg",
+            "value": 54.4
+          }
+        ],
+        "decimals": 1,
+        "baseline": 50,
+        "source": "Swedbank, S&P Global"
+      }
+    },
+    {
+      "line": 2,
+      "template": "route",
+      "props": {
+        "kicker": "Germany",
+        "title": "Delivery delays worst since May",
+        "points": [
+          {
+            "name": "Germany",
+            "lat": 51.16,
+            "lon": 10.45,
+            "alert": true
+          }
+        ],
+        "pad": 4,
+        "source": "Reuters"
+      }
+    },
+    {
+      "line": 2,
+      "at": "input prices",
+      "template": "headline",
+      "props": {
+        "kicker": "German input prices",
+        "title": "Inflation at a five-month high",
+        "source": "Reuters"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "German purchase stocks",
+        "title": "First stock build in almost 4 years",
+        "detail": "Lead times got longer",
+        "source": "Reuters"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "Why lead times drift",
+        "items": [
+          {
+            "label": "Suppliers slow down",
+            "say": "suppliers slow down"
+          },
+          {
+            "label": "Buyers stock up",
+            "say": "buyers stock up"
+          },
+          {
+            "label": "Lead times drift out",
+            "say": "drifting out"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "template": "list",
+      "props": {
+        "kicker": "Update now",
+        "items": [
+          {
+            "label": "Lead time settings",
+            "say": "lead time settings"
+          },
+          {
+            "label": "Q1 safety stocks",
+            "say": "safety stocks"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "at": "before the misses arrive",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Refresh lead times and Q1 safety stocks now"
+      }
+    },
+    {
+      "line": 6,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

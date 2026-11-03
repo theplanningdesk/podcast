@@ -1,0 +1,286 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Manufacturing PMI: Factories Start Stocking Up",
+  "week": "2026-W45",
+  "run_date": "2026-11-03",
+  "brief_file": "news-brief-daily-2026-11-03.md",
+  "target_runtime_sec": 234,
+  "word_count": 671,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-03-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Swedish factories just posted their hottest month in almost four years, and German firms are stocking up for the first time in nearly as long."
+        },
+        {
+          "speaker": "M",
+          "text": "Lead times are stretching, and this is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-03-01",
+        "2026-11-03-02",
+        "2026-11-03-03",
+        "2026-11-03-04",
+        "2026-11-03-05"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Tuesday the third of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, hot factory surveys in Sweden and Germany, Hormuz attacks spreading into the Gulf, two Norwegian carrier stories and a record shipbuilding orderbook."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-03-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Sweden's purchasing managers' index for manufacturing, the P M I, rose to sixty point five in October, according to Swedbank and Silf."
+        },
+        {
+          "speaker": "M",
+          "text": "That's the highest reading since January twenty twenty-two, and the sixteenth month in a row above the long-run average of fifty-four point four. Swedbank says production plans point higher too."
+        },
+        {
+          "speaker": "F",
+          "text": "Germany is running warm as well. Its final October reading came in at fifty-four point two, up from fifty-three point nine, Reuters reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The detail matters more than the headline number. Supplier delivery delays were the worst since May, input prices rose at a five-month high, and backlogs grew at the joint fastest pace since April twenty twenty-two."
+        },
+        {
+          "speaker": "F",
+          "text": "And for the first time in almost four years, German manufacturers built up their purchase stocks, because lead times got longer."
+        },
+        {
+          "speaker": "M",
+          "text": "Export demand was the second strongest in about four and a half years, though overall new orders grew at their slowest pace in three months."
+        },
+        {
+          "speaker": "F",
+          "text": "When suppliers slow down and buyers stock up at the same time, quoted lead times keep drifting out."
+        },
+        {
+          "speaker": "M",
+          "text": "Refresh your lead time settings and first-quarter safety stocks now, rather than waiting for the misses to show up in service levels."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-03-02",
+        "2026-11-03-03",
+        "2026-11-03-04",
+        "2026-11-03-05"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "To the Gulf, where commercial shipping came under renewed attack in and around the Strait of Hormuz over the weekend."
+        },
+        {
+          "speaker": "M",
+          "text": "Tankers and an L N G carrier were targeted, while Washington and Tehran traded sharper warnings, despite new diplomatic efforts."
+        },
+        {
+          "speaker": "F",
+          "text": "Pakistan says an L N G cargo bound for Pakistan and attacked near Hormuz had Iranian approval for its passage. It says several other Qatari shipments reached the Gulf of Oman safely over the past month."
+        },
+        {
+          "speaker": "M",
+          "text": "Attacks beyond the strait itself widen the risk zone for Gulf energy and petrochemicals. If you buy Gulf-sourced polymers, fuels or L N G linked energy in Europe, keep a disruption scenario in the first-quarter plan."
+        },
+        {
+          "speaker": "F",
+          "text": "Over to Norway, where PostNord has wound down business areas with revenue of almost half a billion Norwegian kroner."
+        },
+        {
+          "speaker": "M",
+          "text": "Chief executive Jan Volsdal still expects revenue to grow this year, he said on MT Logistikk's podcast Gods er gull. The report we have doesn't say which lines were cut."
+        },
+        {
+          "speaker": "F",
+          "text": "Some Norwegian shippers will need a new provider for the dropped services, so if you ship with PostNord in Norway, check that your services are still on its list before the twenty twenty-seven tender round."
+        },
+        {
+          "speaker": "M",
+          "text": "Also in Norway, bulk haulier Balder Bulk has gone bankrupt, and the company lists a hundred and fifty-four employees."
+        },
+        {
+          "speaker": "F",
+          "text": "Balder Bulk, formerly Litra Bulk and owned by Litra and SR Group, was filed by its own board, and the Romerike og Glåmdal district court opened the bankruptcy on Monday."
+        },
+        {
+          "speaker": "M",
+          "text": "That's bulk road capacity in eastern Norway gone overnight. If you move aggregates, feed or other bulk goods there, confirm a backup haulier now."
+        },
+        {
+          "speaker": "F",
+          "text": "And at sea, more ships are on the way. Clarksons Research says the global shipbuilding orderbook has passed its two thousand eight record."
+        },
+        {
+          "speaker": "M",
+          "text": "Yards are set to beat their old production peak next year and raise output again in twenty twenty-eight."
+        },
+        {
+          "speaker": "F",
+          "text": "The same day, M S C was linked to three more container ships of twenty-one thousand seven hundred T E U at Shanghai Waigaoqiao, taking its series there to thirteen."
+        },
+        {
+          "speaker": "M",
+          "text": "With record capacity already on East West lanes and more coming, long-term ocean contracts are a buyer's negotiation, so don't lock in multi-year rates at today's levels."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-03-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Tuesday, thanks for listening."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Sweden PMI Hits 60.5 as German Factories Stock Up",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Swedish factories just hit their hottest reading in almost four years."
+      },
+      {
+        "speaker": "M",
+        "text": "Sweden's manufacturing P M I rose to sixty point five in October, the highest since January twenty twenty-two, according to Swedbank and Silf."
+      },
+      {
+        "speaker": "F",
+        "text": "In Germany, supplier delivery delays were the worst since May, and input prices rose at a five-month high."
+      },
+      {
+        "speaker": "M",
+        "text": "German manufacturers also built up purchase stocks for the first time in almost four years, because lead times got longer."
+      },
+      {
+        "speaker": "F",
+        "text": "When suppliers slow down and buyers stock up at the same time, quoted lead times keep drifting out."
+      },
+      {
+        "speaker": "M",
+        "text": "Refresh your lead time settings and first-quarter safety stocks now, before the misses arrive."
+      },
+      {
+        "speaker": "F",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Sweden's manufacturing PMI hit 60.5 in October, its highest since January 2022, while German manufacturers built purchase stocks for the first time in almost four years as supplier lead times stretched. Planners should refresh lead times and Q1 safety stocks now. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "manufacturing",
+      "leadtimes",
+      "pmi"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Swedish factories are at a four-year high and German buyers are stocking up again, so expect quoted lead times to drift.\n\nSweden's manufacturing PMI rose to 60.5 in October, its highest since January 2022, according to Swedbank and Silf. In Germany the final October PMI was 54.2, with supplier delays the worst since May, and manufacturers built purchase stocks for the first time in almost four years as lead times lengthened.\n\nWhen suppliers slow down and buyers stock up at once, lead times keep stretching. Refresh lead-time parameters and Q1 safety stocks now, before the misses hit service levels.\n\nAlso on today's desk:\nAttacks on shipping spread from the Strait of Hormuz deeper into the Gulf.\nNorwegian bulk haulier Balder Bulk went bankrupt, cutting road capacity in eastern Norway.\n\nWhen did you last update the supplier lead times in your planning system?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #manufacturing #leadtimes",
+    "tags": [
+      "Swedbank",
+      "Silf"
+    ]
+  },
+  "show_notes": {
+    "summary": "Manufacturing PMI: Sweden hits 60.5, a four-year high, and German factories build purchase stocks as lead times stretch. Also: Hormuz attacks spreading into the Gulf, PostNord Norway pruning business lines, the Balder Bulk bankruptcy and a record shipbuilding orderbook from Clarksons.",
+    "sources": [
+      {
+        "title": "Swedbank: PMI ökade till 60,5 i oktober, högtryck i industrin",
+        "url": "https://mfn.se/cis/a/swedbank/pmi-okade-till-60-5-i-oktober-hogtryck-i-industrin-59a89fe9"
+      },
+      {
+        "title": "SC Effect: Högtryck i industrin, PMI stiger till 60,5 i oktober",
+        "url": "https://sceffect.se/en/hogtryck-i-industrin-pmi-stiger-till-605-i-oktober/"
+      },
+      {
+        "title": "Reuters via WBOW: German factory activity expands steadily in October, PMI shows",
+        "url": "https://1027wbow.com/2026/11/02/german-factory-activity-expands-steadily-in-october-pmi-shows/"
+      },
+      {
+        "title": "Splash247: Hormuz attacks spread deeper into the Gulf",
+        "url": "https://splash247.com/hormuz-attacks-spread-deeper-into-the-gulf/"
+      },
+      {
+        "title": "SupplyChainBrain: Pakistan LNG cargo attacked near Hormuz had Iranian approval",
+        "url": "https://www.supplychainbrain.com/articles/45134-pakistan-lng-cargo-attacked-near-hormuz-had-iranian-approval"
+      },
+      {
+        "title": "MT Logistikk: Kuttet en halv milliard, vokser likevel",
+        "url": "https://www.mtlogistikk.no/jan-volsdal-kunstlig-intelligens-pakke-og-godstransport/kuttet-en-halv-milliard-vokser-likevel/1352956"
+      },
+      {
+        "title": "MT Logistikk: Balder Bulk konkurs, 154 ansatte berørt",
+        "url": "https://www.mtlogistikk.no/balder-bulk-konkurs-litra/balder-bulk-konkurs-154-ansatte-berort/1352996"
+      },
+      {
+        "title": "Splash247: Global shipbuilding orderbook breaks 2008 record",
+        "url": "https://splash247.com/global-shipbuilding-orderbook-breaks-2008-record-with-output-heading-for-new-peak/"
+      }
+    ]
+  }
+}
