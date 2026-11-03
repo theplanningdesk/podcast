@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-02T09:56:26.214595+00:00",
+ "fetched_at": "2026-11-03T10:01:49.392185+00:00",
  "window_days": 8,
- "sources_ok": 65,
+ "sources_ok": 64,
  "sources_total": 72,
  "sources": [
   {
@@ -27,7 +27,7 @@
    "url": "https://www.scmr.com/",
    "ok": true,
    "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 10,
+   "items": 20,
    "error": null,
    "lane": "logistics"
   },
@@ -81,7 +81,7 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 20,
+   "items": 27,
    "error": null,
    "lane": "logistics"
   },
@@ -108,17 +108,17 @@
    "url": "https://www.logistik-journal.de/",
    "ok": true,
    "method": "feed https://www.logistik-journal.de/feed/",
-   "items": 4,
+   "items": 3,
    "error": null,
    "lane": "logistics"
   },
   {
    "source": "BVL",
    "url": "https://www.bvl.de/",
-   "ok": true,
-   "method": "feed https://www.bvl.de/presse/rss/bvl-news",
-   "items": 1,
-   "error": null,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://www.bvl.de/: ConnectionError: HTTPSConnectionPool(host='www.bvl.de', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='www.bvl.de', port=443): Fa",
    "lane": "logistics"
   },
   {
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 33,
+   "items": 36,
    "error": null,
    "lane": "logistics"
   },
@@ -205,10 +205,10 @@
   {
    "source": "Sea-Intelligence",
    "url": "https://www.sea-intelligence.com/press-room",
-   "ok": true,
-   "method": "feed https://www.sea-intelligence.com/press-room?format=feed&type=rss",
-   "items": 2,
-   "error": null,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://www.sea-intelligence.com/press-room: HTTPError: 406 Client Error: Not Acceptable for url: https://www.sea-intelligence.com/press-room",
    "lane": "logistics"
   },
   {
@@ -223,10 +223,10 @@
   {
    "source": "Talking Logistics",
    "url": "https://talkinglogistics.com/",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://talkinglogistics.com/: ConnectionError: HTTPSConnectionPool(host='talkinglogistics.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='talki",
+   "ok": true,
+   "method": "feed https://talkinglogistics.com/feed/",
+   "items": 3,
+   "error": null,
    "lane": "logistics"
   },
   {
@@ -243,7 +243,7 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 11,
+   "items": 13,
    "error": null,
    "lane": "logistics"
   },
@@ -297,8 +297,8 @@
    "url": "https://idw-online.de/de/pressreleasesrss",
    "ok": true,
    "method": "feed https://idw-online.de/de/pressreleasesrss",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "lane": "management"
   },
   {
@@ -342,7 +342,7 @@
    "url": "https://industriemagazin.at/rss.xml",
    "ok": true,
    "method": "feed https://industriemagazin.at/rss.xml",
-   "items": 3,
+   "items": 4,
    "error": null,
    "lane": "management"
   },
@@ -351,7 +351,7 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "management"
   },
@@ -360,7 +360,7 @@
    "url": "https://via.tt.se/rss/releases/latest?publisherId=2732851",
    "ok": true,
    "method": "feed https://via.tt.se/rss/releases/latest?publisherId=2732851",
-   "items": 1,
+   "items": 3,
    "error": null,
    "lane": "management"
   },
@@ -387,7 +387,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 6,
+   "items": 5,
    "error": null,
    "lane": "management"
   },
@@ -405,8 +405,8 @@
    "url": "https://mfn.se/all/a/sandvik.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/sandvik.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
+   "items": 1,
+   "error": null,
    "lane": "companies"
   },
   {
@@ -414,7 +414,7 @@
    "url": "https://mfn.se/all/a/atlas-copco.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/atlas-copco.rss",
-   "items": 2,
+   "items": 3,
    "error": null,
    "lane": "companies"
   },
@@ -459,8 +459,8 @@
    "url": "https://mfn.se/all/a/husqvarna.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/husqvarna.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
+   "items": 1,
+   "error": null,
    "lane": "companies"
   },
   {
@@ -477,8 +477,8 @@
    "url": "https://mfn.se/all/a/getinge.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/getinge.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
