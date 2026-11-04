@@ -127,5 +127,18 @@
     "duration_sec": 229,
     "pub_date": "2026-11-03T06:30:00+01:00",
     "transcript_lines": 30
+  },
+  {
+    "guid": "planning-desk-2026-11-04",
+    "stem": "2026-11-04",
+    "number": 11,
+    "format": "daily",
+    "title": "Warehouse Network Design: Hitachi Energy Goes Big",
+    "summary": "Warehouse network design: Hitachi Energy picks Logent to design and run a 100,000 m² central warehouse in Ludvika, Sweden. Also: a new Haparanda to Gothenburg rail shuttle, Paulig's standing fallback plans, the Rhine at Kaub down to 18 cm, Bajaj Mobility holding stock steady, and quick hits on net zero demand, Conlio's funding and ID Logistics' humanoid robot pilot.",
+    "notes_html": "<p>Warehouse network design: Hitachi Energy picks Logent to design and run a 100,000 m² central warehouse in Ludvika, Sweden. Also: a new Haparanda to Gothenburg rail shuttle, Paulig&#x27;s standing fallback plans, the Rhine at Kaub down to 18 cm, Bajaj Mobility holding stock steady, and quick hits on net zero demand, Conlio&#x27;s funding and ID Logistics&#x27; humanoid robot pilot.</p><p>Sources:</p><ul><li><a href=\"https://dagenslogistik.se/hitachi-energy-valjer-logent-for-ludvikalagret/\">Dagens Logistik: Hitachi Energy väljer Logent för Ludvikalagret</a></li><li><a href=\"https://dagenslogistik.se/ny-godspendel-mellan-haparanda-och-goteborg/\">Dagens Logistik: Ny godspendel mellan Haparanda och Göteborg</a></li><li><a href=\"https://dagenslogistik.se/sanningens-ogonblick-for-kryddjatten/\">Dagens Logistik: Sanningens ögonblick för kryddjätten</a></li><li><a href=\"https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&amp;includeTimeseries=true&amp;includeCurrentMeasurement=true\">Pegelonline: Rhine gauges</a></li><li><a href=\"https://www.verkehrsrundschau.de/nachrichten/transport-logistik/rhein-niedrigwasser-pegel-kaub-erreicht-historischen-tiefstand-3891008\">VerkehrsRundschau: Pegel Kaub erreicht historischen Tiefstand</a></li><li><a href=\"https://www.finanznachrichten.de/nachrichten-2026-11/70013264-eqs-adhoc-bajaj-mobility-ag-zwischenbericht-q3-26-konzernumsatz-ueberschreitet-nach-drei-quartalen-eur-1-mrd-ebit-steigt-im-q3-26-um-eur-10-mio-a-022.htm\">Bajaj Mobility AG: Zwischenbericht Q3/26 (via finanznachrichten)</a></li><li><a href=\"https://via.tt.se/pressmeddelande/4619771/industrin-vill-stalla-om-men-marknaden-bromsar?lang=sv\">Net Zero Industry via TT: Industrin vill ställa om, men marknaden bromsar</a></li><li><a href=\"https://www.verkehrsrundschau.de/nachrichten/transport-logistik/conlio-erhaelt-millionen-fuer-ki-in-der-transportlogistik-3930576\">VerkehrsRundschau: Conlio erhält Millionen für KI in der Transportlogistik</a></li><li><a href=\"https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/robotik-id-logistics-plant-pilot-im-logistikzentrum-3930478\">VerkehrsRundschau: ID Logistics plant Robotik-Pilot im Logistikzentrum</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-04.html\">https://theplanningdesk.github.io/podcast/e/2026-11-04.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3918600,
+    "duration_sec": 245,
+    "pub_date": "2026-11-04T06:30:00+01:00",
+    "transcript_lines": 32
   }
 ]
