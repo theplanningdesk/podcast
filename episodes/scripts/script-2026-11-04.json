@@ -1,0 +1,306 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Warehouse Network Design: Hitachi Energy Goes Big",
+  "week": "2026-W45",
+  "run_date": "2026-11-04",
+  "brief_file": "news-brief-daily-2026-11-04.md",
+  "target_runtime_sec": 258,
+  "word_count": 744,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-04-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Hitachi Energy is planning a hundred thousand square metre central warehouse in Ludvika, and the logistics provider that will run it is designing it too."
+        },
+        {
+          "speaker": "M",
+          "text": "One building, one big network decision, and this is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-04-01",
+        "2026-11-04-02",
+        "2026-11-04-03",
+        "2026-11-04-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Wednesday the fourth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, a giant warehouse in Ludvika, a new rail shuttle from Haparanda to Gothenburg, how Paulig keeps a plan B ready, and the Rhine sliding lower again."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-04-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Hitachi Energy has chosen Swedish logistics provider Logent to run its planned central warehouse in Ludvika, Dagens Logistik reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The agreement covers the design as well as the operation, and the site is a hundred thousand square metres."
+        },
+        {
+          "speaker": "F",
+          "text": "That's a classic footprint call, pulling stock into one very large central warehouse right next to the plant."
+        },
+        {
+          "speaker": "M",
+          "text": "The part to watch is who holds the pen. When the provider designs the building it will later run, the layout and the contract get decided together."
+        },
+        {
+          "speaker": "F",
+          "text": "That means service levels and flexibility terms belong in the network design from day one, rather than being bolted on afterwards."
+        },
+        {
+          "speaker": "M",
+          "text": "If you're weighing a similar move, agree the service levels, peaks and growth you need before the provider starts drawing, because the layout will carry those choices for years."
+        },
+        {
+          "speaker": "F",
+          "text": "The report we have gives no cost, no timeline and no headcount, so watch for those as the project firms up."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-04-02",
+        "2026-11-04-03",
+        "2026-11-04-04",
+        "2026-11-04-05"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Up to the far north, where a new rail shuttle between Haparanda and the Port of Gothenburg starts tomorrow, the fifth of November."
+        },
+        {
+          "speaker": "F",
+          "text": "It lets Finnish and northern Swedish industry consolidate goods in Haparanda and send them by train to Gothenburg for export."
+        },
+        {
+          "speaker": "M",
+          "text": "That's a new rail to port option for deep sea exports from the north. Add it as a lane in your twenty twenty-seven transport tenders and in your network models."
+        },
+        {
+          "speaker": "F",
+          "text": "Staying in the Nordics, Finnish food and spice group Paulig has tightened its supply chain planning after several years of geopolitical unrest."
+        },
+        {
+          "speaker": "M",
+          "text": "According to Dagens Logistik, Paulig now keeps alternative solutions ready at all times. Its head of supply, Thomas Panteli, says the company works constantly with supply chain risk, because it ships sensitive goods worldwide."
+        },
+        {
+          "speaker": "F",
+          "text": "Fallback routes and sources cost far less to agree before a disruption than in the middle of one."
+        },
+        {
+          "speaker": "M",
+          "text": "If you buy from far away origins, that's resilience in its most practical form, a second option agreed in advance and ready to switch on."
+        },
+        {
+          "speaker": "F",
+          "text": "On the Rhine, the water keeps dropping. The gauge at Kaub read eighteen centimetres on Tuesday, down from twenty-one a day earlier and thirty-two on Saturday."
+        },
+        {
+          "speaker": "M",
+          "text": "Barges need about seventy-seven centimetres at Kaub for a channel of one metre ninety, and Emmerich on the Dutch border is down to fourteen."
+        },
+        {
+          "speaker": "F",
+          "text": "It isn't a record, Kaub fell to eight centimetres in mid-August. But at under a quarter of the level for normal loading, barges on the middle Rhine sail with light loads or not at all."
+        },
+        {
+          "speaker": "M",
+          "text": "For chemical, steel and fuel flows in Germany, Austria and Switzerland, book rail and truck backup now, before the next surcharge lands."
+        },
+        {
+          "speaker": "F",
+          "text": "In Austria, Bajaj Mobility, the KTM motorcycle group, says stocks across the group and at dealers and importers held steady in the third quarter, after the cuts of earlier quarters."
+        },
+        {
+          "speaker": "M",
+          "text": "For the rest of the year it will keep trimming cost, narrow its product portfolio and hold inventory at what it calls a sustainably efficient level, to lift free cash flow."
+        },
+        {
+          "speaker": "F",
+          "text": "Once the channel destocking is done, the job changes from cutting stock to keeping it there. That means production plans driven by sell out, rather than pushing volume to dealers."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-04-06",
+        "2026-11-04-07",
+        "2026-11-04-08"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Into the quick hits, and a new report from the Swedish programme Net Zero Industry finds eight in ten manufacturers see net zero as a long term competitive edge, but more than half say buyers won't pay for lower emission products."
+        },
+        {
+          "speaker": "F",
+          "text": "Berlin's Conlio has raised six point four million euros for A I that checks transport documents at road freight forwarders, which should get real freight costs into planning data sooner."
+        },
+        {
+          "speaker": "M",
+          "text": "And ID Logistics plans to test a humanoid robot from Terra Robotics at one of its sites within six months. A pilot isn't capacity yet, so keep it out of your twenty twenty-seven warehouse plans."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-04-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Wednesday, thanks for listening."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Hitachi Energy Plans 100,000 m² Warehouse in Ludvika",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Hitachi Energy plans a hundred thousand square metre warehouse in Sweden."
+      },
+      {
+        "speaker": "M",
+        "text": "The central warehouse will sit in Ludvika, right next to the plant, and Swedish logistics provider Logent has been chosen to run it."
+      },
+      {
+        "speaker": "F",
+        "text": "Logent gets the design job too, so the company that will operate the building is also the one drawing it."
+      },
+      {
+        "speaker": "M",
+        "text": "That's a classic network design call, pulling stock into one very large central site right beside production."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, the timing matters. Service levels and flexibility have to be written into the design from day one, rather than bolted on afterwards."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Hitachi Energy plans a 100,000 m² central warehouse in Ludvika, Sweden, and has picked Logent to both design and run it. For planners, service levels and flexibility belong in the network design from day one. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "logistics",
+      "warehousing",
+      "networkdesign",
+      "sweden"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Hitachi Energy is consolidating into a 100,000 m² warehouse in Ludvika, and the 3PL running it is also designing it.\n\nHitachi Energy has chosen Swedish logistics provider Logent as its partner for the planned central warehouse next to its plant in Ludvika, Dagens Logistik reports. The agreement covers both the design and the operation of the 100,000 square metre site.\n\nWhen the provider draws the building it will run, layout and contract get set together. Write service levels, peak volumes and growth into the design brief before drawing starts, not into a contract amendment later.\n\nAlso on today's desk:\nA new rail shuttle from Haparanda to the Port of Gothenburg starts 5 November.\nThe Rhine gauge at Kaub fell to 18 cm, under a quarter of the level for normal loading.\n\nWho owns the service-level terms when your logistics provider also designs the warehouse?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #networkdesign #warehousing",
+    "tags": [
+      "Hitachi Energy",
+      "Logent",
+      "Dagens Logistik"
+    ]
+  },
+  "show_notes": {
+    "summary": "Warehouse network design: Hitachi Energy picks Logent to design and run a 100,000 m² central warehouse in Ludvika, Sweden. Also: a new Haparanda to Gothenburg rail shuttle, Paulig's standing fallback plans, the Rhine at Kaub down to 18 cm, Bajaj Mobility holding stock steady, and quick hits on net zero demand, Conlio's funding and ID Logistics' humanoid robot pilot.",
+    "sources": [
+      {
+        "title": "Dagens Logistik: Hitachi Energy väljer Logent för Ludvikalagret",
+        "url": "https://dagenslogistik.se/hitachi-energy-valjer-logent-for-ludvikalagret/"
+      },
+      {
+        "title": "Dagens Logistik: Ny godspendel mellan Haparanda och Göteborg",
+        "url": "https://dagenslogistik.se/ny-godspendel-mellan-haparanda-och-goteborg/"
+      },
+      {
+        "title": "Dagens Logistik: Sanningens ögonblick för kryddjätten",
+        "url": "https://dagenslogistik.se/sanningens-ogonblick-for-kryddjatten/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "VerkehrsRundschau: Pegel Kaub erreicht historischen Tiefstand",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/rhein-niedrigwasser-pegel-kaub-erreicht-historischen-tiefstand-3891008"
+      },
+      {
+        "title": "Bajaj Mobility AG: Zwischenbericht Q3/26 (via finanznachrichten)",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70013264-eqs-adhoc-bajaj-mobility-ag-zwischenbericht-q3-26-konzernumsatz-ueberschreitet-nach-drei-quartalen-eur-1-mrd-ebit-steigt-im-q3-26-um-eur-10-mio-a-022.htm"
+      },
+      {
+        "title": "Net Zero Industry via TT: Industrin vill ställa om, men marknaden bromsar",
+        "url": "https://via.tt.se/pressmeddelande/4619771/industrin-vill-stalla-om-men-marknaden-bromsar?lang=sv"
+      },
+      {
+        "title": "VerkehrsRundschau: Conlio erhält Millionen für KI in der Transportlogistik",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/conlio-erhaelt-millionen-fuer-ki-in-der-transportlogistik-3930576"
+      },
+      {
+        "title": "VerkehrsRundschau: ID Logistics plant Robotik-Pilot im Logistikzentrum",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/robotik-id-logistics-plant-pilot-im-logistikzentrum-3930478"
+      }
+    ]
+  }
+}

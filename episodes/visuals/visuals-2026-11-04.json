@@ -1,0 +1,122 @@
+{
+  "stem": "2026-11-04",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Ludvika, Sweden",
+        "title": "Hitachi Energy plans a 100,000 m² warehouse",
+        "source": "Dagens Logistik"
+      }
+    },
+    {
+      "line": 0,
+      "at": "square metre",
+      "template": "stat",
+      "props": {
+        "kicker": "Hitachi Energy, Ludvika",
+        "value": 100000,
+        "label": "square metres, one central warehouse",
+        "source": "Dagens Logistik"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Ludvika, Sweden",
+        "title": "Next to the plant",
+        "points": [
+          {
+            "name": "Ludvika",
+            "lat": 60.15,
+            "lon": 15.19,
+            "alert": true
+          }
+        ],
+        "pad": 4,
+        "source": "Dagens Logistik"
+      }
+    },
+    {
+      "line": 1,
+      "at": "Logent",
+      "template": "headline",
+      "props": {
+        "kicker": "Logistics provider",
+        "title": "Logent chosen to run the site",
+        "source": "Dagens Logistik"
+      }
+    },
+    {
+      "line": 2,
+      "template": "list",
+      "props": {
+        "kicker": "Logent's job",
+        "items": [
+          {
+            "label": "Design",
+            "say": "design job"
+          },
+          {
+            "label": "Operation",
+            "say": "operate the building"
+          }
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "at": "drawing it",
+      "template": "headline",
+      "props": {
+        "kicker": "One firm, two roles",
+        "title": "The operator draws its own building"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "Network design",
+        "title": "One very large site beside production"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "Write into the design",
+        "items": [
+          {
+            "label": "Service levels",
+            "say": "Service levels"
+          },
+          {
+            "label": "Flexibility",
+            "say": "flexibility"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "from day one",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Set service levels in the design from day one, not afterwards"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
