@@ -1,0 +1,141 @@
+{
+  "stem": "2026-11-05",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "BMW, third quarter",
+        "title": "BMW sold almost a quarter fewer cars in China",
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "BMW deliveries, China",
+        "value": 114000,
+        "label": "cars in the third quarter",
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 1,
+      "at": "twenty-five percent",
+      "template": "stat",
+      "props": {
+        "kicker": "China",
+        "value": -24.8,
+        "suffix": "%",
+        "decimals": 1,
+        "label": "deliveries, third quarter",
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 1,
+      "at": "Europe grew",
+      "template": "bars",
+      "props": {
+        "kicker": "Deliveries, third quarter",
+        "title": "Change in percent",
+        "items": [
+          {
+            "label": "China",
+            "value": -24.8,
+            "highlight": true
+          },
+          {
+            "label": "Europe",
+            "value": 2.6
+          },
+          {
+            "label": "BMW total",
+            "value": -6.3
+          }
+        ],
+        "decimals": 1,
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 2,
+      "template": "headline",
+      "props": {
+        "kicker": "Same day",
+        "title": "BMW widens its restructuring programme",
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 2,
+      "at": "workforce",
+      "template": "headline",
+      "props": {
+        "kicker": "Guidance for 2026",
+        "title": "A slightly smaller workforce this year",
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 3,
+      "template": "stat",
+      "props": {
+        "kicker": "Automotive free cash flow",
+        "value": -600,
+        "suffix": " m EUR",
+        "label": "in the third quarter",
+        "source": "BMW results"
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "kicker": "For planners",
+        "title": "A structural shift in China volume"
+      }
+    },
+    {
+      "line": 4,
+      "at": "call offs",
+      "template": "list",
+      "props": {
+        "kicker": "Reset before budgets lock",
+        "items": [
+          {
+            "label": "Capacity",
+            "say": "capacity"
+          },
+          {
+            "label": "Stock plans",
+            "say": "stock plans"
+          },
+          {
+            "label": "China call-offs",
+            "say": "China call offs"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "reset them",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Reset plans built on BMW China call-offs before 2027 budgets lock"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

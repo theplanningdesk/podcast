@@ -1,0 +1,263 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "BMW Q3 Results: China Deliveries Drop a Quarter",
+  "week": "2026-W45",
+  "run_date": "2026-11-05",
+  "brief_file": "news-brief-daily-2026-11-05.md",
+  "target_runtime_sec": 232,
+  "word_count": 666,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-05-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "BMW's deliveries in China fell by almost a quarter in the third quarter, and on the same day the carmaker widened its restructuring programme."
+        },
+        {
+          "speaker": "M",
+          "text": "Three German car results, one message for planners, and this is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-05-01",
+        "2026-11-05-02",
+        "2026-11-05-RN2",
+        "2026-11-05-RN3",
+        "2026-11-05-RN4"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Thursday the fifth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, BMW's slump in China, Continental's cash tied up in stock, Schaeffler closing four German sites, and two Nordic deals."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-05-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "BMW delivered about five hundred and fifty-one thousand cars in the third quarter, down six point three percent, according to its results presentation."
+        },
+        {
+          "speaker": "M",
+          "text": "The drop sits in China. Deliveries there fell almost twenty-five percent to about a hundred and fourteen thousand, while Europe grew two point six percent."
+        },
+        {
+          "speaker": "F",
+          "text": "And BMW is cutting deeper. It added one and a quarter points of operating margin to its restructuring programme, taking the target to three point seven five points, and it expects a slightly smaller workforce this year."
+        },
+        {
+          "speaker": "M",
+          "text": "The cash tells the same story. Automotive free cash flow was minus six hundred million euros in the quarter, and that's with working capital adding six hundred million back."
+        },
+        {
+          "speaker": "F",
+          "text": "There's one bright spot. BMW expects tariff reimbursements in the fourth quarter worth a high three digit million euro sum."
+        },
+        {
+          "speaker": "M",
+          "text": "Welcome money, but it won't bring Chinese buyers back. Losing a quarter of your China volume in a year looks structural, and much more than a dip."
+        },
+        {
+          "speaker": "F",
+          "text": "The ones who feel it are German suppliers who plan capacity and inventory on BMW's China call offs."
+        },
+        {
+          "speaker": "M",
+          "text": "Those plans need resetting before twenty twenty-seven budgets lock. Run a scenario where China stays at today's level, and size shifts, stock and supplier commitments to that, rather than to last year's run rate."
+        },
+        {
+          "speaker": "F",
+          "text": "And don't count on Europe to close the gap. Growth of under three percent there covers only a small part of what China lost."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-05-02",
+        "2026-11-05-RN2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Staying with cars, Continental's volumes fell four and a half percent in the third quarter, yet its adjusted margin rose to fourteen point nine percent on price and mix."
+        },
+        {
+          "speaker": "F",
+          "text": "The planning number is working capital. It stood at four billion euros, thirty percent of sales, after a seasonal build."
+        },
+        {
+          "speaker": "M",
+          "text": "That build cut adjusted free cash flow to thirty-one million euros, from ninety-nine million, even as Continental raised its full year cash range to between one and one point three billion."
+        },
+        {
+          "speaker": "F",
+          "text": "It also expects bigger raw material headwinds in the fourth quarter and into twenty twenty-seven, and sees global light vehicle production down one to three percent this year, with China down five to seven."
+        },
+        {
+          "speaker": "M",
+          "text": "Falling output and dearer raw materials is the classic squeeze, where every week of buffer stock gets expensive. If you plan at a tyre or rubber supplier, expect pressure to release inventory before year end."
+        },
+        {
+          "speaker": "F",
+          "text": "Schaeffler, also German and also automotive, put numbers on its own cuts on Tuesday. The group plans a net reduction of three thousand four hundred and sixty jobs across sixteen sites, with four sites in Germany closing."
+        },
+        {
+          "speaker": "M",
+          "text": "It expects about four hundred and eighty million euros in one off costs, and savings of around three hundred million euros a year from twenty thirty."
+        },
+        {
+          "speaker": "F",
+          "text": "The detail for planners came from its finance chief. He named printed circuit boards as the biggest cost inflation pressure, because they compete with demand from data centres."
+        },
+        {
+          "speaker": "M",
+          "text": "That's a price race that car part makers don't control. If boards sit on your bill of materials, check lead times and allocation terms with those suppliers before you set next year's costs."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-05-RN3",
+        "2026-11-05-RN4"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Into the quick hits, and the E U has cleared Kesko's purchase of Dahl in Sweden and Brødrene Dahl in Norway and Denmark, Dagens Logistik reports."
+        },
+        {
+          "speaker": "F",
+          "text": "And Scan Global Logistics is buying American forwarder O I A Global, according to the Danish trade site SCM dot dk."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-05-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Thursday, thanks for listening."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with the Friday briefing."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "BMW China Deliveries Fall Nearly 25% as Cuts Widen",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "BMW sold almost a quarter fewer cars in China."
+      },
+      {
+        "speaker": "M",
+        "text": "In the third quarter, BMW delivered about a hundred and fourteen thousand cars in China, down almost twenty-five percent, while Europe grew two point six percent."
+      },
+      {
+        "speaker": "F",
+        "text": "On the same day, the carmaker widened its restructuring programme and said its workforce will shrink slightly this year."
+      },
+      {
+        "speaker": "M",
+        "text": "Automotive free cash flow was negative too, at minus six hundred million euros for the quarter."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, this looks structural. If your capacity and stock plans rest on BMW's China call offs, reset them before twenty twenty-seven budgets lock."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "BMW's China deliveries fell 24.8% to 114,000 cars in Q3 2026, and the carmaker widened its restructuring programme the same day. Suppliers planning on BMW China call-offs should reset capacity and stock plans before 2027 budgets lock. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "automotive",
+      "demandplanning",
+      "china"
+    ]
+  },
+  "linkedin": {
+    "page_post": "BMW's China deliveries fell 24.8% in Q3. Suppliers still planning on last year's call-offs are planning on lost volume.\n\nBMW delivered 551,000 cars in the third quarter, down 6.3%, according to its results presentation. China fell to 114,000 while Europe grew 2.6%, and BMW widened its restructuring programme to 3.75 margin points the same day.\n\nFor German suppliers this looks structural. Run a scenario with China at today's level, and size shifts, stock and supplier commitments to it before 2027 budgets lock.\n\nAlso on today's desk:\nContinental's working capital stood at EUR 4.0bn, 30% of sales, after a seasonal stock build.\nSchaeffler plans a net cut of 3,460 jobs across 16 sites, with four German closures.\n\nWhich China volume sits in your 2027 plan for German car customers, last year's or today's?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #automotive #demandplanning",
+    "tags": [
+      "BMW",
+      "Continental",
+      "Schaeffler"
+    ]
+  },
+  "show_notes": {
+    "summary": "BMW Q3 results: China deliveries fell 24.8% to 114,000 and BMW widened its restructuring programme. Also: Continental's EUR 4.0bn working capital after a seasonal build, Schaeffler's net cut of 3,460 jobs across 16 sites and its circuit board cost warning, EU clearance for Kesko's Dahl deal, and Scan Global Logistics buying OIA Global.",
+    "sources": [
+      {
+        "title": "Investing.com: BMW Q3 2026 slides, margin beats guidance amid China slump, restructuring",
+        "url": "https://www.investing.com/news/company-news/bmw-q3-2026-slides-margin-beats-guidance-amid-china-slump-restructuring-93CH-4998124"
+      },
+      {
+        "title": "Investing.com: Continental Q3 2026 slides, margins expand on premium mix despite weak volumes",
+        "url": "https://in.investing.com/news/stock-market-news/continental-q3-2026-slides-margins-expand-on-premium-mix-despite-weak-volumes-93CH-5678768"
+      },
+      {
+        "title": "Investing.com: Earnings call transcript, Schaeffler Group Q3 2026",
+        "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-schaeffler-group-q3-2026-sales-fall-as-restructuring-deepens-93CH-4994377"
+      }
+    ]
+  }
+}
