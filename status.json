@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-03T10:01:49.392185+00:00",
+ "fetched_at": "2026-11-05T09:50:01.468690+00:00",
  "window_days": 8,
- "sources_ok": 64,
+ "sources_ok": 66,
  "sources_total": 72,
  "sources": [
   {
@@ -18,7 +18,7 @@
    "url": "https://www.supplychainbrain.com/rss/articles",
    "ok": true,
    "method": "feed https://www.supplychainbrain.com/rss/articles",
-   "items": 30,
+   "items": 40,
    "error": null,
    "lane": "logistics"
   },
@@ -27,7 +27,7 @@
    "url": "https://www.scmr.com/",
    "ok": true,
    "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 20,
+   "items": 28,
    "error": null,
    "lane": "logistics"
   },
@@ -55,7 +55,7 @@
    "ok": false,
    "method": null,
    "items": 0,
-   "error": "https://www.supplychain247.com/: ReadTimeout: HTTPSConnectionPool(host='www.supplychain247.com', port=443): Read timed out. (read timeout=25)",
+   "error": "https://www.supplychain247.com/: HTTPError: 403 Client Error: Forbidden for url: https://www.supplychain247.com/",
    "lane": "logistics"
   },
   {
@@ -81,7 +81,7 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 27,
+   "items": 26,
    "error": null,
    "lane": "logistics"
   },
@@ -115,10 +115,10 @@
   {
    "source": "BVL",
    "url": "https://www.bvl.de/",
-   "ok": false,
-   "method": null,
+   "ok": true,
+   "method": "feed https://www.bvl.de/presse/rss/bvl-news",
    "items": 0,
-   "error": "https://www.bvl.de/: ConnectionError: HTTPSConnectionPool(host='www.bvl.de', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='www.bvl.de', port=443): Fa",
+   "error": null,
    "lane": "logistics"
   },
   {
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 36,
+   "items": 28,
    "error": null,
    "lane": "logistics"
   },
@@ -205,10 +205,10 @@
   {
    "source": "Sea-Intelligence",
    "url": "https://www.sea-intelligence.com/press-room",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://www.sea-intelligence.com/press-room: HTTPError: 406 Client Error: Not Acceptable for url: https://www.sea-intelligence.com/press-room",
+   "ok": true,
+   "method": "feed https://www.sea-intelligence.com/press-room?format=feed&type=rss",
+   "items": 2,
+   "error": null,
    "lane": "logistics"
   },
   {
@@ -225,7 +225,7 @@
    "url": "https://talkinglogistics.com/",
    "ok": true,
    "method": "feed https://talkinglogistics.com/feed/",
-   "items": 3,
+   "items": 2,
    "error": null,
    "lane": "logistics"
   },
@@ -243,7 +243,7 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 13,
+   "items": 12,
    "error": null,
    "lane": "logistics"
   },
@@ -288,7 +288,7 @@
    "url": "https://phys.org/rss-feed/science-news/economics-business/",
    "ok": true,
    "method": "feed https://phys.org/rss-feed/science-news/economics-business/",
-   "items": 1,
+   "items": 2,
    "error": null,
    "lane": "management"
   },
@@ -324,8 +324,8 @@
    "url": "https://www.consultancy.eu/rss/consultancy_rssfeed.xml",
    "ok": true,
    "method": "feed https://www.consultancy.eu/rss/consultancy_rssfeed.xml",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 2,
+   "error": null,
    "lane": "management"
   },
   {
@@ -333,8 +333,8 @@
    "url": "https://www.cfodive.com/feeds/news/",
    "ok": true,
    "method": "feed https://www.cfodive.com/feeds/news/",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "lane": "management"
   },
   {
@@ -369,7 +369,7 @@
    "url": "https://mfn.se/all/a/swedbank.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/swedbank.rss",
-   "items": 1,
+   "items": 2,
    "error": null,
    "lane": "management"
   },
@@ -387,7 +387,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 5,
+   "items": 7,
    "error": null,
    "lane": "management"
   },
@@ -450,7 +450,7 @@
    "url": "https://mfn.se/all/a/alfa-laval.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/alfa-laval.rss",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "companies"
   },
@@ -468,7 +468,7 @@
    "url": "https://mfn.se/all/a/essity.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/essity.rss",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "companies"
   },
@@ -504,8 +504,8 @@
    "url": "https://mfn.se/all/a/assa-abloy.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/assa-abloy.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -549,8 +549,8 @@
    "url": "https://mfn.se/all/a/thule-group.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/thule-group.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
+   "items": 1,
+   "error": null,
    "lane": "companies"
   },
   {
@@ -567,8 +567,8 @@
    "url": "https://mfn.se/all/a/ica-gruppen.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/ica-gruppen.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
+   "items": 1,
+   "error": null,
    "lane": "companies"
   },
   {
@@ -576,8 +576,8 @@
    "url": "https://mfn.se/all/a/kone.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/kone.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -585,8 +585,8 @@
    "url": "https://mfn.se/all/a/wartsila.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/wartsila.rss",
-   "items": 2,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -594,7 +594,7 @@
    "url": "https://mfn.se/all/a/valmet.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/valmet.rss",
-   "items": 3,
+   "items": 1,
    "error": null,
    "lane": "companies"
   },
@@ -603,7 +603,7 @@
    "url": "https://mfn.se/all/a/upm-kymmene.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/upm-kymmene.rss",
-   "items": 5,
+   "items": 4,
    "error": null,
    "lane": "companies"
   },
@@ -630,8 +630,8 @@
    "url": "https://mfn.se/all/a/norsk-hydro.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/norsk-hydro.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
+   "items": 1,
+   "error": null,
    "lane": "companies"
   },
   {
