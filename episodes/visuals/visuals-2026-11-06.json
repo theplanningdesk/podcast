@@ -1,0 +1,120 @@
+{
+  "stem": "2026-11-06",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Suez Canal",
+        "title": "Evergreen's big ships head back through Suez",
+        "source": "Linerlytica via Splash247"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Asia to Europe",
+        "title": "Back through Suez after almost three years",
+        "pad": 8,
+        "points": [
+          {"name": "Suez Canal", "lat": 30.0, "lon": 32.55, "alert": true},
+          {"name": "Cape of Good Hope", "lat": -34.36, "lon": 18.47, "muted": true},
+          {"name": "Singapore", "lat": 1.3, "lon": 103.8},
+          {"name": "Rotterdam", "lat": 51.92, "lon": 4.48}
+        ],
+        "routes": [
+          {
+            "style": "primary",
+            "label": "Via Suez",
+            "points": [[103.8, 1.3], [95, 5.5], [80.5, 5.8], [60, 13], [51, 12.2], [43.4, 12.6], [38.5, 19.5], [34.5, 26.5], [32.55, 29.9], [32.3, 31.3], [25, 34], [12, 37.3], [5, 37.8], [-5.6, 36.0], [-9.6, 38.5], [-9.5, 43.2], [-5.5, 48.3], [1.5, 50.5], [4.1, 51.95]]
+          },
+          {
+            "style": "faded",
+            "label": "Cape detour",
+            "points": [[103.8, 1.3], [95, 5.5], [80.5, 5.8], [65, -10], [45, -30], [25, -36.5], [18.4, -35], [12, -22], [8, -8], [-5, 2], [-18, 14], [-17.5, 28], [-10, 38], [-9.5, 43.2], [-5.5, 48.3], [1.5, 50.5], [4.1, 51.95]]
+          }
+        ]
+      }
+    },
+    {
+      "line": 1,
+      "at": "Ever Eon",
+      "template": "list",
+      "props": {
+        "kicker": "First Evergreen ships back",
+        "items": [
+          {"label": "Ever Eon", "say": "Ever Eon"},
+          {"label": "Ever Edit", "say": "Ever Edit"}
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Ever Eon and Ever Edit",
+        "value": 16556,
+        "label": "TEU capacity per ship",
+        "source": "Linerlytica"
+      }
+    },
+    {
+      "line": 2,
+      "at": "Zim",
+      "template": "headline",
+      "props": {
+        "kicker": "Cape detour",
+        "title": "Zim increasingly alone in staying away",
+        "source": "Splash247"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "What changes",
+        "title": "Shorter transit times from Asia to Europe"
+      }
+    },
+    {
+      "line": 3,
+      "at": "bunch up",
+      "template": "takeaway",
+      "props": {
+        "kicker": "While carriers switch",
+        "text": "Arrivals tend to bunch up"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "For planners",
+        "items": [
+          {"label": "Lead times", "say": "lead times"},
+          {"label": "Safety stock", "say": "safety stock"},
+          {"label": "Inbound capacity", "say": "inbound warehouse capacity"}
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "do it now",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Review plans built on Cape routing now"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

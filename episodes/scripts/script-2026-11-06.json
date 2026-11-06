@@ -1,0 +1,329 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Suez Canal: Evergreen Returns, Lead Times Shift",
+  "week": "2026-W45",
+  "run_date": "2026-11-06",
+  "brief_file": "news-brief-daily-2026-11-06.md",
+  "target_runtime_sec": 321,
+  "word_count": 933,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-06-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "After almost three years of sailing around Africa, Evergreen is sending its big ships back through the Suez Canal."
+        },
+        {
+          "speaker": "M",
+          "text": "The Cape detour is ending, and your lead times are about to move. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-06-01",
+        "2026-11-06-02",
+        "2026-11-06-03",
+        "2026-11-06-04",
+        "L-002"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Friday the sixth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Evergreen back in Suez, Maersk raising its outlook again, a paper deal in Brussels, rail in Norway, and a guest piece on China exporting factories."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-06-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Taiwan's Evergreen is preparing to send its first ships through the Suez Canal in almost three years, according to the liner consultancy Linerlytica."
+        },
+        {
+          "speaker": "M",
+          "text": "Two big ones go first, the Ever Eon and the Ever Edit, each with room for about sixteen and a half thousand twenty-foot equivalent units, or T E U."
+        },
+        {
+          "speaker": "F",
+          "text": "Splash247 reports the long detour around southern Africa is coming to an end fast, and Zim is increasingly alone in keeping its ships away from the Red Sea."
+        },
+        {
+          "speaker": "M",
+          "text": "For Asia to Europe that means shorter transit times, which is good news once it settles, and messy while it doesn't."
+        },
+        {
+          "speaker": "F",
+          "text": "During the switch, ships on the short route catch up with ships still on the long one, so arrivals tend to bunch up at ports and at the warehouses behind them."
+        },
+        {
+          "speaker": "M",
+          "text": "Start with the lead-time parameters in your planning system. Most of them were set for Cape routing, and they'll be too long once the carriers switch."
+        },
+        {
+          "speaker": "F",
+          "text": "Then look at safety stock and inbound capacity at your distribution centres. Stock sized for a long voyage is more than you need on a shorter one, and the receiving dock needs room for the bunching."
+        },
+        {
+          "speaker": "M",
+          "text": "Do that review now, while the switch is still under way, rather than after the first early arrivals are sitting in your yard."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-06-02",
+        "2026-11-06-03",
+        "2026-11-06-04",
+        "2026-11-06-05"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Staying at sea, Maersk has raised its full year outlook for the third time this year."
+        },
+        {
+          "speaker": "F",
+          "text": "It now expects underlying operating earnings, or E B I T D A, of fourteen to fourteen and a half billion dollars, up from a range that started at ten and a half billion."
+        },
+        {
+          "speaker": "M",
+          "text": "Splash247 puts that down to extraordinary freight rates, resilient cargo demand and widespread supply chain disruption."
+        },
+        {
+          "speaker": "F",
+          "text": "The bellwether carrier is still earning on disruption, and that's the backdrop for twenty twenty-seven contract talks."
+        },
+        {
+          "speaker": "M",
+          "text": "Shippers hoping Suez will bring rates down in those talks should expect carriers who start from a strong position."
+        },
+        {
+          "speaker": "F",
+          "text": "In the Nordics, Finland's UPM and Sappi have offered the European Commission remedies to win approval for their graphic paper joint venture."
+        },
+        {
+          "speaker": "M",
+          "text": "The package includes capacity optimisation for some paper grades in Europe, commercial safeguards for customers, and investment in decarbonisation, electrification and energy efficiency."
+        },
+        {
+          "speaker": "F",
+          "text": "UPM calls the venture a response to the structural decline of European graphic paper, and says it would make cutting capacity more orderly."
+        },
+        {
+          "speaker": "M",
+          "text": "Capacity optimisation usually means mill closures and grades moving between mills. If you buy paper, map which grades and which mills your supply depends on before Brussels decides."
+        },
+        {
+          "speaker": "F",
+          "text": "In Norway, grocer Rema Distribusjon has dropped one-year renewals and signed a three-year rail deal with CargoNet that runs to twenty thirty."
+        },
+        {
+          "speaker": "M",
+          "text": "That's about thirty-four thousand T E U a year into Rema's regional warehouses, and with a multi-year deal, rail becomes a fixed design input, so replenishment can follow the timetable instead of spot truck capacity."
+        },
+        {
+          "speaker": "F",
+          "text": "Across Europe the trend runs the other way. Combined road and rail volumes fell one point two three percent in the third quarter, according to the International Union for Road-Rail Combined Transport, the U I R R."
+        },
+        {
+          "speaker": "M",
+          "text": "The sector blames infrastructure problems, higher track access charges and the weak economy, and sentiment for the next twelve months stays subdued."
+        },
+        {
+          "speaker": "F",
+          "text": "If your network design counts on moving volume to intermodal for cost or carbon, test that case against rising track charges and patchy infrastructure, and don't assume rail gets cheaper."
+        }
+      ]
+    },
+    {
+      "id": "listener_desk",
+      "type": "speech",
+      "items": [
+        "L-002"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Wolfgang Lehmacher, writing on the blog of the B V L, the German logistics association, argues China exports factories and know-how as well as goods, a second business model gaining weight."
+        },
+        {
+          "speaker": "F",
+          "text": "His example is Ford and CATL in Michigan. Ford runs the battery plant and says there's no joint venture, but uses Chinese battery technology under a limited licence and services agreement."
+        },
+        {
+          "speaker": "M",
+          "text": "Local production can replace imports, he writes, without bringing technological independence. A MERICS and Rhodium Group study found Chinese greenfield investment in the E U and U K rose fifty-one percent last year, to eight point nine billion euros."
+        },
+        {
+          "speaker": "F",
+          "text": "Newly announced projects fell, though, and exports stayed the main route in. He argues tariffs capture only part of this and don't replace an industrial strategy."
+        },
+        {
+          "speaker": "M",
+          "text": "What counts, he says, is whether critical inputs, processes and technical services can be replaced in a disruption, not only where a supplier sits."
+        },
+        {
+          "speaker": "F",
+          "text": "For planners, a risk review that only records country of origin misses the licence behind the part, and two suppliers on one licensed technology aren't real redundancy. Thanks, Wolfgang."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-06-06"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Into the quick hits, and a German survey by M H P and the Quadriga Hochschule Berlin finds Mittelstand firms willing to provide capacity in a crisis or defence case, but with big gaps in actual preparation."
+        },
+        {
+          "speaker": "F",
+          "text": "Logistics and transport firms showed the biggest I T security weaknesses, so crisis plans need a fallback for when a carrier's or a logistics provider's systems go dark."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-06-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Friday, and thanks for listening this week."
+        },
+        {
+          "speaker": "M",
+          "text": "Tomorrow it's the book of the week, and the full week in review is out on Sunday."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Evergreen Sends 16,556 TEU Ships Back Through Suez",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Evergreen's big ships are heading back through the Suez Canal."
+      },
+      {
+        "speaker": "M",
+        "text": "After almost three years of sailing around Africa to avoid the Red Sea, Taiwan's Evergreen is sending the Ever Eon and the Ever Edit back through Suez, according to Linerlytica."
+      },
+      {
+        "speaker": "F",
+        "text": "Each ship carries about sixteen and a half thousand twenty-foot containers, and Splash247 says the Cape detour is ending fast, with Zim increasingly alone in staying away."
+      },
+      {
+        "speaker": "M",
+        "text": "Shorter routes mean shorter transit times from Asia to Europe, and while carriers switch, arrivals tend to bunch up."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, review the lead times, safety stock and inbound warehouse capacity you built on Cape routing, and do it now."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Evergreen is sending its first ships through the Suez Canal in almost three years, the 16,556 TEU Ever Eon and Ever Edit, according to Linerlytica. Shorter Asia-Europe transits mean lead times, safety stock and inbound DC plans built on Cape routing need a review now. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "logistics",
+      "containershipping",
+      "suezcanal"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Evergreen is heading back through Suez, so lead times built on the Cape detour are about to be too long.\n\nTaiwan's Evergreen is preparing its first Suez transits in almost three years, starting with the 16,556 TEU Ever Eon and Ever Edit, according to Linerlytica. Splash247 reports the Cape detour is ending fast, with Zim increasingly alone in staying away.\n\nReview the lead-time parameters, safety stock and inbound DC capacity you set for Cape routing now. While carriers switch, arrivals tend to bunch up at ports and warehouses.\n\nAlso on today's desk:\nMaersk lifted its 2026 outlook for the third time, to underlying EBITDA of USD 14bn to 14.5bn.\nUPM and Sappi offered EU remedies, including capacity optimisation, for their graphic paper joint venture.\n\nThanks to Wolfgang Lehmacher for today's listener desk, from his BVL blog post on China exporting production capability.\n\nWhich lead times in your planning system still assume ships sail around the Cape?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #logistics #containershipping",
+    "tags": [
+      "BVL",
+      "Evergreen",
+      "Maersk"
+    ]
+  },
+  "show_notes": {
+    "summary": "Suez Canal return: Evergreen sends its first ships through Suez in almost three years as the Cape detour for Asia-Europe ends. Also: Maersk's third outlook raise, UPM and Sappi's EU remedies for their paper venture, Rema's rail deal with CargoNet, shrinking combined transport volumes and a German cyber readiness study. Listener desk: Wolfgang Lehmacher on China exporting production capability, from the BVL blog.",
+    "sources": [
+      {
+        "title": "Splash247: Evergreen's Suez return leaves Zim increasingly isolated",
+        "url": "https://splash247.com/evergreens-suez-return-leaves-zim-increasingly-isolated/"
+      },
+      {
+        "title": "Splash247: Maersk upgrades profit outlook despite underperforming rivals",
+        "url": "https://splash247.com/maersk-upgrades-profit-outlook-despite-underperforming-rivals/"
+      },
+      {
+        "title": "UPM: UPM and Sappi submit remedies in European Commission review of proposed graphic paper joint venture",
+        "url": "https://mfn.se/cis/a/upm-kymmene/upm-kymmene-oyj-upm-and-sappi-submit-remedies-in-european-commission-review-of-proposed-graphic-paper-joint-venture-660d8101"
+      },
+      {
+        "title": "MT Logistikk: Rema sikrer treårig jernbaneavtale",
+        "url": "https://www.mtlogistikk.no/cargonet-dagligvarelogistikk-jernbanetransport/rema-sikrer-trearig-jernbaneavtale/1355727"
+      },
+      {
+        "title": "VerkehrsRundschau: Kombinierter Verkehr verliert weiter an Volumen",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/kombinierter-verkehr-verliert-weiter-an-volumen-3931672"
+      },
+      {
+        "title": "BVL blog: Wolfgang Lehmacher, \"China exportiert zunehmend auch Produktionsfähigkeit\"",
+        "url": "https://lnkd.in/eN_5gUAU"
+      },
+      {
+        "title": "VerkehrsRundschau: Studie Logistik zeigt Schwächen bei IT-Sicherheit",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/studie-logistik-zeigt-schwaechen-bei-it-sicherheit-3931607"
+      }
+    ]
+  }
+}
