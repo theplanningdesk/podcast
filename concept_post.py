@@ -53,9 +53,9 @@ def cmd_text(stem: str) -> None:
     post = (c.get("post") or {}).get("linkedin", "").strip()
     if not post:
         raise SystemExit(f"No post.linkedin in concepts/{stem}.json")
-    links = [f"🎧 Spotify: {pod['spotify_url']}" if pod.get("spotify_url") else "",
-             f"🎧 Apple Podcasts: {pod['apple_url']}" if pod.get("apple_url") else "",
-             f"▶️ YouTube: {pod['youtube_url']}" if pod.get("youtube_url") else ""]
+    links = [f"Spotify: {pod['spotify_url']}" if pod.get("spotify_url") else "",
+             f"Apple Podcasts: {pod['apple_url']}" if pod.get("apple_url") else "",
+             f"YouTube: {pod['youtube_url']}" if pod.get("youtube_url") else ""]
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"{base(stem)}-linkedin.txt").write_text(post + "\n", encoding="utf-8")
     (OUT / f"{base(stem)}-linkedin-comment.txt").write_text(

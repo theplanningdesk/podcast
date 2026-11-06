@@ -61,11 +61,11 @@ def link_lines(stem: str, script: dict, pod: dict) -> list[str]:
     youtube = yt_file.read_text().strip() if yt_file.exists() else ""
     spotify, apple = pod.get("spotify_url", ""), pod.get("apple_url", "")
     if script.get("format") == "daily":
-        lines = [f"🎧 Spotify: {spotify}" if spotify else "", f"🎧 Apple Podcasts: {apple}" if apple else ""]
+        lines = [f"Spotify: {spotify}" if spotify else "", f"Apple Podcasts: {apple}" if apple else ""]
     else:
-        lines = [f"▶️ YouTube: {youtube}" if youtube else "", f"🎧 Spotify: {spotify}" if spotify else ""]
+        lines = [f"YouTube: {youtube}" if youtube else "", f"Spotify: {spotify}" if spotify else ""]
     lines = [l for l in lines if l]
-    return lines or [f"🎧 {page}"]
+    return lines or [f"Listen: {page}"]
 
 
 def with_links(text: str, links: list[str]) -> str:
