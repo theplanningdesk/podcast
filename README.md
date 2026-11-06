@@ -1,6 +1,6 @@
 # The Planning Desk: engagement scorecard
 
-Updated 2026-11-05. Numbers refresh every morning; the full data is in the CSV files on this branch.
+Updated 2026-11-06. Numbers refresh every morning; the full data is in the CSV files on this branch.
 
 OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
@@ -8,8 +8,8 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
 | Channel | Metric | Now |
 |---|---|---|
-| instagram | followers | 3 |
-| instagram | posts | 10 |
+| instagram | followers | 4 |
+| instagram | posts | 11 |
 | newsletter | last email | AI Agents in Planning, Suez Rates and the Rhine: Week 44 |
 | newsletter | last email clicks | 1 |
 | newsletter | last email deliveries | 2 |
@@ -18,11 +18,11 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 212 |
-| podcast | op3 downloads all episodes | 41 |
+| podcast | github mp3 fetches all episodes | 233 |
+| podcast | op3 downloads all episodes | 57 |
 | youtube | subscribers | 3 |
-| youtube | total views | 191 |
-| youtube | videos | 13 |
+| youtube | total views | 209 |
+| youtube | videos | 14 |
 | spotify (typed in 2026-10-30) | followers | 1 |
 | spotify (typed in 2026-10-30) | plays | 8 |
 | linkedin (typed in 2026-10-30) | followers | 3 |
@@ -37,14 +37,15 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 11 |  | 9 | 5 |
-| 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 21 |  | 19 | 6 |
-| 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 16 |  | 16 | 106 |
-| 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 24 |  | 34 | 16 |
+| 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 9 |  | 2 | 122 |
+| 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 23 |  | 10 | 20 |
+| 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 21 |  | 20 | 7 |
+| 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 16 |  | 16 | 107 |
+| 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 24 |  | 34 | 17 |
 | 2026-11-01 | weekly | Supply Chain News, Week 44: AI Agents, Suez Freight Rates, Rhine Low Water |  | 22 | 12 |  |  |
 | 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 16 | 5 | 19 | 13 |
-| 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 31 |  | 30 | 23 |
-| 2026-10-29 | daily | Thu 29 Oct: Lunar New Year Comes Early |  | 20 |  | 4 | 7 |
+| 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 31 |  | 31 | 23 |
+| 2026-10-29 | daily | Thu 29 Oct: Lunar New Year Comes Early |  | 20 |  | 4 | 9 |
 | 2026-10-28 | daily | Wed 28 Oct: Audi Builds Past the Tariff |  | 15 |  | 8 | 22 |
 | 2026-10-27 | daily | Tue 27 Oct: Who Signs Off on AI |  | 15 |  | 8 | 127 |
 | 2026-10-26 | daily | Mon 26 Oct: Bring's New Border Hub |  | 20 |  | 14 | 89 |
@@ -52,9 +53,9 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 ## Top podcast episodes so far
 
-1. Warehouse Network Design: Hitachi Energy Goes Big (daily, Wed): 21
-2. Tue 27 Oct: Who Signs Off on AI (daily, Tue): 15
-3. Wed 28 Oct: Audi Builds Past the Tariff (daily, Wed): 15
+1. BMW Q3 Results: China Deliveries Drop a Quarter (daily, Thu): 23
+2. Warehouse Network Design: Hitachi Energy Goes Big (daily, Wed): 18
+3. Tue 27 Oct: Who Signs Off on AI (daily, Tue): 15
 
 ## Source status
 
