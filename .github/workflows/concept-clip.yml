@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       stem:
-        description: "Concept file stem, e.g. 2026-11-10-production-scheduling"
+        description: "Concept file stem(s), space-separated, e.g. 2026-11-10-production-scheduling"
         required: true
       action:
         description: "render = render, attach to the release and schedule the Short; publish = post the Reel now"
@@ -63,12 +63,11 @@ jobs:
           echo "stems=$STEMS" >> "$GITHUB_OUTPUT"
           echo "Concepts: ${STEMS:-none}"
 
-      - name: Install ffmpeg and Python deps
+      # No apt: the renderer brings its own ffmpeg (npx remotion ffmpeg), and apt mirrors can hang.
+      - name: Install Python deps
         if: ${{ steps.pick.outputs.stems != '' }}
-        run: |
-          sudo apt-get update -qq -o Acquire::Retries=3
-          sudo apt-get install -y -qq --no-install-recommends ffmpeg
-          pip install -q -r requirements.txt google-api-python-client google-auth
+        timeout-minutes: 5
+        run: pip install -q requests google-api-python-client google-auth
 
       - uses: actions/setup-node@v4
         if: ${{ steps.pick.outputs.stems != '' }}
@@ -79,6 +78,7 @@ jobs:
 
       - name: Install the video renderer
         if: ${{ steps.pick.outputs.stems != '' }}
+        timeout-minutes: 10
         working-directory: video
         run: |
           npm ci --no-audit --no-fund
@@ -125,6 +125,10 @@ jobs:
       INPUT_STEM: ${{ inputs.stem }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install Python deps
+        timeout-minutes: 5
+        run: pip install -q requests
 
       - name: Find today's concept
         id: due

@@ -37,8 +37,9 @@ for (const [id, fmt, tag] of [['ConceptV', 'v', '9x16'], ['ConceptP', 'p', '4x5'
   const silent = `${base}.silent.mp4`;
   await renderMedia({composition, serveUrl, codec: 'h264', crf: 18, x264Preset: 'veryfast', outputLocation: silent, inputProps, browserExecutable, concurrency, muted: true});
   const tmp = `${base}.part.mp4`;
-  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', silent, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo',
-    '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '64k', '-shortest', '-movflags', '+faststart', tmp]);
+  // Remotion's bundled ffmpeg, so the workflow needs no apt install.
+  execFileSync('npx', ['remotion', 'ffmpeg', '-v', 'error', '-y', '-i', silent, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo',
+    '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '64k', '-shortest', '-movflags', '+faststart', tmp], {cwd: here, stdio: 'inherit'});
   fs.renameSync(tmp, `${base}.mp4`);
   fs.rmSync(silent);
   console.log(`${base}.mp4`);
