@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-05T09:50:01.468690+00:00",
+ "fetched_at": "2026-11-06T09:50:38.918919+00:00",
  "window_days": 8,
- "sources_ok": 66,
+ "sources_ok": 67,
  "sources_total": 72,
  "sources": [
   {
@@ -55,7 +55,7 @@
    "ok": false,
    "method": null,
    "items": 0,
-   "error": "https://www.supplychain247.com/: HTTPError: 403 Client Error: Forbidden for url: https://www.supplychain247.com/",
+   "error": "https://www.supplychain247.com/: ReadTimeout: HTTPSConnectionPool(host='www.supplychain247.com', port=443): Read timed out. (read timeout=25)",
    "lane": "logistics"
   },
   {
@@ -108,7 +108,7 @@
    "url": "https://www.logistik-journal.de/",
    "ok": true,
    "method": "feed https://www.logistik-journal.de/feed/",
-   "items": 3,
+   "items": 5,
    "error": null,
    "lane": "logistics"
   },
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 28,
+   "items": 32,
    "error": null,
    "lane": "logistics"
   },
@@ -180,7 +180,7 @@
    "url": "https://www.bme.de/news/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 5,
+   "items": 4,
    "error": null,
    "lane": "logistics"
   },
@@ -214,10 +214,10 @@
   {
    "source": "Xeneta",
    "url": "https://www.xeneta.com/news",
-   "ok": false,
+   "ok": true,
    "method": "feed https://www.xeneta.com/news/rss.xml",
-   "items": 0,
-   "error": "no article links after filtering",
+   "items": 1,
+   "error": null,
    "lane": "logistics"
   },
   {
@@ -288,7 +288,7 @@
    "url": "https://phys.org/rss-feed/science-news/economics-business/",
    "ok": true,
    "method": "feed https://phys.org/rss-feed/science-news/economics-business/",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "management"
   },
@@ -297,8 +297,8 @@
    "url": "https://idw-online.de/de/pressreleasesrss",
    "ok": true,
    "method": "feed https://idw-online.de/de/pressreleasesrss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "lane": "management"
   },
   {
@@ -342,7 +342,7 @@
    "url": "https://industriemagazin.at/rss.xml",
    "ok": true,
    "method": "feed https://industriemagazin.at/rss.xml",
-   "items": 4,
+   "items": 2,
    "error": null,
    "lane": "management"
   },
@@ -351,8 +351,8 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "lane": "management"
   },
   {
@@ -360,7 +360,7 @@
    "url": "https://via.tt.se/rss/releases/latest?publisherId=2732851",
    "ok": true,
    "method": "feed https://via.tt.se/rss/releases/latest?publisherId=2732851",
-   "items": 3,
+   "items": 2,
    "error": null,
    "lane": "management"
   },
@@ -378,8 +378,8 @@
    "url": "https://www.sttinfo.fi/rss/releases/latest",
    "ok": true,
    "method": "feed https://www.sttinfo.fi/rss/releases/latest",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 2,
+   "error": null,
    "lane": "management"
   },
   {
@@ -387,7 +387,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 7,
+   "items": 6,
    "error": null,
    "lane": "management"
   },
@@ -414,7 +414,7 @@
    "url": "https://mfn.se/all/a/atlas-copco.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/atlas-copco.rss",
-   "items": 3,
+   "items": 2,
    "error": null,
    "lane": "companies"
   },
@@ -450,7 +450,7 @@
    "url": "https://mfn.se/all/a/alfa-laval.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/alfa-laval.rss",
-   "items": 1,
+   "items": 2,
    "error": null,
    "lane": "companies"
   },
@@ -603,7 +603,7 @@
    "url": "https://mfn.se/all/a/upm-kymmene.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/upm-kymmene.rss",
-   "items": 4,
+   "items": 2,
    "error": null,
    "lane": "companies"
   },
@@ -621,8 +621,8 @@
    "url": "https://mfn.se/all/a/orkla.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/orkla.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
+   "items": 1,
+   "error": null,
    "lane": "companies"
   },
   {
@@ -639,8 +639,8 @@
    "url": "https://mfn.se/all/a/carlsberg.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/carlsberg.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
