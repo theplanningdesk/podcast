@@ -1,0 +1,562 @@
+{
+ "date": "2026-11-10",
+ "publish_local": "12:00",
+ "topic": "Production scheduling",
+ "series": "Planning concept",
+ "total": 900,
+ "endStart": 810,
+ "goodFrom": 436,
+ "cta": "New planning concept every Tue & Thu · Full show on Spotify, Apple & YouTube",
+ "viz": "gantt",
+ "model": {
+  "base": [
+   {
+    "kind": "job",
+    "id": 1,
+    "fam": "A",
+    "start": 0,
+    "dur": 8,
+    "due": 26,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 8,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 2,
+    "fam": "C",
+    "start": 9.5,
+    "dur": 7,
+    "due": 34,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 16.5,
+    "dur": 4.0
+   },
+   {
+    "kind": "job",
+    "id": 3,
+    "fam": "B",
+    "start": 20.5,
+    "dur": 6,
+    "due": 40,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 26.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 4,
+    "fam": "D",
+    "start": 28.0,
+    "dur": 8,
+    "due": 50,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 36.0,
+    "dur": 4.0
+   },
+   {
+    "kind": "job",
+    "id": 5,
+    "fam": "A",
+    "start": 40.0,
+    "dur": 7,
+    "due": 58,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 47.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 6,
+    "fam": "C",
+    "start": 48.5,
+    "dur": 6,
+    "due": 64,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 54.5,
+    "dur": 4.0
+   },
+   {
+    "kind": "job",
+    "id": 7,
+    "fam": "B",
+    "start": 58.5,
+    "dur": 8,
+    "due": 74,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 66.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 8,
+    "fam": "D",
+    "start": 68.0,
+    "dur": 7,
+    "due": 82,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 75.0,
+    "dur": 4.0
+   },
+   {
+    "kind": "job",
+    "id": 9,
+    "fam": "A",
+    "start": 79.0,
+    "dur": 6,
+    "due": 86,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 85.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 10,
+    "fam": "B",
+    "start": 86.5,
+    "dur": 7,
+    "due": 92,
+    "late": true
+   },
+   {
+    "kind": "co",
+    "start": 93.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 11,
+    "fam": "C",
+    "start": 95.0,
+    "dur": 8,
+    "due": 100,
+    "late": true
+   },
+   {
+    "kind": "co",
+    "start": 103.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 12,
+    "fam": "D",
+    "start": 104.5,
+    "dur": 8,
+    "due": 108,
+    "late": true
+   }
+  ],
+  "opt": [
+   {
+    "kind": "job",
+    "id": 1,
+    "fam": "A",
+    "start": 0,
+    "dur": 8,
+    "due": 26,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 8,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 3,
+    "fam": "B",
+    "start": 9.5,
+    "dur": 6,
+    "due": 40,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 15.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 6,
+    "fam": "C",
+    "start": 17.0,
+    "dur": 6,
+    "due": 64,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 2,
+    "fam": "C",
+    "start": 23.0,
+    "dur": 7,
+    "due": 34,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 30.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 8,
+    "fam": "D",
+    "start": 31.5,
+    "dur": 7,
+    "due": 82,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 4,
+    "fam": "D",
+    "start": 38.5,
+    "dur": 8,
+    "due": 50,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 46.5,
+    "dur": 4.0
+   },
+   {
+    "kind": "job",
+    "id": 5,
+    "fam": "A",
+    "start": 50.5,
+    "dur": 7,
+    "due": 58,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 9,
+    "fam": "A",
+    "start": 57.5,
+    "dur": 6,
+    "due": 86,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 63.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 7,
+    "fam": "B",
+    "start": 65.0,
+    "dur": 8,
+    "due": 74,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 10,
+    "fam": "B",
+    "start": 73.0,
+    "dur": 7,
+    "due": 92,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 80.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 11,
+    "fam": "C",
+    "start": 81.5,
+    "dur": 8,
+    "due": 100,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 89.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 12,
+    "fam": "D",
+    "start": 91.0,
+    "dur": 8,
+    "due": 108,
+    "late": false
+   }
+  ],
+  "rush": [
+   {
+    "kind": "job",
+    "id": 1,
+    "fam": "A",
+    "start": 0,
+    "dur": 8,
+    "due": 26,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 8,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 3,
+    "fam": "B",
+    "start": 9.5,
+    "dur": 6,
+    "due": 40,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 15.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 6,
+    "fam": "C",
+    "start": 17.0,
+    "dur": 6,
+    "due": 64,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 2,
+    "fam": "C",
+    "start": 23.0,
+    "dur": 7,
+    "due": 34,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 30.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 8,
+    "fam": "D",
+    "start": 31.5,
+    "dur": 7,
+    "due": 82,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 4,
+    "fam": "D",
+    "start": 38.5,
+    "dur": 8,
+    "due": 50,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 46.5,
+    "dur": 4.0
+   },
+   {
+    "kind": "job",
+    "id": 5,
+    "fam": "A",
+    "start": 50.5,
+    "dur": 7,
+    "due": 58,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 9,
+    "fam": "A",
+    "start": 57.5,
+    "dur": 6,
+    "due": 86,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 63.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 7,
+    "fam": "B",
+    "start": 65.0,
+    "dur": 8,
+    "due": 74,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 10,
+    "fam": "B",
+    "start": 73.0,
+    "dur": 7,
+    "due": 92,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 80.0,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 13,
+    "fam": "C",
+    "start": 81.5,
+    "dur": 6,
+    "due": 88,
+    "late": false
+   },
+   {
+    "kind": "job",
+    "id": 11,
+    "fam": "C",
+    "start": 87.5,
+    "dur": 8,
+    "due": 100,
+    "late": false
+   },
+   {
+    "kind": "co",
+    "start": 95.5,
+    "dur": 1.5
+   },
+   {
+    "kind": "job",
+    "id": 12,
+    "fam": "D",
+    "start": 97.0,
+    "dur": 8,
+    "due": 108,
+    "late": false
+   }
+  ],
+  "kpi": {
+   "chg": [
+    26.5,
+    13.0,
+    13.0
+   ],
+   "late": [
+    3,
+    0,
+    0
+   ]
+  }
+ },
+ "acts": [
+  {
+   "start": 0,
+   "head": "Sequenced by due date, the line spends 26.5 hours a week changing over.",
+   "sub": "Twelve orders, four product families. Three orders still ship late."
+  },
+  {
+   "start": 210,
+   "head": "Not every changeover costs the same.",
+   "sub": "Going light to dark takes 1.5 hours. Dark back to light needs a 4-hour clean."
+  },
+  {
+   "start": 420,
+   "head": "Run campaigns from light to dark.",
+   "sub": "Same orders, same due dates. Changeovers drop to 13 hours and nothing ships late."
+  },
+  {
+   "start": 630,
+   "head": "What if a rush order lands on Wednesday?",
+   "sub": "It slots into Thursday's C campaign. No extra changeover, still nothing late. By due date, four orders would slip."
+  }
+ ],
+ "endTitle": "Production scheduling",
+ "endTag": "Sequence for the cost of the switch, not just the due date.",
+ "footnote": "Illustrative model: one filling line, 12 orders, 4 product families, one week. Invented numbers.",
+ "kpis": [
+  {
+   "steps": [
+    [
+     40,
+     26.5
+    ],
+    [
+     436,
+     13
+    ],
+    [
+     660,
+     13
+    ]
+   ],
+   "label": "Changeover hours this week",
+   "decimals": 1
+  },
+  {
+   "steps": [
+    [
+     40,
+     3
+    ],
+    [
+     436,
+     0
+    ],
+    [
+     660,
+     0
+    ]
+   ],
+   "label": "Orders shipped late"
+  }
+ ],
+ "post": {
+  "linkedin": "A filling line loses 26.5 hours a week to changeovers. Sequencing the same orders differently halves that.\n\nIn this illustrative week, 12 orders run on one line in four product families, light to dark. Sequenced by due date, the line changes over 11 times, spends 26.5 hours doing it and still ships three orders late.\n\nThe fix is the cost of the switch. Light to dark takes 1.5 hours. Dark back to light needs a 4-hour clean. Run campaigns from light to dark and the same orders need 13 hours of changeovers, with nothing late. A rush order on Wednesday slots into Thursday's campaign without a single extra changeover.\n\nHow does your scheduler pick the sequence today: due date, habit or changeover cost?\n\nInvented numbers, real mechanics. A new planning concept every Tuesday and Thursday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify. Links in the first comment.\n\n#productionplanning #scheduling #supplychain #operations",
+  "short_title": "Same 12 Orders, Half the Changeover Hours | Production Scheduling",
+  "short_caption": "Sequenced by due date, this filling line spends 26.5 hours a week on changeovers and ships 3 orders late. Run light-to-dark campaigns and it's 13 hours, nothing late. Illustrative model, invented numbers. AI-generated.",
+  "hashtags": [
+   "productionplanning",
+   "scheduling",
+   "supplychain",
+   "manufacturing"
+  ]
+ }
+}

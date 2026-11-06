@@ -1,0 +1,153 @@
+name: Concept clip
+
+# "Planning concept" clips: 30 s silent motion graphics, Tuesdays and Thursdays at 12:00 Stockholm.
+# A concept is a file concepts/<YYYY-MM-DD>-<slug>.json, where the date is the publish day.
+#  - Pushing a concept file renders both cuts (9:16 Shorts/Reels, 4:5 LinkedIn) into the release
+#    concept-<stem>, with the LinkedIn post and first-comment text, and schedules the YouTube Short.
+#  - Just before 12:00 on publish days, the Reel is posted to Instagram at 12:00.
+#  - LinkedIn Page posting is manual: the dispatcher hands Jim the 4:5 clip and text in the morning.
+
+on:
+  push:
+    branches: [main]
+    paths: ["concepts/*.json"]
+  schedule:
+    # Tue and Thu at 10:40 and 11:40 Stockholm in winter (09:40 and 10:40 UTC); the job only goes on
+    # when it's the 11 o'clock hour in Stockholm, so one of the two covers summer time as well.
+    - cron: "40 9,10 * * 2,4"
+  workflow_dispatch:
+    inputs:
+      stem:
+        description: "Concept file stem, e.g. 2026-11-10-production-scheduling"
+        required: true
+      action:
+        description: "render = render, attach to the release and schedule the Short; publish = post the Reel now"
+        type: choice
+        options: [render, publish]
+        default: render
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.action == 'render') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    concurrency:
+      group: concept-render
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BEFORE_SHA: ${{ github.event.before }}
+      INPUT_STEM: ${{ inputs.stem }}
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pick the concepts
+        id: pick
+        run: |
+          if [ -n "$INPUT_STEM" ]; then
+            STEMS="$INPUT_STEM"
+          elif [ -n "$BEFORE_SHA" ] && ! echo "$BEFORE_SHA" | grep -qE '^0+$'; then
+            STEMS=$(git diff --name-only --diff-filter=AM "$BEFORE_SHA" HEAD -- 'concepts/*.json' | xargs -r -n1 basename | sed 's/\.json$//' | sort | tr '\n' ' ')
+          else
+            STEMS=$(ls concepts/*.json | xargs -n1 basename | sed 's/\.json$//' | sort | tr '\n' ' ')
+          fi
+          for s in $STEMS; do test -f "concepts/$s.json" || { echo "Not found: concepts/$s.json"; exit 1; }; done
+          echo "stems=$STEMS" >> "$GITHUB_OUTPUT"
+          echo "Concepts: ${STEMS:-none}"
+
+      - name: Install ffmpeg and Python deps
+        if: ${{ steps.pick.outputs.stems != '' }}
+        run: |
+          sudo apt-get update -qq -o Acquire::Retries=3
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg
+          pip install -q -r requirements.txt google-api-python-client google-auth
+
+      - uses: actions/setup-node@v4
+        if: ${{ steps.pick.outputs.stems != '' }}
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Install the video renderer
+        if: ${{ steps.pick.outputs.stems != '' }}
+        working-directory: video
+        run: |
+          npm ci --no-audit --no-fund
+          npx remotion browser ensure
+
+      - name: Render, attach and schedule
+        if: ${{ steps.pick.outputs.stems != '' }}
+        run: |
+          TODAY=$(TZ=Europe/Stockholm date +%F)
+          for STEM in ${{ steps.pick.outputs.stems }}; do
+            echo "::group::$STEM"
+            B="build/out/planning-desk-concept-$STEM"
+            (cd video && node render-concept.mjs --stem "$STEM" --concurrency 4)
+            python concept_post.py text "$STEM"
+            TAG="concept-$STEM"
+            TITLE="Planning concept: $(python -c "import json,sys;print(json.load(open(sys.argv[1]))['topic'])" "concepts/$STEM.json") (${STEM:0:10})"
+            FILES="$B-9x16.mp4 $B-4x5.mp4 $B-linkedin.txt $B-linkedin-comment.txt"
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              gh release upload "$TAG" $FILES --clobber
+            else
+              gh release create "$TAG" $FILES --title "$TITLE" --notes "Rendered from concepts/$STEM.json" --latest=false
+            fi
+            # One YouTube upload per concept: skip if the release already has a link, the day has passed, or it's a test.
+            HAS_YT=$(gh release view "$TAG" --json assets -q '.assets[].name' | grep -c '\.youtube\.txt$' || true)
+            case "$STEM" in *-test) TEST=1;; *) TEST=0;; esac
+            if [ -n "$YOUTUBE_REFRESH_TOKEN" ] && [ "$HAS_YT" = "0" ] && [ "$TEST" = "0" ] && [[ ! "${STEM:0:10}" < "$TODAY" ]]; then
+              python concept_post.py youtube "$STEM" && gh release upload "$TAG" "$B.youtube.txt" --clobber || echo "::warning::YouTube upload failed for $STEM"
+            fi
+            echo "::endgroup::"
+          done
+
+  publish:
+    if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.action == 'publish') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    concurrency:
+      group: concept-publish
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+      INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+      INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+      INPUT_STEM: ${{ inputs.stem }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find today's concept
+        id: due
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            H=$(TZ=Europe/Stockholm date +%H)
+            [ "$H" = "11" ] || { echo "Stockholm hour is $H, not the 11 o'clock run; nothing to do."; exit 0; }
+            STEMS=$(python concept_post.py due | tr '\n' ' ')
+          else
+            STEMS="$INPUT_STEM"
+          fi
+          echo "stems=$STEMS" >> "$GITHUB_OUTPUT"
+          echo "Due: ${STEMS:-none}"
+
+      - name: Post the Reel to Instagram at 12:00
+        if: ${{ steps.due.outputs.stems != '' && env.INSTAGRAM_TOKEN != '' }}
+        run: |
+          for STEM in ${{ steps.due.outputs.stems }}; do
+            case "$STEM" in *-test) echo "Skipping test concept $STEM"; continue;; esac
+            gh release view "concept-$STEM" >/dev/null 2>&1 || { echo "::error::No release concept-$STEM; was the concept rendered?"; exit 1; }
+            if gh release view "concept-$STEM" --json assets -q '.assets[].name' | grep -q '\.instagram\.txt$'; then
+              echo "Already on Instagram: $STEM"; continue
+            fi
+            python concept_post.py instagram "$STEM"
+            gh release upload "concept-$STEM" "build/out/planning-desk-concept-$STEM.instagram.txt" --clobber
+          done

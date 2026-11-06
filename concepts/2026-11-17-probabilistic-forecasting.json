@@ -1,0 +1,155 @@
+{
+ "date": "2026-11-17",
+ "publish_local": "12:00",
+ "topic": "Probabilistic forecasting",
+ "series": "Planning concept",
+ "total": 900,
+ "endStart": 810,
+ "goodFrom": 436,
+ "cta": "New planning concept every Tue & Thu · Full show on Spotify, Apple & YouTube",
+ "viz": "fan",
+ "model": {
+  "A": [
+   1008,
+   1100,
+   925,
+   1079,
+   979,
+   979,
+   1152,
+   1013,
+   997,
+   1058,
+   1090,
+   998,
+   1047,
+   922,
+   971,
+   965,
+   893,
+   879,
+   870,
+   981
+  ],
+  "B": [
+   940,
+   888,
+   1024,
+   533,
+   972,
+   1083,
+   1263,
+   704,
+   860,
+   295,
+   824,
+   231,
+   503,
+   1386,
+   229,
+   1279,
+   1115,
+   891,
+   1161,
+   1185
+  ],
+  "B2": [
+   600,
+   600,
+   600,
+   2200,
+   600,
+   600,
+   600,
+   2200,
+   600,
+   600,
+   600,
+   2200,
+   600,
+   600,
+   600,
+   2200,
+   600,
+   600,
+   600,
+   2200
+  ],
+  "ssA": 285,
+  "ssB": 1245,
+  "ssB2": 2465
+ },
+ "acts": [
+  {
+   "start": 0,
+   "head": "Two items. Same forecast: 1,000 a week.",
+   "sub": "One sells 1,000 give or take 80. The other swings by 350. A single-number forecast can't tell them apart."
+  },
+  {
+   "start": 210,
+   "head": "Forecast the range, not just the number.",
+   "sub": "The bands show where 80% of weeks will land. Item B's band is four times wider than A's."
+  },
+  {
+   "start": 420,
+   "head": "Set each item's stock from its own range.",
+   "sub": "A needs 285 units of safety stock, B needs 1,245. Total stock falls 24% and B stays in stock 98% of weeks."
+  },
+  {
+   "start": 630,
+   "head": "What if B's biggest customer starts ordering monthly?",
+   "sub": "The average stays at 1,000, so the point forecast doesn't move. The range doubles, and B's stock follows to 2,465 units."
+  }
+ ],
+ "endTitle": "Probabilistic forecasting",
+ "endTag": "The average tells you what to expect. The range tells you what to stock.",
+ "footnote": "Illustrative model: two items, weekly review, 2-week lead time, 98% service target. Invented numbers.",
+ "kpis": [
+  {
+   "steps": [
+    [
+     40,
+     2000
+    ],
+    [
+     436,
+     1530
+    ],
+    [
+     660,
+     2750
+    ]
+   ],
+   "label": "Safety stock, units"
+  },
+  {
+   "steps": [
+    [
+     40,
+     95
+    ],
+    [
+     436,
+     98
+    ],
+    [
+     660,
+     98
+    ]
+   ],
+   "label": "Item B in stock, % of weeks",
+   "suffix": "%"
+  }
+ ],
+ "post": {
+  "linkedin": "Two items, both forecast at 1,000 a week. One needs 285 units of safety stock, the other 1,245.\n\nA single-number forecast can't tell them apart. Item A sells 1,000 give or take 80. Item B swings by 350. Give both a week of cover and you overstock A while B runs out one week in twenty.\n\nForecast the range instead, and set each item's stock from its own range. Total safety stock falls 24% and B stays in stock 98% of weeks.\n\nNow B's biggest customer moves to monthly orders. The average doesn't move, so the point forecast doesn't either. The range doubles, and B's stock follows to 2,465 units.\n\nWhich of your items look identical in the forecast but behave nothing alike?\n\nInvented numbers, real mechanics. A new planning concept every Tuesday and Thursday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify. Links in the first comment.\n\n#demandplanning #forecasting #inventory #supplychain",
+  "short_title": "Same Forecast, Very Different Risk | Probabilistic Forecasting",
+  "short_caption": "Two items, both forecast at 1,000 a week. One needs 285 units of safety stock, the other 1,245. Forecast the range, not just the number. Illustrative model, invented numbers. AI-generated.",
+  "hashtags": [
+   "demandplanning",
+   "forecasting",
+   "inventory",
+   "supplychain"
+  ]
+ }
+}

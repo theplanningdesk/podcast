@@ -1,0 +1,416 @@
+{
+ "date": "2026-11-12",
+ "publish_local": "12:00",
+ "topic": "Network design",
+ "series": "Planning concept",
+ "total": 900,
+ "endStart": 810,
+ "goodFrom": 436,
+ "cta": "New planning concept every Tue & Thu · Full show on Spotify, Apple & YouTube",
+ "viz": "network",
+ "model": {
+  "cities": {
+   "Stockholm": [
+    59.33,
+    18.07,
+    10
+   ],
+   "Gothenburg": [
+    57.71,
+    11.97,
+    6
+   ],
+   "Malmö": [
+    55.6,
+    13.0,
+    5
+   ],
+   "Uppsala": [
+    59.86,
+    17.64,
+    2
+   ],
+   "Västerås": [
+    59.61,
+    16.55,
+    1.5
+   ],
+   "Örebro": [
+    59.27,
+    15.21,
+    1.5
+   ],
+   "Linköping": [
+    58.41,
+    15.62,
+    1.5
+   ],
+   "Jönköping": [
+    57.78,
+    14.16,
+    1.5
+   ],
+   "Norrköping": [
+    58.59,
+    16.19,
+    1.3
+   ],
+   "Umeå": [
+    63.83,
+    20.26,
+    1.2
+   ],
+   "Sundsvall": [
+    62.39,
+    17.31,
+    1
+   ],
+   "Luleå": [
+    65.58,
+    22.15,
+    1
+   ],
+   "Gävle": [
+    60.67,
+    17.14,
+    1
+   ],
+   "Karlstad": [
+    59.38,
+    13.5,
+    1
+   ],
+   "Växjö": [
+    56.88,
+    14.81,
+    0.9
+   ],
+   "Helsingborg": [
+    56.05,
+    12.69,
+    1.4
+   ],
+   "Oslo": [
+    59.91,
+    10.75,
+    7
+   ],
+   "Bergen": [
+    60.39,
+    5.32,
+    3
+   ],
+   "Trondheim": [
+    63.43,
+    10.39,
+    2
+   ],
+   "Stavanger": [
+    58.97,
+    5.73,
+    2
+   ],
+   "Kristiansand": [
+    58.15,
+    8.0,
+    1
+   ],
+   "Drammen": [
+    59.74,
+    10.2,
+    1
+   ],
+   "Tromsø": [
+    69.65,
+    18.96,
+    0.8
+   ],
+   "Helsinki": [
+    60.17,
+    24.94,
+    8
+   ],
+   "Tampere": [
+    61.5,
+    23.76,
+    2.5
+   ],
+   "Turku": [
+    60.45,
+    22.27,
+    2
+   ],
+   "Oulu": [
+    65.01,
+    25.47,
+    1.5
+   ],
+   "Jyväskylä": [
+    62.24,
+    25.75,
+    1.2
+   ],
+   "Kuopio": [
+    62.89,
+    27.68,
+    1
+   ],
+   "Copenhagen": [
+    55.68,
+    12.57,
+    8
+   ],
+   "Aarhus": [
+    56.16,
+    10.2,
+    3
+   ],
+   "Odense": [
+    55.4,
+    10.39,
+    2
+   ],
+   "Aalborg": [
+    57.05,
+    9.92,
+    1.5
+   ]
+  },
+  "cand": [
+   "Malmö",
+   "Gothenburg",
+   "Jönköping",
+   "Stockholm",
+   "Oslo",
+   "Helsinki",
+   "Copenhagen",
+   "Örebro"
+  ],
+  "states": {
+   "today": {
+    "sites": [
+     "Malmö",
+     "Gothenburg",
+     "Stockholm",
+     "Oslo",
+     "Helsinki"
+    ],
+    "assign": {
+     "Stockholm": "Stockholm",
+     "Gothenburg": "Gothenburg",
+     "Malmö": "Malmö",
+     "Uppsala": "Stockholm",
+     "Västerås": "Stockholm",
+     "Örebro": "Stockholm",
+     "Linköping": "Stockholm",
+     "Jönköping": "Gothenburg",
+     "Norrköping": "Stockholm",
+     "Umeå": "Stockholm",
+     "Sundsvall": "Stockholm",
+     "Luleå": "Stockholm",
+     "Gävle": "Stockholm",
+     "Karlstad": "Oslo",
+     "Växjö": "Malmö",
+     "Helsingborg": "Malmö",
+     "Oslo": "Oslo",
+     "Bergen": "Oslo",
+     "Trondheim": "Oslo",
+     "Stavanger": "Oslo",
+     "Kristiansand": "Gothenburg",
+     "Drammen": "Oslo",
+     "Tromsø": "Stockholm",
+     "Helsinki": "Helsinki",
+     "Tampere": "Helsinki",
+     "Turku": "Helsinki",
+     "Oulu": "Helsinki",
+     "Jyväskylä": "Helsinki",
+     "Kuopio": "Helsinki",
+     "Copenhagen": "Malmö",
+     "Aarhus": "Malmö",
+     "Odense": "Malmö",
+     "Aalborg": "Gothenburg"
+    },
+    "total": 25.26
+   },
+   "opt": {
+    "sites": [
+     "Gothenburg",
+     "Stockholm",
+     "Helsinki"
+    ],
+    "assign": {
+     "Stockholm": "Stockholm",
+     "Gothenburg": "Gothenburg",
+     "Malmö": "Gothenburg",
+     "Uppsala": "Stockholm",
+     "Västerås": "Stockholm",
+     "Örebro": "Stockholm",
+     "Linköping": "Stockholm",
+     "Jönköping": "Gothenburg",
+     "Norrköping": "Stockholm",
+     "Umeå": "Stockholm",
+     "Sundsvall": "Stockholm",
+     "Luleå": "Stockholm",
+     "Gävle": "Stockholm",
+     "Karlstad": "Gothenburg",
+     "Växjö": "Gothenburg",
+     "Helsingborg": "Gothenburg",
+     "Oslo": "Gothenburg",
+     "Bergen": "Gothenburg",
+     "Trondheim": "Stockholm",
+     "Stavanger": "Gothenburg",
+     "Kristiansand": "Gothenburg",
+     "Drammen": "Gothenburg",
+     "Tromsø": "Stockholm",
+     "Helsinki": "Helsinki",
+     "Tampere": "Helsinki",
+     "Turku": "Helsinki",
+     "Oulu": "Helsinki",
+     "Jyväskylä": "Helsinki",
+     "Kuopio": "Helsinki",
+     "Copenhagen": "Gothenburg",
+     "Aarhus": "Gothenburg",
+     "Odense": "Gothenburg",
+     "Aalborg": "Gothenburg"
+    },
+    "total": 22.8
+   },
+   "fuel": {
+    "sites": [
+     "Stockholm",
+     "Oslo",
+     "Helsinki",
+     "Copenhagen"
+    ],
+    "assign": {
+     "Stockholm": "Stockholm",
+     "Gothenburg": "Copenhagen",
+     "Malmö": "Copenhagen",
+     "Uppsala": "Stockholm",
+     "Västerås": "Stockholm",
+     "Örebro": "Stockholm",
+     "Linköping": "Stockholm",
+     "Jönköping": "Copenhagen",
+     "Norrköping": "Stockholm",
+     "Umeå": "Stockholm",
+     "Sundsvall": "Stockholm",
+     "Luleå": "Stockholm",
+     "Gävle": "Stockholm",
+     "Karlstad": "Oslo",
+     "Växjö": "Copenhagen",
+     "Helsingborg": "Copenhagen",
+     "Oslo": "Oslo",
+     "Bergen": "Oslo",
+     "Trondheim": "Oslo",
+     "Stavanger": "Oslo",
+     "Kristiansand": "Oslo",
+     "Drammen": "Oslo",
+     "Tromsø": "Stockholm",
+     "Helsinki": "Helsinki",
+     "Tampere": "Helsinki",
+     "Turku": "Helsinki",
+     "Oulu": "Helsinki",
+     "Jyväskylä": "Helsinki",
+     "Kuopio": "Helsinki",
+     "Copenhagen": "Copenhagen",
+     "Aarhus": "Copenhagen",
+     "Odense": "Copenhagen",
+     "Aalborg": "Copenhagen"
+    },
+    "total": 25.15
+   }
+  },
+  "curve": [
+   27.06,
+   23.29,
+   22.8,
+   23.0,
+   25.12,
+   27.92
+  ],
+  "curveFuel": [
+   33.55,
+   27.53,
+   25.87,
+   25.15,
+   26.97,
+   29.68
+  ],
+  "todayFuel": 27.15
+ },
+ "acts": [
+  {
+   "start": 0,
+   "head": "Five DCs, added one acquisition at a time.",
+   "sub": "Nobody designed this network. It costs €25.3M a year to run."
+  },
+  {
+   "start": 210,
+   "head": "Every DC trades kilometres against rent and stock.",
+   "sub": "Fewer sites cut fixed cost and inventory. More sites cut transport. Total cost bottoms out in between."
+  },
+  {
+   "start": 420,
+   "head": "Three DCs serve the Nordics for €2.5M less.",
+   "sub": "Gothenburg, Stockholm and Helsinki. Malmö and Oslo customers move to the nearest remaining site."
+  },
+  {
+   "start": 630,
+   "head": "What if transport costs rise 30%?",
+   "sub": "The best answer moves to four DCs: Stockholm, Oslo, Helsinki and Copenhagen. Still €2.0M below today's network."
+  }
+ ],
+ "endTitle": "Network design",
+ "endTag": "Let the cost curve pick the number of DCs, not history.",
+ "footnote": "Illustrative model: 33 Nordic customer cities, 8 candidate DC sites, annual cost. Invented numbers.",
+ "kpis": [
+  {
+   "steps": [
+    [
+     40,
+     25.3
+    ],
+    [
+     436,
+     22.8
+    ],
+    [
+     660,
+     25.2
+    ]
+   ],
+   "label": "Network cost a year",
+   "decimals": 1,
+   "prefix": "€",
+   "suffix": "M"
+  },
+  {
+   "steps": [
+    [
+     40,
+     5
+    ],
+    [
+     436,
+     3
+    ],
+    [
+     660,
+     4
+    ]
+   ],
+   "label": "Distribution centres"
+  }
+ ],
+ "post": {
+  "linkedin": "Five DCs, added one acquisition at a time, cost €25.3M a year. Three would do the job for €2.5M less.\n\nIn this illustrative Nordic network, 33 customer cities are served from Malmö, Gothenburg, Stockholm, Oslo and Helsinki. Every DC trades kilometres against rent and stock. Fewer sites cut fixed cost and inventory, more sites cut transport, and total cost bottoms out at three: Gothenburg, Stockholm and Helsinki.\n\nThen raise transport costs 30%. The best answer moves to four DCs, and a different four: Stockholm, Oslo, Helsinki and Copenhagen. The right number of sites depends on prices you don't control.\n\nWhen did your company last check whether today's DC count is still the cheapest one?\n\nInvented numbers, real mechanics. A new planning concept every Tuesday and Thursday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify. Links in the first comment.\n\n#networkdesign #supplychain #logistics #nordics",
+  "short_title": "How Many DCs Does a Nordic Network Need? | Network Design",
+  "short_caption": "Five DCs cost this illustrative Nordic network €25.3M a year. Three cost €2.5M less. Raise transport costs 30% and the answer moves to four. Invented numbers. AI-generated.",
+  "hashtags": [
+   "networkdesign",
+   "supplychain",
+   "logistics",
+   "warehousing"
+  ]
+ }
+}

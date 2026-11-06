@@ -1,0 +1,114 @@
+{
+ "date": "2026-11-19",
+ "publish_local": "12:00",
+ "topic": "Service & inventory optimization",
+ "series": "Planning concept",
+ "total": 900,
+ "endStart": 810,
+ "goodFrom": 436,
+ "cta": "New planning concept every Tue & Thu · Full show on Spotify, Apple & YouTube",
+ "viz": "echelon",
+ "model": {
+  "nodes": [
+   "Malmö",
+   "Gothenburg",
+   "Stockholm",
+   "Umeå"
+  ],
+  "central": "Jönköping",
+  "today": {
+   "fast": 0.5,
+   "slow": 0.4,
+   "cbuf": 1.2,
+   "cslow": 0
+  },
+  "opt": {
+   "fast": 0.5,
+   "slow": 0,
+   "cbuf": 0.9,
+   "cslow": 0.8
+  },
+  "twice": {
+   "fast": 0.75,
+   "slow": 0,
+   "cbuf": 0.9,
+   "cslow": 0.8
+  }
+ },
+ "acts": [
+  {
+   "start": 0,
+   "head": "Every warehouse buffers for itself.",
+   "sub": "Four local sites and a central DC each hold safety stock for a 97% fill rate. Total: €4.8M."
+  },
+  {
+   "start": 210,
+   "head": "Slow movers are where the stock hides.",
+   "sub": "They're 80% of items but 20% of sales. Spread over four sites, each needs its own buffer: €1.6M in all."
+  },
+  {
+   "start": 420,
+   "head": "Pool slow movers centrally. Keep fast movers close.",
+   "sub": "Same 97% fill rate with €1.1M less stock. Slow movers ship next day from the central DC."
+  },
+  {
+   "start": 630,
+   "head": "What if local trucks run twice a week, not daily?",
+   "sub": "Local buffers grow by half. Optimized, the network needs €4.7M. Today's setup would need €6.6M."
+  }
+ ],
+ "endTitle": "Service & inventory optimization",
+ "endTag": "Decide where stock sits, not just how much.",
+ "footnote": "Illustrative model: one central DC, four local warehouses, 97% fill rate. Invented numbers.",
+ "kpis": [
+  {
+   "steps": [
+    [
+     40,
+     4.8
+    ],
+    [
+     436,
+     3.7
+    ],
+    [
+     660,
+     4.7
+    ]
+   ],
+   "label": "Total safety stock",
+   "decimals": 1,
+   "prefix": "€",
+   "suffix": "M"
+  },
+  {
+   "steps": [
+    [
+     40,
+     75
+    ],
+    [
+     436,
+     54
+    ],
+    [
+     660,
+     64
+    ]
+   ],
+   "label": "Held in local warehouses",
+   "suffix": "%"
+  }
+ ],
+ "post": {
+  "linkedin": "Four local warehouses and a central DC, each buffering for itself, hold €4.8M of safety stock. Deciding where the stock sits cuts that to €3.7M at the same fill rate.\n\nSlow movers are 80% of items but 20% of sales. Spread over four sites, each warehouse needs its own buffer for them, €1.6M in this illustrative network. Pool them centrally, ship them next day, and keep fast movers close to customers. Same 97% fill rate, €1.1M less stock.\n\nThen cut local trucks from daily to twice a week. Local buffers grow by half. Optimized, the network needs €4.7M. Today's setup would need €6.6M.\n\nWhere does your safety stock sit today, and who decided?\n\nInvented numbers, real mechanics. A new planning concept every Tuesday and Thursday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify. Links in the first comment.\n\n#inventoryoptimization #supplychain #inventory #operations",
+  "short_title": "Same Service, €1.1M Less Stock | Inventory Optimization",
+  "short_caption": "Four local warehouses each buffering for themselves hold €4.8M of safety stock. Pool slow movers centrally and it's €3.7M at the same 97% fill rate. Illustrative model, invented numbers. AI-generated.",
+  "hashtags": [
+   "inventoryoptimization",
+   "supplychain",
+   "inventory",
+   "warehousing"
+  ]
+ }
+}
