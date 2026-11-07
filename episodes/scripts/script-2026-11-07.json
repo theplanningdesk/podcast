@@ -1,0 +1,177 @@
+{
+  "show": "The Planning Desk",
+  "format": "saturday",
+  "episode_title": "The Signal and the Noise by Silver",
+  "week": "2026-W45",
+  "run_date": "2026-11-07",
+  "target_runtime_sec": 497,
+  "word_count": 1460,
+  "book": {
+    "key": "signal",
+    "title": "The Signal and the Noise",
+    "author": "Nate Silver",
+    "year": 2012,
+    "edition": "Penguin paperback with a new introduction, 2015"
+  },
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "N": {
+      "name": "Narrator"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "book_intro",
+      "type": "speech",
+      "lines": [
+        {"speaker": "F", "text": "It's Saturday, the seventh of November. I'm Anna, and this is the book of the week on The Planning Desk."},
+        {"speaker": "F", "text": "Quick note, this show is made with A I. A I agents research the book, and the voices are synthetic."},
+        {"speaker": "F", "text": "Today it's The Signal and the Noise, by Nate Silver, a popular book on forecasting first published in twenty twelve. Here's our narrator."}
+      ]
+    },
+    {
+      "id": "book_open",
+      "type": "speech",
+      "lines": [
+        {"speaker": "N", "text": "We have more data than ever, and most forecasts aren't getting much better, because more data also means more noise to mistake for a pattern."},
+        {"speaker": "N", "text": "The forecasters who do improve share a few plain habits, and planners can copy every one of them."}
+      ]
+    },
+    {
+      "id": "book_context",
+      "type": "speech",
+      "lines": [
+        {"speaker": "N", "text": "The Signal and the Noise is a book of case studies about prediction. Each chapter takes one field, from baseball and elections to weather, earthquakes, poker and the economy, and asks why its forecasts work or fail."},
+        {"speaker": "N", "text": "Nate Silver is a statistician. He built a system for forecasting the performance of baseball players, and for a few years made most of his living playing online poker."},
+        {"speaker": "N", "text": "In two thousand eight he started the election blog FiveThirtyEight. That year his model called forty-nine of the fifty states in the American presidential race."},
+        {"speaker": "N", "text": "The book came out in September twenty twelve, and weeks later his model called all fifty states. Sales jumped after election night, and Amazon named it the best nonfiction book of the year."},
+        {"speaker": "N", "text": "In Britain it carries the subtitle The Art and Science of Prediction, and the German edition is called Die Berechnung der Zukunft."},
+        {"speaker": "N", "text": "It's a long book, but it needs no maths beyond a little probability. Each chapter stands on its own, so it reads well in pieces."}
+      ]
+    },
+    {
+      "id": "big_ideas",
+      "type": "speech",
+      "lines": [
+        {"speaker": "N", "text": "The first big idea is that the worst forecasts are often the most precise ones. Silver opens with the financial crisis of two thousand eight."},
+        {"speaker": "N", "text": "Rating agencies gave their top triple A rating to bundles of mortgage debt. Standard and Poor's put the chance of default at about one in eight hundred and fifty."},
+        {"speaker": "N", "text": "In the end about twenty-eight percent of those securities defaulted, roughly two hundred times the forecast."},
+        {"speaker": "N", "text": "The maths wasn't the weak point. The weak point was an assumption, that housing markets in different regions wouldn't all fall at the same time."},
+        {"speaker": "N", "text": "In planning terms, a forecast with decimals tells you nothing about the assumption underneath it. A network plan built on one demand number, with no range around it, makes the same bet on a smaller scale."},
+        {"speaker": "N", "text": "The second idea is about people. Silver draws on the psychologist Philip Tetlock, who tracked the forecasts of political experts over many years."},
+        {"speaker": "N", "text": "Tetlock sorted them with an old image from the philosopher Isaiah Berlin. Hedgehogs know one big thing and fit every event to it, and foxes know many small things and mix them case by case."},
+        {"speaker": "N", "text": "The foxes made the better forecasts. Hedgehogs did little better than chance, but they made better television, because certainty sounds good on air."},
+        {"speaker": "N", "text": "Silver ran his own test. He went through almost a thousand predictions made by pundits on the American talk show The McLaughlin Group, and they were right about half the time."},
+        {"speaker": "N", "text": "The fox habits are simple. Take evidence from many sources, give ranges and probabilities instead of single numbers, and change the forecast when the facts change, without embarrassment."},
+        {"speaker": "N", "text": "For planners the warning is about process. A monthly review that wants one number and punishes revisions rewards hedgehogs, and slowly trains the updating out of a team."},
+        {"speaker": "N", "text": "The third idea is overfitting, the book's main technical warning. Give a model enough moving parts and it can match the past almost perfectly, by learning its noise."},
+        {"speaker": "N", "text": "Then it fails on the future, because the noise doesn't repeat. Silver's clearest case is earthquakes, where models that fit past records well had little power to predict the next big quake."},
+        {"speaker": "N", "text": "He also asks a question most teams skip. Is this a field rich in signal, like weather, or one where noise dominates, like earthquakes and much of the economy?"},
+        {"speaker": "N", "text": "A planning example is a demand model that explains last year's weekly sales almost perfectly, promotions, holidays, weather and all. That's often a warning sign rather than a success."},
+        {"speaker": "N", "text": "The fix is unglamorous. Hold back a stretch of history the model never saw, judge it only there, and keep the simpler model unless the complex one wins that test."},
+        {"speaker": "N", "text": "The fourth idea comes from the book's success story, weather forecasting. Three days out, the average miss on where a hurricane would hit fell from about three hundred and fifty miles to about one hundred in roughly twenty-five years."},
+        {"speaker": "N", "text": "Better physics and faster computers helped, and so did forecasters who know where the models go wrong. Above all, weather forecasts are checked against reality every day, in public."},
+        {"speaker": "N", "text": "Silver also finds a twist. Some T V forecasters say twenty percent chance of rain when their real estimate is closer to five, because viewers forgive a false alarm more easily than a soaked picnic."},
+        {"speaker": "N", "text": "The test he uses is calibration. Of all the days you called seventy percent likely, did it rain on about seventy percent of them?"},
+        {"speaker": "N", "text": "Behind all this sits the book's method, Bayes' theorem. Start with what you believe, weigh new evidence by how much it should really move you, and update, so today's answer becomes tomorrow's starting point."},
+        {"speaker": "N", "text": "His best known example is a mammogram. For a woman in her forties, a positive result still means only about a ten percent chance of cancer, because the disease is rare and false alarms are common."},
+        {"speaker": "N", "text": "Planners meet the same arithmetic in exception alerts. An alert that's usually right, watching for an event that's rare, will still produce mostly false alarms."},
+        {"speaker": "N", "text": "So score the forecast, not only the outcome. Track bias and calibration, check whether each manual override beat the statistical forecast it replaced, and judge old misses by what was known at the time."}
+      ]
+    },
+    {
+      "id": "for_planners",
+      "type": "speech",
+      "lines": [
+        {"speaker": "N", "text": "Why does a book about elections and baseball matter to planners now? Demand planning is a forecasting job with daily feedback, and this book is about using that feedback well."},
+        {"speaker": "N", "text": "Its strongest lessons still hold. Give ranges instead of single numbers, measure calibration, test models on data they haven't seen, and treat a revision as the method working rather than failing."},
+        {"speaker": "N", "text": "Those lessons matter more as A I forecasting tools arrive. A model with thousands of inputs can overfit faster than any spreadsheet, and only an honest holdout test shows whether it learned anything."},
+        {"speaker": "N", "text": "Where it has dated is the material. The examples are American and mostly from before twenty twelve, and modern machine learning, the kind planners now meet in their tools, barely appears."},
+        {"speaker": "N", "text": "Fair critics have pushed back too. The economist Paul Ormerod, reviewing it in Nature, liked the case for Bayes but said Silver doesn't show how a Bayesian approach would have predicted the financial crisis."},
+        {"speaker": "N", "text": "The climate scientist Michael Mann objected to the climate chapter. He argued that it treated hard physical science with the same methods Silver uses for voter preferences."},
+        {"speaker": "N", "text": "Other reviewers found the book loose in places. The election forecaster Sam Wang said it could have used firmer editing, and the chess chapter in particular is heavy going."}
+      ]
+    },
+    {
+      "id": "reading_guide",
+      "type": "speech",
+      "lines": [
+        {"speaker": "N", "text": "Read it if you forecast demand, run sales and operations planning, S and OP, or build the models other people plan on."},
+        {"speaker": "N", "text": "It also suits a manager who asks for one number and no ranges, since the book makes the case for ranges better than most planners can in a meeting."},
+        {"speaker": "N", "text": "Plan on a couple of weeks of evenings. The chapters stand alone, so you don't need to read them in order."},
+        {"speaker": "N", "text": "If time is short, start with the financial crisis, then the weather chapter, then the chapters on Bayes and poker. Those carry most of the method, and you can skim chess and baseball."},
+        {"speaker": "N", "text": "The paperback from twenty fifteen adds a new introduction by Silver, so that's the edition to get."}
+      ]
+    },
+    {
+      "id": "shelf",
+      "type": "speech",
+      "lines": [
+        {"speaker": "N", "text": "Also on the shelf, three books that pair well with The Signal and the Noise."},
+        {"speaker": "N", "text": "The Business Forecasting Deal, by Michael Gilliland, from twenty ten. It turns the fox habits into a business process, and asks whether each step in your forecasting process makes the forecast better or worse."},
+        {"speaker": "N", "text": "How to Measure Anything, by Douglas Hubbard, in its third edition from twenty fourteen. It shows how to put honest ranges on things that look impossible to measure, and how to train people to give calibrated estimates."},
+        {"speaker": "N", "text": "And Understanding Variation, by Donald Wheeler. It's a short book on telling signal from noise in the monthly numbers managers react to, using a simple chart instead of a complex model."}
+      ]
+    },
+    {
+      "id": "book_sign_off",
+      "type": "speech",
+      "lines": [
+        {"speaker": "F", "text": "Next Saturday, it's The Box, by Marc Levinson."},
+        {"speaker": "F", "text": "News is back Monday morning, and the week in review is out tomorrow. I'm Anna, thanks for listening."}
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "The Signal and the Noise: More Data, Worse Forecasts",
+    "lines": [
+      {"speaker": "N", "text": "More data can make your forecasts worse, not better."},
+      {"speaker": "N", "text": "That's the warning in The Signal and the Noise, Nate Silver's twenty twelve book on why most predictions fail."},
+      {"speaker": "N", "text": "Rating agencies put the default risk on top-rated mortgage bonds at about one in eight hundred and fifty. Around twenty-eight percent defaulted."},
+      {"speaker": "N", "text": "The forecasters who improve, like weather forecasters, give ranges instead of single numbers, test their models on data they've never seen, and update when the facts change."},
+      {"speaker": "N", "text": "Read it if you forecast demand or build planning models. Start with the chapters on the crisis, the weather and Bayes."},
+      {"speaker": "F", "text": "A book every Saturday on The Planning Desk podcast."}
+    ],
+    "caption": "Book of the week: The Signal and the Noise by Nate Silver (2012). Rating agencies put the default risk on top-rated mortgage bonds at about 0.12%, and around 28% defaulted. Silver shows why confident forecasts fail and what the good ones, like weather forecasters, do differently: ranges, honest testing and constant updating. Full episode: The Planning Desk, every Saturday on Apple Podcasts and Spotify. AI-generated: AI agents research the book and the voices are synthetic.",
+    "hashtags": [
+      "books",
+      "supplychain",
+      "demandplanning",
+      "forecasting"
+    ]
+  },
+  "linkedin": {
+    "page_post": "More data can make forecasts worse, because more data means more noise to mistake for signal.\n\nBook of the week: The Signal and the Noise by Nate Silver, 2012.\n\nRating agencies put the default risk on top-rated mortgage bonds at about 0.12%, and around 28% defaulted. The models failed on one assumption, not the maths. A demand plan with no range around it makes the same bet.\n\nExperts who mix many sources and update beat experts with one big theory. A monthly review that punishes revisions trains a team to stop updating.\n\nA model that fits last year almost perfectly has often learned the noise. Hold back data it never saw and judge it only there.\n\nRead it if you forecast demand, run S&OP or build planning models.\n\nWhen did your team last check whether manual overrides beat the statistical forecast?\n\nListen: The Planning Desk, a book every Saturday on Apple Podcasts and Spotify.\n\n#SupplyChain #DemandPlanning #Forecasting",
+    "tags": []
+  },
+  "show_notes": {
+    "summary": "The Signal and the Noise by Nate Silver (2012) explains why most forecasts fail and what the few good forecasters do differently. For planners it makes the case for ranges over single numbers, testing models on data they never saw, measuring calibration and updating as facts change. For demand planners, S&OP leads and anyone who builds forecasting models.",
+    "sources": [
+      {"title": "Wikipedia: The Signal and the Noise", "url": "https://en.wikipedia.org/wiki/The_Signal_and_the_Noise"},
+      {"title": "Wikipedia: Nate Silver", "url": "https://en.wikipedia.org/wiki/Nate_Silver"},
+      {"title": "Wikipedia: Wet bias", "url": "https://en.wikipedia.org/wiki/Wet_bias"},
+      {"title": "Nature: Forecasting with finesse, Paul Ormerod's review", "url": "https://www.nature.com/articles/489501a.pdf"},
+      {"title": "Boston Globe: Review of The Signal and the Noise, Jordan Ellenberg", "url": "https://www.bostonglobe.com/arts/books/2012/09/29/review-the-signal-and-noise-nate-silver/acHgfDUAFwE5Z8awk5HCCO/story.html"},
+      {"title": "Bookforum: Review of The Signal and the Noise", "url": "https://www.bookforum.com/print/1904/nate-silver-s-the-signal-and-the-noise-10254"},
+      {"title": "Princeton Election Consortium: Sam Wang's review", "url": "https://election.princeton.edu/articles/review-of-the-signal-and-the-noise"},
+      {"title": "Northeastern ISE: The Signal and the Noise, chapter analysis", "url": "https://northeasternise.substack.com/p/the-signal-and-the-noise-why-so-many"},
+      {"title": "Summrize: The Signal and the Noise summary", "url": "https://www.summrize.com/books/signal-and-noise-summary"},
+      {"title": "Ali H. Askar: The Signal and the Noise, a book summary", "url": "https://aliaskar.medium.com/the-signal-and-the-noise-by-nate-silver-a-book-summary-dbe090f7fc30"},
+      {"title": "Ellibs: The Business Forecasting Deal, Michael Gilliland", "url": "https://www.ellibs.com/fi/book/9780470769638/the-business-forecasting-deal-exposing-myths-eliminating-bad-practices-providing-practical-solutions"},
+      {"title": "Schweitzer: How to Measure Anything, third edition", "url": "https://www.schweitzer-online.de/en/buch/Hubbard/How-Measure-Anything/9781118539279/A5143878/"},
+      {"title": "University West library: Understanding Variation, Donald J. Wheeler", "url": "https://koha.hv.se/bib/951686"}
+    ]
+  }
+}
