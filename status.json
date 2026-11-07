@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-06T09:50:38.918919+00:00",
+ "fetched_at": "2026-11-07T09:13:40.589546+00:00",
  "window_days": 8,
  "sources_ok": 67,
  "sources_total": 72,
@@ -18,7 +18,7 @@
    "url": "https://www.supplychainbrain.com/rss/articles",
    "ok": true,
    "method": "feed https://www.supplychainbrain.com/rss/articles",
-   "items": 40,
+   "items": 37,
    "error": null,
    "lane": "logistics"
   },
@@ -81,7 +81,7 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 26,
+   "items": 22,
    "error": null,
    "lane": "logistics"
   },
@@ -108,7 +108,7 @@
    "url": "https://www.logistik-journal.de/",
    "ok": true,
    "method": "feed https://www.logistik-journal.de/feed/",
-   "items": 5,
+   "items": 3,
    "error": null,
    "lane": "logistics"
   },
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 32,
+   "items": 28,
    "error": null,
    "lane": "logistics"
   },
@@ -225,7 +225,7 @@
    "url": "https://talkinglogistics.com/",
    "ok": true,
    "method": "feed https://talkinglogistics.com/feed/",
-   "items": 2,
+   "items": 3,
    "error": null,
    "lane": "logistics"
   },
@@ -243,7 +243,7 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 12,
+   "items": 13,
    "error": null,
    "lane": "logistics"
   },
@@ -288,7 +288,7 @@
    "url": "https://phys.org/rss-feed/science-news/economics-business/",
    "ok": true,
    "method": "feed https://phys.org/rss-feed/science-news/economics-business/",
-   "items": 1,
+   "items": 2,
    "error": null,
    "lane": "management"
   },
@@ -333,8 +333,8 @@
    "url": "https://www.cfodive.com/feeds/news/",
    "ok": true,
    "method": "feed https://www.cfodive.com/feeds/news/",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "lane": "management"
   },
   {
@@ -378,7 +378,7 @@
    "url": "https://www.sttinfo.fi/rss/releases/latest",
    "ok": true,
    "method": "feed https://www.sttinfo.fi/rss/releases/latest",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "management"
   },
@@ -387,7 +387,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 6,
+   "items": 7,
    "error": null,
    "lane": "management"
   },
@@ -396,8 +396,8 @@
    "url": "https://mfn.se/all/a/skf.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/skf.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -432,8 +432,8 @@
    "url": "https://mfn.se/all/a/volvo.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/volvo.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -450,7 +450,7 @@
    "url": "https://mfn.se/all/a/alfa-laval.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/alfa-laval.rss",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "companies"
   },
@@ -468,8 +468,8 @@
    "url": "https://mfn.se/all/a/essity.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/essity.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -486,8 +486,8 @@
    "url": "https://mfn.se/all/a/boliden.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/boliden.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -522,8 +522,8 @@
    "url": "https://mfn.se/all/a/sca.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/sca.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -612,8 +612,8 @@
    "url": "https://mfn.se/all/a/stora-enso.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/stora-enso.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
