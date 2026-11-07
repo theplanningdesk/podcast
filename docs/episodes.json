@@ -166,5 +166,18 @@
     "duration_sec": 316,
     "pub_date": "2026-11-06T06:30:00+01:00",
     "transcript_lines": 38
+  },
+  {
+    "guid": "planning-desk-2026-11-07",
+    "stem": "2026-11-07",
+    "number": 14,
+    "format": "saturday",
+    "title": "The Signal and the Noise by Silver: Book Summary",
+    "summary": "The Signal and the Noise by Nate Silver (2012) explains why most forecasts fail and what the few good forecasters do differently. For planners it makes the case for ranges over single numbers, testing models on data they never saw, measuring calibration and updating as facts change. For demand planners, S&OP leads and anyone who builds forecasting models.",
+    "notes_html": "<p>The Signal and the Noise by Nate Silver (2012) explains why most forecasts fail and what the few good forecasters do differently. For planners it makes the case for ranges over single numbers, testing models on data they never saw, measuring calibration and updating as facts change. For demand planners, S&amp;OP leads and anyone who builds forecasting models.</p><p>Sources:</p><ul><li><a href=\"https://en.wikipedia.org/wiki/The_Signal_and_the_Noise\">Wikipedia: The Signal and the Noise</a></li><li><a href=\"https://en.wikipedia.org/wiki/Nate_Silver\">Wikipedia: Nate Silver</a></li><li><a href=\"https://en.wikipedia.org/wiki/Wet_bias\">Wikipedia: Wet bias</a></li><li><a href=\"https://www.nature.com/articles/489501a.pdf\">Nature: Forecasting with finesse, Paul Ormerod&#x27;s review</a></li><li><a href=\"https://www.bostonglobe.com/arts/books/2012/09/29/review-the-signal-and-noise-nate-silver/acHgfDUAFwE5Z8awk5HCCO/story.html\">Boston Globe: Review of The Signal and the Noise, Jordan Ellenberg</a></li><li><a href=\"https://www.bookforum.com/print/1904/nate-silver-s-the-signal-and-the-noise-10254\">Bookforum: Review of The Signal and the Noise</a></li><li><a href=\"https://election.princeton.edu/articles/review-of-the-signal-and-the-noise\">Princeton Election Consortium: Sam Wang&#x27;s review</a></li><li><a href=\"https://northeasternise.substack.com/p/the-signal-and-the-noise-why-so-many\">Northeastern ISE: The Signal and the Noise, chapter analysis</a></li><li><a href=\"https://www.summrize.com/books/signal-and-noise-summary\">Summrize: The Signal and the Noise summary</a></li><li><a href=\"https://aliaskar.medium.com/the-signal-and-the-noise-by-nate-silver-a-book-summary-dbe090f7fc30\">Ali H. Askar: The Signal and the Noise, a book summary</a></li><li><a href=\"https://www.ellibs.com/fi/book/9780470769638/the-business-forecasting-deal-exposing-myths-eliminating-bad-practices-providing-practical-solutions\">Ellibs: The Business Forecasting Deal, Michael Gilliland</a></li><li><a href=\"https://www.schweitzer-online.de/en/buch/Hubbard/How-Measure-Anything/9781118539279/A5143878/\">Schweitzer: How to Measure Anything, third edition</a></li><li><a href=\"https://koha.hv.se/bib/951686\">University West library: Understanding Variation, Donald J. Wheeler</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-07.html\">https://theplanningdesk.github.io/podcast/e/2026-11-07.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 9517580,
+    "duration_sec": 595,
+    "pub_date": "2026-11-07T07:30:00+01:00",
+    "transcript_lines": 53
   }
 ]
