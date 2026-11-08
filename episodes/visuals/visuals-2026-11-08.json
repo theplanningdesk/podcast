@@ -1,0 +1,1961 @@
+{
+ "stem": "2026-11-08",
+ "cues": [
+  {
+   "line": 0,
+   "kicker": "Suez Canal",
+   "headline": "Evergreen heads back through Suez",
+   "sub": "Xeneta sees container spot rates about 30% lower next year.",
+   "kpis": [
+    {
+     "value": 30,
+     "label": "global spot rates, 2027 forecast",
+     "prefix": "-",
+     "suffix": "%",
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 8,
+     "points": [
+      {
+       "name": "Shanghai",
+       "lat": 31.23,
+       "lon": 121.47
+      },
+      {
+       "name": "Suez",
+       "lat": 29.97,
+       "lon": 32.55,
+       "alert": true
+      },
+      {
+       "name": "Cape of Good Hope",
+       "lat": -34.36,
+       "lon": 18.47,
+       "muted": true
+      },
+      {
+       "name": "Rotterdam",
+       "lat": 51.92,
+       "lon": 4.48
+      }
+     ],
+     "routes": [
+      {
+       "style": "primary",
+       "label": "Via Suez",
+       "points": [
+        [
+         121.47,
+         31.23
+        ],
+        [
+         119.5,
+         26
+        ],
+        [
+         114.5,
+         21.5
+        ],
+        [
+         109.5,
+         12
+        ],
+        [
+         105.5,
+         3
+        ],
+        [
+         103.8,
+         1.2
+        ],
+        [
+         98,
+         5.5
+        ],
+        [
+         88,
+         6
+        ],
+        [
+         80,
+         5.8
+        ],
+        [
+         70,
+         10
+        ],
+        [
+         58,
+         13
+        ],
+        [
+         51,
+         12.5
+        ],
+        [
+         43.4,
+         12.6
+        ],
+        [
+         40,
+         16.5
+        ],
+        [
+         37,
+         21.5
+        ],
+        [
+         34.5,
+         26.5
+        ],
+        [
+         32.55,
+         29.9
+        ],
+        [
+         32.3,
+         31.3
+        ],
+        [
+         27,
+         33.5
+        ],
+        [
+         18,
+         35
+        ],
+        [
+         12,
+         37.3
+        ],
+        [
+         5,
+         37.8
+        ],
+        [
+         -2,
+         36.3
+        ],
+        [
+         -5.6,
+         35.95
+        ],
+        [
+         -9.5,
+         37
+        ],
+        [
+         -9.8,
+         40
+        ],
+        [
+         -9.5,
+         43.2
+        ],
+        [
+         -5.5,
+         46.5
+        ],
+        [
+         -3,
+         48.8
+        ],
+        [
+         1.4,
+         50.3
+        ],
+        [
+         3.2,
+         51.4
+        ],
+        [
+         4.05,
+         51.95
+        ]
+       ]
+      },
+      {
+       "style": "faded",
+       "label": "Around the Cape",
+       "points": [
+        [
+         80,
+         5.8
+        ],
+        [
+         72,
+         -5
+        ],
+        [
+         55,
+         -22
+        ],
+        [
+         35,
+         -33
+        ],
+        [
+         20,
+         -36
+        ],
+        [
+         12,
+         -30
+        ],
+        [
+         5,
+         -15
+        ],
+        [
+         0,
+         -2
+        ],
+        [
+         -12,
+         4
+        ],
+        [
+         -19,
+         14
+        ],
+        [
+         -18,
+         25
+        ],
+        [
+         -12,
+         33
+        ],
+        [
+         -9.5,
+         37
+        ],
+        [
+         -9.8,
+         40
+        ],
+        [
+         -9.5,
+         43.2
+        ],
+        [
+         -5.5,
+         46.5
+        ],
+        [
+         -3,
+         48.8
+        ],
+        [
+         1.4,
+         50.3
+        ],
+        [
+         3.2,
+         51.4
+        ],
+        [
+         4.05,
+         51.95
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "source": "Xeneta via AJOT"
+  },
+  {
+   "line": 2,
+   "kicker": "Week 45 in review",
+   "headline": "Supply chain planning and design, the week in review"
+  },
+  {
+   "line": 4,
+   "kicker": "Made with AI",
+   "headline": "AI agents gather the news. Our voices are synthetic."
+  },
+  {
+   "line": 4,
+   "at": "Three threads ran through the week",
+   "kicker": "This week's threads",
+   "headline": "The threads that ran through the week",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Suez reopens, rates forecast to fall",
+       "say": "Suez reopening"
+      },
+      {
+       "label": "Hormuz attacks reach deep into the Gulf",
+       "say": "Hormuz"
+      },
+      {
+       "label": "German automotive cuts deeper",
+       "say": "German car suppliers"
+      },
+      {
+       "label": "The Rhine close to empty",
+       "say": "The Rhine"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 5,
+   "keep": true,
+   "kicker": "This week's threads",
+   "headline": "Hormuz widens, electronics get dearer"
+  },
+  {
+   "line": 7,
+   "kicker": "Evergreen, Suez Canal",
+   "headline": "First Suez transits in almost three years",
+   "sub": "Ever Eon and Ever Edit. Zim is left nearly alone on the Cape route.",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 8,
+     "points": [
+      {
+       "name": "Shanghai",
+       "lat": 31.23,
+       "lon": 121.47
+      },
+      {
+       "name": "Suez",
+       "lat": 29.97,
+       "lon": 32.55,
+       "alert": true
+      },
+      {
+       "name": "Cape of Good Hope",
+       "lat": -34.36,
+       "lon": 18.47,
+       "muted": true
+      },
+      {
+       "name": "Rotterdam",
+       "lat": 51.92,
+       "lon": 4.48
+      }
+     ],
+     "routes": [
+      {
+       "style": "primary",
+       "label": "Via Suez",
+       "points": [
+        [
+         121.47,
+         31.23
+        ],
+        [
+         119.5,
+         26
+        ],
+        [
+         114.5,
+         21.5
+        ],
+        [
+         109.5,
+         12
+        ],
+        [
+         105.5,
+         3
+        ],
+        [
+         103.8,
+         1.2
+        ],
+        [
+         98,
+         5.5
+        ],
+        [
+         88,
+         6
+        ],
+        [
+         80,
+         5.8
+        ],
+        [
+         70,
+         10
+        ],
+        [
+         58,
+         13
+        ],
+        [
+         51,
+         12.5
+        ],
+        [
+         43.4,
+         12.6
+        ],
+        [
+         40,
+         16.5
+        ],
+        [
+         37,
+         21.5
+        ],
+        [
+         34.5,
+         26.5
+        ],
+        [
+         32.55,
+         29.9
+        ],
+        [
+         32.3,
+         31.3
+        ],
+        [
+         27,
+         33.5
+        ],
+        [
+         18,
+         35
+        ],
+        [
+         12,
+         37.3
+        ],
+        [
+         5,
+         37.8
+        ],
+        [
+         -2,
+         36.3
+        ],
+        [
+         -5.6,
+         35.95
+        ],
+        [
+         -9.5,
+         37
+        ],
+        [
+         -9.8,
+         40
+        ],
+        [
+         -9.5,
+         43.2
+        ],
+        [
+         -5.5,
+         46.5
+        ],
+        [
+         -3,
+         48.8
+        ],
+        [
+         1.4,
+         50.3
+        ],
+        [
+         3.2,
+         51.4
+        ],
+        [
+         4.05,
+         51.95
+        ]
+       ]
+      },
+      {
+       "style": "faded",
+       "label": "Around the Cape",
+       "points": [
+        [
+         80,
+         5.8
+        ],
+        [
+         72,
+         -5
+        ],
+        [
+         55,
+         -22
+        ],
+        [
+         35,
+         -33
+        ],
+        [
+         20,
+         -36
+        ],
+        [
+         12,
+         -30
+        ],
+        [
+         5,
+         -15
+        ],
+        [
+         0,
+         -2
+        ],
+        [
+         -12,
+         4
+        ],
+        [
+         -19,
+         14
+        ],
+        [
+         -18,
+         25
+        ],
+        [
+         -12,
+         33
+        ],
+        [
+         -9.5,
+         37
+        ],
+        [
+         -9.8,
+         40
+        ],
+        [
+         -9.5,
+         43.2
+        ],
+        [
+         -5.5,
+         46.5
+        ],
+        [
+         -3,
+         48.8
+        ],
+        [
+         1.4,
+         50.3
+        ],
+        [
+         3.2,
+         51.4
+        ],
+        [
+         4.05,
+         51.95
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "source": "Splash247"
+  },
+  {
+   "line": 8,
+   "keep": true,
+   "kicker": "Xeneta Summit, Munich",
+   "headline": "2027 spot rates forecast 30% lower",
+   "kpis": [
+    {
+     "value": 30,
+     "label": "global spot rates",
+     "prefix": "-",
+     "suffix": "%",
+     "accent": true
+    },
+    {
+     "value": 5,
+     "label": "long-term contract rates",
+     "prefix": "-",
+     "suffix": "%"
+    }
+   ],
+   "source": "Xeneta via AJOT"
+  },
+  {
+   "line": 8,
+   "at": "Red Sea capacity in October",
+   "keep": true,
+   "kicker": "Red Sea capacity",
+   "headline": "October capacity only half the August 2023 level",
+   "kpis": [
+    {
+     "value": 50,
+     "label": "of August 2023 Red Sea capacity",
+     "suffix": "%",
+     "accent": true
+    }
+   ],
+   "source": "Xeneta via AJOT"
+  },
+  {
+   "line": 9,
+   "kicker": "Xeneta 2027 outlook",
+   "headline": "The fleet grows faster than demand",
+   "kpis": [
+    {
+     "value": 6.8,
+     "label": "fleet growth, 2027",
+     "prefix": "+",
+     "suffix": "%",
+     "decimals": 1,
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Growth forecast for 2027, %",
+     "decimals": 1,
+     "suffix": "%",
+     "items": [
+      {
+       "label": "Fleet",
+       "value": 6.8,
+       "highlight": true
+      },
+      {
+       "label": "Demand, high",
+       "value": 4
+      },
+      {
+       "label": "Demand, low",
+       "value": 2.5
+      }
+     ]
+    }
+   },
+   "source": "Xeneta via AJOT"
+  },
+  {
+   "line": 10,
+   "keep": true,
+   "kicker": "Schedule reliability",
+   "headline": "Only 27% of Q3 arrivals on time",
+   "sub": "Sea-Intelligence: service instability far above pre-pandemic levels.",
+   "kpis": [
+    {
+     "value": 27,
+     "label": "on-time arrivals, Q3",
+     "suffix": "%",
+     "accent": true
+    }
+   ],
+   "source": "Xeneta, Sea-Intelligence"
+  },
+  {
+   "line": 11,
+   "kicker": "Maersk",
+   "headline": "2026 guidance raised for the third time",
+   "sub": "Citing extraordinary freight rates and widespread disruption.",
+   "kpis": [
+    {
+     "value": 2,
+     "label": "Drewry Shanghai to Rotterdam, week",
+     "prefix": "-",
+     "suffix": "%"
+    }
+   ],
+   "source": "Splash247, The Loadstar"
+  },
+  {
+   "line": 12,
+   "kicker": "Maersk",
+   "headline": "Shares fell on a smaller upgrade than expected",
+   "sub": "2027 contract talks start from a strong carrier position.",
+   "source": "SCM.dk"
+  },
+  {
+   "line": 13,
+   "kicker": "For planners",
+   "headline": "Budget 2027 on falling rates and shorter transits",
+   "visual": {
+    "template": "flow",
+    "props": {
+     "steps": [
+      {
+       "label": "Falling rates",
+       "say": "falling rates"
+      },
+      {
+       "label": "Shorter transits",
+       "say": "shorter transits"
+      },
+      {
+       "label": "Wider arrival swings",
+       "say": "wider swings in arrival dates"
+      },
+      {
+       "label": "Buffer for variability",
+       "say": "length to variability"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 15,
+   "kicker": "Arabian Gulf",
+   "headline": "Tanker hit 72 nautical miles east of Ras Al Khafji",
+   "kpis": [
+    {
+     "value": 72,
+     "label": "nautical miles off Saudi coast",
+     "suffix": " nm",
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 3,
+     "points": [
+      {
+       "name": "Ras Al Khafji",
+       "lat": 28.42,
+       "lon": 48.5
+      },
+      {
+       "name": "Tanker hit, 1 Nov",
+       "lat": 28.42,
+       "lon": 49.86,
+       "alert": true
+      },
+      {
+       "name": "Strait of Hormuz",
+       "lat": 26.57,
+       "lon": 56.4,
+       "alert": true
+      },
+      {
+       "name": "Gulf of Oman",
+       "lat": 24.6,
+       "lon": 58.4,
+       "muted": true
+      }
+     ],
+     "routes": [
+      {
+       "style": "faded",
+       "label": "Gulf tanker lane",
+       "points": [
+        [
+         59,
+         23.8
+        ],
+        [
+         57.6,
+         25.0
+        ],
+        [
+         56.9,
+         26.0
+        ],
+        [
+         56.5,
+         26.5
+        ],
+        [
+         55.8,
+         26.4
+        ],
+        [
+         54.5,
+         26.0
+        ],
+        [
+         52.5,
+         26.8
+        ],
+        [
+         51,
+         27.6
+        ],
+        [
+         50.2,
+         28.3
+        ],
+        [
+         49.9,
+         28.9
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "source": "gCaptain"
+  },
+  {
+   "line": 16,
+   "keep": true,
+   "kicker": "Strait of Hormuz",
+   "headline": "18 confirmed attacks since 6 October",
+   "sub": "RITI, Louise 1, Arzanah and Al Mayeda were hit in late October.",
+   "kpis": [
+    {
+     "value": 18,
+     "label": "confirmed attacks since 6 October",
+     "accent": true
+    }
+   ],
+   "source": "JMIC via gCaptain"
+  },
+  {
+   "line": 17,
+   "keep": true,
+   "kicker": "Strait of Hormuz",
+   "headline": "About 490 ships waiting outside",
+   "kpis": [
+    {
+     "value": 490,
+     "label": "ships waiting, 1 November",
+     "prefix": "about ",
+     "accent": true
+    }
+   ],
+   "source": "JMIC via gCaptain"
+  },
+  {
+   "line": 17,
+   "at": "Then on Friday",
+   "keep": true,
+   "kicker": "Arabian Gulf, 6 November",
+   "headline": "Seafarer missing after strike on Velos Sapphire",
+   "sub": "Iran reshuffles its Hormuz blacklist.",
+   "source": "Splash247"
+  },
+  {
+   "line": 18,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "A Q1 disruption scenario for Gulf polymers, fuels and LNG",
+   "sub": "Whatever happens at Suez."
+  },
+  {
+   "line": 19,
+   "kicker": "Rhine at Kaub",
+   "headline": "The Rhine stays near empty",
+   "kpis": [
+    {
+     "value": 19,
+     "label": "Kaub, 7 November",
+     "suffix": " cm",
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Rhine gauge at Kaub, cm",
+     "target": 77,
+     "items": [
+      {
+       "label": "31 Oct",
+       "value": 32
+      },
+      {
+       "label": "1 Nov",
+       "value": 24
+      },
+      {
+       "label": "2 Nov",
+       "value": 21
+      },
+      {
+       "label": "3 Nov",
+       "value": 18
+      },
+      {
+       "label": "7 Nov",
+       "value": 19,
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "source": "Pegelonline"
+  },
+  {
+   "line": 20,
+   "keep": true,
+   "kicker": "Rhine",
+   "headline": "77 cm needed for a full 1.90 m channel",
+   "kpis": [
+    {
+     "value": 77,
+     "label": "needed at Kaub",
+     "suffix": " cm"
+    },
+    {
+     "value": 0,
+     "label": "Emmerich, Dutch border",
+     "suffix": " cm",
+     "accent": true
+    }
+   ],
+   "source": "Pegelonline"
+  },
+  {
+   "line": 20,
+   "at": "Kaub already hit",
+   "keep": true,
+   "kicker": "Rhine at Kaub",
+   "headline": "A record low in early October",
+   "kpis": [
+    {
+     "value": -6,
+     "label": "Kaub, early October",
+     "suffix": " cm",
+     "accent": true
+    }
+   ],
+   "source": "Pegelonline"
+  },
+  {
+   "line": 21,
+   "kicker": "UIRR, Europe",
+   "headline": "Combined road and rail volumes down 1.2% in Q3",
+   "sub": "Infrastructure, track charges and the weak economy.",
+   "kpis": [
+    {
+     "value": -1.2,
+     "label": "combined transport volume, Q3",
+     "suffix": "%",
+     "decimals": 1,
+     "accent": true
+    }
+   ],
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 22,
+   "kicker": "For planners",
+   "headline": "Booked road and rail backup is the base plan into winter",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 1.2,
+     "points": [
+      {
+       "name": "Rotterdam",
+       "lat": 51.92,
+       "lon": 4.48
+      },
+      {
+       "name": "Emmerich",
+       "lat": 51.83,
+       "lon": 6.25,
+       "alert": true
+      },
+      {
+       "name": "Duisburg",
+       "lat": 51.45,
+       "lon": 6.73,
+       "muted": true
+      },
+      {
+       "name": "Köln",
+       "lat": 50.94,
+       "lon": 6.96,
+       "muted": true
+      },
+      {
+       "name": "Kaub",
+       "lat": 50.09,
+       "lon": 7.77,
+       "alert": true
+      }
+     ],
+     "routes": [
+      {
+       "style": "primary",
+       "label": "Rhine barge route",
+       "points": [
+        [
+         4.48,
+         51.92
+        ],
+        [
+         5.86,
+         51.85
+        ],
+        [
+         6.25,
+         51.83
+        ],
+        [
+         6.76,
+         51.43
+        ],
+        [
+         6.96,
+         50.94
+        ],
+        [
+         7.6,
+         50.36
+        ],
+        [
+         7.77,
+         50.09
+        ]
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 23,
+   "kicker": "Schaeffler",
+   "headline": "3,460 jobs cut net across 16 European sites",
+   "kpis": [
+    {
+     "value": 3460,
+     "label": "net job cuts by 2028",
+     "accent": true
+    },
+    {
+     "value": 2660,
+     "label": "of them in Germany",
+     "prefix": "about "
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Net job cuts by 2028",
+     "items": [
+      {
+       "label": "Europe",
+       "value": 3460,
+       "highlight": true
+      },
+      {
+       "label": "Germany",
+       "value": 2660
+      }
+     ]
+    }
+   },
+   "source": "produktion.de"
+  },
+  {
+   "line": 24,
+   "keep": true,
+   "kicker": "Schaeffler",
+   "headline": "About €480m of one-off cost, mostly this year",
+   "kpis": [
+    {
+     "value": 480,
+     "label": "one-off restructuring cost",
+     "prefix": "€",
+     "suffix": "m",
+     "accent": true
+    }
+   ],
+   "source": "produktion.de"
+  },
+  {
+   "line": 25,
+   "kicker": "Schaeffler",
+   "headline": "Four German closures, plus Herstal in Belgium",
+   "kpis": [
+    {
+     "value": 300,
+     "label": "yearly savings by 2030",
+     "prefix": "€",
+     "suffix": "m"
+    }
+   ],
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Dortmund"
+      },
+      {
+       "label": "Morbach"
+      },
+      {
+       "label": "Berlin"
+      },
+      {
+       "label": "Schwalbach"
+      },
+      {
+       "label": "Herstal",
+       "detail": "Belgium"
+      }
+     ]
+    }
+   },
+   "source": "produktion.de"
+  },
+  {
+   "line": 26,
+   "kicker": "BMW, Q3",
+   "headline": "China deliveries down 24.8%",
+   "sub": "Restructuring programme widened.",
+   "kpis": [
+    {
+     "value": -24.8,
+     "label": "China deliveries, Q3",
+     "suffix": "%",
+     "decimals": 1,
+     "accent": true
+    }
+   ],
+   "source": "BMW via Investing.com"
+  },
+  {
+   "line": 27,
+   "kicker": "Continental, Q3",
+   "headline": "Working capital at 30% of sales",
+   "sub": "Bigger raw material headwinds expected into 2027.",
+   "kpis": [
+    {
+     "value": 30,
+     "label": "working capital to sales",
+     "suffix": "%",
+     "accent": true
+    }
+   ],
+   "source": "Continental via Investing.com"
+  },
+  {
+   "line": 28,
+   "kicker": "Schaeffler finance chief",
+   "headline": "Circuit boards are the biggest cost pressure",
+   "sub": "They compete with data centre demand.",
+   "source": "Schaeffler Q3 call"
+  },
+  {
+   "line": 29,
+   "kicker": "For planners",
+   "headline": "Two 2027 plans for automotive supply",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Shrinking volume case",
+       "detail": "Mechanical parts",
+       "say": "shrinking volume case"
+      },
+      {
+       "label": "Allocation case",
+       "detail": "Electronics",
+       "say": "allocation case"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 30,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Ask for transfer dates and safety stock plans"
+  },
+  {
+   "line": 32,
+   "kicker": "Apple, fiscal Q4",
+   "headline": "Inventory up 154% on a year earlier",
+   "kpis": [
+    {
+     "value": 14.5,
+     "label": "inventory",
+     "prefix": "$",
+     "suffix": "bn",
+     "decimals": 1
+    },
+    {
+     "value": 154,
+     "label": "year on year",
+     "prefix": "+",
+     "suffix": "%",
+     "accent": true
+    }
+   ],
+   "source": "Tekedia"
+  },
+  {
+   "line": 33,
+   "kicker": "Apple",
+   "headline": "Purchase obligations up $33bn in one quarter",
+   "sub": "June to September, as memory prices climb.",
+   "kpis": [
+    {
+     "value": 33,
+     "label": "added purchase obligations",
+     "prefix": "+$",
+     "suffix": "bn",
+     "accent": true
+    }
+   ],
+   "source": "Tekedia"
+  },
+  {
+   "line": 34,
+   "kicker": "Apple",
+   "headline": "Margin guided lower, iPad hit by supply constraints",
+   "sub": "Price rises and carry-in stock offset some memory cost.",
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 36,
+   "kicker": "For planners",
+   "headline": "Plan 2027 memory on allocations and long-term agreements"
+  },
+  {
+   "line": 37,
+   "kicker": "ABB Robotics, China",
+   "headline": "Beijing blocks SoftBank's purchase of ABB Robotics' China business",
+   "source": "Evertiq"
+  },
+  {
+   "line": 38,
+   "kicker": "ABB and SoftBank",
+   "headline": "A $5.4bn deal, about 7,000 staff",
+   "sub": "Both companies say they are in close dialogue.",
+   "kpis": [
+    {
+     "value": 5.4,
+     "label": "deal value",
+     "prefix": "$",
+     "suffix": "bn",
+     "decimals": 1
+    },
+    {
+     "value": 7000,
+     "label": "staff in the unit",
+     "prefix": "about "
+    }
+   ],
+   "source": "Evertiq"
+  },
+  {
+   "line": 39,
+   "kicker": "For planners",
+   "headline": "Add approval and export control risk to automation timelines"
+  },
+  {
+   "line": 40,
+   "kicker": "ARC Advisory Group",
+   "headline": "AI moves transport management to execution",
+   "visual": {
+    "template": "flow",
+    "props": {
+     "steps": [
+      {
+       "label": "Analysis",
+       "say": "analysis"
+      },
+      {
+       "label": "Automated execution",
+       "say": "automated execution"
+      },
+      {
+       "label": "Deployment decides",
+       "say": "deployment"
+      }
+     ]
+    }
+   },
+   "source": "Logistics Viewpoints"
+  },
+  {
+   "line": 41,
+   "keep": true,
+   "kicker": "SCM.dk, Denmark",
+   "headline": "AI buyers skip suppliers with incomplete product data",
+   "source": "SCM.dk"
+  },
+  {
+   "line": 42,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Master data becomes a sales issue"
+  },
+  {
+   "line": 43,
+   "kicker": "Conlio, Berlin",
+   "headline": "€6.4m for AI that checks transport documents",
+   "kpis": [
+    {
+     "value": 6.4,
+     "label": "raised",
+     "prefix": "€",
+     "suffix": "m",
+     "decimals": 1,
+     "accent": true
+    }
+   ],
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 44,
+   "kicker": "ID Logistics",
+   "headline": "A humanoid robot pilot within six months",
+   "sub": "Keep humanoids out of 2027 warehouse plans.",
+   "kpis": [
+    {
+     "value": 6,
+     "label": "months to the first pilot"
+    }
+   ],
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 45,
+   "kicker": "MHP and Quadriga Hochschule Berlin",
+   "headline": "Logistics shows the biggest IT security gaps",
+   "sub": "Contingency plans need a fallback for a carrier whose systems go dark.",
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 46,
+   "kicker": "Research, Dubai",
+   "headline": "Satellite imagery to predict climate disruption on transport networks",
+   "source": "DC Velocity"
+  },
+  {
+   "line": 47,
+   "kicker": "3M",
+   "headline": "16 sites closed this year, 10 more to change",
+   "kpis": [
+    {
+     "value": 16,
+     "label": "sites closed since January",
+     "accent": true
+    },
+    {
+     "value": 10,
+     "label": "more in the next 12 months"
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "3M manufacturing plants",
+     "target": 100,
+     "items": [
+      {
+       "label": "Before",
+       "value": 108
+      },
+      {
+       "label": "Goal",
+       "value": 100,
+       "highlight": true,
+       "note": "under 100"
+      }
+     ]
+    }
+   },
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 48,
+   "keep": true,
+   "kicker": "3M",
+   "headline": "$1bn a year in productivity by end of 2027",
+   "kpis": [
+    {
+     "value": 1,
+     "label": "yearly productivity target",
+     "prefix": "$",
+     "suffix": "bn"
+    }
+   ],
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 49,
+   "keep": true,
+   "kicker": "3M inventory",
+   "headline": "From the high 90s to the mid 70s days on hand",
+   "kpis": [
+    {
+     "value": 35,
+     "label": "per day of inventory",
+     "prefix": "$",
+     "suffix": "m",
+     "accent": true
+    }
+   ],
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 50,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Fewer plants and fewer days need tighter replenishment"
+  },
+  {
+   "line": 51,
+   "kicker": "Tilray Brands",
+   "headline": "Range cut, four breweries closed",
+   "kpis": [
+    {
+     "value": 4,
+     "label": "breweries closed"
+    },
+    {
+     "value": 20,
+     "label": "savings target",
+     "prefix": "$",
+     "suffix": "m",
+     "accent": true
+    }
+   ],
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 53,
+   "kicker": "Manufacturing PMI, October",
+   "headline": "Sweden hits 60.5, highest since January 2022",
+   "kpis": [
+    {
+     "value": 60.5,
+     "label": "Sweden PMI",
+     "decimals": 1,
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Manufacturing PMI, October",
+     "decimals": 1,
+     "target": 50,
+     "items": [
+      {
+       "label": "Sweden",
+       "value": 60.5,
+       "highlight": true
+      },
+      {
+       "label": "Germany",
+       "value": 54.2
+      }
+     ]
+    }
+   },
+   "source": "Swedbank/Silf, S&P Global"
+  },
+  {
+   "line": 54,
+   "keep": true,
+   "kicker": "Germany",
+   "headline": "Buyers build purchase stocks for the first time in almost four years",
+   "sub": "Supplier delays the worst since May.",
+   "kpis": [
+    {
+     "value": 54.2,
+     "label": "Germany PMI, final",
+     "decimals": 1
+    }
+   ],
+   "source": "Reuters"
+  },
+  {
+   "line": 56,
+   "kicker": "UPM and Sappi",
+   "headline": "Capacity cuts offered for EU approval of paper venture",
+   "sub": "Map which grades and mills you depend on.",
+   "source": "UPM"
+  },
+  {
+   "line": 57,
+   "kicker": "Bajaj Mobility, Austria",
+   "headline": "Motorcycle stocks held steady after earlier cuts",
+   "sub": "Production driven by what dealers sell.",
+   "source": "Bajaj Mobility"
+  },
+  {
+   "line": 59,
+   "kicker": "Net Zero Industry, Sweden",
+   "headline": "8 in 10 manufacturers see net zero as an edge",
+   "sub": "More than half say buyers won't pay for low-emission products.",
+   "kpis": [
+    {
+     "value": 8,
+     "label": "manufacturers see an edge",
+     "suffix": " in 10"
+    }
+   ],
+   "source": "Net Zero Industry"
+  },
+  {
+   "line": 61,
+   "kicker": "Chalmers, Sweden",
+   "headline": "Swedish container trucks run empty almost half the time",
+   "kpis": [
+    {
+     "value": 44,
+     "label": "of truck container moves empty",
+     "suffix": "–46%",
+     "accent": true
+    }
+   ],
+   "source": "Chalmers"
+  },
+  {
+   "line": 62,
+   "kicker": "Chalmers, Sweden",
+   "headline": "Empties are 30 to 35% of truck container mileage",
+   "sub": "Trafikanalys data for 2016 to 2019.",
+   "kpis": [
+    {
+     "value": 30,
+     "label": "of truck container mileage",
+     "suffix": "–35%"
+    }
+   ],
+   "source": "Chalmers"
+  },
+  {
+   "line": 64,
+   "kicker": "Hitachi Energy, Ludvika",
+   "headline": "Logent to design and run a 100,000 m² central warehouse",
+   "kpis": [
+    {
+     "value": 100000,
+     "label": "central warehouse",
+     "suffix": " m²"
+    }
+   ],
+   "source": "Dagens Logistik"
+  },
+  {
+   "line": 66,
+   "kicker": "Haparanda to Gothenburg",
+   "headline": "New rail shuttle started on 5 November",
+   "sub": "Finnish and northern Swedish exports consolidated in Haparanda.",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 2,
+     "points": [
+      {
+       "name": "Haparanda",
+       "lat": 65.84,
+       "lon": 24.14,
+       "alert": true
+      },
+      {
+       "name": "Port of Gothenburg",
+       "lat": 57.71,
+       "lon": 11.97
+      }
+     ],
+     "routes": [
+      {
+       "style": "primary",
+       "label": "New rail shuttle",
+       "points": [
+        [
+         24.14,
+         65.84
+        ],
+        [
+         22.15,
+         65.58
+        ],
+        [
+         20.95,
+         64.75
+        ],
+        [
+         20.26,
+         63.83
+        ],
+        [
+         17.3,
+         62.39
+        ],
+        [
+         17.15,
+         60.67
+        ],
+        [
+         16.0,
+         59.6
+        ],
+        [
+         15.11,
+         59.07
+        ],
+        [
+         13.5,
+         58.4
+        ],
+        [
+         11.97,
+         57.71
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "source": "Dagens Logistik"
+  },
+  {
+   "line": 67,
+   "kicker": "Rema and CargoNet, Norway",
+   "headline": "A three-year rail deal to 2030",
+   "kpis": [
+    {
+     "value": 34000,
+     "label": "TEU a year by rail",
+     "prefix": "about "
+    }
+   ],
+   "source": "MT Logistikk"
+  },
+  {
+   "line": 68,
+   "kicker": "Axess Logistics, Sweden",
+   "headline": "About 50 drivers given notice as port car flows go to rail",
+   "kpis": [
+    {
+     "value": 50,
+     "label": "drivers given notice",
+     "prefix": "about ",
+     "accent": true
+    }
+   ],
+   "source": "Dagens Logistik"
+  },
+  {
+   "line": 69,
+   "kicker": "Alfa Laval and NAVTOR",
+   "headline": "SEK 6.85bn for Norwegian voyage software",
+   "kpis": [
+    {
+     "value": 6.85,
+     "label": "purchase price",
+     "prefix": "SEK ",
+     "suffix": "bn",
+     "decimals": 2
+    },
+    {
+     "value": 700,
+     "label": "in dollars",
+     "prefix": "$",
+     "suffix": "m"
+    }
+   ],
+   "source": "Alfa Laval"
+  },
+  {
+   "line": 71,
+   "kicker": "Transportföretagen Paketindex",
+   "headline": "Parcels from abroad fall, Swedish e-retailers ship more out",
+   "source": "Dagens Logistik"
+  },
+  {
+   "line": 72,
+   "kicker": "Balder Bulk, Norway",
+   "headline": "Bulk haulier bankrupt",
+   "sub": "Shippers in eastern Norway should confirm backup hauliers.",
+   "kpis": [
+    {
+     "value": 154,
+     "label": "staff affected",
+     "accent": true
+    }
+   ],
+   "source": "MT Logistikk"
+  },
+  {
+   "line": 73,
+   "kicker": "PostNord Norway",
+   "headline": "Almost NOK 0.5bn of business dropped, growth still expected",
+   "kpis": [
+    {
+     "value": 0.5,
+     "label": "revenue wound down",
+     "prefix": "NOK ",
+     "suffix": "bn",
+     "decimals": 1
+    }
+   ],
+   "source": "MT Logistikk"
+  },
+  {
+   "line": 74,
+   "visual": {
+    "template": "voice",
+    "props": {
+     "name": "Peter Sand",
+     "role": "Chief Analyst, Xeneta",
+     "where": "Xeneta Summit, 5 November",
+     "text": "Supply growth will outrun demand in 2027, but major supply chain shocks can easily overpower market fundamentals.",
+     "verbatim": false
+    }
+   }
+  },
+  {
+   "line": 75,
+   "kicker": "For planners",
+   "headline": "Budget on falling rates, keep the Gulf scenario beside it"
+  },
+  {
+   "line": 76,
+   "visual": {
+    "template": "voice",
+    "props": {
+     "name": "John Ternus",
+     "role": "CEO, Apple",
+     "where": "Tekedia, 3 November",
+     "text": "What we're seeing with memory pricing right now is unprecedented.",
+     "verbatim": true
+    }
+   }
+  },
+  {
+   "line": 77,
+   "kicker": "For planners",
+   "headline": "Buy less memory than Apple? Plan on allocation"
+  },
+  {
+   "line": 78,
+   "visual": {
+    "template": "voice",
+    "props": {
+     "name": "Violeta Roso",
+     "role": "Senior lecturer, Chalmers",
+     "where": "Chalmers news, 3 November",
+     "text": "Much of Sweden's container trucking moves no goods. The models should show where needless trips can be cut.",
+     "verbatim": false
+    }
+   }
+  },
+  {
+   "line": 79,
+   "kicker": "For planners",
+   "headline": "Empty containers are a network design question"
+  },
+  {
+   "line": 80,
+   "kicker": "Market moves: Kinaxis",
+   "headline": "SaaS revenue up 22%, guidance raised",
+   "kpis": [
+    {
+     "value": 22,
+     "label": "SaaS revenue growth, Q3",
+     "prefix": "+",
+     "suffix": "%",
+     "accent": true
+    }
+   ],
+   "source": "Kinaxis"
+  },
+  {
+   "line": 81,
+   "kicker": "Market moves: Kinaxis",
+   "headline": "Just over $1bn of contracted backlog",
+   "kpis": [
+    {
+     "value": 1.03,
+     "label": "remaining performance obligations",
+     "prefix": "$",
+     "suffix": "bn",
+     "decimals": 2
+    }
+   ],
+   "source": "Kinaxis"
+  },
+  {
+   "line": 82,
+   "kicker": "Market moves: Alpega",
+   "headline": "Former Girteka chief Nikolay Pargov named CEO",
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 83,
+   "kicker": "The week ahead",
+   "headline": "Dates to watch",
+   "visual": {
+    "template": "timeline",
+    "props": {
+     "items": [
+      {
+       "label": "10 Nov",
+       "detail": "Swedish industry economic report",
+       "say": "On Tuesday"
+      },
+      {
+       "label": "15 Nov",
+       "detail": "China export control consultation closes",
+       "say": "the fifteenth",
+       "alert": true
+      },
+      {
+       "label": "16 Nov",
+       "detail": "Political strike at Posten Norge",
+       "say": "the sixteenth"
+      },
+      {
+       "label": "25 Nov",
+       "detail": "FOM live talk, defence supply chains",
+       "say": "the twenty-fifth"
+      },
+      {
+       "label": "30 Dec",
+       "detail": "EU Deforestation Regulation applies",
+       "say": "thirtieth of December"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 85,
+   "keep": true,
+   "kicker": "China, 15 November",
+   "headline": "40 technologies could join the restricted export list",
+   "kpis": [
+    {
+     "value": 40,
+     "label": "technologies"
+    },
+    {
+     "value": 23,
+     "label": "related to AI",
+     "accent": true
+    }
+   ],
+   "source": "MERICS"
+  },
+  {
+   "line": 86,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Export control risk for automation with Chinese content"
+  },
+  {
+   "line": 87,
+   "keep": true,
+   "kicker": "Posten Norge, 16 November",
+   "headline": "Political strike against 2027 postal cuts",
+   "kpis": [
+    {
+     "value": 2000,
+     "label": "of 3,000 postal jobs at risk",
+     "accent": true
+    }
+   ],
+   "source": "Fagforbundet via NTB"
+  },
+  {
+   "line": 88,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Plan Norwegian parcel volumes around the strike"
+  },
+  {
+   "line": 89,
+   "keep": true,
+   "kicker": "EU Deforestation Regulation",
+   "headline": "Due diligence for large and medium operators from 30 December",
+   "source": "European Commission"
+  },
+  {
+   "line": 90,
+   "keep": true,
+   "kicker": "EU Deforestation Regulation",
+   "headline": "Micro and small firms mostly follow on 30 June 2027"
+  },
+  {
+   "line": 91,
+   "keep": true,
+   "kicker": "FOM Hochschule, 25 November",
+   "headline": "Live talk on supply chains for the defence industry",
+   "source": "BME"
+  },
+  {
+   "line": 92,
+   "kicker": "One thing to watch",
+   "headline": "The Rhine at Kaub",
+   "kpis": [
+    {
+     "value": 19,
+     "label": "Kaub, 7 November",
+     "suffix": " cm",
+     "accent": true
+    },
+    {
+     "value": 77,
+     "label": "needed",
+     "suffix": " cm"
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Rhine gauge at Kaub, cm",
+     "target": 77,
+     "items": [
+      {
+       "label": "31 Oct",
+       "value": 32
+      },
+      {
+       "label": "1 Nov",
+       "value": 24
+      },
+      {
+       "label": "2 Nov",
+       "value": 21
+      },
+      {
+       "label": "3 Nov",
+       "value": 18
+      },
+      {
+       "label": "7 Nov",
+       "value": 19,
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "source": "Pegelonline"
+  },
+  {
+   "line": 93,
+   "kicker": "The Planning Desk",
+   "headline": "Daily briefing back tomorrow. Week in review next Sunday."
+  }
+ ]
+}

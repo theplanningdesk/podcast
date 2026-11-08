@@ -1,0 +1,234 @@
+{
+ "show": "The Planning Desk",
+ "episode_title": "Suez Return, Schaeffler Cuts, Memory Chip Prices",
+ "week": "2026-W45",
+ "run_date": "2026-11-08",
+ "brief_file": "news-brief-2026-11-08.md",
+ "target_runtime_sec": 900,
+ "word_count": 2615,
+ "hosts": {
+  "F": {"name": "Anna", "voice": "female, senior news anchor, calm, quick, warm"},
+  "M": {"name": "Erik", "voice": "male, senior news anchor, calm, quick, dry"}
+ },
+ "segments": [
+  {"id": "intro_music", "type": "music", "duration_sec": 10},
+  {
+   "id": "cold_open", "type": "speech",
+   "items": ["2026-W45-T1", "2026-W45-01"],
+   "lines": [
+    {"speaker": "F", "text": "Evergreen is sending ships back through Suez after almost three years around Africa, and Xeneta already sees container spot rates falling thirty percent next year."},
+    {"speaker": "M", "text": "Cheaper ships, dearer chips, and a Rhine still too low for a full barge. This is The Planning Desk, the week in review."}
+   ]
+  },
+  {
+   "id": "welcome", "type": "speech",
+   "items": ["2026-W45-T1", "2026-W45-T2", "2026-W45-T4", "2026-W45-T3"],
+   "lines": [
+    {"speaker": "F", "text": "Good morning, this is The Planning Desk and I'm Anna."},
+    {"speaker": "M", "text": "And I'm Erik."},
+    {"speaker": "F", "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic. Three threads ran through the week, and the first is Suez reopening just as the forecasts turn to falling freight rates."},
+    {"speaker": "M", "text": "The second is Hormuz, where attacks now reach deep into the Gulf, and the third is German car suppliers cutting deeper while electronic parts get dearer."},
+    {"speaker": "F", "text": "The Rhine is still close to empty as well, so we start at sea and work our way inland."}
+   ]
+  },
+  {
+   "id": "week_threads", "type": "speech",
+   "items": ["2026-W45-T1", "2026-W45-01", "2026-W45-26", "2026-W45-T2", "2026-W45-33", "2026-W45-T3", "2026-W45-34", "2026-W45-21", "2026-W45-T4", "2026-W45-02", "2026-W45-13", "2026-W45-17"],
+   "lines": [
+    {"speaker": "F", "text": "Evergreen readied its first Suez transits in almost three years on Thursday, with the Ever Eon and the Ever Edit. That leaves Zim nearly alone on the long way round the Cape."},
+    {"speaker": "M", "text": "The same day Xeneta told its Munich summit that global spot rates will fall about thirty percent in 2027. Long-term contract rates fall about five percent. Red Sea capacity in October was still only half the level of August 2023, so plenty of ships are yet to come back."},
+    {"speaker": "F", "text": "The reason is simple arithmetic. Xeneta sees the fleet growing six point eight percent next year, and demand growing only two and a half to four percent."},
+    {"speaker": "M", "text": "Reliability is still poor though, with Xeneta putting third quarter on-time arrivals at twenty-seven percent. Sea-Intelligence says service instability is far above pre-pandemic levels."},
+    {"speaker": "F", "text": "Maersk lifted its 2026 guidance for the third time on Thursday, citing extraordinary freight rates and widespread disruption. By Friday The Loadstar reported calmer spot markets, with Drewry's Shanghai to Rotterdam rate down two percent on the week."},
+    {"speaker": "M", "text": "Maersk shares still fell, because the upgrade was smaller than analysts expected. The bellwether carrier is still earning on disruption, so 2027 contract talks start from a strong carrier position even as Suez reopens."},
+    {"speaker": "F", "text": "For planners the 2027 budget call is falling rates and shorter transits, with wider swings in arrival dates while carriers switch routes."},
+    {"speaker": "M", "text": "Lead-time buffers move from length to variability, so widen the arrival buffer rather than cut it."},
+    {"speaker": "F", "text": "Hormuz is going the other way. Late on the first of November a tanker was hit about seventy-two nautical miles east of Ras Al Khafji in Saudi Arabia, and another ship inside the strait."},
+    {"speaker": "M", "text": "That followed attacks in the last days of October on the RITI, the Louise 1, the crude tanker Arzanah and the liquefied gas carrier Al Mayeda. The Joint Maritime Information Center counts eighteen confirmed attacks in the strait since the sixth of October."},
+    {"speaker": "F", "text": "About four hundred and ninety ships were waiting outside on the first of November. Then on Friday a seafarer went missing after a suspected missile strike on the product tanker Velos Sapphire, deep inside the Arabian Gulf, as Iran reshuffled its Hormuz blacklist."},
+    {"speaker": "M", "text": "The threat now covers the whole Gulf rather than one chokepoint. Anyone buying Gulf polymers, fuels or energy tied to liquefied gas needs a first quarter disruption scenario, whatever happens at Suez."},
+    {"speaker": "F", "text": "Inland, the Rhine stays near empty. The Kaub gauge read thirty-two centimetres on the last day of October and fell to eighteen by Tuesday. On Saturday morning it read nineteen."},
+    {"speaker": "M", "text": "A full channel of one point nine metres needs about seventy-seven centimetres at Kaub. Further down at Emmerich, on the Dutch border, the gauge reads zero. Kaub already hit a record minus six centimetres in early October."},
+    {"speaker": "F", "text": "Rail isn't picking up the slack either. U I R R says European combined road and rail volumes fell one point two percent in the third quarter, and blames infrastructure, track charges and the economy."},
+    {"speaker": "M", "text": "Barges have run light for three straight weeks and intermodal isn't growing. For chemical and bulk flows in Germany, Austria and Switzerland, booked road and rail backup is the base plan into winter."},
+    {"speaker": "F", "text": "German automotive cut deeper this week. Schaeffler will cut a net three thousand four hundred and sixty jobs across sixteen European sites by 2028, about two thousand six hundred and sixty of them in Germany."},
+    {"speaker": "M", "text": "It expects about four hundred and eighty million euros of one-off cost, mostly booked this year, with the measures landing mainly in 2027 and 2028."},
+    {"speaker": "F", "text": "Four German sites close, Dortmund, Morbach, Berlin and Schwalbach, plus Herstal in Belgium. Schaeffler expects about three hundred million euros a year in savings by 2030."},
+    {"speaker": "M", "text": "BMW reported the next day. Its deliveries in China fell twenty-four point eight percent in the third quarter while Europe rose slightly, and the carmaker widened its restructuring programme."},
+    {"speaker": "F", "text": "Continental showed working capital at thirty percent of sales after a seasonal build, and warned of bigger raw material headwinds into 2027."},
+    {"speaker": "M", "text": "And the inputs are getting dearer. Schaeffler's finance chief named printed circuit boards as the biggest cost inflation pressure, because they compete with data centre demand."},
+    {"speaker": "F", "text": "Volume falls while electronics get dearer, so split 2027 into two plans. One is a shrinking volume case for mechanical parts, the other an allocation case for electronics."},
+    {"speaker": "M", "text": "If you buy from Schaeffler, ask now for transfer dates and safety stock plans for every part moving between plants."},
+    {"speaker": "F", "text": "Erik, over to you on A I and tech, where memory chips tie straight back to that story."}
+   ]
+  },
+  {
+   "id": "ai_tech", "type": "speech",
+   "items": ["2026-W45-03", "2026-W45-04", "2026-W45-05", "2026-W45-06", "2026-W45-07", "2026-W45-08", "2026-W45-09", "2026-W45-10"],
+   "lines": [
+    {"speaker": "M", "text": "Memory chips first, and Apple's numbers tell the story. Its inventory reached about fourteen and a half billion dollars at the end of its fiscal fourth quarter, up a hundred and fifty-four percent on a year earlier."},
+    {"speaker": "F", "text": "Its manufacturing purchase obligations rose thirty-three billion dollars between June and September as memory prices climb."},
+    {"speaker": "M", "text": "Apple guided its December quarter gross margin lower and cited supply constraints for weaker iPad revenue. It also offset some memory cost with price rises and stock it already held, Supply Chain Dive reports."},
+    {"speaker": "F", "text": "What does that mean for everyone else?"},
+    {"speaker": "M", "text": "When the biggest buyer in electronics locks in memory years ahead, anyone with memory chips in the bill of materials should plan 2027 on allocations and long-term agreements."},
+    {"speaker": "F", "text": "Robots next, where Beijing stepped in. ABB says China's foreign investment security review has prohibited SoftBank's purchase of ABB Robotics' China business."},
+    {"speaker": "M", "text": "The whole deal is worth about five point four billion dollars, and the unit has about seven thousand staff. ABB and SoftBank say they're in close dialogue on the transaction."},
+    {"speaker": "F", "text": "Beijing now screens robotics as strategic technology. Automation programmes that rely on China-built robots or China-based suppliers should add approval and export control risk to their timelines."},
+    {"speaker": "M", "text": "In transport software, ARC Advisory Group says A I is moving from analysis to automated execution in transport management systems, or T M S. ARC argues deployment, not features, will decide the winners."},
+    {"speaker": "F", "text": "For shippers the question becomes how fast those agents can work their own exception queue. Danish title SCM dot dk adds that when A I agents do the buying, suppliers with incomplete product data get skipped."},
+    {"speaker": "M", "text": "That turns master data from a planning chore into a sales issue, and gives data teams a fresh argument for fixing item attributes."},
+    {"speaker": "F", "text": "Berlin's Conlio raised six point four million euros for A I that checks transport documents at road freight forwarders. Cleaner documents get actual freight costs into planning data sooner."},
+    {"speaker": "M", "text": "ID Logistics plans to test a humanoid robot at one of its sites within six months, together with Terra Robotics. A pilot isn't capacity, so keep humanoids out of 2027 warehouse plans."},
+    {"speaker": "F", "text": "And a German study by M H P and Quadriga Hochschule Berlin finds logistics and transport firms show the biggest I T security gaps in crisis readiness. Contingency plans need a fallback for a carrier whose systems go dark."},
+    {"speaker": "M", "text": "One for the risk team. A research paper due at a consortium meeting in Dubai this month uses satellite imagery to predict climate disruption to transport networks, a possible early warning feed for sites exposed to floods or low water."}
+   ]
+  },
+  {
+   "id": "management", "type": "speech",
+   "items": ["2026-W45-12", "2026-W45-22", "2026-W45-15", "2026-W45-16", "2026-W45-18", "2026-W45-19"],
+   "lines": [
+    {"speaker": "F", "text": "In management, 3M has closed sixteen factories and distribution centres since January, and will change ten more over the next year."},
+    {"speaker": "M", "text": "That takes its plant count from a hundred and eight to under a hundred, in support of a billion dollars a year in productivity by the end of 2027."},
+    {"speaker": "F", "text": "3M also wants inventory down from the high nineties to the mid seventies in days on hand. Each day is worth about thirty-five million dollars, according to the chief executive."},
+    {"speaker": "M", "text": "Fewer plants and twenty fewer inventory days only work together with tighter, more frequent replenishment. That's the real planning project behind a footprint cut."},
+    {"speaker": "F", "text": "Tilray Brands shows the same logic in beer. It cut its product range, closed four breweries, and now targets twenty million dollars in savings."},
+    {"speaker": "M", "text": "Cutting the range first is what makes the smaller footprint possible."},
+    {"speaker": "F", "text": "On demand, Sweden's purchasing managers' index for manufacturing, the P M I, hit sixty point five in October. That's the highest since January 2022."},
+    {"speaker": "M", "text": "Germany's final reading was fifty-four point two, with supplier delays the worst since May. German manufacturers also raised purchase stocks for the first time in almost four years as lead times lengthened."},
+    {"speaker": "F", "text": "Slower suppliers plus buyers stocking up means quoted lead times keep drifting. Refresh first quarter lead time parameters and safety stocks now."},
+    {"speaker": "M", "text": "In paper, UPM and Sappi offered capacity cuts on certain grades to win E U approval for their graphic paper joint venture. Paper buyers should map which grades and mills they depend on before regulators decide."},
+    {"speaker": "F", "text": "In Austria, Bajaj Mobility says its own and its dealers' motorcycle stocks held steady in the third quarter after earlier cuts."},
+    {"speaker": "M", "text": "After destocking, the planning job becomes keeping stock down, with production driven by what dealers actually sell."},
+    {"speaker": "F", "text": "And a Swedish survey from Net Zero Industry finds eight in ten manufacturers see net zero as a long-term edge, but more than half say buyers won't pay for low-emission products."},
+    {"speaker": "M", "text": "Without a price premium, low-carbon variants stay small batch in sourcing and capacity plans."}
+   ]
+  },
+  {
+   "id": "nordics_dach", "type": "speech",
+   "items": ["2026-W45-14", "2026-W45-23", "2026-W45-24", "2026-W45-25", "2026-W45-27", "2026-W45-11", "2026-W45-28", "2026-W45-30", "2026-W45-29"],
+   "lines": [
+    {"speaker": "M", "text": "Over to the Nordics, where Chalmers has numbers for every network designer. Between forty-four and forty-six percent of container moves by Swedish trucks carry an empty container."},
+    {"speaker": "F", "text": "Those empty runs make up thirty to thirty-five percent of truck container mileage, based on Trafikanalys data for 2016 to 2019."},
+    {"speaker": "M", "text": "The team built models of where empty trips happen, published in Transportation Journal in August. Depot locations and container sharing deals belong in inland network models."},
+    {"speaker": "F", "text": "Hitachi Energy has picked Logent to design and run a hundred thousand square metre central warehouse in Ludvika."},
+    {"speaker": "M", "text": "When the logistics provider also designs the building, service levels and flexibility have to be written into the design up front."},
+    {"speaker": "F", "text": "Rail had a busy week up north. A new shuttle between Haparanda and the Port of Gothenburg started on Thursday, so Finnish and northern Swedish industry can consolidate exports in Haparanda."},
+    {"speaker": "M", "text": "In Norway, Rema Distribusjon swapped one-year renewals for a three-year rail deal with CargoNet to 2030. That's about thirty-four thousand twenty-foot units a year into its regional warehouses."},
+    {"speaker": "F", "text": "And Axess Logistics gave notice to about fifty truck drivers, because car flows from Swedish ports are moving to rail. Other shippers on those corridors may find car carrier trucks scarcer."},
+    {"speaker": "M", "text": "Alfa Laval is buying Norwegian voyage software company NAVTOR for six point eight five billion kronor, about seven hundred million dollars in cash."},
+    {"speaker": "F", "text": "That puts voyage planning and port call data under fewer owners, the same data that shippers' arrival time tools depend on."},
+    {"speaker": "M", "text": "Transportföretagen's parcel index shows a turn. Parcels from abroad to Swedish consumers are falling, while Swedish e-retailers ship more abroad, so their peak plans need more cross-border carrier capacity."},
+    {"speaker": "F", "text": "And Norwegian bulk haulier Balder Bulk went bankrupt on the second of November, with a hundred and fifty-four staff. Shippers in eastern Norway should confirm backup hauliers now."},
+    {"speaker": "M", "text": "PostNord Norway has wound down business worth almost half a billion kroner and still expects growth this year. Shippers using the dropped services should line up a new provider before the 2027 tenders."}
+   ]
+  },
+  {
+   "id": "voices", "type": "speech",
+   "items": ["2026-W45-V3", "2026-W45-V2", "2026-W45-V1", "2026-W45-01", "2026-W45-03", "2026-W45-14"],
+   "lines": [
+    {"speaker": "F", "text": "Three voices from the week. Xeneta's chief analyst Peter Sand said at its summit on Thursday that supply growth will outrun demand in 2027. He added that market fundamentals are easily overpowered by major supply chain shocks, and said the Red Sea cuts both ways for the market."},
+    {"speaker": "M", "text": "So budget on falling rates, and keep the Gulf disruption scenario right next to that budget. This week's Hormuz attacks show how fast a shock can build."},
+    {"speaker": "F", "text": "Apple chief executive John Ternus spoke about memory this week, as reported by Tekedia. In his words, what we're seeing with memory pricing right now is unprecedented. He added that Apple expects less benefit over time from the memory stock it already holds."},
+    {"speaker": "M", "text": "For every company that buys less memory than Apple, that's the case for planning on allocation. Apple can lock in supply years ahead, and most buyers can't."},
+    {"speaker": "F", "text": "And Violeta Roso, senior lecturer at Chalmers, said in the university's news piece on Tuesday that the core problem is how much container trucking moves no goods at all. She hopes the team's models help the industry see where needless trips can be cut."},
+    {"speaker": "M", "text": "That makes empty containers a network design question as much as a carrier cost, and depot locations are where that question starts."}
+   ]
+  },
+  {
+   "id": "market_moves", "type": "speech",
+   "items": ["2026-W45-31", "2026-W45-32"],
+   "lines": [
+    {"speaker": "F", "text": "In market moves, Kinaxis reported third quarter software as a service revenue up twenty-two percent and raised its full-year guidance, according to the company."},
+    {"speaker": "M", "text": "Its remaining performance obligations rose to just over a billion dollars. That backlog says companies are still signing multi-year planning commitments despite tight budgets."},
+    {"speaker": "F", "text": "And logistics software group Alpega named Nikolay Pargov, the former head of Girteka, as group chief executive. A carrier executive at the top may tilt the roadmap toward carriers, worth watching for shippers on its transport software."}
+   ]
+  },
+  {
+   "id": "week_ahead", "type": "speech",
+   "items": ["2026-W45-E1", "2026-W45-E2", "2026-W45-04", "2026-W45-E3", "2026-W45-E5", "2026-W45-E4", "2026-W45-09", "2026-W45-34"],
+   "lines": [
+    {"speaker": "F", "text": "Here's the week ahead. On Tuesday, Teknikföretagen and Industriarbetsgivarna publish a new economic report on Swedish industry at a lunch seminar."},
+    {"speaker": "M", "text": "With the P M I at sixty point five, that's a read on how long the Swedish upturn lasts, and useful for 2027 volumes."},
+    {"speaker": "F", "text": "On Sunday the fifteenth, China closes its consultation on the export control catalogue. Forty technologies could move onto the restricted export list, and twenty-three of them are related to A I."},
+    {"speaker": "M", "text": "Read that next to Beijing blocking the ABB robotics sale, and add export control risk to any automation timeline with Chinese content."},
+    {"speaker": "F", "text": "A week from tomorrow, on the sixteenth, Fagforbundet calls a political strike at Posten Norge against 2027 budget cuts. The union says the cuts would cost two thousand of three thousand postal jobs from July 2027. Fagforbundet has about five thousand three hundred members at Posten."},
+    {"speaker": "M", "text": "Norwegian shippers should expect disruption on the day and plan parcel volumes around it."},
+    {"speaker": "F", "text": "Further out, the E U Deforestation Regulation applies to large and medium operators from the thirtieth of December. Anyone placing cattle, cocoa, coffee, palm oil, rubber, soy or wood products on the E U market needs due diligence running by then."},
+    {"speaker": "M", "text": "Micro and small firms mostly follow on the thirtieth of June 2027, so the big operators go first."},
+    {"speaker": "F", "text": "And on the twenty-fifth, FOM Hochschule holds a live talk on supply chains for the defence industry, the same theme as this week's crisis readiness study."},
+    {"speaker": "M", "text": "The one thing to watch is the Kaub gauge, which ended the week at nineteen centimetres. Until it climbs back toward seventy-seven, keep the road and rail backup booked."}
+   ]
+  },
+  {
+   "id": "sign_off", "type": "speech",
+   "items": ["2026-W45-T1"],
+   "lines": [
+    {"speaker": "F", "text": "That's the week in review on The Planning Desk. The daily briefing is back tomorrow morning, and the next weekly review comes next Sunday."},
+    {"speaker": "M", "text": "Keep your buffers honest and your gauges watched. We'll see you tomorrow."}
+   ]
+  },
+  {"id": "outro_music", "type": "music", "duration_sec": 10}
+ ],
+ "linkedin": {
+  "page_post": "Evergreen is back in Suez, and Xeneta now forecasts global container spot rates about 30% lower in 2027.\n\nThe return comes with a catch. Xeneta sees the fleet growing 6.8% next year against demand of 2.5% to 4%, but put Q3 on-time arrivals at just 27%. For planners, 2027 freight budgets can assume falling rates, while lead-time buffers should shift from transit length to arrival variance.\n\nHormuz is moving the other way. Attacks now reach Saudi waters and deep into the Gulf, with around 490 ships waiting outside the strait on 1 November. Gulf-sourced polymers, fuels and LNG-linked energy need a Q1 disruption scenario, whatever happens at Suez.\n\nGerman automotive cut deeper. Schaeffler will cut a net 3,460 jobs and close four German sites, BMW's China deliveries fell 24.8%, and Schaeffler named circuit boards its biggest cost pressure. Automotive planners need two 2027 cases: shrinking volume for mechanical parts, allocation for electronics.\n\nWhich of your 2027 freight budgets still assumes this year's transit times?\n\nWatch or listen: The Planning Desk, the week in review every Sunday.\n\n#supplychain #logistics #containershipping",
+  "tags": ["Xeneta", "Schaeffler", "BMW"]
+ },
+ "newsletter": {
+  "subject": "Suez Return Meets a 30% Freight Rate Forecast for 2027",
+  "body_md": "Container lines started heading back to Suez this week, and the first forecasts for 2027 point to much cheaper freight. On land, the picture got harder: the Rhine stayed near empty and German automotive cut deeper.\n\n**Suez reopens as forecasts turn to falling rates**\nEvergreen readied its first Suez transits in almost three years ([Splash247](https://splash247.com/evergreens-suez-return-leaves-zim-increasingly-isolated/)). The same day Xeneta forecast 2027 spot rates down 30% and long-term rates down 5%, with fleet growth of 6.8% against demand of 2.5% to 4% ([AJOT](https://www.ajot.com/news/xeneta-summit-analysts-forecast-ocean-freight-spot-rates-to-fall-30-in-2027-as-red-sea-return-sees-capacity-flooding-back)). Q3 on-time arrivals were only 27%. For planners: budget on falling rates, but widen arrival-variance buffers while carriers re-route.\n\n**Hormuz: the risk zone widens**\nA tanker was hit about 72 nm east of Ras Al Khafji on 1 November, after four attacks in late October ([gCaptain](https://gcaptain.com/new-wave-of-attacks-hits-tankers-and-lng-carrier-in-strait-of-hormuz-and-persian-gulf/)). On 6 November a seafarer went missing after a suspected missile strike deep inside the Gulf ([Splash247](https://splash247.com/seafarer-missing-in-gulf-tanker-strike-as-iran-redraws-hormuz-blacklist/)). Gulf-sourced polymers, fuels and LNG-linked energy need a Q1 disruption scenario.\n\n**The Rhine stays near empty**\nKaub read 19 cm on Saturday morning, far below the roughly 77 cm needed for a 1.90 m channel, and Emmerich read zero. European combined road–rail volumes also fell 1.23% in Q3 ([VerkehrsRundschau](https://www.verkehrsrundschau.de/nachrichten/transport-logistik/kombinierter-verkehr-verliert-weiter-an-volumen-3931672)). Booked road and rail backup is the base plan for DACH bulk and chemical flows into winter.\n\n**German automotive cuts deeper, electronics get dearer**\nSchaeffler will cut a net 3,460 jobs and close four German sites by 2028 ([produktion.de](https://www.produktion.de/wirtschaft/schaeffler-plant-stellenabbau-und-werksschliessungen-in-deutschland/2761568)). BMW's China deliveries fell 24.8% in Q3 ([Investing.com](https://www.investing.com/news/company-news/bmw-q3-2026-slides-margin-beats-guidance-amid-china-slump-restructuring-93CH-4998124)). Meanwhile Apple's purchase obligations rose $33bn as memory prices climbed ([Tekedia](https://www.tekedia.com/apple-inventory-jumps-154-as-rising-memory-costs-threaten-profit-margins/)). Automotive planners should run a shrinking-volume case for mechanical parts and an allocation case for electronics.\n\n**Nordics: half the container trucks run empty**\nChalmers researchers found 44–46% of Swedish truck container moves carry empty containers, 30–35% of truck container mileage ([Chalmers](https://www.chalmers.se/aktuellt/nyheter/tme-nastan-varannan-containertransport-kors-tom/)). Depot locations and container-sharing deals belong in inland network models.\n\n**Next week:** Teknikföretagen's industry report on 10 November, and China's export-control consultation closes on 15 November."
+ },
+ "show_notes": {
+  "summary": "Evergreen's Suez return arrives as Xeneta forecasts 2027 container spot rates 30% lower, while Hormuz attacks spread deeper into the Gulf. Also: Schaeffler's job cuts and German automotive restructuring, Apple's memory-driven purchase commitments, the Rhine near empty, and Chalmers on empty container trucking.",
+  "sources": [
+   {"title": "AJOT: Xeneta Summit analysts forecast ocean freight spot rates to fall 30% in 2027", "url": "https://www.ajot.com/news/xeneta-summit-analysts-forecast-ocean-freight-spot-rates-to-fall-30-in-2027-as-red-sea-return-sees-capacity-flooding-back"},
+   {"title": "Splash247: Evergreen's Suez return leaves Zim increasingly isolated", "url": "https://splash247.com/evergreens-suez-return-leaves-zim-increasingly-isolated/"},
+   {"title": "The Loadstar: Calmer waters for container spot rates", "url": "https://theloadstar.com/calmer-waters-for-container-spot-rates-but-fragile-middle-east-a-threat/"},
+   {"title": "Sea-Intelligence: Increased service instability", "url": "https://www.sea-intelligence.com/press-room/418-increased-service-instability"},
+   {"title": "Splash247: Maersk upgrades profit outlook", "url": "https://splash247.com/maersk-upgrades-profit-outlook-despite-underperforming-rivals/"},
+   {"title": "gCaptain: New wave of attacks hits tankers and LNG carrier in Strait of Hormuz and Persian Gulf", "url": "https://gcaptain.com/new-wave-of-attacks-hits-tankers-and-lng-carrier-in-strait-of-hormuz-and-persian-gulf/"},
+   {"title": "Splash247: Seafarer missing in Gulf tanker strike as Iran redraws Hormuz blacklist", "url": "https://splash247.com/seafarer-missing-in-gulf-tanker-strike-as-iran-redraws-hormuz-blacklist/"},
+   {"title": "Pegelonline: Rhine gauges", "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"},
+   {"title": "VerkehrsRundschau: Combined transport keeps losing volume", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/kombinierter-verkehr-verliert-weiter-an-volumen-3931672"},
+   {"title": "produktion.de: Schaeffler plans job cuts and plant closures in Germany", "url": "https://www.produktion.de/wirtschaft/schaeffler-plant-stellenabbau-und-werksschliessungen-in-deutschland/2761568"},
+   {"title": "Investing.com: Schaeffler Q3 2026 earnings call transcript", "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-schaeffler-group-q3-2026-sales-fall-as-restructuring-deepens-93CH-4994377"},
+   {"title": "Investing.com: BMW Q3 2026 slides", "url": "https://www.investing.com/news/company-news/bmw-q3-2026-slides-margin-beats-guidance-amid-china-slump-restructuring-93CH-4998124"},
+   {"title": "Investing.com: Continental Q3 2026 slides", "url": "https://in.investing.com/news/stock-market-news/continental-q3-2026-slides-margins-expand-on-premium-mix-despite-weak-volumes-93CH-5678768"},
+   {"title": "Tekedia: Apple inventory jumps 154% as rising memory costs threaten margins", "url": "https://www.tekedia.com/apple-inventory-jumps-154-as-rising-memory-costs-threaten-profit-margins/"},
+   {"title": "Supply Chain Dive: Apple boosts purchase commitments by $33B amid memory crunch", "url": "https://www.supplychaindive.com/news/apple-boosts-purchase-commitments-by-33b-amid-memory-crunch/873936/"},
+   {"title": "Evertiq: China blocks SoftBank's purchase of ABB's robotics business in China", "url": "https://evertiq.com/news/2026-11-05-china-blocks-softbanks-purchase-of-abbs-robotics-business-in-china"},
+   {"title": "Supply Chain Digital: China blocks SoftBank bid for ABB Robotics", "url": "https://supplychaindigital.com/news/china-blocks-softbanks-us-5-37bn-bid-for-abb-robotics"},
+   {"title": "Logistics Viewpoints: AI is reshaping the TMS market", "url": "https://logisticsviewpoints.com/2026/11/06/ai-is-reshaping-the-tms-market-deployment-will-determine-the-winners/"},
+   {"title": "SCM.dk: When AI agents do the buying, product data is the entry ticket", "url": "https://www.scm.dk/nar-ai-agenter-gar-pa-indkob-bliver-produktdata-adgangsbilletten"},
+   {"title": "VerkehrsRundschau: Conlio raises millions for AI in transport logistics", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/conlio-erhaelt-millionen-fuer-ki-in-der-transportlogistik-3930576"},
+   {"title": "VerkehrsRundschau: ID Logistics plans humanoid robot pilot", "url": "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/robotik-id-logistics-plant-pilot-im-logistikzentrum-3930478"},
+   {"title": "VerkehrsRundschau: Study finds IT security weaknesses in logistics", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/studie-logistik-zeigt-schwaechen-bei-it-sicherheit-3931607"},
+   {"title": "DC Velocity: Researchers use satellite imagery to predict climate-related disruptions", "url": "https://www.dcvelocity.com/technology/supply-chain-it/researchers-use-satellite-imagery-to-predict-climate-related-supply-chain-disruptions"},
+   {"title": "Supply Chain Dive: 3M closes 16 factories, plans changes at 10 more", "url": "https://www.supplychaindive.com/news/3m-closes-16-factories-plans-changes-at-10-more-in-network-revamp/873536/"},
+   {"title": "Supply Chain Dive: Tilray Brands targets $20M in cost savings", "url": "https://www.supplychaindive.com/news/tilray-brands-targets-20m-in-cost-savings-after-craft-brewery-closures/873848/"},
+   {"title": "finanznachrichten: Bajaj Mobility Q3 2026 interim report", "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70013264-eqs-adhoc-bajaj-mobility-ag-zwischenbericht-q3-26-konzernumsatz-ueberschreitet-nach-drei-quartalen-eur-1-mrd-ebit-steigt-im-q3-26-um-eur-10-mio-a-022.htm"},
+   {"title": "TT: Industry wants to transition but the market holds back", "url": "https://via.tt.se/pressmeddelande/4619771/industrin-vill-stalla-om-men-marknaden-bromsar?lang=sv"},
+   {"title": "Swedbank/Silf: PMI rose to 60.5 in October", "url": "https://mfn.se/cis/a/swedbank/pmi-okade-till-60-5-i-oktober-hogtryck-i-industrin-59a89fe9"},
+   {"title": "Reuters via 1027wbow: German factory activity expands steadily in October", "url": "https://1027wbow.com/2026/11/02/german-factory-activity-expands-steadily-in-october-pmi-shows/"},
+   {"title": "UPM: UPM and Sappi submit remedies in EU review", "url": "https://mfn.se/cis/a/upm-kymmene/upm-kymmene-oyj-upm-and-sappi-submit-remedies-in-european-commission-review-of-proposed-graphic-paper-joint-venture-660d8101"},
+   {"title": "Chalmers: Almost every other container transport runs empty", "url": "https://www.chalmers.se/aktuellt/nyheter/tme-nastan-varannan-containertransport-kors-tom/"},
+   {"title": "Dagens Logistik: Every other container truck move runs empty", "url": "https://dagenslogistik.se/varannan-containertransport-pa-lastbil-gar-tom/"},
+   {"title": "Dagens Logistik: Hitachi Energy picks Logent for Ludvika warehouse", "url": "https://dagenslogistik.se/hitachi-energy-valjer-logent-for-ludvikalagret/"},
+   {"title": "Dagens Logistik: New rail shuttle between Haparanda and Gothenburg", "url": "https://dagenslogistik.se/ny-godspendel-mellan-haparanda-och-goteborg/"},
+   {"title": "MT Logistikk: Rema secures three-year rail deal", "url": "https://www.mtlogistikk.no/cargonet-dagligvarelogistikk-jernbanetransport/rema-sikrer-trearig-jernbaneavtale/1355727"},
+   {"title": "Dagens Logistik: Axess gives notice to 50 drivers", "url": "https://dagenslogistik.se/axess-varslar-50-chaufforer/"},
+   {"title": "Alfa Laval: Alfa Laval to acquire NAVTOR", "url": "https://mfn.se/cis/a/alfa-laval/alfa-laval-to-acquire-navtor-as-to-strengthen-the-digital-offering-for-the-maritime-sector-9e7cb4cc"},
+   {"title": "Splash247: Alfa Laval makes $700m NAVTOR bet", "url": "https://splash247.com/alfa-laval-makes-700m-navtor-bet/"},
+   {"title": "MT Logistikk: PostNord Norway cut half a billion and still grows", "url": "https://www.mtlogistikk.no/jan-volsdal-kunstlig-intelligens-pakke-og-godstransport/kuttet-en-halv-milliard-vokser-likevel/1352956"},
+   {"title": "Dagens Logistik: Paketindex, parcels from abroad fall", "url": "https://dagenslogistik.se/paketindex-utlandspaketen-backar/"},
+   {"title": "MT Logistikk: Balder Bulk bankrupt, 154 employees affected", "url": "https://www.mtlogistikk.no/balder-bulk-konkurs-litra/balder-bulk-konkurs-154-ansatte-berort/1352996"},
+   {"title": "Bastille Post: Kinaxis reports third quarter 2026 results", "url": "https://www.bastillepost.com/global/article/6327103-kinaxis-inc-reports-third-quarter-2026-financial-results"},
+   {"title": "Logistics Viewpoints: Kinaxis reports 22% SaaS growth in Q3 2026", "url": "https://logisticsviewpoints.com/2026/11/05/kinaxis-reports-22-saas-growth-in-q3-2026-raises-full-year-outlook/"},
+   {"title": "VerkehrsRundschau: Alpega names Nikolay Pargov CEO", "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/alpega-ex-girteka-chef-pargov-wird-neuer-ceo-3931936"},
+   {"title": "TT: Teknikföretagen and Industriarbetsgivarna economic report, 10 November", "url": "https://via.tt.se/pressmeddelande/4620869/pressinbjudan-ny-konjunkturrapport-fran-teknikforetagen-och-industriarbetsgivarna-1011?lang=sv"},
+   {"title": "MERICS: EU-China economic relations", "url": "https://mericseu.substack.com/p/eu-china-economic-relations-enter"},
+   {"title": "NTB: Fagforbundet announces political strike at Posten", "url": "https://kommunikasjon.ntb.no/pressemelding/19127977/fagforbundet-varsler-politisk-streik-for-posten?publisherId=8191471"},
+   {"title": "European Commission: EUDR implementation from December 2026", "url": "https://trade.ec.europa.eu/access-to-markets/en/news/delay-until-december-2026-and-other-developments-implementation-eudr-regulation"},
+   {"title": "BME: FOM Live-Talk on security and defence supply chains", "url": "https://www.bme.de/news/sicherheit-gemeinsam-neu-denken-wie-wirtschaft-un"}
+  ]
+ }
+}
