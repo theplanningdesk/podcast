@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-07T09:13:40.589546+00:00",
+ "fetched_at": "2026-11-08T09:26:43.513794+00:00",
  "window_days": 8,
  "sources_ok": 67,
  "sources_total": 72,
@@ -410,24 +410,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SupplyChainBrain",
-   "title": "The Trouble with Surveillance Pricing",
-   "link": "https://www.supplychainbrain.com/technology/all-technology/article/16170253/the-trouble-with-surveillance-pricing",
-   "published": "2026-10-30T17:29:05+00:00",
-   "summary": "AI’s power to harness the vast amount of consumers’ personal data in myriad ways to make supply chains more efficient is undeniable...",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "Whistleblowers Claimed Key Oil Tanker Rate Was Manipulated",
-   "link": "https://www.supplychainbrain.com/logistics/global-gateways/article/16170250/whistleblowers-claimed-key-oil-tanker-rate-was-manipulated",
-   "published": "2026-10-30T14:07:01+00:00",
-   "summary": "The Iran war has made it harder to establish the reality of which ships are being hired to transport oil through the Strait of...",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "SCMR",
    "title": "Can you trust a supply chain audit in the age of AI?",
    "link": "https://www.scmr.com/article/supply-chain-audits-ai-generated-fraud",
@@ -662,24 +644,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SCMR",
-   "title": "Reducing costs and staying productive in the VUCA world",
-   "link": "https://www.scmr.com/article/five-priorities-reducing-supply-chain-costs",
-   "published": "2026-10-30T14:27:00+00:00",
-   "summary": "Venkatesh Srinivasan outlines five cost-reduction priorities that encourage supply chain leaders to question product requirements, simplify operations and evaluate alternatives before negotiating prices and managing supplier performance.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SCMR",
-   "title": "First Shift: Automation investment and freight inflation raise the stakes for supply chains",
-   "link": "https://www.scmr.com/article/first-shift-automation-investment-and-freight-inflation-raise-the-stakes-for-supply-chains",
-   "published": "2026-10-30T11:43:00+00:00",
-   "summary": "Walmart’s expanded automation commitment and five-year-high shipper costs lead a briefing on direct sourcing, grocery delivery, port volumes, container capacity and freight-network performance.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "The Loadstar",
    "title": "Calmer waters for container spot rates, but ‘fragile’ Middle East a threat",
    "link": "https://theloadstar.com/calmer-waters-for-container-spot-rates-but-fragile-middle-east-a-threat/",
@@ -766,6 +730,33 @@
    "link": "https://theloadstar.com/detention-fees-have-a-simple-problem-a-bigger-bill-cannot-move-a-box-that-cannot-move/",
    "published": "2026-11-05T16:45:38+00:00",
    "summary": "The US Federal Maritime Commission wants research into when charges above compensatory cost actually speed cargo movement. For shippers, the critical distinction is between a delay they can prevent and one they cannot. A container is ready to leave a terminal, the trucker has an appointment, and the importer chooses to wait another day. A rising demurrage charge might change that decision. Now…",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "FreightWaves",
+   "title": "Intermodal rates coming in hot this fall; mostly fuel driven",
+   "link": "https://www.freightwaves.com/news/intermodal-rates-coming-in-hot-this-fall-mostly-fuel-driven",
+   "published": "2026-11-08T01:30:00+00:00",
+   "summary": "Fuel surcharges are doing most of the work for intermodal contracts this year, but are further increases expected? The post Intermodal rates coming in hot this fall; mostly fuel driven appeared first on FreightWaves .",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "FreightWaves",
+   "title": "Big carriers keep FMCSA’s crackdown alive, Fuller says",
+   "link": "https://www.freightwaves.com/news/fuller-big-carriers-fmcsa-crackdown-permanent",
+   "published": "2026-11-07T13:00:00+00:00",
+   "summary": "FreightWaves' CEO told Optym Convergence non-domiciled CDL holders were probably the main reason the downturn dragged on, and that enforcement will outlast any change in Washingto The post Big carriers keep FMCSA’s crackdown alive, Fuller says appeared first on FreightWaves .",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "FreightWaves",
+   "title": "Compromised communications linked to 40% of stolen loads in Highway fraud report",
+   "link": "https://www.freightwaves.com/news/compromised-communications-linked-to-40-of-stolen-loads-in-highway-fraud-report",
+   "published": "2026-11-07T12:16:29+00:00",
+   "summary": "A new freight fraud report identifies a striking license-related pattern among direct theft incidents. Meanwhile, fraudulent calls surged 90%, and carrier ownership reports more than doubled. The post Compromised communications linked to 40% of stolen loads in Highway fraud report appeared first on FreightWaves .",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1103,33 +1094,6 @@
    "lane": "logistics"
   },
   {
-   "source": "FreightWaves",
-   "title": "GXO’s contract wins surge 34%, but growth comes amid cost pressures",
-   "link": "https://www.freightwaves.com/news/gxos-contract-wins-surge-34-but-growth-comes-amid-cost-pressures",
-   "published": "2026-11-04T20:47:48+00:00",
-   "summary": "GXO secured $375 million in third-quarter contracts, but the rapid pace of onboarding new customers created temporary cost pressures despite rising revenue and earnings. The post GXO’s contract wins surge 34%, but growth comes amid cost pressures appeared first on FreightWaves .",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "FreightWaves",
-   "title": "Emirates rolls out enhanced air cargo service for data center operators",
-   "link": "https://www.freightwaves.com/news/emirates-rolls-out-enhanced-air-cargo-service-for-data-center-operators",
-   "published": "2026-11-04T19:41:24+00:00",
-   "summary": "Emirates is positioning itself to attract more air cargo business from hyperscalers and their suppliers. The post Emirates rolls out enhanced air cargo service for data center operators appeared first on FreightWaves .",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "FreightWaves",
-   "title": "Intermodal leads weekly gains as US rail traffic rises 3.5%, says AAR",
-   "link": "https://www.freightwaves.com/news/intermodal-leads-weekly-gains-as-us-rail-traffic-rises-3-5-says-aar",
-   "published": "2026-11-04T18:52:17+00:00",
-   "summary": "Rail freight on U.S. carriers continues to turn in strong results. The post Intermodal leads weekly gains as US rail traffic rises 3.5%, says AAR appeared first on FreightWaves .",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "Supply Chain Digital",
    "title": "DP World Strengthens FMCG Logistics Capabilities in Europe",
    "link": "https://supplychaindigital.com/news/dp-world-strengthens-fmcg-logistics-capabilities-in-europe",
@@ -1432,33 +1396,6 @@
    "link": "https://www.dcvelocity.com/supply-chain/a-little-accommodation-goes-a-long-way",
    "published": "2026-11-02T17:16:47+00:00",
    "summary": "Each October since 1945, the U.S. Department of Labor has sponsored National Disability Employment Awareness Month to acknowledge the positive impact people with disabilities have on the American workplace. This year’s theme was “Celebrating Value and Talent.” Despite mounting evidence that hiring people with disabilities makes good business sense, corporate America has a long way to go in that…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "DC Velocity",
-   "title": "Black Friday peak subsides as shoppers wait for later buying sprees",
-   "link": "https://www.dcvelocity.com/finance-strategy/black-friday-peak-subsides-as-shoppers-wait-for-later-buying-sprees",
-   "published": "2026-10-30T16:25:03+00:00",
-   "summary": "While Black Friday traditionally marks the unofficial start of the holiday shopping season, that pattern may change in 2026 as consumers are planning to make their biggest holiday shopping push a little later, according to research from Bank of America. A market survey shows that 29% of consumers plan to do most of their holiday shopping in early- to mid-December, up from 19% in 2025. Meanwhile,…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "DC Velocity",
-   "title": "Shipper costs hit five-year high as freight demand stalls",
-   "link": "https://www.dcvelocity.com/transportation/trucking/shipper-costs-hit-five-year-high-as-freight-demand-stalls",
-   "published": "2026-10-30T16:20:34+00:00",
-   "summary": "U.S. shippers continue to pay more to move freight even as shipment volumes remain largely unchanged, according to the latest U.S. Bank Freight Payment Index. Third-quarter shipper spending surged 32.1% from a year ago, marking the largest annual increase since 2021, primarily driven by tightened carrier capacity and diesel prices climbing over $6.50 per gallon nationally. At the same time,…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "DC Velocity",
-   "title": "North American robot orders increased 24.8% in third quarter",
-   "link": "https://www.dcvelocity.com/material-handling/robotics/north-american-robot-orders-increased-24-8-in-third-quarter",
-   "published": "2026-10-30T16:17:49+00:00",
-   "summary": "North American companies ordered 10,989 robots valued at $723.5 million in the third quarter of 2026, according to new data released by the Association for Advancing Automation (A3). Those numbers meant that orders increased 24.8% in units and 26.1% in value compared to the third quarter of 2025, making it the strongest quarter of the year so far. The third-quarter gains also pushed total orders…",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1818,7 +1755,7 @@
    "title": "ANNONSØRINNHOLD FOR POSTNORD Må håndtere stort volum og strenge krav",
    "link": "https://www.mtlogistikk.no/farmasiet-lager-lagerautomatisering/ma-handtere-stort-volum-og-strenge-krav/1354065",
    "published": null,
-   "summary": "",
+   "summary": "Med 30 prosent årlig vekst er Farmasiet avhengig av solide logistikkpartnere. De har funnet en i PostNord. You are using an outdated browser. Please upgrade your browser to improve your experience and security. Farmasiet sendte svimlende 1,7 millioner pakker fra sitt lager på Vestby i 2025 og fortsetter å utfordre de tradisjonelle apotekene. For å lykkes er kundeopplevelsen sentral. – Vi er opptatt av å være tydelige på når vi kommer, og at vi kommer hurtig og leverer som avtalt. Rask og…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -2174,15 +2111,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SCM.dk",
-   "title": "Danske cybertalenter blandt Europas bedste i cybersikkerhed",
-   "link": "https://www.scm.dk/danske-cybertalenter-blandt-europas-bedste-i-cybersikkerhed",
-   "published": "2026-10-30T11:00:00+00:00",
-   "summary": "Danmark opnår en syvendeplads ved EM i cybersikkerhed. Industriens Fond fremhæver talentudvikling som en vej til at styrke dansk erhvervslivs digitale sikkerhed.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "SC Effect",
    "title": "China Blocks SoftBank's Acquisition of ABB Robotics",
    "link": "https://sceffect.se/en/kina-stoppar-softbanks-forvarv-av-abb-robotics/",
@@ -2444,15 +2372,6 @@
    "lane": "logistics"
   },
   {
-   "source": "Talking Logistics",
-   "title": "Above the Fold: Supply Chain Logistics News (October 30, 2026)",
-   "link": "https://talkinglogistics.com/2026/10/30/above-the-fold-supply-chain-logistics-news-october-30-2026/",
-   "published": "2026-10-30T12:42:37+00:00",
-   "summary": "The first time I visited Barcelona, I lost my ability to sleep. The sun went down, it got late, I went to bed, but I never got sleepy. I was up all night. One night of insomnia. It happens. It’s normal. Two nights later, the sun went down again, and once again, sleep never came. ... Read more The post Above the Fold: Supply Chain Logistics News (October 30, 2026) appeared first on Talking…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "Supply Chain Shaman",
    "title": "Grading Academia in Preparing Supply Chain Leaders",
    "link": "https://www.supplychainshaman.com/grading-academia-in-preparing-supply-chain-leaders/",
@@ -2566,15 +2485,6 @@
    "link": "https://news.sap.com/2026/11/how-india-drives-sap-ai-future/",
    "published": "2026-11-02T05:15:00+00:00",
    "summary": "India has evolved from a regional hub into one of SAP’s most important global innovation hubs.",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "SAP News",
-   "title": "SAP Shows How to Lead with AI Governance at SAP TechEd",
-   "link": "https://news.sap.com/2026/10/sap-teched-shows-how-to-lead-with-ai-governance/",
-   "published": "2026-10-30T11:00:00+00:00",
-   "summary": "SAP provides the solutions necessary to govern, control, and innovate now and into the future.",
    "via": "feed",
    "lane": "logistics"
   },
@@ -2799,17 +2709,6 @@
    "lane": "companies"
   },
   {
-   "source": "Atlas Copco",
-   "title": "Atlas Copco Group Celebrates Expansion Week in the United States",
-   "link": "https://mfn.se/one/a/atlas-copco/atlas-copco-group-celebrates-expansion-week-in-the-united-states-02b88352",
-   "published": "2026-10-30T18:58:22+00:00",
-   "summary": "PARSIPPANY, N.J., Oct. 30, 2026 (GLOBE NEWSWIRE) -- Atlas Copco Group has completed Expansion Week US, a coordinated series of openings and expansion announcements highlighting three strategic investments in US manufacturing. From October 26–29, 2026, the Group celebrated projects at two sites in New York and one in South Carolina. The investments expand production of oil-free compressors, dry…",
-   "via": "feed",
-   "company": "Atlas Copco",
-   "highlights": "The investments expand production of oil-free compressors, dry vacuum pumps, and gas and process equipment, supporting shorter lead times, stronger supply chains, and production closer to customers. Powered by renewable hydroelectric energy, the site is expected to employ up to 600 people and strengthen the US domestic semiconductor supply chain. “These investments help us strengthen supply chains, respond more quickly to customer needs, and support continued industrial growth in the United States.”",
-   "lane": "companies"
-  },
-  {
    "source": "Epiroc",
    "title": "Epiroc to acquire mining spare parts supplier Aramine",
    "link": "https://mfn.se/cis/a/epiroc/epiroc-to-acquire-mining-spare-parts-supplier-aramine-da421a24",
@@ -2876,17 +2775,6 @@
    "lane": "companies"
   },
   {
-   "source": "Valmet",
-   "title": "Valmet Oyj: Valmet and Metsä Fibre reach settlement on Kemi bioproduct mill arbitration",
-   "link": "https://mfn.se/cis/a/valmet/valmet-oyj-valmet-and-metsa-fibre-reach-settlement-on-kemi-bioproduct-mill-arbitration-32ad09a0",
-   "published": "2026-10-30T11:30:00+00:00",
-   "summary": "Valmet and Metsä Fibre reach settlement on Kemi bioproduct mill arbitration Valmet Oyj's stock exchange release on October 30, 2026 at 13:30 p.m. EET Valmet announced on October 15, 2024, that Metsä Fibre had filed a request for arbitration against Valmet concerning Metsä Fibre's Kemi bioproduct mill in Finland, claiming approximately EUR 47 million. Metsä Fibre also indicated potential…",
-   "via": "feed",
-   "company": "Valmet",
-   "highlights": "",
-   "lane": "companies"
-  },
-  {
    "source": "UPM",
    "title": "UPM-Kymmene Oyj: UPM and Sappi submit remedies in European Commission review of proposed graphic paper Joint Venture",
    "link": "https://mfn.se/cis/a/upm-kymmene/upm-kymmene-oyj-upm-and-sappi-submit-remedies-in-european-commission-review-of-proposed-graphic-paper-joint-venture-660d8101",
@@ -2895,17 +2783,6 @@
    "via": "feed",
    "company": "UPM",
    "highlights": "They include capacity optimization for the supply of certain paper grades in Europe, and related disclosures, with a view to maintaining a competitive and stable market despite the ongoing decline in demand, while taking into account environmental performance. They also include certain commercial safeguards for customers, and investments in decarbonization, electrification and energy efficiency. The Joint Venture is a rational response to the structural decline of graphic paper markets in Europe and would enable a more orderly adjustment of industry capacity while maintaining reliable customer supply and generating significant efficiencies.",
-   "lane": "companies"
-  },
-  {
-   "source": "UPM",
-   "title": "UPM-Kymmene Oyj: The partial demerger of UPM-Kymmene Corporation has been registered; WISA Group Plc to be listed on Nasdaq Helsinki",
-   "link": "https://mfn.se/cis/a/upm-kymmene/upm-kymmene-oyj-the-partial-demerger-of-upm-kymmene-corporation-has-been-registered-wisa-group-plc-to-be-listed-on-nasdaq-helsinki-63425b81",
-   "published": "2026-10-31T07:00:00+00:00",
-   "summary": "UPM-Kymmene Corporation Stock Exchange Release (Other information disclosed according to the rules of the exchange) October 31, 2026 at 9:00 EET The partial demerger of UPM-Kymmene Corporation has been registered; WISA Group Plc to be listed on Nasdaq Helsinki The completion of the partial demerger (\"Demerger\") of UPM-Kymmene Corporation (\"UPM\") has today October 31, 2026, been registered with…",
-   "via": "feed",
-   "company": "UPM",
-   "highlights": "",
    "lane": "companies"
   },
   {
@@ -2935,25 +2812,25 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 307.0,
+   "level_cm": 297.0,
    "trend": null,
-   "measured_at": "2026-11-07T10:00:00+01:00",
+   "measured_at": "2026-11-08T10:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 19.0,
+   "level_cm": 13.0,
    "trend": null,
-   "measured_at": "2026-11-07T10:00:00+01:00",
+   "measured_at": "2026-11-08T10:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 65.0,
+   "level_cm": 64.0,
    "trend": null,
-   "measured_at": "2026-11-07T10:00:00+01:00",
+   "measured_at": "2026-11-08T10:15:00+01:00",
    "unit": "cm"
   },
   {
@@ -2961,15 +2838,15 @@
    "km": 780.8,
    "level_cm": 152.0,
    "trend": null,
-   "measured_at": "2026-11-07T10:00:00+01:00",
+   "measured_at": "2026-11-08T10:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 0.0,
+   "level_cm": -1.0,
    "trend": null,
-   "measured_at": "2026-11-07T10:00:00+01:00",
+   "measured_at": "2026-11-08T10:15:00+01:00",
    "unit": "cm"
   }
  ]

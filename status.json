@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-07T09:13:40.589546+00:00",
+ "fetched_at": "2026-11-08T09:26:43.513794+00:00",
  "window_days": 8,
  "sources_ok": 67,
  "sources_total": 72,
@@ -18,7 +18,7 @@
    "url": "https://www.supplychainbrain.com/rss/articles",
    "ok": true,
    "method": "feed https://www.supplychainbrain.com/rss/articles",
-   "items": 37,
+   "items": 35,
    "error": null,
    "lane": "logistics"
   },
@@ -27,7 +27,7 @@
    "url": "https://www.scmr.com/",
    "ok": true,
    "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 28,
+   "items": 26,
    "error": null,
    "lane": "logistics"
   },
@@ -81,7 +81,7 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 22,
+   "items": 19,
    "error": null,
    "lane": "logistics"
   },
@@ -153,7 +153,7 @@
    "url": "https://scm.dk/feeds/articles",
    "ok": true,
    "method": "feed https://scm.dk/feeds/articles",
-   "items": 28,
+   "items": 27,
    "error": null,
    "lane": "logistics"
   },
@@ -225,7 +225,7 @@
    "url": "https://talkinglogistics.com/",
    "ok": true,
    "method": "feed https://talkinglogistics.com/feed/",
-   "items": 3,
+   "items": 2,
    "error": null,
    "lane": "logistics"
   },
@@ -243,7 +243,7 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 13,
+   "items": 12,
    "error": null,
    "lane": "logistics"
   },
@@ -414,7 +414,7 @@
    "url": "https://mfn.se/all/a/atlas-copco.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/atlas-copco.rss",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "companies"
   },
@@ -594,8 +594,8 @@
    "url": "https://mfn.se/all/a/valmet.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/valmet.rss",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
    "lane": "companies"
   },
   {
@@ -603,7 +603,7 @@
    "url": "https://mfn.se/all/a/upm-kymmene.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/upm-kymmene.rss",
-   "items": 2,
+   "items": 1,
    "error": null,
    "lane": "companies"
   },

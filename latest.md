@@ -1,4 +1,4 @@
-# Source digest, fetched 2026-11-07 09:13 UTC
+# Source digest, fetched 2026-11-08 09:26 UTC
 67 of 72 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
 
 # Logistics, trade, AI and tech sources
@@ -96,10 +96,6 @@
   Pakistan has communicated with Iranian authorities and has seen several other shipments of Qatari LNG over the past month arrive...
 - 2026-10-31 18:32 | Japan’s Omron Targets India for Manufacturing, Exports Push | https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16170260/japans-omron-targets-india-for-manufacturing-exports-push
   Omron expects India’s rapid economic growth and rising manufacturing activity to fuel demand for its factory automation products...
-- 2026-10-30 17:29 | The Trouble with Surveillance Pricing | https://www.supplychainbrain.com/technology/all-technology/article/16170253/the-trouble-with-surveillance-pricing
-  AI’s power to harness the vast amount of consumers’ personal data in myriad ways to make supply chains more efficient is undeniable...
-- 2026-10-30 14:07 | Whistleblowers Claimed Key Oil Tanker Rate Was Manipulated | https://www.supplychainbrain.com/logistics/global-gateways/article/16170250/whistleblowers-claimed-key-oil-tanker-rate-was-manipulated
-  The Iran war has made it harder to establish the reality of which ships are being hired to transport oil through the Strait of...
 
 ## SCMR
 - 2026-11-06 15:21 | Can you trust a supply chain audit in the age of AI? | https://www.scmr.com/article/supply-chain-audits-ai-generated-fraud
@@ -154,10 +150,6 @@
   AI can help technology and telecommunications companies move from fragmented supply chain visibility to faster decisions, provided leaders establish reliable data, clear accountability and appropriate limits on autonomous action.
 - 2026-11-02 14:29 | First Shift: Trade talks, factory weakness and capacity investments shape the week ahead | https://www.scmr.com/article/first-shift-trade-talks-factory-weakness-and-capacity-investments-shape-the-week-ahead
   U.S.-Canada negotiations and weaker Chinese manufacturing lead a briefing on fertilizer sourcing, peak-season labor, intermodal strategy, cross-border capacity, parcel visibility and procurement cost control.
-- 2026-10-30 14:27 | Reducing costs and staying productive in the VUCA world | https://www.scmr.com/article/five-priorities-reducing-supply-chain-costs
-  Venkatesh Srinivasan outlines five cost-reduction priorities that encourage supply chain leaders to question product requirements, simplify operations and evaluate alternatives before negotiating prices and managing supplier performance.
-- 2026-10-30 11:43 | First Shift: Automation investment and freight inflation raise the stakes for supply chains | https://www.scmr.com/article/first-shift-automation-investment-and-freight-inflation-raise-the-stakes-for-supply-chains
-  Walmart’s expanded automation commitment and five-year-high shipper costs lead a briefing on direct sourcing, grocery delivery, port volumes, container capacity and freight-network performance.
 
 ## The Loadstar
 - 2026-11-06 13:13 | Calmer waters for container spot rates, but ‘fragile’ Middle East a threat | https://theloadstar.com/calmer-waters-for-container-spot-rates-but-fragile-middle-east-a-threat/
@@ -182,6 +174,12 @@
   The US Federal Maritime Commission wants research into when charges above compensatory cost actually speed cargo movement. For shippers, the critical distinction is between a delay they can prevent and one they cannot. A container is ready to leave a terminal, the trucker has an appointment, and the importer chooses to wait another day. A rising demurrage charge might change that decision. Now…
 
 ## FreightWaves
+- 2026-11-08 01:30 | Intermodal rates coming in hot this fall; mostly fuel driven | https://www.freightwaves.com/news/intermodal-rates-coming-in-hot-this-fall-mostly-fuel-driven
+  Fuel surcharges are doing most of the work for intermodal contracts this year, but are further increases expected? The post Intermodal rates coming in hot this fall; mostly fuel driven appeared first on FreightWaves .
+- 2026-11-07 13:00 | Big carriers keep FMCSA’s crackdown alive, Fuller says | https://www.freightwaves.com/news/fuller-big-carriers-fmcsa-crackdown-permanent
+  FreightWaves' CEO told Optym Convergence non-domiciled CDL holders were probably the main reason the downturn dragged on, and that enforcement will outlast any change in Washingto The post Big carriers keep FMCSA’s crackdown alive, Fuller says appeared first on FreightWaves .
+- 2026-11-07 12:16 | Compromised communications linked to 40% of stolen loads in Highway fraud report | https://www.freightwaves.com/news/compromised-communications-linked-to-40-of-stolen-loads-in-highway-fraud-report
+  A new freight fraud report identifies a striking license-related pattern among direct theft incidents. Meanwhile, fraudulent calls surged 90%, and carrier ownership reports more than doubled. The post Compromised communications linked to 40% of stolen loads in Highway fraud report appeared first on FreightWaves .
 - 2026-11-06 20:01 | Why Aviation Automation Still Hasn’t Reached Small Planes | https://www.freightwaves.com/news/why-aviation-automation-still-hasnt-reached-small-planes
   Self-flying planes are closer than most aviation and freight pros think. Reliable Robotics CEO Robert Rose breaks down why small aircraft still operate with outdated systems, what true aviation automation requires, and where autonomous cargo aircraft fit in the supply chain. Rose shares how his time at SpaceX shaped his approach to safety, software and […] The post Why Aviation Automation Still…
 - 2026-11-06 18:21 | PS Logistics expands Tennessee flatbed presence with Roane acquisition | https://www.freightwaves.com/news/ps-logistics-expands-tennessee-flatbed-presence-with-roane-acquisition
@@ -256,12 +254,6 @@
   North American rail traffic saw a mixed performance in Week 43, with significant disruptions impacting major lines. Bill Stephens of Trains Magazine breaks down how record-breaking rainfall in New Mexico and a massive CSX tech outage led to operational challenges. Learn how these events impacted intermodal and carload volumes, and what Q3 earnings reveal about […] The post 8 Inches of Rain Shut…
 - 2026-11-04 20:58 | Dry Van & Reefer: Market Signals You Can’t Ignore | https://www.freightwaves.com/news/dry-van-reefer-market-signals-you-cant-ignore
   Despite trending lower, dry van tender rejection rates still indicate a tight market. Learn why capacity isn’t expanding, even as carriers face cost pressures outpacing revenue growth. We’ll dive into the latest SONAR data, including regional rate maps and intermodal volumes, to uncover the hidden signals in today’s fragile freight market. Dry van tender rejection […] The post Dry Van & Reefer:…
-- 2026-11-04 20:47 | GXO’s contract wins surge 34%, but growth comes amid cost pressures | https://www.freightwaves.com/news/gxos-contract-wins-surge-34-but-growth-comes-amid-cost-pressures
-  GXO secured $375 million in third-quarter contracts, but the rapid pace of onboarding new customers created temporary cost pressures despite rising revenue and earnings. The post GXO’s contract wins surge 34%, but growth comes amid cost pressures appeared first on FreightWaves .
-- 2026-11-04 19:41 | Emirates rolls out enhanced air cargo service for data center operators | https://www.freightwaves.com/news/emirates-rolls-out-enhanced-air-cargo-service-for-data-center-operators
-  Emirates is positioning itself to attract more air cargo business from hyperscalers and their suppliers. The post Emirates rolls out enhanced air cargo service for data center operators appeared first on FreightWaves .
-- 2026-11-04 18:52 | Intermodal leads weekly gains as US rail traffic rises 3.5%, says AAR | https://www.freightwaves.com/news/intermodal-leads-weekly-gains-as-us-rail-traffic-rises-3-5-says-aar
-  Rail freight on U.S. carriers continues to turn in strong results. The post Intermodal leads weekly gains as US rail traffic rises 3.5%, says AAR appeared first on FreightWaves .
 
 ## SupplyChain247
 (failed: https://www.supplychain247.com/: ReadTimeout: HTTPSConnectionPool(host='www.supplychain247.com', port=443): Read timed out. (read timeout=25))
@@ -340,12 +332,6 @@
   When you think of companies that have innovative supply chains, retailers like Amazon and Walmart or consumer packaged-goods companies like Procter & Gamble and Unilever typically spring to mind—not a nearly 200-year-old industrial company with its roots in a French iron foundry. Yet Schneider Electric is making a big push on the supply chain innovation front. The energy tech powerhouse has been…
 - 2026-11-02 17:16 | A little accommodation goes a long way | https://www.dcvelocity.com/supply-chain/a-little-accommodation-goes-a-long-way
   Each October since 1945, the U.S. Department of Labor has sponsored National Disability Employment Awareness Month to acknowledge the positive impact people with disabilities have on the American workplace. This year’s theme was “Celebrating Value and Talent.” Despite mounting evidence that hiring people with disabilities makes good business sense, corporate America has a long way to go in that…
-- 2026-10-30 16:25 | Black Friday peak subsides as shoppers wait for later buying sprees | https://www.dcvelocity.com/finance-strategy/black-friday-peak-subsides-as-shoppers-wait-for-later-buying-sprees
-  While Black Friday traditionally marks the unofficial start of the holiday shopping season, that pattern may change in 2026 as consumers are planning to make their biggest holiday shopping push a little later, according to research from Bank of America. A market survey shows that 29% of consumers plan to do most of their holiday shopping in early- to mid-December, up from 19% in 2025. Meanwhile,…
-- 2026-10-30 16:20 | Shipper costs hit five-year high as freight demand stalls | https://www.dcvelocity.com/transportation/trucking/shipper-costs-hit-five-year-high-as-freight-demand-stalls
-  U.S. shippers continue to pay more to move freight even as shipment volumes remain largely unchanged, according to the latest U.S. Bank Freight Payment Index. Third-quarter shipper spending surged 32.1% from a year ago, marking the largest annual increase since 2021, primarily driven by tightened carrier capacity and diesel prices climbing over $6.50 per gallon nationally. At the same time,…
-- 2026-10-30 16:17 | North American robot orders increased 24.8% in third quarter | https://www.dcvelocity.com/material-handling/robotics/north-american-robot-orders-increased-24-8-in-third-quarter
-  North American companies ordered 10,989 robots valued at $723.5 million in the third quarter of 2026, according to new data released by the Association for Advancing Automation (A3). Those numbers meant that orders increased 24.8% in units and 26.1% in value compared to the third quarter of 2025, making it the strongest quarter of the year so far. The third-quarter gains also pushed total orders…
 
 ## Splash247
 - 2026-11-06 12:00 | DenAr takes on Turkey’s first offshore wind seabed survey campaign | https://splash247.com/denar-takes-on-turkeys-first-offshore-wind-seabed-survey-campaign/
@@ -441,6 +427,7 @@
 - 2026-11-06 07:36 | Forventer opptil 20 prosent flere pakker | https://www.mtlogistikk.no/hentepunkter-pakkevolumer-postnord/forventer-opptil-20-prosent-flere-pakker/1356395
   PostNord rigger logistikknettverket for markant volumvekst før årets høysesong Inngangen til årets mest krevende driftsperiode preges av prognoser om solid vekst i handelsvolumene. For å håndtere den ventede pakkeøkningen på mellom 15 og 20 prosent sammenlignet med 2025, iverksetter PostNord omfattende operative justeringer i distribusjonsapparatet sitt, ifølge en pressemelding fra selskapet. Driftsorganisasjonen har over lengre tid planlagt ressursbruken inn mot avslutningen av 2026. – Vi går…
 - no date | ANNONSØRINNHOLD FOR POSTNORD Må håndtere stort volum og strenge krav | https://www.mtlogistikk.no/farmasiet-lager-lagerautomatisering/ma-handtere-stort-volum-og-strenge-krav/1354065
+  Med 30 prosent årlig vekst er Farmasiet avhengig av solide logistikkpartnere. De har funnet en i PostNord. You are using an outdated browser. Please upgrade your browser to improve your experience and security. Farmasiet sendte svimlende 1,7 millioner pakker fra sitt lager på Vestby i 2025 og fortsetter å utfordre de tradisjonelle apotekene. For å lykkes er kundeopplevelsen sentral. – Vi er opptatt av å være tydelige på når vi kommer, og at vi kommer hurtig og leverer som avtalt. Rask og…
 - 2026-11-05 12:31 | 420 millioner kroner til batteribytte og elektriske bulkskip | https://www.mtlogistikk.no/batteribytte-elektriske-bulkskip-enova/420-millioner-kroner-til-batteribytte-og-elektriske-bulkskip/1355970
   Enova deler ut 420 millioner kroner til tolv batteridrevne fartøy og to ladeanlegg. Målet er å kutte havneopphold og flytte mer godstransport over til sjøveien. Tildelingen retter seg mot prosjekter innen kystfrakt og havbruk, ifølge en pressemelding. Midlene skal finansiere både nybygg og konvertering av eksisterende tonnasje. Beregninger tilsier et samlet årlig utslippskutt på cirka 21 300 tonn CO₂, tilsvarende nær en firedel av de årlige utslippene fra flyruten mellom Oslo og Trondheim. –…
 - 2026-11-05 13:50 | Kan bli en av Norges største | https://www.mtlogistikk.no/alunskiferdeponi-dognhvileplasser-ladestasjoner/kan-bli-en-av-norges-storste/1356089
@@ -521,8 +508,6 @@
   Den danske produktionsvirksomhed Welcon A/S har i over 50 år fremstillet stålkonstruktioner. Hovedvægten af produktionen er i dag tårne til vindmøller.
 - 2026-11-02 07:00 | Frode Laursen indsætter eldrevne modulvogntog over Øresund | https://www.scm.dk/frode-laursen-indsaetter-eldrevne-modulvogntog-over-oresund
   For første gang krydser et eldrevet modulvogntog Øresundsbron. Frode Laursens nye ellastbil har en rækkevidde på op til 600 kilometer og skal anvendes i nordisk godstransport.
-- 2026-10-30 11:00 | Danske cybertalenter blandt Europas bedste i cybersikkerhed | https://www.scm.dk/danske-cybertalenter-blandt-europas-bedste-i-cybersikkerhed
-  Danmark opnår en syvendeplads ved EM i cybersikkerhed. Industriens Fond fremhæver talentudvikling som en vej til at styrke dansk erhvervslivs digitale sikkerhed.
 
 ## SC Effect
 - no date | China Blocks SoftBank's Acquisition of ABB Robotics | https://sceffect.se/en/kina-stoppar-softbanks-forvarv-av-abb-robotics/
@@ -599,8 +584,6 @@
   8 weeks to go until 2027. Are you ready? Ready for what, Adrian? I don’t know. Ready for anything, I guess. 8 weeks is still a long time. Don’t wish it away. I know, but still, this year is coming to an end. Yeah, I know. But what’s your point? I just don’t feel ready. ... Read more The post Above the Fold: Supply Chain Logistics News (November 6, 2026) appeared first on Talking Logistics with…
 - 2026-11-02 12:00 | The Supplier Challenge Behind DPPs and ESG Compliance | https://talkinglogistics.com/2026/11/02/the-supplier-challenge-behind-dpps-and-esg-compliance/
   Digital Product Passports, ESG regulations, product traceability — the list of compliance requirements companies must navigate continues to grow. Unfortunately, meeting these requirements isn’t something companies can do on their own. Much of the data and documentation required comes from suppliers, often across multiple tiers of the supply chain. So, how do you get suppliers ... Read more The…
-- 2026-10-30 12:42 | Above the Fold: Supply Chain Logistics News (October 30, 2026) | https://talkinglogistics.com/2026/10/30/above-the-fold-supply-chain-logistics-news-october-30-2026/
-  The first time I visited Barcelona, I lost my ability to sleep. The sun went down, it got late, I went to bed, but I never got sleepy. I was up all night. One night of insomnia. It happens. It’s normal. Two nights later, the sun went down again, and once again, sleep never came. ... Read more The post Above the Fold: Supply Chain Logistics News (October 30, 2026) appeared first on Talking…
 
 ## Supply Chain Shaman
 - 2026-11-04 13:47 | Grading Academia in Preparing Supply Chain Leaders | https://www.supplychainshaman.com/grading-academia-in-preparing-supply-chain-leaders/
@@ -631,8 +614,6 @@
   Max Success Plan is now available to every customer, whether they choose to work with SAP directly or through a trusted partner.
 - 2026-11-02 05:15 | How India Drives SAP’s AI Future | https://news.sap.com/2026/11/how-india-drives-sap-ai-future/
   India has evolved from a regional hub into one of SAP’s most important global innovation hubs.
-- 2026-10-30 11:00 | SAP Shows How to Lead with AI Governance at SAP TechEd | https://news.sap.com/2026/10/sap-teched-shows-how-to-lead-with-ai-governance/
-  SAP provides the solutions necessary to govern, control, and innovate now and into the future.
 
 ## Gartner Newsroom
 (failed: https://www.gartner.com/en/newsroom: HTTPError: 403 Client Error: Forbidden for url: https://www.gartner.com/en/newsroom)
@@ -730,8 +711,6 @@
 ## Atlas Copco
 - 2026-11-03 07:30 | Compressed air distributor in central Portugal has become part of Atlas Copco Group | https://mfn.se/cis/a/atlas-copco/compressed-air-distributor-in-central-portugal-has-become-part-of-atlas-copco-group-2567b49f
   Nacka, Sweden, November 3, 2026: The operating assets of Iberoair, Lda. ("Iberoair") has become part of Atlas Copco Group. Iberoair is based in Águeda Portugal and provides compressed air equipment and related services. The company serves a broad range of industrial customers, including ceramics, light manufacturing and mechanical industries primarily in central Portugal. "We are pleased to…
-- 2026-10-30 18:58 | Atlas Copco Group Celebrates Expansion Week in the United States | https://mfn.se/one/a/atlas-copco/atlas-copco-group-celebrates-expansion-week-in-the-united-states-02b88352
-  Highlights: The investments expand production of oil-free compressors, dry vacuum pumps, and gas and process equipment, supporting shorter lead times, stronger supply chains, and production closer to customers. Powered by renewable hydroelectric energy, the site is expected to employ up to 600 people and strengthen the US domestic semiconductor supply chain. “These investments help us strengthen supply chains, respond more quickly to customer needs, and support continued industrial growth in the United States.”
 
 ## Epiroc
 - 2026-11-06 07:30 | Epiroc to acquire mining spare parts supplier Aramine | https://mfn.se/cis/a/epiroc/epiroc-to-acquire-mining-spare-parts-supplier-aramine-da421a24
@@ -797,14 +776,11 @@
 (nothing in the window)
 
 ## Valmet
-- 2026-10-30 11:30 | Valmet Oyj: Valmet and Metsä Fibre reach settlement on Kemi bioproduct mill arbitration | https://mfn.se/cis/a/valmet/valmet-oyj-valmet-and-metsa-fibre-reach-settlement-on-kemi-bioproduct-mill-arbitration-32ad09a0
-  Valmet and Metsä Fibre reach settlement on Kemi bioproduct mill arbitration Valmet Oyj's stock exchange release on October 30, 2026 at 13:30 p.m. EET Valmet announced on October 15, 2024, that Metsä Fibre had filed a request for arbitration against Valmet concerning Metsä Fibre's Kemi bioproduct mill in Finland, claiming approximately EUR 47 million. Metsä Fibre also indicated potential…
+(nothing in the window)
 
 ## UPM
 - 2026-11-05 09:00 | UPM-Kymmene Oyj: UPM and Sappi submit remedies in European Commission review of proposed graphic paper Joint Venture | https://mfn.se/cis/a/upm-kymmene/upm-kymmene-oyj-upm-and-sappi-submit-remedies-in-european-commission-review-of-proposed-graphic-paper-joint-venture-660d8101
   Highlights: They include capacity optimization for the supply of certain paper grades in Europe, and related disclosures, with a view to maintaining a competitive and stable market despite the ongoing decline in demand, while taking into account environmental performance. They also include certain commercial safeguards for customers, and investments in decarbonization, electrification and energy efficiency. The Joint Venture is a rational response to the structural decline of graphic paper markets in Europe and would enable a more orderly adjustment of industry capacity while maintaining reliable customer supply and generating significant efficiencies.
-- 2026-10-31 07:00 | UPM-Kymmene Oyj: The partial demerger of UPM-Kymmene Corporation has been registered; WISA Group Plc to be listed on Nasdaq Helsinki | https://mfn.se/cis/a/upm-kymmene/upm-kymmene-oyj-the-partial-demerger-of-upm-kymmene-corporation-has-been-registered-wisa-group-plc-to-be-listed-on-nasdaq-helsinki-63425b81
-  UPM-Kymmene Corporation Stock Exchange Release (Other information disclosed according to the rules of the exchange) October 31, 2026 at 9:00 EET The partial demerger of UPM-Kymmene Corporation has been registered; WISA Group Plc to be listed on Nasdaq Helsinki The completion of the partial demerger ("Demerger") of UPM-Kymmene Corporation ("UPM") has today October 31, 2026, been registered with…
 
 ## Stora Enso
 (nothing in the window)
@@ -822,8 +798,8 @@
 
 ## Rhine gauges (Pegelonline, live)
 Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.
-- MAXAU (Rhine km 362.327): 307.0 cm, measured 2026-11-07T10:00:00+01:00
-- KAUB (Rhine km 546.23): 19.0 cm, measured 2026-11-07T10:00:00+01:00
-- KÖLN (Rhine km 688.0): 65.0 cm, measured 2026-11-07T10:00:00+01:00
-- DUISBURG-RUHRORT (Rhine km 780.8): 152.0 cm, measured 2026-11-07T10:00:00+01:00
-- EMMERICH (Rhine km 851.9): 0.0 cm, measured 2026-11-07T10:00:00+01:00
+- MAXAU (Rhine km 362.327): 297.0 cm, measured 2026-11-08T10:15:00+01:00
+- KAUB (Rhine km 546.23): 13.0 cm, measured 2026-11-08T10:15:00+01:00
+- KÖLN (Rhine km 688.0): 64.0 cm, measured 2026-11-08T10:15:00+01:00
+- DUISBURG-RUHRORT (Rhine km 780.8): 152.0 cm, measured 2026-11-08T10:15:00+01:00
+- EMMERICH (Rhine km 851.9): -1.0 cm, measured 2026-11-08T10:15:00+01:00
