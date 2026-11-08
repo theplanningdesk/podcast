@@ -1,4 +1,4 @@
-# Source digest, fetched 2026-11-08 09:26 UTC
+# Source digest, fetched 2026-11-08 11:34 UTC
 67 of 72 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
 
 # Logistics, trade, AI and tech sources
@@ -798,8 +798,8 @@
 
 ## Rhine gauges (Pegelonline, live)
 Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.
-- MAXAU (Rhine km 362.327): 297.0 cm, measured 2026-11-08T10:15:00+01:00
-- KAUB (Rhine km 546.23): 13.0 cm, measured 2026-11-08T10:15:00+01:00
-- KÖLN (Rhine km 688.0): 64.0 cm, measured 2026-11-08T10:15:00+01:00
-- DUISBURG-RUHRORT (Rhine km 780.8): 152.0 cm, measured 2026-11-08T10:15:00+01:00
-- EMMERICH (Rhine km 851.9): -1.0 cm, measured 2026-11-08T10:15:00+01:00
+- MAXAU (Rhine km 362.327): 296.0 cm, measured 2026-11-08T12:30:00+01:00
+- KAUB (Rhine km 546.23): 13.0 cm, measured 2026-11-08T12:30:00+01:00
+- KÖLN (Rhine km 688.0): 63.0 cm, measured 2026-11-08T12:30:00+01:00
+- DUISBURG-RUHRORT (Rhine km 780.8): 151.0 cm, measured 2026-11-08T12:30:00+01:00
+- EMMERICH (Rhine km 851.9): -2.0 cm, measured 2026-11-08T12:30:00+01:00

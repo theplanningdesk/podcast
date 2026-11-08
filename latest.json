@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-08T09:26:43.513794+00:00",
+ "fetched_at": "2026-11-08T11:34:10.277682+00:00",
  "window_days": 8,
  "sources_ok": 67,
  "sources_total": 72,
@@ -2812,9 +2812,9 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 297.0,
+   "level_cm": 296.0,
    "trend": null,
-   "measured_at": "2026-11-08T10:15:00+01:00",
+   "measured_at": "2026-11-08T12:30:00+01:00",
    "unit": "cm"
   },
   {
@@ -2822,31 +2822,31 @@
    "km": 546.23,
    "level_cm": 13.0,
    "trend": null,
-   "measured_at": "2026-11-08T10:15:00+01:00",
+   "measured_at": "2026-11-08T12:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 64.0,
+   "level_cm": 63.0,
    "trend": null,
-   "measured_at": "2026-11-08T10:15:00+01:00",
+   "measured_at": "2026-11-08T12:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 152.0,
+   "level_cm": 151.0,
    "trend": null,
-   "measured_at": "2026-11-08T10:15:00+01:00",
+   "measured_at": "2026-11-08T12:30:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": -1.0,
+   "level_cm": -2.0,
    "trend": null,
-   "measured_at": "2026-11-08T10:15:00+01:00",
+   "measured_at": "2026-11-08T12:30:00+01:00",
    "unit": "cm"
   }
  ]
