@@ -1,0 +1,330 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Rhine Low Water: Kaub Falls to 13 cm",
+  "week": "2026-W46",
+  "run_date": "2026-11-09",
+  "brief_file": "news-brief-daily-2026-11-09.md",
+  "target_runtime_sec": 261,
+  "word_count": 784,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-09-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "The Rhine at Kaub read thirteen centimetres over the weekend, and barges need about seventy-seven for a full channel."
+        },
+        {
+          "speaker": "M",
+          "text": "The bottleneck is getting worse, not easing. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-09-01",
+        "2026-11-09-02",
+        "2026-11-09-05",
+        "2026-11-09-07"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Monday the ninth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, the Rhine hits a new low, Nordic carriers brace for a peak up to three times normal, freight fraud moves to the inbox, and Germany rewires its truck toll."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-09-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "The Kaub gauge on the Rhine read thirteen centimetres at lunchtime on Sunday, down from nineteen on Saturday, according to the federal Pegelonline gauges."
+        },
+        {
+          "speaker": "M",
+          "text": "Barges need roughly seventy-seven centimetres at Kaub for a shipping channel of one metre ninety, so the river is a long way short."
+        },
+        {
+          "speaker": "F",
+          "text": "Further down, Emmerich on the Dutch border read minus two centimetres over the weekend, Köln sixty-three and Duisburg-Ruhrort one hundred and fifty-one."
+        },
+        {
+          "speaker": "M",
+          "text": "Upstream at Maxau the gauge stood at two hundred and ninety-six, and the tightest stretch is still the middle Rhine around Kaub."
+        },
+        {
+          "speaker": "F",
+          "text": "This is the fourth straight week with Kaub below thirty-five centimetres, and the reading is still falling."
+        },
+        {
+          "speaker": "M",
+          "text": "For chemical, steel and fuel flows in Germany, that makes booked rail and truck capacity the base plan into December, not the fallback."
+        },
+        {
+          "speaker": "F",
+          "text": "Barges that still run will sail light-loaded, so plan on more trips for the same volume."
+        },
+        {
+          "speaker": "M",
+          "text": "If your December plan still assumes full barges on the Rhine, change that assumption this week and book the alternative."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-09-02",
+        "2026-11-09-05",
+        "2026-11-09-06",
+        "2026-11-09-07"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to the Nordics, where parcel networks are getting ready for peak season."
+        },
+        {
+          "speaker": "F",
+          "text": "PostNord in Norway is rigging its network for fifteen to twenty percent more parcels than last year's peak, according to MT Logistikk."
+        },
+        {
+          "speaker": "M",
+          "text": "In Denmark, Bring is doubling terminal staffing and adding a hundred and forty pickup points, because volumes after Black Friday can reach three times normal, S C M dot D K reports."
+        },
+        {
+          "speaker": "F",
+          "text": "And in Sweden, the Christmas trade report from H U I Research says conditions are the best in several years, which could take holiday sales to a record."
+        },
+        {
+          "speaker": "M",
+          "text": "Carriers are adding capacity, but when volume can triple, cut-off times and pickup capacity become the binding constraint."
+        },
+        {
+          "speaker": "F",
+          "text": "Retailers should lock their December carrier allocations and promise dates now, not in the week after Black Friday."
+        },
+        {
+          "speaker": "M",
+          "text": "Freight fraud is moving to the inbox. A new report from Highway links compromised communications to forty percent of direct theft incidents, FreightWaves reports."
+        },
+        {
+          "speaker": "F",
+          "text": "Fraudulent calls are up ninety percent in that report, and carrier ownership reports have more than doubled."
+        },
+        {
+          "speaker": "M",
+          "text": "Verisk CargoNet counted two thousand and seventy-two supply chain crime incidents in the U S and Canada through the twenty-third of October, down twenty-five percent."
+        },
+        {
+          "speaker": "F",
+          "text": "Losses rose thirty-nine percent year on year, though, as criminal networks use identity fraud and carrier impersonation."
+        },
+        {
+          "speaker": "M",
+          "text": "That's North American data, but the same tactics are reported in Europe, and fewer but bigger thefts through hijacked email and phone lines change where the check belongs."
+        },
+        {
+          "speaker": "F",
+          "text": "Carrier verification has to sit in tendering and booking itself, not only in onboarding, so confirm who you're dealing with on every load."
+        },
+        {
+          "speaker": "M",
+          "text": "Staying with fraud, Supply Chain Management Review argues generative A I makes fake supplier records, images and testimony easier to produce."
+        },
+        {
+          "speaker": "F",
+          "text": "Its advice is to strengthen how auditors verify evidence and corroborate compliance claims."
+        },
+        {
+          "speaker": "M",
+          "text": "That lands as due-diligence rules like the E U Deforestation Regulation bite in December, so compliance data feeding sourcing decisions needs cross-checks against independent sources."
+        },
+        {
+          "speaker": "F",
+          "text": "In Germany, the government wants truck toll revenue to flow straight to the motorway company Autobahn G m b H from twenty twenty-eight, VerkehrsRundschau reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The company could borrow and issue bonds from twenty twenty-seven, and Berlin promises planning certainty, while the Federal Audit Office warns of risks."
+        },
+        {
+          "speaker": "F",
+          "text": "Once toll income funds the motorways directly, toll levels become a funding lever, so long-range German road cost assumptions in your network model should carry a toll increase scenario."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-09-03",
+        "2026-11-09-04"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Into the quick hits, and Maersk chief executive Vincent Clerc has signalled more newbuilding orders in the coming months, on top of the twenty-six large container ships ordered in September."
+        },
+        {
+          "speaker": "F",
+          "text": "More tonnage on order as Suez reopens supports the case for softer rates in twenty twenty-seven, and that strengthens shippers' hand in the coming contract round."
+        },
+        {
+          "speaker": "M",
+          "text": "Swedish mining equipment maker Epiroc is buying Aramine, a French supplier of spare parts and services for underground mines, with no price given."
+        },
+        {
+          "speaker": "F",
+          "text": "That pulls aftermarket supply in-house, so service parts inventory and distribution planning sit at the centre of the integration."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-09-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Monday, and keep an eye on Kaub this week."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with the next desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Rhine Low Water: Kaub Gauge Falls to 13 cm",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "The Rhine at Kaub is down to thirteen centimetres."
+      },
+      {
+        "speaker": "M",
+        "text": "Barges need about seventy-seven centimetres there for a full channel of one metre ninety, and the gauge fell from nineteen to thirteen in a day, according to Pegelonline."
+      },
+      {
+        "speaker": "F",
+        "text": "Further down, Emmerich on the Dutch border read minus two, and Kaub has now spent four straight weeks below thirty-five centimetres."
+      },
+      {
+        "speaker": "M",
+        "text": "That means light-loaded barges, and more trips to move the same volume."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners moving chemicals, steel and fuel through Germany, booked rail and truck capacity is now the base plan into December, not the backup."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Rhine low water: the Kaub gauge fell to 13 cm on 8 November, against roughly 77 cm needed for a full 1.90 m channel, its fourth straight week below 35 cm. Planners moving chemicals, steel or fuel through Germany should treat booked rail and truck capacity as the base plan into December. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "logistics",
+      "rhine",
+      "lowwater"
+    ]
+  },
+  "linkedin": {
+    "page_post": "The Rhine at Kaub fell to 13 cm, so rail and truck can no longer be the backup for German bulk flows.\n\nThe Kaub gauge read 13 cm on 8 November, down from 19 cm a day earlier, according to Pegelonline. Barges need roughly 77 cm there for a full 1.90 m channel, and this is the fourth straight week below 35 cm.\n\nIf you move chemicals, steel or fuel through Germany, make booked rail and truck capacity the base plan into December, and assume any barge that does run sails light-loaded.\n\nAlso on today's desk:\nBring is doubling terminal staffing in Denmark as parcel volumes after Black Friday can reach three times normal.\nA Highway report links compromised communications to 40% of stolen loads, while CargoNet sees losses up 39%.\n\nWhich of your December lanes still assume a fully loaded barge on the Rhine?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #logistics #rhine",
+    "tags": [
+      "Bring"
+    ]
+  },
+  "show_notes": {
+    "summary": "Rhine low water: the Kaub gauge fell to 13 cm over the weekend, its fourth week below 35 cm, while Emmerich dropped below zero. Also: Nordic parcel peak preparations at PostNord and Bring, a freight fraud report on compromised communications, AI-generated supplier records and audits, and Germany's plan to route truck-toll revenue to Autobahn GmbH. Quick hits on Maersk's signal of more ship orders and Epiroc buying Aramine.",
+    "sources": [
+      {
+        "title": "Pegelonline: Rhine gauge readings (WSV)",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "MT Logistikk: Forventer opptil 20 prosent flere pakker",
+        "url": "https://www.mtlogistikk.no/hentepunkter-pakkevolumer-postnord/forventer-opptil-20-prosent-flere-pakker/1356395"
+      },
+      {
+        "title": "SCM.dk: Bring fordobler terminalbemanding for julehandlens pakkepres",
+        "url": "https://www.scm.dk/bring-fordobler-terminalbemanding-for-julehandlens-pakkepres"
+      },
+      {
+        "title": "Dagens Logistik: Köpstarka hushåll lyfter julhandeln",
+        "url": "https://dagenslogistik.se/kopstarka-hushall-lyfter-julhandeln/"
+      },
+      {
+        "title": "FreightWaves: Compromised communications linked to 40% of stolen loads in Highway fraud report",
+        "url": "https://www.freightwaves.com/news/compromised-communications-linked-to-40-of-stolen-loads-in-highway-fraud-report"
+      },
+      {
+        "title": "The Loadstar: Cargo crime in North America down in Q3, but losses are mounting",
+        "url": "https://theloadstar.com/cargo-crime-in-north-america-down-in-q3-but-losses-are-mounting/"
+      },
+      {
+        "title": "Supply Chain Management Review: Supply chain audits and AI-generated fraud",
+        "url": "https://www.scmr.com/article/supply-chain-audits-ai-generated-fraud"
+      },
+      {
+        "title": "VerkehrsRundschau: Lkw-Maut soll ab 2028 Autobahnen finanzieren",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/recht-geld/lkw-maut-soll-ab-2028-autobahnen-finanzieren-3932512"
+      },
+      {
+        "title": "SCM.dk: Maersk varsler flere ordrer på containerskibe",
+        "url": "https://www.scm.dk/maersk-varsler-flere-ordrer-pa-containerskibe"
+      },
+      {
+        "title": "Epiroc: Epiroc to acquire mining spare parts supplier Aramine",
+        "url": "https://mfn.se/cis/a/epiroc/epiroc-to-acquire-mining-spare-parts-supplier-aramine-da421a24"
+      }
+    ]
+  }
+}

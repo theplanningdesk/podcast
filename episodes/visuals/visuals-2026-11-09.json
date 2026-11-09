@@ -1,0 +1,211 @@
+{
+  "stem": "2026-11-09",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "stat",
+      "props": {
+        "kicker": "Rhine at Kaub",
+        "value": 13,
+        "label": "cm on the gauge, a new low",
+        "source": "Pegelonline"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Rhine, Germany",
+        "title": "The middle Rhine bottleneck",
+        "pad": 1.5,
+        "points": [
+          {
+            "name": "Emmerich",
+            "lat": 51.83,
+            "lon": 6.25,
+            "alert": true
+          },
+          {
+            "name": "Duisburg-Ruhrort",
+            "lat": 51.45,
+            "lon": 6.73,
+            "muted": true
+          },
+          {
+            "name": "Köln",
+            "lat": 50.94,
+            "lon": 6.96,
+            "muted": true
+          },
+          {
+            "name": "Kaub",
+            "lat": 50.09,
+            "lon": 7.77,
+            "alert": true
+          },
+          {
+            "name": "Maxau",
+            "lat": 49.04,
+            "lon": 8.31,
+            "muted": true
+          }
+        ],
+        "routes": [
+          {
+            "style": "primary",
+            "label": "Rhine",
+            "points": [
+              [
+                8.31,
+                49.04
+              ],
+              [
+                8.46,
+                49.49
+              ],
+              [
+                8.27,
+                50.0
+              ],
+              [
+                7.9,
+                49.97
+              ],
+              [
+                7.77,
+                50.09
+              ],
+              [
+                7.6,
+                50.36
+              ],
+              [
+                7.1,
+                50.73
+              ],
+              [
+                6.96,
+                50.94
+              ],
+              [
+                6.77,
+                51.23
+              ],
+              [
+                6.73,
+                51.45
+              ],
+              [
+                6.62,
+                51.66
+              ],
+              [
+                6.25,
+                51.83
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "line": 1,
+      "at": "seventy-seven",
+      "template": "bars",
+      "props": {
+        "kicker": "Kaub gauge, cm",
+        "title": "Needed for a full channel vs now",
+        "items": [
+          {
+            "label": "Needed",
+            "value": 77
+          },
+          {
+            "label": "Now",
+            "value": 13,
+            "highlight": true
+          }
+        ],
+        "source": "Pegelonline"
+      }
+    },
+    {
+      "line": 1,
+      "at": "from nineteen to thirteen",
+      "template": "stat",
+      "props": {
+        "kicker": "In one day",
+        "value": 13,
+        "label": "cm, down from 19 cm",
+        "source": "Pegelonline"
+      }
+    },
+    {
+      "line": 2,
+      "template": "headline",
+      "props": {
+        "kicker": "Emmerich, Dutch border",
+        "title": "Gauge reads minus 2 cm",
+        "source": "Pegelonline"
+      }
+    },
+    {
+      "line": 2,
+      "at": "four straight weeks",
+      "template": "stat",
+      "props": {
+        "kicker": "Kaub below 35 cm",
+        "value": 4,
+        "label": "straight weeks",
+        "source": "Pegelonline"
+      }
+    },
+    {
+      "line": 3,
+      "template": "takeaway",
+      "props": {
+        "kicker": "What it means",
+        "text": "Light-loaded barges, more trips for the same volume"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "Flows through Germany",
+        "items": [
+          {
+            "label": "Chemicals",
+            "say": "chemicals"
+          },
+          {
+            "label": "Steel",
+            "say": "steel"
+          },
+          {
+            "label": "Fuel",
+            "say": "fuel"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "base plan",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Booked rail and truck is the base plan into December"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
