@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-08T11:34:10.277682+00:00",
+ "fetched_at": "2026-11-09T10:17:28.078395+00:00",
  "window_days": 8,
  "sources_ok": 67,
  "sources_total": 72,
@@ -91,6 +91,33 @@
    "link": "https://www.supplychaindive.com/news/logitech-launches-supply-chain-decarbonization-program/873778/",
    "published": "2026-11-05T12:44:00+00:00",
    "summary": "The computer peripheral manufacturer’s Chain Reaction initiative will start with 17 suppliers pooling purchasing power to collectively buy renewable electricity.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Are Manufacturers Acting Too Hastily in Adopting AI?",
+   "link": "https://www.supplychainbrain.com/scb-features/article/16424533/are-manufacturers-acting-too-hastily-in-adopting-ai",
+   "published": "2026-11-09T05:00:00+00:00",
+   "summary": "Manufacturers are jumping aboard the artificial intelligence bandwagon. But are they moving too fast?",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Extended Service Agreements, Not Right to Repair, Are the Real Aftermarket Story",
+   "link": "https://www.supplychainbrain.com/general-scm/customer-relationship-management/blog/15883271/extended-service-agreements-not-right-to-repair-are-the-real-aftermarket-story",
+   "published": "2026-11-09T05:00:00+00:00",
+   "summary": "Right to repair is forcing part of this conversation, but the pressure was already there from three other directions.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "How Social-Engineering Fraudsters Are Targeting Supply Chains",
+   "link": "https://www.supplychainbrain.com/technology/artificial-intelligence/blog/15883221/how-socialengineering-fraudsters-are-targeting-supply-chains",
+   "published": "2026-11-09T05:00:00+00:00",
+   "summary": "Fraudsters no longer need to hack into systems. They simply mimic trusted business processes, allowing fraudulent payments to...",
    "via": "feed",
    "lane": "logistics"
   },
@@ -401,15 +428,6 @@
    "lane": "logistics"
   },
   {
-   "source": "SupplyChainBrain",
-   "title": "Japan’s Omron Targets India for Manufacturing, Exports Push",
-   "link": "https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16170260/japans-omron-targets-india-for-manufacturing-exports-push",
-   "published": "2026-10-31T18:32:58+00:00",
-   "summary": "Omron expects India’s rapid economic growth and rising manufacturing activity to fuel demand for its factory automation products...",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "SCMR",
    "title": "Can you trust a supply chain audit in the age of AI?",
    "link": "https://www.scmr.com/article/supply-chain-audits-ai-generated-fraud",
@@ -645,6 +663,24 @@
   },
   {
    "source": "The Loadstar",
+   "title": "BBC: Tech giant Nvidia to investigate CEO’s affair with suspected Chinese spy",
+   "link": "https://theloadstar.com/bbc-tech-giant-nvidia-to-investigate-ceos-affair-with-suspected-chinese-spy/",
+   "published": "2026-11-09T06:17:29+00:00",
+   "summary": "BBC reports: US tech giant Nvidia has opened an independent investigation following reports its CEO Jensen Huang had a relationship with a suspected Chinese spy. The company, one of the most valuable in the world, said its board had no reason to believe the company’s secrets or national security were compromised, adding that the CEO was committed to continuing to lead the company. Separately,…",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "The Loadstar",
+   "title": "News in Brief Podcast| Week 44 | Port congestion, Suez returns and Transpacific capacity crunch",
+   "link": "https://theloadstar.com/news-in-brief-podcast-week-44-port-congestion-suez-returns-and-transpacific-capacity-crunch/",
+   "published": "2026-11-08T17:00:30+00:00",
+   "summary": "In this week’s News in Brief, we look at the latest developments shaping global shipping and air cargo, from growing port congestion concerns to shifting capacity and geopolitical uncertainty. The Loadstar managing editor Gavin van Marle joins us fresh from the World Ports Conference in London to discuss the key talking points from the event, the latest concerns around potential disruption at…",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "The Loadstar",
    "title": "Calmer waters for container spot rates, but ‘fragile’ Middle East a threat",
    "link": "https://theloadstar.com/calmer-waters-for-container-spot-rates-but-fragile-middle-east-a-threat/",
    "published": "2026-11-06T13:13:01+00:00",
@@ -716,20 +752,11 @@
    "lane": "logistics"
   },
   {
-   "source": "The Loadstar",
-   "title": "Nasdaq plunges into correction territory",
-   "link": "https://theloadstar.com/nasdaq-plunges-into-correction-territory/",
-   "published": "2026-11-05T16:55:44+00:00",
-   "summary": "CNBC reports: The Nasdaq Composite plummeted on Thursday, erasing the sharp gains from the previous session, as investors accelerated their move away from technology stocks in the wake of the U.S. midterm elections. The tech-heavy Nasdaq declined 3.9% and dipped into correction territory, trading more than 10% below a record set last month. The S&P 500 was down 2.8%. The Dow Jones Industrial…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "The Loadstar",
-   "title": "Detention fees have a simple problem: a bigger bill cannot move a box that cannot move",
-   "link": "https://theloadstar.com/detention-fees-have-a-simple-problem-a-bigger-bill-cannot-move-a-box-that-cannot-move/",
-   "published": "2026-11-05T16:45:38+00:00",
-   "summary": "The US Federal Maritime Commission wants research into when charges above compensatory cost actually speed cargo movement. For shippers, the critical distinction is between a delay they can prevent and one they cannot. A container is ready to leave a terminal, the trucker has an appointment, and the importer chooses to wait another day. A rising demurrage charge might change that decision. Now…",
+   "source": "FreightWaves",
+   "title": "Borderlands Mexico: US foreign-trade zones push to fix USMCA tariff obstacles",
+   "link": "https://www.freightwaves.com/news/borderlands-mexico-us-foreign-trade-zones-push-to-fix-usmca-tariff-obstacles",
+   "published": "2026-11-08T12:00:00+00:00",
+   "summary": "This week in Borderlands Mexico: US foreign-trade zones push to fix USMCA tariff obstacles; Mexico to deploy 826 National Guard officers to boost highway security; and Ametek to invest $25M in Mexico border expansions, add 650 jobs. The post Borderlands Mexico: US foreign-trade zones push to fix USMCA tariff obstacles appeared first on FreightWaves .",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1085,15 +1112,6 @@
    "lane": "logistics"
   },
   {
-   "source": "FreightWaves",
-   "title": "Dry Van & Reefer: Market Signals You Can’t Ignore",
-   "link": "https://www.freightwaves.com/news/dry-van-reefer-market-signals-you-cant-ignore",
-   "published": "2026-11-04T20:58:05+00:00",
-   "summary": "Despite trending lower, dry van tender rejection rates still indicate a tight market. Learn why capacity isn’t expanding, even as carriers face cost pressures outpacing revenue growth. We’ll dive into the latest SONAR data, including regional rate maps and intermodal volumes, to uncover the hidden signals in today’s fragile freight market. Dry van tender rejection […] The post Dry Van & Reefer:…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
    "source": "Supply Chain Digital",
    "title": "DP World Strengthens FMCG Logistics Capabilities in Europe",
    "link": "https://supplychaindigital.com/news/dp-world-strengthens-fmcg-logistics-capabilities-in-europe",
@@ -1401,10 +1419,73 @@
   },
   {
    "source": "Splash247",
-   "title": "DenAr takes on Turkey’s first offshore wind seabed survey campaign",
-   "link": "https://splash247.com/denar-takes-on-turkeys-first-offshore-wind-seabed-survey-campaign/",
-   "published": "2026-11-06T12:00:00+00:00",
-   "summary": "Turkish marine survey specialist DenAr Ocean Engineering Services has been selected by the country’s Ministry of Energy and Natural Resources to carry out geophysical and geotechnical seabed investigations for Turkey’s first offshore wind development programme. The NCS-01 project covers two areas in the Sea of Marmara and forms part of the government initiative to prepare …",
+   "title": "Boluda buys Dutch offshore towage specialist",
+   "link": "https://splash247.com/boluda-buys-dutch-offshore-towage-specialist/",
+   "published": "2026-11-09T10:00:00+00:00",
+   "summary": "Spanish towage giant Boluda has acquired Dutch offshore towage and heavy transport specialist Muller Dordrecht, adding 16 tugs and eight barges to its growing global fleet. The takeover gives Boluda full ownership of the century-old family business, whose fleet includes seven offshore tugs specialising in complex marine transportation, rig moves, anchor handling and offshore wind …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Hunter’s VLCC charter dispute balloons to $86m",
+   "link": "https://splash247.com/hunters-vlcc-charter-dispute-balloons-to-86m/",
+   "published": "2026-11-09T09:49:00+00:00",
+   "summary": "Norwegian shipping investment company Hunter Group’s long-running dispute with a VLCC charter counterparty has escalated further, with unpaid hire now exceeding $86m after the largest monthly shortfall reported since the row began. The Oslo-listed company disclosed on Monday that its counterparty paid approximately $18.62m less than the amount due for October, marking the eighth consecutive …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Record supply growth pushes container fleet towards 50m teu by 2030",
+   "link": "https://splash247.com/record-supply-growth-pushes-container-fleet-towards-50m-teu-by-2030/",
+   "published": "2026-11-09T08:44:30+00:00",
+   "summary": "The global containership fleet is heading towards an unprecedented 50m teu by 2030, setting the stage for a potentially devastating oversupply crisis and enormous downward pressure on freight rates. New analysis from Sea-Intelligence shows the fleet expanding from today’s 34m teu to 40m teu by the second quarter of 2028 and 50m teu by the …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Black Sea shipping reels from fresh attacks and record insurance costs",
+   "link": "https://splash247.com/black-sea-shipping-reels-from-fresh-attacks-and-record-insurance-costs/",
+   "published": "2026-11-09T08:30:31+00:00",
+   "summary": "The Black Sea has experienced another violent weekend, with Russia claiming fresh strikes on merchant ships, human remains discovered aboard a damaged tanker in Bulgaria and war-risk insurance premiums reaching an extraordinary 20% of hull value. Russia’s defence ministry issued a succession of statements over the weekend claiming to have attacked commercial vessels carrying military …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Hormuz suffers weekend of fire",
+   "link": "https://splash247.com/hormuz-suffers-weekend-of-fire/",
+   "published": "2026-11-09T08:15:45+00:00",
+   "summary": "Merchant shipping has been caught in an extraordinary escalation of the war around the Strait of Hormuz over the past 72 hours, with tankers set ablaze, the US military bombing a bulk carrier, fresh Iranian warnings about naval mines and explosions reported along Iran’s southern coastline. The most dramatic American action came on Saturday when …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Ravi Mehrotra returns to shipyards with $470m VLAC order",
+   "link": "https://splash247.com/ravi-mehrotra-returns-to-shipyards-with-470m-vlac-order/",
+   "published": "2026-11-09T08:00:00+00:00",
+   "summary": "Ravi Mehrotra’s Foresight Group is returning to the newbuilding market after a decade-long absence, with the London-based shipowner linked to a $470m order for four very large ammonia carriers (VLACs) at South Korea’s HD Hyundai Heavy Industries. The 90,000 cu m vessels are scheduled for delivery across 2029 and 2030, according to shipbroking sources, marking …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Leon Shipping makes dry bulk debut with Hengli order",
+   "link": "https://splash247.com/leon-shipping-makes-dry-bulk-debut-with-hengli-order/",
+   "published": "2026-11-09T07:26:45+00:00",
+   "summary": "Greek shipowner Panos Efthimiadis is making his first move into dry bulk shipping, with his Leon Shipping & Trading linked to a kamsarmax newbuilding at China’s Hengli Heavy Industries as its orderbook grows to five vessels. The Athens-based company has also been linked to two LR1 product tanker newbuildings, adding to a pair of 50,000 …",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Splash247",
+   "title": "Lila Global adds third vintage LNG carrier with Diamond deal",
+   "link": "https://splash247.com/lila-global-adds-third-vintage-lng-carrier-with-diamond-deal/",
+   "published": "2026-11-09T07:00:33+00:00",
+   "summary": "Lila Global, GMS’s shipowning arm, is expanding its presence in the ageing LNG carrier market, adding its third LNG carrier since September. While the first two acquisitions were steam-powered vessels, the latest addition features a dual-fuel diesel-electric (DFDE) propulsion system. The first vessel to join the fleet was the 2003-built, steam-powered Castillo de Villalba, renamed …",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1412,80 +1493,17 @@
    "source": "Splash247",
    "title": "Khalid Hashim set to pass the baton at Precious Shipping",
    "link": "https://splash247.com/khalid-hashim-set-to-pass-the-baton-at-precious-shipping/",
-   "published": "2026-11-06T11:02:21+00:00",
+   "published": "2026-11-09T06:02:21+00:00",
    "summary": "Thailand’s Precious Shipping is preparing a change at the top, with longtime managing director Khalid Moinuddin Hashim moving to executive vice chairman and finance chief Gautam Khurana taking over the running of the Bangkok-listed dry bulk owner. The company’s board approved the leadership reshuffle, with both appointments taking effect on January 1, 2027, according to …",
    "via": "feed",
    "lane": "logistics"
   },
   {
    "source": "Splash247",
-   "title": "EnerMech picks up Chevron pipeline work off Equatorial Guinea",
-   "link": "https://splash247.com/enermech-picks-up-chevron-pipeline-work-off-equatorial-guinea/",
-   "published": "2026-11-06T10:00:00+00:00",
-   "summary": "UK-headquartered oilfield services specialist EnerMech has secured a contract from Chevron for pipeline pre-commissioning services on the Aseng gas development offshore Equatorial Guinea. The contract covers preparation of approximately 19 km of rigid production flowline connecting the Aseng field to existing offshore infrastructure. EnerMech will provide pre-operational engineering, project…",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Alfa Laval makes $700m NAVTOR bet",
-   "link": "https://splash247.com/alfa-laval-makes-700m-navtor-bet/",
-   "published": "2026-11-06T09:27:35+00:00",
-   "summary": "Swedish industrial group Alfa Laval has struck a $700m all-cash deal to acquire Norwegian maritime software specialist NAVTOR, significantly expanding a digital shipping portfolio that already includes StormGeo and Portchain. The Stockholm-listed group has entered into a definitive agreement to buy NAVTOR for SEK6.85bn ($700m), with completion expected during the first quarter of 2027 subject …",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Indian ship recycling breakthrough hits Brussels roadblock",
-   "link": "https://splash247.com/indian-ship-recycling-breakthrough-hits-brussels-roadblock/",
-   "published": "2026-11-06T09:20:01+00:00",
-   "summary": "A European Parliament committee has voted against allowing two Indian shipbreaking yards onto the EU’s approved recycling list, dealing a setback to shipowners pushing for greater access to South Asian dismantling capacity. The Parliament’s environment committee backed an objection this week to the European Commission’s proposal to approve Shree Ram Vessel Scrap and YSI Recyclers, …",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Venergy doubles VLCC order at Hengli",
-   "link": "https://splash247.com/venergy-doubles-vlcc-order-at-hengli/",
-   "published": "2026-11-06T09:19:00+00:00",
-   "summary": "Greek shipowner Vyron Vasileiadis has firmed up another two VLCCs at China’s Hengli Heavy Industries, doubling Venergy Maritime’s debut supertanker order to four vessels. The Piraeus-based company exercised the options attached to its October contract for two firm 306,000 dwt crude carriers, with all four vessels scheduled for delivery in 2029. The move brings Venergy’s …",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Capital Tankers scores up to $82m suezmax fixture",
-   "link": "https://splash247.com/capital-tankers-scores-up-to-82m-suezmax-fixture/",
-   "published": "2026-11-06T09:16:00+00:00",
-   "summary": "Evangelos Marinakis-backed Capital Tankers has secured a 15-month charter for one of its modern suezmaxes in a deal expected to generate between $73.1m and $82.2m in revenue. The Oslo-listed tanker owner said on Friday that its 155,348 dwt Amor has been fixed to an unnamed global energy company, with employment starting in November. The 2026-built …",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Shipbuilding boom heads for 2028 delivery crunch",
-   "link": "https://splash247.com/shipbuilding-boom-heads-for-2028-delivery-crunch/",
-   "published": "2026-11-06T08:30:33+00:00",
-   "summary": "The global shipbuilding orderbook has expanded three and a half times since 2020, while yard capacity has grown by just 30%, setting the stage for an extraordinary delivery squeeze over the next two years. The latest Shipping Market Review from Danish Ship Finance reveals that shipbuilding order cover has jumped from 1.4 years in 2020 …",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Seafarer missing in Gulf tanker strike as Iran redraws Hormuz blacklist",
-   "link": "https://splash247.com/seafarer-missing-in-gulf-tanker-strike-as-iran-redraws-hormuz-blacklist/",
-   "published": "2026-11-06T08:15:00+00:00",
-   "summary": "A seafarer is missing following a missile-suspected attack on a Greek-operated tanker deep inside the Arabian Gulf, while Iran has reshuffled its growing Strait of Hormuz blacklist and fresh security warnings point to continuing threats to commercial shipping. The Marshall Islands-flagged Velos Sapphire, a 74,998 dwt product tanker built in 2007 and managed by Athens-based …",
-   "via": "feed",
-   "lane": "logistics"
-  },
-  {
-   "source": "Splash247",
-   "title": "Shipping has a coffee problem",
-   "link": "https://splash247.com/shipping-has-a-coffee-problem/",
-   "published": "2026-11-06T08:00:03+00:00",
-   "summary": "From Posidonia to Geneva Dry, the shipping industry’s favourite pastime appears to be arranging coffee meetings that may or may not actually happen. Mike Darby from Merchant Recruitment makes the case for the Baltic Flat White Index. In bunkering, the cappuccino effect means paying for froth instead of fuel. At shipping conferences, it’s practically the …",
+   "title": "Notorious dark fleet VLCC ends colourful career on Bangladesh’s beaches",
+   "link": "https://splash247.com/notorious-dark-fleet-vlcc-ends-colourful-career-on-bangladeshs-beaches/",
+   "published": "2026-11-09T03:00:41+00:00",
+   "summary": "One of the world’s most notorious dark fleet VLCCs has closed a chapter in its history under its last and final name, Era, at the Chattogram shipbreaking yard. At the beginning of the summer, Splash reported that a rusty, 333 m long crude oil tanker with one of the more colourful recent histories in the …",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1527,6 +1545,24 @@
   },
   {
    "source": "VerkehrsRundschau",
+   "title": "DEKRA testet: Lkw-Notbremsassistenten schützen Baustellenpersonal 09.11.2026, 10:31 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/nfz-fuhrpark/dekra-lkw-notbremsassistenten-schuetzen-baustellenpersonal-3932811",
+   "published": "2026-11-09T10:31:00+00:00",
+   "summary": "Straßenbaustellen sind für Beschäftigte ein gefährlicher Arbeitsplatz. DEKRA zeigt, wie Anpralldämpfer, digitale Warnungen und Lkw-Notbremsassistenten schützen. Ablenkung, zu hohes Tempo oder ein kurzer Moment der Unaufmerksamkeit können an Straßenbaustellen schwere Folgen haben. Der DEKRA Verkehrssicherheitsreport 2026 untersucht deshalb, mit welchen technischen Systemen sich Beschäftigte an Arbeitsstellen besser vor Unfällen schützen lassen. Im Fokus stehen insbesondere kurzfristig…",
+   "via": "page links, article read",
+   "lane": "logistics"
+  },
+  {
+   "source": "VerkehrsRundschau",
+   "title": "Lkw-Maut-Index gibt im Oktober deutlich nach 09.11.2026, 08:53 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/lkw-maut-index-gibt-im-oktober-deutlich-nach-3932731",
+   "published": "2026-11-09T08:53:00+00:00",
+   "summary": "Die Fahrleistung mautpflichtiger Lkw ist im Oktober gegenüber September um 1,6 Prozent gesunken. Im Vorjahresvergleich bleibt ein leichtes Plus. Die Fahrleistung schwerer Lkw auf Deutschlands Autobahnen ist im Oktober 2026 zurückgegangen. Gegenüber September sank der kalender- und saisonbereinigte Lkw-Maut-Fahrleistungsindex um 1,6 Prozent. Im Vergleich zum Oktober 2025 lag die Fahrleistung dagegen kalenderbereinigt noch 0,5 Prozent höher. Erfasst werden mautpflichtige Lastkraftwagen mit…",
+   "via": "page links, article read",
+   "lane": "logistics"
+  },
+  {
+   "source": "VerkehrsRundschau",
    "title": "Lkw-Maut soll ab 2028 Autobahnen finanzieren 06.11.2026, 14:52 Uhr",
    "link": "https://www.verkehrsrundschau.de/nachrichten/recht-geld/lkw-maut-soll-ab-2028-autobahnen-finanzieren-3932512",
    "published": "2026-11-06T14:52:00+00:00",
@@ -1554,19 +1590,19 @@
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Descartes und Xeneta bauen Frachtraten-Vergleich aus 06.11.2026, 12:43 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/descartes-und-xeneta-bauen-frachtraten-vergleich-aus-3932419",
-   "published": "2026-11-06T12:43:00+00:00",
-   "summary": "Descartes integriert Frachtraten-Benchmarks von Xeneta in seine Spot-Lösung. Speditionen sollen Angebote schneller kalkulieren und Margen besser absichern. Descartes Systems Group und Xeneta bauen ihre Zusammenarbeit bei der digitalen Frachtraten -Kalkulation aus. Künftig werden Marktdaten von Xeneta in die cloudbasierte Lösung Descartes Spot integriert. Speditionen sollen dadurch eingekaufte Frachtraten direkt mit Marktdaten vergleichen und Kundenangebote schneller kalkulieren können.…",
+   "title": "#Lkw-Maut-Fahrleistungs-Index",
+   "link": "https://www.verkehrsrundschau.de/tag/lkw-maut-fahrleistungs-index-3666303",
+   "published": null,
+   "summary": "Die Fahrleistung mautpflichtiger Lkw ist im Oktober gegenüber September um 1,6 Prozent gesunken. Im Vorjahresvergleich bleibt ein leichtes Plus. Der Lkw-Maut-Fahrleistungsindex hat im September sowohl gegenüber dem Vormonat als auch im Vorjahresvergleich zugelegt. Der Indikator gilt als früher Hinweis auf die Konjunkturentwicklung in Deutschland. Der Lkw-Maut-Fahrleistungsindex gilt als eine Art Frühindikator für die Konjunkturentwicklung, der Anstieg im August ist damit ein weiteres positives…",
    "via": "page links, article read",
    "lane": "logistics"
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Daimler Truck steigert Quartalsgewinn um 73 Prozent 06.11.2026, 09:13 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/nfz-fuhrpark/daimler-truck-steigert-quartalsgewinn-um-73-prozent-3932121",
-   "published": "2026-11-06T09:13:00+00:00",
-   "summary": "Daimler Truck erzielt im dritten Quartal deutliche Zuwächse bei Absatz, Umsatz und Gewinn. Vor allem das Geschäft in Nordamerika erholt sich. Daimler Truck hat im dritten Quartal 2026 deutlich mehr Fahrzeuge verkauft und seinen Gewinn kräftig gesteigert. Das Konzernergebnis erhöhte sich gegenüber dem schwachen Vorjahresquartal um 73 Prozent von 407 auf 702 Millionen Euro. Auch Umsatz und operatives Ergebnis legten deutlich zu. Der Nutzfahrzeughersteller sieht darin Anzeichen für eine Erholung…",
+   "title": "Telematik-Spezial: Neue Intelligenz für die Flotte",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/telematik-spezial-neue-intelligenz-fuer-die-flotte-3927435",
+   "published": "2026-11-09T08:30:00+00:00",
+   "summary": "Künstliche Intelligenz verändert das Flottenmanagement: Sie optimiert Touren, erkennt Risiken und macht aus Fahrzeugdaten konkrete Handlungsempfehlungen. Das Telematik-Spezial zeigt, welche Lösungen bereits praxistauglich sind und worauf Unternehmen bei ihrer Einführung achten müssen. Wie weit ist die digitale Transformation der Logistik fortgeschritten? Der Beitrag ab Seite 4 beleuchtet den Einsatz von Cloud-Technologien, vernetzten Sensoren und KI. Er zeigt zugleich, wo fehlendes Know-how…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1581,37 +1617,19 @@
   },
   {
    "source": "VerkehrsRundschau",
+   "title": "Descartes und Xeneta bauen Frachtraten-Vergleich aus",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/descartes-und-xeneta-bauen-frachtraten-vergleich-aus-3932419",
+   "published": "2026-11-06T12:43:00+00:00",
+   "summary": "Descartes integriert Frachtraten-Benchmarks von Xeneta in seine Spot-Lösung. Speditionen sollen Angebote schneller kalkulieren und Margen besser absichern. Descartes Systems Group und Xeneta bauen ihre Zusammenarbeit bei der digitalen Frachtraten -Kalkulation aus. Künftig werden Marktdaten von Xeneta in die cloudbasierte Lösung Descartes Spot integriert. Speditionen sollen dadurch eingekaufte Frachtraten direkt mit Marktdaten vergleichen und Kundenangebote schneller kalkulieren können.…",
+   "via": "page links, article read",
+   "lane": "logistics"
+  },
+  {
+   "source": "VerkehrsRundschau",
    "title": "VR-Webinar: Wie Digitalisierung den Fahrerberuf attraktiver macht",
    "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/vr-webinar-wie-digitalisierung-den-fahrerberuf-attraktiver-macht-3932216",
    "published": "2026-11-06T09:59:00+00:00",
    "summary": "Wie können digitale Lösungen Lkw-Fahrer entlasten und langfristig binden? Ein Webinar zeigt anhand eines Praxisbeispiels, worauf es dabei ankommt. Der Fahrermangel bleibt eine der größten Herausforderungen für Transport-, Speditions- und Logistikunternehmen. Gleichzeitig erleben viele Lkw-Fahrer ihren Arbeitsalltag als belastend: Informationen erreichen sie nicht immer rechtzeitig, Abstimmungen kosten Zeit und administrative Aufgaben nehmen zu. Intelligente Digitalisierung kann hier ansetzen.…",
-   "via": "page links, article read",
-   "lane": "logistics"
-  },
-  {
-   "source": "VerkehrsRundschau",
-   "title": "#VerkehrsRundschau Podcast",
-   "link": "https://www.verkehrsrundschau.de/tag/verkehrsrundschau-podcast-2950693",
-   "published": null,
-   "summary": "VerkehrsRundschau Funk ist der Podcast f&uuml;r Spedition, Transport und Logistik. Jeden Donnerstag erscheint eine neue Episode m1 VerkehrsRundschau Funk ist der Podcast für Spedition, Transport und Logistik. Jeden Donnerstag erscheint eine neue Episode mit Gästen aus der Branche oder Gesprächspartnern aus der VerkehrsRundschau-Redaktion. VerkehrsRundschau Funk ist der Podcast für Spedition, Transport und Logistik. Jeden Donnerstag erscheint eine neue Episode mit Gästen aus der Branche oder…",
-   "via": "page links, article read",
-   "lane": "logistics"
-  },
-  {
-   "source": "VerkehrsRundschau",
-   "title": "Podcast: 20 Jahre BEST AZUBI – Wie der Wettbewerb Karrieren in der Logistik prägt",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/podcast-383-20-jahre-best-azubi-wie-der-wettbewerb-karrieren-in-der-logistik-praegt-3931965",
-   "published": "2026-11-05T14:59:00+00:00",
-   "summary": "20 Jahre BEST AZUBI: Wie der Wissenswettbewerb Nachwuchskräfte fördert, Karrieren in der Logistik prägt und warum er heute noch wichtig ist.‌ Was kann ein Wissenswettbewerb für die Karriere in der Logistik bewirken? Seit 20 Jahren fördert BEST AZUBI Nachwuchskräfte der Branche. In dieser Podcast-Folge geht es um die Anfänge des Wettbewerbs, seinen Wandel und den besonderen Karriereweg eines ehemaligen Siegers. Seit 20 Jahren stellen Auszubildende für Spedition und Logistikdienstleistung bei…",
-   "via": "page links, article read",
-   "lane": "logistics"
-  },
-  {
-   "source": "VerkehrsRundschau",
-   "title": "Alpega: Ex-Girteka-Chef Pargov wird neuer CEO",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/alpega-ex-girteka-chef-pargov-wird-neuer-ceo-3931936",
-   "published": "2026-11-05T14:32:00+00:00",
-   "summary": "Nikolay Pargov übernimmt die Führung der Alpega Group. Der frühere Girteka-Chef soll das Logistiksoftware-Unternehmen in die nächste Wachstumsphase führen. Die Alpega Group stellt ihre Führung neu auf. Nikolay Pargov übernimmt die Position des Group Chief Executive Officer und folgt damit auf Daniel Cohen. Pargov war seit Juli 2025 Vorsitzender des Verwaltungsrats von Alpega und gibt diese Funktion mit dem Wechsel in die operative Führung ab. Der neue CEO bringt mehr als 20 Jahre Erfahrung aus…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1648,6 +1666,24 @@
    "link": "https://www.logistik-journal.de/domainendung-starkt-ihre-transportmarke-online/",
    "published": "2026-11-04T09:42:33+00:00",
    "summary": "Im Internet entscheidet der erste Eindruck häufig darüber, wie viel Vertrauen und wie viele Aufträge entstehen. Besonders im Transport- und Logistiksektor, wo Zuverlässigkeit und Genauigkeit zählen, wirkt die Webadresse stärker, als viele Unternehmer annehmen. Die Domainendung, also der Teil hinter dem Punkt, prägt mit, wie seriös und regional verankert ein Betrieb wirkt. Spediteure,…",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Castellum möblerar om i toppen",
+   "link": "https://dagenslogistik.se/castellum-moblerar-om-i-toppen/",
+   "published": "2026-11-09T08:10:17+00:00",
+   "summary": "Castellums kommunikationsdirektör lämnar rollen och koncernledningen för att i stället bli affärsområdeschef i Stockholm. Därmed försvinner rollen som kommunikationsdirektör från koncernledningen.",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Transportlösningen kan få miljöpris",
+   "link": "https://dagenslogistik.se/transportlosningen-kan-fa-miljopris/",
+   "published": "2026-11-09T07:17:05+00:00",
+   "summary": "Carlsbergs elsatsning uppmärksammas nu – företaget har nominerats till ett miljöpris. – Den här nomineringen inspirerar oss att fortsätta driva utvecklingen framåt, kommenterar Andreas Andersson, transportchef på Carlsberg Sverige.",
    "via": "feed",
    "lane": "logistics"
   },
@@ -1724,21 +1760,21 @@
    "lane": "logistics"
   },
   {
-   "source": "Dagens Logistik",
-   "title": "Rexel gör Årets Logistiketablering 2026",
-   "link": "https://dagenslogistik.se/rexel-gor-arets-logistiketablering-2026/",
-   "published": "2026-11-04T09:59:00+00:00",
-   "summary": "Rexels nya logistiknav i Mölnlycke tar hem Dagens Logistiks utmärkelse Årets Logistiketablering 2026. Juryn lyfter fram en genomtänkt helhetslösning där återbruk, automation och god arbetsmiljö förenas på en tidigare industrimark med utmärkt kollektivtrafik.",
-   "via": "feed",
+   "source": "MT Logistikk",
+   "title": "Åpner for elvarebiler i kollektivfeltene",
+   "link": "https://www.mtlogistikk.no/elektriske-lastebiler-elektriske-varebiler-kollektivfelt/apner-for-elvarebiler-i-kollektivfeltene/1357603",
+   "published": "2026-11-09T07:07:00+00:00",
+   "summary": "Regjeringen vil gjøre det mulig å slippe elektriske vare- og lastebiler inn i kollektivfeltene, samtidig som vanlige elbiler fortsatt kan holdes ute. Samferdselsminister Kamzy Gunaratnam (Ap) vil gjøre det enklere for elektriske vare- og lastebiler å benytte kollektivfeltene. Ifølge Avisa Oslo har regjeringen gitt Statens vegvesen i oppdrag å innføre et nytt skilt som gjør det mulig å skille mellom elektriske nyttekjøretøy og elektriske personbiler. – Det hjelper ikke å stå i kø når varer og…",
+   "via": "page links, article read",
    "lane": "logistics"
   },
   {
-   "source": "Dagens Logistik",
-   "title": "För bra på processen eller för bra på nödlösningen?",
-   "link": "https://dagenslogistik.se/for-bra-pa-processen-eller-for-bra-pa-nodlosningen/",
-   "published": "2026-11-04T08:20:00+00:00",
-   "summary": "Industrilager och retaillager har en hel del att lära av varandra, skriver Per Schölander i en ny krönika. Industrilager är vassa på struktur och retaillager på flexibilitet. Men dessa styrkor kan också bli svagheter.",
-   "via": "feed",
+   "source": "MT Logistikk",
+   "title": "ANNONSØRINNHOLD FOR POSTNORD Må håndtere stort volum og strenge krav",
+   "link": "https://www.mtlogistikk.no/farmasiet-lager-lagerautomatisering/ma-handtere-stort-volum-og-strenge-krav/1354065",
+   "published": null,
+   "summary": "Med 30 prosent årlig vekst er Farmasiet avhengig av solide logistikkpartnere. De har funnet en i PostNord. You are using an outdated browser. Please upgrade your browser to improve your experience and security. Farmasiet sendte svimlende 1,7 millioner pakker fra sitt lager på Vestby i 2025 og fortsetter å utfordre de tradisjonelle apotekene. For å lykkes er kundeopplevelsen sentral. – Vi er opptatt av å være tydelige på når vi kommer, og at vi kommer hurtig og leverer som avtalt. Rask og…",
+   "via": "page links, article read",
    "lane": "logistics"
   },
   {
@@ -1752,10 +1788,10 @@
   },
   {
    "source": "MT Logistikk",
-   "title": "ANNONSØRINNHOLD FOR POSTNORD Må håndtere stort volum og strenge krav",
-   "link": "https://www.mtlogistikk.no/farmasiet-lager-lagerautomatisering/ma-handtere-stort-volum-og-strenge-krav/1354065",
-   "published": null,
-   "summary": "Med 30 prosent årlig vekst er Farmasiet avhengig av solide logistikkpartnere. De har funnet en i PostNord. You are using an outdated browser. Please upgrade your browser to improve your experience and security. Farmasiet sendte svimlende 1,7 millioner pakker fra sitt lager på Vestby i 2025 og fortsetter å utfordre de tradisjonelle apotekene. For å lykkes er kundeopplevelsen sentral. – Vi er opptatt av å være tydelige på når vi kommer, og at vi kommer hurtig og leverer som avtalt. Rask og…",
+   "title": "Mini kjølebil med 900 kg nyttelast",
+   "link": "https://www.mtlogistikk.no/goupil-kjoleaggregat-last-mile/mini-kjolebil-med-900-kg-nyttelast/1356597",
+   "published": "2026-11-06T09:25:00+00:00",
+   "summary": "KJØLETRANSPORT: Goupil G4+ kombinerer 4,5 m³ varerom og over 900 kg nyttelast med elektrisk kjøling ned til minus 18 grader. Den nye Goupil G4+ er utstyrt med det helelektriske kjøleaggregatet Thermo King E-200e MAX. Løsningen er utviklet for distribusjon av temperaturfølsomme varer i bysentrum og tettbygde områder, der plass og fremkommelighet kan være utfordrende. G4+ produseres i Bourran i Frankrike og har et litiumbatteri på 30 kWh. Rekkevidden er oppgitt til inntil 160 km, men produsenten…",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1774,24 +1810,6 @@
    "link": "https://www.mtlogistikk.no/alunskiferdeponi-dognhvileplasser-ladestasjoner/kan-bli-en-av-norges-storste/1356089",
    "published": "2026-11-05T13:50:00+00:00",
    "summary": "KAN BLI STØRST: På Taraldrud i Nordre Follo planlegges en døgnhvileplass for 150 lastebiler. Anlegget skal få rundt 150 oppstillingsplasser for vogntog og 45 hurtigladere. Målet er å stå ferdig innen første kvartal 2029. Et tidligere alunskiferdeponi på Taraldrud, like ved E6 sør for Oslo, kan bli omgjort til et omfattende anlegg for tungtransporten. Utbyggerselskapet Relog står bak planene, som nå har kommet et viktig skritt videre etter at Nordre Follo kommune og Statsforvalteren er blitt…",
-   "via": "page links, article read",
-   "lane": "logistics"
-  },
-  {
-   "source": "MT Logistikk",
-   "title": "Fem-tonns dieselkiller fra Jungheinrich",
-   "link": "https://www.mtlogistikk.no/efg-5-elektriske-motvektstrucker-internlogistikk/fem-tonns-dieselkiller-fra-jungheinrich/1356121",
-   "published": "2026-11-05T13:56:00+00:00",
-   "summary": "Jungheinrich åpner salget av den elektriske EFG 5-serien. Målet er mer effektiv godshåndtering i tung industri uten behov for diesel. Materialhåndtering i krevende miljøer som byggevarehandel, drikkevareproduksjon og tradisjonell industri stiller strenge krav til maskinparken. Nå ruller Jungheinrich ut nye elektriske motvektstrucker med løftekapasitet fra 4 til 5 tonn og løftehøyder opp til 7,5 meter, ifølge en pressemelding fra selskapet. For logistikkoperatører handler internlogistikk om…",
-   "via": "page links, article read",
-   "lane": "logistics"
-  },
-  {
-   "source": "MT Logistikk",
-   "title": "Rema sikrer treårig jernbaneavtale",
-   "link": "https://www.mtlogistikk.no/cargonet-dagligvarelogistikk-jernbanetransport/rema-sikrer-trearig-jernbaneavtale/1355727",
-   "published": "2026-11-05T08:37:00+00:00",
-   "summary": "Dagligvareaktøren forlater årlige fornyelser og binder seg til sporet fram mot 2030 i en avtale med CargoNet. Årsvolumet ligger i dag på rundt 34.000 TEU. Rema Distribusjon og CargoNet vraker den tidligere praksisen med ettårige kontrakter til fordel for en treårig transportavtale som strekker seg til 2030, ifølge en nyhetsbrev fra CargoNet. For dagligvarekonsernet inngår jernbanefrakt som en sentral del av den overordnede logistikkstrukturen mot regionale lagre.",
    "via": "page links, article read",
    "lane": "logistics"
   },
@@ -1860,11 +1878,20 @@
   },
   {
    "source": "MT Logistikk",
-   "title": "Helgebrief uke 45: Samfunnskritisk – men ikke lønnsomt",
-   "link": "https://www.mtlogistikk.no/helgebrief-kronikk-ukerapport/helgebrief-uke-45-samfunnskritisk-men-ikke-lonnsomt/1357266",
-   "published": "2026-11-06T21:32:00+00:00",
-   "summary": "Mellomvalg, børsuro og hacking har preget uka. Her hjemme viser en stor transportkonkurs hvor skjør den daglige vareforsyningen kan være. Mellomvalget i USA og børsuroen har minnet oss om hvor tett verden henger sammen. Demokratene vant denne uka flertall i begge kamre i Kongressen, godt hjulpet av krigen i Iran og høye dieselpriser. Det er altså ikke bare i Norge vi fortviler over dem. Hva det betyr for handelspolitikk, toll og rammevilkår for norske bedrifter resten av Trumps periode,…",
+   "title": "Åpner for elvarebiler i kollektivfeltene",
+   "link": "https://www.mtlogistikk.no/elektriske-lastebiler-elektriske-varebiler-kollektivfelt/apner-for-elvarebiler-i-kollektivfeltene/1357780",
+   "published": "2026-11-09T09:49:00+00:00",
+   "summary": "Regjeringen vil gjøre det mulig å slippe elektriske vare- og lastebiler inn i kollektivfeltene, samtidig som vanlige elbiler fortsatt kan holdes ute. Samferdselsminister Kamzy Gunaratnam (Ap) vil gjøre det enklere for elektriske vare- og lastebiler å benytte kollektivfeltene. Ifølge Avisa Oslo har regjeringen gitt Statens vegvesen i oppdrag å innføre et nytt skilt som gjør det mulig å skille mellom elektriske nyttekjøretøy og elektriske personbiler. – Det hjelper ikke å stå i kø når varer og…",
    "via": "page links, article read",
+   "lane": "logistics"
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Cyberangreb mod kølesystemer truer forsyningskæder i Europa",
+   "link": "https://www.scm.dk/cyberangreb-mod-kolesystemer-truer-forsyningskaeder-i-europa",
+   "published": "2026-11-09T07:00:00+00:00",
+   "summary": "En bølge af cyberangreb mod europæiske supermarkeders køle- og frysesystemer får myndighederne til at advare danske virksomheder. Sikkerhed og driftsberedskab skal gennemgås.",
+   "via": "feed",
    "lane": "logistics"
   },
   {
@@ -2202,6 +2229,15 @@
   },
   {
    "source": "BME",
+   "title": "09.11.2026 Bias entgegenwirken und bessere Entscheidungen unter Druck treffen Kognitive Verzerrungen wie Ankereffekte, Herdenverhalten, Unterlassungs- oder Kurzfristbias verschlechtern Entscheidungen im Einkauf. Wer ihnen prozessual entgegenwirkt, ermöglicht es, auch unter Druck strategischen…",
+   "link": "https://www.bme.de/news/bias-entgegenwirken-und-bessere-entscheidungen-unter-druck-treffen/",
+   "published": "2026-11-09T00:00:00+00:00",
+   "summary": "Kognitive Verzerrungen wie Ankereffekte, Herdenverhalten, Unterlassungs- oder Kurzfristbias verschlechtern Entscheidungen im Einkauf. Wer ihnen prozessual entgegenwirkt, ermöglicht es, auch unter Druck strategischen Prioritäten die richtige Gewichtung zu geben. Drei Jahrzehnte lang galt im Einkauf eine einfache Devise: Wer den niedrigsten Preis bietet, gewinnt. Inzwischen hat sich die Welt deutlich verändert. Abhängigkeiten, Exportkontrollen, Zölle sowie Beschränkungen bei kritischen…",
+   "via": "page links, article read",
+   "lane": "logistics"
+  },
+  {
+   "source": "BME",
    "title": "06.11.2026 „Innovation schafft Vorsprung“: BME startet Bewerbungsphase für Award Öffentliche Auftraggeber können sich ab sofort mit innovativen Beschaffungsprojekten und -prozessen bewerben. Einsendeschluss ist der 26. Februar 2027.",
    "link": "https://www.bme.de/news/innovation-schafft-vorsprung-bme-startet-bewerbungsphase-fuer-award/",
    "published": "2026-11-06T00:00:00+00:00",
@@ -2377,6 +2413,15 @@
    "link": "https://www.supplychainshaman.com/grading-academia-in-preparing-supply-chain-leaders/",
    "published": "2026-11-04T13:47:51+00:00",
    "summary": "Education is the lifeline for supply chain talent, but is it working? Are we doing a good job of training the next generation of supply chain leaders in today’s academia? This was the question for a recent podcast that I co-hosted with Supply Chain Now. The dialogue was with an esteemed panel of three academics: […]",
+   "via": "feed",
+   "lane": "logistics"
+  },
+  {
+   "source": "SAP News",
+   "title": "Interview with Manish Prasad: “Touch Any Growth Lever in India and You’ll Find SAP There”",
+   "link": "https://news.sap.com/2026/11/interview-with-manish-prasad-sap-india/",
+   "published": "2026-11-09T05:15:00+00:00",
+   "summary": "SAP India President and MD Manish Prasad makes the case for why India is becoming a strategically important market in SAP's global story.",
    "via": "feed",
    "lane": "logistics"
   },
@@ -2609,10 +2654,10 @@
   },
   {
    "source": "STT Info (Finnish releases)",
-   "title": "Teollisuus- ja varastorakennuksissa on keskimäärin kaksi tulipaloa per päivä",
-   "link": "https://www.sttinfo.fi/tiedote/72483386/teollisuus-ja-varastorakennuksissa-on-keskimaarin-kaksi-tulipaloa-per-paiva?lang=fi",
-   "published": "2026-11-07T04:00:00+00:00",
-   "summary": "Rakennuspalot ovat Suomessa vähentyneet pääasiallisesti viimeisen kymmenen vuoden aikana. Poikkeuksen näissä kuitenkin tekee teollisuusrakennuksissa ja varastorakennuksissa sattuneet tulipalot, joiden määrä on pysynyt samana tai lähtenyt pieneen nousuun. Suomen Palopäällystöliitosta kerrotaan isojen hallien palo-osastoinnin haasteista ja miten niitä voidaan taklata.",
+   "title": "Vahterus - Inhimillinen teollisuussinfonia",
+   "link": "https://www.sttinfo.fi/tiedote/72484145/vahterus-inhimillinen-teollisuussinfonia?lang=fi",
+   "published": "2026-11-09T07:57:29+00:00",
+   "summary": "Palkittu ohjaaja ja käsikirjoittaja Juha Lehtola ohjasi elokuvan teollisuusyritys Vahteruksesta.",
    "via": "feed",
    "lane": "management"
   },
@@ -2665,26 +2710,6 @@
    "via": "feed, article read",
    "lane": "management",
    "highlights": "Grund für diese Prognoseanpassung sind insbesondere die im Zusammenhang mit der Restrukturierung der Verbindlichkeiten und der Durchführung des Verfahrens nach dem Gesetz über den Stabilisierungs- und Restrukturierungsrahmen für Unternehmen (\" StaRUG \") anfallenden… Diese Mitteilung ist eine Ad-hoc-Mitteilung gemäß Art. Grund für die Anpassung sind Restrukturierungskosten im Rahmen einer Verbindlichkeitenrestrukturierung nach dem StaRUG."
-  },
-  {
-   "source": "DACH ad hoc releases (finanznachrichten)",
-   "title": "EQS-Adhoc: Borussia Dortmund GmbH & Co. KGaA: Borussia Dortmund meldet vorläufige Zahlen für das erste Quartal (Q1) 2026/2027",
-   "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70044877-eqs-adhoc-borussia-dortmund-gmbh-co-kgaa-borussia-dortmund-meldet-vorlaeufige-zahlen-fuer-das-erste-quartal-q1-2026-2027-022.htm",
-   "published": "2026-11-05T12:09:00+00:00",
-   "summary": "EQS-Ad-hoc: Borussia Dortmund GmbH & Co. Kommanditgesellschaft auf Aktien / Schlagwort(e): Geschäftszahlen / Quartal Borussia Dortmund meldet vorläufige Zahlen für das erste Quartal (Q1) 2026/2027 05.11.2026 / 13:02 CET/CEST Veröffentlichung einer Insiderinformation nach Artikel 17 der Verordnung (EU) Nr. 596/2014, übermittelt durch EQS News - ein Service der EQS Group . Für den Inhalt der Mitteilung ist der Emittent / Herausgeber verantwortlich. Borussia Dortmund startet mit leicht…",
-   "via": "feed, article read",
-   "lane": "management",
-   "highlights": ""
-  },
-  {
-   "source": "DACH ad hoc releases (finanznachrichten)",
-   "title": "EQS-Adhoc: Bechtle Aktiengesellschaft: Erfolgreiches Q3, Prognose für Gesamtjahr nochmals erhöht",
-   "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70042384-eqs-adhoc-bechtle-aktiengesellschaft-erfolgreiches-q3-prognose-fuer-gesamtjahr-nochmals-erhoeht-022.htm",
-   "published": "2026-11-05T08:45:00+00:00",
-   "summary": "EQS-Ad-hoc: Bechtle Aktiengesellschaft / Schlagwort(e): Prognose / Gesamtjahr Bechtle Aktiengesellschaft: Erfolgreiches Q3, Prognose für Gesamtjahr nochmals erhöht 05.11.2026 / 09:39 CET/CEST Veröffentlichung einer Insiderinformation nach Artikel 17 der Verordnung (EU) Nr. 596/2014, übermittelt durch EQS News - ein Service der EQS Group . Für den Inhalt der Mitteilung ist der Emittent / Herausgeber verantwortlich. Neckarsulm, 5. November 2026 - Im dritten Quartal 2026 hat sich die Bechtle AG…",
-   "via": "feed, article read",
-   "lane": "management",
-   "highlights": ""
   },
   {
    "source": "Sandvik",
@@ -2753,6 +2778,17 @@
    "lane": "companies"
   },
   {
+   "source": "SCA",
+   "title": "SCA appoints a new head for business area Containerboard and Pulp",
+   "link": "https://mfn.se/cis/a/sca/sca-appoints-a-new-head-for-business-area-containerboard-and-pulp-d52de1dc",
+   "published": "2026-11-09T10:15:00+00:00",
+   "summary": "SCA appoints Gustaf Nygren as the new head of business area Containerboard and Pulp and member of the executive management team. Gustaf Nygren will assume the role of Head of the Containerboard and Pulp business area on December 1, 2026. Gustaf has extensive experience from various roles within both SCA and other industrial companies. He currently serves as Mill Manager at Obbola. Previously,…",
+   "via": "feed",
+   "company": "SCA",
+   "highlights": "",
+   "lane": "companies"
+  },
+  {
    "source": "Thule",
    "title": "Thule to hold investor update event",
    "link": "https://mfn.se/a/thule-group/thule-to-hold-investor-update-event",
@@ -2772,6 +2808,17 @@
    "via": "feed",
    "company": "ICA Gruppen",
    "highlights": "",
+   "lane": "companies"
+  },
+  {
+   "source": "Valmet",
+   "title": "Valmet Oyj: Valmet continues long-term cooperation with board producer in Asia with another board making line order",
+   "link": "https://mfn.se/cis/a/valmet/valmet-oyj-valmet-continues-long-term-cooperation-with-board-producer-in-asia-with-another-board-making-line-order-7445269b",
+   "published": "2026-11-09T07:30:00+00:00",
+   "summary": "Valmet Oyj's press release on November 9, 2026 at 9:30 a.m. EET Valmet has been selected to supply another complete board making line with automation and lifecycle services to one of its major customers in Asia. Building on the companies' long-term cooperation and the experience from previous deliveries, the new investment will further support the customer's ambitions to expand premium-quality…",
+   "via": "feed",
+   "company": "Valmet",
+   "highlights": "Building on the companies' long-term cooperation and the experience from previous deliveries, the new investment will further support the customer's ambitions to expand premium-quality coated board production while improving production efficiency and operational performance.",
    "lane": "companies"
   },
   {
@@ -2814,31 +2861,31 @@
    "km": 362.327,
    "level_cm": 296.0,
    "trend": null,
-   "measured_at": "2026-11-08T12:30:00+01:00",
+   "measured_at": "2026-11-09T11:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 13.0,
+   "level_cm": 12.0,
    "trend": null,
-   "measured_at": "2026-11-08T12:30:00+01:00",
+   "measured_at": "2026-11-09T11:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 63.0,
+   "level_cm": 57.0,
    "trend": null,
-   "measured_at": "2026-11-08T12:30:00+01:00",
+   "measured_at": "2026-11-09T11:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 151.0,
+   "level_cm": 144.0,
    "trend": null,
-   "measured_at": "2026-11-08T12:30:00+01:00",
+   "measured_at": "2026-11-09T11:15:00+01:00",
    "unit": "cm"
   },
   {
@@ -2846,7 +2893,7 @@
    "km": 851.9,
    "level_cm": -2.0,
    "trend": null,
-   "measured_at": "2026-11-08T12:30:00+01:00",
+   "measured_at": "2026-11-09T11:15:00+01:00",
    "unit": "cm"
   }
  ]
