@@ -18,7 +18,7 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 298 |
+| podcast | github mp3 fetches all episodes | 309 |
 | podcast | op3 downloads all episodes | 100 |
 | youtube | subscribers | 3 |
 | youtube | total views | 269 |
@@ -37,9 +37,9 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 8 |  | 9 | 20 |
-| 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 21 | 12 |  |  |
-| 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 22 | 2 | 24 | 25 |
+| 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 17 |  | 34 | 34 |
+| 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 23 | 14 |  |  |
+| 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 22 | 2 | 27 | 25 |
 | 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 17 |  | 14 | 127 |
 | 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 27 |  | 10 | 23 |
 | 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 22 |  | 28 | 8 |
@@ -56,7 +56,7 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 ## Top podcast episodes so far
 
-1. Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices (weekly, Sun): 21
+1. Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices (weekly, Sun): 23
 2. BMW Q3 Results: China Deliveries Drop a Quarter (daily, Thu): 20
 3. Warehouse Network Design: Hitachi Energy Goes Big (daily, Wed): 19
 
