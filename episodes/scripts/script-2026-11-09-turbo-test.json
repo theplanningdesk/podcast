@@ -1,0 +1,95 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "week": "2026-W46",
+  "run_date": "2026-11-09",
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    },
+    "N": {
+      "name": "Narrator"
+    }
+  },
+  "episode_title": "v4 Turbo voice check",
+  "target_runtime_sec": 90,
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "The Rhine at Kaub read thirteen centimetres over the weekend, and barges need about seventy-seven for a full channel."
+        },
+        {
+          "speaker": "M",
+          "text": "The bottleneck is getting worse, not easing. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Monday the ninth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "The Kaub gauge on the Rhine read thirteen centimetres at lunchtime on Sunday, down from nineteen on Saturday, according to the federal Pegelonline gauges."
+        },
+        {
+          "speaker": "M",
+          "text": "Barges need roughly seventy-seven centimetres at Kaub for a shipping channel of one metre ninety, so the river is a long way short."
+        },
+        {
+          "speaker": "F",
+          "text": "Further down, Emmerich on the Dutch border read minus two centimetres over the weekend, Köln sixty-three and Duisburg-Ruhrort one hundred and fifty-one."
+        }
+      ]
+    },
+    {
+      "id": "narrator_check",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "We have more data than ever, and most forecasts aren't getting much better, because more data also means more noise to mistake for a pattern."
+        },
+        {
+          "speaker": "N",
+          "text": "The forecasters who do improve share a few plain habits, and planners can copy every one of them."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ]
+}
