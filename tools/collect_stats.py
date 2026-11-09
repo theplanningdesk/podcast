@@ -152,8 +152,38 @@ def release_assets() -> dict[str, dict]:
         page += 1
 
 
+LINKS: dict[str, str] = {}   # release asset name -> its text (video links), kept on the stats branch
+LOOKUP_FAILS: list[str] = []
+
+
 def asset_text(asset: dict) -> str:
-    return http_text(asset["browser_download_url"]).strip()
+    """A release asset's text (a YouTube or Instagram link). Cached on the stats branch, since these never change."""
+    name = asset["name"]
+    if name in LINKS:
+        return LINKS[name]
+    try:
+        text = http_text(asset["browser_download_url"]).strip()
+    except Exception:
+        LOOKUP_FAILS.append(name)
+        raise
+    LINKS[name] = text
+    return text
+
+
+def carry_forward(eps: list[dict]) -> int:
+    """Keep yesterday's number where today's lookup came back empty, so one bad run can't blank the scorecard."""
+    prev: dict[str, dict] = {}
+    for r in sorted(read_csv("history.csv"), key=lambda r: r.get("date", "")):  # latest value wins
+        if num(r.get("value")) is not None:
+            prev.setdefault(r["stem"], {})[r["metric"]] = r["value"]
+    kept = 0
+    for e in eps:
+        old = prev.get(e["stem"], {})
+        for k in EP_FIELDS[9:]:
+            if num(e.get(k)) is None and num(old.get(k)) is not None:
+                e[k] = old[k]
+                kept += 1
+    return kept
 
 
 # ---------------------------------------------------------------- sources
@@ -405,6 +435,12 @@ def collect() -> int:
     cfg = load_config()
     pod = cfg["podcast"]
     eps = load_episodes()
+    lp = STATS / "links.json"
+    if lp.exists():
+        try:
+            LINKS.update(json.loads(lp.read_text(encoding="utf-8")))
+        except ValueError:
+            pass
     assets: dict = {}
     try:
         assets = release_assets()
@@ -423,7 +459,12 @@ def collect() -> int:
         channels[("podcast", "op3_downloads_all_episodes")] = op3_total
     channels[("podcast", "github_mp3_fetches_all_episodes")] = sum(num(e.get("github_mp3_fetches")) or 0 for e in eps)
 
+    kept = carry_forward(eps)
+    if kept or LOOKUP_FAILS:
+        STATUS["carried"] = (f"ok: {kept} numbers kept from the previous run where today's lookup came back empty"
+                             + (f" ({len(LOOKUP_FAILS)} link files couldn't be read)" if LOOKUP_FAILS else ""))
     write_csv("episodes.csv", eps, EP_FIELDS)
+    (STATS / "links.json").write_text(json.dumps(LINKS, indent=1, sort_keys=True), encoding="utf-8")
 
     hist = [r for r in read_csv("history.csv") if r.get("date") != TODAY]
     for e in eps:
