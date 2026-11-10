@@ -33,16 +33,22 @@ MAILTO = "theplanningdesk.podcast@gmail.com"
 UA = f"ThePlanningDeskScout/1.0 (+https://theplanningdesk.github.io/podcast; mailto:{MAILTO})"
 ROOT = Path(__file__).resolve().parents[1]
 
-# One OpenAlex query per lane; title and abstract search, boolean OR.
-LANES = {
-    "Forecasting": '"demand forecasting" OR "probabilistic forecasting" OR "forecast accuracy" OR "demand sensing"',
-    "Inventory": '"inventory management" OR "safety stock" OR "inventory optimization" OR "multi-echelon" OR "spare parts inventory"',
-    "Production planning and scheduling": '"production planning" OR "production scheduling" OR "lot sizing" OR "master planning" OR "capacity planning"',
-    "S&OP and IBP": '"sales and operations planning" OR "integrated business planning" OR "S&OP" OR "tactical planning"',
-    "Network design": '"supply chain network design" OR "facility location" OR "distribution network design" OR "network optimization" OR "footprint"',
-    "Resilience and risk": '"supply chain resilience" OR "supply chain disruption" OR "bullwhip" OR "supply chain risk"',
-    "AI in planning": '"supply chain" AND ("large language model" OR "machine learning" OR "reinforcement learning" OR "artificial intelligence")',
+LANE_WORDS = {
+    "Forecasting": ("forecast", "demand sensing"),
+    "Inventory": ("inventor", "safety stock", "multi-echelon", "spare part", "replenish"),
+    "Production planning and scheduling": ("production planning", "scheduling", "lot siz", "master planning", "capacity planning", "aggregate planning"),
+    "S&OP and IBP": ("sales and operations planning", "s&op", "integrated business planning", "tactical planning"),
+    "Network design": ("network design", "facility location", "distribution network", "footprint", "location-allocation"),
+    "Resilience and risk": ("resilien", "disruption", "bullwhip", "supply risk"),
+    "AI in planning": ("machine learning", "reinforcement learning", "large language model", "artificial intelligence", "deep learning"),
 }
+SEARCH = ('"supply chain" OR inventory OR forecasting OR "production planning" OR scheduling OR "lot sizing" OR '
+          '"sales and operations planning" OR "network design" OR "facility location" OR bullwhip OR "safety stock" OR logistics')
+# Journals the show trusts, by ISSN (OpenAlex matches print or electronic).
+ISSNS = ["0925-5273", "0377-2217", "0020-7543", "0144-3577", "0272-6963", "1059-1478", "1523-4614", "0025-1909",
+         "0030-364X", "0041-1655", "0169-2070", "0305-0483", "0305-0548", "0360-8352", "1366-5545", "1359-8546",
+         "0735-3766", "0960-0035", "2192-4376", "2949-8635", "0167-9236", "0254-5330", "0171-6468", "1936-6582",
+         "1478-4092", "0953-7287", "1094-6136", "2472-5854", "0894-069X", "0160-5682", "1932-6157", "2214-7160"]
 
 # Licences that allow keeping and sharing the text with attribution.
 OPEN_LICENCES = {"cc-by", "cc-by-sa", "cc0", "public-domain", "cc-by-nc", "cc-by-nc-sa", "cc-by-nd", "cc-by-nc-nd"}
@@ -83,24 +89,37 @@ def abstract(inv: dict | None) -> str:
     return " ".join(w for _, w in words)
 
 
-def search(lane: str, query: str, since: str, key: str | None) -> list[dict]:
-    params = {
-        "filter": f"from_publication_date:{since},is_oa:true,type:article|preprint,title_and_abstract.search:{query}",
-        "select": "id,doi,display_name,publication_date,type,authorships,primary_location,best_oa_location,locations,"
-                  "abstract_inverted_index,cited_by_count,language",
-        "sort": "publication_date:desc",
-        "per_page": "50",
-        "mailto": MAILTO,
-    }
-    if key:
-        params["api_key"] = key
-    for attempt in range(3):
-        r = requests.get(API, params=params, headers={"User-Agent": UA}, timeout=60)
-        if r.status_code == 200:
-            return [dict(w, lane=lane) for w in r.json().get("results", [])]
-        print(f"  {lane}: HTTP {r.status_code} {r.text[:200]}")
-        time.sleep(5 * (attempt + 1))
-    return []
+def search(name: str, filt: str, key: str | None, pages: int = 2) -> list[dict]:
+    """One OpenAlex list query (10 credits a page), newest first."""
+    out = []
+    for page in range(1, pages + 1):
+        params = {
+            "filter": filt,
+            "select": "id,doi,display_name,publication_date,type,authorships,primary_location,best_oa_location,locations,"
+                      "abstract_inverted_index,cited_by_count,language",
+            "sort": "publication_date:desc", "per_page": "200", "page": str(page), "mailto": MAILTO,
+        }
+        if key:
+            params["api_key"] = key
+        rows = None
+        for attempt in range(3):
+            r = requests.get(API, params=params, headers={"User-Agent": UA}, timeout=90)
+            if r.status_code == 200:
+                rows = r.json().get("results", [])
+                break
+            print(f"  {name} page {page}: HTTP {r.status_code} {r.text[:200]}")
+            time.sleep(5 * (attempt + 1))
+        if not rows:
+            break
+        out += rows
+        if len(rows) < 200:
+            break
+    return out
+
+
+def lanes_of(title: str, text: str) -> list[str]:
+    hay = (title + " " + text).lower()
+    return [lane for lane, words in LANE_WORDS.items() if any(w in hay for w in words)]
 
 
 def describe(w: dict) -> dict:
@@ -138,7 +157,7 @@ def describe(w: dict) -> dict:
         "cited_by": w.get("cited_by_count") or 0,
         "language": w.get("language") or "",
         "abstract": text,
-        "lanes": [w["lane"]],
+        "lanes": [],
     }
 
 
@@ -187,7 +206,11 @@ def keep(p: dict, used: set[str]) -> bool:
 
 def fetch_text(p: dict) -> str:
     from pypdf import PdfReader
-    for url in p["pdfs"]:
+    urls = list(p["pdfs"])
+    key = os.environ.get("OPENALEX_API_KEY")
+    if key:  # OpenAlex keeps copies of open-access PDFs (100 credits each); publishers often block bots
+        urls.append(f"https://content.openalex.org/works/{p['openalex']}.pdf?api_key={key}")
+    for url in urls:
         try:
             r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
             if r.status_code != 200 or not r.content.startswith(b"%PDF"):
@@ -198,7 +221,7 @@ def fetch_text(p: dict) -> str:
             if len(text) > 5000:
                 return text[:180_000]
         except Exception as err:  # noqa: BLE001
-            print(f"  pdf failed {url}: {err}")
+            print(f"  pdf failed {url.split('api_key')[0]}: {err}")
     return ""
 
 
@@ -225,16 +248,25 @@ def main(out_dir: str) -> int:
     used = used_ids()
     found: dict[str, dict] = {}
     status = {}
-    for lane, q in LANES.items():
-        rows = search(lane, q, since, key)
-        status[lane] = len(rows)
-        print(f"{lane}: {len(rows)} results")
+    arxiv_since = (date.today() - timedelta(days=min(days, 45))).isoformat()
+    queries = {
+        "Journals": f"from_publication_date:{since},is_oa:true,primary_location.source.issn:{'|'.join(ISSNS)},"
+                    f"title_and_abstract.search:{SEARCH}",
+        "arXiv": f"from_publication_date:{arxiv_since},indexed_in:arxiv,title.search:{SEARCH}",
+    }
+    for name, filt in queries.items():
+        rows = search(name, filt, key)
+        status[name] = len(rows)
+        print(f"{name}: {len(rows)} results")
         for w in rows:
             p = describe(w)
-            if p["openalex"] in found:
-                found[p["openalex"]]["lanes"].append(lane)
-            else:
-                found[p["openalex"]] = p
+            p["lanes"] = lanes_of(p["title"], p["abstract"])
+            if not p["lanes"]:
+                continue
+            if name == "arXiv":
+                p["type"] = "preprint"
+                p["venue"] = p["venue"] or "arXiv"
+            found.setdefault(p["openalex"], p)
         time.sleep(1)
     cands = [p for p in found.values() if keep(p, used)]
     for p in cands:
