@@ -21,6 +21,7 @@ jobs:
     timeout-minutes: 20
     env:
       OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+      SCOUT_TEXTS: "12"   # full texts per week; each OpenAlex download costs a cent of the free daily dollar
     steps:
       - uses: actions/checkout@v4
         with:
