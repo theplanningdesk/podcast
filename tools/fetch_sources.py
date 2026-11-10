@@ -45,6 +45,14 @@ from pathlib import Path
 import feedparser
 import requests
 
+_ARXIV_TERMS = ['"supply chain"', 'inventory', '"lot sizing"', '"production planning"',
+                '"production scheduling"', '"demand forecasting"', '"sales and operations"',
+                '"job shop"', '"network design"', '"facility location"', 'replenishment',
+                'newsvendor', '"safety stock"', '"capacity planning"', '"multi-echelon"', 'procurement']
+ARXIV_API = ("https://export.arxiv.org/api/query?search_query="
+             + urllib.parse.quote(" OR ".join(f"ti:{t}" for t in _ARXIV_TERMS))
+             + "&sortBy=submittedDate&sortOrder=descending&max_results=60")
+
 # (name, url) or (name, [url, fallback url, ...]); the first URL that yields entries wins.
 # Dropped 10 Nov 2026 after failing every night (403 or timeout): SupplyChain247,
 # Logistics Management, Dagens Infrastruktur, Gartner Newsroom, ASCM. The scrobbler
@@ -67,9 +75,8 @@ SOURCES = [
     ("Ny Teknik", ["https://www.nyteknik.se/rss", "https://www.nyteknik.se/"]),
     ("Dagens Industri", ["https://www.di.se/rss", "https://www.di.se/"]),
     ("MIT Sloan Management Review", "https://sloanreview.mit.edu/feed/"),
-    ("arXiv math.OC (optimisation)", ["https://rss.arxiv.org/rss/math.OC", "https://export.arxiv.org/rss/math.OC"]),
-    ("arXiv cs.AI", ["https://rss.arxiv.org/rss/cs.AI", "https://export.arxiv.org/rss/cs.AI"]),
-    ("arXiv stat.ML", ["https://rss.arxiv.org/rss/stat.ML", "https://export.arxiv.org/rss/stat.ML"]),
+    # arXiv search API (Atom): newest preprints whose title names a planning topic, any category.
+    ("arXiv (planning and OR preprints)", ARXIV_API),
     ("NVIDIA Technical Blog (optimisation)", "https://developer.nvidia.com/blog/feed/"),
     ("Talking Logistics", "https://talkinglogistics.com/"),
     ("Supply Chain Shaman", "https://www.supplychainshaman.com/"),
@@ -189,7 +196,7 @@ ARXIV_WORDS = [
     "production planning", "production scheduling", "job shop", "job-shop", "flow shop",
     "sales and operations", "s&op", "supply chain network", "facility location", "procurement",
     "replenishment", "newsvendor", "safety stock", "capacity planning", "multi-echelon",
-    "supply network", "bullwhip", "order picking", "spare parts", "scheduling", "forecasting",
+    "supply network", "bullwhip", "order picking", "spare parts", "network design",
 ]
 SWEDISH_PLAN_WORDS = [
     "varulager", "lager", "centrallager", "logistikcenter", "fabrik", "produktion",
@@ -200,11 +207,10 @@ SWEDISH_PLAN_WORDS = [
 TITLE_ONLY = {
     "TechXplore (business)", "TechXplore (all)", "Phys.org (economics and business)",
     "The Conversation (business)", "idw-online (DACH research)", "Industriemagazin",
-    "Placera (Swedish business news)", "arXiv math.OC (optimisation)", "arXiv cs.AI",
-    "arXiv stat.ML", "Ny Teknik", "Dagens Industri", "MIT Sloan Management Review",
+    "Placera (Swedish business news)", "arXiv (planning and OR preprints)", "Ny Teknik", "Dagens Industri", "MIT Sloan Management Review",
 }
 # Sources matched on the title alone (arXiv abstracts mention "network design" for 6G and the like).
-TITLE_STRICT = {"arXiv math.OC (optimisation)", "arXiv cs.AI", "arXiv stat.ML"}
+TITLE_STRICT = {"arXiv (planning and OR preprints)"}
 
 # Sources whose feed is broad: keep only items whose title, summary or text matches.
 KEYWORDS = {
@@ -233,9 +239,8 @@ KEYWORDS = {
     "DACH ad hoc releases (finanznachrichten)": [
         "prognose", "restrukturierung", "effizienz", "stellenabbau", "sparprogramm",
         "kostensenkung", "quartal", "werk", "lieferkette"],
-    "arXiv math.OC (optimisation)": ARXIV_WORDS,
-    "arXiv cs.AI": ARXIV_WORDS,
-    "arXiv stat.ML": ARXIV_WORDS,
+    "arXiv (planning and OR preprints)": ARXIV_WORDS,
+    "INFORMS newsroom": ARXIV_WORDS + ["operations", "supply", "inventor", "manufactur", "retail", "logistic"],
     "Ny Teknik": SWEDISH_PLAN_WORDS,
     "Dagens Industri": SWEDISH_PLAN_WORDS,
     "MIT Sloan Management Review": PLANNING_WORDS + ["operations", "supplier", "manufactur"],
@@ -499,6 +504,10 @@ def parse_date(text):
     if m:
         y, mo, d, h, mi = m.groups()
         return dt.datetime(int(y), int(mo), int(d), int(h or 0), int(mi or 0), tzinfo=dt.timezone.utc)
+    m = re.search(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.? (\d{1,2}), (\d{4})\b", text or "")
+    if m:
+        mo = "JanFebMarAprMayJunJulAugSepOctNovDec".index(m.group(1)) // 3 + 1
+        return dt.datetime(int(m.group(3)), mo, int(m.group(2)), tzinfo=dt.timezone.utc)
     m = re.search(r"\b(\d{1,2})\.(\d{1,2})\.(\d{4})\b", text or "")
     if m:
         d, mo, y = m.groups()
@@ -556,7 +565,7 @@ def enrich(items, cutoff):
             it["highlights"] = highlights(full)
             return it, None, text
         if not published:
-            published = parse_date(it["title"])
+            published = parse_date(it["title"]) or parse_date(text[:200])
         if title and len(it["title"]) < 25:
             it["title"] = title
         return it, published, text
