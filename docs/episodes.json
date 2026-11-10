@@ -205,5 +205,18 @@
     "duration_sec": 276,
     "pub_date": "2026-11-09T06:30:00+01:00",
     "transcript_lines": 38
+  },
+  {
+    "guid": "planning-desk-2026-11-10",
+    "stem": "2026-11-10",
+    "number": 17,
+    "format": "daily",
+    "title": "Container Freight Rates: Fleet Heads for 50m TEU",
+    "summary": "Container shipping: Sea-Intelligence sees the global fleet growing from 34m TEU to around 50m TEU by 2030, with heavy pressure on freight rates. Also: a weekend of escalation around the Strait of Hormuz, Danish retailers checking supplier refrigeration security after European freezer cyberattacks, and Black Sea war-risk premiums at 20% of hull value.",
+    "notes_html": "<p>Container shipping: Sea-Intelligence sees the global fleet growing from 34m TEU to around 50m TEU by 2030, with heavy pressure on freight rates. Also: a weekend of escalation around the Strait of Hormuz, Danish retailers checking supplier refrigeration security after European freezer cyberattacks, and Black Sea war-risk premiums at 20% of hull value.</p><p>Sources:</p><ul><li><a href=\"https://splash247.com/record-supply-growth-pushes-container-fleet-towards-50m-teu-by-2030/\">Splash247: Record supply growth pushes container fleet towards 50m teu by 2030</a></li><li><a href=\"https://splash247.com/hormuz-suffers-weekend-of-fire/\">Splash247: Hormuz suffers weekend of fire</a></li><li><a href=\"https://gcaptain.com/new-wave-of-attacks-hits-tankers-and-lng-carrier-in-strait-of-hormuz-and-persian-gulf/\">gCaptain: New wave of attacks hits tankers and LNG carrier in Strait of Hormuz and Persian Gulf</a></li><li><a href=\"https://www.scm.dk/cyberangreb-mod-kolesystemer-truer-forsyningskaeder-i-europa\">SCM.dk: Cyberangreb mod kølesystemer truer forsyningskæder i Europa</a></li><li><a href=\"https://via.ritzau.dk/pressemeddelelse/15271704/styrelsen-for-samfundssikkerhed-er-opmaerksom-pa-at-pro-russiske-hackergrupper-tager-ansvar-for-cyberangreb\">Styrelsen for Samfundssikkerhed via Ritzau: Pro-russiske hackergrupper tager ansvar for cyberangreb</a></li><li><a href=\"https://splash247.com/black-sea-shipping-reels-from-fresh-attacks-and-record-insurance-costs/\">Splash247: Black Sea shipping reels from fresh attacks and record insurance costs</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-10.html\">https://theplanningdesk.github.io/podcast/e/2026-11-10.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3566677,
+    "duration_sec": 223,
+    "pub_date": "2026-11-10T06:30:00+01:00",
+    "transcript_lines": 32
   }
 ]
