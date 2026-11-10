@@ -67,9 +67,9 @@ SOURCES = [
     ("Ny Teknik", ["https://www.nyteknik.se/rss", "https://www.nyteknik.se/"]),
     ("Dagens Industri", ["https://www.di.se/rss", "https://www.di.se/"]),
     ("MIT Sloan Management Review", "https://sloanreview.mit.edu/feed/"),
-    ("arXiv math.OC (optimisation)", "https://rss.arxiv.org/rss/math.OC"),
-    ("arXiv cs.AI", "https://rss.arxiv.org/rss/cs.AI"),
-    ("arXiv stat.ML", "https://rss.arxiv.org/rss/stat.ML"),
+    ("arXiv math.OC (optimisation)", ["https://rss.arxiv.org/rss/math.OC", "https://export.arxiv.org/rss/math.OC"]),
+    ("arXiv cs.AI", ["https://rss.arxiv.org/rss/cs.AI", "https://export.arxiv.org/rss/cs.AI"]),
+    ("arXiv stat.ML", ["https://rss.arxiv.org/rss/stat.ML", "https://export.arxiv.org/rss/stat.ML"]),
     ("NVIDIA Technical Blog (optimisation)", "https://developer.nvidia.com/blog/feed/"),
     ("Talking Logistics", "https://talkinglogistics.com/"),
     ("Supply Chain Shaman", "https://www.supplychainshaman.com/"),
@@ -108,10 +108,7 @@ MANAGEMENT_SOURCES = [
     ("STT Info (Finnish releases)", "https://www.sttinfo.fi/rss/releases/latest"),
     ("DACH ad hoc releases (finanznachrichten)", "https://www.finanznachrichten.de/rss-aktien-adhoc/"),
     # Added 10 Nov 2026: OR and planning-science journals' press releases.
-    ("INFORMS newsroom", ["https://www.informs.org/News-Room/INFORMS-Releases",
-                          "https://www.informs.org/News-Room"]),
-    ("EurekAlert! (business and economics)", ["https://www.eurekalert.org/rss/business_economics.xml",
-                                              "https://www.eurekalert.org/rss.xml"]),
+    ("INFORMS newsroom", "https://www.informs.org/News-Room/INFORMS-Releases/News-Releases"),
 ]
 
 
@@ -190,9 +187,9 @@ _PLAN_RE = [re.compile(r"(?<![a-zåäöæøüß])" + re.escape(w)) for w in PLAN
 ARXIV_WORDS = [
     "supply chain", "inventory", "demand forecast", "lot sizing", "lot-sizing",
     "production planning", "production scheduling", "job shop", "job-shop", "flow shop",
-    "sales and operations", "s&op", "network design", "facility location", "procurement",
+    "sales and operations", "s&op", "supply chain network", "facility location", "procurement",
     "replenishment", "newsvendor", "safety stock", "capacity planning", "multi-echelon",
-    "supply network", "bullwhip", "order picking", "spare parts",
+    "supply network", "bullwhip", "order picking", "spare parts", "scheduling", "forecasting",
 ]
 SWEDISH_PLAN_WORDS = [
     "varulager", "lager", "centrallager", "logistikcenter", "fabrik", "produktion",
@@ -205,8 +202,9 @@ TITLE_ONLY = {
     "The Conversation (business)", "idw-online (DACH research)", "Industriemagazin",
     "Placera (Swedish business news)", "arXiv math.OC (optimisation)", "arXiv cs.AI",
     "arXiv stat.ML", "Ny Teknik", "Dagens Industri", "MIT Sloan Management Review",
-    "EurekAlert! (business and economics)",
 }
+# Sources matched on the title alone (arXiv abstracts mention "network design" for 6G and the like).
+TITLE_STRICT = {"arXiv math.OC (optimisation)", "arXiv cs.AI", "arXiv stat.ML"}
 
 # Sources whose feed is broad: keep only items whose title, summary or text matches.
 KEYWORDS = {
@@ -241,7 +239,6 @@ KEYWORDS = {
     "Ny Teknik": SWEDISH_PLAN_WORDS,
     "Dagens Industri": SWEDISH_PLAN_WORDS,
     "MIT Sloan Management Review": PLANNING_WORDS + ["operations", "supplier", "manufactur"],
-    "EurekAlert! (business and economics)": PLANNING_WORDS + ARXIV_WORDS,
     "produktion.de": GERMAN_WORDS + ["werk", "standort", "fertigung", "kapazität", "verlager"],
 }
 
@@ -250,7 +247,7 @@ LINK_RULES = {
     "Xeneta": {"include": ["/news/", "/press/", "/blog/xeneta-weekly", "ocean-market-update"]},
     "Osto&Logistiikka": {"exclude": ["/mainos/"]},
     "KLU newsroom": {"include": ["/article/"]},
-    "INFORMS newsroom": {"include": ["/News-Room/INFORMS-Releases/"]},
+    "INFORMS newsroom": {"include": ["/News-Releases/"]},
 }
 
 # Company releases: skip routine notices; pull these words' sentences out as highlights.
@@ -452,6 +449,8 @@ def keep(source, items):
     words = KEYWORDS.get(source)
     if words:
         def hay(i):
+            if source in TITLE_STRICT:
+                return i["title"].lower()
             extra = "" if source in TITLE_ONLY else " " + i.get("_text", "")
             return (i["title"] + " " + i["summary"] + extra).lower()
         items = [i for i in items if any(w in hay(i) for w in words)]
