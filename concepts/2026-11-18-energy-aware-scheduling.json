@@ -1,0 +1,148 @@
+{
+ "date": "2026-11-18",
+ "publish_local": "12:00",
+ "topic": "Energy-aware scheduling",
+ "kicker": "Research",
+ "series": "Research",
+ "viz": "oven",
+ "source": {
+  "cite": "Khayyati, Karabağ, Berkman, Demirtas & Tan (2026). Energy-efficient scheduling of a single resource with production requirements. International Journal of Production Research. Open access, CC BY.",
+  "title": "Energy-efficient scheduling of a single resource with production requirements: a joint simulation and scenario-based mathematical programming approach",
+  "authors": [
+   "Siamak Khayyati",
+   "Oktay Karabağ",
+   "Berk Berkman",
+   "Sebnem Demirtas",
+   "Barış Tan"
+  ],
+  "institutions": [
+   "University of Mannheim",
+   "HEC-Liège",
+   "Özyeğin University",
+   "Erasmus University Rotterdam",
+   "Koç University"
+  ],
+  "venue": "International Journal of Production Research",
+  "year": 2026,
+  "doi": "https://doi.org/10.1080/00207543.2026.2757111",
+  "openalex": "W7225202756",
+  "licence": "cc-by",
+  "checked": [
+   "44% of production energy, nearly 12% of vehicle cost: Introduction, p. 1-2",
+   "about 100 special-colour vehicles a day: Introduction, p. 2",
+   "Table 2 (p. 18): energy 10.08 / 8.56 / 5.06, waiting 42.07 / 131.51 / 178.08 s, total cost 10.50 / 9.87 / 6.84",
+   "up to 41% less energy per car for about 35% more waiting: Introduction and Conclusion; 5.06/8.56 = -40.9%, 178.08/131.51 = +35.4%",
+   "threshold vs always-on energy 8.56/10.08 = -15.1% (our arithmetic from Table 2)",
+   "visibility window: cost falls as it grows; most pronounced from 40 to 70 vehicles, diminishing beyond: Section 8.2",
+   "oven modes on, off, warm-up, intermediate standby temperatures: Sections 1 and 3.1"
+  ],
+  "card": "Khayyati et al. (2026), International Journal of Production Research. Open access, CC BY."
+ },
+ "model": {
+  "table": {
+   "always": {
+    "energy": 10.08,
+    "wait": 42.07,
+    "total": 10.5
+   },
+   "threshold": {
+    "energy": 8.56,
+    "wait": 131.51,
+    "total": 9.87
+   },
+   "scheduled": {
+    "energy": 5.06,
+    "wait": 178.08,
+    "total": 6.84
+   }
+  }
+ },
+ "acts": [
+  {
+   "start": 0,
+   "head": "Keep a paint oven hot all day and every car pays for it.",
+   "sub": "At this car plant the paint shop uses 44% of production energy. Energy is nearly 12% of what it costs to build a car."
+  },
+  {
+   "start": 210,
+   "head": "Simple rules switch off too late.",
+   "sub": "A threshold rule watches the queue. To avoid delays it keeps the oven hot, and saves only 15% against always-on."
+  },
+  {
+   "start": 420,
+   "head": "See the cars coming, then schedule the oven.",
+   "sub": "Live car positions feed a digital twin that predicts arrivals. The oven drops to standby or off in the gaps: 41% less energy per car than the threshold rule."
+  },
+  {
+   "start": 630,
+   "head": "How far ahead does the plant need to see?",
+   "sub": "Cost falls as visibility grows, most between 40 and 70 cars ahead. Past that, extra foresight adds little."
+  }
+ ],
+ "endStart": 810,
+ "total": 900,
+ "endTitle": "See it coming, switch it off",
+ "endTag": "Cars waited 35% longer, about three minutes each, for 41% less oven energy.",
+ "footnote": "Source: Khayyati et al. (2026), Int. J. Production Research, Table 2. Shift timeline illustrative.",
+ "cta": "New research explainer every Wednesday · Paper link in the post",
+ "goodFrom": 434,
+ "kpis": [
+  {
+   "label": "Oven energy per car, min of full heat",
+   "decimals": 1,
+   "steps": [
+    [
+     40,
+     10.08
+    ],
+    [
+     220,
+     8.56
+    ],
+    [
+     434,
+     5.06
+    ]
+   ]
+  },
+  {
+   "label": "Wait per car, seconds",
+   "decimals": 0,
+   "steps": [
+    [
+     40,
+     42.07
+    ],
+    [
+     220,
+     131.51
+    ],
+    [
+     434,
+     178.08
+    ]
+   ],
+   "goodFrom": 100000
+  }
+ ],
+ "post": {
+  "linkedin": "Knowing when the next car will arrive cut a paint oven's energy per car by 41% in a new study. No new oven, just a better schedule.\n\nNew open-access research in the International Journal of Production Research, from authors at the University of Mannheim, Özyeğin University and others, looks at a special-colour paint oven serving about 100 cars a day. At this plant the paint shop uses 44% of production energy.\n\nKeeping it always on uses the equivalent of 10.1 minutes of full heat per car. A threshold rule that watches the queue only gets that to 8.6, because it keeps the oven hot to avoid delays. Feed live car positions into a digital twin, predict arrivals, and schedule the oven into standby or off in the gaps: 5.1 minutes per car, 41% less than the threshold rule.\n\nThe price is waiting. Cars waited about 35% longer, roughly three minutes each instead of just over two. And the plant doesn't need perfect foresight: the biggest gains came as visibility grew from 40 to 70 cars ahead, with smaller gains beyond that.\n\nWhich energy-heavy asset in your plant still runs on \"keep it hot just in case\"?\n\nPaper link in the first comment. A new research explainer every Wednesday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify.\n\n#productionplanning #scheduling #energyefficiency #manufacturing",
+  "comment_paper": "Paper (open access): Khayyati, Karabağ, Berkman, Demirtas & Tan (2026), Energy-efficient scheduling of a single resource with production requirements, International Journal of Production Research. https://doi.org/10.1080/00207543.2026.2757111",
+  "short_title": "41% Less Oven Energy by Predicting Arrivals | Research",
+  "short_caption": "In a new study, scheduling a car plant's paint oven on predicted arrivals cut energy per car 41% versus a threshold rule, for about 35% more waiting. Khayyati et al. (2026), International Journal of Production Research, open access. AI-generated explainer.",
+  "hashtags": [
+   "productionplanning",
+   "scheduling",
+   "energyefficiency",
+   "manufacturing"
+  ],
+  "tags": [
+   "University of Mannheim",
+   "Özyeğin University",
+   "Koç University",
+   "Erasmus University Rotterdam",
+   "HEC Liège",
+   "International Journal of Production Research"
+  ]
+ }
+}

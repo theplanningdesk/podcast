@@ -59,8 +59,9 @@ def cmd_text(stem: str) -> None:
              f"YouTube: {pod['youtube_url']}" if pod.get("youtube_url") else ""]
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"{base(stem)}-linkedin.txt").write_text(post + "\n", encoding="utf-8")
-    (OUT / f"{base(stem)}-linkedin-comment.txt").write_text(
-        "\n".join(["The Planning Desk, supply chain planning news every weekday:"] + [l for l in links if l]) + "\n", encoding="utf-8")
+    paper = (c.get("post") or {}).get("comment_paper", "").strip()
+    lines = ([paper, ""] if paper else []) + ["The Planning Desk, supply chain planning news every weekday:"] + [l for l in links if l]
+    (OUT / f"{base(stem)}-linkedin-comment.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"LinkedIn text written for {stem}.")
 
 
@@ -68,7 +69,7 @@ def cmd_youtube(stem: str) -> None:
     from youtube_upload import insert, youtube_client
     c, cfg = concept(stem), load_config()
     p, yt = c.get("post") or {}, cfg.get("youtube", {})
-    desc = "\n\n".join(x for x in [p.get("short_caption", "").strip(),
+    desc = "\n\n".join(x for x in [p.get("short_caption", "").strip(), p.get("comment_paper", "").strip(),
                                    f"Supply chain planning news every weekday: {cfg['podcast']['base_url']}",
                                    tags_line(c), "#Shorts"] if x)
     when = publish_at(c)
@@ -99,7 +100,8 @@ def cmd_instagram(stem: str) -> None:
     except Exception as err:
         print(f"Couldn't resolve the release redirect ({err}); using the release link.")
     p = c.get("post") or {}
-    caption = "\n\n".join(x for x in [p.get("short_caption", "").strip(), tags_line(c)] if x)[:2100]
+    doi = (c.get("source") or {}).get("doi", "")
+    caption = "\n\n".join(x for x in [p.get("short_caption", "").strip(), f"Paper: {doi}" if doi else "", tags_line(c)] if x)[:2100]
     container = call("POST", f"{API}/{user}/media",
                      {"media_type": "REELS", "video_url": url, "caption": caption, "share_to_feed": True}, token)["id"]
     status = ""

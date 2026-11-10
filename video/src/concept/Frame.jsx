@@ -49,7 +49,7 @@ export const Story = ({fmt: fm = 'v', d}) => {
   const f = useCurrentFrame();
   const l = LAYOUT[fm];
   const endP = ramp(f, d.endStart, 18);
-  const dim = 1 - 0.55 * endP;
+  const dim = 1 - (d.source ? 0.97 : 0.55) * endP;
   const Viz = VIZ[d.viz];
   return (
     <AbsoluteFill style={{backgroundColor: C.paper}}>
@@ -59,9 +59,14 @@ export const Story = ({fmt: fm = 'v', d}) => {
       </div>
       {endP > 0 && (
         <div style={{position: 'absolute', top: l.text, left: PAD, width: CW, opacity: endP, transform: `translateY(${(1 - endP) * 16}px)`}}>
-          <div style={{fontFamily: FONT, color: C.orange, fontSize: 26, fontWeight: 900, letterSpacing: 2.6, textTransform: 'uppercase'}}>Planning concept</div>
+          <div style={{fontFamily: FONT, color: C.orange, fontSize: 26, fontWeight: 900, letterSpacing: 2.6, textTransform: 'uppercase'}}>{d.kicker || 'Planning concept'}</div>
           <div style={{fontFamily: HEAD, color: C.ink, fontSize: l.head + 16, fontWeight: 700, lineHeight: 1.05, marginTop: 14, letterSpacing: -1}}>{d.endTitle}</div>
           <div style={{fontFamily: FONT, color: C.text, fontSize: l.sub, lineHeight: 1.3, marginTop: 18}}>{d.endTag}</div>
+          {d.source && (
+            <div style={{marginTop: 22, paddingLeft: 18, borderLeft: `5px solid ${C.orange}`, fontFamily: FONT, color: C.sub, fontSize: l.sub - 6, lineHeight: 1.3}}>
+              <span style={{fontWeight: 900, color: C.ink}}>Paper</span>&nbsp;&nbsp;{d.source.card || d.source.cite}
+            </div>
+          )}
         </div>
       )}
       <div style={{position: 'absolute', top: l.viz, left: PAD, width: CW, height: l.vizH, opacity: dim}}>
