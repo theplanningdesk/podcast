@@ -1,8 +1,8 @@
 {
- "fetched_at": "2026-11-10T06:47:06.810570+00:00",
+ "fetched_at": "2026-11-10T06:51:11.695715+00:00",
  "window_days": 8,
  "sources_ok": 75,
- "sources_total": 78,
+ "sources_total": 77,
  "sources": [
   {
    "source": "SupplyChainBrain",
@@ -170,7 +170,7 @@
    "ok": false,
    "method": null,
    "items": 0,
-   "error": "https://rss.arxiv.org/rss/math.OC: empty feed",
+   "error": "https://rss.arxiv.org/rss/math.OC: empty feed; https://export.arxiv.org/rss/math.OC: empty feed",
    "lane": "planning"
   },
   {
@@ -178,7 +178,7 @@
    "url": "https://rss.arxiv.org/rss/cs.AI",
    "ok": true,
    "method": "feed https://rss.arxiv.org/rss/cs.AI",
-   "items": 4,
+   "items": 9,
    "error": null,
    "raw_items": 397,
    "lane": "planning"
@@ -189,7 +189,7 @@
    "ok": false,
    "method": null,
    "items": 0,
-   "error": "https://rss.arxiv.org/rss/stat.ML: empty feed",
+   "error": "https://rss.arxiv.org/rss/stat.ML: empty feed; https://export.arxiv.org/rss/stat.ML: empty feed",
    "lane": "planning"
   },
   {
@@ -374,21 +374,12 @@
   },
   {
    "source": "INFORMS newsroom",
-   "url": "https://www.informs.org/News-Room/INFORMS-Releases",
+   "url": "https://www.informs.org/News-Room/INFORMS-Releases/News-Releases",
    "ok": true,
    "method": "page links (articles opened for dates)",
    "items": 15,
    "error": null,
-   "raw_items": 40,
-   "lane": "management"
-  },
-  {
-   "source": "EurekAlert! (business and economics)",
-   "url": "https://www.eurekalert.org/rss/business_economics.xml",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://www.eurekalert.org/rss/business_economics.xml: HTTPError: 404 Client Error: Not Found for url: https://www.eurekalert.org/rss/business_economics.xml; https://www.eurekalert.org/rss.xml: HTTPError: 404 Client Error: Not Found for url: https://www.eurekalert.org/rss.xml",
+   "raw_items": 29,
    "lane": "management"
   },
   {
