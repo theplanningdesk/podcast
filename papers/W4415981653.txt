@@ -1,0 +1,1057 @@
+TITLE: Data-driven bed capacity planning using Mt/Gt/∞ queueing models with an application to neonatal intensive care units
+AUTHORS: Maryam Akbari‐Moghaddam, Douglas G. Down, Na Li, Catherine Eastwood, Ayman Abou Mehrem, Alexandra A. Howlett
+VENUE: Operations Research Data Analytics and Logistics (2026-11-04)
+DOI: https://doi.org/10.1016/j.ordal.2026.200516
+LICENCE: cc-by
+LINK: https://doi.org/10.1016/j.ordal.2026.200516
+
+Data-Driven Bed Capacity Planning UsingM t/Gt/∞Queueing Models with an
+Application to Neonatal Intensive Care Units
+Maryam Akbari-Moghaddama,b,∗, Douglas G. Downa, Na Lib,c,a, Catherine Eastwoodb,c, Ayman Abou
+Mehremd, Alexandra Howlettd
+aDepartment of Computing and Software, McMaster University, 1280 Main Street West, Hamilton, L8S 4L7, Ontario, Canada
+bCentre for Health Informatics, Cumming School of Medicine, University of Calgary, 3280 Hospital Drive NW, Calgary, T2N
+4Z6, Alberta, Canada
+cDepartment of Community Health Sciences, Cumming School of Medicine, University of Calgary, 3280 Hospital Drive
+NW, Calgary, T2N 4Z6, Alberta, Canada
+dDepartment of Pediatrics, Cumming School of Medicine, University of Calgary, Alberta Children’s Hospital, 28 Oki Drive
+NW, Calgary, T3B 6A8, Alberta, Canada
+Abstract
+Hospitals face challenges in long-term intensive care unit (ICU) capacity planning under uncertain
+demand. Admission rates fluctuate over time, and LOS distributions vary with patient heterogeneity, hospital
+location, case mix, and clinical practice. Common approaches rely on steady-state queueing models or
+heuristic rules with fixed parameters, which often fail to capture real occupancy dynamics. The widely used
+85% occupancy rule, for example, recommends keeping average utilization below this level to preserve
+responsiveness, yet it is grounded in stationary assumptions and may lack resilience in time-varying systems.
+Our analysis shows that even when long-run utilization targets are satisfied, daily occupancy often exceeds
+100% capacity.
+We propose a data-driven framework to estimate ICU bed occupancy using an Mt/Gt/∞ queueing model
+with time-varying arrival rates and empirically fitted LOS distributions. The approach combines statistical
+decomposition and parametric fitting to capture temporal patterns in admissions and LOS, and is applied to
+multi-year data from neonatal ICUs (NICUs) in Calgary. We evaluate capacity scenarios including average-
+based thresholds and Poisson-based surge estimates. Results show that static heuristics are inadequate under
+fluctuating demand and underscore the importance of modeling LOS variability when estimating bed needs.
+Although the case study focuses on NICUs, the framework has potential applicability to other ICU settings
+and provides interpretable, data-informed support for systems facing rising demand and constrained capacity.
+Keywords:Bed occupancy forecasting, Data-driven planning, Time-varying queueing models, Length of stay
+(LOS) modeling, Capacity planning,M t/Gt/∞queue, Intensive Care Units (ICUs)
+This paper has been submitted to theOperations Research, Data Analytics and Logisticsjournal.
+∗Corresponding Author: Maryam Akbari-Moghaddam. Email: akbarimm@mcmaster.ca
+arXiv:2510.02852v2 [stat.AP] 6 Mar 2026
+1. Introduction
+Intensive care units (ICUs) provide continuous monitoring and advanced interventions for critically ill
+patients. Their capacity is limited by staffed beds, specialized personnel, and infrastructure. When demand
+approaches or exceeds available resources, care delivery can become strained, which reflects a supply–demand
+mismatch that affects beds, staffing, and equipment [1, 2, 3]. Many health systems are planning for sustained
+pressure in critical care while facing constraints such as staffing shortages and aging infrastructure [ 4, 5].
+These challenges make long-term capacity planning a central operational problem in ICU management.
+A key difficulty is that ICU demand and service durations vary over time. Admissions fluctuate due to
+temporal factors, seasonal illness patterns, and population dynamics [ 6, 7]. Length of stay (LOS) varies
+widely because of heterogeneity in patient severity and comorbidities [8], and can evolve with changes in
+clinical practice, case mix, and hospital protocols. Because occupancy depends on both the arrival process
+and the full LOS distribution, planning based on time-averaged quantities can mask periods of congestion
+and yield capacity targets that lack resilience during peak periods.
+Traditionally, long-term ICU bed planning has relied on steady-state queueing models that assume
+stationary arrival rates and service durations [9]. These models use long-run average admission rates and
+LOS, which simplifies analysis and remains common in practice due to tractability [ 10]. However, when
+arrivals and discharges vary over time, as often observed in ICUs because of seasonal patterns or structural
+demand shifts, stationary assumptions fail to capture real dynamics [7, 11]. As a result, steady-state models
+may underestimate capacity during high-demand periods [12] or encourage overprovisioning when planning
+relies on historical peaks. Moreover, occupancy depends on the full LOS distribution rather than its mean,
+since LOS variability determines how long patients overlap in the system.
+This study develops a data-driven framework for long-term ICU bed planning under non-stationary
+demand. We focus on neonatal intensive care units (NICUs) across five hospital sites in the Calgary Zone,
+Alberta, Canada, which exhibit temporal variation in admissions and LOS. These sites operate within a
+regional network where patient transfers often respond to occupancy levels. Our goal is to estimate the beds
+required if each site accommodated its underlying demand without capacity-driven redistribution.
+Although NICUs have distinct clinical features, they share key capacity constraints with other ICUs,
+including limited flexibility in staffed beds and the need to maintain readiness under demand uncertainty
+[8]. Infants requiring advanced support often need immediate admission, even when the unit is strained.
+Congestion therefore appears as overload and resource strain rather than infants waiting for resources.
+This characteristic motivates the use of an Mt/Gt/∞ framework, an infinite-server queueing model that
+accommodates time-varying arrivals and service durations rather than relying on steady-state averages. The
+infinite-server assumption reflects the priority of immediate admission in critical care. Strain is therefore
+expressed as overload and resource bottlenecks rather than waiting lines. The model yields a tractable expres-
+2
+sion for expected occupancy via convolution of past arrivals with time-varying LOS survival probabilities,
+enabling transparent scenario evaluation.
+Our contributions are as follows. First, we estimate time-varying admission rates and mean LOS using
+STL decomposition [13], selected through a grid search. Second, we fit parametric LOS distributions and
+construct time-varying survival probabilities by calibrating parameters to smoothed daily LOS moments
+while preserving site-level tail heterogeneity. Third, we integrate these components in a non-stationary model
+to generate daily occupancy trajectories under theM t/Gt/∞framework. Fourth, we convert occupancy into
+capacity targets using benchmarks ranging from average-based rules to overflow probability constraints
+based on Poisson tail approximations. Finally, we extend the model to forward-looking planning through a
+births-driven projection module combining demographic forecasts with resampled historical arrival and LOS
+patterns.
+Our framework produces site-specific capacity estimates that reflect temporal variability in demand
+and LOS. The results show that targets based solely on time averages may fail to protect against transient
+overload, while overflow-constrained thresholds provide explicit control of exceedance risk at the cost of
+lower utilization. The projection module generates scenario-based ranges for future bed requirements under
+demographic change.
+The remainder of the paper is organized as follows. Section 2 reviews related work on capacity heuristics,
+queueing models, and forecasting approaches for hospital occupancy. Section 3 describes the Calgary
+NICU dataset and the planning objective. Section 4 presents the modeling framework, including STL-based
+estimation, LOS distribution fitting, and occupancy measures derived from the queueing model. It also
+defines the capacity planning strategies and resilience metrics. Finally, Section 5 reports empirical results
+and scenario comparisons. Section 6 summarizes implications, limitations, and extensions for ICU capacity
+planning.
+2. Related Work
+The estimation of hospital bed occupancy has been studied using various modeling paradigms. This
+section reviews prior work in three areas relevant to our study: (i) queueing models and capacity planning
+frameworks, (ii) simulation-based forecasting, and (iii) time-series and machine learning forecasting ap-
+proaches.We highlight how this literature informs our framework and how our model extends existing work to
+support data-driven, scenario-based ICU capacity planning. Although similar forecasting and capacity plan-
+ning frameworks have been applied in other operational domains, we focus on healthcare-specific literature
+due to the distinct clinical and patient-flow constraints inherent to healthcare systems.
+3
+2.1. Queueing Models and Capacity Planning Frameworks
+A widely used approach in hospital planning is steady-state queueing models, particularly M/M/c or
+Erlang-based frameworks, which assume constant arrival and service rates to estimate required bed capacity.
+These models are widely applied in healthcare resource planning [14, 15, 16, 17, 18]. Some studies embed
+them within cost-optimization frameworks to determine hospital-specific occupancy and capacity targets [19].
+Others, such as Joseph [20], stress their practical value while cautioning against simplistic average-based
+decisions.
+Closely related to steady-state reasoning is the 85% rule, which suggests that average occupancy in
+high-resilience settings such as ICUs and emergency departments should not exceed 85% [21]. The rule aims
+to ensure sufficient capacity for demand surges and reduce delays but is grounded in long-run averages. It
+does not explicitly account for temporal variability in arrivals or service patterns. Bain et al. [22] argue that a
+universal “safe” occupancy threshold oversimplifies queueing dynamics and obscures the trade-off between
+utilization and availability, emphasizing the need for system-specific evaluation rather than fixed benchmarks.
+These limitations are amplified in NICUs, where admissions and LOS vary substantially and flexibility
+in staffed beds is limited. In such settings, steady-state models and fixed occupancy rules fail to capture
+dynamic demand and short-term overload risk. Several studies propose time-varying congestion metrics
+beyond long-run averages. Au et al. [23] model emergency department overflow as a time-dependent queue
+and show that congestion depends on patient flow and bed turnover dynamics. Wartelle et al. [24] introduce a
+time-windowed congestion metric based on arrival-to-departure load ratios, arguing that averages such as
+occupancy and waiting time do not reflect short-term congestion patterns.
+Despite the relevance of non-stationary queueing to hospital operations, many applied planning studies
+still rely on steady-state approximations using time-averaged arrivals and LOS [9, 10]. Some work adopts
+dynamic queueing models to better reflect variability. Eick et al. [ 7] analyze the Mt/G/∞ queue under
+sinusoidal input, and Whitt and Zhang [6] integrate SARIMA-based arrivals with deterministic queueing
+for ED forecasting. Other studies extend the Mt/G/∞ framework to address data or system constraints. For
+example, Li et al. [25] estimate parameters from interval-censored data via maximum likelihood, Whitt and
+Zhao [26] incorporate non-Poisson arrivals with Gaussian staffing approximations, and Chan et al. [11] model
+inspection-based discharge timing. Shi et al. [27] propose a broader processing network capturing inpatient
+delays and overflow policies.
+2.2. Simulation-based Forecasting
+Several papers propose data-driven models for short-term occupancy forecasting. Baas et al. [ 28] use
+Monte Carlo simulation of patient trajectories through wards and ICUs during COVID-19 to generate real-
+time bed forecasts, combining empirical LOS with epidemic-based arrival projections. Similarly, Whitt
+and Zhang [29] apply a time-varying infinite-server model to emergency department data to capture weekly
+4
+patterns in arrivals, admissions, and LOS. Their focus is short-term operations, whereas our objective is
+long-term capacity planning. Leeftink et al. [ 30] simulate nurse shift allocation across a national NICU
+network to address daily demand fluctuations. Braaksma et al. [ 31] use hourly census forecasts to guide
+intraday nurse staffing and workload balancing through flexible float deployment.
+Other simulation frameworks address multi-layered or regionally coordinated planning. Dijkstra et al.
+[32] develop a multi-level simulation-optimization model to redistribute COVID-19 patients across hospitals,
+combining infinite-server queues with stochastic programming to balance regional surpluses and shortages.
+However, these approaches require centralized coordination and real-time transfer control, which are not
+available in our NICU setting and fall outside this study’s scope.
+2.3. Time-Series and Machine Learning Forecasting Approaches
+Parallel to queueing approaches, a large literature addresses occupancy and demand forecasting using
+statistical and machine learning methods. Classical time-series models such as SARIMA [ 33] and more
+recent tools such as Prophet [34] and XGBoost [35] have been widely used in healthcare forecasting.
+Tuominen et al. [36] forecast daily arrivals and use peak occupancy as a proxy for crowding in a Finnish
+ED. Cheng et al. [37] and Reboredo et al. [38] apply SARIMAX and INGARCH models to short-term ED
+forecasting. The former predicts hourly occupancy up to four hours ahead, while the latter forecasts daily
+arrivals for staffing decisions. Both account for temporal autocorrelation, and INGARCH also captures
+time-varying variability in arrivals.
+Recent studies examine richer feature sets and explainable AI methods. Tuominen et al. [39] evaluate
+LightGBM, N-BEATS, DeepAR, and TFT for 24-hour ED occupancy forecasting using over 150 covariates,
+finding that simpler models can match or outperform deep learning benchmarks such as ARIMA. Susnjak and
+Maddigan [40] apply ensemble learning with SHAP and LIME for three-month urgent care forecasts. Becerra
+et al. [41] use SARIMA to model seasonal respiratory ED visits in Chile. Overton et al. [42] propose EpiBeds,
+linking SEIR projections with hospital transition pathways to produce weekly ICU demand forecasts in the
+United Kingdom.
+While these forecasting approaches support operational prediction, they often omit explicit LOS distribu-
+tions and lack tractable links between demand, LOS, and long-term capacity decisions. In domains such as
+call centers, staffing can be adjusted flexibly in response to demand [43, 44, 45]. ICU bed capacity, however,
+is constrained by infrastructure and specialized staffing, motivating planning tools that convert time-varying
+demand and service patterns into interpretable capacity thresholds.
+Finally, Chen et al. [46] study sinusoidal non-homogeneous Poisson processes (NHPPs) for modeling
+arrivals in customer service systems, showing they capture non-weekly cycles more smoothly than piecewise
+linear functions. Although we estimate arrival rates through empirical decomposition, this work supports
+modeling time-varying demand with flexible functional forms.
+5
+Within this literature, few models integrate time-varying arrival rates and LOS distributions in a data-
+driven queueing framework for long-term planning. Most emphasize short-term forecasting without scenario
+analysis or rely on simulation without tractable structure. Many studies in Sections 2.2 and 2.3 focus on
+demand prediction, staffing optimization, or patient flow rather than physical bed capacity. Empirical estima-
+tion of LOS variance and its effect on occupancy uncertainty is also often overlooked despite its relevance
+for surge planning. Our approach addresses these gaps by combining statistical decomposition, parametric
+LOS modeling, and occupancy estimation within an infinite-server framework to generate interpretable,
+site-specific planning thresholds.
+3. Problem Setting and Data
+We begin by describing the general modeling framework and then present the empirical setting used for
+implementation and evaluation. This study develops a data-driven approach to estimate time-varying bed
+occupancy and the capacity required to meet specified resiliency targets when arrivals and service durations
+evolve over time. Planning in this setting is challenging because admissions and LOS fluctuate, while capacity
+cannot be scaled quickly in response to surges. As a result, average-based rules can be misleading, and
+explicit quantification of occupancy variability is essential for robust long-term planning.
+3.1. Modeling Objective
+The objective of this study is twofold. Methodologically, we estimate daily expected bed occupancy in
+a critical care unit using empirically observed, time-varying arrival rates and LOS distributions. Expected
+occupancy varies with seasonal admission patterns and evolving clinical practices that affect average stay
+duration. Because daily occupancy is stochastic and fluctuates beyond average trends, planning cannot rely
+solely on long-run averages.
+Second, we translate these stochastic occupancy estimates into capacity requirements that satisfy explicit
+probabilistic resilience targets. We estimate the probability that occupied beds exceed available capacity
+and use it to determine capacity levels under specified resiliency thresholds. Capacity is set as the minimum
+number of beds needed to keep this exceedance probability below a chosen limit. This framework also
+enables comparison of alternative capacity levels based on their implied overflow risk over time.
+3.2. Data Description
+We utilize a multi-year dataset of NICU admissions from five major sites in the Calgary Zone between
+April 1, 2016 and December 31, 2023, with each record representing one admission. The data include patient
+demographics, admission characteristics, diagnosis codes, and timestamps, enabling reconstruction of daily
+census counts and estimation of site-specific demand and LOS patterns. For modeling, we use only the
+6
+institution identifier and total NICU LOS in days, treated as continuous to capture partial-day stays. These
+variables are sufficient to estimate time-varying occupancy within the queueing framework.
+A key feature of the Calgary Zone NICU system is that patient transfers between sites are often capacity
+driven. We focus on estimating the number of beds required if each site accommodated its own demand.
+Therefore, we construct adjusted site-level demand and LOS time series before modeling. Specifically,
+for Site 2, many admissions historically transfer to Sites 3–5 during periods of high congestion. In the
+adjusted dataset, these admissions and their LOS are attributed back to Site 2 rather than the receiving sites.
+Consequently, adjusted admissions at Sites 3–5 decline, while Site 2’s LOS increases. Figure 1 shows the
+adjusted LOS distributions and volumes. All subsequent analyses use these adjusted series.
+(a) LOS distribution by institution (adjusted)
+ (b) Admission counts by institution (adjusted)
+Figure 1: Comparison of adjusted LOS distribution and admission counts by institution using adjusted series that retain capacity-
+driven transfers at the originating site.
+3.3. Challenges in Modeling NICU Bed Occupancy
+Estimating NICU occupancy requires modeling both the arrival process and LOS distribution, both of
+which exhibit heterogeneity and non-stationarity. Admission volumes and LOS differ substantially across
+sites, reflecting variation in unit size, clinical practice, patient mix, and historical transfer patterns.
+Figure 1 shows substantial heterogeneity in LOS distributions and admission volumes across the five
+sites, which motivates site-specific estimation of arrival rates and LOS. In addition to cross-site heterogeneity,
+both admissions and LOS vary over time. Admissions display seasonality and short-term fluctuations linked
+to birth patterns, population dynamics, and operational changes. LOS is also non-stationary, with its mean
+and variability shifting due to evolving clinical protocols or case mix. Figure 2 illustrates these dynamics for
+one representative site, with similar patterns observed across others.
+To determine whether these visual patterns reflect significant changes over time, we conducted site-level
+trend analyses for monthly admissions and mean LOS. For each NICU, the monthly series was regressed on a
+linear time index with month-of-year indicators, using Newey–West (HAC) robust standard errors to account
+7
+(a) Average daily admission rate by month (adjusted)
+ (b) Average of daily mean LOS by month (adjusted)
+Figure 2: Time-varying admissions and mean LOS at an example site using the adjusted series.
+for serial correlation. Results show statistically significant trends in admissions and mean LOS at most sites,
+indicating that the patterns in Figure 2 represent systematic changes rather than random month-to-month
+variation.
+Finally, the multi-site structure introduces an additional consideration for capacity planning. Because
+patient transfers redistribute load, site-level capacity estimates depend on whether the system is treated as
+independent units or a connected network. We estimate requirements using adjusted demand that attributes
+capacity-driven transfers back to the originating site. This choice aligns the modeled demand with the
+capacity that would be needed if reliance on redistribution were reduced, and it gives insights into how
+transfer policies can affect the apparent balance of demand and capacity across sites.
+4. Methodology
+This section describes the framework used to estimate time-varying occupancy and derive capacity under
+resiliency constraints. It integrates empirical estimation of arrival rates and LOS distributions within a
+non-stationary infinite-server queueing model to support scenario-based planning across ICU sites facing
+demand uncertainty and service variability.
+4.1. Overall Framework
+Our framework estimates and evaluates time-varying ICU occupancy under non-stationary conditions
+using anM t/Gt/∞model. It integrates empirical estimation of the arrival process and LOS distribution and
+supports scenario-based capacity planning. The main components are: (i) arrival rate estimation, (ii) LOS
+distribution modeling, and (iii) estimation of expected occupancy under the infinite-server queueing model.
+Each component is implemented in a site-specific manner to reflect operational heterogeneity across ICUs.
+Table 1 summarizes the key indices, variables, and planning parameters.
+Because NICU discharge decisions may be influenced by congestion, we tested whether LOS was
+associated with contemporaneous occupancy levels. Cox models at pooled and site-specific levels showed no
+8
+Table 1: Notation used throughout the paper
+Symbol Definition
+mIndex for NICU site
+tDay index
+uDays since admission, used as the convolution lag
+SLOS random variable
+Smax Truncation horizon in the convolution
+λt Time-varying admission rate on dayt µt Time-varying mean LOS on dayt
+σ 2t Time-varying LOS variance on dayt κLOS shape parameter
+ρt Expected occupancy on dayt Lt Number of occupied beds on dayt ¯ρLong-run average occupancy implied by historical averages
+δt Deviation from long-run mean occupancy Baverage Baseline capacity estimate using historical averages
+Bα Capacity level corresponding to overflow risk thresholdα γUtilization threshold used in overflow evaluation
+ηElasticity of admissions with respect to projected births
+ψMultiplicative drift factor in projections
+yProjection year index
+Yf Set of projection years,Y f ={y min, . . . ,ymax}
+Y ω h Recent-year reference set used to define baseline admissions and
+site shares
+Y ν h Historical reference set used to resample within-year arrival and
+LOS patterns
+h,h ′ Resampled reference years drawn from Y ν h for arrivals and LOS,
+respectively
+Ay Observed total admissions in yeary
+ˆAy Projected system-wide admissions in yeary ˜Ky Projected number of births in yeary
+sm Average admission share of sitemoverY ω h
+significant link between occupancy levels and time to discharge. We therefore treat LOS as independent of
+occupancy levels. In settings where such effects exist, LOS would need to be modeled as state-dependent,
+requiring extension of theM t/Gt/∞framework to allow LOS to depend on the occupancy level.
+We formulate the problem as follows. Let λt denote the admission rate on day t, allowed to vary over
+time. The expected occupancy on day t, denoted ρt, accounts for patients admitted on prior days t−u
+whose LOS extends beyond t, where u∈ {0,1, . . . ,Smax} and Smax is a truncation horizon. This requires the
+conditional survival probability P(Sk >u|τ k =t−u) =1−G t−u(u), the probability that patient k, admitted
+on day τk =t−u , remains hospitalized on day t. Here, Sk denotes the LOS of patient k, and Gt−u is the
+cumulative distribution function (CDF) of the LOS distribution for admissions on day t−u , estimated from
+best-fitting parametric models with time-varying parameters. Although indexed by k, we assume a common
+LOS distribution across patients, so the survival probability depends only on time since admission and the
+subscriptkis suppressed in implementation.
+This survival probability does not treat death as a competing risk. LOS represents total time to exit,
+whether by discharge, transfer, or death, since occupancy modeling concerns only when a bed becomes
+9
+available. The queueing model therefore treats LOS as time to system exit without distinguishing exit
+mechanisms. We next describe the key components in detail.
+4.2. Arrival Rate Estimation
+To estimate the time-varying arrival rateλt for each site m, we use historical admission data aggregated
+into daily counts from the adjusted series described in Section 3. Because admissions exhibit noise, seasonality,
+and irregular fluctuations, we apply statistical decomposition to extract a smooth estimate of the underlying
+arrival intensity for the occupancy model.
+Specifically, we apply Seasonal-Trend decomposition via Loess (STL) [13] to decompose daily admissions
+into trend, seasonal components, and residual noise. STL is chosen for robustness to outliers and flexibility
+in capturing irregular seasonality. For each site, we perform a grid search over seasonal windows of 7, 15,
+and 31 days, trend windows of 15, 31, and 61 days, polynomial degrees of 1 and 2, and a robustness flag for
+weighted fitting. These windows reflect weekly to monthly smoothing scales relevant to hospital admissions.
+The grid search selects the configuration that minimizes residual standard deviation. Our search evaluates 72
+candidate configurations per site. The resulting smoothed trend is used as the estimate of λt, representing
+expected admissions at sitemon dayt.
+We use STL over alternatives like SARIMA [33] or machine learning because our goal is not short-term
+forecasting but estimation of a smooth, interpretable arrival function for queueing analysis. Unlike black-
+box models, STL offers explicit separation of trend and seasonality and supports scenario evaluation [47].
+Moreover, its outputs can be directly incorporated into theM t/Gt/∞framework.
+4.3. LOS Distribution Modeling
+To estimate the time-varying conditional survival probability P(S>u|τ=t−u) for each site m and day
+t, we use historical LOS data for all admissions. The same preprocessing and STL decomposition applied
+to admission counts is used for LOS, retaining the grid search configuration. LOS values are aggregated
+into daily averages, and STL extracts a smooth trend that estimates the time-varying mean LOS µt. To
+capture dispersion, we analyze STL residuals with rolling windows of 7, 15, and 31 days and select the
+window yielding the most stable local volatility. The rolling standard deviation is then squared to obtain the
+time-varying LOS varianceσ 2 t .
+We then fit several candidate parametric distributions to empirical LOS values at each site, including
+Weibull, Lognormal, Gamma, Fisk (Burr Type XII), and Exponential families. These distributions are
+commonly used for neonatal LOS due to their ability to capture skewness and heterogeneity [48]. For each
+site, maximum likelihood estimation (MLE) is applied to pooled LOS observations to obtain time-invariant
+distributional parameters, independently of arrivals and time-varying LOS moments.
+10
+Based on empirical analysis, we observed that the shape parameter κ of the Weibull, Gamma, and Fisk
+distributions remains stable over time when LOS is aggregated at quarterly, biannual, and annual resolutions.
+We assess this using the coefficient of variation (CV) of κ across aggregation windows and find CV < 0.2 in
+all cases [49]. We therefore fix κ per site and deterministically re-parameterize the remaining distribution
+parameters to match the smoothed daily LOS mean and, when applicable, variance obtained from STL
+decomposition. These time-varying moments are not used in the MLE stage but are incorporated when
+constructing conditional survival probabilities for the occupancy model. While this approach is supported by
+the stability observed in our data, in general, one may need to estimate a time-varying function for the shape
+parameter to account for potential structural changes or temporal dynamics.
+To evaluate goodness-of-fit, we compare the marginal survival function of each candidate distribution
+to the empirical survival curve from the Kaplan-Meier estimator. We compute the root mean squared error
+(RMSE) between empirical and parametric survival probabilitiesP(S>u) over a distribution-specific horizon
+Smax. For each distribution, Smax is defined as the smaller of the maximum observed LOS at that site and the
+99th percentile of the corresponding parametric distribution constructed using fixed shape parameters (when
+applicable), the empirical mean LOS, and variance (when required). This ensures comparison over a range
+where both empirical and model-based survival probabilities are well defined. The distribution minimizing
+RMSE is selected as best-fitting for that site. The selected distribution, with fixed κ (if applicable), is then
+used to compute conditional survival probabilitiesP(S>u|τ=t−u)in Eq. 1 below.
+The conditional survival probabilities P(S>u|τ=t−u) are defined as follows for each candidate
+distribution:
+•Exponential:exp
+
+− u µt−u
+
+,
+•Weibull:exp
+
+−
+
+u
+θt−u
+κ 
+, whereθ t−u = µt−u Γ(1+ 1 κ ),
+• Lognormal: 1−Φ
+
+logu−µ lognorm t−u
+τt−u
+
+, where τt−u =
+r
+log
+
+1+ σ 2t−u µ2t−u  , and µlognorm t−u =log(µ t−u)−
+1
+2 τ2 t−u,
+• Gamma: 1−F Gamma(u;κ,θ t−u), where θt−u = µt−u κ , and FGamma(u;κ,θ) denotes the CDF of the
+Gamma distribution with shape parameterκand scale parameterθ, evaluated atu,
+•Fisk (Burr Type XII):
+
+θt−u
+u+θt−u
+κ
+, whereθ t−u = µt−u π/κ (ifκ̸=0).
+In Section 4.4, we discuss how we estimate site-specific bed occupancy and provide several scenario-based
+capacity planning strategies.
+11
+4.4. Occupancy Estimation and Scenario-Based Capacity Planning
+Given the time-varying admission rate λt and the conditional survival probability function P(S>u|
+τ=t−u) , we estimate the expected beds occupied at each ICU site m on day t using a non-stationary
+infinite-server queue. As discussed in Section 4.1, this is modeled under the Mt/Gt/∞ framework, which
+allows both the arrival rate and LOS distribution to vary over time.
+The expected occupancy ρt is computed as a convolution of past admissions with corresponding survival
+probabilities. For each day t, we sum patients admitted on days t−u , for u=0 to Smax, weighting each by the
+probability of remaining hospitalized on day t. The expected bed occupancy is calculated using the standard
+convolution formula for infinite-server queues:
+ρt =
+Smax
+∑
+u=0
+λt−u ·P(S>u|τ=t−u).(1)
+We may interpret the expected occupancy ρt through the decomposition ρt = ¯ρ+δ t, where ¯ρ represents
+occupancy implied by long-run average arrival and LOS rates, and δt captures excess occupancy from
+short-term fluctuations (due to both LOS variance and temporal fluctuations). Under this view, capacity
+planning consists of providing beds for long-term demand plus a buffer to absorb day-to-day short-term
+fluctuations.
+Eq. 1 builds on the classical Mt/G/∞ result of Eick et al. [7] and its extension to time-varying service
+distributions by Whitt [50]. In our implementation, arrivals and LOS vary daily, forming a discrete-time
+approximation of a non-stationary infinite-server queue. Eq. 1 holds under the assumptions that (i) arrivals
+follow a nonhomogeneous Poisson process, (ii) a patient’s LOS is independent from other patients’ LOS and
+from the arrival process, and (iii) the time-varying LOS distributions have finite mean at each point in time,
+so that the expected occupancy remains finite. These three assumptions are satisfied in our setting, allowing
+ρt to be computed as a convolution of past arrivals with the corresponding survival functions [50, 51].
+The assumption of a nonhomogeneous Poisson arrival process is supported by several diagnostics applied
+to site-level admission data. Kolmogorov–Smirnov tests of interarrival times rejected exponentiality at
+all sites, indicating that arrival rates are not constant over time. We then evaluated daily counts using the
+dispersion index, which compares the variance to the mean. Dispersion ratios were below but close to 1,
+and chi-squared p-values were near 1, showing no significant deviation from the variance structure expected
+under a Poisson process. Thus, despite time-inhomogeneity, marginal daily variability remains consistent
+with Poisson-like behavior. A chi-squared goodness-of-fit test rejected a homogeneous Poisson distribution at
+all sites, likely due to seasonality and structural patterns.
+We therefore adopt a nonhomogeneous Poisson process with time-varying rate λt within the infinite-
+server framework considered. The discrete approximation in Eq. 1 replaces the continuous convolution
+with a summation up to Smax, defined for each site as the 99th percentile of the fitted LOS distribution.
+12
+The tail probability P(S>u|τ=t−u) is computed using the distribution-specific formulas in Section 4.3,
+parameterized by smoothed µt−u and σ 2 t−u. Iterating over t and u∈ {0, . . . ,Smax} yields the time series of
+expected occupancyρ t, which we use to evaluate capacity planning strategies.
+To assess ICU bed requirements under uncertainty, we explore two planning strategies informed byρt:
+•Average Occupancy Estimation:A baseline benchmark defined as
+Baverage = ¯ρ+
+p
+¯ρ,
+where ¯ρ= ¯λ·E[S] is the product of the average admission rate ¯λ and the mean LOS E[S], both
+computed over the full historical dataset. This approach does not rely on STL smoothing or time-series
+decomposition.
+The square-root term provides a buffer for random occupancy fluctuations, reflecting that under a
+Poisson process the standard deviation is approximately the square root of the mean. Similar buffers
+are common in operations research, including call center staffing [52, 53] (e.g., the square-root staffing
+rule in the Erlang-C model [54, 55]) and public transit planning [56]. However, this method does not
+formally control the probability of exceeding capacity.
+• Overflow-Constrained Occupancy:We formulate capacity planning as a constrained optimization
+problem in which we minimize the number of beds subject to a probabilistic performance constraint.
+Specifically, we solve:
+minBs.t.P(L t >γB)≤α,
+where Lt denotes the number of occupied beds at time t, γ∈(0,1) is a utilization threshold (e.g., 0.85),
+and α∈(0,1) is the maximum acceptable overflow risk. Minimizing B promotes high utilization,
+while the constraint limits how often occupancy exceeds γB. This can be evaluated over the time series
+{ρt}to measure how frequently a capacity level is exceeded over the planning horizon.
+Under the Mt/Gt/∞ assumptions (NHPP arrivals and independent LOS), the number in system at time
+t is Poisson with mean ρt, given by the convolution in Eq. 1 [50]. Overflow probabilities are therefore
+computed using the Poisson tail:
+P(Lt >γB) =1−F Poisson(γB;ρ t),(2)
+whereF Poisson(γB;ρ t)denotes the CDF of a Poisson distribution with meanρ t evaluated atγB.
+13
+This method also uses STL-smoothed arrival rates and LOS parameters. Unlike the other two, it directly
+constrains expected overflow risk and ensures that the probability of exceedingγBremains below the
+acceptable limitα. It thus provides a capacity level with explicit resilience guarantees.
+4.5. Future Projection of ICU Bed Requirements
+While retrospective NICU occupancy estimates inform historical demand and capacity alignment, plan-
+ning requires a forward-looking perspective. To extend the framework in Section 4.4, we develop a births-
+driven projection method combining regional birth forecasts with historical site-level admission shares and
+seasonal arrival and LOS patterns. This helps ensure that long-term capacity planning reflects demographic
+trends and observed temporal variability.
+Let Yf ={y min, . . . ,ymax} denote the desired projection years. We use two historical windows: (i) a set
+Y ω h of recent years to determine baseline admissions and site shares, and (ii) a set Y ν h of historical years to
+provide reference patterns for within-year arrivals and LOS. The first captures recent structural conditions,
+while the second preserves realistic daily variability.
+Annual demand is defined relative to historical admissions and scaled to projected births. Let ˜Ky denote
+projected total births in year y∈Y f , obtained from external forecasts. Baseline system-wide admissions are
+the mean overY ω h ,
+Abase = 1 |Y ω h | ∑ y∈Y ω h Ay,
+where Ay is observed admissions in year y. Let y0 =y min denote the base year. Projected admissions for
+y∈Y f are given by
+ˆAy =A base ·
+ ˜Ky
+˜Ky0
+η
+·ψ (y−y0).(3)
+Here, η denotes the elasticity of admissions with respect to births (η=1 implies proportional scaling),
+and ψ is a structural drift factor capturing multiplicative annual changes. This formulation is used for two
+reasons. First, it reflects the dependence of admissions on birth volumes, with η governing responsiveness
+(e.g., proportional change when η=1 , slower growth when η<1 ). Second, ψ captures long-term shifts not
+explained by births, such as changes in admission practices or referral patterns. Together, these parameters
+provide a transparent model that accounts for demographic and structural drivers of long-run demand.
+To allocate ˆAy across sites, we compute the average site share overY ω h :
+sm = 1 |Y ω h | ∑ y∈Y ω h Am,y ∑m′ Am′,y , ∑ m sm =1,
+where Am,y is admissions at site m in year y∈Y ω h . Projected admissions at site m in year y∈Y f are then
+14
+ˆAm,y =s m · ˆAy.
+For each site m and projection year y∈Y f , we preserve intra-annual variation by resampling patterns
+from Y ν h . A reference year h is sampled at random, and its daily admissions λm,h,t are normalized to construct
+a profile
+pm,h,t =
+
+
+
+λm,h,t
+∑365 u=1 λm,h,u ,if ∑u λm,h,u >0,
+1
+365 ,if ∑u λm,h,u =0,
+t=1, . . . ,365.
+We define the projected daily arrivals ˆλm,y,t by scaling the normalized profile pm,h,t so that its sum matches
+the annual admission target ˆAm,y. Therefore,
+ˆλm,y,t = ˆAm,y ·p m,h,t,
+365
+∑
+t=1
+ˆλm,y,t = ˆAm,y.
+To project LOS, we resample a reference year h′ ∈Y ν h and carry forward its daily mean µm,h′,t and
+variance σ 2 m,h′,t without scaling, preserving intra-annual variation. The site-specific LOS family identified in
+Section 4.3 is assumed fixed over the horizon, with parameters determined from the resampled mean and
+variance series. Our data indicate that the LOS distribution is stable across years, and this method retains that
+stability while preserving seasonal variation.
+Given projected daily arrivals ˆλm,y,t and the LOS distribution, site-specific expected occupancy at site m
+in yearyon daytis estimated using theM t/Gt/∞convolution:
+ˆρm,y,t =
+Smax
+∑
+u=0
+ˆλm,y,t−u ·P( ˆS>u|τ=t−u),
+where ˆS is the estimated LOS and Smax is the site-specific truncation horizon from the fitted LOS model in
+Section 4.3. The conditional survival probability P( ˆS>u|τ=t−u) is computed from the site’s best-fitting
+parametric LOS distribution, parameterized by the resampled reference year.
+Our framework links empirical demand estimation with analytical queueing approximations and provides
+a flexible, interpretable methodology for ICU planning. Each component corresponds to observable quantities
+such as admission rates and LOS distributions, and occupancy follows from a transparent convolution formula.
+Unlike black-box models, assumptions can be examined independently, and capacity thresholds are defined
+through explicit probabilistic constraints. Such transparency is emphasized in healthcare operations research
+for validation and policy adoption [e.g., 43, 45, 47].
+The framework also accommodates site-level heterogeneity and supports scenario-based evaluation
+under time-varying conditions. These scenarios allow decision makers to benchmark historical performance,
+consider worst-case behavior, and design capacity with resilience guarantees. It further extends to future
+15
+years by combining demographic projections with historical site-specific arrival and LOS patterns, enabling
+long-term planning under plausible demand trajectories.
+5. Results
+In this section, we present the results of our modeling pipeline which consists of results from STL
+decomposition, LOS distribution modelling, and the evaluation of bed occupancy scenarios across the NICU
+sites.
+5.1. STL Grid Search and Smoothed Trend Estimation
+Table 2 reports the optimal STL configuration selected via grid search. The same parameters are chosen
+across all five NICU sites. Shorter seasonal and trend windows (7 and 15 days) best capture the temporal
+dynamics, with the weekly seasonal window reflecting short-term cycles and the bi-weekly trend window
+balancing smoothness and responsiveness. Linear fitting (degree 1, standard LOESS) with non-robust
+weighting minimizes residual variance in both admission and LOS time series, suggesting that local trends
+dominate the time series structure. For LOS variance estimation, a 31-day rolling window applied to
+STL residuals produces the most stable standard deviation estimates. This wider window likely balances
+responsiveness to variance shifts while reducing noise from small daily LOS samples and smoothing transient
+outliers.
+Table 2: Optimal STL decomposition parameters selected across all NICU sites
+Parameter Value
+Seasonal Window 7 days
+Trend Window 15 days
+Seasonal Degree 1
+Trend Degree 1
+Robust False
+Rolling Window (LOS Variance) 31
+Figure 3 shows smoothed monthly trends for admission rate λt and mean LOS µt at each site. Admission
+rates display recurring variation and site-level differences, while mean LOS is relatively stable except at Site
+1, which shows higher variability and occasional spikes. Daily STL outputs are aggregated to monthly values
+for visualization. However, all modeling steps are conducted using daily resolution data.
+5.2. Parametric LOS Distribution Fit and Comparison
+As discussed in Section 4.3, we fit five candidate parametric distributions to empirical LOS data at each
+site. Table 3 reports the selected distribution per site, its shape parameter κ (if applicable), the RMSE relative
+16
+(a) Smoothed monthly admission rateλ t
+ (b) Smoothed monthly mean LOSµ t
+Figure 3: Smoothed monthly trends in admission rate and mean LOS across the five NICU sites
+to the Kaplan-Meier curve, and the truncation threshold Smax. Site-specific selections reflect differences in
+tail behavior, with Fisk capturing heavier tails at Sites 1 and 2, and Exponential fitting intermediate decay at
+Site 5.
+Table 3: Best-fitting LOS distribution by site, along with RMSE and fixed shape parameterκ
+Site Best Distribution RMSEκS max
+1 Fisk 0.01 1.34 325
+2 Fisk 0.03 1.25 340
+3 Exponential 0.02 – 40
+4 Gamma 0.01 1.16 42
+5 Exponential 0.02 – 39
+Figure 4 compares Kaplan-Meier LOS tails with the five parametric distributions at a represntetaive site.
+The plot shows the marginal tail probabilityP(S>u)up to 60 days, chosen for visualization purposes only,
+as over 90% of admissions have LOS below this threshold. The selected distributions closely match empirical
+tails across most time points, which supports their use in our occupancy modeling. Similar patterns are
+observed across the other sites and are shown in Figure A.7.
+5.3. Scenario-Based Capacity Estimates and Site-Level Utilization
+Capacity Estimation Strategies
+We evaluate the traditional average occupancy estimate and the overflow-constrained capacity strategies
+given in Section 4.4. For the latter, we compute B0.01 and B0.05, the minimum number of beds ensuring daily
+exceedance probabilities of at most 1% and 5%, respectively. These strategies give insights into trade-offs
+between resilience and utilization, with smaller α yielding more conservative capacity. We set γ=1 in Eq. 2,
+targeting overflow relative to full nominal bed capacity B. This parameter can be adjusted. For example,
+γ=0.85 evaluates risk of exceeding 85% capacity, consistent with common operational guidelines [21].
+17
+(a) Site 4
+Figure 4: Comparison of empirical LOS tail probabilitiesP(S>u)with candidate parametric distributions at an example site
+Table 4 compares the actual number of beds at each NICU site with proposed capacity estimates. The
+traditional estimate Baverage yields the smallest values and later is shown to underestimate capacity needed for
+resiliency under demand variability. These comparisons use the adjusted demand series from Section 3, which
+remove capacity-driven transfers from Site 2. Consequently, the actual number of beds at Site 2 appears lower
+than required, while Sites 3–5 appear higher relative to adjusted demand, reflecting historical redistribution
+within the network.
+Table 4: Comparison of actual beds with scenario-based estimates
+Site Actual BedsB average B0.05 B0.01
+1 14 20 26 31
+2 39 67 83 90
+3 30 14 20 24
+4 27 16 22 26
+5 16 11 15 19
+Utilization Outcomes across Sites
+We next examine how bed counts from each strategy affect site-level utilization. Table 5 reports the mean
+and standard deviation of daily utilization over the entire time horizon of our dataset, assuming each proposed
+capacity is implemented. We also report weighted mean and standard deviation of daily utilization using
+18
+admission volume as weights, so higher-volume sites contribute proportionally to system-wide performance.
+Table 5: Utilization under different capacity planning strategies (mean and std)
+SiteB average B0.05 B0.01
+1 82.45 (14.38) 63.43 (11.06) 53.20 (9.28)
+2 91.10 (12.86) 73.54 (10.38) 67.82 (9.57)
+3 83.00 (27.85) 58.10 (19.50) 48.42 (16.25)
+4 82.10 (22.88) 59.71 (16.64) 50.52 (14.08)
+5 76.47 (27.76) 56.08 (20.36) 44.27 (16.07)
+Weighted
+site-level
+85.07 (5.24) 64.74 (7.31) 56.36 (9.50)
+We observe that the traditional heuristic maintains high utilization but offers limited surge protection. In
+contrast, overflow-constrained strategies (B0.05 and B0.01) add beds to limit daily exceedance probabilities
+to 5% and 1%, reducing mean utilization while accounting for demand fluctuations. At the system level,
+weighted utilization confirms these patterns. The traditional estimate yields average utilization of 85.07%
+with low variance, which has close alignment with current bed levels. More conservative strategies reduce
+mean utilization, from 64.74% underB0.05 to 56.36% under B0.01. These results illustrate the tradeoff between
+operational efficiency and capacity resilience.
+Figure 5 shows site-level utilization under theB0.05 scenario. Sites with greater demand variability exhibit
+some exceedances beyond 85% utilization, even with added capacity, but most days remain within safe
+margins. The observed upper bound, typically near 85% across institutions, suggests these estimates are
+appropriate for planning.
+We also examine utilization patterns underB 0.01. Figure 6 shows daily utilization trajectories across the
+five NICU sites. The B0.01 scenario provides stronger surge protection and substantially lowers utilization,
+often below 70%. While it reduces overflow risk, it may lead to persistent underutilization during typical
+periods, which reflects its more conservative capacity buffer. The utilization threshold parameter γ in Eq. 2
+offers additional flexibility for planners. Allowing γ>1 permits temporary surges beyond nominal bed
+capacity within the resiliency constraint, which can increase average utilization while tolerating controlled
+exceedances. Such a specification may be relevant in settings where short-term overflow can be absorbed
+operationally, for example through temporary surge beds or flexible staffing arrangements, thereby providing
+an intermediate option between strict capacity limits and purely utilization-based planning.
+A key insight from our modeling pipeline is the influence of time-varying LOS variance on occupancy.
+Many models rely only on mean LOS, but we estimate both mean and variance using STL decomposition
+and rolling residuals. Variance is incorporated into the Mt/Gt/∞ model when the lognormal distribution
+is selected, since its parameterization depends on both moments. This allows the framework to capture
+both the expected load and its dispersion over time and can help yielding more realistic capacity estimates.
+The modular structure also allows evaluation of alternative resilience targets while remaining aligned with
+19
+(a) Site 1
+ (b) Site 2
+(c) Site 3
+ (d) Site 4
+(e) Site 5
+Figure 5: Daily bed utilization (%) under overflow-constrained thresholdB 0.05. Dashed lines show 85% and 100% thresholds.
+historical utilization patterns.
+As discussed in Section 2, static heuristics such as the 85% rule have limitations for ICU planning.
+Although this rule targets 85% average utilization, it assumes stationary and evenly distributed demand
+over time. In practice, however, demand varies substantially day to day. At Site 3, which exhibits high
+variability in daily demand, occupancy exceeded 100% of planned capacity on over 23% of days, despite
+using the 85% rule, which suggests 14 beds. Our empirical analyses reveal that this steady-state estimate
+fails to accommodate temporal surges, leading to frequent overload. At the same time, 31.68% of days fell
+below 70% occupancy, with an average shortfall of 18.48% (with a standard deviation of 11.95%), indicating
+20
+(a) Site 1
+ (b) Site 2
+(c) Site 3
+ (d) Site 4
+(e) Site 5
+Figure 6: Daily utilization under theB 0.01 planning strategy. Red and green lines indicate 100% and 85% occupancy, respectively.
+significant under-utilization.
+In contrast, the least conservative strategy, B0.05, identifies 20 beds for Site 3 (see Table 4) and limits
+overcapacity risk to 5%. Under this threshold, average utilization falls to 58.10%, and exceedances above
+100% become rare. These results illustrate the trade-off between high long-term utilization and protection
+against temporal overload, as lower overload risk requires additional capacity and reduces average utilization.
+Therefore, although the 85% rule may serve as a rule of thumb, our findings support cautions raised by
+Bain et al. [22] and Au et al. [23] that applying it without accounting for temporal variation can underestimate
+capacity needs. Increasing beds reduces overload frequency but lowers average utilization, which highlights
+21
+the trade-off between efficiency and resilience.
+Forward-looking Scenarios and Projections
+In addition to retrospectively analyzing utilization and capacity mismatches, our framework supports
+forward-looking scenario planning. Using Eq. 1, we evaluate alternative assumptions by applying a multiplier
+β to λt, µt, or σ 2 t . For example, seasonal surges can be modeled by increasing λt, staffing shortages that
+delay discharges by increasingµ t, and improved policies and practices by reducingµ t.
+Although changes in mean admissions and LOS have intuitive capacity effects, the role of LOS variance
+is less visible yet important for affecting the right tail of occupancy distributions, especially in high-utilization
+environments such as NICUs. We conduct a sensitivity analysis by scaling the variance of the fitted
+lognormal LOS (as this distribution uses both moments) using β, while holding the mean fixed. We consider
+β∈ {0.2,0.5,0.8} for reduced variability, β∈ {1.2,1.5,1.8} for increased variability, and β=0 as a
+zero-variance setting in which all patients have identical LOS durations. For each site, required beds are
+re-estimated under each β and compared to the baseline β=1 . Table 6 reports percentage changes relative
+to this baseline.
+Table 6: Percentage change in number of beds required under varying LOS variance multipliers β, relative to the baseline case β=1 .
+All scenarios use lognormal LOS distributions with fixed mean and scaled variance.
+Site Strategyβ=0β=0.2β=0.5β=0.8β=1.2β=1.5β=1.8
+1 B0.05 10.34 6.90 3.45 0 -3.45 -3.45 -6.90 B0.01 14.71 8.82 5.88 2.94 0 -2.94 -5.88
+2 B0.05 10.98 6.10 3.66 1.22 0 -1.22 -2.44 B0.01 15.38 7.69 3.30 1.10 -1.10 -2.20 -3.30
+3 B0.05 9.52 4.76 4.76 0 0 0 0 B0.01 7.69 3.85 0 0 0 -3.85 -3.85
+4 B0.05 4.35 4.35 0 0 0 -4.35 -4.35 B0.01 11.11 7.41 3.70 3.70 0 0 0
+5 B0.05 6.25 6.25 6.25 0 0 0 0 B0.01 10.00 5.00 5.00 5.00 0 0 0
+Table 6 shows a consistent pattern across sites and thresholds. Reducing LOS variance (β<1 ) increases
+beds required to meet a fixed overflow target, whereas increasing variance (β>1 ) decreases capacity needs.
+This contrasts with standard queueing intuition, where greater service duration variability is often linked
+to worse congestion [57]. For example, under B0.05 at Site 1, deterministic LOS (β=0 ) increases required
+capacity by 10.34%, while inflating variance by 80% reduces it by 6.90%. Similar directional effects appear
+across the remaining sites and underB 0.01.
+This behavior follows from the structure of the Mt/Gt/∞ model. With mean LOS fixed, higher variance
+22
+disperses discharges and reduces synchronized overlap among patient cohorts, thereby lowering peak occu-
+pancy. Lower variance concentrates discharges and increases temporal overlap, which raises capacity needed
+to meet the same overflow constraint. Although variability reduction is often viewed as beneficial [58], our
+results show that, in an infinite-server setting, LOS dispersion can affect risk-based capacity estimates.
+We conclude this section by presenting projected bed requirements based on the approach in Section 4.5.
+We generate R=300 scenarios, each independently resampling historical years h,h ′ ∈Y ν h for arrivals and
+LOS, while preserving births-driven annual admissions. For each site and year, we compute required capacity
+underB average,B 0.05, andB 0.01.
+We report two projection exercises: (a) retrospective validation and (b) forward-looking projection. Both
+use the same methodology but differ in reference and projection windows. For retrospective validation,Y ν h
+covers 2017–2021, and for forward projection, it covers 2017–2023 (data for 2016 is excluded as a reference
+year because the first three months were unavailable). In each case, Y ω h consists of the three most recent
+years within Y ν h to reflect current structural conditions in admissions and site shares. The window Y ν h offers
+a broader set of reference patterns for within-year arrivals and LOS and thus preserves realistic seasonal
+and intra-annual variability consistent with observed historical behavior. For retrospective validation, we set
+ymin =2022 andy max =2023, and for forward projection, we sety min =2024 andy max =2030.
+The projected total births ˜Ky are obtained from the Alberta Interactive Health Data repository [59] for the
+Calgary Zone. According to their documentation, birth projections use (i) female population forecasts and
+(ii) age-specific fertility rate assumptions. Appendix B reports annual admissions, mean LOS per site, and
+projected births for the Calgary zone from 2022 to 2030.
+In Eq. 3, we set η=1 and ψ=1 , to assume that NICU admissions scale proportionally with births. This
+choice is consistent with the relatively stable admission-to-birth ratios observed in our historical data. Setting
+ψ=1 treats births as the primary demand driver and excludes additional structural drift. However, alternative
+ψ values could represent persistent shifts in admission practices or referral patterns that are not explained by
+birth counts alone.
+Table 7 reports projected bed requirements from the retrospective validation exercise. We summarize
+projections using medians and IQR, as well as means and standard deviations. The Baverage values are fixed,
+as they depend on deterministic yearly admissions ˆAy and mean LOS over Y ν h . Other strategies vary due to
+resampled within-year arrival and LOS patterns. We compare these projections with retrospective capacity
+estimates in Table 4, which were computed using the full historical time series. .
+Across sites, Baverage remains close to historical values. For Sites 1, 3, 4, and 5, projected medians under
+B0.05 and B0.01 align with historical estimates and show narrow IQRs, indicating stability in recent arrival and
+LOS patterns. For Site 2, projected risk-constrained capacities are slightly lower, as estimates in Table 4 were
+driven by joint peaks in admissions and LOS. However, the projection in the retrospective validation exercise
+anchors admissions to recent conditions and resamples within-year patterns, which reduces the influence
+23
+of extreme historical periods. Overall, the results show that the approach preserves the scale and cross-site
+ordering of historical bed requirements, while yielding estimates that reflect more recent structural conditions
+and realistic variability through resampling.
+Table 7: Projected bed requirements (2022-2023), summarized acrossR=300 runs
+Site Baverage B0.05 B0.01
+median [IQR] mean (SD) median [IQR] mean (SD)
+1 19 26 (22, 27) 25 (3) 30 (26, 31) 29 (4)
+2 68 74 (71, 77) 74 (4) 81 (78, 85) 81 (5)
+3 14 18 (18, 19) 19 (1) 22 (22, 23) 22 (1)
+4 17 23 (21, 23) 22 (1) 27 (25, 28) 26 (2)
+5 10 15 (14, 16) 15 (1) 18 (17, 19) 18 (1)
+Table 8 reports projected beds required in 2030 under each strategy. The results show that B0.05 and B0.01
+consistently exceed Baverage, reflecting additional beds needed to keep overflow probability low. For example,
+at Site 1 the median B0.05 is 26 beds versus 21 under Baverage, and the median B0.01 increases to 31. Across
+sites, the median increase relative to Baverage ranges from 4–6 beds for B0.05 and 8–13 beds for B0.01. This
+illustrates how progressively tighter risk thresholds translate into higher capacity targets.
+The dispersion across scenarios provides further insight into projection robustness and it varies by site.
+Larger sites such as Site 2 exhibit wider interquartile ranges (up to 7 beds) and standard deviations (up to
+5 beds), whereas smaller sites such as Site 5 show tighter interquartile ranges (up to 2 beds) and standard
+deviations (up to 1 bed). Within each site, variability generally increases from B0.05 to B0.01, which reflects
+the greater sensitivity of conservative planning rules to daily demand fluctuations.
+Table 8: Projected bed requirements (2024-2030), summarized acrossR=300 runs
+Site Baverage B0.05 B0.01
+median [IQR] mean (SD) median [IQR] mean (SD)
+1 21 26 (25, 29) 27 (4) 31 (29, 34) 32 (4)
+2 72 79 (75, 83) 79 (5) 87 (82, 92) 87 (5)
+3 16 21 (20, 22) 21 (1) 25 (24, 26) 26 (2)
+4 18 24 (23, 25) 24 (2) 28 (26, 30) 28 (2)
+5 12 17 (17, 19) 18 (1) 21 (20, 23) 21 (2)
+5.4. Implications for Capacity Planning
+In what follows, we summarize the main findings in an application-oriented manner and discuss their
+relevance for long-term capacity planning under non-stationary demand.
+1.Average-based utilization rules or fixed utilization targets may underestimate overflow risk.
+Planning based on average occupancy or fixed utilization targets, including the 85% benchmark, ignores
+temporal variability in admissions and LOS. Because both are time-varying, rules relying on long-run
+24
+averages may underestimate required beds. Furthermore, sustaining utilization above a fixed threshold
+such as 85% in a non-stationary environment increases the risk of overflow, delayed admissions, or service
+strain. Variation across sites further suggests that capacity strategies should be tailored to local demand
+characteristics rather than applied uniformly across institutions.
+2.Resiliency-based thresholds provide a risk-explicit framework for capacity determination.
+Overflow-constrained strategies set bed levels by imposing an explicit bound on the probability that
+demand exceeds capacity. This shifts planning from utilization heuristics to a probabilistic performance
+criterion that quantifies congestion risk. By expressing decisions through exceedance probabilities,
+alternative thresholds can be evaluated based on their resiliency implications. Such an approach provides
+a quantitative basis for selecting bed levels consistent with institutional risk tolerance and observed
+variability in admissions and LOS, rather than relying only on average occupancy targets.
+3.The efficiency–resiliency trade-off is inherent in non-stationary ICU systems.
+Because admissions and LOS vary over time, increasing bed capacity reduces overload risk but lowers
+average utilization, whereas maintaining high utilization increases congestion exposure. This trade-off
+reflects variability in λt and µt and persists across sites and projections. It can become more pronounced
+in non-stationary systems, where both admissions and LOS vary over time, making it more difficult to
+simultaneously maintain high utilization and protection against overflow. More strict thresholds such as
+B0.01 offer stronger protection against exceedance but further reduce utilization, while B0.05 may offer
+a balance between routine performance and surge resilience. The appropriate threshold depends on
+institutional risk tolerance and local demand variability. Expanding permanent bed capacity to address
+surges reduces average utilization and can leave resources underused during routine periods, whereas
+tuning capacity primarily for efficiency increases exposure to prolonged over-occupancy. One potential
+response is to supplement fixed infrastructure with flexible components such as temporary surge beds,
+cross-trained staff, or shared arrangements with other units. While challenging in neonatal settings, such
+mechanisms may mitigate the structural efficiency–resiliency trade-off observed across sites.
+4.Redistribution may mask structural imbalances in demand across sites.
+In a multi-site NICU network, inter-site transfers can ease local congestion but may conceal persistent
+differences in underlying demand. When high-demand sites are routinely relieved through transfers,
+historical bed allocations may appear balanced despite unbalanced intrinsic demand. By removing
+redistribution in planning, we estimate the capacity each site would need to serve its own demand. In our
+setting, we observe that one site would require substantially higher capacity than its current allocation
+suggests, which indicates regional imbalance. If adjusting permanent capacity at high-demand sites is
+25
+constrained, continued reliance on transfers becomes a structural mechanism for redistributing demand,
+which can be incorporated explicitly into regional capacity planning rather than treated solely as an
+operational response.
+5.LOS dispersion influences risk-sensitive capacity estimates.
+Required bed levels under resiliency-based planning depend on both the mean and dispersion of the LOS
+distribution. With mean LOS fixed, changes in variance alter the degree of temporal overlap among
+patients and therefore affect peak occupancy formation. Greater dispersion spreads discharges over time
+and moderates peaks, whereas lower variance concentrates departures and increases short-term congestion
+risk.
+6.Capacity projections should account for multiple sources of uncertainty.
+Projected bed requirements are affected both by parameter uncertainty in estimated admission rates and
+LOS, as well as structural uncertainty in demand fluctuations beyond historical patterns. Demographic
+shifts, episodic surges, or clusters of prolonged stays may produce realizations that differ from the past
+patterns. Interpreting projections as ranges rather than point estimates, regularly updating inputs, and
+evaluating alternative fluctuation scenarios can provide a more stable basis for long-term planning under
+evolving demand conditions.
+6. Discussion
+This study develops a data-driven framework to estimate time-varying ICU bed occupancy under non-
+stationary demand using an Mt/Gt/∞ structure informed by empirical arrival and LOS processes. Rather
+than relying on steady-state or time-aggregated averages that ignore temporal heterogeneity, the framework
+models temporal variability in admissions and service durations and translates occupancy trajectories into
+overflow-constrained capacity levels.
+The main methodological contribution is integrating STL decomposition, parametric LOS modeling, and
+occupancy estimation within a unified, tractable pipeline. The framework supports scenario-based evaluation
+of resiliency thresholds by translating projected occupancy into exceedance probabilities. A key strength of
+the Mt/Gt/∞ structure is its ability to assess forward-looking scenarios by adjusting time-varying admissions
+or LOS distributions to evaluate changes in practice, policy, or demand. It also includes a births-driven
+projection component linking demographic forecasts with site-level admission patterns, enabling planning
+that reflects expected population growth rather than relying only on historical data.
+Our results show clear differences between utilization-based and overflow-constrained strategies in
+non-stationary settings. Capacity based solely on average occupancy may underestimate exceedance risk by
+26
+ignoring temporal variation. In contrast, probabilistic thresholds determine bed levels using explicit resiliency
+targets. We also find that variability in arrivals and LOS, including dispersion effects, influences the capacity
+required to meet these targets.
+Several limitations should be acknowledged. First, the model operates at daily resolution and does not
+capture intra-day fluctuations in admissions or discharges. Second, STL smoothing may lag abrupt demand
+shifts. Third, the LOS component assumes fixed shape parameters, which may not fully capture evolving
+clinical dynamics. Furthermore, in our setting, overflow probabilities rely on a Poisson approximation, which
+may understate tail risk under correlated arrivals.
+A further limitation is potential error in estimating the LOS distribution, especially when bias leads to
+systematic over- or underestimation and affects planning resiliency. Rare extreme cases (e.g., year-long stays)
+are also difficult to estimate due to sparse tail data, limiting accurate estimation of extreme occupancy levels.
+This warrants caution and may justify conservative adjustments for tail uncertainty. Stratifying patients into
+more homogeneous subgroups (e.g., by diagnosis or LOS profile) could improve fit, but small subgroup
+sizes—particularly among long-stay patients—can make parameter estimation and scenario analysis unstable
+and introduce additional uncertainty. Finally, our framework does not model staffing constraints, routing, or
+endogenous discharge under congestion. Mortality is embedded within LOS rather than treated as a separate
+exit process, and thus distinguishing discharge and death may improve interpretability in settings where they
+follow distinct dynamics.
+Several extensions could strengthen our framework. Integration with an interactive decision-support
+platform would enable real-time scenario evaluation. Short-term machine learning forecasts of time-varying
+arrival rates and LOS moments could be combined with the queueing structure to create hybrid predictive-
+planning pipelines. In addition, online updating mechanisms may further improve responsiveness to changing
+demand conditions.
+Future research may incorporate explicit modeling of transfers and routing to examine coordinated
+regional capacity design. Although our empirical analysis uses neonatal data, the modeling structure is not
+population-specific and can be applied to other ICU settings with appropriate characterization of arrivals and
+LOS dynamics. In environments where congestion induces state dependence in LOS, the service component
+would need adjustment, while the occupancy estimation formulation remains applicable. The framework can
+also extend to other hospital units (e.g., surgical recovery) and geographically dispersed systems, potentially
+supporting coordinated multi-region planning. Incorporating covariates such as weather, staffing, or policy
+changes may further enhance predictive performance and adaptive planning, which we leave for future work.
+27
+Ethics Approval
+Our study has received ethical approval from the University of Calgary’s Conjoint Health Research Ethics
+Board (CHREB) under ethics ID REB24-0800. All data are collected in accordance with Alberta Health
+Services (AHS) data governance protocols, with direct identifiers removed prior to researcher access. Only
+de-identified records of NICU admissions, discharges, and intra-hospital transfers are used for analysis. Data
+confidentiality and privacy are maintained in compliance with AHS and institutional guidelines.
+Acknowledgments
+We sincerely thank Sharon Zhang and Bing Li at Alberta Health Services for their support in coordinating
+and providing access to the data, which significantly contributed to the development of this study.
+Funding
+This work was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC)
+Discovery Grant Program. We also acknowledge funding support from the University of Calgary Transdisci-
+plinary Scholarship Connector Grant, with Dr. Na Li as Principal Investigator.
+28
+Appendix A. LOS Tail Comparisons
+(a) Site 1
+ (b) Site 2
+(c) Site 3
+ (d) Site 5
+Figure A.7: Comparison of empirical LOS tail probabilities P(S>u) with candidate parametric distributions at the remaining sites
+Appendix B. Annual Admissions and Mean LOS (Historical) and Projected Births
+Table B.9 reports annual total admissions and mean LOS for each site during the historical period from
+2016 to 2023. Admissions are consistently highest at Site 2, which records nearly 1,000 admissions each year,
+while Site 1 shows the lowest volumes. Mean LOS varies more widely across sites, with Site 1 displaying
+the longest stays on average and Sites 2 and 5 the shortest. Year-to-year fluctuations are evident, but no
+strong upward or downward trend is observed in admissions, whereas LOS values remain relatively stable
+within each site. The projected births for the Calgary zone, provided by the Alberta Interactive Health Data
+29
+repository [59] increase steadily from 18,741 in 2022 to 21,049 in 2030, with annual projections of 19,067
+(2023), 19,337 (2024), 19,569 (2025), 19,822 (2026), 20,087 (2027), 20,383 (2028), and 20,703 (2029).
+Table B.9: Historical admissions and mean LOS per site
+Year Site 1 Site 2 Site 3 Site 4 Site 5
+2016 218 / 21.20 823 / 11.58 585 / 11.03 463 / 13.89 343 / 10.29
+2017 299 / 20.08 1094 / 20.70 527 / 8.64 449 / 11.05 334 / 8.60
+2018 330 / 18.24 1158 / 21.92 492 / 8.39 452 / 9.96 344 / 8.76
+2019 265 / 25.82 1039 / 21.81 466 / 9.99 514 / 10.98 356 / 9.27
+2020 250 / 23.57 989 / 20.92 397 / 9.17 491 / 9.68 305 / 8.47
+2021 229 / 26.79 996 / 22.70 438 / 8.95 481 / 9.53 332 / 8.86
+2022 250 / 21.87 954 / 21.97 454 / 8.60 504 / 8.99 421 / 8.17
+2023 314 / 20.50 990 / 23.56 532 / 9.40 539 / 9.07 393 / 8.46
+Values shown as “yearly admissions / mean LOS”
+References
+[1] H. Wunsch, W. T. Linde-Zwirble, D. A. Harrison, A. E. Barnato, K. M. Rowan, D. C. Angus, Use
+of intensive care services during terminal hospitalizations in england and the united states, American
+journal of respiratory and critical care medicine 180 (9) (2009) 875–880.
+[2] O. G. Rewa, H. T. Stelfox, A. Ingolfsson, D. A. Zygun, R. Featherstone, D. Opgenorth, S. M. Bagshaw,
+Indicators of intensive care unit capacity strain: a systematic review, Critical Care 22 (2018) 1–13.
+[3] A. Batchelor, Adult critical care, GIRFT Programme National Specialty Report: NHS England (2021).
+[4] European Observatory on Health Systems and Policies, State of Health in the EU Iceland: Country
+Health Profile 2021, OECD Publishing, 2021.
+[5] S. Murthy, A. Leligdowicz, N. K. Adhikari, Intensive care unit capacity in low-income countries: a
+systematic review, PloS one 10 (1) (2015) e0116949.
+[6] W. Whitt, X. Zhang, Forecasting arrivals and occupancy levels in an emergency department, Operations
+Research for Health Care 21 (2019) 1–18.
+[7] S. G. Eick, W. A. Massey, W. Whitt,Mt/G/∞ queues with sinusoidal arrival rates, Management Science
+39 (2) (1993) 241–252.
+[8] S. Kim, I. Horowitz, K. K. Young, T. A. Buckley, Analysis of capacity management of the intensive
+care unit in a hospital, European Journal of Operational Research 115 (1) (1999) 36–46.
+30
+[9] J. E. Helm, S. AhmadBeygi, M. P. Van Oyen, Design and analysis of hospital admission control for
+operational effectiveness, Production and Operations Management 20 (3) (2011) 359–374.
+[10] L. V . Green, P. J. Kolesar, W. Whitt, Coping with time-varying demand when setting staffing require-
+ments for a service system, Production and Operations Management 16 (1) (2007) 13–39.
+[11] C. W. Chan, J. Dong, L. V . Green, Queues with time-varying arrivals and inspections with applications
+to hospital discharge policies, Operations Research 65 (2) (2017) 469–495.
+[12] L. V . Green, V . Nguyen, Strategies for cutting hospital beds: the impact on patient service, Health
+services research 36 (2) (2001) 421.
+[13] R. B. Cleveland, W. S. Cleveland, I. Terpenning, Stl: A seasonal-trend decomposition procedure based
+on loess, Journal of Official Statistics 6 (1) (1990) 3.
+[14] F. Gorunescu, S. I. McClean, P. H. Millard, A queueing model for bed-occupancy management and
+planning of hospitals, Journal of the operational Research society 53 (1) (2002) 19–24.
+[15] F. Gorunescu, S. I. McClean, P. H. Millard, Using a queueing model to help plan bed allocation in a
+department of geriatric medicine, Health care management science 5 (2002) 307–312.
+[16] L. R. Pinto, F. C. C. de Campos, I. H. O. Perpetuo, Y . C. N. M. B. Ribeiro, Analisys of hospital bed
+capacity via queuing theory and simulation, in: Proceedings of the Winter Simulation Conference 2014,
+IEEE, 2014, pp. 1281–1292.
+[17] A. Shapoval, E. K. Lee, Optimizing inpatient bed capacity to improve care delivery, in: 2017 IEEE
+International Conference on Bioinformatics and Biomedicine (BIBM), IEEE, 2017, pp. 855–860.
+[18] O. Bittencourt, V . Verter, M. Yalovsky, Hospital capacity management based on the queueing theory,
+International Journal of Productivity and Performance Management 67 (2) (2018) 224–238.
+[19] M. Maaz, A. Papanastasiou, Determining the optimal capacity and occupancy rate in a hospital: A
+theoretical model using queuing theory and marginal cost analysis, Managerial and Decision Economics
+41 (7) (2020) 1305–1311.
+[20] J. W. Joseph, Queuing theory and modeling emergency department resource utilization, Emergency
+Medicine Clinics 38 (3) (2020) 563–572.
+[21] A. T. Janke, E. R. Melnick, A. K. Venkatesh, Hospital occupancy and emergency department boarding
+during the covid-19 pandemic, JAMA Network Open 5 (9) (2022) e2233964–e2233964.
+31
+[22] C. A. Bain, P. G. Taylor, G. McDonnell, A. Georgiou, Myths of ideal hospital occupancy, Medical
+Journal of Australia 192 (1) (2010) 42–43.
+[23] L. Au, G. Byrnes, C. A. Bain, M. Fackrell, C. Brand, D. A. Campbell, P. G. Taylor, Predicting overflow
+in an emergency department, IMA Journal of management mathematics 20 (1) (2009) 39–49.
+[24] A. Wartelle, F. Mourad-Chehade, F. Yalaoui, D. Laplanche, S. Sanchez, Changing the perspective of
+system crowding evaluation using a new congestion measure: application to the emergency department,
+Operational Research 24 (4) (2024) 53.
+[25] D. Li, Q. Hu, L. Wang, D. Yu, Statistical inference forM t/G/In f inityqueueing systems under incom-
+plete observations, European Journal of Operational Research 279 (3) (2019) 882–901.
+[26] W. Whitt, J. Zhao, Many-server loss models with non-poisson time-varying arrivals, Naval Research
+Logistics (NRL) 64 (3) (2017) 177–202.
+[27] P. Shi, M. C. Chou, J. G. Dai, D. Ding, J. Sim, Models and insights for hospital inpatient operations:
+Time-dependent ed boarding time, Management Science 62 (1) (2016) 1–28.
+[28] S. Baas, S. Dijkstra, A. Braaksma, P. van Rooij, F. J. Snijders, L. Tiemessen, R. J. Boucherie, Real-time
+forecasting of covid-19 bed occupancy in wards and intensive care units, Health care management
+science 24 (2021) 402–419.
+[29] W. Whitt, X. Zhang, A data-driven model of an emergency department, Operations Research for Health
+Care 12 (2017) 1–15.
+[30] G. Leeftink, K. Morris, T. Antonius, W. de Vries, E. Hans, Inter-organizational pooling of nicu nurses in
+the dutch neonatal network: a simulation-optimization study, Health Care Management Science (2025)
+1–20.
+[31] A. Braaksma, N. Kortbeek, R. J. Boucherie, Bed census predictions and nurse staffing, Handbook of
+Healthcare Logistics: Bridging the Gap between Theory and Practice (2021) 151–180.
+[32] S. Dijkstra, S. Baas, A. Braaksma, R. J. Boucherie, Dynamic fair balancing of covid-19 patients over
+hospitals based on forecasts of bed occupancy, Omega 116 (2023) 102801.
+[33] G. E. Box, G. M. Jenkins, G. C. Reinsel, G. M. Ljung, Time series analysis: forecasting and control,
+John Wiley & Sons, 2015.
+[34] S. J. Taylor, B. Letham, Forecasting at scale, The American Statistician 72 (1) (2018) 37–45. doi:
+10.1080/00031305.2017.1380080.
+32
+[35] T. Chen, C. Guestrin, Xgboost: A scalable tree boosting system, in: Proceedings of the 22nd ACM
+SIGKDD International Conference on Knowledge Discovery and Data Mining, ACM, 2016, pp. 785–
+794.doi:10.1145/2939672.2939785.
+[36] J. Tuominen, A. Roine, T. Saviauk, A. Seppo, M. Pihlaja, J. Ovaska, S. Pauniaho, N. Oksala, Forecasting
+daily arrivals and peak occupancy in a combined emergency department (2021).
+[37] Q. Cheng, N. T. Argon, C. S. Evans, Y . Liu, T. F. Platts-Mills, S. Ziya, Forecasting emergency department
+hourly occupancy using time series analysis, The American Journal of Emergency Medicine 48 (2021)
+177–182.
+[38] J. C. Reboredo, J. R. Barba-Queiruga, J. Ojea-Ferreiro, F. Reyes-Santias, Forecasting emergency
+department arrivals using ingarch models, Health Economics Review 13 (1) (2023) 51.
+[39] J. Tuominen, E. Pulkkinen, J. Peltonen, J. Kanniainen, N. Oksala, A. Palomäki, A. Roine, Forecasting
+emergency department occupancy with advanced machine learning models and multivariable input,
+International Journal of Forecasting 40 (4) (2024) 1410–1420.
+[40] T. Susnjak, P. Maddigan, Forecasting patient demand at urgent care clinics using explainable machine
+learning, CAAI Transactions on Intelligence Technology 8 (3) (2023) 712–733.
+[41] M. Becerra, A. Jerez, B. Aballay, H. O. Garcés, A. Fuentes, Forecasting emergency admissions due to
+respiratory diseases in high variability scenarios using time series: A case study in chile, Science of the
+total environment 706 (2020) 134978.
+[42] C. E. Overton, L. Pellis, H. B. Stage, F. Scarabel, J. Burton, C. Fraser, I. Hall, T. A. House, C. Jewell,
+A. Nurtay, et al., Epibeds: Data informed modelling of the covid-19 hospital burden in england, PLoS
+computational biology 18 (9) (2022) e1010406.
+[43] N. Gans, G. Koole, A. Mandelbaum, Telephone call centers: Tutorial, review, and research prospects,
+Manufacturing & Service Operations Management 5 (2) (2003) 79–141.
+[44] W. Whitt, Staffing a call center with uncertain arrival rate and absenteeism, Production and operations
+management 15 (1) (2006) 88–102.
+[45] G. Koole, S. Li, A practice-oriented overview of call center workforce planning, Stochastic Systems
+13 (4) (2023) 479–495.
+[46] N. Chen, R. Gürlek, D. K. Lee, H. Shen, Can customer arrival rates be modelled by sine waves?, Service
+Science 16 (2) (2024) 70–84.
+33
+[47] R. J. Hyndman, G. Athanasopoulos, Forecasting: principles and practice, OTexts, 2018.
+[48] F. Kheiry, S. Kargarian-Marvasti, S. Afrashteh, A. Mohammadbeigi, N. Daneshi, S. Naderi, S. H.
+Saadat, Evaluation of goodness of fit of semiparametric and parametric models in analysis of factors
+associated with length of stay in neonatal intensive care unit, Clinical and experimental pediatrics 63 (9)
+(2020) 361.
+[49] O. Shechtman, The coefficient of variation as an index of measurement reliability, in: Methods of
+clinical epidemiology, Springer, 2013, pp. 39–49.
+[50] W. Whitt, Time-varying queues, Queueing models and service management 1 (2) (2018).
+[51] B. H. Fralix, G. Riaño, A new look at transient versions of little’s law, and m/g/1 preemptive last-come-
+first-served queues, Journal of Applied Probability 47 (2) (2010) 459–473.
+[52] S. Borst, A. Mandelbaum, M. I. Reiman, Dimensioning large call centers, Operations research 52 (1)
+(2004) 17–34.
+[53] G. Koole, A. Mandelbaum, Queueing models of call centers: An introduction, Annals of Operations
+Research 113 (2002) 41–59.
+[54] A. Janssen, J. S. Van Leeuwaarden, B. Zwart, Refining square-root safety staffing by expanding erlang
+c, Operations Research 59 (6) (2011) 1512–1522.
+[55] W. Whitt, What you should know about queueing models to set staffing requirements in service systems,
+Naval Research Logistics (NRL) 54 (5) (2007) 476–484.
+[56] M. Schmidt, A. Schöbel, Planning and optimizing transit lines, arXiv preprint arXiv:2405.10074 (2024).
+[57] W. Whitt, The queueing network analyzer, The bell system technical journal 62 (9) (1983) 2779–2815.
+[58] W. J. Hopp, M. L. Spearman, Factory physics, Waveland Press, 2011.
+[59] Government of Alberta, Interactive health data, http://www.ahw.gov.ab.ca/IHDA_Retrieval/
+selectCategory.do, accessed: 2025-08-26 (2025).
+34

@@ -1,0 +1,1547 @@
+TITLE: Translation uniformity and evolutionary conservation are associated with microprotein mass spectrometry detectability
+AUTHORS: Ivo Fierro-Monti
+VENUE: BMC Biology (2026-11-09)
+DOI: https://doi.org/10.1186/s12915-026-02777-3
+LICENCE: cc-by
+LINK: https://doi.org/10.1186/s12915-026-02777-3
+
+Translation uniformity, evolutionary conservation,
+and peptide properties associate with microprotein
+mass spectrometry detection
+Ivo Fierro-Monti 
+European Molecular Biology Laboratory's European Bioinformatics Institute (EMBL-EBI)
+https://orcid.org/0000-0002-5460-2117
+Method Article
+Keywords: Non-canonical open reading frames, mass spectrometry detectability, microproteins,
+Ribosome engagement, Evolutionary conservation, Protein language model
+Posted Date: May 8th, 2026
+DOI: https://doi.org/10.21203/rs.3.rs-9645389/v1
+License:   This work is licensed under a Creative Commons Attribution 4.0 International License.  
+Read Full License
+Additional Declarations: The authors declare no competing interests.
+ 1 
+Translation uniformity, evolutionary conservation, and peptide 1 
+properties associate with microprotein mass spectrometry detection 2 
+ 3 
+Author: 4 
+Ivo Fierro-Monti 1,2 * ID 5 
+1 European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI), 6 
+Wellcome Trust Genome Campus, Hinxton, Cambridgeshire CB10 1SD, UK. 7 
+2 Biozentrum, University of Basel, 4056 Basel, Switzerland. 8 
+ 9 
+*Correspondence to ivo.fierromonti@cantab.net 10 
+ 11 
+Keywords: Non-canonical open reading frames, mass spectrometry detectability, mi croproteins, 12 
+Ribosome engagement, Evolutionary conservation, Protein language model 13 
+ 14 
+Running title: Non-canonical Open Reading Frames microproteins detectability by Mass 15 
+Spectrometry 16 
+Abstract 17 
+Background 18 
+Non-canonical open reading frames (ncORFs) encode a substantial, largely unexplored layer of 19 
+ 2 
+the human proteome. The short microproteins they produce frequently escape detection by 20 
+standard mass spectrometry (MS) workflows, creating a “dark proteome” that hampers gene 21 
+annotation and functional characterisation. To address this, sequence-derived attributes were used 22 
+to identify factors associated with MS repository detectability and to build an interpretable 23 
+predictive framework that enables rational prioritisation of ncORFs for proteomic discovery. 24 
+Results 25 
+7,097 ncORF sequences (99 % <150 residues) were curated from the TransCODE Consortium, 26 
+and labelled by PeptideAtlas peptide-level evidence as MS-detected (n = 1,725) or undetected 27 
+(n = 5,372). An ensemble combining ESM-2 protein language model embeddings with logistic 28 
+regression and nineteen biological features (ESM2-LR) achieved a mean ROC-AUC of 0.721 29 
+(SD 0.018, coefficient of variation 2.5 % across ten independent runs). Model-agnostic SHAP and 30 
+permutation importance analyses concordantly ranked cumulative in-frame ribosome footprint 31 
+uniformity (CIF-HBP) as the strongest associated factor, followed by mammalian ORF-level 32 
+evolutionary conservation (ORBLv_mammal) and genomic biotype. Predicted HLA class I-binding 33 
+peptide density, which captures physicochemical properties overlapping with optimal LC-MS/MS 34 
+analyte characteristics, was also positively associated with detectability. Late-fusion analysis 35 
+demonstrated that ESM-2 embeddings and biological features contribute complementary predictive 36 
+signals. 37 
+Conclusions 38 
+These findings indicate that sustained translation, purifying selection for ORF structural integrity, 39 
+and favourable peptide physicochemistry converge to influence ncORF detectability. The ESM2-LR 40 
+framework provides a reproducible, scalable tool to prioritise candidate microproteins for targeted 41 
+MS validation, gene annotation, and the interpretation of disease-associated regulatory variants, 42 
+subject to future external validation on independent datasets. 43 
+ 3 
+ 44 
+1. Introduction 45 
+ 46 
+Proteins encoded by well-annotated, protein-coding genes, collectively termed the canoni cal 47 
+proteome, account for only a subset of the sequences actively translated in human cells. Recent 48 
+evidence indicates that numerous additional sequences, not annotated as canonical, undergo active 49 
+translation, revealing a largely unexplored layer of the proteome. However, the detect ion and 50 
+annotation of these non-canonical open reading frames (ncORFs) remain challenging, underscoring 51 
+the need to expand gene catalogues and improve our understanding of their roles i n human 52 
+physiology and disease. Over the past decade, evidence from ribosome profiling (Ribo- seq), mass 53 
+spectrometry (MS)-based proteomics, and immunopeptidomics has revealed tha t thousands of 54 
+ncORFs are actively translated in human cells, producing short polypeptides termed micropro teins 55 
+or peptideins (candidate microproteins for which a physiological role cannot yet be verified) [1]), or 56 
+small ORF-encoded peptides (SEPs) [1-7]. Ribo-seq evidence shows translation, but ribosome 57 
+occupancy does not always result in stable protein accumulation. This study specifically examines 58 
+detection in mass spectrometry repositories as an operational proxy for productive t ranslation that 59 
+yields stable, detectable protein products. 60 
+Non-canonical ORFs constitute a heterogeneous class of genomic elements defined by their 61 
+derivation from previously not annotated genomic regions as primary protein-coding sequences. 62 
+They include upstream ORFs (uORFs) located in the 5′ untranslated regions of messe nger RNAs, 63 
+where they are translated by scanning ribosomes before reaching the main coding sequence; 64 
+upstream overlapping ORFs (uoORFs) that share partial sequence with an annot ated coding 65 
+sequence in an alternative reading frame; internal ORFs (intORFs) embedded wi thin canonical 66 
+ 4 
+coding sequences; downstream and downstream overlapped ORFs (dORFs and doORFs); ORFs 67 
+encoded within long non-coding RNAs (lncRNA-ORFs); and novel intergenic or repetitive element-68 
+derived ORFs [8-12]. Each biotype class has a mechanistically distinct relationship with the ribosome 69 
+and a correspondingly different probability of yielding a stable, detectable translatio n product [13-70 
+17]. 71 
+Despite their widespread translation, few ncORFs have been formally annotated as canonical 72 
+protein-coding genes by reference annotation authorities such as GENCODE and UniProtKB/Swiss-73 
+Prot. This annotation gap reflects two converging challenges: first, the low an d often condition-74 
+dependent expression of ncORF-encoded microproteins, which places man y below the detection 75 
+threshold of standard MS-based proteomics workflows; and second, the frequent absence of amino 76 
+acid sequence conservation across species, which has historically been a prerequisite for confident 77 
+protein-coding gene annotation [1]. Furthermore, because reference annotation authori ties 78 
+increasingly require independent mass spectrometric evidence to elevate transcript-level O RFs to 79 
+protein-coding gene status, understanding the factors associated with MS detectabi lity has direct 80 
+consequences for gene annotation pipelines and prioritisation criteria. However, it is now recognised 81 
+that conventional measures of protein-coding constraint may be insufficient for the ncORF space, 82 
+where evolutionary selection may act primarily to maintain the structural features of the ORF, such 83 
+as the presence of an open reading frame, a functional initiation codon, and a proper termi nation 84 
+codon, rather than conserving the specific amino acid sequence encoded [1, 2, 18]. 85 
+Functionally characterised microproteins have been shown to regulate muscle physiology, cardiac 86 
+function, mitochondrial metabolism, and cell cycle progression [19-20]. In the oncology context, 87 
+ncORF-derived peptides have been identified as cancer-restricted cryptic antigens presented by 88 
+Human Leucocyte Antigen (HLA) class I molecules, which categorises them as potential 89 
+immunotherapy targets [21-24]. Furthermore, disruption of uORF translation by genetic variants has 90 
+ 5 
+been linked to human Mendelian diseases and cancer predisposition, underscoring the regulatory 91 
+importance of this translational layer [25-27]. 92 
+Despite their biological significance, ncORF-derived microproteins represent a chal lenge for MS-93 
+based proteomics analysis. Their short length limits the number of tryptic pe ptides available for 94 
+detection, and often lacks "proteotypic" peptides, those that are uniquely identifiable and possess 95 
+high ionisation efficiency, further exacerbating the detection gap. The absence of these 96 
+microproteins from standard proteome databases leads to their frequent exclusi on from database 97 
+search strategies [4, 28-30]. The result is a substantial ’dark proteome’ of translated products not yet 98 
+detected by conventional proteomics workflows, largely due to low expression and database 99 
+exclusion. 100 
+The launch of international consortia, including the TransCODE Consortium, the HUPO Human 101 
+Proteome Project (HUPO-HPP), the Human ImmunoPeptidome Project (H UPO-HIPP), and the 102 
+GENCODE annotation group, reflects the growing recognition that a systemati c, evidence-based 103 
+framework is required to characterise the ncORF-encoded proteome. Such a framework is needed 104 
+to determine which ncORF products merit annotation as bona fide protein-coding genes or, at 105 
+minimum, as peptideins, candidate microproteins or translation products that are con fidently 106 
+detected endogenously but for which a physiological role cannot yet be verified [1, 18, 31]. 107 
+Understanding how sequence, physicochemical properties, translation and evolutionary signatures, 108 
+and genomic context influence the repository MS detectability of ncORF products is therefore 109 
+essential. Such knowledge enables the rational prioritisation of ncORFs for annotation , the 110 
+optimisation of targeted MS or immunopeptidomics strategies to investigate the dark proteome, and 111 
+the discrimination of likely functional microproteins from the large pool of lowly expressed or non-112 
+functional ncORF translations [1, 5, 32-35]. 113 
+ 6 
+In this study, we developed a computational framework based on Evolutionary Scale M odelling 2 114 
+(ESM-2). Protein language models (pLMs) like ESM-2 can capture latent biophysical constraints 115 
+(e.g., fold stability, surface accessibility) that are difficult to encode manually, particularly for peptides 116 
+in the 8–25 residue range typical of ncORF tryptic products. These embeddings may complement 117 
+hand-crafted physicochemical features for predicting ncORF microprotein detection, though their 118 
+marginal contribution remains to be quantified. ESM2-LR systematically evaluated sequence-derived 119 
+features, including translation evidence, genomic biotype, evolutionary conservation, seconda ry 120 
+structure, physicochemical and biophysical properties, and immunogenicity, across 7,097 ncOR F 121 
+sequences. The aim was to identify the strongest sequence and annotation-derived factors 122 
+statistically associated with cumulative MS repository detection. 123 
+ 124 
+2. Background and Rationale 125 
+2.1 The non-canonical proteome and its detection challenge 126 
+Non-canonical ORFs originate from genomic regions not annotated as primary pro tein-coding 127 
+sequences and can be classified into several distinct biotype classes, each with a unique relationship 128 
+to the ribosome: 129 
+• ORF biotype1: upstream overlapping ORF (uoORF), located in the 5’ UTR of mRN As and 130 
+overlapping the primary coding sequence in an alternative reading frame; associated with 131 
+translational regulation. 132 
+• ORF biotype2: upstream ORF (uORF), located in the 5’ UTR of mRNAs and translated by 133 
+scanning ribosomes before the main coding sequence; also associated with translational 134 
+regulation. 135 
+ 7 
+• ORF biotype3: internal ORF (intORF), embedded within canonical mRNAs. 136 
+• ORF biotype4: lncRNA-ORF, a short ORF within long non-coding RNA transcripts, typically 137 
+translated at low efficiency but occasionally producing functional microproteins. 138 
+• ORF biotype5: downstream ORF (dORF), located downstream of the main coding sequence. 139 
+• ORF biotype6: processed transcript (PT). 140 
+• ORF biotype7: downstream overlapping ORF (doORF), overlapping the primary coding 141 
+sequence. 142 
+Each biotype class varies in its likelihood of producing a stable, abundant peptide detectable by MS, 143 
+and this heterogeneity poses a central challenge for predictive models th at aim to operate across 144 
+the entire ncORF space. Here, ’detectability’ refers specifically to peptide-level evidence in 145 
+aggregated MS repositories (PeptideAtlas), integrating biological abundance, cellular stab ility, and 146 
+technical detection parameters. 147 
+Correspondence between biotype taxonomy and the numerical biotype indicator columns used in 148 
+the 7,097 ncORF analytical dataset. Biotype indicators orf_biotype1, orf_biotype4, and orf_biotype5 149 
+are the only three biotype columns present in the complete-case feature set derived from GENCODE 150 
+v42 annotations following the definitions in [1]. Note that the sequential numbering (biotype1–7) in 151 
+this section refers to the full GENCODE biotype taxonomy; the orf_biotype1/4/5 column labels in the 152 
+dataset correspond to specific subsets of this taxonomy. 153 
+Sequences may be positive for more than one biotype indicator. Sequences negative fo r all three 154 
+indicators belong to other biotype classes (biotype2 uORF, biotype3 intORF, biotype6 PT, biotype7 155 
+doORF) that were not included as separate features in this analysis; their absence as features does 156 
+not preclude their presence in the dataset. 157 
+ 8 
+ 158 
+2.2 Mass spectrometry detectability of short peptides 159 
+In standard bottom-up LC-MS/MS proteomics, peptide detectability depends on several factors: 160 
+sufficient protein abundance to surpass the instrument’s noise threshold, generation o f tryptic 161 
+peptides within the optimal 7 –25 amino acid range for electrospray ionisation and fragmentation, 162 
+adequate hydrophobicity for reverse-phase chromatography retention, and suitable charge state 163 
+distribution for precursor selection. Importantly, most of the 7,097 analysed ncORF-deri ved 164 
+sequences are shorter than 150 amino acids and typically yield only 1-3 tryptic peptides, which 165 
+substantially reduces their likelihood of detection in data-dependent acquisition (DDA) workflows that 166 
+prioritise abundant peptides for fragmentation. 167 
+ 168 
+2.3 Feature selection rationale 169 
+Given these constraints, MS detection of ncORF-derived peptides is influenced not only by classical 170 
+physicochemical properties, which may be inadequate for short sequences, but also by translation 171 
+evidence, evolutionary conservation, translational mechanisms, and other factors aff ecting 172 
+detectability. Accordingly, features such as ncORF Translation Uniformity (CIF-HBP), ORBLv (ORF 173 
+Relative Branch Length - evolutionary conservation), biotype, and predicted HLA-binding affinity 174 
+were included in the analysis to comprehensively capture these influences. 175 
+ 176 
+3. Materials and Methods 177 
+ 178 
+ 9 
+3.1 Dataset construction 179 
+A total of 7,097 ncORF-derived amino acid sequences, 99% of which comprise few er than 150 180 
+residues, were curated from the TransCODE Consortium reference dataset [1]. Sequence s were 181 
+classified as MS-detected (positive class; n = 1,725) or MS-undetected (n egative class; n = 5,372) 182 
+based on peptide-level evidence consolidated from two publicly accessible repositories: the Human 183 
+non-HLA PeptideAtlas build 2023-06 (https://peptideatlas.org/builds/human/non-hla/) and the 184 
+Human HLA PeptideAtlas build 2023-11 (https://peptideatlas.org/builds/human/hla/index_ 2023-185 
+11.php), as described in [1]. The resulting class imbalance (~1:3.1 positive-to-negative) reflects the 186 
+biologically realistic low detection rate of ncORF-derived microproteins in cumulative MS repositories 187 
+and represents the natural prevalence against which the model’s practical utility should be assessed. 188 
+Performance metrics evaluated on the balanced test sets (PR-AUC, F1-score) do not directly 189 
+generalise to this natural prevalence. 190 
+Biotype annotations (biotype classes 1, 4, and 5 as defined in Section 2.1) were derived from 191 
+GENCODE v42; the original TransCODE dataset used GENCODE v35 [1]. CIF_HBP (cumulative in-192 
+frame footprint uniformity score, Human Body-map P-site; see Section 3.2) was obtained for all 7,097 193 
+ncORFs from ribosome profiling data of the Human Body Map multi-tissue dataset, as previously 194 
+defined [2]. ORBLv evolutionary conservation scores were computed for all 7,097 ncORFs as 195 
+described in [1]. NetMHCpan 4.1 HLA class I binding affinity predictions (IC ₅₀, nM) were pre-196 
+computed across a representative panel of common HLA alleles; n_predHLAbinders_div_aaLength 197 
+represents the number of predicted binders with IC₅₀ < 500 nM per amino acid length of the ncORF, 198 
+as previously described [1]. A systematic limitation of the MS-detection labels must be 199 
+acknowledged: PeptideAtlas and ProteomeXchange aggregate detections across heterogeneous 200 
+experimental conditions, tissues, cell lines, and instruments. An ncORF classified as ’undetected’ 201 
+may be genuinely expressed in untested contexts, constituting label noise that biases t he classifier 202 
+boundary and contributes to the ROC-AUC performance ceiling (see Discussion, Section 5.4). 203 
+ 10 
+Code availability: the complete analysis pipeline, including the dataset analysed and the code, is 204 
+publicly available on GitHub at: 205 
+https://github.com/ivfimo/pLM_linked_to_ML_Classifier_script/blob/main/ESM2_LR_Classifier_v2 206 
+ 207 
+3.2 Feature engineering 208 
+In addition to the ncORFs amino acid sequence, 19 features were computed per sequence, spanning 209 
+four categories. 210 
+i. Physicochemical and sequence-compositional features. 211 
+Amino acid length; average residue volume (AvrgVolResidues); electron ion interaction potential 212 
+(ElectrIonInteracPotentialVal); free energy of solvation in water (FreeESol_inWater) ; instability 213 
+index; log₁₀-transformed relative mutability (log10RelMutab); netCharge; Normalised frequency 214 
+of alpha helix (NormFreqAlphaHelix); Normalised frequency of beta sheet, un weighted 215 
+(NormFreqBetaSheetUnweight); Ratio of average and computed composition 216 
+(ratioAvrgComputedComp); SolubilityIndex. These attributes were computed using the 217 
+Bio.SeqUtils.ProtParam module from BioPython and Amino Acid Indices version 9.2 218 
+(https://www.genome.jp/aaindex/). 219 
+ii. Translation signature. 220 
+CIF_HBP, the cumulative in-frame footprint score from the Human Body -map P-site dataset, 221 
+quantifies the proportion of codons in an ORF at which in-frame ribosomal P-site occupancy 222 
+exceeds 33.3% of the maximum P-site density observed across that ORF. It captur es whether 223 
+ribosomes traverse the entire ORF throughout their length (uniform elongation) rather than 224 
+initiating at the 5′ end and stalling or terminating prematurely. CIF_HB P is derived from 225 
+population-averaged Ribo-seq data across the Human Body Map dataset and does not reflect 226 
+ 11 
+condition-matched translation; its association with MS repository detectability is best interpreted 227 
+as a constitutive translation signature rather than a condition-specific efficiency estimate. 228 
+iii. Evolutionary features. 229 
+(a) ORBLv_mammal: ORF Relative Branch Length - evolutionary conservation of ORF structural 230 
+integrity across mammalian genomes, specifically, the preservation of a functional initiation 231 
+codon, an uninterrupted reading frame, and a stop codon, without requiring con servation of the 232 
+encoded amino acid sequence. (b) PhyloCSF: conventional amino acid-level coding potential 233 
+scored by comparative phylogenetic substitution modelling (codon substitution model). (c) 234 
+Upstream Kozak context conservation. (d) mean_constraint: mean per-nucleotide evolutio nary 235 
+constraint derived from the Evo 2 genomic foundation model [36]. For each ncORF, the genomic 236 
+context (minimal–maximal exon boundaries – 1,000 nucleotide flanking sequence) was retrieved 237 
+from GRCh38 via the Ensembl REST API. Evo 2 computed, at each nucleotide position, the log-238 
+likelihood of the reference base relative to each alternative base; a per-position constraint score 239 
+was defined as the minimum log-likelihood difference across the three alternative substitutions. 240 
+The mean of this score across all positions within the ncORF genomic context constitutes 241 
+mean_constraint. The more negative this score is, the more constrained. Ful l derivation details 242 
+are provided in the Supplementary Information (Supplementary Figure 5). 243 
+iv. Genomic and translational features 244 
+Binary biotype class indicators (orf_biotype1 [uoORF], orf_biotype4 [lncRNA-ORF], orf_biotype5 245 
+[dORF]); number of predicted tryptic peptides; fraction of tryptic peptides falling within the 8–25 246 
+amino acid window optimal for LC-MS/MS detection; maximum predicted HLA-I bi nding affinity 247 
+among all tryptic peptides (IC ₅₀; NetMHCpan 4.1); n_predHLAbinders_div_aaLength (see 248 
+Section 3.1). 249 
+ 12 
+For a complete enumeration of the 19 biological features used in the ESM2 -LR classifier, and their 250 
+importance ranking, see Supplementary Information (Supplementary Figure 5). 251 
+ 252 
+3.3 Feature Correlation Analysis 253 
+Pairwise Spearman correlations were computed across all 19 numeric features in the complete-case 254 
+dataset (n = 7,097 ncORFs) to identify collinear associated factors that could cause misattribution of 255 
+shared variance in the downstream importance analyses. The collinearity flagging threshold was set 256 
+at |r| > 0.70. No feature pair exceeded this threshold (maximum observed: |r| = 0.648 between 257 
+PhyloCSF and aa_length). No very strong correlations (|r| > 0.90) were observed across any of the 258 
+171 pairwise comparisons. Full results are presented in Figure 2 (Spearman correlation heatmap). 259 
+The absence of collinear feature pairs confirms that all 19 importance scores derived from SHAP 260 
+LinearExplainer are directly attributable to their respective features without shared-v ariance 261 
+correction. The two domain-specific features central to this analysis, CIF_HBP (max |r| = 0.256) and 262 
+mean_constraint (max |r| = 0.215), were among the most independent in the entire set, confirming 263 
+that they contribute genuinely orthogonal biological information. 264 
+ 265 
+3.4 Machine learning framework 266 
+Binary classification (MS-detected vs. MS-undetected) was performed using an en semble pipeline 267 
+combining ESM-2 protein language model embeddings with logistic regression (ESM2 -LR; primary 268 
+model). In parallel, a feature-space-asymmetric benchmarking panel (i.e., traditional classifiers 269 
+received only 19 features, while ESM2-LR received 1,619 features) of 18 tradition al classifiers was 270 
+trained on the 19 biological features alone (Supplementary Figure 1): Logistic Regression, Random 271 
+Forest, K-Nearest Neighbours, Decision Tree, XGBoost, Gaussian Naïve Bayes, Ext ra Trees, 272 
+ 13 
+Bernoulli Naïve Bayes, Hist Gradient Boosting, LightGBM, AdaBoost, RBF SVM, Gradient Boosting, 273 
+SGD Classifier, Linear Discriminant Analysis, Linear SVM, MLP Classifier, and Ridg e Classifier. 274 
+Hyperparameter optimisation was performed by 5-fold stratified cross-vali dation with grid search 275 
+over the regularisation parameter C. Model performance was evaluated by ROC-AUC as the primary 276 
+metric, supplemented by PR-AUC, F1-score, MCC, and balanced accuracy (Supplementary Figure 277 
+2). Feature importance was assessed using (i) SHAP LinearExplainer (primary method) and ( ii) 278 
+permutation importance (validation method), as described in Section 3.5.2v. 279 
+ 280 
+3.5 Computational environment and hardware 281 
+All analyses were implemented in Python 3 using the libraries listed in Table 1. The pipeline was 282 
+designed for hardware-adaptive execution. At initialisation, the availability of a TP U device was 283 
+probed via torch_xla.core.xla_model; if detected, computation was directed to the TPU 284 
+(xm.xla_device()) with a batch size of 64 sequences. Absent a TPU, execution fell back to a CUDA-285 
+capable GPU (batch size 64) or CPU (batch size 8). All model computations were perf ormed in full 286 
+precision (float32); half-precision (float16) inference was not employed, as the ESM -2 (8M 287 
+parameter) model does not require memory optimisation for the dataset size analysed. 288 
+Table 1. Principal software packages and their roles in the ESM-2 / Logistic Regression classification 289 
+pipeline. External tools (NetMHCpan 4.1, Evo 2) are included for completeness. 290 
+Package / model Role in pipeline 
+PyTorch (torch) Deep learning framework; ESM-2 model inference; device 
+management 
+ 14 
+Hugging Face transformers ESM-2 model architecture and tokeniser loading from Hub 
+ESM-2 
+(facebook/esm2_t6_8M_UR50D) 
+Protein language model; 320-dim sequence embeddings via 
+mean pooling 
+scikit-learn Logistic Regression; GridSearchCV; permutation_importance; 
+ROC/PR metrics 
+SHAP LinearExplainer; exact SHAP attributions for linear classifier 
+numpy Numerical array operations; embedding storage and memory-
+mapped loading 
+pandas Tabular data handling; feature matrix construction; CSV I/O 
+matplotlib / seaborn ROC and PR curve plots; SHAP summary and bar plots; 
+confusion matrix heatmap 
+tqdm Progress monitoring during batched embedding generation and 
+SHAP computation 
+ 291 
+3.5.1 Dataset construction and class balancing 292 
+The input dataset comprised 1,725 MS-detectable and 5,372 non-detectable ncORF sequences 293 
+(natural class imbalance ~1:3.1). All rows containing missing values in any column were removed 294 
+via pandas dropna() before analysis, yet no rows were found to have missing values, and no rows 295 
+were removed. To prevent classifier bias towards the majority class, random undersa mpling of the 296 
+ 15 
+majority class was applied: all 1,725 minority-class samples (group = 1) were retained, whil e an 297 
+equal number of majority-class samples were drawn without replacement (fixed seed: random_state 298 
+= 42), yielding a balanced 1:1 corpus of n = 3,450 sequences. Performance metrics evaluat ed on 299 
+test sets derived from this balanced corpus, particularly PR-AUC and F1-score, do not directly 300 
+generalise to the natural ~1:3.1 ncORF detection prevalence. For deployment in natural-prevalence 301 
+contexts, model probabilities should be recalibrated using isotonic regression or Platt scaling on a 302 
+non-undersampled calibration set. 303 
+ 304 
+3.5.2 Sequence embedding with ESM-2 305 
+ 306 
+i. Model selection and loading 307 
+Protein language model embeddings were generated using ESM-2 308 
+(facebook/esm2_t6_8M_UR50D): 6 transformer encoder layers; 8 million pa rameters; 320-309 
+dimensional hidden states; pre-trained on the UniRef50 database at 50% sequence identity 310 
+clustering [37]. This variant was selected to balance representational capacity with com putational 311 
+efficiency for the target sequence length distribution (all sequences ≤ 128 amino aci ds). The 312 
+tokeniser and pre-trained model weights were loaded from the Hugging Face Mode l Hub via 313 
+AutoTokenizer.from_pretrained and AutoModel.from_pretrained, respectively. The mod el was 314 
+placed in evaluation mode (model.eval()) for all inference operations, disabling dropou t and 315 
+suppressing gradient computation. The ESM-2 8M variant may have insufficient rep resentational 316 
+capacity compared with larger variants (35M–3B parameters); a comparative ablation across ESM-317 
+2 sizes is recommended in future work. 318 
+ii. Embedding generation procedure 319 
+ 16 
+Sequences were tokenised with a maximum length of 128 amino acid residues (padding = 320 
+’max_length’; truncation enabled). A single forward pass extracted hidden st ates from all six 321 
+transformer layers (indices 1–6). Mask-pooled mean aggregation (weighted by the attention mask, 322 
+excluding padding tokens) yielded one 320-dimensional embedding vector per layer per sequence. 323 
+Per-layer embedding matrices of shape [N × 320] were cached as NumPy (.np y) arrays for each 324 
+dataset split (training, validation, test) to avoid redundant computation. 325 
+Layer subset selection employed a zero-fit Fisher Linear Discriminant Analysis (LDA) criter ion. For 326 
+each of the 6 layers, class- conditional mean vectors (μ ₀ˡ, μ₁ˡ ∈ ℝ³²⁰), the between-class difference 327 
+vector (δˡ = μ ₁ˡ − μ ₀ˡ), and the ridge -regularised pooled within- class covariance matrix (Σˡ; 328 
+regularisation ε = 10 ⁻⁶) were computed on the training set. Cholesky decomposition pre -computed 329 
+Σˡ⁻¹δˡ per layer. All 63 non -empty subsets (2⁶ − 1) were scored analytically under a block -diagonal 330 
+independence approximation: J(S) = Σ_{l∈S} δˡᵀ(Σˡ)⁻„δˡ. The top 6 subsets by J(S) were validated by 331 
+logistic regression AUC on the validation set. Layers 2–6 were selected as the optimal combination. 332 
+iii. Ensemble combined stream 333 
+Multiple balanced training sets were generated via random undersampling of the majority class, each 334 
+with a distinct random seed (10 seeds total). For each seed, selected layer embeddings (layers 2–335 
+6; 5 × 320 = 1,600 dimensions) were concatenated with the 19 biological features to form the 336 
+combined feature matrix [n × 1,619]. A logistic regression classifier with L2 penalty was trained with 337 
+hyperparameter optimisation: GridSearchCV over C ∈ {0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 338 
+0.2, 0.5, 1, 2, 5, 10, 100} (14 values), 5-fold stratified CV, libline ar solver, ROC-AUC scoring. 339 
+Validation and test set predicted probabilities were recorded per seed; final combine d-stream 340 
+predictions were averaged across ensemble members. 341 
+A biological-feature-only baseline ensemble was constructed in parallel, using the same 10 -seed 342 
+undersampling procedure, with logistic regression trained on the 19 biological fea tures scaled by a 343 
+ 17 
+robust scaler (to mitigate outlier influence). Late fusion combined the two streams via a convex 344 
+combination: p_fused = α · p_combined + (1 − α) · p_bio. The mixing coefficient α was optimised on 345 
+the validation set by grid search over [0.0, 1.0] in steps of 0.05, maximising validation ROC-AUC. A 346 
+classification threshold was subsequently tuned on the validation set by scanning [0.30, 0. 70] in 347 
+steps of 0.005, maximising- score. The optimised α and threshold were applied unchanged to the 348 
+held-out test set. 349 
+Methodological note: Biological features were unscaled in the combined stream but RobustScaled 350 
+in the bio-only baseline. Because L2-regularised logistic regression is scale-sensiti ve, this 351 
+inconsistency confounds the interpretation of the fusion weight α and may distort relative feature 352 
+importance estimates. 353 
+iv. Stability Evaluation 354 
+To assess reproducibility and quantify run-to-run variability, the full pipeli ne was repeated 10 times 355 
+with distinct random seeds (2024–2033). For each run: (a) a fresh balanced dataset was resampled 356 
+from the original data; (b) a 70/15/15 stratified split was applied (n_train = 2,414; n_val = 518; n_test 357 
+= 518); (c) layer selection was fixed to layers 2–6 (determined from preliminary optimisation); (d) the 358 
+10-seed ensemble, late fusion optimisation, and threshold tuning were performed independently; (e) 359 
+performance metrics were recorded on the held-out test set. Summary statis tics were computed 360 
+across the 10 runs: mean, SD, 95% CI (Student’s t-distribution), coeffi cient of variation (CV = 361 
+SD/mean × 100%), and range (Table 4; Supplementary Figure 3). Stability ti ers: High (CV < 3%), 362 
+Moderate (3 –5%), Low (> 5%). Note: this 70/15/15 stability protocol yields non-comparable 363 
+performance estimates relative to the single 80/10/10 exploratory run (Supplementary Figure 3). The 364 
+stability-mean ROC-AUC = 0.721 – 0.018 is adopted as the primary pe rformance estimate 365 
+throughout. 366 
+v. Feature importance analysis 367 
+ 18 
+To interpret the final ensemble model and identify the most influential features, w e performed two 368 
+complementary model-agnostic analyses: SHAP (Shapley Additive explanations) and permuta tion 369 
+importance. 370 
+v. 1 SHAP analysis 371 
+A logistic regression classifier was retrained on the full combined feature matrix (l ayers 2 –6 372 
+embeddings concatenated with 19 biological features) using the same optimisation procedure as the 373 
+ensemble members. SHAP values were computed using the SHAP LinearExplainer with 374 
+feature_perturbation = ’interventional’, see Table 2, Phase 4, 10. SHAP analysis , assuming feature 375 
+independence. For the 19 biological features, mutual independence was confirmed by the collinearity 376 
+analysis (max pairwise |r| = 0.648), but ESM-2 embedding dimensions encode highly cor related 377 
+positional and compositional sequence information and cannot be treated as exchangeable. The 378 
+interventional mode assumes feature independence. While biological features were screened for 379 
+pairwise collinearity (max |r| = 0.648), ESM-2 embedding dimensions may correlate w ith biological 380 
+features via shared sequence properties (e.g., hydrophobicity). This may marginally mi sattribute 381 
+shared variance between embeddings and biological features in SHAP attributions. The 382 
+LinearExplainer computes attributions analytically from the model coefficient vector and estimated 383 
+feature covariance, yielding exact (not sampled) SHAP values. The background reference 384 
+distribution was constructed from 100 randomly sampled training sequences. SHA P values were 385 
+computed on the full held-out test set and exported for downstream analysis. Visualisation outputs: 386 
+(i) comprehensive beeswarm summary plot including ESM-2 embedding dimensions 387 
+(Supplementary Figure 4); (ii) focused beeswarm plot of 19 biological featu res (Figure 1); (iii) 388 
+horizontal bar plot of top biological features by mean |SHAP|; (iv) per-ESM-2-layer SHAP magnitude 389 
+aggregation chart. 390 
+ 19 
+MLP Classifier (KernelExplainer). For the multi-layer perceptron, SHAP values w ere approximated 391 
+using shap.KernelExplainer, a model-agnostic method that estimates Shapley values via weighted 392 
+linear regression on perturbed inputs. A background distribution of 500 randomly sam pled training 393 
+instances (stratified by class) served as the reference distribution. For each test instance, 2,000 394 
+Monte Carlo samples were drawn, which empirical convergence analysis confirmed as sufficien t: 395 
+feature rankings stabilised (coefficient of variation < 5%) beyond 1,000 samples. Th e background 396 
+size and sampling parameters followed recommendations for models with ≤50 featu res. 397 
+Convergence was verified by computing SHAP values for a representative test instance at increasing 398 
+sample sizes (100–2,000). 399 
+TensorFlow-Keras (TF-K) Classifier was performed using the model-agnostic shap.Explainer, which 400 
+implements the KernelSHAP algorithm to approximate Shapley values for the neural netw ork 401 
+classifier. The explainer was initialised on the standardised training data (X_t rain_scaled), which 402 
+served as the background distribution for estimating expected model outputs. SHAP values w ere 403 
+computed for the held-out test set (X_test_scaled), with each value representin g the marginal 404 
+contribution of a given feature to the model’s predicted probability of MS detectability, relative to the 405 
+background expectation. To ensure compatibility with the Keras sequential model, the expl ainer 406 
+automatically adapts to the model’s prediction function. Feature importance was visuali sed using a 407 
+summary (beeswarm) plot, where features are ranked by mean absolute SHAP value, the horizontal 408 
+position indicates the direction and magnitude of each feature’s contribution (positive values push 409 
+towards the detectable class), and colour encodes the feature’s raw value (red = high, blue = low). 410 
+This approach enables global interpretation of the neural network’s decision patterns while 411 
+accounting for feature interactions inherent to the non-linear architecture. All S HAP computations 412 
+were performed using the shap Python library (version 0.46) with default parameters, ensuring 413 
+deterministic and reproducible attributions. 414 
+ 20 
+Interpretation. SHAP values were computed on the held-out test set. Positive SHAP values indicate 415 
+that a feature pushes the prediction towards the detectable class (group = 1), while negative values 416 
+push towards the non-detectable class (group = 0). Feature importance was quantified as the mean 417 
+absolute SHAP value across all test instances. For ESM2-LR, SHAP values for indi vidual ESM-2 418 
+embedding dimensions were aggregated by transformer layer to assess per-layer contributions. For 419 
+the MLP and TF-K classifier, SHAP analysis was restricted to the 19 biological features due to the 420 
+absence of ESM-2 embeddings in that model. 421 
+v. 2 Permutation importance analysis 422 
+Each of the 19 biological features was independently permuted (values randomly shuffled across 423 
+test-set samples) with 20 repeats per feature; the resulting mean decrease in test -set ROC-AUC 424 
+was recorded per feature (n_jobs = −1). Features causing larger AUC decreases are considered 425 
+more important. Mean and SD across repeats were visualised as horizontal bar charts with error 426 
+bars (Figure 1B). Permutation importance is treated as a cross-validation too l to confirm top-tier 427 
+SHAP rankings; it is not the primary importance estimate. Negative permu tation importance values 428 
+(observed for FreeESol_inWater) are interpreted as artefacts of test-set statistical power limitations 429 
+or collinearity, not as evidence of genuine detrimental contributions, which SHAP correctly resolves 430 
+to a small positive attribution. 431 
+v. 3 Software and reproducibility 432 
+All results are fully reproducible given fixed random seeds (random_state = 42 throughout all 433 
+stochastic operations). The complete analysis pipeline is implemented in Python 3. The full list of 434 
+software dependencies and their roles is provided in Table 1. 435 
+v. 4 End-to-End Pipeline Overview 436 
+ 21 
+The complete analytical pipeline is summarised in Table 2 as a step-by-step reference for 437 
+reproducing or adapting this workflow. 438 
+Table 2. Sequential steps of the ESM-2 / Logistic Regression MS-detectability classification 439 
+pipeline. 440 
+The primary performance estimate throughout the manuscript is ROC-AUC = 0.721 ± 0.018 (95 % CI: 441 
+0.710– 0.732), derived from the 10-run stability evaluation (Step 9, 70 / 15 / 15 split). The single-run 442 
+exploratory estimate (Step 8, ROC-AUC = 0.768) is a statistical outlier and is not the primary figure. 443 
+Step Name Description 
+PHASE 1 — Data Ingestion and Preprocessing 
+1 Data loading 
+& cleaning 
+Input CSV loaded via pandas.read_csv(). All rows containing missing 
+values in any column removed via dropna() prior to any downstream 
+processing. Numerical features identified by excluding (a) the raw 
+amino acid sequence string column and (b) the binary outcome label 
+column (group: 1 = MS-detectable, 0 = non-detectable). 
+2 Class 
+balancing 
+Random undersampling of the majority class (non-detectable; original 
+n = 5,372) to match the minority class (detectable; n = 1,725), yielding a 
+balanced 1:1 corpus of n = 3,450 sequences. Fixed seed 
+(random_state = 42) ensures reproducibility. 
+Important: The 1:1 class prevalence after balancing does not reflect 
+the natural ∼1:3.1 ncORF detection rate. Performance metrics 
+evaluated on balanced test sets (PR-AUC, F1-score) do not directly 
+generalise to natural-prevalence deployment. For such use, model 
+probabilities should be recalibrated using isotonic regression or Platt 
+scaling on a non-undersampled calibration set. 
+ 22 
+3 Dataset 
+partitioning 
+ 
+Two distinct evaluation protocols are used and must not be 
+conflated: 
+(3a) Single exploratory run (Supplementary Figure 2): Stratified 
+80 / 10 / 10 split → ntrain = 2,760 / nval = 345 / ntest = 345. Yields ROC-
+AUC = 0.768 — a statistical outlier 2.7 SD above the stability mean 
+(p = 0.007). This is NOT the primary performance estimate. 
+(3b) Stability evaluation -primary protocol (10 runs, seeds 2024–
+ 2033): Stratified 70 / 15 / 15 split → ntrain = 2,414 / nval = 518 / ntest = 518 
+per run. Mean ROC-AUC = 0.721 ± 0.018 (95 % CI: 0.710– 0.732) is the 
+primary performance estimate reported throughout the manuscript. 
+Both protocols reflect a 1:1 class prevalence (after Step 2 balancing); 
+performance metrics do not directly generalise to the natural ∼1:3.1 
+ncORF detection prevalence. 
+PHASE 2 — ESM-2 Protein Language Model Embedding 
+4 ESM-2 model 
+loading 
+facebook/esm2_t6_8M_UR50D loaded with 
+output_hidden_states = True to expose all 6-transformer layer 
+hidden states. Model moved to the available compute device 
+(TPU → GPU → CPU) and set to evaluation mode (model.eval()). 
+Dropout deactivated; gradient computation suppressed via 
+torch.no_grad() throughout all inference operations. Batch size: 64 
+(TPU/GPU) or 8 (CPU). All computations in full precision (float32). 
+5 Multi-layer 
+embedding 
+generation 
+Sequences tokenised: max_length = 128 aa; 
+padding = ’max_length’; truncation enabled. Single forward pass 
+under torch.no_grad() extracts hidden states from all 6 transformer 
+layers (indices 1– 6). Mask-pooled mean aggregation (weighted by 
+attention mask, excluding padding tokens) yields one 320-dimensional 
+embedding vector per layer per sequence. Per-layer embedding 
+ 23 
+matrices [N × 320] cached as .npy arrays per split (train / val / test) to 
+eliminate redundant GPU computation across runs. 
+6 Layer selection 
+& feature matrix 
+construction 
+ 
+Layer selection (zerofit Fisher LDA criterion): Class-conditional 
+mean vectors (μ₀ˡ, μ₁ˡ ∈ ℝ‡†°), between-class difference vector 
+δˡ = μ₁ˡ − μ₀ˡ, and ridge-regularised (ε = 10⁻⁶) pooled within-class 
+covariance Σˡ computed on the training set per layer. Cholesky 
+decomposition pre-computes Σˡ⁻¹δˡ. All 63 non-empty layer subsets 
+(2⁶ − 1) scored analytically: J(S) = Σₗ∈S δˡᵀ(Σˡ)⁻„δˡ. Top 6 subsets 
+validated by logistic regression AUC on validation set. 
+Optimal combination: Layers 2– 6 (5 layers × 320 dimensions = 
+1,600-dimensional embedding representation). 
+Feature matrix construction: Selected layer embeddings (layers 2– 6; 
+unscaled) concatenated with the 19 biological features (unscaled) → 
+combined matrix of shape [n × 1,619]. A separate bio-feature-only 
+matrix [n × 19] (robust-scaled) is constructed in parallel for the baseline 
+ensemble stream. 
+PHASE 3 — Ensemble Modelling, Fusion, and Evaluation 
+7 Hyperparameter 
+optimisation 
+ 
+10-seed ensemble with repeated random undersampling of the majority 
+class per seed. For each seed: GridSearchCV over C ∈ {0.001, 0.002, 
+0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 100} (14 values); L2 
+penalty; liblinear solver; 5-fold stratified cross-validation; ROC-AUC 
+scoring. Final combined-stream and bio-stream predictions obtained by 
+averaging probabilities across all 10 ensemble members. 
+8 Late fusion 
+& threshold 
+tuning 
+Fused probability: pₚᵤₛᵉᵈ = α × pₜₒₘᵇᵉᵏᵉᵈ + (1 − α) × pᵇᵉₒ. Mixing coefficient 
+α optimised on validation set (scan 0.0 → 1.0, Δ = 0.05, maximising 
+validation ROC-AUC). Decision threshold subsequently tuned on 
+ 24 
+ validation set (scan 0.30 → 0.70, Δ = 0.005, maximising F1-score). Both 
+α and threshold applied unchanged to held-out test set. 
+Single exploratory-run metrics (80/10/10 split; Supplementary 
+Figure 2): ROC-AUC = 0.768; PR-AUC = 0.737; MCC = 0.368; balanced 
+accuracy = 0.662. 
+Caution: ROC-AUC = 0.768 is a statistical outlier (2.7 SD above the 10-
+run stability mean; p = 0.007) and is NOT the primary performance 
+estimate. See Step 9 for the primary figure. 
+9 Model stability 
+evaluation 
+ 
+Full pipeline (Steps 2– 8) repeated independently for each of 10 random 
+seeds (2024– 2033). Per run: (a) fresh balanced dataset resampled 
+from original data; (b) 70 / 15 / 15 stratified split applied (ntrain = 2,414; 
+nval = 518; ntest = 518); (c) layer selection fixed to Layers 2– 6; (d) 10-seed 
+ensemble, late fusion optimisation, and threshold tuning performed 
+independently; (e) performance metrics recorded on held-out test set. 
+Primary performance estimate: mean ROC-AUC = 0.721 ± 0.018 
+(95 % CI: 0.710– 0.732; CV = 2.5 %; High stability tier). Summary 
+statistics reported: mean, SD, 95 % CI (Student's t-distribution), 
+CV = SD / mean × 100 %, and range (Tables 3– 4; Supplementary 
+Figure 3). Stability tiers: High (CV < 3 %), Moderate (3– 5 %), Low 
+(> 5 %). 
+PHASE 4 — Feature Importance Analysis 
+10 SHAP analysis 
+ 
+A fresh logistic regression classifier (L2 penalty, liblinear solver) is 
+trained on the combined feature matrix (ESM-2 embeddings + 19 
+biological features; dimensions = [n_train × (k×320 + 19)], where k = 
+number of selected layers) using GridSearchCV (C ∈ {0.001–100}, 5-
+fold CV, ROC-AUC scoring). The optimal C is selected and the model 
+refit on all training data. 
+ 25 
+SHAP LinearExplainer with 
+feature_perturbation = ’interventional’. For linear models, this 
+mode computes exact, deterministic SHAP values analytically as ϕⱼ(x) = 
+βⱼ·(xⱼ - E[Xⱼ]), requiring no sampling. The background distribution is the 
+full training set X_tr0. This approach is chosen because: 
+(i) The high dimensionality (k×320 ≥ 960) makes covariance estimation 
+for ’correlation_dependent’ mode computationally prohibitive; 
+(ii) The embedding dimensions and biological features are largely 
+decorrelated by construction (different data modalities); 
+(iii) Exact attribution without sampling variance improves reproducibility. 
+SHAP values are computed on the held-out test set and decomposed 
+into ESM-2 embedding dimensions (per-layer grouping) and 19 
+biological features by integer indexing. Five output artefacts are saved 
+at 300 dpi: shap_all_features.png (all features, max_display=30), 
+shap_bio_features.png (19 biological features, RdBu colour map), 
+shap_bio_bar.png + bio_shap_importance.csv (mean |SHAP| ranking), 
+shap_per_layer.png (per-layer vs. bio mean |SHAP|), and 
+shap_bio_values_raw.csv (raw SHAP matrix, n_test × 19). SHAP: 
+SHapley Additive exPlanations. EMB_DIM = 1,600 (5 layers × 320 
+dimensions). n_bio_features = 19. 
+11 Permutation 
+importance 
+ 
+permutation_importance applied to the held-out test set: each of the 
+19 biological features independently permuted (20 repeats; 
+n_jobs = −1; scoring = ROC-AUC). Mean decrease in AUC and SD 
+across repeats reported per feature. 
+Results saved as CSV and visualised as a horizontal bar chart with 
+error bars (Figure 1B; 300 dpi). Treated as an independent cross-
+validation tool to confirm top-tier SHAP rankings; NOT the primary 
+importance estimate. Negative permutation importance values (e.g., 
+ 26 
+FreeESol_inWater) are interpreted as statistical artefacts of test-set 
+power limitations, not genuine detrimental contributions. 
+ 444 
+Table 2. Sequential steps of the ESM-2 / Logistic Regression MS-detectability classification pipeline. 445 
+Steps highlighted in green were corrected relative to the original manuscript. Two evaluation 446 
+protocols are used: (3a) a single exploratory run with an 80 / 10 / 10 stratifi ed split (n train = 2,760; 447 
+n val = 345; n test = 345), reported in Supplementary Figure 2; and (3b) a 10 -run stability evaluation 448 
+with a 70 / 15 / 15 stratified split (n train = 2,414; n val = 518; n test = 518 per run), reported in 449 
+Tables 3– 4 and Supplementary Figure 3. These two protocols are not directly comparable. The 450 
+primary performance estimate is the stability-run mean ROC-AUC = 0.721 ± 0.018 (95 % CI: 0.710–451 
+ 0.732). ESM-2: Evolutionary Scale Modelling 2 protein language model 452 
+(facebook/esm2_t6_8M_UR50D; 8 M parameters; 320 -dimensional hidden states). LDA: linear 453 
+discriminant analysis. SHAP: SHapley Additive exPlanations. ROC-AUC: area under the receiver 454 
+operating characteristic curve. PR-AUC: area under the precision –recall curve. MCC: Matthews 455 
+Correlation Coefficient. CV: coefficient of variation. All stochastic operatio ns use a fixed seed 456 
+(random_state = 42) for reproducibility. 457 
+ 458 
+4. Results 459 
+4.1 Classifier Performance 460 
+The ensemble pipeline, which combined ESM-2 protein language model embeddings with logistic 461 
+regression (LR), was evaluated using both single-run and multi-run protocols. The 80/10/10 single-462 
+run estimate exceeded the stability mean by 2.7 SD. While larger training sets can i nflate 463 
+ 27 
+performance, the magnitude of this deviation suggests favourable sample partitioning. Because the 464 
+split proportions differ between protocols, these estimates are not directly comparable, and the 465 
+80/10/10 run is treated as exploratory. (Supplementary Figure 2). 466 
+The cross-run stability analysis confirmed high reproducibility of the ESM2 -LR model 467 
+(Supplementary Figure 3). ROC-AUC showed high stability across runs (mean = 0.721, SD = 0.018, 468 
+coefficient of variation [CV] = 2.5%; all runs exceeded ROC-AUC = 0.69). F1-score was also highly 469 
+stable (mean = 0.706, SD = 0.012, CV = 1.7%). PR-AUC demonstrated mod erate variability (mean 470 
+= 0.704, SD = 0.023, CV = 3.3%), and Matthews Correlation Coefficient (MCC ) was more variable 471 
+(mean = 0.312, SD = 0.045, CV = 14.3%), consistent with its known sensitivity to threshold selection. 472 
+The late-fusion hyperparameter α, which controls the relative weight of ESM -2 embeddings versus 473 
+biological features, showed substantial variability across splits (mean = 0.525, SD = 0.155, CV = 474 
+29.5%), indicating that the optimal balance between the two information streams is split-dependent 475 
+and should not be interpreted as a fixed model parameter. The high variability of α (range 0.20–0.75) 476 
+indicates that the optimal weighting between ESM-2 embeddings and biological features is sensitive 477 
+to the specific training partition drawn. This suggests that the two streams capt ure partially 478 
+overlapping information, and that their relative informativeness depends on sample composition, and 479 
+high α variance (CV = 29.5%) suggests that in some data partitions, biolog ical features alone 480 
+approach optimal performance, challenging claims of consistent complementarity. 481 
+ 482 
+Table 3. Classifier performance comparison. 483 
+Classifier 
+ROC-AUC 
+(test) 
+PR-AUC 
+(test) 
+F1-Score 
+(test) 
+MCC (test) 
+Feature 
+dimension 
+ 28 
+(†) ESM2-LR 
+(stability mean, 10 
+runs) 
+0.721 – 
+0.018 (95% 
+CI: 0.710–
+0.732) 
+0.704 – 
+0.023 (95% 
+CI: 0.689–
+0.718) 
+0.706 – 
+0.0131 (95% 
+CI: 0.697–
+0.714) 
+0.312 1619 
+MLP Classifier 0.720 0.465 0.217 0.216 19 
+Linear SVM (bio 
+features only) 
+N/R N/R 0.488 0.281 19 
+TensorFlow-Keras 
+(TF-K) 
+0.707 N/R 0.470 N/R 19 
+†Feature space differs: 1,619 dimensions (combined) vs. 19 dimensions (traditional). 484 
+Table 3. Classifier performance comparison. The performance of four selected models was 485 
+evaluated on the balanced held-out test set (1:1 class ratio). PR-AUC f or traditional classifiers was 486 
+not reported in the original benchmarking (N/R). For all 18 ML classifiers evalua ted, see 487 
+Supplementary data (Figure 1), and Supplementary Figures 6 and 7, MLP and TF-K data analysis. 488 
+ESM2-LR achieved ROC-AUC comparable to the best traditional classifier (M LP: 0.720 vs. 0.721). 489 
+ESM2-LR F1 = 0.706 and TF-K F1 = 0.47 were obtained after validation-set threshold optimisation; 490 
+the MLP was not threshold-tuned, yielding F1 = 0.217 at the default threshold. This F1 comparison 491 
+is therefore confounded by threshold asymmetry and should not be interpreted as evidence of a 492 
+superior ESM-2 signal. ESM2-LR was trained on 1,619 features (1,600 ESM-2 embedding 493 
+dimensions + 19 biological features), whereas traditional classifiers used 19 biological features only. 494 
+Consequently, ROC-AUC similarity does not demonstrate equivalence; an embedding-only ablation 495 
+is required to isolate the marginal contribution of ESM-2. F1-scores are not directly comparable due 496 
+to differential threshold optimisation. An embedding-only ablation is recommended in future work to 497 
+isolate the marginal contribution of protein language model embeddings. 498 
+ 29 
+ 499 
+Table 4. Stability metrics across 10 independent runs. 500 
+Metric Mean SD 95% CI CV (%) Range Stability 
+ROC-AUC 0.7206 0.0177 
+[0.710–
+0.732] 
+2.5% 
+0.699–
+0.749 
+High 
+PR-AUC 0.7035 0.0232 
+[0.689–
+0.718] 
+3.3% 
+0.675–
+0.753 
+Moderate 
+F1-Score 0.706 0.012 
+[0.698–
+0.713] 
+1.7% 
+0.687–
+0.728 
+High 
+MCC 0.312 0.045 
+[0.284–
+0.340] 
+14.3% 
+0.258–
+0.382 
+Low 
+Balanced Accuracy 0.639 0.025 
+[0.623–
+0.655] 
+3.9% 
+0.602–
+0.678 
+Moderate 
+α (fusion weight) 0.525 0.155 
+[0.428–
+0.622] 
+29.5% 
+0.20–
+0.75 
+Low 
+Table 4. Stability metrics for the ESM2-LR model across 10 independent runs (seeds 2024–2033). 501 
+CV: coefficient of variation = (SD/mean) × 100%. Stability classification: High (CV < 3%), Moderate 502 
+(3–5%), Low (> 5%). 503 
+4.2 ESM2-LR Model Advantages and Limitations 504 
+When benchmarked against 18 traditional classifiers trained exclusively on the 19 biological features, 505 
+the ESM2-LR model (ROC-AUC = 0.721, 95% CI: 0.710 –0.732; Table 3) achieved ROC-AUC = 506 
+ 30 
+0.721, comparable to the best-performing traditional classifier (MLP: 0.720, difference not statistically 507 
+tested). ESM2-LR achieved ROC-AUC comparable to the best traditional classif ier (MLP: 0.720). 508 
+While ESM2-LR attained a higher operational F1 (0.706) after validation-set threshold optimisation, 509 
+traditional classifiers were evaluated at default thresholds. This comparison is confound ed by 510 
+threshold asymmetry and should not be interpreted as evidence of a superior ESM-2 signal without 511 
+threshold-matched benchmarking (Table 5). For applications requiring rapid throughput or full 512 
+interpretability of individual feature contributions, logistic regression on biological features alone 513 
+remains a practical alternative (MCC = 0.277, balanced accuracy = 0.661). 514 
+The complementary roles of ESM-2 embeddings and biological features are further supported by the 515 
+late-fusion architecture: the validation-optimised α weight consistently allocates approximately equal 516 
+contributions to the two streams (mean α = 0.525), implying that neither t he embedding nor the 517 
+biological feature stream alone captures all the relevant signal. An ablation study directly quantifying 518 
+the marginal contribution of each stream to ROC-AUC and F1 is recommended in future work. 519 
+ 520 
+Table 5. ESM2-LR model advantages and limitations. 521 
+ESM2-LR Advantages ESM2-LR Limitations & Caveats 
+Higher operational F1 (0.706) after validation-
+set threshold optimisation; traditional 
+classifiers not threshold-tuned 
+Computational cost: 100–10,000× slower 
+than traditional classifiers, requiring 
+GPU/TPU resources 
+Captures implicit sequence context beyond 
+hand-crafted features via multi-layer pLM 
+embeddings 
+Single-run ROC-AUC of 0.768 is an 
+optimistic outlier (2.7 SD above stability 
+mean); expected performance is 0.721 
+ 31 
+High stability across 10 independent runs 
+(CV = 2.5% for ROC-AUC), demonstrating 
+reproducibility 
+ESM-2 was pre-trained on canonical 
+UniRef50 sequences; its latent space may 
+not fully represent ncORF microprotein 
+sequence diversity 
+Late fusion with biological features enables 
+interpretable attribution of both streams via 
+SHAP 
+Class balancing by random undersampling 
+discards majority-class data; performance 
+metrics reflect a 1:1 prevalence and do not 
+generalise directly to the natural 1:3 ncORF 
+population 
+Applicable to large-scale screening where 
+follow-up validation resources are limited 
+Fusion weight α is variable across splits 
+(mean 0.525, CV = 29.5%), indicating 
+sensitivity to data partitioning in the late-
+fusion step 
+Model-agnostic SHAP attributions provide 
+exact, interpretable feature rankings despite 
+high-dimensional embedding inputs 
+CIF_HBP and Ribo-seq features are derived 
+from population-averaged data; condition-
+matched translation evidence would improve 
+prediction accuracy 
+ 522 
+4.3 Top Predictive Features 523 
+The top predictive features of MS repository detectability were identified by two com plementary 524 
+model interpretation methods: SHAP (Shapley Additive exPlanations) via LinearExplainer , and 525 
+permutation importance (Figure 1). The five highest-ranked features by SHA P analysis were: (1) 526 
+Translation Uniformity (CIF_HBP); (2) genomic biotype indicator for lncRNA- ORF membership 527 
+ 32 
+(orf_biotype4); (3) mammalian ORF-level evolutionary conservation score (ORBLv_m ammal); (4) 528 
+amino acid sequence conservation score (PhyloCSF); and (5) downstream ORF membership 529 
+(orf_biotype5). Upstream overlapping ORF membership (orf_biotype1) ranked sixth in both methods. 530 
+Predicted HLA-binding peptide density (n_predHLAbinders_div_aaLength) ran ked ninth by SHAP 531 
+and eighth by permutation importance. Concordance across attribution methods increases 532 
+confidence that these features carry a reproducible statistical signal, though this does not establish 533 
+causal relationships with MS detection. 534 
+For a linear classifier operating on a combined ESM-2 embedding and numerical featur e matrix, 535 
+SHAP via LinearExplainer is the primary importance method. It computes exact, analytically derived 536 
+attributions from the model’s coefficient vector and the estimated feat ure covariance structure, 537 
+producing values that reflect each feature’s contribution within the actual l earned input manifold. 538 
+Permutation importance serves as an independent validation tool. The concordance of top rankings 539 
+between the two methods constitutes the most reliable finding of the importance analysis. 540 
+Notably, the number of predicted tryptic peptides and the fraction within the optimal 8–25 aa window 541 
+were not among the top-ranked features, likely because most ncORFs in this dataset have similarly 542 
+limited tryptic peptide yields (1–3 peptides), minimising inter-sequence variance. 543 
+ 544 
+Figure 1. SHAP summary and permutation importance plots of biological feature 545 
+importance. 546 
+A B 547 
+ 33 
+ 548 
+Figure 1. SHAP summary plot (A) and permutation importance analysis (B) of the 19 biological 549 
+features. (A) Each point represents one test-set observation; horizontal posi tion gives the SHAP 550 
+value (positive values increase predicted detectability); colour encodes the featu re value from low 551 
+(blue) to high (red). Features are ranked by mean absolute SHAP value. (B) Horizontal bar chart 552 
+showing mean decrease in ROC-AUC upon feature permutation (20 repeats ); error bars indicate 553 
+standard deviation. The three features ranked identically by both methods (CIF_HBP, orf_biotype4, 554 
+ORBLv_mammal) constitute the high-confidence tier of importance results. 555 
+ 556 
+Translation Uniformity (CIF_HBP): Rank 1 (both methods) 557 
+Because protein abundance was not independently modelled, CIF_HBP likely acts in part as a proxy 558 
+for steady-state protein level. This feature quantifies the fraction of codons with >33.3% in-frame 559 
+ribosomal P-site occupancy relative to maximum ORF density. Ribo-seq measures ribosom e 560 
+occupancy, not protein output; high CIF_HBP reflects uniform ribosome occupancy across the ORF. 561 
+Because Ribo-seq cannot distinguish productive elongation from stalled or abortive translation, this 562 
+pattern is consistent with, but does not prove, sustained production of full-length prot ein. For short 563 
+
+ 34 
+ncORFs, which typically yield only 1 –3 tryptic peptides, uniform occupancy may increase the 564 
+probability that detectable peptides are present, though other explanations (including higher steady-565 
+state abundance or reduced turnover) are equally compatible with the data. 566 
+It is important to note that CIF_HBP is derived from population -averaged Ribo-seq data across the 567 
+Human Body Map dataset and does not reflect condition-matched translation. The association 568 
+between CIF_HBP and MS repository detectability is therefore best interpr eted as capturing a 569 
+constitutive translation signature rather than a condition-specific efficiency. Conditi on-matched 570 
+quantitative ribosome profiling would likely provide a stronger associated factor if avai lable. 571 
+Furthermore, because protein abundance is a key factor associated with MS detectability and is not 572 
+independently modelled here, CIF_HBP likely acts in part as a proxy for steady-state protein level 573 
+rather than as a direct factor associated with detectability conditional on abundance. 574 
+Genomic biotype (orf_biotype4, orf_biotype5, orf_biotype1): Ranks 2, 5, 6 575 
+Genomic biotype was identified as a directional feature associated with MS repository detectability, 576 
+reflecting the mechanistic relationship between each ORF class and the ribosomal machinery. 577 
+lncRNA-ORF membership (orf_biotype4) was the strongest negatively associated factor, consistent 578 
+with the low and highly variable translation efficiency of lncRNA-associated ORFs, which arise from 579 
+transcripts not evolved primarily for protein production. In the complete-case dataset, orf_biotype4 = 580 
+1 was present in 29.0% of undetected sequences but only 20.5% of detected sequences. Similarly, 581 
+downstream ORFs (dORFs; orf_biotype5) were depleted among detected sequences (4.0% vs 7.7% 582 
+undetected), reflecting the low probability of post-termination ribosome reinitiation in human cells. By 583 
+contrast, upstream overlapping ORFs (uoORFs; orf_biotype1) were modestly enriche d among 584 
+detected sequences (13.1% vs. 8.2% of undetected), consistent with the partial evol utionary 585 
+constraint conferred on uoORFs by their overlap with the annotated downstream coding sequence. 586 
+A caveat applies to biotype-based importance scores: the apparent differential detec tability of 587 
+biotype classes may partly reflect differential coverage across annotation databases (e.g., lncRNA-588 
+ 35 
+ORFs show lower cross-database overlap than uORF annotations) rather than exclusively reflecting 589 
+intrinsic translational properties. This potential annotation bias should be considered w hen 590 
+interpreting biotype contributions to the model. 591 
+Evolutionary conservation (ORBLv_mammal): Rank 3 (both methods) 592 
+ORBLv_mammal, the third most important feature by both SHAP and permutation importance, 593 
+captures evolutionary conservation of ORF structural integrity across mammalian geno mes: 594 
+specifically, the preservation of a functional initiation codon, an uninterrupted reading frame, and a 595 
+stop codon, without requiring conservation of the encoded amino acid sequence. Unlike PhyloCSF, 596 
+which measures amino acid-level conservation and ranked fourth by SHAP, ORBLv_mammal 597 
+addresses the relevant evolutionary signal for the ncORF space, where most sequences have not 598 
+been selected to maintain protein sequence but may have been selected to maintain the capacity 599 
+for translation. 600 
+The fraction plots in Figure 3C show that ORBLv_mammal values are strongly right-skewed in both 601 
+the detected and undetected populations (the vast majority of ncORFs have near-zero mammalian 602 
+conservation), consistent with the scarcity of deeply conserved ncORFs. Nevertheless, the fraction 603 
+of detected sequences increases monotonically across ORBLv bins, confirming that the small subset 604 
+of ncORFs under purifying selection for ORF-level structural integrity is meaningfully enriched among 605 
+MS-detectable sequences. This pattern supports the TransCODE Consortium finding that ORF-level 606 
+constraint, not amino acid constraint, is the biologically relevant evolutionary signal fo r translated 607 
+ncORFs [1]. However, ORF-level constraint may also reflect selection on the RNA transc ript (e.g., 608 
+splicing, RNA structure, or regulatory elements) rather than protein-coding functi on per se. 609 
+Alternatively, high ORBLv may reflect phylogenetic signal noise in young, lineage-specific ORFs that 610 
+have not yet accumulated substitutions, rather than purifying selection. 611 
+Amino acid conservation (PhyloCSF): Rank 4 (SHAP) / Rank 5 (permutation) 612 
+ 36 
+PhyloCSF, which scores the log-odds of observing an alignment under a codon substitut ion model 613 
+tuned to protein-coding sequences, ranked fourth by SHAP importance with a negati ve directional 614 
+effect. Despite its 4th-place SHAP ranking, emphasis is placed that PhyloCSF i s not considered a 615 
+biologically meaningful predictor in this analysis. Its inclusion in Table 6 serves only to document the 616 
+ranking; readers should not interpret PhyloCSF as a determinant of ncORF detectability. Therefore, 617 
+its SHAP importance is interpreted as a mathematical consequence of collinearity with length rather 618 
+than a biologically meaningful factor associated with detectability. Importantly, the negative SHAP 619 
+value for PhyloCSF should be interpreted with care: both detected and undetected ncORFs are 620 
+overwhelmingly distributed at negative PhyloCSF values (consistent with lacking canonical amino 621 
+acid conservation), and the fraction plot shows no coherent monotonic enrichment across bins. The 622 
+negative SHAP contribution is most likely a consequence of the feature’s near -uniformly negative 623 
+distribution combined with the logistic regression’s learned coefficient: sequen ces with slightly less 624 
+negative PhyloCSF values are marginally less likely to be detected by the current model, possibly 625 
+reflecting collinear relationships with amino acid length (the strongest negative correlation i n the 626 
+feature set, r = −0.65). Alternatively, the negative coefficient may be a regression artefact arising 627 
+from collinearity with amino acid length (|r| = 0.648), rather than a biologi cally meaningful negative 628 
+associated factor. PhyloCSF’s dissociation from ORBLv_mammal is not a contradictory f inding but 629 
+a confirmation: This dissociation is consistent with the hypothesis that detectable ncORFs are more 630 
+likely to show ORF-level constraint than amino acid-level conservation, though other explanations 631 
+(including the noisiness of PhyloCSF for short sequences, or RNA-level selection on ORF structure) 632 
+are not excluded. 633 
+HLA-binding peptide density (n_predHLAbinders_div_aaLength): Rank 9 (SHAP) / Rank 8 634 
+(permutation) 635 
+The predicted HLA class I binding peptide density (n_predHLAbinders_div_aaLength), defined as 636 
+the number of tryptic peptides with NetMHCpan 4.1-predicted IC₅₀ < 500 nM across all HLA alleles, 637 
+ 37 
+divided by the amino acid length of the ncORF, was consistently positive ly associated with MS 638 
+repository detectability, ranking ninth by SHAP and eighth by permutation importan ce. This feature 639 
+captures a physicochemical property of the encoded peptides that is relevant both to immune 640 
+presentation (requiring 8–11 amino acid peptides of appropriate hydrophobicity and anchor residues 641 
+for HLA-I groove binding) and to MS analyte quality (hydrophobicity enhances rever se-phase 642 
+chromatography retention, and peptides in the 8 –11 residue range are optimally resolved by LC-643 
+MS/MS fragment ion coverage). The modest but consistent contribution of this feature indicates that 644 
+peptide physicochemistry favourable for immune sampling is also favourable for mass spectrometric 645 
+detection, independently of protein abundance. 646 
+The slight discordance between SHAP rank (9th) and permutation rank (8th) for this feature is 647 
+mechanistically interpretable: permutation importance captures the synergistic effect of HLA-binding 648 
+density in combination with specific ESM-2 embedding dimensions, whereas SH AP assigns credit 649 
+individually. Given that this feature has no high-correlation partners in the biologi cal feature set 650 
+(maximum |r| = 0.256 with any other feature), the discordance is unlikely to reflect a collinearity 651 
+artefact. 652 
+Table 6. Top predictive features ranked by SHAP and permutation importance, with biol ogical 653 
+interpretation. ’Full’ indicates concordant ranking between SHAP and permutation analysis. ’Partial’ 654 
+indicates minor rank discordance across methods. 655 
+Feature 
+SHAP 
+Rank 
+Perm. 
+Rank 
+Concordance Reliability 
+Biological 
+basis / 
+direction of 
+effect on 
+detection 
+ 38 
+CIF_HBP (Translation 
+Uniformity) 
+1st 1st Full High 
+Fraction of 
+codons with 
+>33.3% in-
+frame P-sites; 
+uniform 
+ribosome 
+occupancy 
+across ORF 
+length; pattern 
+consistent with 
+sustained 
+translation, 
+though Ribo-
+seq cannot 
+confirm 
+productive 
+protein output 
+orf_biotype4 (lncRNA-ORF) 2nd 2nd Full 
+Moderate–
+High 
+Lowest 
+ribosome 
+engagement 
+class; depleted 
+among detected 
+sequences 
+(20.5% vs. 
+ 39 
+29.0% of 
+undetected). 
+Negative 
+associated 
+factor. 
+ORBLv_mammal (ORF-
+level conservation) 
+3rd 3rd Full High 
+Purifying 
+selection on 
+ORF structural 
+integrity (start 
+codon, reading 
+frame, stop 
+codon) across 
+mammals, 
+independent of 
+amino acid 
+conservation. 
+Positive 
+associated 
+factor. 
+orf_biotype5 (dORF) 5th 4th Partial 
+Moderate–
+High 
+Downstream 
+ORF class; 
+depleted among 
+detected 
+sequences 
+ 40 
+(4.0% vs. 7.7% 
+of undetected); 
+post-termination 
+ribosome re-
+initiation is 
+infrequent and 
+yield is low. 
+Negative 
+associated 
+factor. 
+orf_biotype1 (uoORF) 6th 6th Full 
+Moderate–
+High 
+Upstream 
+overlapping 
+ORF; partial 
+constraint from 
+overlapping 
+CDS; enriched 
+among detected 
+sequences 
+(13.1% vs. 8.2% 
+of undetected). 
+Positive 
+associated 
+factor. 
+ 41 
+n_predHLAbinders_div_aaL
+ength (HLA binding density) 
+9th 8th Partial 
+High (ncORF 
+context) 
+Fraction of 
+tryptic peptides 
+with predicted 
+HLA-I IC₅₀ < 
+500 nM per aa 
+length; HLA-I 
+ligand 
+physicochemistr
+y overlaps with 
+optimal MS 
+analyte 
+properties 
+(hydrophobicity, 
+length, charge). 
+Positive 
+associated 
+factor. 
+PhyloCSF (amino acid 
+conservation) 
+4th 5th Partial 
+Low 
+(artefactual) 
+Conventional 
+coding potential 
+score; SHAP 
+importance 
+reflects 
+collinearity with 
+amino acid 
+ 42 
+length (r = 
+−0.648) rather 
+than 
+independent 
+biological 
+signal. Not 
+interpreted as a 
+meaningful 
+factor 
+associated with 
+detectability. 
+Negative 
+associated 
+factor in this 
+context. 
+Table 6. Top predictive features ranked by SHAP and permutation importance. Reliability reflects 656 
+combined method agreement and collinearity assessment. 657 
+ 658 
+4.4 Feature Correlation and Independence 659 
+Pairwise Spearman correlations were computed across all 19 numeric features in the complete-case 660 
+dataset (n = 7,097 ncORFs) to identify collinear associated factors that could cause misattribution of 661 
+shared variance in the importance analyses (Figure 2). Across all 171 pairwise compar isons, no 662 
+feature pair exceeded the collinearity flagging threshold of |r| > 0.70, and no pair exhibited very strong 663 
+ 43 
+correlation (|r| > 0.90). The maximum observed pairwise correlation was |r| = 0.64 8 between 664 
+PhyloCSF and aa_length, two conceptually distinct features measuring coding potent ial and 665 
+sequence length, respectively. This association likely reflects the fact that longe r ncORFs (which 666 
+tend to have more amino acid positions for PhyloCSF scoring) are more frequently found in contexts 667 
+where conventional coding constraint metrics yield fewer negative scores. 668 
+The two domain-specific features central to this analysis, CIF_HBP (ribosome profiling uniformity; 669 
+max |r| = 0.256 with any feature) and mean_constraint (Evo genomic co nstraint; max |r| = 0.215), 670 
+were among the most independent features in the entire set, confirming tha t they contribute 671 
+orthogonal biological information with no shared-variance risk. The four primary associ ated factors 672 
+identified by SHAP analysis, ORBLv_mammal, PhyloCSF, n_predHLAbinders_div_aaLength, and 673 
+log10RelMutab, were all mutually independent (pairwise |r| ≤ 0.462), ensuring that their importance 674 
+scores are directly attributable to each feature. These results support the interpretation that the 19-675 
+feature set captures diverse, non-redundant biological signals, and that all feature importance 676 
+estimates derived from the ESM-2–Logistic Regression classifier can be interpreted with confidence 677 
+without shared-variance correction. 678 
+Figure 2. Spearman correlation matrix of the 19 biological features (n = 7,097 ncORFs). 679 
+ 680 
+
+ 44 
+Figure 2. Spearman correlation matrix of the 19 biological features (n = 7,097 ncORFs). Correlation 681 
+coefficients (|r|) range from −1.0 (blue) to +1.0 (red). No feature pai r exceeded the collinearity 682 
+threshold |r| = 0.70. The strongest negative correlation was between aa_length and PhyloCSF ( r = 683 
+−0.648). The strongest positive correlations were between SolubilityIndex and 684 
+NormFreqBetaSheetUnweight (r = 0.59) and between FreeESol_inWater and AvrgVolResidues (r = 685 
+0.57). 686 
+ 687 
+4.5 Feature Detectability Distributions 688 
+Analysis of the distributions of the highest-ranked features across MS-detected and undetected 689 
+ncORFs revealed consistent, biologically interpretable patterns of enrichment (Figure 3). Panels are 690 
+described below in order of biological interpretation, corresponding to their SHAP importance rank. 691 
+CIF_HBP (Translation Uniformity; Panel A). The distribution of CIF_HBP scores was right-shifted 692 
+in the detected population relative to the undetected population (mean ~0.62 vs. ~0.50, respectively). 693 
+The fraction of detected sequences increased monotonically across bins, rising from approximately 694 
+10% in the lowest-scoring bin to approximately 45% in the highest. This 4.5-fold enrichment across 695 
+the CIF_HBP dynamic range is the strongest single-feature discriminat ory signal observed in the 696 
+entire dataset and is consistent with sustained elongation across the ORF being t he primary 697 
+statistically associated factor for the accumulation of detectable full-length microprotein. 698 
+HLA-binding peptide density (n_predHLAbinders_div_aaLength; Panel B). The distribution of 699 
+predicted HLA-binding peptide density showed a near-normal profile across the full ncORF set. The 700 
+binned fraction plot demonstrated a stepwise increase in detection probability with increasing HLA-701 
+binding density (from ~8% to ~40%), confirming that intrinsic peptide physicochemist ry favourable 702 
+for immune presentation is independently associated with MS repository detectability. Thi s pattern 703 
+ 45 
+was replicated independently of CIF_HBP and ORBLv, consistent with the colline arity analysis 704 
+demonstrating that n_predHLAbinders_div_aaLength is orthogonal to these features. 705 
+ORBLv_mammal (ORF-level evolutionary conservation; Panel C). The ORBLv_mammal 706 
+distribution was strongly right-skewed in both detected and undetected populations, with the majority 707 
+of ncORFs near zero conservation, reflecting the known rarity of deeply conserved ncORFs across 708 
+mammals. Despite this, the fraction of detected sequences increased progressively wit h ORBLv 709 
+value, reaching approximately 35 –40% in the highest conservation bins compared to ~15% in the 710 
+near-zero bins. This monotonic enrichment indicates that purifying selection for ORF structural 711 
+integrity identifies a biologically real subset of ncORFs that are stably and sufficiently expressed for 712 
+MS detection. 713 
+PhyloCSF (amino acid conservation; Panel D). Both detected and undetected ncORFs were 714 
+overwhelmingly distributed at negative PhyloCSF values, and the fraction plot showed no coherent 715 
+monotonic trend across bins. This confirms that conventional amino acid-level conservation does not 716 
+discriminate MS-detectable from MS-undetectable ncORFs, and that the fourth-ran ked SHAP 717 
+importance of PhyloCSF reflects its role as a covariate within the logistic regression rather than a 718 
+standalone discriminative feature. While SHAP identified PhyloCSF as the fourt h most important 719 
+feature by mean |SHAP|, its detection fraction plot shows no monotonic tren d across bins (Figure 720 
+3D), and it is the feature most strongly correlated with amino acid length (r = -0.648). The SHAP 721 
+importance of PhyloCSF, therefore, likely reflects its role as a length- correlated covariate in the 722 
+logistic regression rather than a direct biological factor associated with detectability. 723 
+Biotype membership (Panel E). The categorical distribution across biotype classes confirmed the 724 
+directional effects identified by SHAP. Upstream overlapping ORFs (biotype 1 [ uoORF]) were 725 
+modestly enriched among detected sequences (13.1% of detected vs. 8.2% of undetected ncORFs 726 
+within this biotype class). By contrast, lncRNA-ORFs (biotype 4) and downstream ORFs (biotype 5 727 
+[dORF]) were depleted among detected sequences (20.5% vs. 29.0% and 4.0% vs. 7.7% of 728 
+ 46 
+undetected, respectively). uORFs (biotype 2) and intORFs (biotype 3) showed intermediate detection 729 
+fractions. These patterns are consistent with the established hierarchy of ribosomal en gagement 730 
+efficiency across ncORF biotype classes and validate the directional importance estimate s from 731 
+SHAP. 732 
+Together, the distributions in Figure 3 validate the SHAP and permutati on importance findings by 733 
+independently confirming the directionality and progressive nature of each feature’s association with 734 
+MS repository detectability. Critically, CIF_HBP, ORBLv_mammal, and 735 
+n_predHLAbinders_div_aaLength each show monotonic enrichment of detected sequences across 736 
+their entire dynamic range, providing strong empirical support for their roles as continuous, graduated 737 
+associated factors rather than threshold-dependent classifiers. The combination of the se three 738 
+orthogonal associated factors (translation quality, evolutionary selection, and peptide 739 
+physicochemistry) is consistent with a multidimensional association with detectability for the ncORF 740 
+proteome. 741 
+Figure 3. Distribution and detection fractions of key biological features across MS-detected 742 
+(orange) and undetected (blue) ncORFs. 743 
+A. 744 
+ 745 
+B 746 
+
+ 47 
+ 747 
+C 748 
+ 749 
+D 750 
+ 751 
+E 752 
+
+ 48 
+ 753 
+Figure 3. Distribution and detection fractions of key biological features across MS-detected (orange) 754 
+and undetected (blue) ncORFs. For continuous features (A –D), the left panels show absolute 755 
+frequency distributions and the right panels show the fraction of det ected ncORFs per bin. For 756 
+biotypes (E), absolute counts (top) and detection fractions (bottom) are shown per biotype class. (A) 757 
+CIF_HBP: detected distribution is right-shifted (mean ~0.62 vs. ~0.50 ); detected fraction rises 758 
+monotonically from ~10% to ~45%. (B) n_predHLAbinders_div_aaLength: near-normal distribution; 759 
+detected fraction increases stepwise from ~8% to ~40%. (C) ORBLv_mammal: strongly right-760 
+skewed; detected fraction increases progressively at higher values despite a near-zero mode in both 761 
+groups. (D) PhyloCSF: both groups concentrated at negative values; no coherent monotonic trend. 762 
+(E) Biotype: uoORF (biotype 1) enriched among detected; lncRNA-ORF (biotype 4 ) and dORF 763 
+(biotype 5) depleted. Percentages are of the total detected/undetected of the total set. 764 
+ 765 
+
+ 49 
+4.6 Comparison of SHAP and Permutation Importance and 766 
+Methodological Justification 767 
+SHAP and permutation importance analyses yielded largely concordant rankings, with three features 768 
+occupying identical ranks in both methods: CIF_HBP (rank 1), orf_biotype4 ( rank 2), and 769 
+ORBLv_mammal (rank 3). This three-way convergence across independent attribution methods 770 
+provides the strongest available evidence that these features carry a genuine association signal for 771 
+ncORF MS repository detectability and are not artefacts of any single interpretability ap proach. 772 
+orf_biotype1 also ranked identically (rank 6) in both methods. While ranks 1 –3 are robust, mid-tier 773 
+rankings (ranks 4 –9) show method-dependent variation and should be interp reted with greater 774 
+caution. 775 
+Mid-tier discordances, particularly for PhyloCSF (SHAP rank 4, permutation rank 5) and 776 
+n_predHLAbinders_div_aaLength (SHAP rank 9, permutation rank 8), are mechanist ically 777 
+interpretable. For the linear classifier evaluated here, SHAP via LinearExplainer is the primary 778 
+reliability standard for three reasons: (i) SHAP values are analytically exact for linear models, 779 
+computed directly from the coefficient vector and feature covariance structure without sampl ing 780 
+noise; (ii) the correlation-dependent perturbation mode correctly accounts for the correlated structure 781 
+of the 320-dimensional ESM-2 embedding space, whereas permutation importance tr eats all input 782 
+dimensions as exchangeable and thereby distorts the attributed importance of correlated embedding 783 
+clusters; and (iii) the negative permutation importance observed for FreeESol _inWater is a 784 
+diagnostic signal of insufficient test-set statistical power or correlation artefact rather than a genuine 785 
+negative contribution, which SHAP correctly resolves to a small but positive attribution. Permutation 786 
+importance is therefore treated as a cross-validation tool for the top tier of results, and its agreement 787 
+at ranks 1–3 and rank 6 provides high-confidence confirmation of those features. Rankings below 788 
+rank 6 should be interpreted with greater caution and are not the basis for bi ological conclusions. 789 
+While biological features were screened for pairwise collinearity, ESM-2 embedding dim ensions 790 
+ 50 
+encode compositional information that may correlate with biological features (e.g ., hydrophobicity). 791 
+The ’interventional’ SHAP mode assumes feature independence, which may marginally misattribute 792 
+shared variance between embeddings and biological features. 793 
+ 794 
+4.7 Cross-Model Validation of Feature Importance via Multi-Layer 795 
+Perceptron and TensorFlow-Keras 796 
+To assess whether feature rankings were architecture-dependent, we performed exploratory SHAP 797 
+analysis on an MLP and TensorFlow-Keras (TF-K), both trained on the 19 biological fea tures. MLP 798 
+and TF-K SHAP analysis were used as described in the Methods section 3.5.2 v.1 SHAP analysis. 799 
+ESM2-LR, MLP and TF-K Classifiers ranked CIF_HBP highest, suggesting this feature contains the 800 
+strongest predictive signal regardless of the model architecture. However, mid-tier rankings differed 801 
+(e.g., n_predHLAbinders_div_aaLength ranked 2 nd in TF-K, 3 rd in MLP, and 9th in ESM2-LR; 802 
+orf_biotype4 ranked 8 th, 7 th and 2 nd, respectively) (see Supplementary Figures 6 and 7). These 803 
+discrepancies may reflect: (a) genuine non-linearities captured by the MLP, (b) SHAP approximation 804 
+noise in KernelExplainer, or (c) differences in feature scaling (RobustScaler for MLP/TF-K; unscaled 805 
+for ESM2-LR combined stream), which alters the effective regularisation and feat ure variance in 806 
+linear versus non-linear models. Distinguishing these possibilities requires dedicated i nteraction 807 
+testing. These exploratory results suggest that the dominant factors statistically associated with MS 808 
+repository detection are partially consistent across linear and non-linear models, tho ugh ranking 809 
+differences for mid-tier features indicate model-dependent behaviour that requires further 810 
+investigation. Detailed metrics and the SHAP summary plots are provided in the S upplementary 811 
+Figures 6 and 7. 812 
+ 813 
+ 51 
+5. Discussion 814 
+The central finding of this study is that, within a sequence- and annotation-de rived feature space, 815 
+cumulative MS-based repository detection of ncORF-derived microproteins is statistically associated 816 
+with three features: the uniformity of active translation across the ORF length, evolutionary selection 817 
+at the ORF structural level, and the physicochemical properties of tryptic pepti des relevant to both 818 
+HLA class I presentation and LC-MS/MS ionisation. The integration of ESM-2 protein language 819 
+model embeddings with logistic regression (ESM2-LR) achieved F1 = 0.706 after validati on-set 820 
+threshold optimisation. The best traditional classifier (MLP) achieved ROC-AUC = 0.720 but was not 821 
+threshold-tuned for F1, precluding fair comparison. Any apparent ESM2-LR advantag e rests 822 
+primarily on the F1-score, which is confounded by threshold asymmetry; the ROC-AUC difference is 823 
+too small to be interpreted as a meaningful performance advantage. Technical factors, incl uding 824 
+instrument sensitivity, sample preparation, and database completeness, were not modelled and 825 
+represent an additional source of unresolved variance. 826 
+The complementary nature of ESM-2 embeddings and biological features is evident from the late-827 
+fusion architecture: the validation-optimised fusion weight α averaged 0.525 across stability runs (SD 828 
+= 0.155), indicating that neither information stream alone captures all the relevant signal. The F1 829 
+advantage of ESM2-LR over Linear SVM (0.706 vs. 0.488) may suggest that ESM -2 embeddings 830 
+contribute sequence-level information relevant to true-positive identification that bi ological features 831 
+cannot provide, improving sensitivity without a proportional increase in false positives. ESM 2-LR 832 
+may be suitable for large-scale screening applications where follow-up validation r esources are 833 
+limited. For applications requiring rapid predictions or fully interpretable feature contributions, linear 834 
+SVM on the 19 biological features alone (MCC = 0.281, balanced accuracy = 0 .663) remains a 835 
+practical alternative (Supplementary Figure 1). 836 
+ 52 
+5.1 Translation Uniformity as the Primary Factor Associated with MS 837 
+Detectability 838 
+CIF_HBP was the top-ranked feature by both SHAP (rank 1) and permu tation importance (rank 1), 839 
+with the fraction of MS-detected sequences rising monotonically from approximatel y 10% in the 840 
+lowest CIF_HBP bin to approximately 45% in the highest, a 4.5-fold enrichment a cross the full 841 
+dynamic range. This association is biologically interpretable: CIF_HBP quantifies the uni formity of 842 
+ribosome P-site occupancy across the ORF, which may reflect sustained elongation rather t han 843 
+merely initiation at the 5′ end and stalling prematurely. One speculative interpretation is that uniform 844 
+ribosome occupancy might correlate with mRNA stability; stalled ribosomes can trigger mRNA decay 845 
+pathways, though this link has not been established for short ncORFs and remains entir ely 846 
+speculative. An important caveat applies: CIF_HBP is derived from population- averaged Ribo-seq 847 
+data across the Human Body Map multi-tissue dataset and does not reflect conditi on-matched 848 
+translation. The CIF_HBP –detectability association is therefore best interpreted as a constitutive 849 
+translation signature rather than a condition-specific efficiency estimate. Furthermore , protein 850 
+abundance, a key factor associated with MS repository detectability, is not independently modelled 851 
+here; CIF_HBP likely captures in part a proxy for steady-state protein level rather t han acting as a 852 
+direct factor associated with detectability conditional on abundance. Condition-matched quantitative 853 
+ribosome profiling, where Ribo-seq and MS data are obtained from the same biological sample, 854 
+would likely provide a substantially stronger factor than the body-map-averaged CI F_HBP used in 855 
+this study. 856 
+The TensorFlow-Keras and MLP also ranked CIF_HBP highest (Supplementary Figures 6 and 7), 857 
+though this agreement may simply reflect that the models exploit the stron gest signal in the data 858 
+rather than indicating a model-independent biological law. 859 
+ 53 
+For short ncORF-encoded microproteins, which typically yield only 1–3 tryptic peptides, even a single 860 
+missed or low-abundance C-terminal peptide can render the protein invisibl e in data-dependent 861 
+acquisition (DDA) workflows. Uniform ribosomal engagement throughout the codi ng sequence is 862 
+therefore statistically associated with increased MS repository detectability. 863 
+ 864 
+5.2 Evolutionary Features: ORF-Level Conservation Dissociates from 865 
+Amino Acid Conservation 866 
+ORBLv_mammal, which captures preservation of ORF structural integrity (start codon, uninterrupted 867 
+reading frame, stop codon) across mammalian genomes without requiring amino acid sequence 868 
+conservation, ranked third by both SHAP and permutation importance, and showed a prog ressive 869 
+enrichment of detected ncORFs at higher conservation values. This pattern is consistent w ith the 870 
+TransCODE Consortium finding [1] that ORF-level constraint may indicate pur ifying selection to 871 
+maintain translational competence, though it does not exclude RNA-level or regulatory functions as 872 
+alternative selective pressures. If ncORFs under ORF-level purifying selection sustain uniform 873 
+translational elongation, then this hypothesis could be examined by combining ORBLv and CIF_HBP 874 
+distributions. Alternatively, high ORBLv may correlate with more efficient transcriptional or 875 
+translational machinery (e.g., stronger Kozak contexts), leading to higher protei n abundance and 876 
+thus greater MS detection probability, rather than purifying selection on the encoded peptide per se. 877 
+PhyloCSF, which scores amino acid-level coding potential by comparative phylogenetic substitution 878 
+modelling, ranked fourth by SHAP with a negative directional effect, but showed no coherent 879 
+monotonic trend in detection fraction across its value range; both detected and undetected ncORFs 880 
+were overwhelmingly distributed at negative PhyloCSF values. The negative SHAP con tribution of 881 
+PhyloCSF most plausibly reflects the logistic regression coefficient applied to a featu re that is 882 
+ 54 
+predominantly negative-valued and collinear with amino acid length (|r| = 0.648): sequences with 883 
+slightly less negative PhyloCSF values are not more detectable; rather, the feature acts as a length-884 
+correlated covariate within the learned decision boundary. This dissociation between 885 
+ORBLv_mammal (positive, rank 3) and PhyloCSF (negative effect, rank 4) suggests that detectable 886 
+ncORFs are more likely to show evidence of selection for ORF structural integrity than for amino acid 887 
+sequence conservation as measured by conventional phylogenetic metrics [16]. An alternative 888 
+hypothesis is that many ncORFs are simply young, lineage-specific ORFs that have not yet 889 
+accumulated amino acid substitutions, and ORBLv captures phylogenetic signal noise rather than 890 
+purifying selection. Distinguishing these hypotheses requires population genomic analysis: genuine 891 
+purifying selection should manifest as reduced polymorphism and depletion of loss-of-f unction 892 
+variants in high-ORBLv ncORFs, whereas phylogenetic noise would show no such population-level 893 
+constraint should be observed. This alternative could be tested by correlating ORBLv with Kozak 894 
+sequence strength or translation initiation rates independent of ORF structure. 895 
+5.3 Genomic Biotype as a Directional Modifier of Detectability 896 
+Before interpreting biotype effects, we note that differential detectability may partly reflect annotation 897 
+coverage rather than intrinsic biology. lncRNA-ORF annotations exhibit lower c ross-database 898 
+agreement than uORF annotations, potentially inflating apparent depletion among detected 899 
+sequences if some lncRNA-ORFs are absent from MS search databases [42,43]. Sub ject to this 900 
+caveat, the observed patterns are consistent with known ribosomal engagement hierarchies. 901 
+Genomic biotype acted as a directional modifier rather than a dominant associated factor in isolation, 902 
+consistent with its role in determining the mechanistic relationship between each ORF class and the 903 
+ribosomal machinery. lncRNA-ORF membership (orf_biotype4) was the strongest ne gative 904 
+associated factor, with orf_biotype4 = 1 being present in 29.0% of undetected but on ly 20.5% of 905 
+detected sequences. This depletion is consistent with the generally lower translation effi ciency of 906 
+lncRNA-ORFs, though it may also reflect tissue-specific expression patterns or an notation gaps in 907 
+ 55 
+proteomics databases. Downstream ORFs (orf_biotype5) were similarly depleted (4.0% vs 7.7% 908 
+undetected), consistent with the low probability of productive post-termination r ibosome reinitiation 909 
+in human cells. By contrast, upstream overlapping ORFs (orf_biotype1) were m odestly enriched 910 
+among detected sequences (13.1% vs. 8.2% of undetected), consistent with the partial evolutionary 911 
+constraint conferred by their overlap with an annotated downstream coding sequence. 912 
+. 913 
+5.4 Peptide Physicochemistry and Immunopeptidomics Convergence 914 
+n_predHLAbinders_div_aaLength, the NetMHCpan 4.1-predicted HLA class I binding peptide 915 
+density (IC₅₀ < 500 nM tryptic peptides per amino acid), was a consistently positively asso ciated 916 
+factor of MS repository detectability (SHAP rank 9, permutation rank 8). The physicochemical 917 
+properties required for HLA class I groove binding, peptide length in the 8 –11 residue range, and 918 
+appropriate anchor residue hydrophobicity partially overlap with the properties that make peptides 919 
+tractable analytes for LC-MS/MS: hydrophobicity promotes both HLA bind ing and reverse-phase 920 
+retention, and the 8–11 residue window favoured by HLA-I falls within the lower end of the optimal 921 
+LC-MS/MS range. However, the two detection modalities differ in their specific length and motif 922 
+requirements, so this convergence should be interpreted as a correlation rather than a shared 923 
+mechanistic basis. The independent association of HLA-binding density with MS repository detection 924 
+likely reflects overlapping physicochemical preferences, specifically, hydrophobicity and favourable 925 
+charge states, rather than identical length requirements. While HLA-I ligands are typical ly 8 –11 926 
+residues, standard proteomics optimally detects 7 –25 residue tryptic peptides. The correlation, 927 
+therefore, suggests that peptides with HLA-compatible physicochemistry also possess 928 
+chromatographic and ionisation properties conducive to LC-MS/MS detection, not that ncORFs are 929 
+detected exclusively via HLA-length peptides. 930 
+ 56 
+These findings are consistent with and extend the TransCODE Consortium observation t hat a high 931 
+proportion of peptides detected in the HLA PeptideAtlas map to ncORFs [1]. The shared enrichment 932 
+for physicochemically tractable peptides suggests that HLA-presented ncORF peptides already 933 
+archived in immunopeptidomics repositories are directly amenable to targeted MS detec tion by 934 
+parallel reaction monitoring (PRM) or data-independent acquisition (DIA ). These findings reinforce 935 
+the emerging view [1, 6, 21] that immunopeptidomics databases represent an underexploited 936 
+discovery resource for ncORF proteomics and extend it by demonstrating that the physicochemical 937 
+overlap between HLA-I ligand properties and LC-MS/MS analyte properties i s independently 938 
+predictive of detectability even within a feature importance framework. 939 
+While the ESM2-LR and MLP models generally agree, the MLP SHAP analysis r esults reveal a 940 
+significant non-linear signal regarding peptide immunogenicity. The feature 941 
+n_predHLAbinders_div_aaLength (density of HLA-binding peptides) ascended from the 9th rank in 942 
+the ESM2-LR to the 2nd rank in the TensorFlow-Keras, and 4 th in the MLP SHAP analysis. This 943 
+suggests that while linear models capture the general utility of this feature, the MLP and TensorFlow 944 
+identify more complex interactions between peptide length, hydrophobicity, and detectability. These 945 
+ranking differences may alternatively reflect the smaller sample size and higher variance of 946 
+KernelExplainer estimates in non-linear models, rather than genuine non-linear interactions. 947 
+5.5 Limitations and Sources of Uncertainty 948 
+Homology-reduction analysis failure. The CD-HIT homology-reduction analysis at 30% sequenc e 949 
+identity did not remove any sequences (7,097 → 7,097), precluding formal assessment of 950 
+generalisability to sequence-dissimilar ncORFs. This failure likely reflects inapp ropriate parameter 951 
+settings for short peptide sequences. Consequently, claims of model generalisab ility are 952 
+unsupported and require re-evaluation with corrected parameters or alternative clustering methods. 953 
+ 57 
+PeptideAtlas and ProteomeXchange aggregate detections across heterogeneous experimental 954 
+conditions, tissues, instruments, and database search strategies. An ncORF classified as 955 
+’undetected’ may be detectable under untested conditions, constituting systematic false negatives in 956 
+the training labels. Label noise likely contributes substantially to the performance ceiling, though its 957 
+relative contribution compared to missing abundance data or model misspecification i s unknown. 958 
+Future work should estimate the proportion of false negatives in the undetected class, for example, 959 
+by assessing what fraction of ’undetected’ ncORFs have high CIF_HBP scores. 960 
+Absence of simpler baselines. The marginal contribution of ESM-2 embeddings beyond the top three 961 
+biological features (CIF_HBP, ORBLv_mammal, HLA-binding density) has not been quantified. A 962 
+logistic regression trained on the top three biological features alone would establi sh the marginal 963 
+value of ESM-2 embeddings and is required to justify the additional computational cost. 964 
+Absent protein abundance feature. Protein steady-state abundance is not directly modelled, as it is 965 
+not derivable from sequence alone. CIF_HBP likely serves in part as a proxy for abundance, but the 966 
+relationship is indirect and condition-averaged. 967 
+No external validation. The model was evaluated only on held-out splits from the same 7,097-968 
+sequence GENCODE v42 dataset. No external validation on an independent ncORF dat aset, such 969 
+as those from Chothani et al. [2], Sandmann et al. [5], or Wacholder e t al. [4], was performed. This 970 
+model is not generalisable across datasets, yet it suggests a framework that may he lp prioritise 971 
+rationally, pending external validation. 972 
+Class-balancing artefact. Random undersampling discards 68% of the negative-class dat a and 973 
+changes the effective prevalence from ~24.3% to 50%. Performance metrics evaluated on balanced 974 
+test sets do not reflect expected performance at the natural ncORF detection prevalence. 975 
+Applications operating at natural prevalence should apply probability calibration. 976 
+ 58 
+ESM-2 domain mismatch. ESM-2 was pre-trained on canonical UniRef50 sequences and m ay not 977 
+fully represent the sequence diversity of short (< 50 amino acid) microproteins. The choice of the 978 
+smallest ESM-2 variant (8M parameters) limits representational capacity; a compa rative ablation 979 
+across ESM-2 variants is recommended. 980 
+Feature scaling was inconsistent across streams: biological features were RobustScaled in the bio-981 
+only baseline but unscaled in the combined stream, while ESM-2 embeddings were un scaled 982 
+throughout. Because L2-regularised logistic regression is scale-sensitive, this inconsisten cy may 983 
+affect the relative importance attributed to biological versus embedding features and complicate the 984 
+interpretation of the fusion weight α. 985 
+6. Conclusion 986 
+This study provides evidence that, within the GENCODE v42 ncORF dataset, cumulative MS 987 
+repository detection is statistically associated with: (1) ribosome occupancy uniform ity across the 988 
+ORF (CIF_HBP); (2) evolutionary conservation of ORF structural integrity (ORBLv_ mammal); and 989 
+(3) peptide physicochemical properties correlated with both HLA class I presentation and LC-MS/MS 990 
+analyte quality (n_predHLAbinders_div_aaLength). These features are concordantly ranked by 991 
+SHAP and permutation importance, though they may share protein abundance as a common 992 
+unmodeled mediator. The ESM2-LR framework achieved ROC-AUC ~0.721 on held- out test data. 993 
+While traditional classifiers trained on biological features alone approached similar ROC-AUC (MLP: 994 
+0.720), the marginal contribution of ESM-2 embeddings beyond the top biological features remains 995 
+to be formally quantified via ablation. The operational F1 advantage (0.706) w as obtained after 996 
+threshold optimisation and requires threshold-matched benchmarking before claiming superior 997 
+precision-recall performance. These conclusions apply primarily to DDA workflows; DIA and targeted 998 
+PRM/SRM approaches may partially mitigate the detection biases described, and the model’s 999 
+ 59 
+applicability to these alternative acquisition strategies is untested. A near-term priority is external 1000 
+validation on independent ncORF datasets and explicit modelling of protein abundance. 1001 
+The following factors likely contribute to the model performance ceiling at ROC-AUC ≈ 0.721, listed 1002 
+in an estimated order of impact pending formal quantification: (1) label no ise arising from the 1003 
+heterogeneous experimental conditions aggregated in PeptideAtlas; (2) the absence of protein 1004 
+abundance as a feature; (3) ESM-2 domain mismatch with microprotein sequence space; (4) 1005 
+information loss from random undersampling; and (5) irreducible stochasticity in condition-dependent 1006 
+ncORF expression. The most impactful direction for raising this ceiling is the integration of condition-1007 
+matched quantitative Ribo-seq and parallel proteomics data from the same biological sample, along 1008 
+with homology-aware cross-validation and explicit modelling of protein abundance, as provided by 1009 
+emerging reference datasets such as those of Chothani et al. [2] and Wacholder et al. [4], which 1010 
+would furnish condition-resolved training labels that sequence-level features cannot fully substitute. 1011 
+A near-term priority is external validation of the ESM2-LR model on independent ncORF datasets, 1012 
+such as the expanded translated ORF catalogue of Chothani et al. [2] or the community 1013 
+benchmarking dataset of Wacholder et al. [4], which would establish whether the i dentified 1014 
+associated factors generalise beyond the GENCODE v42 training context. Future ncORF databases 1015 
+could consider including a detectability score to guide experimental prioritisation, pending external 1016 
+validation and correction of the scaling inconsistency between feature streams. 1017 
+More broadly, the finding that sustained translation, evolutionary selection for ORF s tructural 1018 
+competence, and peptide physicochemistry amenable to immune surveillance are statistically 1019 
+associated with MS repository detectability is consistent with the TransCOD E Consortium’s 1020 
+observation [1] that the immunopeptidomics-detectable and MS proteomics-detectable layers of the 1021 
+non-canonical proteome are enriched for the same biologically real and funct ionally constrained 1022 
+microproteins. This convergence reinforces the emerging view [1,7,22] that immunopeptido mics 1023 
+databases are an underexploited resource for standard LC-MS/MS proteomics of ncORFs, and that 1024 
