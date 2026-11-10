@@ -1,0 +1,132 @@
+{
+  "stem": "2026-11-10",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Container shipping",
+        "title": "Container fleet heads for 50m TEU",
+        "detail": "Global containership capacity by 2030",
+        "source": "Sea-Intelligence"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Fleet today",
+        "value": 34,
+        "label": "million TEU of capacity",
+        "source": "Sea-Intelligence"
+      }
+    },
+    {
+      "line": 1,
+      "at": "forty million",
+      "template": "bars",
+      "props": {
+        "kicker": "Fleet, million TEU",
+        "title": "Capacity on course to grow",
+        "items": [
+          {
+            "label": "Today",
+            "value": 34
+          },
+          {
+            "label": "Q2 2028",
+            "value": 40
+          },
+          {
+            "label": "2030",
+            "value": 50,
+            "highlight": true
+          }
+        ],
+        "source": "Sea-Intelligence"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "By 2030",
+        "value": 50,
+        "label": "million TEU, towards",
+        "source": "Sea-Intelligence"
+      }
+    },
+    {
+      "line": 2,
+      "at": "severe oversupply",
+      "template": "headline",
+      "props": {
+        "kicker": "The warning",
+        "title": "Potentially severe oversupply",
+        "source": "Splash247"
+      }
+    },
+    {
+      "line": 3,
+      "template": "takeaway",
+      "props": {
+        "kicker": "What it means",
+        "text": "Heavy downward pressure on freight rates"
+      }
+    },
+    {
+      "line": 3,
+      "at": "half again as large",
+      "template": "headline",
+      "props": {
+        "kicker": "Within four years",
+        "title": "A fleet half again as large",
+        "source": "Sea-Intelligence"
+      }
+    },
+    {
+      "line": 3,
+      "at": "bargaining power",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Power shift",
+        "text": "Bargaining power moves to shippers"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "2027 ocean tenders",
+        "items": [
+          {
+            "label": "Shorter terms",
+            "say": "shorter terms"
+          },
+          {
+            "label": "Index-linked rates",
+            "say": "index-linked rates"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "locking in",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Don't lock in today's rates for long"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Container Freight Rates: Fleet Heads for 50m TEU",
+  "week": "2026-W46",
+  "run_date": "2026-11-10",
+  "brief_file": "news-brief-daily-2026-11-10.md",
+  "target_runtime_sec": 219,
+  "word_count": 657,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-10-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "The world's container fleet is on course to grow by about half in four years, and that puts freight rates under heavy pressure."
+        },
+        {
+          "speaker": "M",
+          "text": "That's a lot of new slots chasing your cargo. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-10-01",
+        "2026-11-10-02",
+        "2026-11-10-03",
+        "2026-11-10-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Tuesday the tenth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, a container fleet growing by half, a weekend of fire around Hormuz, Danish grocers checking their freezers for hackers, and Black Sea war-risk cover at a fifth of a ship's value."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-10-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "New analysis from the Danish consultancy Sea-Intelligence has the global containership fleet growing from about thirty-four million twenty-foot equivalent units, or T E U, today to forty million by the second quarter of twenty twenty-eight."
+        },
+        {
+          "speaker": "M",
+          "text": "And towards fifty million by twenty thirty, which is roughly half again as much capacity as is sailing today."
+        },
+        {
+          "speaker": "F",
+          "text": "Splash247 reports the analysis warns of a potentially severe oversupply, and of heavy downward pressure on freight rates."
+        },
+        {
+          "speaker": "M",
+          "text": "Growth on that scale shifts bargaining power to shippers, and the twenty twenty-seven ocean tenders are where it shows up first."
+        },
+        {
+          "speaker": "F",
+          "text": "The real choice in those tenders is how long you lock in today's rates."
+        },
+        {
+          "speaker": "M",
+          "text": "Our view is to favour shorter terms or index-linked rates, rather than fixing today's levels for a long stretch."
+        },
+        {
+          "speaker": "F",
+          "text": "A long fixed rate signed this winter could look expensive if the fleet really is half again as large within four years."
+        },
+        {
+          "speaker": "M",
+          "text": "Check which of your lanes run on multi-year fixed deals, and which of those come up in the next round, before you sign anything new."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-10-02",
+        "2026-11-10-03",
+        "2026-11-10-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Over to the Gulf, where Splash247 reports an extraordinary escalation around the Strait of Hormuz in the seventy-two hours to Monday morning."
+        },
+        {
+          "speaker": "M",
+          "text": "Tankers were set ablaze, the U S military bombed a bulk carrier on Saturday, and Iran issued fresh warnings about naval mines."
+        },
+        {
+          "speaker": "F",
+          "text": "Explosions were also reported along Iran's southern coast, on top of a tally that was already high."
+        },
+        {
+          "speaker": "M",
+          "text": "As of the first of November, the Joint Maritime Information Center had recorded eighteen confirmed attacks in the strait since the sixth of October, with about four hundred and ninety vessels waiting outside, gCaptain reported."
+        },
+        {
+          "speaker": "F",
+          "text": "The Gulf lanes are going from slow to unpredictable, and that's harder to plan around than a steady delay."
+        },
+        {
+          "speaker": "M",
+          "text": "If you buy petrochemicals, polymers or fuel-linked inputs via the Gulf, build longer safety lead times and name an alternative supplier in your first-quarter plans."
+        },
+        {
+          "speaker": "F",
+          "text": "In Denmark, store chains have asked their suppliers to review the security of their cooling systems, after a wave of cyberattacks on supermarket refrigeration across Europe, S C M dot D K reports."
+        },
+        {
+          "speaker": "M",
+          "text": "Earlier attacks made freezers heat up in stores in Belgium, Luxembourg, Sweden, Ireland, the Netherlands, Estonia and Finland, including ICA and Coop sites in Sweden."
+        },
+        {
+          "speaker": "F",
+          "text": "The Danish Agency for Societal Safety warns that similar attacks could hit Denmark."
+        },
+        {
+          "speaker": "M",
+          "text": "On the fifth of November two pro-Russian hacker groups claimed responsibility, which the agency said it could neither confirm nor rule out."
+        },
+        {
+          "speaker": "F",
+          "text": "When connected cooling equipment can be switched off remotely, the cold chain has a failure mode that most continuity plans don't cover."
+        },
+        {
+          "speaker": "M",
+          "text": "Put a cyber scenario next to the power-cut scenario in your cold-chain plan, including how fast you can move stock to unaffected sites."
+        },
+        {
+          "speaker": "F",
+          "text": "The Black Sea had another violent weekend, with Russia's defence ministry claiming fresh strikes on merchant ships."
+        },
+        {
+          "speaker": "M",
+          "text": "Human remains were found aboard a damaged tanker in Bulgaria, and Splash247 reports war-risk insurance premiums have reached twenty percent of a ship's hull value."
+        },
+        {
+          "speaker": "F",
+          "text": "At that price many owners will simply stop calling at Black Sea ports."
+        },
+        {
+          "speaker": "M",
+          "text": "Plan grain, steel and fertiliser flows out of the region with fewer sailings and higher landed costs, and don't treat it as a short blip."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-10-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Tuesday, and keep an eye on the Gulf this week."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with the next desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Container Fleet Heads for 50m TEU by 2030",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "The world's container fleet is heading for fifty million T E U."
+      },
+      {
+        "speaker": "M",
+        "text": "That's up from about thirty-four million twenty-foot equivalent units today, with forty million expected by the second quarter of twenty twenty-eight, according to Danish consultancy Sea-Intelligence."
+      },
+      {
+        "speaker": "F",
+        "text": "It's heading towards fifty million by twenty thirty, and Splash247 reports the analysis warns of a potentially severe oversupply."
+      },
+      {
+        "speaker": "M",
+        "text": "That means heavy downward pressure on freight rates, and a fleet half again as large within four years shifts bargaining power to shippers."
+      },
+      {
+        "speaker": "F",
+        "text": "If you're running twenty twenty-seven ocean tenders, favour shorter terms or index-linked rates over locking in today's levels for long."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Container shipping: Sea-Intelligence sees the global containership fleet growing from about 34m TEU today to 40m TEU by Q2 2028 and towards 50m TEU by 2030, warning of potentially severe oversupply and heavy downward pressure on freight rates. Shippers heading into 2027 ocean tenders should favour shorter terms or index-linked rates. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "logistics",
+      "containershipping",
+      "freightrates"
+    ]
+  },
+  "linkedin": {
+    "page_post": "A container fleet heading for 50m TEU by 2030 hands bargaining power to shippers in the 2027 tender round.\n\nDanish consultancy Sea-Intelligence sees the global containership fleet growing from about 34m TEU today to 40m TEU by Q2 2028 and towards 50m TEU by 2030. Splash247 reports the analysis warns of a potentially severe oversupply and heavy downward pressure on freight rates.\n\nIf you're tendering 2027 ocean contracts, favour shorter terms or index-linked rates over locking in today's levels for long.\n\nAlso on today's desk:\nTankers burned and the US military bombed a bulk carrier around Hormuz over the weekend, as Iran warned of naval mines.\nDanish grocers are asking suppliers to check cooling-system security after cyberattacks heated up freezers across Europe.\n\nHow many of your 2027 ocean lanes are still set to run on a fixed rate for longer than a year?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #logistics #containershipping",
+    "tags": [
+      "Sea-Intelligence",
+      "Splash247"
+    ]
+  },
+  "show_notes": {
+    "summary": "Container shipping: Sea-Intelligence sees the global fleet growing from 34m TEU to around 50m TEU by 2030, with heavy pressure on freight rates. Also: a weekend of escalation around the Strait of Hormuz, Danish retailers checking supplier refrigeration security after European freezer cyberattacks, and Black Sea war-risk premiums at 20% of hull value.",
+    "sources": [
+      {
+        "title": "Splash247: Record supply growth pushes container fleet towards 50m teu by 2030",
+        "url": "https://splash247.com/record-supply-growth-pushes-container-fleet-towards-50m-teu-by-2030/"
+      },
+      {
+        "title": "Splash247: Hormuz suffers weekend of fire",
+        "url": "https://splash247.com/hormuz-suffers-weekend-of-fire/"
+      },
+      {
+        "title": "gCaptain: New wave of attacks hits tankers and LNG carrier in Strait of Hormuz and Persian Gulf",
+        "url": "https://gcaptain.com/new-wave-of-attacks-hits-tankers-and-lng-carrier-in-strait-of-hormuz-and-persian-gulf/"
+      },
+      {
+        "title": "SCM.dk: Cyberangreb mod kølesystemer truer forsyningskæder i Europa",
+        "url": "https://www.scm.dk/cyberangreb-mod-kolesystemer-truer-forsyningskaeder-i-europa"
+      },
+      {
+        "title": "Styrelsen for Samfundssikkerhed via Ritzau: Pro-russiske hackergrupper tager ansvar for cyberangreb",
+        "url": "https://via.ritzau.dk/pressemeddelelse/15271704/styrelsen-for-samfundssikkerhed-er-opmaerksom-pa-at-pro-russiske-hackergrupper-tager-ansvar-for-cyberangreb"
+      },
+      {
+        "title": "Splash247: Black Sea shipping reels from fresh attacks and record insurance costs",
+        "url": "https://splash247.com/black-sea-shipping-reels-from-fresh-attacks-and-record-insurance-costs/"
+      }
+    ]
+  }
+}
