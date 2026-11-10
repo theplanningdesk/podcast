@@ -63,6 +63,14 @@ SKIP_PUBLISHERS = ("mdpi",)  # uneven peer review; the show wants authority
 # Vendor and employer names: their papers are marketing, and the show stays clear of them.
 SKIP_AFFILIATIONS = ("optilon", "toolsgroup", "o9 solutions", "kinaxis", "blue yonder", "relex", "slimstock",
                      "sap se", "oracle", "anaplan", "logility", "e2open", "optilogic", "coupa", "llamasoft")
+# A paper must be about supply chains: two distinct domain terms in title and abstract, one in the title.
+DOMAIN = ("supply chain", "inventor", "forecast", "demand planning", "production planning", "scheduling", "lot siz",
+          "logistic", "warehous", "distribution network", "distribution center", "distribution centre", "procurement",
+          "sourcing", "s&op", "sales and operations", "integrated business planning", "bullwhip", "safety stock",
+          "facility location", "network design", "manufactur", "replenish", "spare part", "capacity planning",
+          "master planning", "aggregate planning", "order fulfil", "lead time", "supplier", "retail")
+SKIP_TITLE = ("sap ", "sap-", "kinaxis", "o9 ", "blue yonder", "oracle", "anaplan", "relex", "toolsgroup", "optilon")
+SKIP_VENUES = ("zenodo",)
 PRACTICE = ("case study", "case company", "industrial", "real-world", "real world", "empirical", "field", "practitioner",
             "company data", "retailer", "manufacturer", "we collaborate", "implementation", "sweden", "swedish", "germany",
             "german", "norway", "denmark", "finland", "austria", "switzerland")
@@ -162,7 +170,12 @@ def keep(p: dict, used: set[str]) -> bool:
         return False
     if not p["abstract"] or len(p["abstract"]) < 400:
         return False
-    if any(x in p["publisher"].lower() for x in SKIP_PUBLISHERS):
+    if any(x in p["publisher"].lower() for x in SKIP_PUBLISHERS) or any(x in p["venue"].lower() for x in SKIP_VENUES):
+        return False
+    title, hay = p["title"].lower(), (p["title"] + " " + p["abstract"]).lower()
+    if any(x in title + " " for x in SKIP_TITLE):
+        return False
+    if not any(d in title for d in DOMAIN) or len({d for d in DOMAIN if d in hay}) < 2:
         return False
     aff = " ".join(p["institutions"]).lower()
     if any(x in aff for x in SKIP_AFFILIATIONS):
