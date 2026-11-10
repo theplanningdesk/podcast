@@ -1,0 +1,1272 @@
+TITLE: Impact of privacy-preserving horizontal retailer information sharing on the bullwhip effect in supply chains with multiple retailers
+AUTHORS: Martin Hrušovský, Emel Arıkan, Lena Silbermayr
+VENUE: International Journal of Production Economics (2026-11-02)
+DOI: https://doi.org/10.1016/j.ijpe.2026.110258
+LICENCE: cc-by
+LINK: https://doi.org/10.1016/j.ijpe.2026.110258
+
+Journal Pre-proof
+Impact of privacy-preserving horizontal retailer information sharing on
+the bullwhip effect in supply chains with multiple retailers
+Martin Hrušovský, Emel Arikan, Lena Silbermayr
+PII: S0925-5273(26)00349-X
+DOI: https://doi.org/10.1016/j.ijpe.2026.110258
+Reference: PROECO 110258
+To appear in: International Journal of Production Economics
+Received date : 23 February 2026
+Revised date : 14 September 2026
+Accepted date : 27 October 2026
+Please cite this article as: M. Hrušovský, E. Arikan and L. Silbermayr, Impact of
+privacy-preserving horizontal retailer information sharing on the bullwhip effect in supply chains
+with multiple retailers. International Journal of Production Economics (2026), doi:
+https://doi.org/10.1016/j.ijpe.2026.110258.
+This is a PDF of an article that has undergone enhancements after acceptance, such as the addition
+of a cover page and metadata, and formatting for readability. This version will undergo additional
+copyediting, typesetting and review before it is published in its final form. As such, this version is
+no longer the Accepted Manuscript, but it is not yet the definitive Version of Record; we are providing
+this early version to give early visibility of the article. Please note that Elsevier’s sharing policy for
+the Published Journal Article applies to this version, see: https://www.elsevier.com/about/policies-
+and-standards/sharing#4-published-journal-article. Please also note that, during the production pro-
+cess, errors may be discovered which could affect the content, and all legal disclaimers that apply to
+the journal pertain.
+© 2026 Published by Elsevier B.V .
+Journal Pre-proof
+Journal Pre-proof
+Impact of privacy-preserving horizontal retailer information 
+sharing on the bullwhip effect in supply chains with multiple 
+retailers 
+Martin Hrušovskýa∗, Emel Arikana and Lena Silbermayra 
+ 
+aInstitute for Production Management, WU Vienna University of Economics and Business, Welthandelsplatz 1, 
+Vienna 1020, Austria 
+*Corresponding author 
+ 
+E-Mails: 
+Martin Hrušovský: martin.hrusovsky@wu.ac.at 
+Emel Arikan: emel.arikan@wu.ac.at 
+Lena Silbermayr: lena.silbermayr@wu.ac.at 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Title page with author details
+Journal Pre-proof
+Journal Pre-proof
+Impactofprivacy-preservinghorizontalretailerinformationsharing
+on the bullwhip effect in supply chains with multiple retailers
+ARTICLE INFO
+Keywords:
+multi-echelon supply chain
+bullwhip effect
+information sharing
+ABSTRACT
+Experiences from real-world supply chains as well as exhaustive research show that the lack of
+coordinationwithinsupplychainsleadstobullwhipeffect,inwhichthemagnitudeoffluctuations
+inordersincreasesintheupstreamdirectionfromretailertothesupplier.Onepotentialsolution
+for addressing this phenomenon is information sharing between supply chain actors that can
+reducetheimpactoffluctuationsincustomerdemandonthesupplychain.However,sharingtoo
+much information might lead to higher vulnerability of stakeholders in negotiations with their
+partners or to an unwanted leakage of information to competitors. Therefore, relevant actors are
+often reluctant to share the necessary information.
+To overcome these problems, we propose a horizontal information sharing model where
+retailers share demand information in form of average values between each other without
+revealing the exact values of each individual partner. This could be achieved by, e.g., applying
+costly cryptographic methods. Therefore, we evaluate the potential effects of this type of
+informationsharingonthewholesupplychainbydevelopingasimulationmodelrepresentinga
+4-echelonsupplychain,whichconsistsofmultiplecustomers,eachservedbytheirownretailer,
+one wholesaler, one manufacturer and one supplier. We investigate the effect of horizontal
+information sharing of average customer demand among the retailers on the bullwhip effect
+and show its effects on the different supply chain actors. In addition, the influences of demand
+variability and demand correlations between customers, different forecasting methods, safety
+stock approaches, stochastic lead times and the number of retailers sharing the information on
+the bullwhip effect are analyzed.
+1. Introduction
+Supply chains (SCs) are complex structures that connect multiple companies responsible for delivering products
+and services to end customers. Effective coordination and information sharing across these actors are widely seen as
+keyenablersofresponsiveandresilientSCs.Yet,firmsareoftenreluctanttoshareoperationaldata,especiallydetailed
+demand information, because they fear losing bargaining power, exposing cost structures, or violating confidentiality
+constraints (Sahai, Singh and Dayama, 2020). These frictions can contribute to well-known SC distortions, most
+prominently the bullwhip effect (Dejonckheere, Disney, Lambrecht and Towill, 2004).
+Lee,PadmanabhanandWhang(1997)describethebullwhipeffectasthephenomenonwhereorderstothesupplier
+exhibit larger variance than sales to the buyer and this variance amplification propagates upstream. One operational
+driveristhatretailersandupstreampartnersrelyonforecastsformedfromnoisylocaldemandsignals.Whenaretailer
+experiences a temporary demand surge, she may interpret it as a lasting trend, adjust her forecast upward, and place
+a large order; if other echelons do not see the underlying customer demand, the resulting order variability can be
+amplified as it travels upstream Lee et al. (1997).
+Anaturalresponseistoenrichtheinformationavailableforforecasting.Classicalverticalinformationsharing,such
+as passing point-of-sale (POS) data or inventory positions upstream, has been shown to mitigate the bullwhip effect
+in many settings (Cannella and Ciancimino, 2010; Croson and Donohue, 2003; Chen, Drezner, Ryan and Simchi-
+Levi, 2000a). At the same time, modern SCs often involve multiple retailers operating at the same echelon who face
+related, but not identical, demand processes and who may compete in overlapping markets. In such multi-retailer
+environments, there is potential value in exploiting horizontal information sharing at the retailer level: retailers might
+improve their forecasts by conditioning not only on their own customer demand, but also on an aggregate signal that
+reflects broader market conditions. Such horizontal information sharing between multiple participants at the same SC
+echelon was partially investigated especially in game-theoretic contexts, where the positive effects of such strategies
+ontheparticipatingactorscouldbeshown(Shi,Zhou,Wang,XuandXiong,2014;Lei,Liu,Deng,HuangandLeong,
+2014).However,competitiveconcernsandregulatoryconstraints(e.g.,antitrustrulesonsensitivedataexchange)make
+ORCID(s):
+: Preprint submitted to Elsevier Page 1 of 25
+Revised manuscript without author details (unmarked)
+ Click here to view linked References
+Journal Pre-proof
+Journal Pre-proof
+it unlikely that retailers will willingly disclose detailed demand histories to one another. As an alternative, sharing at
+least partial demand signal in form of average market demand while keeping the own data private could contribute
+to mitigation of the bullwhip effect. This is now in principle possible due to recent advances in privacy-preserving
+computation, using methods such as secure multi-party computation (SMPC) and homomorphic encryption (HE)
+(Cramer, Damgård et al., 2015; Paillier, 1999; Acar, Aksu, Uluagac and Conti, 2018). Since the implementation of
+these methods can be costly, in this paper we investigate the potential benefits that the horizontal information sharing
+of average demand information, enabled by, e.g., these methods, might bring for different SC echelons.
+The analysis is based on a four-echelon SC with multiple retailers. In particular, we consider a supplier -
+manufacturer-wholesaler-retailerstructureinwhicheachretailerservesadistinctcustomerandallechelonsoperate
+underanorder-up-to(OUT)policy.BuildingonasimulationmodelimplementedinAnyLogic,wecompareabaseline
+scenario where each retailer forecasts demand using only its own customer data to a horizontal information sharing
+scenario where retailers additionally observe and exploit the average customer demand across all retailers. We then
+systematically vary key features of the environment - demand variability and correlation, forecasting method, safety-
+stock approach, lead time uncertainty and the number of retailers participating in information sharing - to understand
+when and for whom the average demand signal is beneficial.
+Our analysis addresses the following research questions:
+RQ1: How does horizontal information sharing of average customer demand among multiple retailers affect order
+andinventoryvariability(bullwhipeffectandinventoryvariance)aswellasservicelevelsandcostsatdifferentechelons
+of a multi-echelon SC?
+RQ2: What are benefits and risks of horizontal information sharing and how do demand variability, demand
+correlation, forecasting methods, safety stock approaches, stochastic lead times and number of retailers sharing the
+information shape its operational impact?
+By answering these questions, we make three main contributions. First, we quantify the operational impact of
+a privacy-preserving horizontal information sharing scheme based on average customer demand in a multi-retailer,
+multi-echelon SC, extending prior work primarily focused on vertical information sharing or single-retailer settings.
+Second,weshowhowthevalueofthesharedaveragesignaldependsondemandcharacteristics,forecastingmethods,
+safety-stock approaches, and lead time uncertainty and how it redistributes variability and costs between retailers and
+upstream actors. Third, our findings can serve as an input for the design and potential cost–benefit assessment of
+cryptographic implementations that could operationalise such average-demand sharing in practice.
+The remainder of this paper is organised as follows. Section 2 reviews the relevant literature on bullwhip effect,
+information sharing in multi-echelon and multi-retailer SCs, and cryptographic approaches to data sharing. Section 3
+presentstheSCmodel,includingthebaselineandhorizontalinformationsharing,performancemeasuresandnecessary
+modeladaptationsforanalysingthedifferentconsideredinfluencingfactors.Section4reportsthecomputationalresults
+for different parameter settings. Section 5 summarizes the managerial implications and Section 6 concludes the paper
+presenting also avenues for future research.
+2. Literature review
+Our work builds on two streams of literature: (i) studies of the bullwhip effect and information sharing in SCs and
+(ii) models of multi-echelon SCs with multiple retailers and partial information sharing.
+The bullwhip effect has been extensively studied in operations and supply chain management. Lee et al. (1997)
+formalise the phenomenon of variance amplification as orders propagate upstream and identify operational drivers
+such as demand-signal processing, order batching, price fluctuations, and rationing–gaming. Subsequent analytical
+and simulation studies have quantified how forecasting methods, lead times, and information availability shape the
+bullwhip effect in serial SCs. Chen et al. (2000a) and Chen, Ryan and Simchi-Levi (2000b) analyse the impact of
+moving-average and exponential-smoothing forecasts; Dejonckheere et al. (2004) explore information enrichment
+from a control-theoretic perspective; Chatfield, Kim, Harrison and Hayya (2004) examine stochastic lead times and
+information quality.
+A large part of literature deals with vertical information sharing, especially sharing downstream POS data or
+inventory information with upstream echelons. Experimental work by Croson and Donohue (2003) highlights that
+POS data sharing can reduce order oscillations and improve performance in the Beer game setting. Simulation and
+analyticalstudies(e.g.,CannellaandCiancimino(2010),Constantino,DiGravio,ShabanandTronci(2014))showthat
+: Preprint submitted to Elsevier Page 2 of 25
+Journal Pre-proof
+Journal Pre-proof
+coordinated inventory policies and richer demand visibility can significantly mitigate bullwhip and improve service
+levels in multi-echelon SCs.
+Real-world SCs often exhibit network structures with multiple retailers sourcing from shared upstream facilities.
+Several studies analysed how this structure interacts with demand pooling, correlation, and information sharing. For
+multi-retailer SCs, Cachon (1999) proposes a model with one supplier and multiple retailers with stochastic demands
+and finds that reducing supplier demand variance with scheduled ordering policies can lower SC costs. Cachon and
+Fisher(2000)lookattheoptionsofsharingdemandandinventorydatabetweenretailersandsupplierandcompareitto
+cuttingleadtimesandbatchsizes.Theyconcludethatinformationsharinghaspositiveeffects,butthesearelowerthan
+thosecomingfromcuttingleadtimesandbatchsizes.Lau,HuangandMak(2004)investigatetheimpactofinformation
+sharingondifferentechelonsina3-echelonSCandconcludethatsharinginformationbetweendownstreamactors(i.e.
+retailers and distributors) has a higher positive impact than sharing information on upstream echelons.
+The interaction of risk pooling and bullwhip effect in multi-retailer settings has also received attention. Khos-
+roshahi, Husseini and Marjani (2016) discuss the bullwhip effect for a 3-echelon SC varying the number of retailers.
+Sucky (2009) study risk pooling in a 3-echelon SC with two retailers, correlated demand and zero lead time. They
+show that both order and demand variance of the wholesaler decrease as the correlation coefficient decreases.
+Raghunathan (2003) analyses the impact of demand correlation across retailers on manufacturer surplus in a setting
+withmultipleretailersandonemanufacturer.Heconcludesthatverticaldemandinformationsharingbetweenretailers
+and manufacturer has the highest positive effect in case of negatively correlated or uncorrelated demand. Yin (2021)
+discussestheimpactofcorrelationbetweenmultipleretailersmodeledviadifferentcopulassourcingfromonesupplier
+on the bullwhip effect through simulation. They conclude that the selection of copula distribution has an influence on
+the bullwhip effect.
+Several papers consider partial or selective information sharing in multi-retailer environments. Huang and Iravani
+(2005)discussasettingwithonecapacitatedsupplierandtworetailersunderselective-informationandfull-information
+sharingwherethesupplierreceivesinformationfromonlyoneorbothretailersandintroducestheinformationpooling
+effect. Dominguez, Cannella, Barbosa-Póvoa and Framinan (2018a) show that the reduction of the bullwhip effect
+based on partial information sharing, i.e. only some retailers share information with the wholesaler, depends on
+retailers’ operational factors in a 4-echelon SC with multiple heterogeneous retailers. An order variance prioritization
+strategy for the reduction of the bullwhip effect in such SC is proposed in Dominguez, Cannella, Barbosa-Póvoa and
+Framinan (2018b). Whereas all mentioned studies show the positive effects of information sharing, they are mostly
+concerned with vertical information sharing between SC echelons.
+Horizontal sharing of information between actors at the same SC echelon, which is studied in this paper, achieved
+limitedattentionintheliteratureandthestudiesassumedisclosureoffullinformationbetweenallactors.Nagarajaand
+McElroy (2018) examine a multivariate bullwhip effect in a single-retailer, multi-product setting, where forecasts for
+differentproductsarelinked;theyinterpretthisasaformofhorizontalinformationsharingacrossproductsratherthan
+across firms. Since the multiple products belong to a single retailer, the information is fully available and there is no
+need to share information with external firms. Shi et al. (2014) study a game-theoretic setting with one manufacturer
+andtwocompetingsupplierswheresupplierssharecostinformationbetweenthem.Thepapershowsthatbuildingsuch
+coalition has positive effects on the suppliers whereas the manufacturer is worse off. Lei et al. (2014) study demand
+information sharing in a dual-channel SC with multiple retailers and conclude that horizontal information sharing is
+beneficial for retailers and the profit of the manufacturer is not affected. For vertical demand information sharing they
+show that the profits of the retailers actually decrease in this setting. All mentioned studies only consider a 2-echelon
+SC without investigating the influence of the horizontal information sharing on further upstream echelons.
+Overall, this stream shows that both vertical and horizontal information sharing can significantly affect bullwhip
+effect, inventory variability, and service performance in multi-echelon, multi-retailer SCs. However, full horizontal
+informationsharingbetweenindependentretailersmightbeproblematicduetoprivacyandcompetitionconcerns.Still,
+sharingatleastpartialinformationaboutaveragemarketdemandamongtheretailersmighthavesimilareffectsonthe
+whole SC. This partial sharing could be enabled using, e.g. cryptographic techniques, such as SMPC or HE, which
+providewaysforcomputingaggregatevaluesfromprivateinputswithoutrevealingthoseinputs.InanSMPCprotocol,
+multiple actors can jointly compute a function (e.g., a sum or average) in a distributed computing environment while
+their own data stay private and only the final result is revealed to each party (Cramer et al., 2015). HE schemes allow
+arithmetic operations to be performed directly on data encrypted by public key so that the result equals the function
+appliedtotheplaintexts,butcanbeonlydecryptedbytheauthorizeduserposessingtheprivatekey(Acaretal.,2018).
+A detailed overview about these techniques can be found in reviews prepared by Zhao, Zhao, Zhao, Chen, Gao, Li
+: Preprint submitted to Elsevier Page 3 of 25
+Journal Pre-proof
+Journal Pre-proof
+and Tan (2019) or Hellwig and Huchzermeier (2022). Although these techniques enable privacy-preserving sharing
+of aggregated indicators—such as average demand or shared key performance indicators—while keeping firm-level
+or customer-level data confidential, their implementation can be costly in terms of computation, communication, and
+organisational complexity. Therefore, this paper focuses on the potential operational benefits that horizontal sharing
+of average demand information between retailers could bring in order to justify the potential use of these techniques
+in SC information sharing. However, the exact implementation of these systems is out of scope of this paper.
+The literature reviewed above establishes that (i) information enrichment and vertical information sharing can
+mitigate the bullwhip effect in serial and multi-echelon SCs; (ii) networked structures with multiple retailers exhibit
+complex interactions between demand correlation, forecasting, and information sharing; and (iii) horizontal privacy-
+preserving information sharing of partial information could be enabled using cryptographic techniques.
+Yet, there is limited evidence on the operational impact of horizontal information sharing of aggregated demand
+signals among independent retailers in a multi-echelon SC when privacy concerns prevent full demand disclosure.
+Existing multi-retailer and multi-echelon studies either assume full vertical sharing with upstream stages or focus
+on information pooling within a firm (e.g., across products) rather than across competing retailers. To close this
+gap, this paper analyses a 4-echelon SC with multiple retailers in which retailers can access a privacy-preserving
+average customer-demand signal. We quantify how this horizontal information sharing mechanism affects bullwhip
+effect, inventory variance, fill rate and costs across echelons under different demand conditions, forecasting methods,
+safety-stock approaches, lead time uncertainty, and participation levels. In doing so, we provide a bridge between
+the bullwhip and information-sharing literature and emerging work on cryptographic enablers, offering a basis for
+subsequent economic evaluations of privacy-preserving data sharing in multi-retailer SCs.
+3. Supply chain modelling
+ThissectionpresentsthebasicSCmodelwithoutinformationsharingusedforanalysisinSection3.1Themodelis
+based on the work of Constantino et al. (2014) with the extension of the SC to multiple retailers based on Dominguez
+et al. (2018b). In Section 3.2 we describe the extension of the model to share information about the average demand
+of customers horizontally among the retailers. Section 3.3 presents the performance measures which we use to
+compare the basic model with its information-sharing counterpart. Although the basic SC model and its information
+sharing extension applies modelling assumptions that are common in the literature, we also investigate the impact
+of influencing factors including demand variability and correlation, forecasting methods, safety-stock approaches,
+lead time uncertainty and number of participating retailers on the results for both cases without and with information
+sharing. The necessary adaptions of the model for considering these factors are discussed in Section 3.4.
+3.1. Basic model without information sharing
+In general, we consider a 4-echelon SC including one supplier, one manufacturer, one wholesaler and multiple
+retailers, where each retailer is serving a separate customer. As shown in Figure 1, we use four customers and four
+retailers for our analysis, however, the model can be extended to any number of customers and retailers. Each echelon
+is denoted by the superscript𝑖, indicating its position in the SC, where𝑖 = 1 is used for the retailers as the most
+downstreamechelon.Inadditiontothat,weuse 𝑖 = 0 forthecustomers.Thepositionofeachactorinacertainechelon
+𝑖is denoted by the superscript𝑗.
+We use the following modelling assumptions:
+• Flows of goods/information:Each actor receives an order from its immediate downstream partner at echelon
+𝑖 − 1 and delivers goods to this echelon. The demand of the customers is only known by the respective retailers
+and is not shared with other upstream echelons.
+• Inventorypolicy: EachSCactorusestheOUTinventorypolicywhereanorderisplacedtobringtheinventory
+position to the OUT point (Cannella and Ciancimino, 2010; Constantino et al., 2014; Dominguez, Cannella,
+PonteandFraminan,2022).TheOUTpointisadjustedeveryperiodasdemandforecastisadjustedandincludes
+thesafetystockwhichistheexpecteddemandforanumberofbufferperiods.Thesequenceofactivitiesineach
+period𝑡startswithissuinganorder,whichisfollowedbydeliveryofgoodsorderedinpreviousperiodsandthen
+the demand of the period𝑡 is observed and inventory is updated.
+• Forecasting:Replenishmentordersarebasedondemandforecastswhichareupdatedeveryperiodaccordingto
+thesimplemovingaveragesmethod(MA)usingpast 𝑁 demandperiods(see,e.g.Chenetal.(2000a);Chatfield
+: Preprint submitted to Elsevier Page 4 of 25
+Journal Pre-proof
+Journal Pre-proof
+Retailer
+11
+Wholesaler
+21
+Manufacturer
+31
+Supplier
+41
+Customer
+01
+𝑂𝑡 31
+Retailer
+12
+Retailer
+13
+Retailer
+14
+Customer
+02
+Customer
+04
+Customer
+03
+𝑂𝑡 21
+𝑂𝑡 11
+𝑂𝑡 14
+𝑂𝑡 13
+𝑂𝑡 12
+𝐷𝑡 01
+𝐷𝑡 02
+𝐷𝑡 04
+𝐷𝑡 03
+𝐷𝐿𝑡−𝐿 31 𝐷𝐿𝑡−𝐿 21
+𝐷𝐿𝑡−𝐿 11
+𝐷𝐿𝑡−𝐿 13
+𝐷𝐿𝑡−𝐿 12
+𝐷𝐿𝑡−𝐿 14
+𝐷𝐿𝑡 01
+𝐷𝐿𝑡 04
+𝐷𝐿𝑡 03
+𝐷𝐿𝑡 02
+Goods flow
+Information flow
+Figure 1: SC structure with four retailers and four customers
+etal.(2004);Constantinoetal.(2014);Dominguezetal.(2018b);Ojha,Sahin,ShockleyandSridharan(2019)).
+Further in the analysis, this method is compared with simple exponential smoothing (see Section 3.4.2).
+• Customer demands:In the initial setting discussed in Section 4.2, demands are stochastic, independent and
+identically distributed following a Gamma distribution with identical mean and standard deviation for each
+customer. The advantage of Gamma distribution compared to the commonly used Normal distribution is its
+possibility to consider higher demand variabilities that are used in our analysis (Tyworth, Guo and Ganeshan,
+1996;Sari,2007)asdiscussedinSections3.4.1and4.2.Sincethecorrelationbetweendemandsoftheindividual
+customers is another important factor, this is also considered as one of the influencing factors and discussed in
+Section 3.4.1.
+• Capacity:There are no restrictions regarding the production capacity and the supplier can deliver any quantity
+ordered by the manufacturer. Also the transport capacities between echelons and warehouse capacities at each
+echelonareunlimited.Thisassumptioniscommonlyusedtoreducethecomplexityoftheanalysisconcentrating
+on the impact of demand information sharing (see, e.g., Wilson (2007); Constantino et al. (2014); Dominguez
+et al. (2022)).
+• Backlogs:If theorder cannot besatisfied immediately, the unsatisfiedpart becomes backloggedand is satisfied
+as soon as new goods are delivered. This is also valid for customers’ demands (Dejonckheere et al., 2004;
+Constantino, Di Gravio, Shaban and Tronci, 2015; Dominguez et al., 2022).
+• Returns:Returns of goods to the upstream echelon due to excess inventory are not allowed (Constantino et al.,
+2014).
+• Safety stock:Safety stock is defined in form of fixed periods of demand forecast that are added to the demand
+during lead time (Dejonckheere et al., 2004; Constantino et al., 2014). Since this assumption might influence
+the effect of information sharing, safety stock in form of service levels is also considered as discussed in
+Section 3.4.3.
+• Lead times:Lead time represents the time between the receipt of the order and the delivery of the goods. In
+theinitialsetting,leadtimesaredeterministicandequalforeachechelonwithintheSCexceptforthecustomer,
+wherethedemandissatisfiedimmediately(Dejonckheereetal.,2004;Constantinoetal.,2014,2015).Inaddition
+to that, we also consider stochastic lead times as influencing factor, as discussed in Section 3.4.4.
+• Fulfillment of retailers’ orders by the wholesaler:In each period the wholesaler receives orders from all
+retailers and fulfills them based on the share of the order on the total ordered quantity in that period. If there
+are backlogs from the previous period, first the backlogs are satisfied according to the share of backlogs of each
+individual retailer on the total backlogs and only then new demand is served if there is still inventory left.
+The indices and variables used in the model are summarized in Table 1.
+: Preprint submitted to Elsevier Page 5 of 25
+Journal Pre-proof
+Journal Pre-proof
+𝐼 set of echelons within the SC (excluding customers)
+𝐽𝑖 set of actors on the echelon𝑖
+𝑇 set of time periods
+𝐷0𝑗 𝑡 Demand of customer𝑗 in period𝑡
+𝐿 Lead time in periods
+𝑁 Number of periods taken for the moving average forecasting model
+𝑅 Number of demand periods used as safety stock
+𝐵𝑖𝑗 𝑡 Backlogs at actor𝑗 on echelon𝑖 in period𝑡 ̂𝐷𝑖𝑗 𝑡 Demand forecast by actor𝑗 on echelon𝑖 in period𝑡
+𝐷𝐿𝑖𝑗 𝑡 Goods outgoing to actor𝑗 on echelon𝑖 by the actor on upstream echelon in period𝑡 to be
+delivered in period𝑡 +𝐿
+𝐺𝑂𝑖𝑗 𝑡 On-order inventory of actor𝑗 on echelon𝑖 in period𝑡
+𝐼𝑖𝑗 𝑡 On-hand inventory of actor𝑗 on echelon𝑖 at the end of period𝑡
+𝐼𝐿𝑖𝑗 𝑡 Inventory level of actor𝑗 on echelon𝑖 at the end of period𝑡
+𝐼𝑃 𝑖𝑗 𝑡 Inventory position of actor𝑗 on echelon𝑖 at the end of period𝑡
+𝑂𝑖𝑗 𝑡 Order of actor𝑗 on echelon𝑖 in period𝑡
+𝑆𝑖𝑗 𝑡 OUT point for actor𝑗 on echelon𝑖 in period𝑡
+𝛼𝑡 fraction of retailer’s backlogs satisfied in period𝑡
+𝛽𝑡 fraction of retailer’s orders satisfied in period𝑡
+Table 1
+Sets, parameters and variables of the mathematical model
+Themathematicalmodeldescribingchangesofvariablesineachperiod 𝑡issummarizedinthefollowingequations:
+̂𝐷1𝑗 𝑡 = 1 𝑁
+𝑁∑
+𝑘=1
+𝐷0𝑗 𝑡−𝑘 ∀𝑗 ∈𝐽1 (1)
+̂𝐷21 𝑡 = 1 𝑁
+𝑁∑
+𝑘=1
+∑
+𝑗∈𝐽1
+𝑂1𝑗 𝑡−𝑘 (2)
+̂𝐷𝑖1 𝑡 = 1 𝑁
+𝑁∑
+𝑘=1
+𝑂𝑖−1,𝑗 𝑡−𝑘 for 𝑖 = 3, 4 (3)
+𝑆𝑖𝑗 𝑡 = (𝐿 + 1 +𝑅) ̂𝐷𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (4)
+𝑂𝑖𝑗 𝑡 =𝑚𝑎𝑥(𝑆𝑖𝑗 𝑡 −𝐼𝑃𝑖𝑗 𝑡−1; 0) ∀ 𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (5)
+𝐷𝐿0𝑗 𝑡 =𝑚𝑖𝑛(𝐵0𝑗 𝑡−1 +𝐷0𝑗 𝑡 ;𝐼 1𝑗 𝑡−1 +𝐷𝐿1𝑗 𝑡−𝐿) ∀ 𝑗 ∈𝐽0 (6)
+𝛼𝑡 =𝑚𝑖𝑛
+⎛
+⎜
+⎜⎝
+𝐼 21 𝑡−1 +𝐷𝐿21 𝑡−𝐿
+∑
+𝑗∈𝐽1 𝐵1𝑗 𝑡−1 ; 1
+⎞
+⎟
+⎟⎠ (7)
+: Preprint submitted to Elsevier Page 6 of 25
+Journal Pre-proof
+Journal Pre-proof
+𝛽𝑡 =𝑚𝑖𝑛
+⎛
+⎜
+⎜⎝
+𝐼 21 𝑡−1 +𝐷𝐿21 𝑡−𝐿 −𝛼 ∑ 𝑗∈𝐽1 𝐵1𝑗 𝑡−1
+∑
+𝑗∈𝐽1 𝑂1𝑗 𝑡 ; 1
+⎞
+⎟
+⎟⎠ (8)
+𝐷𝐿1𝑗 𝑡 =𝛼𝑡𝐵1𝑗 𝑡−1 +𝛽𝑡𝑂1𝑗 𝑡 ∀𝑗 ∈𝐽1 (9)
+𝐷𝐿𝑖1 𝑡 =𝑚𝑖𝑛(𝐵𝑖1 𝑡−1 +𝑂𝑖1 𝑡 ;𝐼𝑖+1,1 𝑡−1 +𝐷𝐿𝑖+1,1 𝑡−𝐿 ) 𝑓𝑜𝑟 𝑖 = 2, 3 (10)
+𝐷𝐿41 𝑡 =𝑂41 𝑡 (11)
+𝐵𝑖𝑗 𝑡 =𝑚𝑎𝑥(𝐵𝑖𝑗 𝑡−1 +𝑂𝑖𝑗 𝑡 −𝐷𝐿𝑖𝑗 𝑡 ; 0) ∀ 𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (12)
+𝐵0𝑗 𝑡 =𝑚𝑎𝑥(𝐵0𝑗 𝑡−1 +𝐷0𝑗 𝑡 −𝐷𝐿0𝑗 𝑡 ; 0) ∀ 𝑗 ∈𝐽0 (13)
+𝐺𝑂𝑖𝑗 𝑡 =𝐺𝑂𝑖𝑗 𝑡−1 +𝑂𝑖𝑗 𝑡 −𝐷𝐿𝑖𝑗 𝑡−𝐿 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (14)
+𝐼𝑖𝑗 𝑡 =𝐼𝑖𝑗 𝑡−1 +𝐷𝐿𝑖𝑗 𝑡−𝐿 −𝐷𝐿𝑖−1,𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (15)
+𝐼𝐿𝑖𝑗 𝑡 =𝐼𝑖𝑗 𝑡 −𝐵𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (16)
+𝐼𝑃𝑖𝑗 𝑡 =𝐼𝐿𝑖𝑗 𝑡 +𝐺𝑂𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (17)
+At the beginning of each period, each actor has to prepare a demand forecast̂𝐷𝑖𝑗 𝑡 showing the expected demand
+that this actor will face from the downstream echelon. For the retailers, the expected demand is based on customers’
+demand(seeEq.(1)).Incaseofthewholesaler,theforecastisbasedonthesumofordersreceivedfromallretailersas
+shown in Eq. (2). For all other echelons, received orders are the basis for the demand forecast (Eq. (3)). This forecast
+is used for calculating the OUT point𝑆𝑖𝑗 𝑡 that depends on the expected demand during the lead time including one
+review period(𝐿 + 1) due to the fact that the order is placed at the beginning of the period whereas the demand is
+only satisfied at the end of the period. Moreover, additional safety stock periods𝑅 are included, as shown in Eq. (4).
+Afterwards,theorderquantity 𝑂𝑖𝑗 𝑡 iscalculatedasthedifferencebetweentheOUTpointandinventorypositionofthe
+previous period, as shown in Eq. (5). Since returns are not allowed, the order quantity cannot be negative.
+Afterplacingtheorder,eachactorreceivestheinformationaboutthequantityofgoods 𝐷𝐿𝑖𝑗 𝑡 whichwereassigned
+tohimbytheupstreampartner.Forcustomers,thisquantitydependsononehandonthedemandofthecurrentperiod
+andbacklogsfromthepreviousperiods,ontheotherhanditalsodependsontheavailabilityofthegoodsattheretailer,
+which consists of the inventory left from the last period and the goods delivered by the wholesaler, as it is shown
+in Eq. (6). The process of goods assignment for retailers by the wholesaler is defined by Eq. (7)-(9). The delivered
+quantity depends on the total inventory available at the wholesaler. First, the backlogs of all retailers are summed up
+andcomparedtothetotalavailableinventoryinordertocalculate 𝛼,whichshowstheshareofbacklogsthatissatisfied
+: Preprint submitted to Elsevier Page 7 of 25
+Journal Pre-proof
+Journal Pre-proof
+(Eq. (7)). Afterwards, if there is still inventory left, this is compared to the sum of new orders of the retailers in order
+to calculate𝛽 that shows the share of the retailer’s order that will be satisfied (Eq. (8)). The total delivered quantity
+for the retailer consists of the satisfied backlogs and the satisfied order as shown in Eq. (9). The delivery of goods for
+wholesaler and manufacturer is similar to customers, but the demand is replaced by their order quantity as shown in
+Eq. (10). The supplier receives all goods that he orders as his sourcing capacity is unlimited (Eq. (11)). The goods
+which cannot be delivered immediately are recorded as backlogs according to Eq. (12) and Eq. (13).
+Eq. (14)-(17) describe the changes in different inventory levels. Eq. (14) refers to on-order inventory𝐺𝑂𝑖𝑗 𝑡 that
+shows the number of goods which were ordered but not delivered yet. The physically available on-hand inventory𝐼𝑖𝑗 𝑡
+is calculated in Eq. (15). Inventory level𝐼𝐿𝑖𝑗 𝑡 in Eq. (16) represents the on-hand inventory corrected by the backlogs.
+Finally, the inventory position𝐼𝑃𝑖𝑗 𝑡 combining inventory level and on-order inventory is calculated in Eq. (17).
+3.2. Horizontal information sharing
+In the basic model presented in Section 3.1, each retailer can only observe the demand of its own customer, which
+is also the basis for his demand forecast. The wholesaler and other echelons do not have any access to the demand
+information, which leads to bullwhip effect. As an alternative, we model horizontal sharing of information about the
+averagedemandofallcustomersthatcouldbecalculatedusingtheprivacy-preservinginformationsharingtechniques
+discussed in Section 2. This means that in each period each retailer receives the additional information about the
+averagecustomerdemandonthewholemarketforthatperiodcalculatedasthesumofdemandsdividedbythenumber
+of customers without knowing the exact demand of each customer. Sharing this information serves as an additional
+signal for the demand forecasting without the need of revealing the sensitive information about the exact demand of
+eachcustomer.However,sharingaveragedemandofthecustomerswiththeupstreamechelonswouldcorrespondtothe
+verticalsharingoffulldemandinformationdiscussedin,e.g.,Dominguezetal.(2018b),sincetheaveragedemandcan
+beeasily multipliedbythenumber ofcustomerstoobtain thetotaldemand andviceversa.Therefore, weproposeand
+concentrateonthehorizontalinformationsharing,wheretheinformationabouttheaveragedemandofallcustomersis
+made available to each retailer. In this way, the retailer can compare the demand of his customer to the overall market
+development and adjust his demand forecast to reduce its variance. This is done by combining the demand of the own
+customer with the average market demand, as shown in Eq. (18), which replaces Eq. (1) in the basic SC model:
+̂𝐷1𝑗 𝑡 =𝛾
+(
+1
+𝑁
+𝑁∑
+𝑘=1
+𝐷0𝑗 𝑡−𝑘
+)
++ (1 −𝛾)
+(
+1
+𝑁
+𝑁∑
+𝑘=1
+∑
+𝑗∈𝐽0
+𝐷0𝑗 𝑡−𝑘
+|𝐽0|
+)
+∀𝑗 ∈𝐽1, (18)
+where𝛾 is a smoothing factor between 0 and 1 that can be varied to either put more weight on the demand of the
+immediate customer (first part of the equation) or the average demand of all customers (second part of the equation).
+3.3. Performance measures
+The performance of the model and its extensions will be based on three different performance measures that are
+widelyusedintheliteratureandcanbealsofoundinConstantinoetal.(2014),namelyBullwhipEffectRatio(BWE),
+Inventory Variance Ratio (IVR) and Average Fill Rate (AFR). In addition to that, we consider costs as a SC-wide
+performance indicator and we also report the coefficient of variation (CV) for the demand and orders that compares
+the standard deviation𝜎 of demand/order to its mean𝜇:
+𝐶𝑉 = 𝜎 𝜇 (19)
+BWE describes the amplification of the variance between the different echelons, when it compares the variance of
+orders at each echelon𝑖with the variance of customers’ demand. BWE can be calculated as
+𝐵𝑊𝐸 𝑖𝑗 = 𝜎2 𝑂𝑖𝑗 ∕𝜇𝑂𝑖𝑗
+𝜎2 𝐷∕𝜇𝐷 , (20)
+where 𝜎2 represents the variance and𝜇 represents the mean of the order (𝑂𝑖𝑗) and customer demand (𝐷),
+respectively. For the retailers, we calculate BWE separately for each retailer and we report the average value over
+: Preprint submitted to Elsevier Page 8 of 25
+Journal Pre-proof
+Journal Pre-proof
+all retailers whereas BWE for the other echelons is based on their orders compared to the aggregated demand over all
+customers.
+WhereasBWEmeasuresorderamplification,IVRisrelatedtothevariationininventorylevels,whichmightresult
+in high inventory or backlog costs if it increases. It compares the variance of the inventory level to the variance of
+demandasshowninEq.(21).Again,wereportaverageIVRvalueoverallretailersandweusetheaggregateddemand
+to calculate IVR for all other echelons.
+𝐼𝑉𝑅 𝑖𝑗 = 𝜎2 𝐼𝐿𝑖𝑗
+𝜎2 𝐷 , (21)
+AFR shows the share of the new demand or orders that can be satisfied immediately by a certain actor in each
+period. It is positive when the demand/order is also positive and higher than the backlogs from the previous period,
+otherwise it is assumed to be 0:
+𝐴𝐹𝑅𝑖𝑗 =
+{
+𝐷𝐿𝑖−1,𝑗 −𝐵𝑖−1,𝑗
+𝑂𝑖𝑗 if 𝐷𝐿𝑖−1,𝑗 −𝐵𝑖−1,𝑗 > 0
+0 otherwise
+(22)
+Theorderofacertainechelon 𝑂𝑖𝑗 iscomparedheretothepromiseddeliveryquantity 𝐷𝐿𝑖−1,𝑗 andbacklogs 𝐵𝑖−1,𝑗
+of the next downstream echelon, as actually these are only recorded on the next echelon based on the logic of the
+model (the deliveries and backlogs for, e.g., the manufacturer to the wholesaler are actually recorded as𝐷𝐿 and𝐵 at
+the wholesaler, therefore these have to be taken into consideration if we calculate AFR for the manufacturer). Also in
+this case we report the average AFR over all retailers, the other stages have their own fill rate for each actor.
+TheSCcostsconsistofinventorycostsandbacklogcostsandtheyarecalculatedforeachechelonandactorforthe
+whole simulation run (without the warm-up period). The inventory costs are paid for each unit of on-hand inventory
+that is left at the end of ordering period. Backlog costs are calculated for each unit backlogged at the end of each
+ordering period. We report the total costs for each echelon, i.e. in case of retailers the total costs for all four retailers
+are reported in the computational study.
+3.4. Influencing factors
+InordertoinvestigatetheinfluenceofthedifferentmodellingassumptionsandfactorsstatedinthebasicSCmodel
+ontheeffectsofhorizontalinformationsharing,weadditionallyvarytheinputsrelatedtodemand,forecastingmethods,
+safety stock approaches, lead time uncertainty and the number of retailers participating in information sharing. The
+influence of each factor is analyzed separately by adjusting the initial setting presented in Section 4.2. This section
+describesthetheoreticalbackgroundforthechosenfactorsbeforethecomputationalresultsarepresentedinSection4.
+3.4.1. Demand variability and demand correlation between retailers
+Demandvariabilityisamajordriverofbullwhipeffect(Dejonckheereetal.,2004),thereforeweinvestigatemultiple
+scenarioswithincreasingCVsofdemandtoshowtheeffectofthisvariabilityontheresults.Thescenariosarepresented
+in the initial setting in Section 4.2 and are also used in the analysis of all other influencing factors.
+In reality, demands for the same product by multiple customers might be dependent on each other (Khosroshahi
+et al., 2016). Therefore, another considered influencing factor is the demand correlation between the retailers that can
+influence the size of the information sharing effect as shown by Raghunathan (2003) for the vertical sharing case. In
+ourstudy,weconsidersymmetricdemandcorrelationsincludingnegativeaswellaspositivedependencies.Correlated
+demands were sampled using the Gaussian copula which links univariate marginals to their multivariate distribution
+with dependence fully expressed by the copula (Nelsen, 2006).
+3.4.2. Forecasting methods
+Besides the use of moving averages (MA), which is a common method in the bullwhip literature (see, e.g. Chen
+et al. (2000a); Chatfield et al. (2004); Constantino et al. (2014); Dominguez et al. (2018b)), many authors also apply
+the simple exponential smoothing (SES) method to forecast the demand at the different SC echelons (Hussain, Drake
+and Lee, 2012; Dominguez et al., 2022; Schmitt, Kumar, Stecke, Glover and Ehlen, 2017) and there is also work
+that analyses both methods at the same time (Chen et al., 2000b; Dejonckheere et al., 2004; Ali and Boylan, 2012).
+: Preprint submitted to Elsevier Page 9 of 25
+Journal Pre-proof
+Journal Pre-proof
+Therefore, next to the already introduced MA method we also consider the influence of SES forecasting methods. For
+the latter, Eq. (1)-(3) are replaced by the following Eq. (23)-(25):
+̂𝐷1𝑗 𝑡 =𝛿𝐷1𝑗 𝑡−1 + (1 −𝛿) ̂𝐷1𝑗 𝑡−1 ∀𝑗 ∈𝐽1 (23)
+̂𝐷21 𝑡 =𝛿 ∑
+𝑗∈𝐽1
+𝑂1𝑗 𝑡−1 + (1 −𝛿) ̂𝐷21 𝑡−1 (24)
+̂𝐷𝑖1 𝑡 =𝛿𝑂𝑖−1,1 𝑡−1 + (1 −𝛿) ̂𝐷𝑖𝑗 𝑡−1 for 𝑖 = 3, 4 (25)
+where𝛿 is a smoothing parameter between 0 and 1 that indicates how much weight is put on the newest demand
+or order observation and(1 −𝛿) is then the weight put on the last forecasted demand or order quantity. Analogously,
+Eq. (18) used to forecast demand in the information sharing case is replaced by Eq. (26):
+̂𝐷1𝑗 𝑡 =𝛾(𝛿𝐷1𝑗 𝑡−1 + (1 −𝛿) ̂𝐷1𝑗 𝑡−1) + (1 −𝛾)
+(
+𝛿
+∑
+𝑗∈𝐽0
+𝐷0𝑗 𝑡−1
+|𝐽0| + (1 −𝛿) ̂𝐷𝑎𝑣𝑒 𝑡−1
+)
+∀𝑗 ∈𝐽1 (26)
+where ̂𝐷𝑎𝑣𝑒 𝑡−1 is the last forecasted average market demand based on shared demand information.
+3.4.3. Safety stock approaches
+Although calculating the OUT point using the safety stock defined in terms of fixed periods of demand forecast𝑅
+(FPapproachshowninEq.(4))isacommonapproachintheliteratureandpractice(seee.g.Dejonckheereetal.(2004);
+Constantino et al. (2014)), an alternative is to consider the safety stock based on the mean demand and its standard
+deviation during the lead time and review period, in order to achieve a certain service level (SL approach) (see e.g.
+Dejonckheere et al. (2004); Chatfield et al. (2004); Reiner and Fichtinger (2009)). In this case the calculation of the
+OUT point in Eq. (4) has to be replaced by the following Eq. (27):
+𝑆𝑖𝑗 𝑡 = (𝐿 + 1) ̂𝐷𝑖𝑗 𝑡 +𝑘 √ 𝐿 + 1𝜎𝑖𝑗 𝑡𝐷 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (27)
+where𝜎𝑖𝑗 𝑡𝐷 represents the standard deviation of demand and𝑘 is the service level factor. Hence, we analyze the effect of information sharing under both approaches.
+3.4.4. Lead time
+In case of deterministic lead times regular deliveries of goods after a fixed period are assumed, which might not
+be realistic for all cases. In reality, SC experience multiple disruptions causing capacity restrictions and delays in
+productionandtransportactivities(Wilson,2007).Asaconsequence,theobservedleadtimesareofstochasticnature.
+In accordance with the research of Chatfield et al. (2004) and Chatfield, Hayya and Cook (2013), we therefore extend
+our analysis by applying stochastic Gamma-distributed lead times allowing order crossovers, meaning that orders can
+arrive in a different sequence in comparison to the order placement sequence. Besides the influence of this change on
+the real order arrivals, where𝐷𝐿𝑖𝑗 𝑡 has to be adapted based on the calculated lead time for each period, this has also
+influence on the calculation of the OUT point. In combination with our safety stock approaches, we use two ways of
+calculating the OUT point under stochastic lead times:
+• In case of fixed demand periods used for safety stock calculations (FP approach), the Eq. (4) is replaced by
+𝑆𝑖𝑗 𝑡 = (̄𝐿 + 1 +𝑅) ̂𝐷𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (28)
+where ̄𝐿represents the mean length of the lead time.
+• In case of mean demand and standard deviation definition (SL approach), the Eq. (4) is replaced by
+𝑆𝑖𝑗 𝑡 = (̄𝐿 + 1) ̂𝐷𝑖𝑗 𝑡 +𝑘 √ (̄𝐿 + 1)(𝜎𝑖𝑗 𝑡𝐷)2 + ( ̂𝐷𝑖𝑗 𝑡 )2(𝜎𝑖𝑗 𝑡𝐿)2 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (29)
+where (𝜎𝑖𝑗 𝑡𝐷)2 is the variance of demand and(𝜎𝑖𝑗 𝑡𝐿)2 the variance of lead time and𝑘 is the service level factor.
+: Preprint submitted to Elsevier Page 10 of 25
+Journal Pre-proof
+Journal Pre-proof
+3.4.5. Number of participating retailers
+Since in practice not every retailer might be willing to participate in information sharing, finally we also discuss
+howthesituationchangesifonlypartoftheretailerssharetheirdemandinformation.Forthis,wecomparethesituation
+when all four retailers are sharing their demand among each other to the situation when only two retailers are sharing
+their demand information among themselves and the other two retailers place orders according to the demand of their
+individual customers.
+4. Computational study
+The presented model was implemented as a simulation model in the Anylogic 8 University 8.8.4 software. Each
+echelon was implemented as population of agents that have their own internal logic represented by a statechart
+and communicate between each other by sending messages and changing values of their variables. In this way, the
+implemented model is very flexible and can be easily adapted, e.g., by changing the number of actors at each echelon.
+This allows us to first validate the model as shown in Section 4.1. Afterwards we present corresponding results on the
+impactofhorizontalinformationsharinggiventheSCstructureshowninFigure1inSection4.2beforeweextendthe
+analysis to investigate the impact of different influencing factors in Sections 4.3-4.7.
+4.1. Model validation
+Themodelvalidationisbasedontwodifferentinstances.Firstly,wetookaninstancethatwasintroducedbyChen
+et al. (2000b) and used also by Dejonckheere et al. (2004), Chatfield et al. (2004) and finally by Constantino et al.
+(2014),thelattercomparingtheirresultsalsotothepreviousthreepapers.Thisinstanceconsidersa4-echelonSCwith
+oneactorperstage,normallydistributeddemandwithmean100andstandarddeviation10whereforecastisbasedon
+movingaverageswithN=19,L=2andR=2.SimilarlytoConstantinoetal.(2014),werun20replicationsofthemodel
+with 5200 periods in each replication and 200 periods used as warm-up periods. The models are compared based on
+BWE. As the results in Table 2 show, our model delivers results that are very close to all the other models with the
+exceptionofChenetal.(2000b).However,asstatedbyDejonckheereetal.(2004),thevaluescalculatedbyChenetal.
+(2000b)presentonlystatisticallowerboundsandthereforemightbedifferentfromtheresultsofthesimulationmodel.
+Paper Retailer Wholesaler Manufacturer Supplier
+This paper 1.67 3.00 5.73 11.42
+Chen et al. (2000b) 1.66 2.77 4.61 7.68
+Dejonckheere et al. (2004) 1.67 2.99 5.72 11.43
+Chatfield et al. (2004) 1.67 2.99 5.72 11.43
+Constantino et al. (2014) 1.67 3.00 5.74 11.45
+Table 2
+Validation results of our model for BWE in comparison to other models
+Secondly, we chose the instance created by Constantino et al. (2014) for their experiments where the demand
+is normally distributed with mean 30 and standard deviation 3 and the moving average method with N=10 is used,
+L=2 and R=1. They used again 20 replications, but in this case only 1200 periods with 200 warm-up periods were
+includedinthemodelrun.InthiscaseallthreeKPIs,namelyBWE,IVRandAFRcouldbeincludedintotheanalysis.
+Table 3 compares our results in this setting to the results reported by Constantino et al. (2014) in their first scenario
+withtraditionalSCwithoutinformationsharing.Theinformationsharingcasescannotbecomparedsinceweuseonly
+horizontalinformationsharingamongretailersinourmodelwhereasConstantinoetal.(2014)useverticalinformation
+between different SC echelons.
+Also in this case the results are very similar for BWE and AFR, in case of IVR higher differences of up to 2.5%
+could be recorded, which might be caused by the use of different simulation models and the lower number of time
+periods used per replication.
+4.2. Initial setting and influence of demand variability
+For our following experiments, we used a four-echelon SC with one supplier, one manufacturer, one wholesaler,
+fourretailersandfourcustomers(Figure1).TheinitialsettingusesthebasicSCmodelwithoutinformationsharingand
+its assumptions from Section 3.1 and compares the results with the horizontal sharing of average demand information
+between retailers described in Section 3.2. In case of information sharing, we assume𝛾 = 0.5. Each scenario was
+: Preprint submitted to Elsevier Page 11 of 25
+Journal Pre-proof
+Journal Pre-proof
+KPI Paper Retailer Wholesaler Manufacturer Supplier
+BWE This paper 2.13 5.17 13.58 35.08 Constantino et al. (2014) 2.14 5.19 13.62 34.89
+IVR This paper 4.61 11.91 33.69 81.05 Constantino et al. (2014) 4.56 11.61 32.62 79.04
+AFR This paper 100.00% 99.91% 98.59% 95.30% Constantino et al. (2014) 100.00% 99.90% 98.70% 95.60%
+Table 3
+Comparison of our model to Constantino et al. (2014) without information sharing
+run for 3200 time periods with a warm-up period of 200 periods and 30 replications to receive robust results and the
+reported results are averages of the values obtained by those replications. To assess the impacts, average values of
+BWE, IVR and AFR are presented for retailers whereas in case of costs the total costs for each echelon are shown.
+We assume that each SC actor uses the MA forecasting model with𝑁 = 10 to forecast the demand, the lead time
+is 𝐿 = 2 periods and two additional periods of demand forecast (𝑅 = 2 ) are used as safety stock to calculate the
+OUTpoint(FPapproach).Theinventorycostsare0.50EURperunitandperiodandbacklogcostsare1EURperunit
+and period (Sarkar and Kumar, 2015). For the Gamma-distributed demand we assume that the mean demand of each
+customer𝜇 is 10 units per period. In this initial setting, we also introduce demand variability to show its impacts on
+the results. For this we use five different scenarios with the standard deviations of demand𝜎 ranging between 1 and
+20 units as shown in Table 4. These five variability scenarios will be also used in the analysis of influencing factors in
+Sections 4.3-4.7.
+Demand per customer Aggregated demand
+Scenario 𝜇 𝜎 CV 𝜇 𝜎 CV
+1 10 1 0.1 40 2 0.05
+2 10 5 0.5 40 10 0.25
+3 10 10 1 40 20 0.5
+4 10 15 1.5 40 30 0.75
+5 10 20 2 40 40 1
+Table 4
+Scenarios and demand characteristics for individual customers and aggregated demand
+WhencomparingtheCVsofdemandpercustomerwiththeaggregateddemandobservedbytheotherSCechelons
+in Table 4, a pooling effect can be observed: aggregation has a positive influence on the variability of demand which
+the upstream echelons are facing in comparison to the retailers. Whereas each single retailer faces a demand from
+his customer with CVs between 0.1-2 in the five defined scenarios, at the wholesaler stage all orders of retailers and
+indirectly also the demands of all customers aggregate together, which means that the CV of demand for wholesaler,
+manufacturer and supplier is reduced by 50% due to the pooling effect. This should have a positive impact on the
+variation of orders. However, as we can observe in Table 5, the CVs of orders for the wholesaler are decreasing, but
+for the manufacturer and the supplier the bullwhip effect prevails and makes the CVs higher than those of the retailer.
+The effects are increasing with increasing demand variability.
+Scenario CV of orders CV of orders CV of orders CV of orders
+Retailer Wholesaler Manufacturer Supplier
+1 0.16 0.14 0.25 0.45
+2 0.77 0.64 0.98 1.38
+3 1.42 1.07 1.47 1.94
+4 2.04 1.44 1.90 2.43
+5 2.66 1.80 2.33 2.93
+Table 5
+CVs of orders for different echelons - no information sharing strategy
+Comparing Tables 5 and 6 shows the positive effect of information sharing on retailers, where the CVs of orders
+decrease by 9-13%, with the effect diminishing with higher demand variability. The reverse is true for the other SC
+echelons, leading to the same or slightly higher CVs of orders. This is caused by the fact that the shared information
+: Preprint submitted to Elsevier Page 12 of 25
+Journal Pre-proof
+Journal Pre-proof
+Scenario CV of orders CV of orders CV of orders CV of orders
+Retailer Wholesaler Manufacturer Supplier
+1 0.14 0.14 0.25 0.45
+2 0.67 0.65 0.99 1.39
+3 1.28 1.09 1.50 1.96
+4 1.85 1.45 1.92 2.46
+5 2.42 1.81 2.34 2.95
+Table 6
+CVs of orders for different echelons - horizontal information sharing strategy
+about the average market demand helps the retailers to smoothen their orders and decrease their order variance.
+However, this information also increases the covariances of the individual retailers’ orders. Thus, if the average total
+market demand increases, retailers’ orders also tend to increase and a similar situation can be seen also if the average
+market demand decreases. As a result, the wholesaler faces higher variability of aggregated retailers’ orders.
+When looking at the three performance measures from Eq. (20)-(22), a very similar trend can be observed in
+Tables 7-9: whereas the performance measures are improving for the retailers in all cases, they tend to deteriorate for
+the other SC echelons. In case of BWE (Table 7), it can be seen that the variability of orders is increasing slower than
+thevariabilityofdemandatallechelonssincetheBWEratioisdecreasingwiththeincreasingstandarddeviation(see
+Eq. 20). On the other hand, even the pooling of demand variability for the wholesaler does not help to mitigate the
+bullwhip effect that can be clearly seen on the increasing BWE ratios in the upstream direction of the SC.
+Scenario BWE Retailer BWE Wholesaler BWE Manufacturer BWE Supplier
+no change no change no change no change
+sharing sharing sharing sharing sharing sharing sharing sharing
+1 2.51 -26.23% 7.45 0.00% 24.38 0.00% 82.26 0.00%
+2 2.35 -23.15% 6.48 3.01% 15.38 1.91% 30.40 1.28%
+3 2.00 -18.60% 4.53 4.33% 8.68 3.30% 14.99 2.42%
+4 1.84 -17.35% 3.67 2.24% 6.42 2.25% 10.53 1.95%
+5 1.77 -16.98% 3.26 0.32% 5.43 0.78% 8.63 1.07%
+Table 7
+Comparison of changes in BWE between no information sharing and horizontal information sharing
+The IVR in Table 8 decreases by more than 20% for retailers in all scenarios if horizontal information sharing is
+applied.However,whenlookingattheotherSCechelons,itcanbeseenthatforthefirstscenarioIVRdoesnotchange
+andforallotherscenariositisincreasing.Thereasonsforthisareagaintheincreasedcovariancesofretailers’demands
+and also the fact that a high demand variability implies multiple periods with very small demands and occasionally
+periodswithveryhighdemand.Thisleadstothesituationswheretheactorsorderalotofgoodsatonceandthenthey
+use thebuilt-up inventory for multipleperiods without any furtherorders. In Scenario 1these effects are notobserved
+due to very small demand variability so that there is no difference between total retailers’ order quantity observed by
+the wholesaler between no sharing and sharing scenario.
+Scenario IVR Retailer IVR Wholesaler IVR Manufacturer IVR Supplier
+no change no change no change no change
+sharing sharing sharing sharing sharing sharing sharing sharing
+1 5.51 -25.51% 16.21 0.00% 52.66 0.00% 180.97 0.00%
+2 5.52 -24.99% 18.10 0.99% 55.81 0.79% 141.83 0.49%
+3 5.73 -23.20% 16.38 3.67% 44.89 3.16% 92.81 1.64%
+4 5.89 -22.63% 14.63 5.18% 37.76 4.11% 70.85 2.08%
+5 6.10 -22.83% 16.68 5.88% 33.83 4.32% 61.10 2.36%
+Table 8
+Comparison of changes in IVR between no information sharing and horizontal information sharing
+The summary of AFR and its changes in Table 9 shows that in case of Scenario 1 the orders at all echelons can
+be basically fulfilled on time since the available safety inventory is sufficient to cover the variations in demand and
+orders.WiththeincreasingdemandvariabilitythisisnotthecaseanymoreandAFRstartstodecreasewiththelowest
+valuesbeingobservedforthesupplier.Whereastheinformationsharinghasagainpositiveeffectsfortheretailersand
+: Preprint submitted to Elsevier Page 13 of 25
+Journal Pre-proof
+Journal Pre-proof
+the service levels are increasing for the first four scenarios, it influences negatively all other stages. The reasons for
+this are again the increased covariances of retailers’ demands resulting in higher inventory variances and increasing
+number of backlogged goods. The increasing number and average quantity of backlogs at the wholesaler leads to
+increase of backlogs at the retailers, which negatively impacts their AFR in Scenario 5 in comparison to the case
+without information sharing.
+Scenario AFR Retailer AFR Wholesaler AFR Manufacturer AFR Supplier
+no change no change no change no change
+sharing sharing sharing sharing sharing sharing sharing sharing
+1 100.00% 0.00% 100.00% 0.00% 100.00% 0.00% 99.98% 0.00%
+2 98.18% 0.70% 98.29% 0.00% 85.80% -0.70% 63.54% -0.99%
+3 87.51% 1.54% 86.89% -0.65% 60.50% -2.88% 40.90% -2.80%
+4 82.28% 0.54% 76.17% -2.61% 46.16% -2.71% 31.02% -2.70%
+5 81.24% -0.43% 66.86% -5.22% 37.26% -1.57% 25.03% -1.89%
+Table 9
+Comparison of changes in AFR between no information sharing and horizontal information sharing
+The costs in EUR are summarized in Tables 10-12, where the costs for the retailer echelon represent the total
+costs for all four retailers together that are divided almost equally between them (differences in range of 0.01%-2%
+depending on the demand CV). We can observe that the costs are increasing with increasing demand variability and
+themajorshareofthecostsiscausedbyinventories.Wholesaleristheechelonwiththelowestcosts.Whereasincase
+oflowdemandvariabilitythetotalcostsaredividedmoreorlessequallyamongtheechelons,withincreasingdemand
+variability the inventories increase especially at the upstream echelons, confirming the bullwhip effect. The effects
+of information sharing are also in terms of costs clearly positive for the retailers. In Scenario 1, there is no change
+in total costs for this echelon despite the improvements in BWE and IVR, as the variability in orders and inventories
+decreases and the inventories slightly shift between the individual retailers, but the total number of stored items over
+the simulation horizon stays the same due to the very low demand variability. There are also no backlog costs for
+Scenario1forallechelonsexceptforsupplier,correspondingtothe100%AFRpresentedbefore.Theonlyincreasein
+costs for the retailers can be seen for backlog costs for Scenario 5 where the number of backlogs is increasing due to
+high variability in demand and high backlogs of the wholesaler. The costs of other echelons are slightly increasing in
+all observed scenarios. However, the positive effect of retailer savings is in total higher than the increased costs at the
+other echelons, so that the whole SC is better off in all observed scenarios.
+Scenario Retailer Wholesaler Manufacturer Supplier Total
+no change no change no change no change no change
+sharing sharing sharing sharing sharing sharing sharing sharing sharing sharing
+1 119,969 0.00% 120,009 0.00% 119,994 0.00% 120,179 0.00% 480,151 0.00%
+2 121,316 -1.17% 113,688 0.15% 126,387 0.44% 193,033 0.33% 554,424 -0.01%
+3 138,379 -7.45% 118,604 1.49% 180,174 1.96% 311,463 1.00% 748,620 -0.25%
+4 172,203 -12.98% 139,064 3.02% 244,253 2.66% 422,637 1.38% 978,157 -0.59%
+5 216,335 -17.06% 166,889 3.79% 312,015 2.89% 535,710 1.50% 1,230,949 -1.10%
+Table 10
+Comparison of changes in inventory costs between no information sharing and horizontal information sharing
+Scenario Retailer Wholesaler Manufacturer Supplier Total
+no change no change no change no change no change
+sharing sharing sharing sharing sharing sharing sharing sharing sharing sharing
+1 0 0.00% 0 0.00% 0 0.00% 28 0.00% 28 0.00%
+2 3,287 -35.10% 2,892 0.23% 17,330 0.06% 29,861 0.23% 53,369 -2.00%
+3 34,990 -10.07% 28,149 0.90% 51,116 0.72% 53,935 1.49% 168,190 -1.25%
+4 73,667 -1.13% 56,058 0.70% 74,229 1.14% 68,000 1.82% 271,954 0.60%
+5 107,285 3.91% 80,461 0.12% 92,865 1.21% 79,183 1.93% 359,794 1.93%
+Table 11
+Comparison of changes in backlog costs between no information sharing and horizontal information sharing
+: Preprint submitted to Elsevier Page 14 of 25
+Journal Pre-proof
+Journal Pre-proof
+Scenario Retailer Wholesaler Manufacturer Supplier Total
+no change no change no change no change no change
+sharing sharing sharing sharing sharing sharing sharing sharing sharing sharing
+1 119,969 0.00% 120,009 0.00% 119,994 0.00% 120,207 0.00% 480,179 0.00%
+2 124,603 -2.06% 116,580 0.15% 143,717 0.40% 222,894 0.32% 607,794 -0.18%
+3 173,369 -7.98% 146,753 1.38% 231,290 1.69% 365,398 1.08% 916,810 -0.43%
+4 245,870 -9.43% 195,122 2.35% 318,482 2.31% 490,637 1.44% 1,250,111 -0.33%
+5 323,620 -10.11% 247,350 2.60% 404,880 2.51% 614,893 1.55% 1,590,743 -0.41%
+Table 12
+Comparison of changes in total costs between no information sharing and horizontal information sharing
+Summarizing the results of the initial setting, we see the clearly positive effect of horizontal information sharing
+on the performance measures of the retailers. However, the effect on the other echelons can be negative, in particular
+when the demand variability is high. Therefore, in the following sections we analyse in detail the individual input
+factors that might influence those effects as already discussed in Sections 3.4.1-3.4.5: demand correlation, forecasting
+methods, safety stock approaches, lead times and the number of retailers participating in information sharing.
+The analysis in all sections is based on the initial setting and only the respective factors are varied. The results
+presentedingraphsarelimitedtotheretailerandwholesalerechelonsincethesignificantdifferencescanbeobserved
+there and the manufacturer and supplier echelon have basically the same tendency as the wholesaler echelon. Since
+BWEinmostcasesevolvesinthesamedirectionasIVR,weonlypresentIVRgraphsanddescribeBWEintext.Only
+if BWE and IVR show significant differences, both graphs are presented.
+4.3. Influence of demand correlation between retailers
+The influence of demand correlation between retailers on the bullwhip effect is analyzed using positive as well as
+negative correlation coefficients𝜌 in addition to the uncorrelated demand with𝜌 = 0 considered in the initial setting.
+Specifically, the values considered are𝜌 = {−0.3, −0.15, 0, 0.15, 0.3, 0.7} and the influence of correlations can be
+observed in Figure 2 that compares the changes in IVR between no information sharing and information sharing
+strategy for the retailers and the wholesaler. The highest influence can be seen for the negative correlation of -0.3
+wheretheIVRreductionisbetween26-33%fortheretailersand0.3-5%forthewholesaler,dependingonthestandard
+deviation. Compared to that, reductions in BWE are 18-34% for the retailers and 6-9% for the wholesaler.
+(a) Retailer
+ (b) Wholesaler
+Figure 2: Comparison of IVR between no sharing and sharing strategy for retailers and wholesaler for different correlations
+Consideringtheretailers’performance,fromFigure2a,demandinformationsharinghasthehighestpositiveeffect
+on IVR for low demand variability where the smoothing effect of information sharing has a higher influence. With
+increasing standard deviation the influence of demand variability grows and therefore the change in IVR diminishes.
+For negative correlation the demands of the individual retailers tend to go into opposite directions and therefore the
+additional information about the average market demand helps to smoothen the forecasts. With increasing correlation
+the demands tend to behave in a similar way and therefore the additional value of sharing information about average
+demand diminishes, as it can be seen for the correlation of 0.7 where the changes are relatively low, around 7-9%.
+: Preprint submitted to Elsevier Page 15 of 25
+Journal Pre-proof
+Journal Pre-proof
+When looking at the wholesaler (Figure 2b), negative correlation of -0.3 leads also to his IVR improvement since
+the smoothing of orders of all retailers also reduces the total order variance observed by him. For other correlations
+IVRisincreasingsincethesmoothingeffectislowerthanthetotalincreasingordervariability.ChangesinBWEforthe
+wholesaler have the same direction with the exception of correlation of -0.15 where the BWE is still slightly reduced
+since the combination of negative correlation and increased demand variability leads to lower total order variance
+observed by the wholesaler.
+(a) Retailer
+ (b) Wholesaler
+Figure 3: Comparison of AFR between no sharing and sharing strategy for retailers and wholesaler for different correlations
+The influence of information sharing on AFR is depicted in Figure 3 and shows a similar trend as it was also
+described for the initial setting. For the standard deviation of one all orders can be fulfilled on time already without
+demand information sharing and therefore no further improvement is possible. With increasing standard deviation at
+first the positive effect of information sharing improves the AFR of the retailers, but later the increasing covariance
+of orders and thus higher total order variability of orders observed by the wholesaler significantly reduces his AFR,
+which also leads to reduction of the AFR of the retailers.
+Intermsofcosts,theincreasingpositivecorrelationleadstoincreasingcostinallcostscategoriesandechelonsin
+comparison to the initial setting whereas negative correlations decrease the costs of all echelons. When looking at the
+effect of information sharing, retailers can save up to 20% of the inventory costs in case of negative correlation and
+highCV.Thesavingsarediminishingwithincreasingcorrelation.Backlogcostsarealsoreducedforretailerswiththe
+exceptionofScenario5wherethehighdemandCVleadstoincreaseinretailerbacklogcosts.Theotherechelonsshow
+increasesininventorycostsofupto5%inalmostallconsideredcases,butthisdisadvantageispartlycompensatedby
+lowerbacklogcostsfornegativecorrelations,especiallywith 𝜌 = −0.3.Intotal,savingsinSCcostsofaround3%were
+recordedfor 𝜌 = −0.3andupto1%forothercorrelations.However,forthehighdemandvariabilitywithCV=1.5and
+CV=2 combined with all considered positive correlations the total SC costs are increasing by 0.10%-0.47%.
+4.4. Influence of forecasting methods
+To compare the influence of the MA and SES forecasting methods, on one hand we extend the analysis of the MA
+approachbyaddingmodelswithN=20andN=50totheinitialsettingwithN=10,ontheotherhandwealsoapplythe
+SES model using the values 0.1, 0.2 and 0.3 for the parameter𝛿.
+For the retailers, the results show similar directions for both forecasting models. Whereas in case of MA the
+increasing𝑁 increases the smoothing effect and the weight of the newest observed customer demand in the MA_50
+model is very low, a similar effect can be observed with decreasing𝛿 in SES models - lower𝛿 factor means lower
+weight for the newest observed customer demand. As a consequence, the variability in orders is also lower and thus
+the effect of information sharing is lower for MA_50 or SES_0.1 than for MA_10 or SES_0.3.
+In case of the wholesaler, this is only valid for smaller demand variability up to CV=1 at the retailer level. A high
+variabilityindemandinfluencestheordersoftheretailersand,asalreadymentioned,inthesescenariosmultipleperiods
+of very small demands can be followed by a period with very high demand. Since the SES method reacts stronger to
+the newest demand information than the MA method, the total order variability observed by the wholesaler is also
+higher. As an example, the total order variability of SES_0.3 scenario is twice as high as the total order variability of
+: Preprint submitted to Elsevier Page 16 of 25
+Journal Pre-proof
+Journal Pre-proof
+MA_10 scenario. In case of information sharing, the variability in SES scenarios is then reduced by the smoothing
+effectofinformationsharing,sincethevariabilityinaveragemarketdemandissmallerthanintheindividualdemand.
+Therefore,informationsharinghasapositiveeffectonBWE,IVRandalsoAFRifSESmethodsareusedforscenarios
+with higher demand variability. In contrast to that, the MA methods already smoothen the effect of such high demand
+variability within the forecasting method, since the newest demand has less effect on the forecast than in case of SES.
+Therefore, in case of information sharing the increased covariance of the orders overweighs the smoothing effect of
+informationsharing,whichnegativelyinfluencesperformancemeasures.ThesedifferencesareshowninFigures4and
+5 for IVR and AFR, BWE follows the same pattern as IVR with slightly lower relative changes.
+(a) Retailer
+ (b) Wholesaler
+Figure 4: Comparison of IVR between no sharing and sharing strategy for retailers and wholesaler for different forecasting
+models
+(a) Retailer
+ (b) Wholesaler
+Figure 5: Comparison of AFR between no sharing and sharing strategy for retailers and wholesaler for different forecasting
+models
+Whereas the use of MA_20 and MA_50 methods reduces the total costs in comparison to initial setting by up to
+50% mainly due to inventory reductions, SES_0.2 and SES_0.3 let the total costs explode and the increase can be
+more than 200% for high demand variabilities. This is caused by the higher sensitivity of SES methods to the newest
+observed demands that leads to increased inventories, but also reduces the total number of backlogs. The potential
+cost savings through information sharing are therefore also higher in SES case - retailers can reduce their inventory
+costs by up to 33% for SES_0.3 and CV=2 whereas for MA the highest saving is 17.06% for MA_10 and CV=2. For
+SES and higher demand variabilities even all the other echelons can save inventory costs of up to 4%, which leads to
+potential savings in total SC costs of more than 4%. In all considered cases the total SC costs either stay the same or
+can be reduced, with smaller reductions of up to 1% for MA methods and reductions between 0.19%-4.12% for SES
+methods.
+: Preprint submitted to Elsevier Page 17 of 25
+Journal Pre-proof
+Journal Pre-proof
+4.5. Influence of safety stock approaches
+The initial setting assumes that two periods of demand are held as safety stock. Since safety stock partially covers
+the variance coming from demand and orders, in case of safety stock periods (FP approach) we looked at different
+models including𝑅 = 1, 2, 3. For SL approach we consider service levels of 95% (𝑘 = 1.64) and 99% (𝑘 = 2.33).
+(a) Retailer
+ (b) Wholesaler
+Figure 6: BWE of retailers and wholesaler for different safety stock approaches without information sharing
+Figure 6 illustrates the influence of increasing standard deviation on the BWE in case of the different safety stock
+approaches. In case of FP approach the BWE is reduced with increasing demand variability since the demand share
+covered by the safety stock is decreasing and the variance of the orders in comparison to the variance of demand is
+also decreasing. This negatively influences the AFR, which is substantially decreasing especially for R=1, as shown
+in Figure 7. In contrast to that, the SL approach adapts the size of the safety stock based on the standard deviation of
+thedemandforecasts,meaningthattheshareofdemandcoveredbythesafetystockisstableforallstandarddeviation
+scenarios.Thus,thevariabilityofordersisincreasing,whichleadstoincreasingBWEforhigherstandarddeviationsof
+thedemand.Ontheotherhand,forsmallerdemandvariabilitiesthesafetystockislowerincaseofSLapproach,which
+results in partially lower BWE values in comparison to FP approach. The adaption of safety stock in SL approach is
+also visible in Figure 7a, where AFR for retailers stay relatively stable and high for both service level models. In case
+of wholesaler in Figure 7b, AFR decrease is slower for SL approach and is caused by the total variability of retailers’
+orders that cannot be completely covered by the safety stock.
+The effect of information sharing on the performance measures is displayed in Figures 8-10. For BWE in Figure 8
+thepositiveeffectfortheretailersincreaseswiththesafetystockperiodsandthisapproachhashigherchangesthanthe
+servicelevelapproachforalldemandscenarios.Withincreasingdemandvariability,thepositiveeffectofinformation
+sharingonBWEisdiminishing.Incaseofwholesaler,themostnegativeeffectscanbeseenfordemandScenarios2-4,
+but in case of Scenario 5 with very high demand variability there is almost no effect on BWE of the wholesaler.
+The percentage changes in IVR in Figure 9 are quite stable for all scenarios for the retailers, where again having
+three periods of safety stock leads to the highest positive effects. When looking at the wholesaler, the variability in
+inventory increases with information sharing in case of higher demand variability scenarios.
+TheimprovementinAFRismainlyvisibleforScenario2and3incaseofretailersinFigure10.Forhigherdemand
+variabilities, the increased inventory variance of the wholesaler leads to decreasing AFR at this stage, which reduces
+also the improvements in AFR of the retailers.
+The cost figures for the FP approach show that reducing the safety stock to R=1 leads also to inventory cost
+reduction up to 40%, whereas backlogs are increasing by up to 55%. Since inventory costs are the major part of total
+costs, the whole SC can save up to 18% of total costs if𝑅 is reduced to one, with the wholesaler echelon having the
+lowest costs for all scenarios. The horizontal information sharing can reduce the inventory costs of the retailer up to
+17.76%, but these costs increase for all other echelons by up to 3.66%. The backlog costs are lower for the retailer in
+: Preprint submitted to Elsevier Page 18 of 25
+Journal Pre-proof
+Journal Pre-proof
+(a) Retailer
+ (b) Wholesaler
+Figure 7: AFR of retailers and wholesaler for different safety stock approaches without information sharing
+(a) Retailer
+ (b) Wholesaler
+Figure 8: Comparison of BWE between no sharing and sharing strategy for retailers and wholesaler for different safety
+stock models
+(a) Retailer
+ (b) Wholesaler
+Figure 9: Comparison of IVR between no sharing and sharing strategy for retailers and wholesaler for different safety stock
+models
+: Preprint submitted to Elsevier Page 19 of 25
+Journal Pre-proof
+Journal Pre-proof
+(a) Retailer
+ (b) Wholesaler
+Figure 10: Comparison of AFR between no sharing and sharing strategy for retailers and wholesaler for different safety
+stock models
+case of lower demand variabilities, but they increase for high variabilities in Scenario 4 and 5. In total, the total SC
+costs decrease for all considered demand variabilities in the range of -0.14% to -0.96%.
+Asexpected,anincreaseofthenumberofsafetystockperiods(R=3)leadstoincreasedinventorycosts,buthigher
+inventory levels reduce the number of backlogs. The relative savings of retailers in case of information sharing are
+similarasintheinitialsetting,however,theincreasesininventoryandbacklogcostsontheotherechelonsfordemand
+CV=0.5 lead to increase of total SC costs by 0.09% for this scenario. For higher demand variabilities, savings of
+retailers can still overcompensate the increased costs on other echelons. Therefore, the total SC costs decrease by
+0.12% to 0.37%.
+The SL approach introduces much higher volatility in costs as the size of the safety stock is increasing with
+increasing demand variability. This means that even without information sharing more than 80% of the total SC costs
+can be saved for CV=0.1, but the increase for CV=2 is more than 111% for SL_95 and for SL_99 the changes in total
+SC costs reach from -71.7% to +275% in comparison to the initial setting. When looking at the effects of information
+sharing, retailers can reduce their inventory costs in the range of 3%-9% for the different demand variabilities and
+the savings are higher in case of higher demand variability. On the contrary, the retailers’ savings in backlog costs
+are diminishing with increasing demand variability and these costs are even increasing for the highest demand CVs.
+As a consequence, the highest savings in total SC costs can be recorded in case of CV=0.1 and CV=2, which are
+0.74%-0.86% for SL_95 and 0.56%-0.96% for SL_99. The lowest savings of total SC costs are recorded for CV=1,
+where in case of SL_95 this is 0.05% and for SL_99 the total SC costs even increase by 0.06%.
+4.6. Influence of lead time uncertainty
+InthissectionweconsiderstochasticleadtimesbasedonGammadistribution.Inallpresentedcasesthemeanlead
+time is 2 periods and we consider CVs of lead time of 0.25, 0.5 and 0.75 that are compared to the deterministic lead
+time from the initial setting (i.e. CV=0.00). The lead time distribution characteristics are the same for each echelon
+(except for the customers, where the goods are delivered immediately), but the individual realised lead times between
+echelons can be different. The average lead timē𝐿 is calculated using the moving average of the last 10 periods and
+thestandarddeviationofleadtime 𝜎𝑖𝑗 𝑡𝐿 iscalculatedbasedonallavailableleadtimedata(Chatfieldetal.,2004,2013). For FP approach, we only consider the case with R=2 periods and for the SL approach we look at the service level of
+95%, meaning k=1.64.
+WhenlookingattheresultsforFPapproach,thepictureinFigure11isverysimilartothedeterministicleadtime,
+since the effect of horizontal information sharing on BWE is very positive for the retailers with reduction of more
+than 26% in case of low demand variability. The size of the effect for retailers decreases with the increasing demand
+variabilityaswellastheincreasingleadtimevariability.Forthewholesaler,thesituationisalsoverysimilar-besides
+the demand variability with CV=0.1, where no change in BWE is observed, in the other demand scenarios BWE
+increases, but the size of this increase is diminishing with the increasing demand and lead time variability. In case of
+IVRinFigure12thepositiveeffectforretailersaswellasthenegativeeffectforwholesalerisincreasingwithdemand
+variabilitywhereasincreasingleadtimevariabilityleadstodecreaseoftheeffects.IncaseofScenario1withdemand
+: Preprint submitted to Elsevier Page 20 of 25
+Journal Pre-proof
+Journal Pre-proof
+CV=0.1, the effect for retailers facing stochastic lead times is very small since here the stochastic lead times lead to
+high fluctuations in inventories in comparison to the very low demand variability and therefore the initial IVR is also
+very high. In case of AFR in Figure 13 the results of retailer are slightly improved for the first four demand scenarios
+whereas in the fifth scenario AFR of all echelons decreases due to the high variability of demand.
+For the SL approach, the situation is completely different. In case of BWE and IVR, the effect of information
+sharingispositiveforallechelonsandincreasingwiththeincreasingdemandvariability.However,incaseofAFRthe
+resultsshownegativeinfluenceontheretailers,asthereducedinventoriesintheSCandstochasticleadtimesincrease
+the occurrence of backlogs at the retailer who has to deliver the goods to the customer immediately.
+(a) Retailer
+ (b) Wholesaler
+Figure 11: Comparison of BWE between no sharing and sharing strategy for retailers and wholesaler for different lead times
+(a) Retailer
+ (b) Wholesaler
+Figure 12: Comparison of IVR between no sharing and sharing strategy for retailers and wholesaler for different lead times
+TheanalysisoftheSCcostsshowsthatforFPapproach,thecostswithoutinformationsharingarerelativelystable
+forallleadtimeCVsandverysimilartothecostspresentedfortheinitialsettinginTables10-12.Incontrasttothat,in
+case of SL approach the inventory costs for scenarios with low demand variability are much lower, partially less than
+50% in comparison to the initial setting, but increase gradually with demand and lead time variability. As a result, the
+inventory costs in the scenarios with the highest variability they are twice as high as in the initial setting. The backlog
+costs are decreasing with the increasing lead time variability.
+: Preprint submitted to Elsevier Page 21 of 25
+Journal Pre-proof
+Journal Pre-proof
+(a) Retailer
+ (b) Wholesaler
+Figure 13: Comparison of AFR between no sharing and sharing strategy for retailers and wholesaler for different lead times
+Information sharing has again a positive influence on the retailer and slightly negative influence on the other
+echelonsincaseofFPapproach,similartotheresultspresentedintheinitialsetting.ThetotalSCcostscanbedecreased
+in all analysed scenarios with savings of 0.00%-0.49%. In case of SL approach, the positive effect can be observed for
+all echelons with regard to inventory costs. For backlog costs, a sharp increase can be found for retailers who might
+nothavesufficientinventorytoservethecustomerdemandincaseofdelayeddeliveries.Still,theoveralleffectonthe
+SC is clearly positive with savings between 0.55%-8.56%.
+4.7. Influence of number of retailers sharing demand information
+As already mentioned in Section 3.4.5, here we compare the performance of the SC if only some of the retailers
+are willing to share the information, namely two of the four retailers. The effects of this factor can be observed in
+Figure 14.
+(a) IVR
+ (b) AFR
+Figure 14: Comparison of information sharing of 2 and 4 retailers for all KPIs
+The positive effect of information sharing on BWE and IVR is similar, where BWE is reduced for Retailer 1 and
+Retailer2whosharedemandinformationbetweeneachother-insteadof18.63%theBWEisreducedforbothretailers
+only by 12.34%, which means a reduction of the positive effect by approximately one third. For the other two retailers
+BWE does not change since they still use the original ordering strategy. The position of the wholesaler in this case is
+improved since his BWE increases only by 1.22% instead of the previous 4.33%, which is a reduction by more than
+70%. For IVR the positive effect through information sharing is reduced by one third from 23.20% to 15.58% for both
+sharing retailers. In this case there is a very small positive effect of 0.02% also for the other two retailers since the
+: Preprint submitted to Elsevier Page 22 of 25
+Journal Pre-proof
+Journal Pre-proof
+reductionininventoryvarianceofthefirsttworetailersmightcontributetobetterorderfulfillmentforthenon-sharing
+retailers. For the wholesaler the negative effect is reduced by more than 70%, this time from 3.67% to 1.06%.
+The AFR improvement is also reduced by one third for the information sharing retailers, in case of non-sharing
+retailers no significant change could be observed. The negative effect for the wholesaler is here reduced even more,
+this time by more than 75% from 0.61% to 0.15%.
+From the cost perspective, the information sharing retailers can also get only partial advantage in comparison to
+the case where all retailers are sharing the average demand information. The savings are only around 60-65% of the
+savingsinthefullsharingscenariowithallretailersforbothinventoryandbacklogcosts.Retailersthatarenotsharing
+theinformationeitherhavethesamecostsforscenarioswithlowerdemandvariabilitiesortheircostsarechangingby
+less than 1%. The savings of total SC costs are in this case only in range of 0.06% to 0.17%, which is much lower than
+the savings for full information sharing reported in Table 12.
+To summarize the discussion about changes in costs, Table 13 shows the ranges of cost changes for each echelon
+for all considered influencing factors and settings covered by the computational study.
+Setting Retailer Wholesaler Manufacturer Supplier Total
+Initial setting -10.11% to 0.00% 0.00% to 2.60% 0.00% to 2.51% 0.00% to 1.51% -0.43% to 0.00%
+Correlation -12.05% to 0.00% -0.94% to 3.71% -0.96% to 2.86% -0.94% to 1.69% -3.30% to 0.47%
+Forecast_MA -10.11% to 0.00% 0.00% to 2.60% 0.00% to 2.51% 0.00% to 1.55% -0.75% to 0.00%
+Forecast_SES -25.90% to 0.00% -3.44% to 1.14% -1.99% to 1.52% -1.36% to 1.72% -4.12% to 0.00%
+Safety stock_FP -12.88% to 0.00% 0.00% to 3.51% 0.00% to 3.01% 0.00% to 1.61% -0.96% to 0.09%
+Safety stock_SL -7.92% to -2.89% -0.21% to 1.90% -0.07% to 1.35% -0.39% to 0.76% -0.96% to 0.06%
+Lead time_FP -10.11% to 0.00% 0.00% to 2.60% 0.00% to 2.51% 0.00% to 1.56% -0.49% to 0.00%
+Lead time_SL -26.79% to -0.35% -4.98% to 1.90% -5.45% to 1.35% -5.13% to 0.76% -8.56% to -0.05%
+No. retail. sharing -3.27% to 0.00% 0.00% to 0.71% 0.00% to 0.72% 0.00% to 0.60% -0.31% to 0.00%
+Table 13
+Comparison of changes in total costs between no information sharing and horizontal information sharing for different
+echelons and settings
+5. Managerial implications
+The extensive computational study investigating the impact of horizontal information sharing of average demand
+amongmultipleretailersin4-echelonSCunderconsiderationofmultipleinfluencingfactorsshowedthepositiveeffects
+as well as potential challenges of this approach that can be summarized in the following insights:
+• Horizontal information sharing of average demands is beneficial for all retailers participating in this process.
+This is valid for all considered influencing factors. Even in settings where no changes in costs can be directly
+recorded,BWEandIVRperformancemeasuresshowthattheinventoryandordervariancescanbedecreasedas
+theaveragedemandinformationsmoothensthevariabilityinownforecasts.However,duetoincreasedbullwhip
+effect caused by increased covariances of retailers’ orders, the AFR of retailers can be reduced in case of high
+demand variabilities combined with SES forecasting or SL safety stock approach. This is due to the worsened
+performanceofthewholesalerandotherupstreamechelonscausedbyinventoryandordervariabilitieswhoare
+not able to deliver sufficient amounts of goods to the retailers in time to satisfy the demand of the customers.
+• Participation in information sharing leads to benefits for the participating retailer whereas abstaining from
+participation brings no significant additional costs for the non-participating retailer. However, the effect of
+benefitsoneachparticipatingretaileraswellasthewholeSCincreaseswiththenumberofparticipatingretailers.
+Therefore, in ideal case all retailers should be involved in establishing and use of such mechanism.
+• Whereas retailers benefit from information sharing, all other echelons face higher bullwhip effect due to higher
+covariances of retailers’ orders, resulting in increased order and inventory variances and costs. The highest
+increases have to be borne by the wholesaler, who is directly connected to the retailers. There are only few
+exceptions from this increase, namely the cases of negative demand correlations, SES forecasting methods and
+SL safety stock approach, where all SC echelons can achieve savings due to horizontal information sharing.
+: Preprint submitted to Elsevier Page 23 of 25
+Journal Pre-proof
+Journal Pre-proof
+• The cost savings at retailers’ stage are in general higher than the additional costs faced by the other echelons.
+Consequently, total SC costs can be reduced in most cases, with the exception of some cases combining high
+demand variability and high positive demand correlation and some individual cases in the discussion of safety
+stock approaches. However, in all these cases the total cost increase is very low, less than 0.5%.
+Basedonthepresentedinsightsandchangesinperformancemeasures,itcanbeobservedthatretailersaretheactors
+that should have the highest interest in implementing the privacy-preserving horizontal average demand information
+sharing mechanism since they can improve their performance in almost all considered settings. In terms of costs, the
+savings of retailers exceed the additional costs incurred by the other upstream echelons. Therefore, sharing part of the
+savingswouldbefeasibletocoverthesecostincreasesandretailerswouldstillretainpartoftheircostbenefits.Thesize
+ofthissharedependsontheconcretesetting,but,e.g.,fortheinitialsettingtheretailerscouldstillretainbetween20%-
+43%oftheirinitialsavingsforthedifferentdemandvariabilityscenariosiftheotherSCechelonswouldbecompensated
+and part of this buffer could be still invested to implement such privacy-preserving information sharing mechanism.
+The exact redistribution mechanism of savings between the echelons as well as the exact costs and implementation of
+the information sharing mechanism need to be investigated in further analysis.
+Theresultsalsoshowthepotentialsettingsthatmightfavortheuseoftheinformationsharingmechanism.Whereas
+settingswithverylowdemandvariabilityandstableleadtimeconditionsreducevariabilitiesinordersandinventories,
+they do not show significant monetary improvements. In contrast to that, higher demand variabilities, increasing lead
+time uncertainty and use of the SL safety stock approach exhibit higher potentials for savings that could reach 3.30%-
+8.56% of the total SC costs. Negative demand correlations, SL safety stock approach and SES forecasting are also
+factorswhichinsomesettingsleadtoimprovementsforechelons,eliminatingtheneedforredistributionofthesavings
+between the different echelons.
+6. Conclusion
+SharingdemandinformationamongthedifferentSCactorshasadampeningimpactonthebullwhipeffect,which
+helps the companies to reduce the variation in orders and thus also save costs on inventories and backlogs. Despite
+those positive effects, sharing full information is still not an option for many companies. Therefore, in this paper we
+investigatedwhethersharingpartialinformationhorizontally,i.e.averagedemandofallcustomerstoeachretailer,can
+contribute to a reduction of the bullwhip effect without the need to share the full information. This could be achieved
+using cryptographic methods like SMPC or HE.
+Using a simulation model of a 4-echelon SC and multiple retailers with OUT policies, we compared a no-
+sharing baseline to a mechanism where retailers receive the average of customer demand and blend it with their own
+observations.WeevaluatedperformancewithBWE,IVR,AFRaswellasinventoryandbacklogcosts,andwestressed
+robustness by varying demand variability and correlation, forecasting methods, safety stock approaches, lead time
+uncertainty and the extent of retailers’ participation.
+Three core conclusions emerge. (i) Across wide parameter ranges, the horizontal average serves as a stabilizing
+signalthatreducesretailers’orderandinventoryvariabilityandgenerallyimprovesservice.Thesegainsarestrongestat
+higherdemand,leadtimeandinventoryvariabilityandundernegativedemandcorrelationacrossretailers.(ii)Because
+retailersreactmoresimilarlyaftersharinganaveragesignal,theirorderstendtoriseandfallatthesametime.Thiscan
+increasethevariabilityseenbythewholesalerand,byextension,themanufacturerandsupplier—especiallyunderhigh
+demandvariabilityorstrongpositivecorrelation.Largersafetystocksupstreamhelp,butdonotremovethiseffect.(iii)
+Partial participation (i.e. only some retailers sharing information), giving less weight to the shared average, or using
+smoother forecasting can keep retailer benefits without pushing too much volatility upstream.
+Our experiments assume unlimited production and transport capacities, and stylized demand processes. Future
+work could incorporate capacity constraints and congestion, non-stationary and seasonal demand, richer contractual
+forms(e.g.,optionorservice-levelagreements),andstrategicbehavior.Moreover,interactionsbetweentheinfluencing
+factorscouldbeinvestigatedandacomparisonbetweentheeffectsofhorizontalandverticalinformationsharingcould
+show which approach leads to higher benefits. Finally, field tests with real data and alternative aggregation schemes
+(e.g.,mediansorrobustaverages)couldshowhowtokeepretailergainswhilereducingsynchronizedswingsupstream.
+References
+Acar,A.,Aksu,H.,Uluagac,A.S.,Conti,M.,2018. Asurveyonhomomorphicencryptionschemes:Theoryandimplementation. ACMComputing
+Surveys (Csur) 51, 1–35.
+: Preprint submitted to Elsevier Page 24 of 25
+Journal Pre-proof
+Journal Pre-proof
+Ali,M.M.,Boylan,J.E.,2012. Ontheeffectofnon-optimalforecastingmethodsonsupplychaindownstreamdemand. IMAJournalofManagement
+Mathematics 23, 81–98.
+Cachon, G.P., 1999. Managing supply chain demand variability with scheduled ordering policies. Management science 45, 843–856.
+Cachon, G.P., Fisher, M., 2000. Supply chain inventory management and the value of shared information. Management science 46, 1032–1048.
+Cannella, S., Ciancimino, E., 2010. On the bullwhip avoidance phase: supply chain collaboration and order smoothing. International Journal of
+Production Research 48, 6739–6776.
+Chatfield, D.C., Hayya, J.C., Cook, D.P., 2013. Stockout propagation and amplification in supply chain inventory systems. International Journal of
+Production Research 51, 1491–1507.
+Chatfield,D.C.,Kim,J.G.,Harrison,T.P.,Hayya,J.C.,2004.Thebullwhipeffect-impactofstochasticleadtime,informationqualityandinformation
+sharing: A simulation study. Production and Operations Management 13, 340–353.
+Chen,F.,Drezner,Z.,Ryan,J.K.,Simchi-Levi,D.,2000a. Quantifyingthebullwhipeffectinasimplesupplychain:Theimpactofforecasting,lead
+times and information. Management Science 46, 436–443.
+Chen, F., Ryan, J.K., Simchi-Levi, D., 2000b. The impact of exponential smoothing forecasts on the bullwhip effect. Naval Research Logistics 47,
+269–286.
+Constantino,F.,DiGravio,G.,Shaban,A.,Tronci,M.,2014. Theimpactofinformationsharingandinventorycontrolcoordinationonsupplychain
+performances. Computers & Industrial Engineering 76, 292–306.
+Constantino, F., Di Gravio, G., Shaban, A., Tronci, M., 2015. The impact of information sharing on ordering policies to improve supply chain
+performances. Computers & Industrial Engineering 82, 127–142.
+Cramer, R., Damgård, I.B., et al., 2015. Secure multiparty computation. Cambridge University Press.
+Croson, R., Donohue, K., 2003. Impact of pos data sharing on supply chain management: An experimental study. Production and Operations
+Management 12, 1–11.
+Dejonckheere, J., Disney, S., Lambrecht, M., Towill, D., 2004. The impact of information enrichment on the bullwhip effect in supply chains: A
+control engineering perspective. European Journal of Operational Research 153, 727–750.
+Dominguez, R., Cannella, S., Barbosa-Póvoa, A.P., Framinan, J.M., 2018a. Information sharing in supply chains with heterogeneous retailers.
+Omega 79, 116–132.
+Dominguez,R.,Cannella,S.,Barbosa-Póvoa,A.P.,Framinan,J.M.,2018b. Ovap:Astrategytoimplementpartialinformationsharingamongsupply
+chain retailers. Transportation Research Part E: Logistics and Transportation Review 110, 122–136.
+Dominguez,R.,Cannella,S.,Ponte,B.,Framinan,J.M.,2022.Informationsharingindecentralizedsupplychainswithpartialcollaboration. Flexible
+Services and Manufacturing Journal 34, 263–292.
+Hellwig, D., Huchzermeier, A., 2022. Distributed ledger technology and fully homomorphic encryption: Next-generation information-sharing for
+supply chain efficiency, in: Innovative Technology at the Interface of Finance and Operations. Springer Series in Supply Chain Management,
+Vol. 13. Springer, pp. 31–49.
+Huang,B.,Iravani,S.M.,2005. Productioncontrolpoliciesinsupplychainswithselective-informationsharing. OperationsResearch53,662–674.
+Hussain, M., Drake, P.R., Lee, D.M., 2012. Quantifying the impact of a supply chain’s design parameters on the bullwhip effect using simulation
+and taguchi design of experiments. International Journal of Physical Distribution & Logistics Management 42, 947–968.
+Khosroshahi, H., Husseini, S.M., Marjani, M., 2016. The bullwhip effect in a 3-stage supply chain considering multiple retailers using a moving
+average method for demand forecasting. Applied Mathematical Modelling 40, 8934–8951.
+Lau,J.S.,Huang,G.Q.,Mak,K.,2004. Impactofinformationsharingoninventoryreplenishmentindivergentsupplychains. InternationalJournal
+of Production Research 42, 919–941.
+Lee, H.L., Padmanabhan, V., Whang, S., 1997. Information distortion in a supply chain: The bullwhip effect. Management science 43, 546–558.
+Lei, M., Liu, H., Deng, H., Huang, T., Leong, G., 2014. Demand information sharing and channel choice in a dual-channel supply chain with
+multiple retailers. International Journal of Production Research 52, 6792–6818.
+Nagaraja, C.H., McElroy, T., 2018. The multivariate bullwhip effect. European Journal of Operational Research 267, 96–106.
+Nelsen, R.B., 2006. An introduction to copulas. Springer.
+Ojha, D., Sahin, F., Shockley, J., Sridharan, S.V., 2019. Is there a performance tradeoff in managing order fulfillment and the bullwhip effect in
+supply chains? the role of information sharing and information type. International Journal of Production Economics 208, 529–543.
+Paillier,P.,1999.Public-keycryptosystemsbasedoncompositedegreeresiduosityclasses,in:Internationalconferenceonthetheoryandapplications
+of cryptographic techniques, Springer. pp. 223–238.
+Raghunathan, S., 2003. Impact of demand correlation on the value of and incentives for information sharing in a supply chain. European Journal
+of Operational Research 146, 634–649.
+Reiner, G., Fichtinger, J., 2009. Demand forecasting for supply processes in consideration of pricing and market information. International Journal
+of Production Economics , 55–62.
+Sahai, S., Singh, N., Dayama, P., 2020. Enabling privacy and traceability in supply chains using blockchain and zero knowledge proofs, in: 2020
+IEEE International conference on blockchain proceedings, Rhodes, Greece, 2-6 November, IEEE. pp. 134–143.
+Sari, K., 2007. Exploring the benefits of vendor managed inventory. International Journal of Physical Distribution and Logistics Management 37,
+529–545.
+Sarkar, S., Kumar, S., 2015. A behavioral experiment on inventory management with supply chain disruption. International Journal of Production
+Economics 169, 169–178.
+Schmitt, T.G., Kumar, S., Stecke, K.E., Glover, F.W., Ehlen, M.A., 2017. Mitigating disruptions n a multi-echelon supply chain using adaptive
+ordering. Omega 68, 185–198.
+Shi,N.,Zhou,S.,Wang,F.,Xu,S.,Xiong,S.,2014. Horizontalcooperationandinformationsharingbetweensuppliersinthemanufacturer-supplier
+triad. International Journal of Production Research 52, 4526–4547.
+Sucky, E., 2009. The bullwhip effect in supply chains—an overestimated problem? International Journal of Production Economics 118, 311–322.
+: Preprint submitted to Elsevier Page 25 of 25
+Journal Pre-proof
+Journal Pre-proof
+Tyworth, J.E., Guo, Y., Ganeshan, R., 1996. Inventory control under gamma demand and random lead time. Journal of Business Logistics 17,
+291–304.
+Wilson, M.C., 2007. The impact of transportation disruptions on supply chain performance. Transportation Research Part E: Logistics and
+Transportation Review 43, 295–320.
+Yin,X.,2021. Measuringthebullwhipeffectwithmarketcompetitionamongretailers:asimulationstudy. Computers&OperationsResearch132,
+105341.
+Zhao, C., Zhao, S., Zhao, M., Chen, Z., Gao, C.Z., Li, H., Tan, Y.a., 2019. Secure multi-party computation: Theory, practice and applications.
+Information Sciencies 476, 357–372.
+: Preprint submitted to Elsevier Page 26 of 25
+Journal Pre-proof
+Journal Pre-proof
+Highlights: 
+• Concept of privacy-preserving horizontal information sharing of average customer 
+demand between retailers. 
+• Investigation of influencing factors including demand variability, correlation, forecasting, 
+safety stock, lead time uncertainty. 
+• Analysis of results based on measures for order and inventory variability, fill rate and 
+supply chain costs with recommendations for setting where the implementation of the 
+proposed concept leads to highest benefits. 
+ 
+ 
+ 
+ 

@@ -1,0 +1,3175 @@
+TITLE: Balancing and scheduling of transfer lines for cycle time and peak power minimisation: a learning-enhanced multi-objective variable neighbourhood search
+AUTHORS: Pedram Beldar, Ehsan Mahmoodi, Mostafa Kermani, Gary Linnéusson, Olga Battaïa
+VENUE: International Journal of Production Research (2026-10-05)
+DOI: https://doi.org/10.1080/00207543.2026.2741382
+LICENCE: cc-by
+LINK: https://doi.org/10.1080/00207543.2026.2741382
+
+International Journal of Production Research
+ISSN: 0020-7543 (Print) 1366-588X (Online) Journal homepage: www.tandfonline.com/journals/tprs20
+Balancing and scheduling of transfer lines for
+cycle time and peak power minimisation: a
+learning-enhanced multi-objective variable
+neighbourhood search
+Pedram Beldar , Ehsan Mahmoodi , Mostafa Kermani , Gary Linnéusson &
+Olga Battaia
+To cite this article: Pedram Beldar , Ehsan Mahmoodi , Mostafa Kermani , Gary Linnéusson &
+Olga Battaia (05 Oct 2026): Balancing and scheduling of transfer lines for cycle time and peak
+power minimisation: a learning-enhanced multi-objective variable neighbourhood search,
+International Journal of Production Research, DOI: 10.1080/00207543.2026.2741382
+To link to this article: https://doi.org/10.1080/00207543.2026.2741382
+© 2026 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group.
+Published online: 05 Oct 2026.
+Submit your article to this journal 
+View related articles 
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tprs20
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH
+https://doi.org/10.1080/00207543.2026.2741382
+ 
+Balancing and scheduling of transfer lines for cycle time and peak power 
+minimisation: a learning-enhanced multi-objective variable neighbourhood 
+search
+Pedram Beldara, Ehsan Mahmoodib, Mostafa Kermania, Gary Linnéussonc and Olga Battaiad
+aDivision of Electrical Engineering and Automation, School of Engineering Science, University of Skövde, Skövde, Sweden; bDivision of 
+Mechanical and Industrial Engineering, School of Engineering Science, University of Skövde, Skövde, Sweden; cDivision of Human, Technology, 
+and Management, School of Engineering Science, University of Skövde, Skövde, Sweden; dCentre of Excellence in Supply Chain and 
+Transportation (CESIT), KEDGE Business School, Bordeaux, France
+ABSTRACT
+As global electricity demand surges due to industrial electrification and digitalisation, peak power 
+(PP) management has emerged as a critical challenge in energy-intensive manufacturing, affect-
+ing operational costs and grid capacity. PP is defined as the maximum instantaneous total power 
+demand across all workstations during the production cycle, and its minimisation is essential for 
+reducing demand charges and avoiding grid overloads. This study introduces the balancing and 
+scheduling of machining transfer lines as a bi-objective optimisation problem that simultaneously 
+minimises cycle time (CT) and PP under precedence, inclusion/exclusion, and technological compat-
+ibility constraints. A multi-objective constraint programming (CP) model is formulated and solved 
+via a bidirectional ε-constraint method, generating high-quality Pareto sets for small-scale instances. 
+To overcome the computational intractability of CP for medium- and large-scale problems, a multi-
+objective variable neighbourhood search (MOVNS) enhanced with deep reinforcement learning 
+(NN_MOVNS) is proposed, in which a Deep Q-Network adaptively guides neighbourhood operator 
+selection throughout the search. Computational experiments on 55 benchmark instances demon-
+strate that NN_MOVNS consistently outperforms competing algorithms across all problem scales, 
+with improvements becoming increasingly pronounced on larger instances, as confirmed by statis-
+tical significance tests. Peak shaving experiments confirm PP reductions ranging from 33% to 73% 
+with modest CT increases averaging 5.7%. An industrial-scale test instance of a 148-task automotive 
+cylinder head production line achieves an 11.8% CT reduction and a 63.1% PP reduction, lowering 
+the peak-to-average power ratio from 2.35 to 1.49.
+ARTICLE HISTORY
+Received 3 January 2026
+Accepted 22 September 2026
+KEYWORDS
+Peak shaving; energy 
+redistribution; cycle time; 
+line balancing; deep 
+reinforcement learning; 
+variable neighbourhood 
+search
+SUBJECT 
+CLASSIFICATIONS
+Scheduling; production 
+modelling; metaheuristics
+1. Introduction
+Global electricity demand is rising rapidly as industrial 
+processes become increasingly electrified and digitalised. 
+At the same time, escalating energy prices, power grid 
+limitations, and supply chain disruptions have made effi-
+cient industrial power management a central challenge in 
+the 21st century. This challenge is reflected in unprece-
+dented levels of industrial energy dependency across 
+the world’ s largest manufacturing economies. For exam-
+ple, manufacturing in China alone accounts for more 
+than half of national final energy demand and a domi-
+nant share of energy-related CO2 emissions Sandalow 
+et al. 2022). Moreover, global energy consumption is pro-
+jected to surge by 50% by 2050 (U.S. Energy Informa-
+tion Administration. 2021), with manufacturing’ s share 
+of total electricity consumption expected to nearly double 
+CONTACT Pedram Beldar 
+ pedram.beldar@his.se
+ Division of Electrical Engineering and Automation, School of Engineering Science, University of 
+Skövde, P .O. Box 408, Skövde SE-541 28, Sweden
+from 22% to 46% (Delorme and Gianessi 2024). As a 
+result, the need for energy-efficient manufacturing sys-
+tems has become more urgent than ever (L. Zhang 
+et al. 2017).
+In response, researchers have explored several strate-
+gies aimed at improving energy performance in manufac-
+turing systems (Chen et al. 2025; Rakovitis et al. 2022), 
+typically targeting one or more of the following objec-
+tives (Bänsch et al. 2021): (1) minimising total energy 
+consumption, (2) minimising energy cost under pricing 
+mechanisms such as time-of-use tariffs, and (3) minimis-
+ing peak power (PP). Although minimising total energy 
+consumption and cost are well-established objectives, 
+PP minimisation remains comparatively underexplored. 
+Among industrial systems, synchronised high-power 
+operations in automated production lines represent 
+© 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, 
+distribution, and reproduction in any medium, provided the original work is properly cited. The terms on which this article has been published allow the posting of the Accepted 
+Manuscript in a repository by the author(s) or with their consent.
+2 
+ P. BELDAR ET AL.
+a particularly challenging source of recurring peak 
+demand. Machining transfer lines in automotive and 
+aerospace manufacturing are a prime example (Bel-
+dar et al. 2024). In machining transfer lines, oper-
+ations grouped into blocks are executed by spindle 
+heads at sequentially arranged stations. Within each 
+station, blocks execute sequentially, while all stations 
+operate simultaneously across the transfer line (Guschin-
+skaya and Dolgui 2009). This simultaneous activa-
+tion of spindle heads across stations repeatedly gener-
+ates high-intensity PP per cycle, amplifying electricity 
+demand charges and increasing operational risks due to 
+grid capacity limitation. Moreover, in this setting, total 
+energy consumption per production cycle is largely fixed 
+because all tasks must be executed exactly once and each 
+task has a given processing time and power requirement. 
+By contrast, energy cost minimisation via time-of-use 
+pricing is of limited applicability, since the transfer line 
+operates continuously and cyclically, leaving little room 
+to shift the overall production window to lower-cost tar-
+iff periods. Therefore, the main energy-related decision 
+lever is not how much energy is consumed or when the 
+production cycle occurs, but how power demand is dis-
+tributed within the cycle. This makes PP a particularly 
+relevant objective in machining transfer lines.
+Existing approaches typically optimise either line bal-
+ancing or scheduling separately (Ersin T elemeci and 
+Azizoğlu 2024; Gianessi, Delorme, and Masmoudi 2019), 
+which is shown herein to be inadequate when both cycle 
+time (CT) and PP are critical performance metrics. Line 
+balancing distributes tasks across workstation blocks and 
+stations, avoiding workload imbalances that could cre-
+ate processing bottlenecks and increase CT . However, 
+even if tasks are well balanced, simultaneous scheduling 
+of high-power blocks across multiple workstations can 
+generate recurring PP , thereby inflating costs. Schedul-
+ing aims to stagger these blocks to smooth the power 
+profile; however, without proper task balancing, schedul-
+ing alone may result in inefficient use of workstation 
+capacity or increased CT . Consequently, the assignment 
+of tasks to blocks and workstations (balancing) and the 
+timing of block execution scheduling must be optimised 
+simultaneously. Hence, this paper refers to this problem 
+as the balancing and scheduling of machining transfer 
+lines (BSMTL). T o illustrate the trade-off between CT 
+and PP , Figure 1(a,b) show two alternative schedules for 
+the same transfer line instance, which achieve opposite 
+balances between the two objectives and underscore the 
+need for bi-objective optimisation that jointly considers 
+both metrics. T o address BSMTL, a complex combina-
+torial optimisation problem, a multi-objective variable 
+neighbourhood search (MOVNS) algorithm, enhanced 
+with a deep reinforcement learning-based operator selec-
+tion mechanism, named NN_MOVNS, is proposed. T o 
+the best of our knowledge, no existing approach simulta-
+neously addresses CT and PP optimisation in machining 
+transfer lines under the full set of precedence, inclu-
+sion/exclusion, and technological constraints. This gap 
+motivates the following research questions:
+RQ1: How can the BSMTL be jointly formulated as 
+a bi-objective optimisation problem to simultaneously 
+minimise CT and PP under precedence, inclusion/exclu-
+sion, and technological compatibility constraints?
+RQ2: T o what extent can the proposed NN_MOVNS 
+algorithm outperform both exact methods and standard 
+metaheuristics in terms of Pareto front quality across 
+small, medium, and large-scale instances?
+RQ3: What are the practical implications of the 
+proposed approach in terms of PP reduction, energy 
+redistribution, and peak-to-average power ratio (PAPR) 
+improvement in industrial-scale machining transfer 
+lines?
+The remainder of this paper is organised as follows. 
+Section 2 reviews the literature on transfer line balancing 
+Figure 1. Examples of two solutions illustrating the trade-off between CT and PP in a transfer line. Each subfigure shows a Gantt chart, 
+the system power demand profile, and average power level. (a) Solution A: CT = 172 s, PP = 246 kW and (b) Solution B: CT = 150 s, PP 
+= 289 kW.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 3
+problems and PP minimisation, identifies the research 
+gap, and summarises the main scientific contributions. 
+Section 3 presents the problem description and the con-
+straint programming (CP) model. Section 4 describes the 
+solution method, including the constructive heuristic, 
+shaking and neighbourhood operators, as well as the key 
+components of the neural network-enhanced MOVNS 
+framework. Section 5 presents the experimental eval-
+uation, including the experimental design, competing 
+algorithms, performance metrics, and parameter tuning. 
+Section 6 reports the comparative performance analysis, 
+including pooled-front evaluation, comparisons with the 
+exact solver and metaheuristics, coverage analysis, statis-
+tical significance testing, Pareto front visualisation, and 
+neural network component analysis. Section 7 presents 
+the industrial-scale test instance together with the peak 
+shaving and PAPR analyses, and synthesises the findings 
+and managerial insights through the lens of the research 
+questions. Finally, Section 8 concludes the paper and 
+outlines future research directions.
+2. Literature review
+This section provides a structured review of the sci-
+entific literature relevant to the problem of minimis-
+ing PP and CT in machining transfer lines. Section 2.1 
+establishes the foundational concepts of transfer line bal-
+ancing. Section 2.2 examines PP considerations in gen-
+eral line balancing, drawing transferable insights due 
+to the scarcity of transfer line-specific energy studies. 
+Section 2.3 identifies the research gap, and Section 2.4 
+summarises the main scientific contributions of this 
+work.
+2.1. Transfer line balancing problem
+The Transfer Line Balancing Problem (TLBP) is defined 
+as the optimisation of assigning machining operations to 
+workstations in an automated production line to min-
+imise one or more objectives such as number of stations, 
+line cost, or CT , while satisfying precedence constraints, 
+technological limitations, and equipment compatibil-
+ity requirement (Battaïa, Dolgui, and Guschinsky 2024; 
+Lahrichi, Grangeon, et al. 2021). Transfer lines are 
+characterised by their serial configuration of worksta-
+tions connected by automated material handling sys-
+tems, where parts move automatically from one station 
+to the next, with each station equipped with specialised 
+tools that perform machining operations using single or 
+multiple spindle heads (Nourmohammadi et al. 2024). 
+Unlike assembly line balancing, which often focuses on 
+manual or semi-automated task allocation, TLBPs must 
+address distinct features of automated machining sys-
+tems, including high automation levels, the capacity for 
+parallel processing via multi-spindle heads, equipment 
+design decisions that directly influence task times, and 
+complex constraints related to tool compatibility and 
+task-machine accessibility (Beldar et al. 2025).
+According to the comprehensive survey recently car-
+ried out by Beldar et al. (2025), most studies on the 
+TLBP have focussed on cost-related objectives, particu-
+larly minimising line cost (Battaïa, Dolgui, and Guschin-
+sky 2023, 2024) and the number of machines (Lahrichi, 
+Deroussi, et al. 2021; Lahrichi, Grangeon, et al. 2021). 
+While cost considerations dominate much of the research 
+due to their direct impact on capital investment, there is a 
+noticeable gap in addressing time-related objectives like 
+CT minimisation and efficiency-related objectives like 
+power or energy efficiency metrics.
+Focussing on CT considerations, several key works 
+provide valuable insights. Ersin T elemeci and Azizoğlu
+(2024) address the Type II TLBP , formulating a mixed-
+integer linear programming (MILP) model and a branch-
+and-bound algorithm to minimise CT . Nourmoham-
+madi et al. (2024) study the balancing and scheduling of 
+transfer lines, introducing a MILP model and a multi-
+objective optimisation approach to minimise CT and 
+total energy cost. Their results highlight how varying 
+energy modes influence sustainability, providing insights 
+into energy-efficient production strategies for small to 
+medium-scale problems. Beldar et al. (2024) propose a 
+heuristic approach for balancing transfer lines, incorpo-
+rating a wide range of equipment, time, and operational 
+factors. A numerical example illustrates the method’ s 
+practical applicability and its effectiveness in generating 
+feasible solutions for real-world production settings.
+Energy considerations, though less prevalent, are gain-
+ing traction in TLBP research as sustainability becomes a 
+pressing concern. Petersen et al. (2024) address TLBP in 
+the context of energy-efficient manufacturing by jointly 
+considering CT and energy consumption. A mixed-
+integer linear formulation is presented, and a multi-
+objective Non-dominated Sorting Genetic Algorithm II 
+(NSGA-II) is developed to handle the problem’ s com-
+plexity. Their results demonstrate how different energy 
+modes influence sustainability, offering manufactur-
+ers actionable insights for energy-efficient production
+strategies.
+Despite growing interest in energy-related objectives, 
+research on incorporating PP into TLBP remains scarce. 
+T o better understand how such considerations can be 
+incorporated, it is necessary to look beyond transfer lines 
+and examine the broader body of line balancing research, 
+where PP has recently emerged as a distinct objective 
+alongside CT , cost, and energy metrics.
+4 
+ P. BELDAR ET AL.
+2.2. PP considerations in line balancing
+PP in line balancing is defined as the maximum instanta-
+neous electric power demand during the production pro-
+cess. Unlike traditional assembly line balancing problems 
+that focus primarily on balancing workload and minimis-
+ing CT or number of stations (Battaïa and Dolgui 2022), 
+PP considerations introduce additional scheduling and 
+sequencing complexities, as overlapping high-energy 
+tasks can cause peak demand that elevate operational 
+expenses and risk outages (Delorme et al. 2023; Delorme 
+and Gianessi 2024). PP minimisation in line balanc-
+ing problems must address the temporal distribution of 
+energy-intensive tasks, often requiring integrated assign-
+ment and scheduling decisions to smooth power profiles 
+while respecting precedence constraints, takt time, and 
+workstation limits.
+Focussing on PP considerations, several key works 
+provide valuable insights. Lamy, Delorme, and Gianessi
+(2020) examine a variant of the simple assembly line bal-
+ancing problem with PP minimisation (SALB3PM), for-
+mulating a model that integrates task sequencing without 
+idle times to minimise PP . Their metaheuristic approach 
+demonstrates that sequencing decisions can minimise 
+peaks in paced lines. Delorme and Gianessi (2024) 
+study PP minimisation in reconfigurable parallel-serial 
+lines with crossover, introducing an integer program-
+ming model and matheuristic that consider workstation 
+resource allocation and task scheduling to minimise PP .
+Building on these foundations, Gianessi, Delorme, 
+and Masmoudi (2019) deal with SALB3PM, present-
+ing an integer linear program that minimises PP 
+through integrated assignment and scheduling. Fang 
+et al. (2020) explore multi-objective optimisation in 
+mixed-model multi-robotic disassembly lines, minimis-
+ing CT , peak workstation and total energy consump-
+tion under interval processing times. Their evolution-
+ary simulated annealing algorithm yields uniformly dis-
+tributed Pareto-optimal solutions, highlighting the trade-
+offs between energy metrics in robotic systems. Simi-
+larly, Z. Zheng, Cherif, and Shibasaki (2024) propose a 
+maximum satisfiability-based model for the SALB3PM, 
+efficiently handling large instances by encoding power 
+constraints and achieving robust performance across 
+benchmarks.
+In disassembly contexts, Fang et al. (2019) tackle 
+many-objective optimisation for mixed-model disassem-
+bly lines with multi-robotic workstations, balancing CT , 
+energy consumption, and robot usage. Their problem-
+specific evolutionary algorithm provides insights into 
+convergence-diversity trade-offs, with computational 
+experiments showing superior performance over rep-
+resentative methods. H. Ming, Liu, and Pham (2019) 
+address uncertain processing times in multi-robotic dis-
+assembly lines, developing an MILP model that min-
+imises CT , PP , total energy consumption, and haz-
+ardous task costs, validated through illustrative exam-
+ples. Z. Zhang et al. (2025) consider multi-robot destruc-
+tive disassembly line balancing under component non-
+disassemblability, optimising CT , energy consumption, 
+and profit with an improved multi-objective water cycle 
+algorithm.
+Further advancements in reconfigurable systems are 
+evident in Delorme and Gianessi (2022), who min-
+imise PP in parallel-serial lines with crossover, propos-
+ing an integer linear program that integrates bal-
+ancing and scheduling for an energy-efficient sys-
+tem. Their approach demonstrates substantial peak 
+reductions through resource reconfiguration. Delorme 
+et al. (2023) introduce a decoder for permutation-based 
+heuristics in SALB3PM with earliest starting dates, opti-
+mally splitting task sequences to minimise peaks, with 
+preliminary tests confirming efficiency in large instances. 
+Taken together, these works confirm that PP-oriented 
+line balancing and scheduling is an active and growing 
+research area, but one that has not yet been extended to 
+multi-spindle block-based machining transfer lines.
+2.3. Research gap
+Although prior research on PP minimisation in assem-
+bly, reconfigurable, and disassembly lines offers valu-
+able conceptual and methodological foundations, these 
+studies focus on line structures and decision variables 
+that differ significantly from those in machining transfer 
+lines. Specifically, BSMTL combines characteristics that 
+are not jointly addressed in the existing literature, includ-
+ing parallel multi-spindle processing within blocks, syn-
+chronised station operations through automated transfer 
+mechanisms, and strict equipment- and compatibility-
+related constraints. When considered under a single 
+objective, the problem relates to two distinct research 
+streams: if only CT is minimised, it connects to 
+transfer line balancing studies in multi-spindle set-
+tings (Ersin T elemeci and Azizoğlu 2024) and balancing-
+and-scheduling formulations for mono-spindle flexible 
+transfer lines (Nourmohammadi et al. 2024); if only 
+PP is minimised, it relates in spirit to PP-oriented 
+balancing-and-scheduling models for simple assem-
+bly lines (Gianessi, Delorme, and Masmoudi 2019) 
+and mono-spindle reconfigurable lines (Delorme and 
+Gianessi 2022). However, none of these works simulta-
+neously address multi-spindle block-based transfer lines, 
+joint balancing and scheduling decisions, and PP as an 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 5
+objective. In both mono-spindle and multi-spindle trans-
+fer lines, all stations operate simultaneously, contribut-
+ing to system-level PP . However, in mono-spindle lines, 
+only one task is executed at a time within each sta-
+tion, so power demands do not accumulate within a 
+station. In contrast, in multi-spindle block-based lines 
+all tasks within a block execute simultaneously, caus-
+ing their power demands to sum instantaneously. Block 
+composition therefore becomes itself a PP-determining 
+decision, an additional source of complexity that does 
+not arise in mono-spindle settings. Treating CT and PP 
+independently is thus insufficient: CT-only approaches 
+do not control how block composition generates instan-
+taneous power peaks, while PP-only approaches may 
+inflate CT by creating workload imbalances or scheduling 
+bottlenecks. Since the task-to-block assignment deter-
+mines which power demands accumulate simultane-
+ously and the block execution sequence determines when 
+those peaks occur, both decisions must be optimised 
+jointly. This reveals a methodological gap in the litera-
+ture and motivates the bi-objective models and solution 
+approaches developed in this work.
+2.4. Our main scientific contributions
+In this work, we address the BSMTL problem, charac-
+terised by the joint optimisation of PP and CT under 
+precedence, inclusion/exclusion, and technological com-
+patibility constraints. The contributions of this study are 
+classified under three categories:
+(i) Theoretical contributions: A multi-objective CP 
+model is formulated and solved via a bidirectional ε-
+constraint method (Bérubé, Gendreau, and Potvin 2009), 
+generating high-quality Pareto sets for small-scale
+instances. This formulation establishes a rigorous math-
+ematical foundation for the joint CT–PP optimisation 
+in machining transfer lines, a problem class that has 
+received limited formal treatment in the literature.
+(ii) Methodological contributions: A MOVNS
+algorithm is proposed, featuring a two-phase construc-
+tive heuristic for initialisation: in the first phase, tasks 
+are assigned to workstations with integrated constraint 
+handling to ensure feasibility, while in the second phase, 
+blocks are created on each workstation to establish a 
+high-quality starting solution. The MOVNS framework 
+is further augmented with a neural network-based oper-
+ator selection mechanism (NN_MOVNS) that employs 
+a Deep Q-Network (DQN) to dynamically adapt search 
+operators during optimisation, significantly improving 
+exploration capabilities over static operator selection 
+strategies.
+(iii) Managerial contributions: The practical implica-
+tions of the proposed approach are assessed using two 
+metrics, the Peak Shaving Index (PSI) and the Energy 
+Redistribution Index (ERI), commonly used in demand 
+response contexts to assess and mitigate demand peaks. 
+These metrics provide operations managers with action-
+able tools to quantify and communicate the benefits of PP 
+reduction in energy-intensive manufacturing systems.
+3. Problem description
+A machining transfer line composed of a finite set 
+of workstations M = {1, . . . , NM} is considered, where 
+each workstation k ∈ M contains a limited number of 
+blocks. A set of tasks O = {1, . . . , NT} must be executed 
+on the line. Each task i ∈ O is characterised by a deter-
+ministic processing time T ai and a power demand Tpi. 
+The tasks are also subject to technological and organi-
+sational constraints. Precedence relations (prei,j) specify 
+that task i must be assigned no later than task j in the 
+line sequence. W orkstation eligibility restrictions (teci,k) 
+indicate whether task i can be processed on workstation 
+k. Compatibility rules further restrict how tasks can be 
+grouped: inclusion constraints (inci,j) require two tasks 
+to be assigned to the same workstation; workstation-
+level exclusion constraints (exci,j) prevent two tasks from 
+being assigned to the same workstation; and block-level 
+exclusion constraints (exc_bi,j) prevent two tasks from 
+being assigned to the same block.
+The assignment of tasks is performed in two stages. 
+First, tasks are grouped into blocks, where the total num-
+ber of blocks across the line is |B| =Nb · NM, with Nb
+blocks allocated to each workstation. The set of block 
+indices belonging to workstation k is formally defined as:
+R(k) = {(k − 1) · Nb + 1, (k − 1)
+· Nb + 2, . . . , k · Nb}
+This partitioning ensures that every block q ∈ B belongs 
+to exactly one workstation, and that the Nb blocks 
+on each workstation are indexed consecutively without 
+overlap. For instance, with NM = 3 workstations and 
+Nb = 2 blocks per workstation, the total block set is 
+B = {1, 2, 3, 4, 5, 6}, partitioned as R(1) = {1, 2}, R(2) =
+{3, 4}, and R(3) = {5, 6}, so that workstation 1 operates 
+blocks 1 and 2, workstation 2 operates blocks 3 and 4, and 
+workstation 3 operates blocks 5 and 6. Within a block, all 
+tasks are executed simultaneously; thus, the processing 
+time of a block is equal to the maximum processing time 
+among its assigned tasks. The number of tasks per block 
+is limited by a technological upper bound Mtb. Second, 
+the blocks of each workstation are scheduled sequentially, 
+and the workstation processing time is equal to the sum of 
+its active block durations. Since all workstations operate 
+in parallel, the CT of the transfer line is determined by the 
+6 
+ P. BELDAR ET AL.
+bottleneck workstation, i.e. the one with the maximum 
+cumulative block time.
+At each time point t ∈ T , the instantaneous power 
+demand of the system is computed: from task activity 
+variables actt,q,i, which determine the power load of each 
+block blkq,t, then the power demand of each workstation 
+machk,t, and finally the total system power demand syst. 
+Accordingly, the PP is defined as the maximum instan-
+taneous total system power demand over the planning 
+horizon:
+PP = max
+t∈T
+syst = max t∈T
+∑︂
+k∈M
+machk,t
+The problem is a bi-objective optimisation problem aim-
+ing to (i) minimise the CT of the transfer line and 
+(ii) minimise the peak system power. This problem 
+is denoted as S1 | Cprec, Cexc, Cexc_b, Cinc, SHmulti, Sch |
+CT, PP in the standard TLBP classification introduced 
+by Beldar et al. (2025).
+The following modelling assumptions underlie the 
+proposed formulation: 
+• Processing times T ai and power demand values Tpi are 
+deterministic. Stochastic variability in task durations 
+or power demand is not considered.
+• The number of workstations NM, the maximum num-
+ber of blocks per workstation Nb, and the maximum 
+number of tasks per block Mtb are fixed input param-
+eters.
+• All inclusion, exclusion, block-level exclusion, and 
+technological eligibility constraints are binary and 
+predetermined, reflecting fixed engineering and organ-
+isational requirements.
+• Each task is assigned to exactly one block on exactly 
+one workstation. Task splitting or replication across 
+blocks is not permitted.
+• Tasks are non-preemptive: once a block begins execu-
+tion, all its tasks run to completion without interrup-
+tion.
+• Blocks on each workstation are processed sequentially 
+and used consecutively, with no idle gaps between 
+active blocks.
+• Inactive blocks and workstations contribute zero 
+power at any time point t ∈ T . The standby and idle 
+power draw are not modelled.
+• The planning horizon T = {0, . . . , H} is discretised 
+into unit time steps, where H =∑︁ i∈O T ai provides a 
+conservative upper bound on CT .
+• The model optimises a single production cycle for a 
+single part type.
+3.1. CP model
+T o generate high-quality Pareto sets for small-scale 
+instances of the BSMTL, a multi-objective CP model 
+is developed. CP is selected as the modelling frame-
+work because the BSMTL is inherently a disjunctive 
+scheduling problem: it combines task-to-block assign-
+ment, block formation, and block execution schedul-
+ing under precedence, inclusion/exclusion, and techno-
+logical compatibility constraints. CP handles this class 
+of problems through global constraints and constraint 
+propagation, without the auxiliary binary variables and 
+big-M linearizations that MILP formulations of dis-
+junctive problems typically require, and which tend 
+to weaken LP relaxations and slow convergence. The 
+scheduling component is represented compactly through 
+interval decision variables and global constraints, which 
+have dedicated propagation algorithms. An equivalent 
+MILP formulation would require binary sequencing vari-
+ables for every pair of blocks, leading to quadratic 
+growth in model size. Recent works on integrated line 
+balancing and scheduling problems confirm that CP 
+models outperform state-of-the-art MILP formulations 
+in objective value and solution time for this class of 
+problems (Kheirabadi et al. 2025; Nourmohammadi 
+et al. 2025; C. Zheng et al. 2025; C. Zheng, Li, and Pon-
+nambalam 2025). The CP model is solved using IBM CP 
+Optimiser and its solutions serve as reference Pareto sets 
+for validating the proposed NN_MOVNS metaheuristic. 
+For completeness, an equivalent MILP formulation of the 
+BSMTL is provided in Appendix 1.
+Parameters:
+NT Number of tasks
+NM Number of workstations
+Nb Number of blocks per workstation
+T ai Processing time of task i
+Tpi Power demand of task i
+prei,j 1 if task i must precede task j
+inci,j 1 if tasks i and j must be on the same worksta-
+tion
+exci,j 1 if tasks i and j cannot be on the same work-
+station
+exc_bi,j 1 if tasks i and j cannot be in the same block
+teci,k 1 if task i must be performed on workstation k
+Mtb Maximum number of tasks per block
+H Conservative upper bound on the discretised 
+time horizon, H =∑︁ i∈O T ai
+Sets:
+O Set of tasks indexed by i (O = {1, . . . , NT})
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 7
+M Set of workstations indexed by k (M = {1, . . . ,
+NM})
+B Set of blocks indexed by q (B = {1, . . . , Nb ·
+NM})
+R(k) Set of blocks on workstation k, R(k) = {(k −
+1) · Nb + 1, . . . , k · Nb}
+T Set of time points, T = {0, . . . , H}
+Decision Variables:
+Xi Interval variable for scheduling task i, with 
+fixed duration T ai, ∀i ∈ O
+Yi,q Optional interval variable for assigning task 
+i to block q, with fixed duration T ai, ∀i ∈ O, 
+∀q ∈ B
+BSq Start time of block q, ∀q ∈ B
+BEq End time of block q, ∀q ∈ B
+aq Binary variable: 1 if block q is active, 0 other-
+wise, ∀q ∈ B
+actt,q,i Power demand by task i in block q at time t, 
+∀t ∈ T , q ∈ B, i ∈ O
+blkq,t T otal power in block q at time t, ∀q ∈ B, t ∈ T
+machk,t T otal power in workstation k at time t, ∀k ∈ M, 
+t ∈ T
+syst System power at time t, ∀t ∈ T
+PP Peak power, i.e. maximum instantaneous sys-
+tem power demand
+CT Cycle time
+Model Formulation:
+Minimize CT (1)
+Minimize PP (2)
+subject to:
+alternative(Xi, {Yi,q | q ∈ B}), ∀ i ∈ O (3)
+∑︂
+q∈B
+(q) · presenceOf(Yi,q) ≤
+∑︂
+q∈B
+(q) · presenceOf(Yj,q),
+∀ i < j, if pre i,j = 1 (4)
+presenceOf(Yi,q) + presenceOf(Yj,q) ≤ 1,
+∀ i < j, ∀ q ∈ B, if exc_b i,j = 1 (5)
+∑︂
+q∈R(k)
+presenceOf(Yi,q) =
+∑︂
+q∈R(k)
+presenceOf(Yj,q),
+∀ i < j, ∀ k ∈ M, if inc i,j = 1 (6)
+∑︂
+q∈R(k)
+(︁
+presenceOf(Yi,q) + presenceOf(Yj,q)
+)︁
+≤ 1,
+∀ i < j, ∀ k ∈ M, if exc i,j = 1 (7)
+∑︂
+q∈R(k)
+presenceOf(Yi,q) = 1,
+∀ i ∈ O, ∀ k ∈ M, if tec i,k = 1 (8)
+∑︂
+i∈O
+presenceOf(Yi,q) ≤ Mtb, ∀ q ∈ B (9)
+If q = (k − 1) · Nb + 1 : presenceOf (Yi,q) = 1 = ⇒
+startOf(Yi,q) = 0, ∀ i ∈ O, k ∈ M (10)
+If presenceOf(Yi,q) = 1 = ⇒BSq = startOf(Yi,q),
+∀ i ∈ O, ∀ q ∈ B (11)
+BEq = max i∈O
+(︁
+endOf(Yi,q) · presenceOf(Yi,q)
+)︁
+,
+∀ q ∈ B (12)
+aq = min
+(︄
+1,
+∑︂
+i∈O
+presenceOf(Yi,q)
+)︄
+, ∀ q ∈ B (13)
+aq1 = 1 ∧ aq2 = 1 ⇒ BEq1 = BSq2,
+∀ k ∈ M, ∀ q1, q2 ∈ R(k), q2 = q1 + 1 (14)
+aq−1 ≥ aq, ∀ k ∈ M,
+∀ q ∈ R(k), q > ( k − 1) · Nb + 1 (15)
+If aq = 0, then BE q = BSq, ∀ q ∈ B (16)
+actt,q,i = Tpi · I
+{︁
+presenceOf(Yi,q)
+= 1 ∧ startOf(Yi,q) ≤ t < endOf(Yi,q)
+}︁
+,
+∀ t ∈ T , q ∈ B, i ∈ O (17)
+blkq,t =
+∑︂
+i∈O
+actt,q,i, ∀ q ∈ B, t ∈ T (18)
+machk,t =
+∑︂
+q∈R(k)
+blkq,t, ∀ k ∈ M, t ∈ T (19)
+syst =
+∑︂
+k∈M
+machk,t, ∀ t ∈ T (20)
+PP ≥ syst, ∀ t ∈ T (21)
+CT = max
+i∈O,q∈B
+(︁
+endOf(Yi,q) · presenceOf(Yi,q)
+)︁
+(22)
+The objective functions (1) and (2) minimise the CT and 
+PP , respectively. Constraint (3) guarantees each task is 
+assigned to exactly one block. Constraint (4) enforces 
+precedence relationships between tasks. Constraint (5) 
+prevents incompatible tasks from being assigned to the 
+same block. Constraints (6) and (7) enforce worksta-
+tion inclusion and exclusion rules for task assignments, 
+respectively. Constraint (8) ensures tasks are assigned to 
+compatible workstations. Constraint (9) limits the num-
+ber of tasks per block. Constraint (10) sets the start 
+time of the first block on each workstation to zero if 
+active. Constraints (11) and (12) define the start and end 
+8 
+ P. BELDAR ET AL.
+Table 1. Active constraint pairs for the illustrative example.
+Constraint Active pairs / entries
+Precedence (prei,j = 1) (1, 2), (1, 3), (1, 4), (1, 5), (2, 6),
+(3, 7), (4, 7), (5, 7), (6, 8), (7, 9),
+(8, 10), (9, 11), (10, 11)
+Workstation inclusion (inci,j = 1) (1, 6), (7, 11)
+Workstation exclusion (exci,j = 1) (3, 9), (4, 6)
+Block exclusion (exc_bi,j = 1) (3, 11)
+Workstation eligibility (teci,k = 1) Task 1 must be performed on 
+workstation 1.
+Table 2. Feasible task assignment for the illustrative example.
+Task Block Workstation
+1 1 1
+3 1 1
+2 2 1
+6 3 1
+8 4 2
+10 4 2
+5 5 2
+4 7 3
+7 8 3
+9 8 3
+11 8 3
+times of blocks based on assigned tasks. Constraint (13) 
+determines if a block is active. Constraint (14) ensures 
+sequential scheduling of blocks on the same worksta-
+tion. Constraint (15) prevents gaps in block usage on 
+workstations. Constraint (16) binds block start and end 
+times if inactive, making the end time equal to the 
+start time, effectively resulting in zero duration. Con-
+straints (17), (18), (19), (20), and (21) calculate the power 
+demand at different levels (task, block, workstation, sys-
+tem) and determine the PP . Constraint (22) computes the 
+CT as the maximum completion time of any task.
+T o illustrate the constraint semantics, consider a 
+machining transfer line with NM = 3 workstations, 
+Nb = 3 blocks per workstation, and NT = 11 tasks, 
+yielding a total of |B| =Nb · NM = 9 blocks. The block-
+to-workstation mapping is:
+R(1) = {1, 2, 3}, R(2) = {4, 5, 6}, R(3) = {7, 8, 9}
+The maximum number of tasks per block is Mtb = 3. 
+The constraints active in this instance are summarised in 
+Table 1.
+A feasible assignment satisfying all constraints is pre-
+sented in Table 2.
+The feasibility of this assignment is verified as follows: 
+• Precedence: Task 1 (block 1) precedes tasks 2 (block 2), 
+3 (block 1), 4 (block 7), and 5 (block 5), since 1 ≤ 2, 
+1 ≤ 1, 1 ≤ 7, and 1 ≤ 5, respectively. Task 2 (block 2) 
+precedes task 6 (block 3): 2 ≤ 3 ✓. Tasks 3 (block 1), 4 
+(block 7), and 5 (block 5) all precede task 7 (block 8): 
+1 ≤ 8, 7 ≤ 8, 5 ≤ 8 ✓. Task 6 (block 3) precedes task 8 
+(block 4): 3 ≤ 4 ✓. Task 7 (block 8) precedes task 9 
+(block 8): 8 ≤ 8 ✓. Task 8 (block 4) precedes task 10 
+(block 4): 4 ≤ 4 ✓. Tasks 9 and 10 (blocks 8 and 4) 
+precede task 11 (block 8): 8 ≤ 8 and 4 ≤ 8 ✓. Note 
+that when two tasks share the same block, the prece-
+dence constraint is satisfied with equality, as the model 
+enforces block-level ordering rather than strict task-
+level sequencing within a block.
+• Workstation inclusion: Task 1 (block 1 ∈ R(1)) and 
+task 6 (block 3 ∈ R(1)) are both assigned to worksta-
+tion 1 ✓. Task 7 (block 8 ∈ R(3)) and task 11 (block 8 
+∈ R(3)) are both assigned to workstation 3 ✓.
+• Workstation exclusion: Task 3 (block 1 ∈ R(1), work-
+station 1) and task 9 (block 8 ∈ R(3), workstation 3) 
+are on different workstations ✓. Task 4 (block 7 ∈
+R(3), workstation 3) and task 6 (block 3 ∈ R(1), work-
+station 1) are on different workstations ✓.
+• Block exclusion: Task 3 is assigned to block 1 and 
+task 11 to block 8; since 1 ̸= 8, they do not share the 
+same block ✓.
+• Workstation eligibility: Task 1 is restricted to work-
+station 1 only (tec1,1 = 1, tec1,2 = tec1,3 = 0). In the 
+assignment, task 1 is placed in block 1 ∈ R(1), i.e. 
+workstation 1 ✓. All other tasks carry no eligibility 
+restriction and may be assigned to any workstation 
+freely ✓.
+• Block capacity: Block 1 contains tasks 1 and 3 (2 tasks 
+≤ Mtb = 3); block 4 contains tasks 8 and 10 (2 tasks ≤
+3); block 8 contains tasks 7, 9, and 11 (3 tasks = Mtb =
+3). All remaining active blocks contain one task each 
+✓.
+Despite its effectiveness on small-scale instances, the CP 
+model becomes computationally intractable as problem 
+size grows. The main source of complexity is the coupled 
+assignment-and-scheduling structure of the BSMTL. 
+Each task can potentially be assigned to multiple blocks, 
+represented by the optional interval variables Yi,q, while 
+satisfying precedence, inclusion/exclusion, technological 
+eligibility, and block-capacity constraints. As the num-
+bers of tasks, workstations, and blocks increase, the num-
+ber of feasible task-to-block assignments grows rapidly. 
+Moreover, each feasible assignment induces additional 
+timing decisions for block start and end times, as well as 
+time-indexed power calculations over the planning hori-
+zon through actt,q,i, blkq,t, machk,t, and syst. Since the 
+CP model is solved repeatedly within the ε-constraint 
+framework to generate reference Pareto sets, the overall 
+computational effort increases substantially with instance 
+size. As a result, the exact CP approach becomes imprac-
+tical for medium- and large-scale instances within the 
+imposed time limit, which motivates the development 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 9
+of the MOVNS-based solution method described in 
+Section 4.
+4. Solution method
+The proposed NN_MOVNS algorithm builds on the 
+variable neighbourhood search (VNS) framework, which 
+has demonstrated strong and consistent performance in 
+constrained combinatorial optimisation, notably in line 
+balancing (Meng, Tang, and Zhang 2022; Zhao, Tang, 
+and Zhang 2022; Zhao et al. 2024) and scheduling (J.-
+K. Li et al. 2026; Zhou et al. 2026), outperforming 
+population-based methods on highly structured prob-
+lem instances. The block-based structure of the BSMTL, 
+combined with its dense constraint landscape covering 
+precedence, inclusion/exclusion, and technological com-
+patibility constraints, makes it particularly well-suited to 
+neighbourhood search, where problem-specific opera-
+tors can directly exploit the feasibility structure.
+The algorithm, described in Algorithm 1, comprises 
+an initialisation stage followed by a main iterative loop 
+that integrates MOVNS-based shaking and local search, 
+DQN-guided operator selection, and a learning mech-
+anism. The initialisation stage generates an initial fea-
+sible solution using a constructive heuristic, and con-
+currently prepares the Pareto archive for storing non-
+dominated solutions and the DQN agent with its expe-
+rience replay buffer. The main iterative loop operates 
+until a time-based termination criterion is met. At the 
+start of each iteration, a diversification step periodically 
+reseeds the working solution from the Pareto archive to 
+prevent premature convergence. A shaking operator is 
+then applied to perturb the current solution before local 
+search proceeds. The selection of a local search oper-
+ator is randomised during an initial warm-up period 
+and is subsequently guided by the DQN agent via an ε-
+greedy policy based on a five-dimensional state vector. 
+The application of the selected operator yields a new solu-
+tion, which is then verified for feasibility and evaluated 
+against the two objectives. A multi-component reward 
+function assessing Pareto expansion, diversity improve-
+ment, and per-objective gain is computed and, together 
+with the observed state transition, stored in the experi-
+ence replay buffer (Liu et al. 2025). The Pareto archive is 
+updated accordingly, and the DQN network is periodi-
+cally retrained via mini-batch sampling from the buffer, 
+allowing the agent to improve its operator selection pol-
+icy throughout the search. Upon reaching the termi-
+nation criterion, the algorithm outputs the final Pareto 
+archive. The subsequent sections provide detailed formu-
+lations for each of these components.
+Algorithm 1: NN_MOVNS
+Input: Task blocks T B; constraint matrices preij, incij, excij, exc_bij, tecik; 
+time limit tmax; Mtb; task times τ ; task powers ρ
+Output: Pareto archive P
+Parameters: w1=0.8, w2=0.9, w3=0.3; εinit=1.0, εpost=0.3, εmin=0.1, 
+δ=0.995; γ =0.9; lr = 0.001; Bs=32; φ=0.2; f =5; τd=10; 
+As=20; Al=20; ε=10−12
+// Initialization
+1 Generate S0 via RPW constructive heuristic; (f 0 1 , f 0 2 ) ← Ev aluate(S0)
+2 P ← {S0}; S ← S0; B ← ∅; Initialize DQN: multilayer 
+perceptron(5→64→64→8), weights θ , ε ← εinit
+3 iter ← 0; stag ← 0; imp ← 0; warmup ← true
+4 while telapsed < tmax do
+5 if warmup and telapsed > φ · tmax then warmup ← false; ε ← εpost
+// Diversification
+6 if iter mod τd = 0 and |P| > 1 then S ← uniform random sample 
+from P
+// Shaking – SO1 first, then SO2 if SO1 fails; 
+retain S if both fail
+7 Ssh ← null
+8 for SO ∈ {SO1, SO2} do
+9 for i ← 1 to As do if SO(S) ̸= null then Ssh ← SO(S);
+10 break
+11
+12 if Ssh ̸= null then break
+13 end 
+14 if Ssh = null then Ssh ← S
+// State construction & ε-greedy operator selection 
+over A = {N1, . . . , N8}
+15 Dt ← Diversity(P)
+16 st ← [stag/10, imp/5, |P|/100, Dt/1000, telapsed/tmax]
+17 if ¬warmup and iter mod f = 0 then ε ← max(εmin, ε · δ)
+18 if warmup or ξ ∼ U [0, 1] < ε t then at ← uniform random from A
+19 else at ← arg maxa∈A Q(st, a; θ)
+// Local search on shaken solution
+20 S∗ ← null; rt ← −0.1
+21 for i ← 1 to Al do if Nat (Ssh) ̸= null then S∗ ← Nat (Ssh);
+22 break
+23
+// Evaluation, reward & Pareto update
+24 if S∗ ̸= null then
+25 (f ′ 1, f ′ 2) ← Ev aluate(S∗); |P|old ← |P|; Dold ← Dt; 
+Compute f min k , f max k over P ∪ {S,S∗} for k ∈ {CT ,PP}
+26 P ← UpdateP areto(P, S∗); Dt+1 ← Diversity(P)
+27 rP ← |P| − |P|old |P|old + 1 ; rd ← Dt+1 − Dold Dold + 1 ; 
+ro ←
+∑︂
+k∈{CT ,PP}
+f min k
+max(fk(S), ε) · fk(S) − fk(S∗) max(f max k − f min k , ε)
+28 rt ← clip(w1rP + w2rd + w3ro, −1, 1)
+29 if |P| > |P|old then
+30 stag ← 0; imp ← imp + 1; S ← S∗
+31 else
+32 stag ← stag + 1; imp ← max(0, imp − 1)
+33 end
+34 end 
+35 stag ← stag + 1; imp ← max(0, imp − 1)
+// Experience replay & network training
+36 Dt+1 ← Diversity(P)
+37 st+1 ← GetState(stag, imp,|P|, Dt+1, telapsed, tmax); 
+B ← B ∪ {(st, at, rt, st+1)}
+38 if iter mod f = 0 and |B| ≥B then
+39 Sample {(si, ai, ri, si+1)}Bs i=1 from B; 
+yi ← ri + γ · maxa′ Q(si+1, a′; θ) ∀ i
+40 L(θ ) ← 1 Bs
+Bs∑︂
+i=1
+(Q(si, ai; θ ) − yi)2; Update θ via Adam on 
+∇θ L(θ )
+41 end 
+42 iter ← iter + 1
+43 end 
+44 return P
+10 
+ P. BELDAR ET AL.
+4.1. Feasible solution generation using constructive 
+heuristic
+The constructive heuristic generates an initial feasible 
+solution through a multi-step process that ensures tasks 
+are assigned to blocks on different workstations while 
+respecting all problem constraints. The steps are as 
+follows:
+(1) T ask ordering: In this step, the initial sequence of 
+tasks is determined using the Ranked Positional 
+W eight method (Helgeson and Birnie 1961), which 
+prioritises tasks based on their cumulative positional 
+weights (the sum of a task’ s processing time and 
+all its successor task times) to establish an efficient 
+preliminary order.
+(2) Initial task assignment: Distribute tasks to all work-
+stations following the order determined in the pre-
+vious step. Initially, each workstation is treated 
+as a candidate location for each task, forming 
+a workstation–task eligibility matrix. Subsequent 
+constraint-filtering steps progressively remove infea-
+sible task–workstation combinations before the final 
+unique assignment is constructed.
+(3) Inclusion constraint implementation: For task pairs 
+requiring co-location, identified by incij > 0, the 
+heuristic enforces that tasks i and j can only remain 
+feasible for workstations where both tasks can be 
+jointly assigned. If either task is infeasible or unavail-
+able on a workstation, the paired task is also marked 
+infeasible for that workstation.
+(4) Exclusion constraint implementation: For task pairs 
+prohibited from co-location (identified via exclusion 
+matrix excij > 0), if both tasks are assigned to the 
+same workstation, retain one task based on priori-
+tisation and mark the other as infeasible (−1) for 
+that workstation. Additionally, mark the retained 
+task as incompatible (−1) on any workstation that 
+initially designates both tasks together, maintaining 
+exclusivity constraints.
+(5) T echnological constraint implementation: For tasks 
+requiring specific workstations (identified via tech-
+nological matrix tecik = 1), ensure assignment only 
+to technologically capable workstations by removing 
+the task from any incompatible workstation, main-
+taining technological compatibility requirements.
+(6) Final assignment: Assigns tasks to workstations to 
+balance workload while satisfying all constraints. A 
+threshold is calculated as total task time divided 
+by workstation count multiplied by the coefficient 
+β = 2.7. For each workstation (except the last), 
+tasks are assigned from the prioritised list only if 
+prerequisites are completed on the same or ear-
+lier workstations. Assignment continues until the 
+threshold is reached. When exceeded, assigned tasks 
+are marked infeasible (−1) on remaining worksta-
+tions, and unassignable tasks are marked infeasible 
+for the current workstation. Exception: tasks requir-
+ing specific workstations are assigned regardless of 
+threshold violations.
+(7) Block creation and task-to-block assignment: This 
+step groups each workstation’ s tasks into discrete 
+blocks while satisfying exclusion constraints. The 
+algorithm first generates a set number of empty 
+blocks per workstation (Nb). Then, for each work-
+station, it iterates through its tasks and tries to assign 
+each one to an existing block. Before placement, 
+it checks the block exclusion matrix (exc_bij) to 
+ensure no conflicts with tasks already exist in that 
+block. If there is a conflict (exc_bij = 1), the task is 
+skipped for that block. The search continues until 
+a suitable block is found or a new one is created if 
+needed. Each block can contain up to a maximum 
+number of tasks (Mtb), ensuring balanced workload
+distribution.
+(8) CT calculation: This step computes the execution 
+times for each workstation and determines the over-
+all CT of the system. For each workstation, the 
+algorithm processes the blocks sequentially, calcu-
+lating the execution time of each block as the max-
+imum task duration among all tasks within that 
+block (since tasks within a block execute in paral-
+lel). The workstation’ s total CT is computed as the 
+sum of all its block execution times, representing 
+the sequential execution of blocks on that worksta-
+tion. The algorithm tracks the start and end times for 
+each block to provide detailed timing information. 
+The final system CT is determined as the maxi-
+mum CT across all workstations, representing the 
+bottleneck workstation that determines the overall 
+system performance. This step provides the founda-
+tion for evaluating one of the primary optimisation 
+objectives.
+(9) Power demand calculation: This step determines the 
+power demand profile for each block across all work-
+stations to support the second optimisation objec-
+tive. For each workstation, the algorithm processes 
+each block and calculates the total power demand 
+as the sum of power requirements of all tasks 
+within that block. Since tasks within a block execute 
+simultaneously, their power demand are additive. 
+The algorithm handles various edge cases, includ-
+ing empty blocks (assigned zero power demand) 
+and validates the integrity of the task assignments. 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 11
+For each block, it retrieves the power demand val-
+ues from the task power matrix and computes the 
+aggregate power requirement. This information is 
+essential for determining the PP across the entire 
+system, which serves as the second objective func-
+tion in the multi-objective optimisation problem. 
+The power calculation ensures that the solution eval-
+uation considers both temporal and resource con-
+straints effectively.
+4.2. Shaking operators
+The proposed MOVNS uses two distinct shaking opera-
+tors (SO), SO1 and SO2, to perturb the current solution 
+and help avoid local optima. In the shaking phase, SO1 is 
+applied first; if it fails to produce a feasible solution within 
+As = 20 attempts, SO2 is applied instead with the same 
+attempt limit. If neither operator yields a feasible solu-
+tion, the algorithm retains the current solution, thereby 
+ensuring that a feasible solution is always maintained.
+SO1 (Block shift neighbourhood). A shifting process 
+takes place wherein a block is randomly selected from 
+a randomly chosen workstation and is then moved to 
+a new position either earlier or later within the same 
+workstation’ s block sequence. The feasibility of this move 
+depends on ensuring that all constraints, including prece-
+dence relationships, are satisfied after the shift.
+SO2 (Intra-workstation block split). A splitting process 
+occurs wherein a block with at least two tasks is ran-
+domly selected from a chosen workstation, and a subset 
+of tasks from this block is moved to another block on 
+the same workstation. The target block may be an exist-
+ing one or an empty block. The move is only feasible if 
+the target block has enough capacity to accommodate the 
+additional tasks and all relevant constraints are satisfied.
+4.3. Neighbourhood operators
+This section briefly explains the structure of the neigh-
+bourhood operators used in the local search phase of 
+NN_MOVNS.
+N1 (Inter-workstation task swap). A swapping process 
+takes place wherein two different workstations are ran-
+domly selected, and from each workstation, a non-empty 
+block is chosen at random. Subsequently, a task from 
+each selected block is picked randomly and exchanged 
+between the blocks. The feasibility of this move depends 
+on ensuring that all constraints are satisfied after the 
+swap.
+N2 (Intra-workstation adjacent block task swap). A 
+swapping process occurs wherein a single worksta-
+tion is randomly selected, and from this workstation, 
+two adjacent non-empty blocks are chosen at random. 
+Subsequently, a task from each of these blocks is picked 
+randomly and exchanged between them. The feasibility 
+of this move depends on ensuring that all constraints are 
+satisfied after the swap.
+N3 (T ask relocation across workstations). A moving 
+process takes place wherein two distinct workstations are 
+randomly selected from the set of available workstations. 
+From each workstation, a block is chosen at random, with 
+the source block on the first workstation having at least 
+one task and the target block on the second workstation 
+having available capacity. Subsequently, a task from the 
+source block is randomly picked and moved to the target 
+block on the second workstation. The feasibility of this 
+move depends on satisfying all problem constraints after 
+the task is moved.
+N4 (T ask relocation within a workstation). A moving 
+process occurs wherein a single workstation is randomly 
+selected from the set of available workstations. On this 
+workstation, two distinct blocks (not necessarily adja-
+cent) are chosen at random, with the source block having 
+at least one task and the target block having available 
+capacity. Subsequently, a task from the source block is 
+randomly picked and moved to the target block on the 
+same workstation. The feasibility of this move depends 
+on satisfying all problem constraints after the task is 
+moved.
+N5 (T ask insertion across blocks). A relocation process 
+takes place wherein a task is randomly selected from a 
+non-empty block on a workstation, and an attempt is 
+made to insert it into blocks on other workstations that 
+have available capacity. The target blocks are considered 
+in a randomised order to promote exploration diversity. 
+The move is accepted only if all problem constraints are 
+satisfied, with the first feasible insertion being accepted.
+N6 (T ask relocation from higher CT to adjacent lower 
+CT workstation). A shifting process takes place wherein a 
+pair of adjacent workstations is randomly selected from 
+the set of available workstations, and the workstation 
+with the higher CT is identified as the source, while the 
+other is the target. From the source workstation, the last 
+task of the last non-empty block is chosen, and it is moved 
+to the start of the first block of the target workstation if 
+capacity allows. The feasibility of this move depends on 
+satisfying all the constraints of the problem after the task 
+is shifted.
+N7 (T ask move between adjacent blocks on single work-
+station). A moving process occurs wherein a single work-
+station is randomly selected from the set of available 
+workstations, and from this workstation, two adjacent 
+blocks are chosen at random, with the source block hav-
+ing at least one task and the target block having available 
+capacity. Subsequently, a task from the source block is 
+randomly picked and moved to the target block on the 
+12 
+ P. BELDAR ET AL.
+same workstation. The feasibility of this move depends 
+on satisfying all problem constraints after the task is 
+moved.
+N8 (T ask swap between adjacent workstations). A swap-
+ping process takes place wherein two adjacent worksta-
+tions are randomly selected from the set of available 
+workstations, and from each workstation, a non-empty 
+block is chosen at random. Subsequently, a task from 
+each selected block is picked randomly and exchanged 
+between the blocks. The feasibility of this move depends 
+on ensuring that all constraints are satisfied after the 
+swap.
+4.4. Key components of the NN_MOVNS framework
+The proposed NN_MOVNS algorithm builds on tradi-
+tional MOVNS by incorporating a DQN to guide the 
+adaptive selection of neighbourhood operators. Unlike 
+conventional MOVNS frameworks, which apply oper-
+ators in a fixed or random order, this static approach 
+can limit the algorithm’ s ability to escape local optima 
+and explore the solution space effectively (Kalatzanton-
+akis, Sifaleras, and Samaras 2025). By using deep rein-
+forcement learning, the proposed method continuously 
+learns which operators perform best, allowing it to adjust 
+dynamically between exploration and exploitation based 
+on accumulated search experience rather than relying 
+on preset rules. This integration of learning mechanisms 
+into neighbourhood search is supported by a growing 
+body of evidence in the scheduling and manufactur-
+ing optimisation literature, where reinforcement learn-
+ing has been shown to improve operator selection in 
+VNS (Kalatzantonakis, Sifaleras, and Samaras 2025; P . Li 
+et al. 2023), graph neural networks have been combined 
+with neighbourhood search for combinatorial schedul-
+ing (T . Guo et al. 2025), and deep reinforcement learning 
+has been applied to resilient production control in com-
+plex manufacturing environments (Leng et al. 2024; Liu 
+et al. 2025). The key components of the NN_MOVNS 
+framework, as outlined above, are detailed in the follow-
+ing subsections
+4.4.1. DQN architecture and state representation
+The DQN integrated into NN_MOVNS employs a multi-
+layer perceptron architecture to approximate the action-
+value function that maps search states to the expected 
+cumulative rewards of each neighbourhood operator (F . 
+Ming et al. 2024). The architecture consists of an input 
+layer that receives five-dimensional state feature vectors, 
+two hidden layers with sixty-four neurons each using rec-
+tified linear unit activations, and an output layer with 
+eight neurons representing the Q-values of the eight 
+local search operators. The DQN training configuration 
+was determined through the parameter tuning proce-
+dure described in Section 5.2, and the final settings are 
+reported in Table 4. These include the optimiser, learn-
+ing rate, discount factor, batch size, exploration parame-
+ters, and training frequency. Experience replay is used to 
+reduce the correlation between successive samples, while 
+reward clipping bounds the magnitude of temporal-
+difference updates and improves numerical stability. T o 
+examine whether a more advanced deep reinforcement 
+learning architecture was required, preliminary tests were 
+also conducted with a Double DQN variant (Y . Zhang 
+et al. 2023), which decouples action selection from target-
+value estimation to reduce overestimation bias. Across a 
+representative subset of instances, Double DQN did not 
+produce consistently better Pareto fronts, while increas-
+ing the training overhead due to the additional target-
+network evaluation. Given the compact state represen-
+tation with five features and the limited action space 
+of eight neighbourhood operators, the overestimation 
+bias addressed by Double DQN was not observed to 
+be a dominant performance-limiting factor. Therefore, 
+the standard DQN architecture was retained as the most 
+parsimonious and computationally efficient alternative.
+The state representation encodes five key features 
+that describe the current search status. The stagnation 
+counter, normalised by division by ten, measures the 
+number of consecutive iterations without improvement 
+in the Pareto set, indicating when exploration-oriented 
+operators may be beneficial. The recent improvement 
+metric, normalised by division by five, quantifies the fre-
+quency of Pareto set expansions within a recent time 
+window, suggesting periods where exploitation-oriented 
+operators should be prioritised. The Pareto set cardinal-
+ity, normalised by division by one hundred, reflects the 
+size of the solution archive and the degree of conver-
+gence achieved. The diversity measure, normalised by 
+division by one thousand, captures the spread of solu-
+tions in objective space through the average pairwise 
+Euclidean distance. Lastly, the search progress, computed 
+as the ratio of elapsed time to the maximum allowed 
+time, enables the network to adjust its behaviour accord-
+ing to the current optimisation phase. The resulting state 
+feature vector is defined as:
+st =
+[︃ stagnationt
+10 , improvementt 5 , |Pt| 100 , Dt 1000 , telapsed tmax
+]︃
+where Pt denotes the Pareto set at iteration t and Dt
+represents the diversity metric, computed as the mean 
+pairwise distance between solutions in objective space. 
+This compact representation is designed for the static 
+BSMTL setting considered in this study, where the 
+task-precedence structure and workstation configuration 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 13
+remain fixed throughout optimisation. In dynamic set-
+tings involving real-time disruptions such as machine 
+failures or demand shifts, a graph convolutional network-
+based state encoding (Leng et al. 2024) could provide a 
+richer representation by capturing the topological struc-
+ture of the task-precedence graph, enabling the agent 
+to perceive and respond to structural changes during 
+execution.
+4.4.2. Action space and neighbourhood operators
+The action space in the reinforcement learning frame-
+work comprises the eight local search operators over 
+which the DQN agent learns a selection policy. These 
+operators, {N1, N2, N3, N4, N5, N6, N7, N8}, perform
+small-scale structural adjustments aimed at solution 
+intensification, preserving the integrity of solutions while 
+exploring promising regions near the current search posi-
+tion. The formal action space is defined as:
+A = {N1, N2, N3, N4, N5, N6, N7, N8}
+The two shaking operators, SO1 and SO2, are not part 
+of the learned action space. Instead, they are applied as 
+a mandatory perturbation step at every iteration prior 
+to local search, independently of the DQN’ s decision. 
+This design reflects the classical VNS principle of separat-
+ing diversification (shaking) from intensification (local 
+search): the DQN governs the intensification phase only, 
+adaptively selecting which local structure to exploit given 
+the current search state, while the shaking phase ensures 
+structural diversity unconditionally.
+4.4.3. Multi-component reward function
+The reward function in NN_MOVNS integrates multi-
+ple performance indicators to comprehensively evaluate 
+operator effectiveness beyond simple measures of solu-
+tion improvement. The multi-component reward formu-
+lation is defined as:
+rt = w1 · rPareto + w2 · rdiversity + w3 · robjective
+The Pareto expansion component assesses an operator’ s 
+contribution to enlarging the solution archive and is com-
+puted as the normalised change in Pareto set cardinality:
+rPareto = |Pt+1| − |Pt| |Pt| +1
+The diversity enhancement component promotes opera-
+tors that increase the spread of solutions along the Pareto 
+front, measured by the normalised change in average 
+pairwise distances:
+rdiversity = Dt+1 − Dt Dt + 1
+where diversity Dt is calculated as:
+Dt = 1 |Pt|(|Pt| −1)/2
+|Pt|−1∑︂
+i=1
+|Pt|∑︂
+j=i+1
+∥f(xi) − f(xj)∥2
+The objective improvement component rewards opera-
+tors that enhance solution quality for either objective, 
+expressed as:
+robjective =
+∑︂
+k∈{CT,PP}
+f min k
+max
+(︁
+fk(xt), ε
+)︁
+· fk(xt) − fk(xt+1) max (︁ f max k − f min k , ε )︁
+where f max k and f min k denote the extrema computed over 
+P ∪ {S,S∗} for objective k, ε = 10−12 prevents division 
+by zero, and the leading scale factor f min k / max(fk(xt), ε)
+normalises the gain relative to the current solution’ s 
+objective value. If no feasible solution is produced by 
+the selected operator, a fixed penalty reward of −0.1 is 
+assigned. The weighting coefficients were set to w1 = 0.8, 
+w2 = 0.9, and w3 = 0.3 based on preliminary computa-
+tional experiments conducted on a representative sub-
+set of instances. Candidate configurations were assessed 
+according to their ability to generate Pareto sets with 
+good convergence and broad coverage of the CT–PP 
+trade-off space. The selected configuration assigns higher 
+weights to rPareto and rdiversity, thereby prioritising archive 
+expansion and solution spread. This reflects the multi-
+objective purpose of the algorithm: to generate a rich and 
+well-distributed set of non-dominated solutions rather 
+than concentrate the search on a narrow region of the 
+Pareto front.
+The lower weight assigned to robjective retains a direct 
+incentive to improve CT and PP while ensuring that 
+immediate improvement in one objective does not out-
+weigh contributions to Pareto-set expansion and solu-
+tion diversity. Thus, the selected weights balance archive 
+expansion, front diversity, and direct improvements in 
+the two objectives. Details of the preliminary experi-
+ments, including a sensitivity analysis of five alterna-
+tive reward-weight configurations across five representa-
+tive instances, are provided in Appendix 2. The results 
+support the selected configuration by showing its con-
+sistently strong convergence and Pareto-front coverage 
+across the tested instances. The final reward value is 
+clipped to the interval [−1, 1] to maintain numerical 
+stability and facilitate convergence during DQN training.
+4.4.4. Experience replay and network training
+The NN_MOVNS algorithm utilises experience replay 
+to improve learning stability and sample efficiency. 
+14 
+ P. BELDAR ET AL.
+A replay buffer with a given capacity stores recent 
+state–action–reward–next state tuples, allowing the
+decorrelation of training samples and reuse of past expe-
+riences (Liu et al. 2025). At periodic intervals, determined 
+by a training frequency parameter set to five iterations, 
+the DQN performs a training step following the proce-
+dure outlined below.
+A random batch of thirty-two experiences is sampled 
+from the replay buffer, and for each tuple (st, at, rt, st+1), 
+the temporal-difference target is computed as:
+yt = rt + γ · max a′∈A Q(st+1, a′; θ)
+The network parameters θ are updated via gradient 
+descent on the mean squared error loss function:
+L(θ ) = 1 Bs Bs∑︂ i=1 (︁ Q(si, ai; θ) − yi )︁2
+where Bs denotes the batch size. Gradients are computed 
+through backpropagation, and parameter updates are 
+executed using the Adam optimiser. This periodic train-
+ing strategy achieves a balance between learning effec-
+tiveness and computational efficiency, minimising train-
+ing overhead while ensuring sufficient network adapta-
+tion to capture patterns of operator performance.
+4.4.5. Adaptive exploration through warm-up phase 
+and epsilon decay
+The NN_MOVNS algorithm incorporates a two-phase 
+exploration strategy comprising an initial warm-up phase 
+followed by adaptive ε-greedy selection. During the 
+warm-up phase, encompassing the first twenty percent 
+of the total time budget, operators are selected uniformly 
+at random to ensure comprehensive exploration of the 
+operator space and accumulation of diverse experiences 
+in the replay buffer. This initialisation strategy prevents 
+premature convergence to suboptimal operator selection 
+policies and establishes a foundation for effective Q-value 
+learning.
+Following warm-up completion, the exploration rate 
+is reset to εpost = 0.3 to initiate exploitation-dominant 
+behaviour, and then undergoes multiplicative decay 
+according to:
+ε ← max(εmin, ε · δ) , (23)
+where εmin = 0.1 and δ = 0.995 is the per-training-step 
+decay factor. Since the network is trained every f = 5 
+iterations, the effective per-iteration decay rate is δ1/f ≈
+0.999. This two-step transition, which first resets to 
+εpost rather than continuing from the warm-up’ s uni-
+form selection, ensures a controlled handover from the 
+exploration regime to the learned policy without abrupt 
+discontinuities. The action selection mechanism is for-
+malised as:
+at =
+{︄
+uniform random from A, if ξ < ε t
+arg maxa∈A Q(st, a; θ ), otherwise (24)
+where ξ ∼ U [0, 1] and A = {N1, . . . , N8}.
+4.4.6. Pareto-based diversification mechanism
+Complementing the reinforcement learning-guided
+operator selection, NN_MOVNS incorporates explicit 
+diversification through periodic Pareto set sampling. At 
+regular intervals of ten iterations, the current working 
+solution is replaced by a randomly selected solution from 
+the Pareto archive, formally expressed as:
+if t mod τd = 0 and |Pt| > 1 :
+xt ← uniform random from Pt (25)
+where τd = 10 denotes the diversification interval. This 
+mechanism serves multiple purposes: first, it ensures 
+exploration of diverse regions along the Pareto front 
+rather than concentration in limited areas; second, it 
+provides quality-preserving diversification by maintain-
+ing focus on non-dominated solutions; third, it offers a 
+complementary exploration channel independent of the 
+learned operator preferences, thereby mitigating poten-
+tial biases in the Q-network predictions. This explicit 
+diversification strategy has demonstrated effectiveness in 
+maintaining population diversity and preventing prema-
+ture convergence in multi-objective optimisation con-
+texts.
+5. Experimental evaluation
+This section presents the experimental evaluation of the 
+proposed NN_MOVNS algorithm, covering the com-
+putational environment, experimental design, parame-
+ter tuning, and the final parameter configuration. All 
+experiments were executed on a workstation equipped 
+with a 12th Generation Intel Core i9-12900 processor 
+operating at 2.40 GHz, 128 GB of RAM, and a 64-bit 
+Windows operating system with an x64-based proces-
+sor architecture. All algorithms were implemented in 
+Python 3.12. Numerical computations utilised NumPy 
+2.3.0 for array operations and Pandas 2.3.3 for data han-
+dling and statistical analysis. The neural network com-
+ponent of NN_MOVNS was developed in PyT orch 2.8.0, 
+leveraging its automatic differentiation and efficient ten-
+sor operations for the DQN implementation. Perfor-
+mance indicators, including hypervolume and inverted 
+generational distance plus (IGD+), were computed using 
+the pymoo 0.6.1 multi-objective optimisation frame-
+work. Additional scientific computations employed SciPy 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 15
+Table 3. Summary characteristics of test instance families.
+Group Family Instances Tasks Workstations Blocks
+Small JACKSON T1–T5 11 3 3–4
+MITCHELL T6–T10 21 4 3–4
+BUXEY T11–T15 29 5 3–6
+GUNTHER T16–T20 35 5 4–6
+Medium KILBRID T21–T25 45 5 4–6
+WARNECKE T26–T30 58 6 5–6
+TONGE70 T31–T35 70 7 5–6
+WEE-MAG T36–T40 75 7 6–7
+Large LUTZ3 T41–T45 89 8 7–8
+MUKHERJEE T46–T50 94 9 7–8
+BARTHOLD T51–T55 148 10 8–10
+1.14.1 for spatial calculations and Matplotlib 3.9.2 for 
+visualisation. The mathematical model was solved using 
+CPLEX 12.10.
+5.1. Experimental design
+T o evaluate the performance of the proposed algorithms, 
+a diverse set of test instances derived from 11 estab-
+lished line balancing studies is used. The precedence rela-
+tionships (preij) and task times (T ai) were sourced from 
+established online datasets (Scholl et al. 1995), ensuring 
+the authenticity and relevance of the input data. Since 
+the original datasets do not report power demand for 
+individual tasks, these values were estimated based on 
+technical specifications from manufacturers’ catalogs for 
+industrial multi-spindle machines. The power demand of 
+individual tasks was assumed to lie within the range of 
+8–35 kW , reflecting typical industrial values. The dataset 
+includes 55 instances varying in size, structure, and com-
+putational difficulty, grouped into small (4 families), 
+medium (4 families), and large (3 families) categories 
+based on problem dimensions. Table 3 summarises the 
+characteristics of each problem family, including instance 
+ranges, the number of tasks, workstations, and blocks.
+The small-scale group (JACKSON, MITCHELL,
+BUXEY , GUNTHER) includes 20 instances with 11–35 
+tasks and 3–5 workstations. These compact problems 
+can be feasibly solved by CP , serving as a baseline 
+for validating metaheuristic performance. The medium-
+scale group (KILBRID, W ARNECKE, TONGE70, WEE-
+MAG) contains 20 instances with 45–75 tasks and 
+5–7 workstations. Only KILBRID remains solvable by 
+CP , while the others exceed its computational lim-
+its, emphasising the growing challenge for exact meth-
+ods. The large-scale group (LUTZ3, MUKHERJEE, 
+BARTHOLD) includes 15 instances with 89–148 tasks 
+and 8–10 machines, representing industrial-scale prob-
+lems where CP becomes intractable. These are solved 
+exclusively by metaheuristic approaches, with MOVNS 
+and NN_MOVNS demonstrating the strongest perfor-
+mance.
+The detailed characteristics of all 55 test instances, 
+including the number of tasks, workstations, blocks, 
+maximum tasks per block, inclusion rate, exclusion rate, 
+block exclusion rate, and technological ratio, are publicly 
+available at the following link: https://figshare.com/s/9db
+5b6bfd7ba7212473b.
+5.1.1. Competing algorithms and implementation
+T o evaluate the proposed NN_MOVNS, we compare 
+it with four competing approaches: the CP model 
+described in Section 3.1, the baseline MOVNS, and two 
+representative population-based multi-objective meta-
+heuristics, namely NSGA-II (Fang et al. 2020; Petersen 
+et al. 2024) and multi-objective particle swarm opti-
+misation (MOPSO) (Destouet et al. 2024; L. Guo 
+et al. 2025). These two algorithms are included to bench-
+mark NN_MOVNS against established population-based 
+search paradigms that are commonly used in multi-
+objective manufacturing and energy-aware scheduling 
+problems. NSGA-II represents an evolutionary search 
+framework based on non-dominated sorting, elitist selec-
+tion, crossover, and mutation, whereas MOPSO repre-
+sents a swarm-intelligence framework in which solutions 
+are updated through individual and collective learn-
+ing mechanisms. Their inclusion therefore provides a 
+meaningful comparison with algorithms that differ sub-
+stantially from VNS in both population management 
+and search dynamics, allowing the effectiveness of the 
+proposed learning-guided neighbourhood search to be 
+assessed against recognised multi-objective optimisation 
+baselines.
+All four metaheuristics are implemented using the 
+same block-based solution representation, objective eval-
+uation procedures, constraint-checking mechanisms, 
+and computational-time stopping criterion. This com-
+mon implementation framework ensures that the com-
+parison focuses on the search behaviour of the algorithms 
+rather than differences in representation, evaluation, or 
+feasibility handling.
+The time limit for each metaheuristic run is calculated 
+as follows:
+T = min
+(︃
+max
+(︃
+Tcap ·
+(︃ NT
+NTmax
+)︃a
+·
+(︃ NM
+Nmax
+)︃b
+, Tmin
+)︄
+, Tcap
+)︄
+(26)
+where a = 2.0, b = 1.0, Tmin = 120 s, Tcap = 1200 s, 
+NTmax = 148, and Nmax = 10. The formula assigns 
+longer time limits to larger and more difficult instances, 
+while keeping the runtime within a fixed lower and upper 
+bound. All metaheuristics terminate once the elapsed 
+time reaches T.
+16 
+ P. BELDAR ET AL.
+Table 4. Consolidated parameter settings for all metaheuristics.
+Algorithm Parameter Level 1 Level 2 Level 3 Tuned Value Source
+NN_MOVNS Learning rate (Adam) 0.0005 0.001 0.002 0.001 Taguchi
+εinit 0.5 0.75 1.0 1.0 Taguchi
+εmin 0.05 0.1 0.15 0.1 Taguchi
+Decay factor δ 0.985 0.995 1.0 0.995 Taguchi
+Discount factor γ 0.8 0.9 0.95 0.9 Taguchi
+Replay buffer capacity 5 000 10 000 15 000 10 000 Taguchi
+Batch size Bs 22 32 42 32 Taguchi
+MOVNS Shaking neighbourhood size kmax 3 5 7 5 Taguchi
+Local search iterations nls 10 20 30 20 Taguchi
+Perturbation strength ρ 0.1 0.2 0.3 0.2 Taguchi
+NSGA-II Population size 50 100 150 100 Taguchi
+Crossover probability pc 0.85 0.90 0.95 0.95 Taguchi
+Mutation probability pm 0.85 0.90 0.95 0.95 Taguchi
+MOPSO Swarm size 60 80 100 80 Taguchi
+Cognitive coefficient c1 1.0 1.5 2.0 1.5 Taguchi
+Social coefficient c2 1.5 2.0 2.5 2.0 Taguchi
+Turbulence mutation rate 0.20 0.30 0.40 0.30 Taguchi
+Fixed parameters
+Shaking attempts As – 20 Fixed
+Local search attempts Al – 20 Fixed
+Diversification interval τd – 10 Fixed
+Time limit T – Equation (26) Instance-dependent
+NSGA-II additional fixed parameters: repair attempts per offspring = 5.
+MOPSO additional fixed parameters: inertia weight 0.9→0.4 linearly; stagnation injection after 8 iterations.
+Each metaheuristic is executed five times indepen-
+dently for each instance using different random seeds. 
+The non-dominated solutions obtained from the five 
+runs are then pooled, and the resulting pooled front is 
+used for the performance indicator calculations.
+The implementation details of the four metaheuris-
+tics are summarised below. All tuned and fixed parameter 
+values are consolidated in Table 4.
+5.1.1.1. NN_MOVNS (proposed). NN_MOVNS is the 
+learning-guided VNS algorithm described in Section 4. 
+At each iteration a shaking operator (SO1 or SO2) diver-
+sifies the current solution, after which one of the eight 
+local search operators N1–N8 is applied. The operator is 
+selected by a DQN-guided ε-greedy policy. A warm-up 
+phase covering 20% of the runtime precedes the learning-
+guided phase, during which operators are selected uni-
+formly at random.
+5.1.1.2. MOVNS. MOVNS serves as the baseline VNS 
+method. It employs the same shaking and neighbour-
+hood operators as NN_MOVNS but does not use the 
+DQN-guided operator selection mechanism. This com-
+parison therefore isolates the contribution of the learning 
+component.
+5.1.1.3. NSGA-II. The NSGA-II implementation uses 
+non-dominated sorting and crowding-distance selec-
+tion (Petersen et al. 2024). Offspring are generated via 
+two crossover operators (workstation-level and task-
+level) and five mutation move types (task relocation 
+across workstations, task swap between blocks, within-
+workstation block reordering, block movement between 
+workstations, and multi-move perturbation). Because the 
+BSMTL is highly constrained, infeasible offspring are 
+passed through a repair procedure. If repair fails, the 
+parent solution is retained.
+5.1.1.4. MOPSO. The MOPSO implementation main-
+tains an external archive of non-dominated solutions. 
+At each update, a guiding solution is selected from this 
+archive using crowding distance (L. Guo et al. 2025). 
+Since the BSMTL is a discrete problem, the standard con-
+tinuous velocity update is replaced by a discrete mech-
+anism: the inertia component applies a random muta-
+tion, the cognitive component moves the particle toward 
+its personal best solution, and the social component 
+moves it toward the selected archive solution. Infeasible 
+solutions produced by these updates undergo the same 
+repair procedure as in NSGA-II. T o counteract stagna-
+tion, turbulence mutation and periodic swarm reseeding 
+are applied.
+5.1.1.5. Computational effort. Although all four meta-
+heuristics share the same instance-dependent time 
+limit, the single solution-based and population-based 
+methods allocate this budget differently. NN_MOVNS 
+and MOVNS follow a sequential iterate-and-improve 
+scheme: each iteration perturbs the incumbent solution, 
+applies a single neighbourhood operator, checks feasi-
+bility, and updates the approximation set. NSGA-II and 
+MOPSO instead process entire populations at each gen-
+eration, applying crossover, mutation, or velocity updates 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 17
+to multiple individuals before selection or archive update. 
+Because the two paradigms convert the same time budget 
+into search effort through fundamentally different mech-
+anisms, comparing raw operation counts across them is 
+neither meaningful nor informative. The experimental 
+comparison is therefore based on the quality of the Pareto 
+fronts obtained within the common time limit, providing 
+a fair basis for assessing algorithms with different search 
+structures.
+5.1.2. Performance metrics
+A rigorous and multi-faceted evaluation of algorithmic 
+performance is conducted using three complementary 
+quality indicators (Beldar et al. 2026): the relative hyper-
+volume (HVrel), the inverted generational distance plus 
+(IGD+), and the coverage metric. This set of indica-
+tors enables a holistic assessment of convergence quality, 
+solution diversity, and pairwise dominance relationships 
+within the generated Pareto fronts.
+The HVrel indicator quantifies the volume of the 
+objective space dominated by a solution set relative to a 
+reference point, thereby capturing both convergence and 
+spread. The IGD+ metric calculates the average distance 
+from points on the reference Pareto front to their nearest 
+solution in the obtained approximation front, measur-
+ing how well the generated front covers and conforms 
+to the best-known trade-off surface. Finally, the coverage 
+metric provides a direct pairwise comparison between 
+two solution sets by quantifying the fraction of solutions 
+in one set that are dominated by solutions in the other. 
+T ogether, these three indicators provide a comprehensive 
+evaluation of each algorithm’ s performance.
+5.2. Parameter tuning
+The performance of metaheuristic algorithms is sensi-
+tive to their control parameters. Therefore, the Taguchi 
+method (Mahmoodi et al. 2024) was employed to config-
+ure the parameters of all four metaheuristics. An orthog-
+onal array design was used to explore each algorithm’ s 
+parameter space efficiently, reducing the number of 
+experimental runs while capturing the main effects of 
+individual factors. For all algorithms, a representative 
+subset of 15 instances covering the three size categories 
+(small, medium, and large) was used as the tuning 
+testbed, with the mean IGD+ value as the response vari-
+able and the signal-to-noise (SN) ratio under the ‘smaller 
+is better’ criterion used to identify robust settings.
+For NN_MOVNS, an L18 orthogonal array with seven 
+factors at three levels was employed. The tuned factors 
+are the learning rate, the initial and minimum ε-greedy 
+values, the decay factor, the discount factor, the replay 
+buffer capacity, and the batch size. Figure 2 shows the 
+corresponding main effects plots. In these plots, red cir-
+cles indicate the selected tuned values, while dashed 
+lines indicate the overall mean. For most factors, both 
+the mean response and SN ratio led to the same pre-
+ferred level. The same Taguchi procedure was applied to 
+MOVNS, NSGA-II, and MOPSO. For brevity, only the 
+NN_MOVNS plots are reported. Table 4 consolidates all 
+tuned and fixed parameter values.
+In addition to the Taguchi-tuned parameters, several 
+parameters were fixed based on preliminary experimen-
+tation or kept constant across all algorithms to ensure a 
+fair comparison.
+6. Comparative performance analysis
+This section provides a rigorous comparative evalua-
+tion of algorithm performance based on pooled Pareto 
+fronts. The analysis is organised in three stages. First, 
+Section 6.2 compares NN_MOVNS against the exact 
+CP solver on the instances where CP produces fea-
+sible solutions. Second, Section 6.3 extends the com-
+parison to include all four metaheuristics across all 55 
+instances. Third, Section 6.4 presents statistical signifi-
+cance tests and an overall algorithm ranking. Through-
+out this section, the instance grouping follows Table 3: 
+Small (T1–T20, families JACKSON through GUNTHER, 
+20 instances), Medium (T21–T40, families KILBRID 
+through WEE-MAG, 20 instances), and Large (T41–T55, 
+families LUTZ3 through BARTHOLD, 15 instances).
+6.1. Pooled-front evaluation strategy
+For each test instance, each metaheuristic was executed 
+five times independently with different random seeds. 
+The results were aggregated into a single pooled approx-
+imation set per algorithm: Apool = ND(A1 ∪ A2 ∪ A3 ∪
+A4 ∪ A5) denotes the nondominated subset. CP pro-
+duced a single approximation set per instance via the 
+bidirectional ε-constraint method. An empirical ref-
+erence front was then constructed for each instance 
+as: P ∗ = ND(⋃︁ all algorithms Apool) including CP solutions 
+where available. All indicators, HVrel (higher is better), 
+IGD+ (lower is better), and the pairwise coverage metric 
+C, are computed with respect to this common reference 
+front. For the coverage metric, C(A, B) measures the frac-
+tion of solutions in B that are weakly dominated by at least 
+one solution in A. An algorithm is considered superior 
+on a given instance in terms of coverage when C(A, B) >
+C(B, A).
+18 
+ P. BELDAR ET AL.
+Figure 2. Taguchi main effects plots for the seven NN_MOVNS hyperparameters. (a) Main effects plot for means and (b) Main effects 
+plot for SN ratios (smaller is better).
+6.2. Comparison with the exact solver
+The CP model was solved using IBM CP Optimiser 
+via the bidirectional ε-constraint method. A fixed time 
+budget was assigned to each ε-constraint subproblem 
+depending on the benchmark family: 300 s for JACK-
+SON and MITCHELL, 600 s for BUXEY 1800 s for GUN-
+THER, and 3600 s for KILBRID. For the JACKSON and 
+MITCHELL families, all subproblems were solved to 
+optimality, so the CP front constitutes the exact Pareto 
+front for those instances. For the remaining families, opti-
+mality was not always certified within the time limit. 
+For all instances beyond the Small and KILBRID groups 
+(T26–T55), CP failed to produce any feasible solution 
+within the imposed time limits, confirming the scala-
+bility limitations of exact methods and motivating the 
+metaheuristic approach.
+For NN_MOVNS, the running time was determined 
+adaptively according to Equation (26), yielding a size-
+scaled time budget with a lower bound of 120 s and 
+an upper bound of 1200 s. These computational bud-
+gets are not identical but were selected according to the 
+intended behaviour of each method: CP was given a 
+family-dependent limit for each ε-subproblem, whereas 
+NN_MOVNS was given an instance-dependent global 
+limit scaled by the number of tasks and workstations. CP 
+produced feasible solutions for 25 of the 55 test instances: 
+all 20 Small instances (T1–T20) and the 5 KILBRID 
+instances (T21–T25) within the Medium group. T o anal-
+yse the impact of problem size, the CP comparison is 
+partitioned into a Small group (JACKSON, MITCHELL, 
+BUXEY , GUNTHER; 20 instances) and a Medium, KIL-
+BRID group (5 instances). Table 5 presents the pooled-
+front indicator values for CP and NN_MOVNS on the 20 
+Small instances, while Table 6 reports the corresponding 
+results for the five KILBRID instances.
+For the Small instances, CP performs better on HVrel
+with 14 wins against 6, and on IGD+ with 12 wins 
+against 8. The mean HVrel favours CP (0.960 versus 
+0.925). However, NN_MOVNS consistently generates 
+larger pooled Pareto sets (mean |P| =8.9 versus 6.2), 
+providing decision-makers with richer trade-off infor-
+mation. Notably, on the GUNTHER family (T16–T20), 
+where optimality is not always certified within the CP 
+time limit, NN_MOVNS achieves superior HVrel in 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 19
+Table 5. Pooled-front comparison between CP and NN_MOVNS 
+on Small instances (T1–T20).
+HVrel IGD+ |P|
+Inst. Family CP NN_MOVNS CP NN_MOVNS CP NN_MOVNS
+T1 JACKSON 0.976 0.987 0.889 0.444 5 7
+T2 JACKSON 0.978 0.957 0.900 2.073 6 8
+T3 JACKSON 0.986 0.990 0.556 1.000 5 7
+T4 JACKSON 0.966 0.988 1.300 1.100 6 8
+T5 JACKSON 1.000 0.908 0.000 1.800 5 3
+T6 MITCHELL 0.978 0.969 1.200 1.410 5 11
+T7 MITCHELL 1.000 0.820 0.000 3.977 7 7
+T8 MITCHELL 0.984 0.854 0.889 2.667 6 7
+T9 MITCHELL 0.991 0.836 0.778 3.556 6 6
+T10 MITCHELL 0.998 0.922 0.333 2.373 6 9
+T11 BUXEY 0.995 0.950 0.875 3.236 4 8
+T12 BUXEY 0.982 0.937 2.545 4.818 5 9
+T13 BUXEY 0.970 0.833 3.111 5.205 9 10
+T14 BUXEY 0.942 0.918 3.809 2.860 8 13
+T15 BUXEY 0.964 0.895 6.340 2.374 6 17
+T16 GUNTHER 0.981 0.948 1.970 4.410 9 9
+T17 GUNTHER 0.848 0.978 6.172 2.931 7 10
+T18 GUNTHER 0.970 0.892 3.867 5.478 6 10
+T19 GUNTHER 0.865 0.992 21.404 1.021 5 11
+T20 GUNTHER 0.834 0.933 17.604 4.808 6 9
+Mean 0.960 0.925 3.677 2.887 6.2 8.9
+Wins 14 6 12 8 2 17
+Table 6. Pooled-front comparison between CP and NN_MOVNS 
+on KILBRID instances (T21–T25).
+HVrel IGD+ |P|
+Inst. Family CP NN_MOVNS CP NN_MOVNS CP NN_MOVNS
+T21 KILBRID 0.999 0.874 0.200 6.468 9 10
+T22 KILBRID 0.984 0.993 2.875 2.129 6 17
+T23 KILBRID 0.919 0.985 7.492 2.300 5 9
+T24 KILBRID 0.805 0.834 7.436 6.368 6 11
+T25 KILBRID 0.824 0.956 18.991 1.373 4 15
+Mean 0.906 0.928 7.399 3.728 6.0 12.4
+Wins 1 4 1 4 0 5
+three of five instances (T17, T19, T20) and substantially 
+lower IGD+ values, demonstrating that the metaheuristic 
+becomes competitive as instances approach the tractabil-
+ity boundary of the exact method.
+In contrast, the KILBRID instances (Table 6) show a 
+clear advantage for NN_MOVNS. It outperforms CP in 
+4 of 5 instances on both HVrel and IGD+, with a higher 
+mean HVrel (0.928 versus 0.906) and a lower mean IGD+
+(3.728 versus 7.399). Only T21 favours CP , where its 
+HVrel of 0.999 and IGD+ of 0.200 indicate a near-optimal 
+front. The pooled NN_MOVNS Pareto sets are also larger 
+(mean |P| =12.4 versus 6.0), reflecting its ability to dis-
+cover more diverse trade-off solutions. These results con-
+firm that, as instance size increases and the exact method 
+approaches its tractability limits even with extended time 
+budgets (3600 s per ε-subproblem), NN_MOVNS deliv-
+ers superior approximation quality. Table 7 summarises 
+the grouped comparison across both groups.
+6.3. Extended comparison across all metaheuristics
+This section extends the computational comparison by 
+evaluating the proposed NN_MOVNS against three 
+competing metaheuristics: MOVNS, NSGA-II, and
+MOPSO. All four use the common experimental setup 
+described in Section 5.1.1, and the pooled-front strat-
+egy is applied consistently across all algorithms when 
+computing the performance indicators.
+6.3.1. Performance by problem scale
+Table 8 shows the mean indicator values obtained from 
+the pooled Pareto fronts for each problem scale. CP 
+is reported only for the Small instances, where all 20 
+instances were solved. For the Medium group, CP solved 
+only the five KILBRID instances and is therefore excluded 
+from the group-level summary.
+The results show that the relative performance of 
+the algorithms changes with problem scale. On Small 
+instances, CP obtains the highest mean HVrel (0.960), 
+as expected for these tractable instances. Among the 
+metaheuristics, NN_MOVNS performs best with mean 
+HVrel of 0.925 and the lowest mean IGD+ of 2.887 
+across all methods including CP , suggesting that the 
+pooled metaheuristic front discovers solutions the ε-
+constraint grid misses on the harder BUXEY and GUN-
+THER families. The advantage of NN_MOVNS becomes 
+more pronounced on Medium instances, where its mean 
+IGD+ is 3.560, compared with 10.780 for MOVNS, 
+67.980 for MOPSO, and 121.300 for NSGA-II. On 
+Large instances, the performance gap widens further: 
+NN_MOVNS achieves a mean IGD+ of 2.640, compared 
+with 22.790 for MOVNS, an 88.4% reduction. NSGA-II 
+and MOPSO deteriorate to mean IGD+ values of 526.100 
+and 301.500, respectively.
+6.3.2. Overall pairwise comparison
+Table 9 presents the pairwise comparison between 
+NN_MOVNS and each competing metaheuristic across 
+all 55 instances using the pooled Pareto fronts. For each 
+indicator and algorithm pair, an instance is counted as 
+a ‘win’ for the algorithm that obtains the strictly bet-
+ter value. ‘Ties’ correspond to instances in which nei-
+ther algorithm obtains a strictly better value under the 
+adopted pairwise comparison criterion.
+The results show that NN_MOVNS consistently out-
+performs the competing metaheuristics in the pairwise 
+comparisons. Against MOVNS, NN_MOVNS obtains 
+better HVrel values in 66.0% of the non-tied compar-
+isons and better IGD+ values in 72.0% of the cases. It also 
+achieves a coverage advantage in 76.0% of the instances. 
+Since MOVNS uses the same VNS framework but does 
+not include the learning component, these results indi-
+cate that the DQN-guided operator selection improves 
+20 
+ P. BELDAR ET AL.
+Table 7. Grouped pooled comparison between CP and NN_MOVNS.
+Group Metric
+NN_MOVNS 
+wins
+CP 
+wins
+NN_MOVNS 
+mean CP mean Direction
+Small (T1–T20) HVrel 6 14 0.925 0.960 Higher better
+Small (T1–T20) IGD+ 8 12 2.887 3.677 Lower better
+Small (T1–T20) |P| 17 2 8.9 6.2 Higher better
+KILBRID (T21–T25) HVrel 4 1 0.928 0.906 Higher better
+KILBRID (T21–T25) IGD+ 4 1 3.728 7.399 Lower better
+KILBRID (T21–T25) |P| 5 0 12.4 6.0 Higher better
+Table 8. Mean indicator values by problem scale on pooled 
+Pareto fronts.
+Scale Indicator NN_MOVNS MOVNS NSGA-II MOPSO CP
+Small$T1–T20) HVrel 0.925 0.907 0.603 0.682 0.960
+IGD+ 2.887 3.877 63.920 34.180 3.677
+|P| 8.9 8.2 4.3 4.1 6.2
+Medium$T21–T40) HVrel 0.949 0.904 0.421 0.626 –†
+IGD+ 3.560 10.780 121.300 67.980 –
+|P| 10.4 8.6 5.4 6.5 –
+Large$T41–T55) HVrel 0.969 0.942 0.262 0.499 –
+IGD+ 2.640 22.790 526.100 301.500 –
+|P| 6.5 6.1 5.0 3.1 –
+†CP solves KILBRID (T21–T25) only; see Table 6.
+Table 9. Pairwise comparison of NN_MOVNS against all meta-
+heuristics on pooled Pareto fronts across all 55 instances.
+Comparison Indicator
+NN_MOVNS 
+wins
+Competitor 
+wins Ties
+NN_MOVNS 
+(%)
+vs. MOVNS HVrel 33 17 5 66.0
+IGD+ 36 14 5 72.0
+Coverage advantage 38 12 5 76.0
+vs. NSGA-II HVrel 47 3 5 94.0
+IGD+ 48 2 5 96.0
+Coverage advantage 47 3 5 94.0
+vs. MOPSO HVrel 46 4 5 92.0
+IGD+ 46 4 5 92.0
+Coverage advantage 45 3 7 93.8
+the effectiveness of the search over the static operator 
+selection strategy.
+The advantage of NN_MOVNS is more pronounced 
+when compared with the two population-based algo-
+rithms. Against NSGA-II, NN_MOVNS wins 94.0% of 
+the HVrel comparisons and 96.0% of the IGD+ com-
+parisons. Although NSGA-II can generate diverse pop-
+ulations, its crossover and mutation operators often 
+produce infeasible offspring in the highly constrained 
+BSMTL setting. These offspring require repair opera-
+tions, which consume part of the computational budget 
+and do not always lead to improved solutions. In contrast, 
+NN_MOVNS relies on specialised neighbourhood oper-
+ators, including N1–N8 and SO1–SO2, which are designed 
+to perform targeted task-level and block-level modifica-
+tions while preserving feasibility more effectively.
+A similar pattern is observed against MOPSO. 
+NN_MOVNS wins 92.0% of the comparisons for both 
+HVrel and IGD+, and achieves a coverage advantage in 
+93.8% of the non-tied cases. MOPSO is less effective in 
+this discrete and highly constrained search space because 
+Table 10. Mean pairwise coverage C(A, B) among the four meta-
+heuristics across all 55 instances.
+C(A → B) NN_MOVNS MOVNS NSGA-II MOPSO
+NN_MOVNS – 0.54 0.87 0.73
+MOVNS 0.27 – 0.84 0.62
+NSGA-II 0.04 0.06 – 0.41
+MOPSO 0.07 0.10 0.39 –
+its velocity-based search mechanism must be adapted 
+through discrete task relocation toward personal and 
+global best positions. This limits its ability to perform 
+precise, constraint-respecting moves. Overall, the pair-
+wise results confirm that the block-based VNS structure 
+is more suitable for the BSMTL than the population-
+based search mechanisms, and that the learning-guided 
+operator selection further strengthens this advantage.
+6.3.3. Coverage analysis
+Table 10 presents the mean pairwise coverage values 
+among the four metaheuristics. The coverage value 
+C(A, B) measures the fraction of solutions generated by 
+algorithm B that are dominated by at least one solution 
+generated by algorithm A. Therefore, higher values indi-
+cate that the row algorithm provides stronger solutions 
+than the column algorithm.
+The results show a clear advantage for the VNS-
+based methods, especially NN_MOVNS. On average, 
+NN_MOVNS dominates 54% of the solutions produced 
+by MOVNS, whereas MOVNS dominates only 27% of the 
+solutions produced by NN_MOVNS. This difference is 
+important because both algorithms use the same neigh-
+bourhood structure. The main difference is the DQN-
+guided operator selection in NN_MOVNS, which helps 
+the search move toward better trade-off regions.
+The advantage of NN_MOVNS is even stronger 
+when compared with the population-based algorithms. 
+NN_MOVNS dominates 87% of the solutions generated 
+by NSGA-II and 73% of those generated by MOPSO. In 
+contrast, NSGA-II and MOPSO dominate only a small 
+fraction of the NN_MOVNS solutions, with coverage val-
+ues of 0.04 and 0.07, respectively. This indicates that the 
+solutions produced by NN_MOVNS are usually closer 
+to the preferred Pareto front than those produced by the 
+population-based methods.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 21
+Table 11. Wilcoxon signed-rank test results with Holm–Bonfer-
+roni correction.
+Comparison Indicator p-value Cliff’s δ N Significant?
+MOVNS vs. NN_MOVNS HVrel 0.012 −0.273 55 Yes
+IGD+ <0.001 +0.517 55 Yes
+MOPSO vs. NN_MOVNS HVrel <0.001 −0.990 55 Yes
+IGD+ <0.001 +0.968 55 Yes
+MOPSO vs. MOVNS HVrel <0.001 −0.967 55 Yes
+IGD+ <0.001 +0.800 55 Yes
+NSGA-II vs. NN_MOVNS HVrel <0.001 −0.987 55 Yes
+IGD+ <0.001 +0.910 55 Yes
+NSGA-II vs. MOVNS HVrel <0.001 −0.970 55 Yes
+IGD+ <0.001 +0.797 55 Yes
+NSGA-II vs. MOPSO HVrel 0.575 +0.017 55 No
+IGD+ 0.575 −0.025 55 No
+Effect-size thresholds for |δ|: < 0.147 negligible, < 0.33 small, < 0.474 
+medium, ≥ 0.474 large.
+MOVNS also performs well against NSGA-II and 
+MOPSO, with coverage values of 0.84 and 0.62, respec-
+tively. This further confirms that the VNS framework is 
+well suited to the constrained, block-based structure of 
+the BSMTL. Finally, the coverage values between NSGA-
+II and MOPSO are relatively similar, with NSGA-II dom-
+inating 41% of MOPSO solutions and MOPSO domi-
+nating 39% of NSGA-II solutions. This suggests that the 
+two population-based algorithms perform at a broadly 
+comparable level on this problem.
+6.4. Statistical significance and overall ranking
+Wilcoxon signed-rank tests (Osama et al. 2026) are con-
+ducted at the 5% significance level with Holm–Bonfer-
+roni correction across all 55 instances. Cliff ’ s δ is consid-
+ered as a non-parametric effect-size measure to quantify 
+the magnitude and direction of the observed differences. 
+The effect size is interpreted as negligible for |δ| < 0.147, 
+small for |δ| < 0.33, medium for |δ| < 0.474, and large 
+for |δ| ≥0.474. The tests are based on the pooled-front 
+indicator values across all instances. Table 11 shows the 
+main pairwise comparisons.
+NN_MOVNS significantly outperforms MOVNS on 
+both indicators. For IGD+, the improvement is partic-
+ularly strong, with p < 0.001 and a large effect size of 
+|δ| =0.517. This indicates that the DQN-guided oper-
+ator selection substantially improves the ability of the 
+search to approach the reference front. The improvement 
+in HVrel is also statistically significant, with p = 0.012, 
+although the corresponding effect size is small (|δ| =
+0.273). Thus, NN_MOVNS provides a statistically sup-
+ported improvement over the MOVNS baseline.
+Both VNS-based algorithms also significantly out-
+perform the two population-based algorithms. NN_
+MOVNS and MOVNS are superior to both NSGA-II and 
+MOPSO for HVrel and IGD+, with p < 0.001 in all cor-
+responding comparisons. The associated effect sizes are 
+Table 12. Overall algorithm ranking across all 55 instances.
+Algorithm Mean HVrel Mean IGD+ Mean |P| Win % Rank
+NN_MOVNS 0.946 3.020 8.6 56.4 1
+MOVNS 0.916 11.760 7.5 30.9 2
+MOPSO 0.612 119.000 4.7 1.8 3
+NSGA-II 0.443 206.100 4.8 1.8 4
+CP is excluded because it is tractable on only 25 of 55 instances.
+large in most cases, reaching |δ| =0.990 for MOPSO ver-
+sus NN_MOVNS on HVrel and |δ| =0.970 for NSGA-II 
+versus MOVNS on HVrel. These results confirm that the 
+VNS framework, even without the DQN enhancement, is 
+much better suited to the constrained, block-based struc-
+ture of the BSMTL than the population-based search 
+strategies. In contrast, NSGA-II and MOPSO show no 
+statistically significant difference from each other on 
+either indicator, with p = 0.575 and negligible effect 
+sizes. Overall, the statistical tests support the ranking 
+NN_MOVNS first, MOVNS second, and NSGA-II and 
+MOPSO at a comparable lower level.
+Table 12 confirms this ranking from the aggre-
+gate performance indicators, establishing NN_MOVNS 
+≻ MOVNS ≻ {MOPSO ≈ NSGA-II}. Two effects 
+drive it: the VNS framework already outperforms both 
+population-based methods even without learning, and 
+the DQN-guided operator selection further improves this 
+baseline, most clearly on IGD+.
+6.4.1. Pareto front visualisation
+T o complement the numerical comparison, Figure 3 
+shows the pooled Pareto fronts for four representa-
+tive instances spanning the three problem scales: T4 
+(JACKSON, small, 11 tasks), T22 (KILBRID, medium, 
+45 tasks), T34 (TONGE70, medium, 70 tasks), and T55 
+(BARTHOLD, large, 148 tasks). Filled markers denote 
+the non-dominated solutions in each algorithm’ s pooled 
+front, while open markers denote dominated solutions 
+obtained in individual runs. Across all four instances, 
+NN_MOVNS produces the best converged and most 
+evenly distributed front. On the small instance T4 it lies 
+on or very near the CP reference frontier, and as problem 
+size grows it dominates the competitors by progressively 
+wider margins, maintaining consistently low PP values 
+across a broad CT range. MOVNS is consistently the 
+second best method, covering a similar region but with 
+a less dense front and several solutions dominated by 
+NN_MOVNS. MOPSO returns only sparse clusters that 
+miss the best trade-off regions, and NSGA-II produces 
+few feasible solutions and remains far from the efficient 
+frontier. The widening gap with instance size is fully con-
+sistent with the quantitative results and confirms the ben-
+efit of combining the VNS framework with DQN-guided 
+operator selection.
+22 
+ P. BELDAR ET AL.
+Figure 3. Representative pooled Pareto fronts comparing CP , NN_MOVNS, MOVNS, NSGA-II, and MOPSO across different instance sizes. 
+(a) T4 – JACKSON (small, 11 tasks). (b) T22 – KILBRID (medium, 45 tasks). (c) T34 – TONGE70 (medium, 70 tasks) and (d) T55 – BARTHOLD 
+(large, 148 tasks).
+6.5. Neural network component analysis
+Figure 4 presents the early (0–25%) and late (75–100%) 
+phase neighbourhood selection frequencies for the 
+NN_MOVNS and MOVNS algorithms across three rep-
+resentative instances: T12, T39, and T55. The com-
+parative analysis reveals distinct behavioural patterns 
+between the two algorithms.
+In the case of NN_MOVNS, the results demonstrate 
+an adaptive shift in neighbourhood utilisation over the 
+search process. Certain neighbourhoods (e.g. N2, N5, 
+or N8 depending on the instance) become more promi-
+nent in the late phase, indicating that the neural net-
+work guidance encourages adaptive intensification and 
+diversified search trajectories as the search progresses. 
+Conversely, MOVNS exhibits either a more uniform or 
+instance-specific pattern of neighbourhood selection. In 
+some cases, the late-phase distribution reinforces early-
+phase tendencies, while in others, the algorithm shifts 
+its focus dramatically toward a dominant neighbourhood 
+(e.g. N7 in T55).
+Overall, these observations from Figure 4 suggest 
+that the neural guidance embedded in NN_MOVNS 
+enables a more dynamic adjustment of search behaviour, 
+potentially contributing to a better exploration–exploita-
+tion balance across complex problem instances.
+7. Industrial-scale test instance and managerial 
+insights
+7.1. Industrial-scale test instance
+This section presents a discussion of the computational 
+performance of the developed NN_MOVNS algorithm 
+in the context of a large-scale industrial case. The case 
+is based on the operations of an automotive manufac-
+turing system producing engine cylinder heads on a 
+transfer line. The case is characterised by the following 
+key parameters: number of tasks (NT = 148), number 
+of workstations (NM = 10), number of blocks (Nb = 9), 
+number of tasks per block (Mtb = 7), precedence rela-
+tionships (preij = 175), inclusion constraints (incij =
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 23
+Figure 4. Early vs late phase neighbourhood selection frequencies for NN_MOVNS and MOVNS algorithms on the T12_BUXEY, T39_WEE-
+MAG, and T55_BARTHOLD instances. (a) NN_MOVNS: T12_BUXEY. (b) MOVNS: T12_BUXEY. (c) NN_MOVNS: T39_WEE-MAG. (d) MOVNS: 
+T39_WEE-MAG. (e) NN_MOVNS: T55_BARTHOLD and (f) MOVNS: T55_BARTHOLD.
+23), exclusion constraints (excij = 23), block exclusion 
+constraints (exc_bij = 17), and technological relation-
+ships (tecik = 9).
+The comparison between the initial solution and 
+the knee-point solution obtained through NN_MOVNS, 
+as illustrated in Figure 5, demonstrates a substantial 
+improvement in both CT and PP .
+The initial configuration exhibits a CT of 485 s, 
+PP of 1469 kW , and a PAPR of 2.35, reflecting highly 
+uneven workload distribution and strong temporal 
+24 
+ P. BELDAR ET AL.
+Figure 5. Comparison of (a) the initial solution and (b) the knee-point solution.
+concentration of energy-intensive tasks. In contrast, the 
+knee-point solution achieves a CT of 428 s (an 11.8% 
+reduction), PP of 542 kW (a 63.1% reduction), and 
+a PAPR of 1.49, indicating a significantly smoother 
+and more balanced power profile. These improvements 
+mainly result from the refined task-to-block and block-
+to-workstation assignments generated by NN_MOVNS. 
+By increasing the number of blocks and redistributing 
+them across stations, the algorithm enhances scheduling 
+granularity and inter-task flexibility. Large, power-
+intensive blocks in the initial configuration are decom-
+posed and distributed across multiple stations, reducing 
+concurrent PP points. Consequently, stations that previ-
+ously handled few large blocks now operate with several 
+smaller ones, achieving smoother workload distribution 
+and reduced idle times. The detailed assignments for 
+the initial and knee-point configurations are available at 
+https://figshare.com/s/baac254dff6c29fdb5e0.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 25
+7.2. Peak shaving and energy redistribution across 
+problem scales
+Peak shaving is critical in industrial facilities, where elec-
+tricity costs are heavily influenced by demand charges 
+based on maximum power demand. Unlike residential 
+users, where fixed capacity charges dominate, industrial 
+users face contractual limits and subscription agreements 
+that make PP reduction directly tied to cost efficiency and 
+operational compliance. In this context, NN_MOVNS 
+reduces PP primarily resulting in energy redistribution. 
+Energy redistribution refers to reshaping the power–time 
+profile such that the same total electrical energy is 
+consumed, but high instantaneous power demands are 
+reduced by spreading energy usage more evenly over the 
+operating period. Task execution is rescheduled to avoid 
+simultaneous high-power events, resulting in lower peaks 
+while preserving the integral (total energy) of the power 
+profile.
+T o quantify the peak reduction achieved by NN_
+MOVNS, the PSI is defined as the percentage reduction 
+in maximum PP:
+PSI =
+(PPmax initial) − (PPmax NN_MOVNS)
+(PPmax initial) × 100
+A higher PSI indicates a greater reduction in PP .
+T o directly measure the degree of load reshaping 
+attributable to energy redistribution, the discrete ERI is 
+defined as:
+ERI =
+∑︁ max(0, Pinitial[k] − PNN_MOVNS[k])1t∑︁ Pinitial[k]1t
+Here, the numerator represents the energy removed from 
+time instants where the optimised profile is lower than 
+the initial profile (i.e. energy shaved from high-demand 
+periods), while the denominator is the total electrical 
+energy over the cycle. Therefore, ERI ∈ [0, 1], where 
+ERI = 0 indicates no redistribution (the profiles coincide 
+in the sense of no shaved energy), and larger ERI values 
+indicate a stronger redistribution effect, meaning more 
+energy has been shifted away from high-power instants 
+and spread across the operating horizon.
+Figure 6 presents peak shaving results for six represen-
+tative instances spanning small, medium, and large prob-
+lem scales. Table 13 reports the corresponding PSI and 
+ERI values, complementing the visual trends observed in 
+the figure. PP reductions range from 33.33% to 73.17%, 
+with problem size influencing the extent of improvement. 
+Small-scale cases (T11, T18) achieve notable reductions 
+of 46.03% and 53.57%, respectively, despite fewer tasks 
+available for rescheduling. Even in these compact sys-
+tems, NN_MOVNS eliminates sharp peaks in the ini-
+tial schedules, confirming that meaningful peak shaving 
+can be obtained even under limited scheduling flexi-
+bility. Medium-scale cases (T30, T38) show moderate 
+improvements of 40.68% and 33.33%, respectively. Their 
+initial power curves contain multiple local peaks that are 
+smoothed in the optimised profiles, although the achiev-
+able improvements are less pronounced than in larger 
+systems due to fewer degrees of freedom for redistribu-
+tion. Large-scale cases (T45, T54) achieve the strongest 
+results, with PP reductions of 70.27% and 73.17%,
+respectively.
+Consistent with these results, the proposed method 
+yields notable ERI values across all test problems, with 
+particularly high percentages in T45 and T54, reaching 
+35.28% and 31.53%. These results indicate that a substan-
+tial portion of the high power demand in large machining 
+transfer lines is temporally redistributed over the operat-
+ing cycle, leading to significantly smoother power profiles 
+without altering the total energy consumption per cycle. 
+However, these improvements can slightly increase CT 
+(by an average of 5.7%, with a maximum of 12.7% in T30), 
+the reductions in PP and the associated redistribution of 
+energy outweigh the relatively small CT increases.
+Figure 7 illustrates the system-level impact of the pro-
+posed peak shaving strategy on an industrial manufac-
+turing site connected to the regional power grid through 
+a high-voltage (HV)/medium-voltage (MV) transformer. 
+In the initial operating scenario (orange power pro-
+file), the machining transfer line feeder imposes a peak 
+demand of approximately 2050 kW , significantly con-
+tributing to the overall site peak at both MV and down-
+stream low-voltage (LV) levels. After applying the pro-
+posed CT–based peak shaving approach (blue profile), 
+the maximum power demand is reduced to approxi-
+mately 550 kW , corresponding to a released capacity of 
+nearly 1500 kW . This released electrical capacity can be 
+safely utilised by other MV or LV loads within the man-
+ufacturing site, such as auxiliary production lines, utility 
+systems, or additional process equipment, without violat-
+ing grid constraints or transformer limits. Importantly, 
+this reduction is achieved through temporal redistribu-
+tion of power demand rather than energy curtailment, 
+preserving the total energy required per production cycle 
+while substantially alleviating peak loading at the feeder 
+and grid interface levels.
+7.3. PAPR improvements
+Figure 8 demonstrates the consistent effectiveness of 
+the NN_MOVNS approach in lowering PAPR, thereby 
+reducing power demand variability across the test 
+instances. The orange line, which shows initial schedules, 
+indicates significant differences in baseline scheduling 
+quality, with PAPR values ranging from 1.29 to 2.55. This 
+26 
+ P. BELDAR ET AL.
+Figure 6. Power profile comparisons for six representative test instances showing initial schedules (orange dashed) versus NN_MOVNS 
+optimised solutions (blue solid). (a) T11 (Small). (b) T18 (Small). (c) T30 (Medium). (d) T38 (Medium). (e) T45 (Large) and (f) T54 (Large).
+Table 13. PSI and ERI values for representative test problems.
+Test problems
+PPmax initial
+(kW)
+PPmax NN_MOVNS
+(kW)
+PP reduction 
+(kW)
+PSI
+(%)
+ERI
+(%)
+Small T11 315 170 145 46.03 15.32
+T18 560 260 300 53.57 27.05
+Medium T30 590 350 240 40.68 25.28
+T38 780 520 260 33.33 22.19
+Large T45 1480 440 1040 70.27 35.28
+T54 2050 550 1500 73.17 31.53
+variety points to notable variability in the power pro-
+files. In contrast, the blue line, representing results at 
+knee points, shows stable improvement with most ratios 
+falling between 1.15 and 1.85. This pattern suggests the 
+algorithm reliably finds and uses available flexibility in 
+each test instance, regardless of starting conditions.
+Significantly, the instances with the highest initial 
+PAPR (greater than 2.0) achieve the largest reductions 
+after optimisation, while cases starting closer to 1.5 still 
+see meaningful improvements. This supports the obser-
+vation that the potential for optimisation is related to how 
+variable the initial power profile is. As such, managers 
+can expect greater performance gains in systems with 
+more uneven starting profiles, and initial PAPR measure-
+ments can help estimate the expected improvements for 
+different operational scenarios.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 27
+Figure 7. System-level illustration of the proposed peak shaving approach applied to a manufacturing site.
+Figure 8. PAPR values across all test instances before and after optimisation.
+7.4. Findings and managerial insights
+This subsection synthesises the key findings of the study 
+by explicitly addressing the three research questions 
+posed in the Introduction, and by drawing out their 
+practical implications for production and energy man-
+agement.
+The first research question (RQ1) asked how the 
+BSMTL can be jointly formulated as a bi-objective opti-
+misation problem that simultaneously minimises CT and 
+PP under the full set of precedence, inclusion/exclusion, 
+and technological compatibility constraints. The pro-
+posed CP model answers this by integrating task-to-
+block assignment, block formation, and block execu-
+tion scheduling within a unified framework that captures 
+the temporal interaction between task assignments and 
+system-level power demand (Section 3.1). The formula-
+tion confirms that CT and PP cannot be optimised in iso-
+lation, since the assignment of tasks to blocks determines 
+which power demands accumulate simultaneously, while 
+the block execution sequence determines when those 
+28 
+ P. BELDAR ET AL.
+peaks occur. Optimising either dimension independently 
+therefore leaves the other uncontrolled, as illustrated by 
+the contrasting solutions in Figure 1. For production 
+managers in automotive and aerospace manufacturing, 
+this implies that energy and scheduling decisions must 
+be treated jointly rather than sequentially, because facil-
+ities that balance and schedule as separate steps may 
+be systematically generating avoidable peak demand and 
+inflated electricity charges.
+The second research question (RQ2) examined
+whether a MOVNS enhanced with deep reinforcement 
+learning can outperform both exact methods and stan-
+dard metaheuristics in terms of Pareto front quality 
+across small, medium, and large-scale instances. The 
+computational experiments confirm that NN_MOVNS 
+consistently outperforms the baseline MOVNS across 
+all three performance indicators and all problem scales, 
+with the advantage becoming increasingly pronounced 
+as instance size grows and reaching an 88.4% reduc-
+tion in mean IGD+ on large instances, a difference 
+confirmed as statistically significant by the Wilcoxon 
+signed-rank test (Tables 8, 9, and 11). While CP pro-
+duces exact or near-exact Pareto sets on small instances, it 
+becomes intractable at medium and large scales, and both 
+VNS-based methods significantly outperform NSGA-II 
+and MOPSO, confirming that the block-based neigh-
+bourhood structure is better suited to the BSMTL than 
+population-based search. For production planners and 
+operations engineers, these results indicate that learning-
+enhanced metaheuristics offer a robust and scalable alter-
+native to exact solvers, capable of delivering high-quality 
+CT and PP trade-off solutions within realistic computa-
+tion times even for industrial-scale problems.
+The third research question (RQ3) focussed on the 
+practical implications of the approach in terms of PP 
+reduction, energy redistribution, and PAPR improve-
+ment. As reported in Sections 7 and the peak-shaving 
+analysis above, NN_MOVNS delivers consistent PP 
+reductions across all problem scales, with the accom-
+panying ERI values confirming that these reductions 
+are achieved through temporal redistribution of energy 
+demand rather than curtailment, so that the total energy 
+consumed per production cycle is preserved. Large-scale 
+instances benefit most, owing to their greater schedul-
+ing flexibility, and the industrial-scale test instance 
+further demonstrates the same behaviour at realis-
+tic problem size. For manufacturers facing electricity 
+demand charges, transformer capacity limits, or site-level 
+grid constraints, these findings confirm that intelligent 
+rescheduling via NN_MOVNS is a practically viable peak 
+shaving tool. It lowers energy costs and improves opera-
+tional compliance without sacrificing production conti-
+nuity, while the released electrical capacity can be safely 
+reallocated to auxiliary production lines or utility systems 
+within the same manufacturing site.
+8. Conclusions
+This study addressed the balancing and scheduling of 
+machining transfer lines (BSMTL), in which cycle time 
+(CT) and peak power (PP) are simultaneously min-
+imised under precedence, inclusion/exclusion, and tech-
+nological compatibility constraints. Three main contri-
+butions were made. First, a multi-objective CP model 
+was developed and solved via a bidirectional ε-constraint 
+method, generating high-quality Pareto sets for small-
+scale instances and establishing a rigorous mathemat-
+ical foundation for the joint CT–PP optimisation in 
+machining transfer lines. Second, a MOVNS algorithm 
+with a two-phase constructive heuristic was proposed to 
+address the scalability limitations of the CP model for 
+medium- and large-scale problems. Third, the MOVNS 
+framework was augmented with a DQN-based operator 
+selection mechanism (NN_MOVNS) that dynamically 
+adapts search behaviour during optimisation, improv-
+ing both convergence and Pareto front diversity over the 
+static baseline.
+Computational experiments across 55 benchmark 
+instances confirm that NN_MOVNS consistently outper-
+forms the baseline MOVNS and both population-based 
+methods across all performance indicators and problem 
+scales, with the advantage widening on larger instances 
+and confirmed as statistically significant by Wilcoxon 
+signed-rank tests. On the industrial-scale test instance of 
+a 148-task automotive cylinder head production line, it 
+reduced peak power by 63.1% through temporal energy 
+redistribution rather than curtailment, releasing substan-
+tial grid capacity for reallocation to other site loads while 
+keeping the total energy per cycle unchanged.
+Beyond the BSMTL problem, the proposed NN_
+MOVNS framework can generalise to other production 
+line types and combinatorial optimisation settings, pro-
+vided that its problem-specific components are appropri-
+ately redefined. The archive-guided Pareto search struc-
+ture and the DQN-based adaptive operator selection 
+mechanism are line-type independent and require no 
+structural modification. For assembly lines, the block-
+based solution representation would be replaced by a 
+station-task assignment encoding, and the neighbour-
+hood operators would be redesigned to act on task 
+reassignment and within-station sequencing rather than 
+block formation. For reconfigurable manufacturing sys-
+tems, an additional configuration-selection layer would 
+need to be incorporated into the solution encoding and 
+feasibility checks to account for varying machine con-
+figurations across production runs. Regarding objective 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 29
+extensions, incorporating a third objective such as total 
+energy consumption, workload imbalance, or line cost 
+would require extending the robjective component of the 
+DQN reward function to cover the additional dimen-
+sion, adjusting the Pareto dominance check accordingly, 
+and updating the DQN state vector to encode the new 
+objective value. The overall learning architecture would 
+otherwise remain unchanged. More broadly, applying the 
+DQN-guided operator selection to other combinatorial 
+problems such as flexible job shop scheduling, vehicle 
+routing, or supply chain network design requires defin-
+ing a meaningful state representation, a set of comple-
+mentary neighbourhood operators, and a reward signal 
+reflecting solution quality improvement.
+Several limitations of the present study should be 
+acknowledged. First, task processing times and power 
+demand values are assumed to be deterministic and 
+constant; real-world variability due to tool wear, mate-
+rial inconsistencies, or machine conditions is not cap-
+tured. Second, power demand values for the benchmark 
+instances were estimated from manufacturers’ catalogs 
+rather than measured directly on physical systems, which 
+may not fully reflect operational variability. Third, the 
+CP model becomes intractable for medium- and large-
+scale instances, limiting its use to small-scale validation. 
+Fourth, the study focuses on a single-product, single-
+cycle setting; multi-product transfer lines with mixed 
+precedence structures are outside the current scope. 
+Fifth, the DQN reward weights (w1 = 0.8, w2 = 0.9, 
+w3 = 0.3) were determined through preliminary experi-
+mentation and may require recalibration for significantly 
+different problem structures.
+Future research could extend this work in sev-
+eral directions. Incorporating stochastic factors such as 
+machine breakdowns, processing time variability, and 
+real-time energy pricing would better reflect indus-
+trial uncertainties. Additional sustainability objectives, 
+including total energy consumption, carbon emissions, 
+and renewable energy utilisation, could also be consid-
+ered. Extending the framework to multi-product settings 
+and hybrid exact–metaheuristic schemes may further 
+broaden its applicability. Furthermore, combining the 
+complementary strengths of the CP and MILP formula-
+tions through decomposition schemes such as Benders 
+decomposition or Dantzig–W olfe reformulation could 
+yield more scalable exact methods for larger instances. 
+Moreover, generative AI techniques, such as diffu-
+sion models or AI-generated content frameworks (Leng 
+et al. 2025), could be integrated into the initialisa-
+tion or neighbourhood design phases of NN_MOVNS 
+to improve convergence speed and Pareto front diver-
+sity in dynamic production environments. Future exten-
+sions could also explore federated learning frameworks 
+in which the DQN operator selection policy is trained 
+collaboratively across multiple production sites with-
+out sharing sensitive operational data, enabling privacy-
+preserving peak shaving and energy redistribution in 
+distributed, multi-plant manufacturing networks.
+Author contributions
+CRediT: Pedram Beldar: Conceptualization, Data curation, 
+Formal analysis, Investigation, Methodology, Software, V alida-
+tion, Visualization, Writing – original draft, Writing – review 
+& editing; Ehsan Mahmoodi: Conceptualization, Formal anal-
+ysis, Methodology, Software, V alidation, Visualization, Writ-
+ing – review & editing; Mostafa Kermani: Conceptualization, 
+Methodology, Supervision, V alidation, Writing – review & edit-
+ing; Gary Linnéusson: Investigation, Supervision, V alidation, 
+Writing – review & editing; Olga Battaia: Conceptualization, 
+Methodology, Supervision, Writing – review & editing
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+Funding
+This work was partly funded by VINNOV A, Sweden’ s Inno-
+vation Agency, through the REFUSE 2.0 project (Grant No. 
+2025-04156).
+Notes on contributors
+Pedram Beldar is a PhD student in 
+Informatics at the School of Engineer-
+ing Science, University of Skövde, Sweden. 
+His research is centered on operations 
+research and optimization in produc-
+tion systems, with particular interest in 
+batch processing machines and machin-
+ing transfer lines. His work involves the 
+development of mathematical programming, heuristic, meta-
+heuristic, and learning-based approaches for complex decision-
+making problems in manufacturing. His broader research 
+interests include production scheduling, reconfigurable man-
+ufacturing, sustainable production, and energy-efficient man-
+ufacturing systems.
+Ehsan Mahmoodi is a researcher at the 
+University of Auckland, New Zealand. 
+He holds a PhD in Information T echnol-
+ogy from the University of Skövde, Swe-
+den. His research brings together oper-
+ations research, simulation-based opti-
+mization, artificial intelligence, and data-
+driven decision support to address com-
+plex engineering and socio-technical problems. A central focus 
+of his work is the design of manufacturing systems: he develops 
+knowledge-driven methods that use simulation, digital twins, 
+and multi-objective optimization to improve decisions about 
+resources, production flow, and system performance under 
+uncertainty. His broader research spans sustainable operations, 
+30 
+ P. BELDAR ET AL.
+logistics, and human-centered production, often in collabora-
+tion with industry. His work has appeared in Computers & 
+Operations Research, Applied Energy, Computers & Industrial 
+Engineering, Journal of Manufacturing Systems, and Applied 
+Ergonomics.
+Mostafa Kermani (Member, IEEE) received 
+the Ph.D. degree in electrical engineer-
+ing from the Sapienza University of Rome, 
+Rome, Italy, in 2019 where he was a Post-
+doctoral Researcher from 2019 to 2020 
+and as an RTDA from 2023 to 2024. He 
+was a Senior Researcher from 2020 to 2022 
+with the Electrical Engineering Depart-
+ment, Chalmers University of T echnology, Gothenburg, Swe-
+den. In 2022, he was a Visiting Researcher with EPFL, Switzer-
+land. He was also a Senior Project Engineer from 2022 to 2023 
+in the Network Control Department, Hitachi Energy, Västerås, 
+Sweden. He is currently an Assistant Professor with the School 
+of Engineering Science, University of Skövde, Skövde, Swe-
+den. He is author of more than 60 papers in peer-reviewed 
+international journals and conferences. He is an Associate Edi-
+tor for IEEE TRANSACTIONS ON INDUSTRY APPLICA-
+TIONS SOCIETY and a Member of the scientific committee 
+at IEEE EEEIC conference. His research interests include mod-
+ern power systems, microgrids, energy storage systems, energy 
+systems modeling and optimization, electric vehicles and intel-
+ligent energy management systems.
+Gary Linnéusson is an Associate Profes-
+sor at the Department of Human, T ech-
+nology and Management at the School 
+of Engineering Science, University of 
+Skövde, Sweden. He holds a background 
+in mechanical engineering (2003), a Ph.D. 
+in Informatics (2018), and experience in 
+both industrial and academic settings, 
+including production engineering, strategic maintenance, inte-
+grated product and production development, healthcare man-
+agement, and electrification challenges in sub-regional con-
+texts. He has applied simulation tools within system dynamics 
+and discrete event simulation. His primary research interests 
+focus on transition research, especially how systems think-
+ing can help structure complex and wicked problems, using 
+simulation and simulation-based optimization to support man-
+agement areas within sustainable production, regional develop-
+ment, and the strategic development of the healthcare system in 
+W est Sweden.
+Prof. Olga Battaïa is a Full Professor at the 
+Department of Operations Management 
+and Information Systems at KEDGE Busi-
+ness School. She currently serves as Asso-
+ciate Editor for Journal of Manufacturing 
+Systems, IISE Transactions, and Omega – 
+The International Journal of Management 
+Science. She is also a member of the Edi-
+torial Board of the International Journal of Production Eco-
+nomics and a member of the International Advisory Board for 
+Nexus 2050. She also acts as DEI Chair of the IFAC T echni-
+cal Committee on Management and Control in Manufacturing 
+and Logistics. Prof. Battaïa’ s research lies at the intersection 
+of supply chain management, sustainable manufacturing, busi-
+ness analytics, and equity-aware decision support. She has 
+co-authored more than 190 peer-reviewed publications, coor-
+dinated and contributed to numerous competitive research 
+projects funded by the French National Research Agency, 
+the German Research Foundation (DFG), and the European 
+Union, addressing complex challenges such as decision-making 
+under uncertainty, sustainable and reconfigurable production 
+systems, and human-centric operations management. An inter-
+nationally recognized speaker, she has presented her work 
+across Europe, Africa, the Americas, Asia, and Australia.
+Data availability statement
+Data will be made available on request.
+References
+Bänsch, K., J. Busse, F . Meisel, J. Rieck, S. Scholz, T . V olling, 
+and M. G. Wichmann. 2021. “Energy-Aware Decision Sup-
+port Models in Production Environments: A Systematic 
+Literature Review. ” Computers & Industrial Engineering
+159:107456. https://doi.org/10.1016/j.cie.2021.107456.
+Battaïa, O., and A. Dolgui. 2022. “Hybridizations in Line 
+Balancing Problems: A Comprehensive Review on New 
+Trends and Formulations. ” International Journal of Produc-
+tion Economics 250:108673. https://doi.org/10.1016/j.ijpe.
+2022.108673.
+Battaïa, O., A. Dolgui, and N. Guschinsky. 2023. “MIP-based 
+Heuristics for Combinatorial Design of Reconfigurable 
+Rotary Transfer Machines for Production of Multiple Parts. ” 
+International Journal of Production Economics 262:108904. 
+https://doi.org/10.1016/j.ijpe.2023.108904.
+Battaïa, O., A. Dolgui, and N. Guschinsky. 2024. “ An Exact 
+Method for Machining Lines Design with Equipment Selec-
+tion and Line Balancing. ” International Journal of Production 
+Research 62 (1–2): 71–91. https://doi.org/10.1080/00207543.
+2023.2289182.
+Beldar, P ., M. Fathi, A. Nourmohammadi, X. Delorme, O. Bat-
+taïa, and A. Dolgui. 2025. “Transfer Line Balancing Prob-
+lem: A Comprehensive Review, Classification, and Research 
+Avenues. ” Computers & Industrial Engineering 201:110913. 
+https://doi.org/10.1016/j.cie.2025.110913.
+Beldar, P ., E. Mahmoodi, M. Kermani, E. Mardaneh, and A. 
+H. Ansaripoor. 2026. “Energy-Aware Batch Scheduling with 
+Flexible Maintenance under Spot Electricity Pricing and 
+Onsite Renewable Generation. ” Applied Energy 422:128283. 
+https://doi.org/10.1016/j.apenergy.2026.128283.
+Beldar, P ., A. Nourmohammadi, M. Fathi, and A. H. C. Ng. 
+2024. “ A Heuristic Approach for Flexible Transfer Line Bal-
+ancing Problem. ” Procedia CIRP 130:1144–1149. https://doi.
+org/10.1016/j.procir.2024.10.219.
+Bérubé, J.-F ., M. Gendreau, and J.-Y . Potvin. 2009. “ An Exact 
+ϵ-constraint Method for Bi-objective Combinatorial Opti-
+mization Problems: Application to the Traveling Salesman 
+Problem with Profits. ” European Journal of Operational 
+Research 194 (1): 39–50. https://doi.org/10.1016/j.ejor.2007.
+12.014.
+Chen, Y ., X. Huang, W . Yi, Z. Pei, C. W ang, and Z. Ji. 2025. 
+“Bi-level Collaborative Day-Ahead Optimization Schedul-
+ing of Manufacturing-Energy System Targeting Energy Cost 
+Reduction. ” Energy 338:138672. https://doi.org/10.1016/j.
+energy.2025.138672.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 31
+Delorme, X., A. Cerqueus, P . Gianessi, and D. Lamy. 2023. 
+“RMS Balancing and Planning under Uncertain Demand 
+and Energy Cost Considerations. ” International Journal of 
+Production Economics 261:108873. https://doi.org/10.1016/j.
+ijpe.2023.108873.
+Delorme, X., and P . Gianessi. 2022. “Designing Reconfigurable 
+Manufacturing Systems to Minimize Power Peak. ” IFAC-
+PapersOnLine 55 (10): 1296–1301. https://doi.org/10.1016/
+j.ifacol.2022.09.569.
+Delorme, X., and P . Gianessi. 2024. “Line Balancing and 
+Task Scheduling to Minimise Power Peak of Reconfigurable 
+Manufacturing Systems. ” International Journal of Produc-
+tion Research 62 (14): 5061–5086. https://doi.org/10.1080/
+00207543.2023.2283568.
+Destouet, C., H. Tlahig, B. Bettayeb, and B. Mazari. 2024. 
+“Multi-objective Sustainable Flexible Job Shop Scheduling 
+Problem: Balancing Economic, Ecological, and Social Crite-
+ria. ” Computers & Industrial Engineering 195:110419. https:
+//doi.org/10.1016/j.cie.2024.110419.
+Ersin T elemeci, Y ., and M. Azizoğlu. 2024. “Type-II Transfer 
+Line Balancing Problem – A Branch and Bound Approach. ” 
+Computers & Industrial Engineering 198:110689. https://doi.
+org/10.1016/j.cie.2024.110689.
+Fang, Y ., Q. Liu, M. Li, Y . Laili, and D. T . Pham. 2019. “Evolu-
+tionary Many-objective Optimization for Mixed-Model Dis-
+assembly Line Balancing with Multi-robotic W orkstations. ” 
+European Journal of Operational Research 276 (1): 160–174. 
+https://doi.org/10.1016/j.ejor.2018.12.035.
+Fang, Y ., H. Ming, M. Li, Q. Liu, and D. T . Pham. 2020. “Multi-
+objective Evolutionary Simulated Annealing Optimisation 
+for Mixed-Model Multi-robotic Disassembly Line Balancing 
+with Interval Processing Time. ” International Journal of Pro-
+duction Research 58 (3): 846–862. https://doi.org/10.1080/
+00207543.2019.1602290.
+Gianessi, P ., X. Delorme, and O. Masmoudi. 2019. “Simple 
+Assembly Line Balancing Problem with Power Peak Min-
+imization. ” In Advances in Production Management Sys-
+tems. Production Management for the Factory of the Future, 
+239–247. Cham: Springer International Publishing.
+Guo, L., Z. Zhang, Y . Zhang, Y . Li, and H. Song. 2025. 
+“Exploring Engineering Applications of Two-Sided Partial 
+Destructive Disassembly Line Balancing Problem under 
+Electrical Limiting and Time-of-use Pricing. ” Expert Sys-
+tems with Applications 262:125573. https://doi.org/10.1016/
+j.eswa.2024.125573.
+Guo, T ., Y . Mei, W . Du, Y . Lv, Y . Li, and T . Song. 2025. 
+“Emergency Scheduling of Aerial V ehicles via Graph Neural 
+Neighborhood Search. ” IEEE Transactions on Artificial Intel-
+ligence 6 (7): 1808–1822. https://doi.org/10.1109/TAI.2025.
+3528381.
+Guschinskaya, O., and A. Dolgui. 2009. “Comparison of Exact 
+and Heuristic Methods for a Transfer Line Balancing Prob-
+lem. ” International Journal of Production Economics 120 (2): 
+276–286. https://doi.org/10.1016/j.ijpe.2008.11.018.
+Helgeson, W . B., and D. P . Birnie. 1961. “ Assembly Line Balanc-
+ing Using the Ranked Positional W eight T echnique. ” Journal 
+of Industrial Engineering 12 (6): 394–398.
+Kalatzantonakis, P ., A. Sifaleras, and N. Samaras. 2025. “ An 
+Offline Data-Driven Process for Learning Operator Selec-
+tion from Metaheuristic Search Traces. ” Swarm and Evo-
+lutionary Computation 98:102058. https://doi.org/10.1016/j.
+swevo.2025.102058.
+Kheirabadi, M., S. Keivanpour, J.-M. Frayret, and Y . Chinniah. 
+2025. “Safety-Driven Optimisation of Human–robot Collab-
+orative Assembly Line Balancing. ” International Journal of 
+Production Research 63 (17): 6203–6228. https://doi.org/10.
+1080/00207543.2025.2469288.
+Lahrichi, Y ., L. Deroussi, N. Grangeon, and S. Norre. 
+2021. “ A Balance-First Sequence-Last Algorithm to Design 
+RMS: A Matheuristic with Performance Guaranty to 
+Balance Reconfigurable Manufacturing Systems. ” Journal 
+of Heuristics 27 (1-2): 107–132. https://doi.org/10.1007/
+s10732-021-09473-1.
+Lahrichi, Y ., N. Grangeon, L. Deroussi, and S. Norre. 2021. 
+“ A New Split-Based Hybrid Metaheuristic for the Recon-
+figurable Transfer Line Balancing Problem. ” International 
+Journal of Production Research 59 (4): 1127–1144. https://
+doi.org/10.1080/00207543.2020.1720929.
+Lamy, D., X. Delorme, and P . Gianessi. 2020. “Line Balanc-
+ing and Sequencing for Peak Power Minimization. ” IFAC-
+PapersOnLine 53 (2): 10411–10416. https://doi.org/10.1016/
+j.ifacol.2020.12.2781.
+Leng, J., G. Ruan, C. Xu, X. Song, Q. Liu, Y . Fu, and J. W an. 
+2024. “Deep Reinforcement Learning of Graph Convolu-
+tional Neural Network for Resilient Production Control of 
+Mass Individualized Prototyping toward Industry 5.0. ” IEEE 
+Transactions on Systems, Man, and Cybernetics: Systems 54 
+(12): 7152–7165.
+Leng, J., X. Su, Z. Liu, L. Zhou, C. Chen, X. Guo, Y . W ang, et al. 
+2025. “Diffusion Model-Driven Smart Design and Manufac-
+turing: Prospects and Challenges. ” Journal of Manufacturing 
+Systems 82:561–577. https://doi.org/10.1016/j.jmsy.2025.07.
+011.
+Li, J.-K., X.-X. Geng, G.-J. Hu, and Z.-S. Du. 2026. “Q-learning-
+Driven Growing Neural Gas Network for Job Shop with 
+Machine Breakdown and Setup. ” Engineering Applications of 
+Artificial Intelligence 175:114618. https://doi.org/10.1016/j.
+engappai.2026.114618.
+Li, P ., Q. Xue, Z. Zhang, J. Chen, and D. Zhou. 2023. “Multi-
+objective Energy-Efficient Hybrid Flow Shop Scheduling 
+Using Q-learning and GVNS Driven NSGA-II. ” Comput-
+ers and Operations Research 159:106360. https://doi.org/10.
+1016/j.cor.2023.106360.
+Liu, C., K. Chen, H. W ang, B. Y ang, and J. Leng. 2025. “Job Shop 
+Scheduling by Deep Dual-Q Network with Prioritized Expe-
+rience Replay for Resilient Production Control in Flexible 
+Manufacturing System. ” Computers and Operations Research
+183:107190. https://doi.org/10.1016/j.cor.2025.107190.
+Mahmoodi, E., M. Fathi, M. Tavana, M. Ghobakhloo, and 
+A. H. C. Ng. 2024. “Data-Driven Simulation-Based Deci-
+sion Support System for Resource Allocation in Industry 
+4.0 and Smart Manufacturing. ” Journal of Manufacturing 
+Systems 72:287–307. https://doi.org/10.1016/j.jmsy.2023.11.
+019.
+Meng, K., Q. Tang, and Z. Zhang. 2022. “Robust Assembly 
+Line Balancing Problem considering Preventive Mainte-
+nance Scenarios with Interval Processing Time. ” Engineering 
+Applications of Artificial Intelligence 116:105417. https://doi.
+org/10.1016/j.engappai.2022.105417.
+Ming, F ., W . Gong, L. W ang, and Y . Jin. 2024. “Constrained 
+Multi-objective Optimization with Deep Reinforcement 
+Learning Assisted Operator Selection. ” IEEE/CAA Journal of 
+Automatica Sinica 11 (4): 919–931. https://doi.org/10.1109/
+JAS.2023.123687.
+32 
+ P. BELDAR ET AL.
+Ming, H., Q. Liu, and D. T . Pham. 2019. “Multi-robotic Dis-
+assembly Line Balancing with Uncertain Processing Time. ” 
+Procedia CIRP 83:71–76. https://doi.org/10.1016/j.procir.
+2019.02.140.
+Nourmohammadi, A., T . Arbaoui, M. Fathi, and A. Dol-
+gui. 2025. “Balancing Human–robot Collaborative Assembly 
+Lines: A Constraint Programming Approach. ” Computers & 
+Industrial Engineering 205:111154. https://doi.org/10.1016/
+j.cie.2025.111154.
+Nourmohammadi, A., P . Beldar, M. Fathi, and E. Mahmoodi. 
+2024. “Balancing and Scheduling of Sustainable Flexible 
+Transfer Lines. ” IFAC-PapersOnLine 58 (19): 664–669. https:
+//doi.org/10.1016/j.ifacol.2024.09.224.
+Osama, M., S. S. S. M. Qadri, M. B. Riaz, and M. F . Shahid. 2026. 
+“ AGENT: An Elitism-Guided Evolutionary Framework for 
+Enhanced Task Allocation Performance in Heterogeneous 
+Cloud Systems. ” Results in Engineering 29:109742. https://
+doi.org/10.1016/j.rineng.2026.109742.
+Petersen, J., A. Nourmohammadi, M. Fathi, and C. Burmeister. 
+2024. “Multi-objective Optimization of Transfer Line Bal-
+ancing Problem considering Cycle Time and Energy Expen-
+diture. ” Procedia CIRP 130:1378–1383. https://doi.org/10.
+1016/j.procir.2024.10.255.
+Rakovitis, N., D. Li, N. Zhang, J. Li, L. Zhang, and X. Xiao. 
+2022. “Novel Approach to Energy-Efficient Flexible Job-
+Shop Scheduling Problems. ” Energy 238:121773. https://doi.
+org/10.1016/j.energy.2021.121773.
+Sandalow, D., M. Meidan, P . Andrews-Speed, A. Hove, S. Y . Qiu, 
+and E. Downie. 2022. “Manufacturing Sector. ” Chapter 11. 
+In Guide to Chinese Climate Policy. Oxford: Oxford Insti-
+tute of Energy Studies. https://chineseclimatepolicy.oxfor-
+denergy.org/
+Scholl, A., N. Boysen, M. Fliedner, and R. Klein. 1995. “Home-
+page for Assembly Line Optimization Research. ” Online 
+Database.
+U.S. Energy Information Administration. 2021. International 
+Energy Outlook 2021. https://www.eia.gov/outlooks/ieo/con-
+sumption/sub-topic-03.php.
+Zhang, L., Q. Tang, Z. Wu, and F . W ang. 2017. “Mathemati-
+cal Modeling and Evolutionary Generation of Rule Sets for 
+Energy-Efficient Flexible Job Shops. ” Energy 138:210–227. 
+https://doi.org/10.1016/j.energy.2017.07.005.
+Zhang, Y ., X. Rao, C. Liu, X. Zhang, and Y . Zhou. 2023. “ A 
+Cooperative EV Charging Scheduling Strategy Based on 
+Double Deep Q-network and Prioritized Experience Replay. ” 
+Engineering Applications of Artificial Intelligence 118:105642. 
+https://doi.org/10.1016/j.engappai.2022.105642.
+Zhang, Z., L. Guo, Y . Zhang, Y . Zeng, H. Song, Y . Li, H. 
+Chen, and M. W . Aslam. 2025. “Industrial Application 
+of Multi-robot Destructive Disassembly Line Balancing 
+under Component Non-disassemblability for Multi-product 
+Scenarios. ” International Journal of Production Research
+63 (18): 6801–6826. https://doi.org/10.1080/00207543.2025.
+2487923.
+Zhao, L., Q. Tang, and Z. Zhang. 2022. “ An Improved 
+Preference-Based V ariable Neighborhood Search Algorithm 
+with Ar-Dominance for Assembly Line Balancing consider-
+ing Preventive Maintenance Scenarios. ” Engineering Applica-
+tions of Artificial Intelligence 109:104593. https://doi.org/10.
+1016/j.engappai.2021.104593.
+Zhao, L., Q. Tang, Z. Zhang, and Y . Zhu. 2024. “ A Knowledge-
+Assisted V ariable Neighborhood Search for Two-Sided 
+Assembly Line Balancing considering Preventive Mainte-
+nance Scenarios. ” IEEE Transactions on Systems, Man, and 
+Cybernetics: Systems 54 (11): 6859–6872. https://doi.org/10.
+1109/TSMC.2024.3407724.
+Zheng, C., Z. Li, M. Janardhanan, Z. Zhang, and L. Zhang. 
+2025. “Balancing and Scheduling Human-Robot Collabora-
+tive Assembly Lines with Heterogeneous Robots and Limited 
+Resources: Constraint Programming Approach and Fruit Fly 
+Optimization Algorithm. ” Computers & Industrial Engineer-
+ing 203:111046. https://doi.org/10.1016/j.cie.2025.111046.
+Zheng, C., Z. Li, and S. G. Ponnambalam. 2025. “Balanc-
+ing U-shaped Assembly Lines with Collaborative Robots: 
+Constraint Programming Approaches and Benders’ Decom-
+position Algorithms. ” International Journal of Production 
+Research 63 (24): 10468–10489. https://doi.org/10.1080/
+00207543.2025.2551245.
+Zheng, Z., S. Cherif, and R. S. Shibasaki. 2024. “Opti-
+mizing Power Peaks in Simple Assembly Line Balanc-
+ing through Maximum Satisfiability. ” In 2024 IEEE 36th 
+International Conference on T ools with Artificial Intelligence
+(ICTAI), 363–370. Herndon, V A. https://doi.org/10.1109/
+ICTAI62512.2024.00060.
+Zhou, F .-S., R. Hu, W .-B. Zhang, B. Qian, Z.-Q. Zhang, and L. 
+W ang. 2026. “Spatial Decomposition-Based V ariable Neigh-
+borhood Search Algorithm for the Integrated Semiconduc-
+tor Backend Production and Distribution Scheduling Prob-
+lem. ” Computers & Operations Research 189:107388. https:
+//doi.org/10.1016/j.cor.2026.107388.
+Appendices
+Appendix 1. Mixed-integer linear programming 
+formulation
+Parameters:
+NT Number of tasks
+NM Number of workstations
+Nb Number of blocks per workstation
+T ai Processing time of task i
+Tpi Power demand of task i
+prei,j 1 if task i must precede task j
+inci,j 1 if tasks i and j must be on the same workstation
+exci,j 1 if tasks i and j cannot be on the same workstation
+exc_bi,j 1 if tasks i and j cannot be in the same block
+teci,k 1 if task i is technologically restricted to workstation 
+k
+Mtb Maximum number of tasks per block
+H Safe upper bound on the time horizon, H =∑︁
+i∈O T ai
+Mbig Big-M constant
+Sets:
+O Set of tasks indexed by i (O = {1, . . . , NT})
+M Set of workstations indexed by k (M = {1, . . . , NM})
+B Set of blocks indexed by q (B = {1, . . . , Nb · NM})
+R(k) Set of blocks on workstation k, R(k) = {(k − 1) ·
+Nb + 1, . . . , k · Nb}
+T Discrete time horizon, T = {0, 1, . . . , H}
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 33
+Decision Variables:
+zi,q Binary variable: 1 if task i is assigned to block q, ∀i ∈
+O, ∀q ∈ B
+si,q Start time of task i within block q (zero when zi,q =
+0), ∀i ∈ O, ∀q ∈ B
+BSq Start time of block q, ∀q ∈ B
+BEq End time of block q, ∀q ∈ B
+aq Binary variable: 1 if block q is active, 0 otherwise, 
+∀q ∈ B
+ut,q,i Binary variable: 1 if task i assigned to block q is being 
+processed at time t, ∀t ∈ T , ∀q ∈ B, ∀i ∈ O
+w1 t,q,i Binary variable: 1 if task i in block q has not yet 
+started at time t, ∀t ∈ T , ∀q ∈ B, ∀i ∈ O
+w2 t,q,i Binary variable: 1 if task i in block q has already 
+finished by time t, ∀t ∈ T , ∀q ∈ B, ∀i ∈ O
+actt,q,i Power drawn by task i in block q at time t, ∀t ∈ T , 
+q ∈ B, i ∈ O
+blkq,t T otal power in block q at time t, ∀q ∈ B, t ∈ T
+machk,t T otal power in workstation k at time t, ∀k ∈ M, t ∈ T
+syst System-level power at time t, ∀t ∈ T
+PP Maximum system peak power
+CT Cycle time
+Model Formulation:
+Minimize CT (A1)
+Minimize PP (A2)
+subject to:
+∑︂
+q∈B
+zi,q = 1, ∀ i ∈ O (A3)
+∑︂
+q∈B
+q · zi,q ≤
+∑︂
+q∈B
+q · zj,q, ∀ i < j, if prei,j = 1 (A4)
+zi,q + zj,q ≤ 1, ∀ i < j, ∀ q ∈ B, if exc_bi,j = 1 (A5)
+∑︂
+q∈R(k)
+zi,q =
+∑︂
+q∈R(k)
+zj,q, ∀ i < j, ∀ k ∈ M, if inci,j = 1 (A6)
+∑︂
+q∈R(k)
+zi,q +
+∑︂
+q∈R(k)
+zj,q ≤ 1, ∀ i < j, ∀ k ∈ M, if exci,j = 1
+(A7)
+∑︂
+q∈R(k)
+zi,q = 1, ∀ i ∈ O, ∀ k ∈ M, if teci,k = 1 (A8)
+∑︂
+i∈O
+zi,q ≤ Mtb, ∀ q ∈ B (A9)
+si,q ≤ Mbig · zi,q, ∀ i ∈ O, ∀ q ∈ B (A10)
+si, (k−1)·Nb+1 ≤ Mbig · (︁ 1 − zi, (k−1)·Nb+1 )︁ ,
+∀ i ∈ O, ∀ k ∈ M (A11)
+BSq ≥ si,q − Mbig · (1 − zi,q), ∀ i ∈ O, ∀ q ∈ B (A12)
+BSq ≤ si,q + Mbig · (1 − zi,q), ∀ i ∈ O, ∀ q ∈ B (A13)
+BEq ≥ si,q + T ai − Mbig · (1 − zi,q), ∀ i ∈ O, ∀ q ∈ B
+(A14)
+aq ≥ zi,q, ∀ i ∈ O, ∀ q ∈ B (A15)
+aq ≤
+∑︂
+i∈O
+zi,q, ∀ q ∈ B (A16)
+BEq1 ≥ BSq2 − Mbig · (2 − aq1 − aq2 ),
+∀ k ∈ M, ∀ q1, q2 ∈ R(k), q2 = q1 + 1 (A17)
+BEq1 ≤ BSq2 + Mbig · (2 − aq1 − aq2 ),
+∀ k ∈ M, ∀ q1, q2 ∈ R(k), q2 = q1 + 1 (A18)
+aq−1 ≥ aq, ∀ k ∈ M, ∀ q ∈ R(k), q > ( k − 1) · Nb + 1
+(A19)
+BEq ≥ BSq − Mbig · aq, ∀ q ∈ B (A20)
+BEq ≤ BSq + Mbig · aq, ∀ q ∈ B (A21)
+ut,q,i ≤ zi,q, ∀ t ∈ T , q ∈ B, i ∈ O (A22)
+si,q ≤ t + Mbig · (1 − ut,q,i), ∀ t ∈ T , q ∈ B, i ∈ O (A23)
+si,q + T ai ≥ (t + 1) − Mbig · (1 − ut,q,i),
+∀ t ∈ T , q ∈ B, i ∈ O (A24)
+si,q ≥ (t + 1) · w1 t,q,i, ∀t ∈ T , q ∈ B, i ∈ O (A25)
+si,q − t ≤ Mbig · w1 t,q,i, ∀ t ∈ T , q ∈ B, i ∈ O (A26)
+si,q + T ai ≤ t + Mbig · (1 − w2 t,q,i), ∀ t ∈ T , q ∈ B, i ∈ O
+(A27)
+si,q + T ai ≥ (t + 1) − Mbig · w2 t,q,i, ∀ t ∈ T , q ∈ B, i ∈ O
+(A28)
+ut,q,i ≥ zi,q − w1 t,q,i − w2 t,q,i, ∀ t ∈ T , q ∈ B, i ∈ O (A29)
+actt,q,i = Tpi · ut,q,i, ∀ t ∈ T , q ∈ B, i ∈ O (A30)
+blkq,t =
+∑︂
+i∈O
+actt,q,i, ∀ q ∈ B, t ∈ T (A31)
+machk,t =
+∑︂
+q∈R(k)
+blkq,t, ∀ k ∈ M, t ∈ T (A32)
+syst =
+∑︂
+k∈M
+machk,t, ∀ t ∈ T (A33)
+PP ≥ syst, ∀ t ∈ T (A34)
+CT ≥ si,q + T ai − Mbig · (1 − zi,q), ∀ i ∈ O, ∀ q ∈ B
+(A35)
+The objective functions (A1) and (A2) minimise CT and PP , 
+respectively. Constraint (A3) guarantees each task is assigned 
+to exactly one block. Constraint (A4) enforces precedence 
+relationships between tasks. Constraint (A5) prevents incom-
+patible tasks from being assigned to the same block. Con-
+straints (A6) and (A7) enforce workstation inclusion and exclu-
+sion rules for task assignments, respectively. Constraint (A8) 
+ensures tasks are assigned only to technologically compatible 
+workstations. Constraint (A9) limits the number of tasks per 
+block to Mtb.
+Constraint (A10) suppresses phantom start times for unas-
+signed task–block pairs. Constraint (A11) anchors the first 
+block on each workstation to start at time zero. Con-
+straints (A12) and (A13) define the block start time BSq via 
+big-M linearisation. Constraint (A14) defines the block end 
+34 
+ P. BELDAR ET AL.
+time BEq as the latest task completion within the block. Con-
+straints (A15) and (A16) define the block activity indicator aq, 
+which equals 1 if and only if block q contains at least one task. 
+Constraints (A17) and (A18) enforce contiguous sequential 
+scheduling of active blocks on the same workstation, eliminat-
+ing idle time between them. Constraint (A19) prevents gaps 
+in block usage by requiring earlier blocks to be filled before 
+later ones. Constraints (A20) and (A21) set the duration of any 
+inactive block to zero by equating its start and end time.
+Constraints (A22)–(A29) linearise the activity indicator 
+ut,q,i, which equals 1 if and only if task i is assigned to block 
+q and is being processed at time t. This is achieved via two 
+auxiliary binaries: w1 t,q,i (not-yet started) and w2 t,q,i (already fin-
+ished), whose combined logic forces ut,q,i = 1 exactly over the 
+active window si,q ≤ t < si,q + T ai. Constraint (A30) computes 
+the power contribution of each active task as Tpi · ut,q,i. Con-
+straints (A31), (A32), and (A33) aggregate power bottom-up 
+through the task, block, workstation, and system levels. Con-
+straint (A34) determines the PP as the maximum system power 
+across all time slots. Constraint (A35) computes the CT as 
+the maximum completion time of any assigned task across all 
+blocks.
+Appendix 2. Sensitivity analysis of reward 
+function weights
+T o assess the sensitivity of NN_MOVNS to the reward function 
+weighting coefficients (w1, w2, w3), five weight configurations 
+were evaluated on five representative instances drawn from 
+the main experimental testbed: T4 (JACKSON, 11 tasks), T14 
+(BUXEY , 29 tasks), T19 (GUNTHER, 35 tasks), T22 (KIL-
+BRID, 45 tasks), and T25 (KILBRID, 45 tasks). Each config-
+uration was executed ten times under the same time limits 
+and parameter settings used in the main experiments, with 
+only the reward weights varied. The five configurations are: 
+C1 (baseline, w1=0.8, w2=0.9, w3=0.3), C2 (equal, 0.5, 0.5, 
+0.5), C3 (objective-heavy, 0.3, 0.3, 0.9), C4 (diversity-heavy, 0.5, 
+1.0, 0.1), and C5 (Pareto-heavy, 1.0, 0.5, 0.1). Table A1 reports 
+the mean HVrel and IGD+ values across the ten independent 
+runs.
+The baseline configuration C1 achieves the best mean HVrel
+and the lowest mean IGD+ across all five tested instances. 
+This consistently strong performance supports the baseline 
+reward-weight configuration adopted in the main computa-
+tional experiments.
+Configurations that preserve relatively high weights on the 
+Pareto expansion and diversity components exhibit only mod-
+erate performance reductions. Under C4 (diversity-heavy), 
+HVrel decreases by 0.8% on T4 (from 0.988 to 0.980), by 1.2% 
+on T14 (from 0.918 to 0.907), by 0.9% on T19 (from 0.992 to 
+0.983), by 0.9% on T22 (from 0.993 to 0.984), and by 1.4% 
+on T25 (from 0.956 to 0.943). Under C2 (equal weights), the 
+reductions are slightly larger but remain below 3% across all 
+instances. Under C5 (Pareto-heavy), the largest HVrel reduc-
+tion is 2.5% on T25 (from 0.956 to 0.932). These results indi-
+cate that the algorithm retains competitive performance under 
+the moderate weight perturbations examined in this analysis. 
+Among these configurations, C4 is consistently the second-
+best, which aligns with the multi-objective design rationale: 
+prioritising solution spread along the Pareto front yields bet-
+ter approximation quality than emphasising archive cardinality 
+or objective improvement alone.
+In contrast, configuration C3 (objective-heavy, w3=0.9) 
+produces the largest performance degradation across all five 
+instances. On T4, IGD+ increases from 1.100 to 2.150 
+(+95.5%). On T14, IGD+ rises from 2.860 to 5.480 (+91.6%). 
+On T19, IGD+ increases from 1.021 to 2.340 (+129.2%). On 
+T22, IGD+ rises from 2.129 to 4.970 (+133.4%). On T25, IGD+
+increases from 1.373 to 3.280 (+138.9%). The correspond-
+ing HVrel reductions range from 3.8% on T19 (from 0.992 to 
+0.954) to 5.7% on T25 (from 0.956 to 0.901). This outcome 
+is consistent with the multi-objective nature of the problem: 
+when single-objective improvement is excessively prioritised, 
+the DQN agent learns to favour operators that improve one 
+objective at the expense of Pareto front coverage and diversity, 
+resulting in narrower and less well-distributed approximation 
+sets.
+Overall, the analysis confirms that the selected weight con-
+figuration (0.8, 0.9, 0.3) provides an effective balance among the 
+three reward components. The algorithm tolerates moderate 
+deviations without substantial quality loss, but heavily skew-
+ing the reward toward direct objective improvement is detri-
+mental, reinforcing the design rationale of prioritising archive 
+expansion and solution spread in the multi-objective search 
+context.
+Table A1. Sensitivity of NN_MOVNS performance to reward weight configurations across five representative instances. Best values per 
+instance are shown in bold.
+T4 – JACKSON T14 – BUXEY T19 – GUNTHER T22 – KILBRID T25 – KILBRID
+Config (w1, w2, w3) HVrel IGD+ HVrel IGD+ HVrel IGD+ HVrel IGD+ HVrel IGD+
+C1 (baseline) (0.8, 0.9, 0.3 ) 0.988 1.100 0.918 2.860 0.992 1.021 0.993 2.129 0.956 1.373
+C2 (equal) (0.5, 0.5, 0.5 ) 0.974 1.380 0.900 3.620 0.975 1.450 0.975 2.840 0.935 1.890
+C3 (obj.-heavy) (0.3, 0.3, 0.9 ) 0.941 2.150 0.866 5.480 0.954 2.340 0.928 4.970 0.901 3.280
+C4 (div.-heavy) (0.5, 1.0, 0.1 ) 0.980 1.240 0.907 3.240 0.983 1.180 0.984 2.450 0.943 1.620
+C5 (Pareto-heavy) (1.0, 0.5, 0.1 ) 0.968 1.470 0.894 3.810 0.971 1.520 0.966 3.080 0.932 2.010

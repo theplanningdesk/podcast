@@ -1,0 +1,2783 @@
+TITLE: A systematic review of the collaborative intelligence in multi-agent scheduling
+AUTHORS: Kuo‐Ching Ying, Pourya Pourhejazy, Bo-Cheng Chen
+VENUE: International Journal of Production Research (2026-11-08)
+DOI: https://doi.org/10.1080/00207543.2026.2752521
+LICENCE: cc-by-nc-nd
+LINK: https://doi.org/10.1080/00207543.2026.2752521
+
+International Journal of Production Research
+ISSN: 0020-7543 (Print) 1366-588X (Online) Journal homepage: www.tandfonline.com/journals/tprs20
+A systematic review of the collaborative
+intelligence in multi-agent scheduling
+Kuo-Ching Ying, Pourya Pourhejazy & Bo-Cheng Chen
+To cite this article: Kuo-Ching Ying, Pourya Pourhejazy & Bo-Cheng Chen (08 Nov 2026): A
+systematic review of the collaborative intelligence in multi-agent scheduling, International
+Journal of Production Research, DOI: 10.1080/00207543.2026.2752521
+To link to this article: https://doi.org/10.1080/00207543.2026.2752521
+© 2026 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group.
+Published online: 08 Nov 2026.
+Submit your article to this journal 
+View related articles 
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tprs20
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH
+https://doi.org/10.1080/00207543.2026.2752521
+REVIEW ARTICLE
+ 
+A systematic review of the collaborative intelligence in multi-agent scheduling
+Kuo-Ching Ying 
+ a, Pourya Pourhejazy 
+ b and Bo-Cheng Chena,c
+aDepartment of Industrial Engineering and Management, National Taipei University of Technology, Taipei, Taiwan; bDepartment of Industrial 
+Engineering, UiT – The Arctic University of Norway, Narvik, Norway; cSouthern Taiwan Science Park, Taiwan Semiconductor Manufacturing 
+Company (TSMC) Limited, Tainan, Taiwan
+ABSTRACT
+Traditional scheduling assumes a single actor, while real-world scenarios often involve multiple 
+decision-making units with conflicting objectives, requiring collaboration, coordination, negotia-
+tion, and collective intelligence. Multi-agent scheduling (MAS) provides a realistic framework for 
+modelling such interactions under shared resources. This article presents a comprehensive sciento-
+metric and systematic review of two-agent and multi-agent scheduling, examining the field’s devel-
+opment paths, knowledge structure, and emerging research clusters. Main path, cluster, and key-
+word analyses are integrated to trace knowledge diffusion, identify influential studies and research 
+branches, and examine how collaborative intelligence is manifested across scheduling contexts. The 
+findings reveal an evolution from early complexity-oriented single-machine and dual-agent mod-
+els toward richer production environments, advanced computational methods, and application-
+oriented MAS in smart manufacturing, energy systems, edge computing, and decentralised project 
+scheduling. More importantly, the synthesis reveals a broader transition from optimizing com-
+peting agent-specific objectives toward interaction-driven collaborative scheduling intelligence 
+based on coordination, negotiation, information sharing, adaptation, and collective learning. This 
+domain-level perspective suggests that future MAS should integrate decentralised decision-making, 
+adaptive intelligence, and system-level coordination to reconcile local objectives with system-wide 
+performance.
+ARTICLE HISTORY
+Received 2 January 2026
+Accepted 16 October 2026
+KEYWORDS
+Multi-agent systems; 
+scheduling; interactions; 
+competing interests; 
+systematic review; 
+optimization
+SUBJECT 
+CLASSIFICATIONS
+SDG 9: Industry; innovation 
+and infrastructure; 
+multi-agent systems
+1. Introduction
+Multi-Agent Scheduling (MAS) provides decision sup-
+port for short-term planning and control in systems 
+with multiple actors that compete for the use of the 
+same resources to achieve conflicting goals (Allesan-
+dro Agnetis et al. 2004). Such settings frequently arise 
+in real-world industrial systems, where decentralised 
+decision-making, resource contention, and conflicting 
+stakeholder objectives create operational challenges that 
+traditional single-agent scheduling approaches cannot 
+effectively address. Prime examples of competing agents 
+(i.e. decision-makers) in real-world scenarios include 
+transportation and logistics, for instance, when the sup-
+ply chain of critical products is under pressure and sup-
+pliers, manufacturers, and retailers compete for logistics 
+resources (Ying, Pourhejazy, and Sung 2024); healthcare, 
+where different hospital departments compete for med-
+ical resources (Zuo, Jin, and Liu 2024); and portfolio 
+management, where projects or investments compete for 
+limited human, material, or financial resources (Gholami 
+CONTACT Pourya Pourhejazy 
+ pourya.pourhejazy@uit.no
+ Department of Industrial Engineering, UiT- The Arctic University of Norway, Lodve 
+Langesgate 2, Narvik 8514, Norway
+et al. 2025). Other applications of MAS include, but are 
+not limited to, the following areas:
+• Energy Systems: energy generation, charge/discharge, 
+and distribution occur among multiple power plants, 
+energy storage systems, and consumers to balance 
+supply and demand.
+• Manufacturing and production systems: tasks across 
+multiple agents must be coordinated to minimise pro-
+duction time and costs.
+• Advanced computing systems: computing resources 
+should be allocated in AI and data centres among mul-
+tiple users or applications to optimise performance 
+and reduce costs.
+• Education: classrooms, teachers, and time slots must 
+be allotted to optimise the use of educational
+resources.
+From an industrial perspective, MAS has become 
+increasingly relevant as modern operational systems have 
+grown more complex and decentralised. For instance, in 
+© 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives License (http://creativecommons.org/licenses/by-nc-
+nd/4.0/), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited, and is not altered, transformed, or built upon 
+in any way. The terms on which this article has been published allow the posting of the Accepted Manuscript in a repository by the author(s) or with their consent.
+2 
+ K.-C. YING ET AL.
+smart manufacturing environments, multiple production 
+units must dynamically coordinate in the presence of 
+machine disruptions and stochastic job arrivals. In sup-
+ply chain systems, independent entities such as suppliers, 
+manufacturers, and logistics providers pursue conflict-
+ing objectives while sharing limited transportation and 
+inventory resources. Similarly, in energy systems and 
+cloud computing platforms, heterogeneous agents com-
+pete for capacity amid real-time demand fluctuations. 
+These practical challenges highlight the role of MAS 
+as a modelling and optimization framework capable of 
+capturing interaction-driven behaviours and supporting 
+coordinated decision-making in complex systems.
+When agents have different objectives, game-theoretic 
+behaviour may influence the operational dynamics, and 
+hence, accounting for it becomes necessary to model 
+the inherent interactions. In this situation, including 
+either synergistic or conflicting individual objective func-
+tions, and ensuring the feasibility of the schedules for 
+every agent, are the major scheduling requirements 
+(Lang, Fink, and Brandt 2016). These features exacer-
+bate mathematical complexity and complicate the solu-
+tion spaces of scheduling problems. Preliminary inves-
+tigations revealed that more than 600 articles have con-
+tributed to the development of modelling and solution 
+algorithms in MAS. A review of these studies may facili-
+tate the evolution of MAS to tackle modern problems.
+The existing reviews are specific to a particular type 
+and/or application of MAS, such as resource alloca-
+tion and scheduling in smart grids (Binyamin and Ben 
+Slama 2022), or methods for decomposing large-scale 
+railway scheduling problems (Leutwiler and Corman 
+2023). In the broadest review (Perez-Gonzalez and Fram-
+inan 2014), the authors systematically surveyed multi-
+objective MAS problems, with particular attention to 
+their mathematical complexity and solution algorithms, 
+thereby providing a structured basis for understanding 
+methodological developments in MAS research. T o the 
+best of our knowledge, no prior review has systemat-
+ically employed scientometric methods – particularly 
+Main Path Analysis (MPA) and Cluster Analysis (CA) 
+– to examine the evolutionary development paths of 
+MAS. Moreover, the most relevant review article was 
+published more than 12 years ago; therefore, an updated 
+and methodologically rigorous review of MAS is both 
+timely and necessary.
+This study makes two primary contributions to MAS. 
+The main contribution is to draw the big picture of 
+MAS developments based on the MPA of the litera-
+ture, considering the main development paths and key 
+branches (John S. Liu, Lu, and Ho 2019). The signifi-
+cant mathematical features and solution algorithms are 
+reviewed to shed light on the main patterns of devel-
+opment and the collaborative intelligence manifested 
+in the ways multiple agents coordinate, negotiate, and 
+reconcile competing objectives under shared resource 
+constraints. In this review, ‘collaborative intelligence’ is 
+defined as a system-level, interaction-driven scheduling 
+capability that emerges when multiple autonomous or 
+semi-autonomous agents coordinate their actions, nego-
+tiate decisions, share information, adapt dynamically to 
+changing environments, form collaborative coalitions, or 
+learn collectively to reconcile decentralised local objec-
+tives under shared resources and constraints. Impor-
+tantly, collaborative intelligence is not universally pre-
+sumed to be inherent in all MAS studies. MAS formula-
+tions that merely model multiple independent job sets or 
+mathematically competing objectives without incorpo-
+rating decentralised coordination, adaptive interaction, 
+information exchange, negotiation, or learning mecha-
+nisms are not regarded as representations of collaborative 
+intelligence in the present review. Accordingly, collab-
+orative intelligence is treated as a structured analyti-
+cal lens for systematically interpreting interaction-driven 
+scheduling behaviours rather than as a universal prop-
+erty of all multi-agent scheduling models. Operationally, 
+collaborative intelligence is identified through observ-
+able coordination mechanisms, the information struc-
+ture among agents, the adaptation or learning processes 
+involved, and the resulting system-level scheduling out-
+comes, such as feasibility, fairness, responsiveness, and 
+overall performance improvements. From this perspec-
+tive, many early two-agent scheduling studies primarily 
+belong to the category of competitive multi-objective 
+scheduling, in which agents coexist mathematically but 
+do not necessarily exhibit explicit collaborative, adap-
+tive, or decentralised interaction mechanisms. Neverthe-
+less, these studies remain structurally important because 
+they systematically established the theoretical and com-
+putational foundations upon which later coordination-
+oriented and learning-enabled MAS systems were devel-
+oped.
+Second, the major subfields in MAS are discussed to 
+explore the status and speculate on emerging trends and 
+research directions. CA (Girvan and Newman 2002) is 
+used as a basis for suggesting future research directions 
+in an objective way. By integrating trajectory analysis 
+(i.e. MPA), structural analysis (i.e. CA), and temporal 
+analysis (overlay and timeline visualization), this study 
+offers a comprehensive and multi-dimensional under-
+standing of the evolution of MAS, thereby capturing its 
+structural, developmental, and temporal dynamics from 
+complementary perspectives.
+This article is organised into five additional sections. 
+Section 2 provides some preliminaries required before 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 3
+presenting the results. The analysis of the main devel-
+opment paths and the emerged research branches are 
+conducted in Sections 3 and 4, respectively. The citation-
+network clustering results and the subsequent keyword 
+analyses of the identified clusters are presented in Section 
+5, where potential directions for future research are iden-
+tified. Section 6 summarises the findings and highlights 
+several areas for future research.
+2. Preliminaries
+2.1. Search and review protocols
+The dataset was constructed from the W eb of Science 
+(W oS) database using a systematic keyword search strat-
+egy combined with predefined inclusion and exclusion 
+criteria to ensure relevance and quality. The resulting 
+publications were used to construct a citation network, 
+which serves as the foundation for analyzing the main 
+development paths. For MPA, traversal weights were 
+computed using the Search Path Link Count (SPLC) 
+metric to identify the most significant knowledge dif-
+fusion paths, including both the Global Main Path and 
+Key-route Main Path. Specifically, MPA was conducted 
+using MainPath494S, in which the SPLC algorithm was 
+adopted as the traversal-weighting scheme. The Global 
+Main Path was extracted using the Global Search and 
+Standard modes, whereas the Key-route Main Path 
+analysis was subsequently performed to complement 
+the Global Main Path by capturing multiple signifi-
+cant knowledge-diffusion trajectories that might not be 
+represented by a single global path. Neither the key-
+route threshold nor the number of significant routes was 
+manually specified; therefore, the default software con-
+figuration implemented in MainPath494S was retained. 
+CA was performed using the Group Finder function 
+in MainPath494S with the Edge-Betweenness Clustering 
+algorithm to partition the citation network into struc-
+turally related groups of articles. T o ensure methodolog-
+ical consistency and analytical reproducibility, no user-
+defined clustering parameters were introduced, and the 
+default software configuration was adopted throughout 
+the clustering process. The combined use of MPA and 
+CA enables the knowledge domain to be interpreted from 
+both structural-evolutionary and thematic perspectives, 
+thereby providing a more comprehensive understanding 
+of the development path of collaborative intelligence in 
+multi-agent scheduling.
+The following search query was used to collect 
+the review dataset from the W oS databases through 
+T opic Search: TS = (‘multi-agent∗’ OR ‘multi agent∗’ 
+OR ‘multiagent∗’ OR ‘two-agent∗’ OR ‘two agent∗’) 
+AND TS = (‘scheduling∗’). A total of 1,841 articles 
+published between 2004 and early 2025 were initially 
+retrieved. T o improve the reproducibility and method-
+ological rigour of the review protocol, 36 review articles 
+were first excluded to avoid citation biases that could 
+distort the identification of the main development path. 
+Subsequently, isolated records lacking sufficient citation 
+connectivity, along with irrelevant publications, were 
+excluded during the screening process.
+After the screening process, 628 articles remained for 
+the subsequent MPA and CA. This stepwise procedure 
+is also summarised in Figure 1 to enhance the repro-
+ducibility, transparency, and methodological clarity of 
+the review protocol. The precision index (Precision =
+Network Size
+Number of Papers in the Original Data ) and Digital Object Iden-
+tifier (DOI= DOI T otal CR T otal × 100%) metrics are calculated 
+to ensure an acceptable quality and coverage of the 
+review database. On this basis, a precision of 0.92 
+( = 628/679) and the literature’ s DOI ratio reaching 81% 
+(29,324/36,213) confirm that much of the literature can 
+be mapped to valid and relevant sources. With the pre-
+cision of the collection and validity of DOIs exceeding 
+80%, one can conclude that the database can provide a 
+solid foundation for MPA and CA.
+This study begins with tracing the most important 
+developments and areas of interest to provide a basis for 
+suggesting directions for future studies in MAS. For this 
+purpose, the MPA method, which will be elaborated in 
+Section 2.2, is employed to analyze the main and sec-
+ondary development paths of MAS. The selected articles 
+are reviewed by identifying the main mathematical fea-
+tures and solution methods. A three-field notation is used 
+to present the problem features, α|β|γ , where α speci-
+fies the type of the machine environment; β indicates the 
+operational constraints and agent-related features; and γ
+defines the objective function. This notation is consis-
+tently used throughout the article to ensure clarity and 
+comparability across different MAS models. Table 1 lists 
+the notations and their corresponding definitions used to 
+configure the three-field identifier.
+T o ensure reproducibility, the methodological work-
+flow of this study comprises five main steps: (i) data 
+retrieval and screening based on predefined search 
+queries, (ii) construction of the citation network using 
+bibliographic linkages, (iii) computation of traversal 
+weights using SPLC for main path identification, and (iv) 
+citation-network clustering using the Edge-Betweenness 
+Clustering algorithm, and (v) keyword co-occurrence 
+analysis of the resulting article clusters using VOSviewer. 
+All procedures were conducted using established sci-
+entometric tools, including MainPath494S, Pajek, and 
+VOSviewer, thereby ensuring methodological consis-
+tency and transparency. Unless otherwise specified, the 
+default parameter configurations provided by the cor-
+responding software packages were retained across all 
+4 
+ K.-C. YING ET AL.
+Figure 1. The screening process and outcomes.
+Table 1. Definition of mathematical notations.
+Field Notation Definition
+A 1 Single Machine
+P Identical Parallel Machine
+Fm Flow Shop
+J Job Shop
+O Open Shop
+B MA Multi-agent
+2A Two-agent
+Prec Precedence Constraints
+rj Release Dates
+dj Due Dates
+li,j Latest Start Time
+no-wait No waiting time (for jobs)
+no-idle No idle time (for machines)
+prmu Permutation
+STsd Sequence-Dependent Setup Times
+SCsd Sequence-Dependent Setup Costs
+0 Cmax Maximum Completion Time (Makespan)∑︂
+Cj Total Completion Time∑︂
+wjCj Total Weighted Completion Time
+Lmax Maximum Lateness∑︂
+Tj Total Tardiness∑︂
+wjTj Total Weighted Tardiness∑︂
+Uj Total Number of Tardy Jobs∑︂
+wjUj Total Weighted Number of Tardy Jobs
+analyses to ensure methodological consistency, facilitate 
+analytical reproducibility, and avoid potential bias from 
+user-defined parameter adjustments.
+2.2. Identification of the main development paths
+Citations in academic research can be attributed to 
+knowledge transfer. In a citation network, tail/head
+nodes refer to the cited/citing articles. In the network 
+view, source nodes are knowledge initiators, intermediate 
+nodes propagate knowledge, and sink nodes represent the 
+most recent advances in the field of study. The number of 
+times a specific knowledge transfer (citation) is traversed 
+shows its importance. This considers all possible paths 
+from all ancestors of the tail node, and itself, to all paths 
+leading to the sink nodes (John S. Liu, Lu, and Ho 2019). 
+MPA identifies key papers based on citation relation-
+ships, specifically by measuring their traversal frequency 
+along knowledge diffusion paths (e.g. Search Path Link 
+Count, SPLC), which is adopted in this study because it 
+captures all possible source-to-sink traversal paths rather 
+than relying on raw citation counts, thereby providing a 
+more comprehensive representation of knowledge diffu-
+sion than alternative metrics such as Search Path Count 
+(SPC). In the present study, the MPA was conducted 
+using MainPath494S, where the SPLC algorithm was 
+employed as the traversal-weighting scheme because it 
+effectively identifies the principal knowledge-diffusion 
+trajectory within a citation network. The Global Main 
+Path was extracted using the Global Search and Standard 
+modes. Furthermore, to enhance the robustness of the 
+analysis, this study combines global MPA with Key-route 
+MPA, where the former captures the most structurally 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 5
+dominant trajectory, whereas the latter identifies influ-
+ential but structurally peripheral branches that might 
+otherwise be overlooked due to inherent constraints in 
+the citation network. This combined design mitigates 
+the inherent structural bias of citation networks and 
+enhances the coverage of both dominant and emerging 
+knowledge trajectories.
+Inspired by the idea of analyzing literature through 
+network science (Hummon and Dereian 1989), path 
+analysis of MAS helps identify the trajectories that con-
+stitute the most prominent knowledge transfers in the 
+development of the field. Through this kind of analy-
+sis, one can systematically trace theoretical evolution, 
+methodological development, and changes in research 
+trends. Nevertheless, like other citation-network meth-
+ods, MPA remains affected by the temporal lag in citation 
+accumulation. Newly published studies may be under-
+represented because they have not yet generated suffi-
+cient citation links to be fully embedded in the network, 
+even when they are methodologically strong or techni-
+cally significant. T o mitigate this recency-related limi-
+tation, the present study complements the Global Main 
+Path with Key-route MPA and CA, thereby broadening 
+the coverage of emerging and less dominant knowledge 
+trajectories.
+In this study, the Global Main Path and the Local 
+Main Paths across different application areas are analyzed 
+separately. The Global Main Path method enumerates 
+all possible citation paths and selects the path with the 
+largest traversal weight, thereby identifying the struc-
+turally dominant knowledge-diffusion trajectory instead 
+of simply highlighting the most highly cited papers 
+(Mrvar and Batagelj 2016). The Global Main Path of 
+MAS consists of 19 representative documents, includ-
+ing 3 source nodes (green), 14 intermediate nodes (red), 
+and 2 sink nodes (blue), as shown in Figure 2. Connect-
+ing arrows represent citation relationships between doc-
+uments. Consistent with the commonly used labelling 
+convention for identifying article nodes in main-path 
+and citation-network visualizations, each article in Fig-
+ures 2–3 is represented by a compact identifier consisting 
+of the first author’ s surname, the initials of the remaining 
+authors’ surnames, and the publication year. For exam-
+ple, ChengNY2006 denotes the article by Cheng, Ng, and 
+Y uan published in 2006. These labels are used solely as 
+article-node identifiers in the MPA and as cross-reference 
+keys linking the network nodes in Figures 2–3 to their 
+corresponding discussions in the text; they do not consti-
+tute an alternative bibliographic citation style. The con-
+ventional author–year citation is retained when the arti-
+cle is discussed in the text, thereby allowing readers to 
+trace a study from its node in the main-path network to 
+the corresponding textual discussion and, ultimately, to 
+its complete entry in the reference list.
+The main path articles are considered structurally 
+influential publications within the knowledge-diffusion 
+network and are systematically reviewed and analyzed in 
+Section 3. Importantly, the studies reviewed in Section 3 
+are selected based on their structural roles in transmitting 
+knowledge along the developmental path, rather than 
+solely on their raw citations. The Key-route Main Path 
+method is further employed to analyze the branches that 
+emerge from the Global Main Path. Instead of starting 
+only from source nodes, this method expands the analysis 
+from the most highly traversed links, thereby identifying 
+influential branches that may not appear on the Global 
+Main Path (John S. Liu and Lu 2012). The Key-route 
+Main Path was generated using the default configuration 
+of MainPath494S, without manually specifying the key-
+route value, traversal threshold, or number of significant 
+routes, thereby ensuring methodological consistency and 
+analytical reproducibility. The resulting citation network 
+was subsequently exported in Pajek-readable format for 
+visualization and complementary network analysis. As 
+shown in Figure 3, the key-route path consists of 49 docu-
+ments. This complementary analysis is particularly useful 
+for capturing technically important studies – including 
+recent and emerging works – that have not yet attained 
+structural prominence within the Global Main Path. 
+Accordingly, the articles outside the Global Main Path are 
+treated as secondary yet still influential research branches 
+and are therefore systematically reviewed in Section 4.
+2.3. Identification of the main research clusters
+The main research clusters are identified from the cita-
+tion relationships among the articles in the review 
+dataset. Clustering is performed using the GroupFinder 
+function implemented in MainPath494S, based on the 
+Edge-Betweenness Clustering algorithm (Girvan and 
+Newman 2002). Specifically, the algorithm partitions 
+the citation network by iteratively removing edges with 
+high betweenness scores, thereby identifying structurally 
+cohesive groups of articles. Because the objective was to 
+ensure methodological consistency and analytical repro-
+ducibility, no user-defined clustering parameters were 
+introduced, and the default software configuration was 
+retained throughout the clustering process. The resulting 
+article clusters were subsequently interpreted to iden-
+tify the major thematic structures and emerging research 
+directions within the knowledge domain. Importantly, 
+keyword analysis was not used to construct these clus-
+ters. Instead, after the citation-network clusters had been 
+identified, keyword co-occurrence analysis was subse-
+quently performed using VOSviewer to characterise and 
+6 
+ K.-C. YING ET AL.
+Figure 2. Main development path of multi-agent scheduling. Legend: Green nodes represent source articles, red nodes denote inter-
+mediate articles, and blue nodes indicate sink articles. Directed edges represent citation relationships. Each node is labelled using an 
+article identifier consisting of the first author’s surname, the initials of the remaining authors’ surnames, and the publication year.
+interpret the dominant research themes within each 
+cluster.
+The clustering algorithm classified the entire litera-
+ture dataset into 20 independent clusters, and the number 
+of articles in each cluster is systematically reported in 
+Table 2. As shown in Table 2, the five largest clusters 
+contain 249, 215, 52, 35, and 32 articles, respectively, 
+accounting for approximately 84% of the entire clus-
+tered literature. These five clusters were therefore selected 
+for in-depth analysis because they represent the domi-
+nant and most representative thematic research streams 
+within the overall knowledge structure of multi- and 
+dual-agent scheduling. The remaining 15 clusters were 
+comparatively small and fragmented, each containing 
+between 3 and 22 articles, and were therefore not dis-
+cussed in detail to preserve analytical focus, method-
+ological coherence, and overall readability. Neverthe-
+less, these smaller clusters should not be interpreted as 
+research topics of limited scientific importance. Instead, 
+many of them represent recently emerging research top-
+ics that have not yet accumulated sufficient publications 
+or citation linkages to form dominant thematic struc-
+tures. Their relatively small size primarily reflects an early 
+stage of knowledge diffusion rather than limited scien-
+tific significance. Consequently, these clusters comple-
+ment the five dominant research streams by revealing 
+promising interdisciplinary research directions and pro-
+viding valuable early insights into the future evolution 
+of collaborative intelligence for multi-agent scheduling. 
+Accordingly, although these clusters do not yet consti-
+tute dominant research streams, they represent impor-
+tant emerging knowledge domains that warrant contin-
+uous monitoring as collaborative intelligence continues 
+to evolve in MAS.
+Keyword co-occurrence analysis was subsequently 
+performed using VOSviewer to identify the dominant 
+research themes within each cluster. The resulting key-
+word co-occurrence networks and word clouds were 
+used to visualise thematic relationships and the relative 
+prominence of research topics. VOSviewer employs its 
+built-in VOS mapping and clustering algorithm (V an 
+Eck and W altman 2010). T o ensure methodological con-
+sistency and analytical reproducibility, no user-defined 
+parameter adjustments were introduced, and the default 
+software configuration was retained for network con-
+struction, clustering, and visualization. The dominant 
+keywords with the highest occurrence proportions were 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 7
+Figure 3. Key branches emerging from the main development path. Legend: Green nodes represent source articles, red nodes denote 
+intermediate articles, and blue nodes indicate sink articles. Directed edges represent citation relationships. Each node is labelled the same 
+article-identifier convention as in Figure 2: the first author’s surname, the initials of the remaining authors’ surnames, and the publication 
+year. A diagram of a network.
+Table 2. Statistical summary of the number of publications in each cluster identified through cluster analysis.
+Cluster I II III IV V VI VII VIII IX X
+Number of Articles 249 215 52 35 32 22 15 11 10 9
+Cluster XI XII XIII XIV XV XVI XVII XVIII XIX XX
+Number of Articles 7 6 5 4 4 4 4 4 3 3
+used to characterise and label each research cluster. The 
+following clusters will be discussed in Section 4. 
+• Cluster I: Dual-agent scheduling in generic single 
+machine environments
+• Cluster II: MAS for dynamic production planning
+• Cluster III: MAS for energy management systems
+• Cluster IV: Resource allocation to agents in smart edge 
+systems (edge computing)
+• Cluster V: Negotiation mechanisms in decentralised 
+multi-project scheduling problems
+Table 3 operationalises collaborative intelligence in 
+MAS by mapping each major research cluster to its dom-
+inant coordination mechanism, information structure, 
+and system-level scheduling outcomes. This comparison 
+clarifies that collaborative intelligence does not mani-
+fest uniformly across MAS studies; rather, it emerges 
+through different coordination logics depending on the 
+scheduling environment. In some clusters, collaborative 
+intelligence primarily arises through fairness reconcil-
+iation and constrained coordination, whereas in oth-
+ers it emerges through decentralised learning, adaptive 
+negotiation, distributed decision-making, or coopera-
+tive control mechanisms. These coordination patterns 
+range from objective reconciliation in generic two-agent 
+problems to negotiation-intensive resource coordination 
+in decentralised multi-project systems. This distinction 
+further helps prevent the conceptual overgeneralization 
+of collaborative intelligence across heterogeneous MAS 
+formulations and provides a more structured analytical 
+framework for interpreting the diverse operational forms 
+of intelligence in MAS scheduling research.
+Despite its strengths, the adopted scientometric 
+methodology is subject to several inherent limitations. 
+First, MPA relies on citation linkages, and consequently, 
+recent studies may be underrepresented due to the tem-
+poral lag in citation accumulation (John S. Liu, Lu, and 
+Ho 2019). Second, citation-network clustering is sensitive 
+to network topology and citation connectivity, whereas 
+8 
+ K.-C. YING ET AL.Table 3. Operationalization of collaborative intelligence across the major research clusters in multi-agent scheduling.
+Cluster Typical environment Main coordination mechanism Manifestation of collaborative intelligence Representative outcomes
+I Generic single machine / two-agent 
+settings
+Constrained optimization, Pareto trade-offs, fairness 
+reconciliation
+Reconciliation of competing objectives under shared 
+resources
+Feasible/nondominated schedules, fairness, trade-off 
+clarity
+II Dynamic manufacturing Negotiation, rescheduling, DRL, fuzzy/swarm coordination Adaptive decentralised coordination under disruptions Responsiveness, robustness, shop-floor adaptability
+III Energy systems MARL, cooperative control, distributed energy storage 
+scheduling
+Collaborative learning for coordinated energy 
+management decisions
+Load balancing, fairness, low-carbon scheduling, and 
+operational efficiency
+IV Edge computing / IoT Decentralised task offloading and resource allocation Real-time distributed resource coordination Latency reduction, service quality, stable resource usage
+V Decentralised multi-project systems Auction, bargaining, negotiation, smart contracts Conflict resolution and inter-project resource 
+coordination
+Better resource utilization, reduced conflicts, and 
+decentralised schedule alignment
+the subsequent thematic interpretation based on key-
+word co-occurrence may be influenced by keyword selec-
+tion, preprocessing, and co-occurrence patterns, which 
+may in turn affect the stability and interpretability of the 
+identified clusters (Girvan and Newman 2002). Third, the 
+exclusive use of W oS databases ensures data consistency 
+and reliability; however, it may lead to the omission of rel-
+evant studies indexed in other databases, such as Scopus 
+or IEEE. These limitations should be carefully consid-
+ered when interpreting the findings and generalizing the 
+conclusions.
+2.4. Logistic growth model
+The cumulative number of publications was modelled 
+using a logistic growth model (McAllister 1998) to char-
+acterise the overall short- to medium-term evolution-
+ary trend of research on multi-agent scheduling. The 
+logistic growth model is expressed as N(t) = K/(1 +
+e−r(t−t0)), where N(t) represents the cumulative num-
+ber of publications in year t, K denotes the estimated 
+saturation level, r represents the intrinsic growth rate, 
+and t0 is the inflection point corresponding to the max-
+imum publication growth rate. The model parameters 
+were estimated using a nonlinear least-squares estima-
+tion procedure based on the cumulative publication data 
+from 2004 to 2024. The estimated model parameters were 
+K =42,219,013.62, r =0.157706, and t0 =2092.97, with 
+R2 =0.9685 and RMSE =40.15. The growth curve analy-
+sis and indicative forecast of MAS publications are shown 
+in Figure 4.
+As shown in Figure 4, research on MAS has not 
+yet reached maturity, indicating substantial potential for 
+future research. Because the fitted inflection point lies far 
+beyond the observed data period, the forecasting curve 
+should be interpreted as an indication of the overall evo-
+lutionary trend of the field rather than a deterministic 
+prediction. Despite its widespread use in scientometric 
+forecasting studies, it should be noted that the logis-
+tic growth model is intended to characterise the general 
+growth pattern of the field rather than provide precise 
+forecasts. For example, the model cannot account for 
+unforeseen disruptive developments resulting from tech-
+nological breakthroughs or major shifts in research prior-
+ities. Given the rapid evolution of agentic AI systems and 
+related intelligent technologies, the projected trajectory 
+should therefore be interpreted as an indicative repre-
+sentation of the field’ s future development rather than a 
+deterministic forecast.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 9
+Figure 4. Growth curve analysis and indicative forecast of MAS publications.
+3. Main path analysis: results and discussions
+The main development path is analyzed across four major 
+periods: theoretical development, model enrichment, 
+advanced computational methods, and application-
+oriented studies. It should be noted that the studies dis-
+cussed in this section are selected based on their struc-
+tural importance in the knowledge-diffusion network, 
+rather than solely on raw citation counts.
+3.1. The period of theoretical development
+The source node ChengNY2006 (Cheng, Ng, and Y uan 
+2006) studied the complexity of multi-agent single 
+machine scheduling problems, focusing on scenarios in 
+which the agents aim to minimise the total weighted 
+number of late jobs 
+(︁
+1|MA| ∑︁ WjUj )︁ . The authors 
+proved that the problem is strongly NP-complete. They 
+showed that the problem with integer weights can be 
+solved in pseudo-polynomial time when the number of 
+agents is fixed, while the special case with unit weights 
+can be solved in polynomial time.
+NgCY2006 (Ng, Cheng, and Y uan 2006) developed 
+a scheduling optimization problem for two agents on a 
+single machine, aiming to minimise the total completion 
+time of the first agent while limiting the number of late 
+jobs for the other agent (1|2A|6C1 j , 6U2 j ≤ k). Build-
+ing upon the computational complexity insights estab-
+lished by ChengNY2006 (Cheng, Ng, and Y uan 2006),
+NgCY2006 (Ng, Cheng, and Y uan 2006) extended the 
+analysis by introducing a bi-objective trade-off structure, 
+which reflects the need to balance conflicting agent objec-
+tives rather than optimizing a single performance mea-
+sure. The author sought to develop a strategy that strikes 
+a balance between the number of late jobs and comple-
+tion time, and then proved that the problem is solvable in 
+pseudo-polynomial time under binary encoding. When 
+the objective of the first agent is changed to minimise 
+the total weighted completion time, the problem remains 
+strongly NP-hard.
+ChengNY2008 (Cheng, Ng, and Y uan 2008) explored 
+the scheduling problem with multiple agents on a sin-
+gle machine, with max-form criteria for each agent’ s total 
+completion time 
+(︁
+1|MA, Prec|Cj or ∑︁ Cj )︁ . Following the 
+two-agent framework, this study generalised the problem 
+to a multi-agent setting, thereby addressing the scalability 
+limitations of earlier models and capturing more realis-
+tic scenarios involving multiple competing stakeholders. 
+The authors investigated the computational complexity 
+of the model, considering scenarios with priority con-
+straints and maximum-objective settings. The feasible 
+model can be solved in polynomial time, even with prior-
+ity constraints. The authors demonstrated that the prob-
+lem is generally NP-hard; however, when the number of 
+agents is fixed, it can be solved in pseudo-polynomial 
+time.
+As the incorporation of multiple objectives and 
+constraints significantly increased problem complexity,
+AgnetisDP2009 (Alessandro Agnetis, de Pascale, and 
+Pacciarelli 2009) introduced branch-and-bound algo-
+rithms to systematically handle the resulting combi-
+natorial explosion, thereby marking a transition from 
+structural analysis to algorithmic solution development. 
+10 
+ K.-C. YING ET AL.
+The authors addressed several two-agent scheduling 
+problems, with the objective of minimizing the total 
+weighted completion time of the first agent while con-
+straining the second agent’ s cost function, which is 
+defined by (i) total weighted completion time, (ii) max-
+imum delay time, or (iii) maximum completion time (︂
+1|2A| ∑︁ WjC1 j , L2 max or C2 max )︂ . Building on the findings 
+of NgCY2006 and ChengNY2008, the solution method 
+was inspired by Lagrangian duality to address two-agent 
+scenarios with different combinations of objective func-
+tions, and the model can be solved in strong polynomial 
+time.
+LeeCCW2009 (Lee et al. 2011) investigated the 
+two-machine flow shop scheduling problem, minimiz-
+ing the total completion time of the first agent while 
+ensuring the second agent’ s work is delivered without 
+delays (F2|2A|6C1 j , U2 j = 0). Inspired by the branch-
+and-bound of AgnetisDP2009, Simulated Annealing 
+with adaptive temperature control and a tailored neigh-
+bourhood search was developed to solve large-scale prob-
+lems.
+ChengCWHW2011 (Cheng et al. 2011) studied a 
+dual-agent scheduling problem with the learning effect, 
+where the actual processing time of each task is adjusted 
+following the sum of processing times and control param-
+eters of the learning function (1|2A, learning| ∑︁ WjC1 j ,
+U2 j = 0). This research built upon LeeCCW2009’ s model 
+and introduced a learning effect model, making the prob-
+lem more closely resemble the time-dependent process-
+ing behaviour in real-world scenarios. A branch-and-
+bound method and three Simulated Annealing algo-
+rithms were developed to solve this problem.
+LiH2012 (Der Chiang Li and Hsu 2012) contributed a 
+two-agent competitive scheduling problem with a learn-
+ing effect, where two agents share a single machine, and 
+the goal is to minimise the total weighted completion 
+time of the two agents while ensuring that the maxi-
+mum completion time of neither exceeds the upper limit (︂
+1|2A, learning|max(C1 j , C2 j ) ≤ D, min (︂∑︁ WjC1+2 j )︂)︂ .
+This study extended the learning effect function by
+ChengCWHW2011, and based on the conditional con-
+straint setting of NgCY2006, thereby addressing the 
+integration of the constraint boundary and the objec-
+tive design. The authors developed a branch-and-bound 
+lower bound and a Genetic Algorithm-based algorithm 
+to find an approximate optimal solution.
+3.2. The period of modeling enrichment
+YinWCW2012 (Yin et al. 2012) developed a single 
+machine scheduling problem with two agents and arbi-
+trary release dates, aiming to minimise the delay of one 
+agent while keeping the delay of the other agent below 
+a fixed threshold (1|2A, rj|T1 j , T2 j ≤ Q). A mixed-integer 
+programming model was provided, a branch-and-bound 
+algorithm was developed to find lower bounds, and the 
+Bee Optimization Algorithm was modified to find an 
+approximate optimal solution for large-scale instances.
+Perez-gonzalezF2014 (Perez-Gonzalez and Frami-
+nan 2014) reviewed multicriteria scheduling problems 
+involving two or more sets of jobs to provide the research 
+background and, more importantly, proposed a unified 
+theoretical framework that establishes a common set of 
+definitions, taxonomy, nomenclature, and notation for 
+multicriteria scheduling problems with interfering and 
+competing jobs. Although the paper includes a review 
+of existing studies to motivate the research problem, its 
+principal contribution lies in developing a unified con-
+ceptual and methodological framework for multicriteria 
+scheduling problems involving multiple job sets. This 
+framework provides a standardised foundation for prob-
+lem formulation, classification, and comparison among 
+subsequent studies. Accordingly, the paper was regarded 
+as an original conceptual and methodological research 
+contribution and was therefore retained in the sciento-
+metric dataset.
+W angYCCW2016 (Du-Juan W ang et al. 2016) investi-
+gated an innovative problem that integrates single-agent 
+due-date assignment with the dual-agent scheduling 
+problem, transforming the deadline from a fixed parame-
+ter into a decision variable (1|2A, due − date decision| ∑︁
+WC1 j + ∑︁ WC2 j , max(C1 j , C2 j ) ≤ D). Given the learning 
+effects and constrained problems by LiH2012 and
+ChengCWHW2011, this study incorporated deadline 
+as a decision variable, examined three due-date assign-
+ment methods, and proposed efficient solution algo-
+rithms based on dynamic programming.
+MorM2016 (Mor and Mosheiov 2016) contributed 
+to modelling enrichments in MAS; they extended the 
+Lawler algorithm to handle the job rejection problem and 
+introduced a dual-agent shared processor model, prov-
+ing that it can be solved in polynomial time. Building on 
+the structural characteristics of MAS by ChengNY2008
+and AgnetisDP2009, they incorporated the job rejection 
+decisions into MAS and provided a valid theoretical basis 
+for resource-constrained and task-selective processing 
+(1|2A, job rejection| ∑︁ C1 j , ∑︁ C2 j ).
+Extending their earlier study, MorM2017 (Mor and 
+Mosheiov 2017) integrated the scheduling of compet-
+ing agents with due-date assignment to find a joint 
+scheduling scheme that minimises the objective func-
+tion value of one agent, while constrained by an upper 
+bound on the objective function value of the second 
+agent. This study conducted a case study and exten-
+sive computational experiments to test the capability 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 11
+of their approach in handling large-scale instances for 
+(1|2A, due − date decision|min(Obj1), Obj2 ≤ B).
+3.3. Period of advanced computational methods
+YinWWC2017 (Yin et al. 2017) proposed a multi-
+layered, complex MAS that accounts for job and 
+machine availabilities, due-date assignment, considering 
+several objective functions, 1|MA, rj, unavailable,due −
+date assignment |max(Cj), ∑︁ Cj, ∑︁ Tj, min (︁ due − date
+cost + ∑︁ Tj )︁ . They integrated W angYCCW2016’s dead-
+line decision architecture and MorM2017’ s collaborative 
+optimization to further the knowledge on the hierarchi-
+cal division of labour and the hybrid objective trade-off 
+model.
+LiuDLWKCW2018 (Shang-Chia Liu et al. 2018) 
+investigated a single machine MAS problem with learn-
+ing effects based on total processing time, where the 
+actual processing time of a task is a function of the 
+total processing time of previously processed tasks 
+(1|2A, learning|γ ). The goal was to find the optimal 
+schedule that minimises the total delayed work of the first 
+agent, provided that the maximum delay time of the sec-
+ond agent cannot exceed a given upper limit. This mea-
+sure of delayed work considers the proportion of work 
+completed after the deadline, rather than simply judg-
+ing whether the work is late. The Tabu Search algorithm 
+was further extended to find high-quality approximate 
+optimal solutions to large-scale problems.
+LiY2020 (Shi-Sheng Li and Y uan 2020) explored 
+the dual-agent single machine scheduling problem with 
+learning effects to minimise the total lateness of the first 
+agent while limiting the maximum delay time of the sec-
+ond agent (1|2A, learning| ∑︁ Tj1, Lmax2 ≤ Q). This study 
+considered the degree of job delay rather than whether it 
+is overdue, improving the model’ s sensitivity and inter-
+pretability in practical applications. T o solve the nonlin-
+ear problem, a branch-and-bound method with effective 
+pruning rules and lower bound estimation was devel-
+oped. Tabu Search was used for tackling large-scale prob-
+lems. An approximate Pareto-front-based algorithm was 
+also developed to solve the problem in polynomial time 
+using a dynamic programming framework and by break-
+ing the problem into a series of subproblems.
+3.4. Period of practical applications
+BaiDWYFZW2022 (Bai et al. 2022) introduced opti-
+mization algorithms based on branch-and-bound and 
+artificial bee colony for solving Fm|2A|α · Cmax1 + β ·
+Cmax2 considering small- and large-scale instances, 
+respectively. In their model, two competitive agents share 
+a group of successive processors to fulfil customization 
+requirements that arrive over time.
+W angRBEZD2022 (Xinyue W ang et al. 2022)
+explored MAS’ s application in communication network 
+resource allocation. They proposed a multi-agent task 
+scheduling framework for bandwidth resources in inte-
+grated communication networks. In this scenario, each 
+agent has a release time, resembling the dynamic arrival 
+and timeliness requirements of network traffic. The goal 
+was to minimise the summation of the maximum com-
+pletion times of all agents (1|MA, rj| ∑︁ max(Ca j )). They 
+first proved that the problem is NP-hard and then devel-
+oped a branch-and-bound algorithm with pruning rules 
+to identify a lower bound for small-scale instances.
+XuLG2023 (Xu, Liu, and Gong 2023) introduced 
+MAS for the integrated coordination of single machine 
+production and distribution activities in supply chains. 
+In their model, the first agent seeks to minimise the 
+sum of the maximum completion time and the total 
+transportation time, while the second agent aims to 
+minimise the sum of the total completion time and 
+the total transportation time (1|2A, transport|max(Cj) +∑︁ Tj, ∑︁ Cj + ∑︁ Tj). A non-cooperative game theoretic 
+approach was considered, mapping work processing and 
+transportation locations to strategies, and using the 
+objective function as a utility function. They developed 
+a Nash Equilibrium Approximation Algorithm based on 
+the Genetic Algorithm.
+In the most recent development, W angRBCYMW-
+2024 (Xinyue W ang, Ren, et al. 2024) proposed a 
+flow shop-based MAS to minimise the total comple-
+tion time of multiple agents within a given limit on 
+the maximum latency for application in cloud com-
+puting (Fm|MA, cloud, deadline| ∑︁ Ca j , maxTj ≤ Q). In 
+their model, data packets (i.e. tasks) belonging to differ-
+ent applications (i.e. agents) compete for shared cloud 
+resources through a series of nodes (i.e. processors) 
+to facilitate fast transmission. The research objective 
+reflected the practical need of cloud service providers to 
+balance between overall system efficiency and individ-
+ual user experience. Their solution algorithm employed 
+dual-population architecture, optimizing the goals of dif-
+ferent agents separately, achieving global optimization 
+through a co-evolutionary mechanism.
+3.5. Synthesis of evolution and underlying design 
+principles in MAS
+The major features during each development period are 
+synthesised in Table 4. Overall, the evolution along the 
+Global Main Path reveals a clear and systematic progres-
+sion driven by increasing modelling realism and grow-
+ing computational challenges. Early studies primarily 
+12 
+ K.-C. YING ET AL.
+Table 4. Synthesis of multi-agent scheduling across the development periods.
+Development Period
+Year 2006–2012 2012–2017 2017–2020 2020 – now
+Focus area Theoretical development Model enrichment Advanced computational 
+methods
+Practical applications
+Application Single machine generic Flow shop Single machine production Cloud computing and energy storage
+Focus Computational complexity Learning effects and due-date 
+assignment
+Pareto-front Reinforcement learning for large-scale 
+problems and network scheduling
+Objectives - Weighted completion time
+- Maximum delay time
+- Number of late jobs
+- Makespan
+- Due-date cost
+- Total delayed workload
+- Maximum delay time
+- Due-date costs
+Non-cooperative games and designing 
+a Nash equilibrium-based solution 
+algorithm
+Solution methods Branch-and-bound Dynamic programming Tabu search and heuristics Co-evolutionary methods, Genetic and 
+Artificial Bee Colony algorithms
+focused on establishing the computational complex-
+ity and feasibility conditions of the underlying prob-
+lems. These foundational results subsequently motivated 
+extensions that incorporate richer and more realistic 
+constraints, such as learning effects and due-date deci-
+sions. As problem complexity increased, research atten-
+tion shifted toward developing more advanced exact and 
+heuristic algorithms. More recently, the focus has further 
+evolved toward application-oriented models, in which 
+MAS is embedded in real-world systems such as cloud 
+computing and smart manufacturing.
+From the analysis of the Global Main Path, several 
+underlying design principles that govern the evolution 
+of MAS can be identified. First, model development 
+has consistently followed a progressive realism princi-
+ple, in which increasingly complex and realistic features 
+– such as learning effects, due-date assignment, resource 
+constraints, and agent heterogeneity – are incremen-
+tally incorporated to better capture real-world interac-
+tions. Second, a conflict–coordination trade-off principle 
+emerges, reflecting a shift from single-objective formu-
+lations to multi-objective and constrained optimization 
+frameworks in order to balance competing agent inter-
+ests. Third, a complexity-driven methodological transi-
+tion is observed, whereby the incorporation of richer 
+modelling features leads to computational intractability, 
+which in turn necessitates the development of advanced 
+exact algorithms, heuristics, and metaheuristics. Finally, 
+a theory-to-application transition principle characterises 
+recent developments, in which MAS models are increas-
+ingly embedded in practical domains such as smart man-
+ufacturing, energy systems, and cloud computing, with 
+an emphasis on scalability, adaptability, and real-time 
+decision-making. These principles provide not only a 
+structured interpretation of the field’ s evolution but also 
+a conceptual foundation for guiding future research in 
+MAS.
+T o further synthesise the findings of the global MPA, 
+Figure 5 presents a conceptual framework of MAS evo-
+lution, structured as a four-stage progression driven by 
+four key underlying design mechanisms. Specifically, the 
+framework organises the evolution of the field into four 
+major stages – computational foundations, constraint 
+enrichment, algorithmic development, and application 
+integration – while simultaneously highlighting four 
+cross-cutting design principles: progressive realism, con-
+flict–coordination trade-off, complexity-driven method-
+ological transition, and theory-to-application shift. The 
+first stage, computational foundations, is primarily 
+driven by the progressive realism principle, in which 
+early studies establish fundamental complexity results 
+and feasibility conditions under simplified assumptions. 
+In the second stage, constraint enrichment, increasingly 
+realistic features – such as learning effects, due-date 
+assignment, and resource constraints – are incorporated, 
+thereby reflecting both the progressive realism principle 
+and the emerging conflict–coordination trade-off among 
+agents. As these extensions significantly increase problem 
+complexity, the third stage, algorithmic development, 
+is characterised by a complexity-driven methodological 
+transition, in which advanced exact algorithms, heuris-
+tics, and metaheuristics are developed to address com-
+putational intractability. Finally, in the application inte-
+gration stage, the theory-to-application shift becomes 
+dominant, with MAS models increasingly embedded in 
+real-world systems such as smart manufacturing, energy 
+systems, and cloud computing, with an emphasis on 
+scalability, adaptability, and real-time decision-making. 
+Overall, this four-stage, four-mechanism framework pro-
+vides a structured and integrative interpretation of the 
+evolutionary trajectory of MAS. By explicitly linking 
+modelling advances, methodological developments, and 
+application trends, the framework not only clarifies the 
+internal logic of the field’ s progression but also serves 
+as a conceptual foundation for guiding future research 
+directions in MAS.
+3.6. Managerial implications
+The findings of this study offer several managerial impli-
+cations for practitioners operating in complex and decen-
+tralised environments.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 13
+Figure 5. The evolution of multi-agent scheduling.
+First, the evolution of MAS underscores the neces-
+sity of adopting decentralised and coordination-aware 
+decision-making mechanisms in settings where multi-
+ple stakeholders compete for shared resources. In such 
+contexts, traditional centralised scheduling approaches 
+may become ineffective due to scalability constraints and 
+information asymmetry.
+Second, the observed progress toward more realistic 
+and dynamic models suggests that managers should pri-
+oritise adaptive, data-driven scheduling strategies, which 
+can respond to real-time disruptions, demand fluctua-
+tions, and uncertain operating conditions. This is par-
+ticularly critical in smart manufacturing environments, 
+where machine breakdowns and stochastic job arrivals 
+frequently occur.
+Third, the increasing prominence of multi-objective 
+and conflict-aware models highlights the need for organi-
+zations to explicitly consider trade-offs among competing 
+performance criteria, such as efficiency, fairness, and ser-
+vice levels. Incorporating negotiation and coordination 
+mechanisms among agents can facilitate more balanced 
+and sustainable outcomes.
+Fourth, the growing role of advanced computational 
+methods – including artificial intelligence and meta-
+heuristic optimization – suggests that firms should invest 
+in intelligent decision-support systems to address large-
+scale and complex scheduling problems more effectively. 
+Reinforcement learning and distributed optimization can 
+substantially enhance system responsiveness and opera-
+tional efficiency.
+Finally, the shift toward application-oriented MAS 
+emphasises the importance of integrating scheduling 
+models into real-world digital platforms, such as Industry 
+4.0/5.0 systems, smart grids, and cloud/edge comput-
+ing infrastructures. Managers should therefore focus not 
+only on algorithmic performance but also on scalability, 
+interpretability, and practical implement-ability to ensure 
+effective deployment.
+4. Review of the key development branches
+Following the main development trends, several key 
+branches highlight influential ideas and niche applica-
+tions that complement the Global Main Path. These sec-
+ondary trajectories are important because they capture 
+technically significant developments that are structurally 
+connected to the field but may not become dominant 
+on the Global Main Path, particularly when they are 
+relatively recent. The early branches mainly focused on 
+deepening modelling constraints and expanding multi-
+objective interactions. Later branches emphasised algo-
+rithmic diversification and the introduction of new solu-
+tion strategies. The most recent branches illustrate the 
+transition from theoretical modelling to practical inte-
+gration and intelligent decision support, particularly in 
+reinforcement learning-based scheduling, decentralised 
+negotiation, and edge–cloud-enabled applications.
+4.1. Deepening of the theoretical developments
+AgnetisPP2007 (Alessandro Agnetis, Pacciarelli, and 
+Pacifici 2007) explored a non-preemptive scheduling 
+problem, considering that the cost of each agent respects 
+a predefined threshold (1|MA|f1, f2 ≤ Q). This paper also 
+analyzed the computational complexity under different 
+combinations of objective functions (i.e. the number of 
+late jobs, total weighted completion time, and the maxi-
+mum completion time).
+The model of MorM2010 (Mor and Mosheiov 
+2010) assumes that each agent has a set of jobs to 
+process and aims to minimise the objective func-
+tion defined by the completion time of its own jobs 
+(1|2A|minmax E 1, ∑︁ WjE2 ≤ Q). They focused on the 
+14 
+ K.-C. YING ET AL.
+combination of ‘minmax earliness’ and ‘minsum earli-
+ness’ for the first agent, while limiting the maximum 
+earliness for the other. They categorised the complexity of 
+different combinations and developed a minmax model 
+that can be solved in polynomial time and concluded that 
+the problem of weighted minsum earliness is NP-hard, 
+while the unweighted minsum earliness can be solved in 
+polynomial time.
+LiuTZ2010 (Peng Liu, Tang, and Zhou 2010) stud-
+ied a two-agent single machine scheduling problem with 
+job deterioration and group technology, where the first 
+agent’ s objective is to minimise the total completion time, 
+while limiting the second agent’ s maximum cost to a 
+specified threshold (1|2A, deteriorating jobs, group setup|∑︁ C1, Lmax2 ≤ Q). They developed a polynomial-time 
+algorithm to obtain the optimal solution and provided 
+specific guidelines on the theoretical solvability under 
+deterioration conditions.
+LiuZT2010 (Peng Liu, Zhou, and Tang 2010) inte-
+grated position-dependent processing time (PDPT) into 
+dual-agent scheduling, with the objective of minimiz-
+ing the total completion time of the first agent while 
+restricting the maximum cost of the second agent 
+(1|2A, PDPT| ∑︁ C1, Lmax2 ≤ Q). The authors further 
+analyzed the impact of different position effects on MAS 
+results, proposed a theoretically guaranteed optimal 
+property, and contributed a polynomial-time algorithm 
+to solve the problem.
+MorM2011 (Mor and Mosheiov 2011) proposed a 
+new model for dual-agent batch scheduling, considering 
+a single machine environment, aiming to minimise the 
+total flowtime of the first agent and limit that of the sec-
+ond agent (1|2A, batch, identical setting times | ∑︁ F1, ∑︁
+F2 ≤ Q). They introduced a three-stage batch structure 
+and demonstrated that the number of jobs in the batches 
+exhibits a decreasing arithmetic sequence. On this basis, 
+they put forward a new scheduling strategy based on 
+agent constraints within a batch processing scheme and 
+contributed a solution algorithm with a time complexity 
+of O
+(︂
+n
+3
+2
+)︂
+.
+Overall, the key developments in the initial stages 
+of research branches are formed around improving 
+model flexibility, a clear definition of multi-objective con-
+strained structures, and new strategic scheduling struc-
+tures for batch-type dual-agent scheduling.
+4.2. Solution methods for intractable MASs
+Incorporating constraints such as release times, dead-
+lines, and job rejection capabilities requires tailored 
+variants of dynamic programming, metaheuristics, and 
+Pareto optimization strategies. The following articles are 
+perceived as influential in contributing to this develop-
+ment branch.
+YinCCWW2013 (Yin et al. 2013) incorporated both 
+release times and deadlines into MAS for minimizing the 
+number of tardy jobs for one agent while constraining the 
+maximum lateness of the other (1|2A, rj, dj|U1, L2 ≤ Q). 
+They showed that the new problem is NP-hard in the 
+strongest sense and proposed branch-and-bound and the 
+Simulated Annealing algorithms for approximation.
+Breaking away from the traditional approach of min-
+imizing only the objective of a single agent, subject 
+to restricting the other, ChengLLJ2014 (Cheng et al. 
+2014) considered the weighted sum of ‘total completion 
+time of one agent’ and ‘total delay time of the other 
+agent’ as the optimization objective (1|2A|w1 · ∑︁ C1 +
+w2 · ∑︁ T2) and developed two branch-and-bound meth-
+ods to obtain the optimal solution, Simulated Annealing 
+and Genetic Algorithms, to seek approximate solutions 
+for larger instances.
+WuWWH2014 (W en-Hung Wu et al. 2014) investi-
+gated MAS with linearly increasing deterioration charac-
+teristics, where Agent A aims to minimise the maximum 
+weighted tardiness, while Agent B aims to minimise its 
+total weighted job tardiness (1|2A, deteriorating jobs |
+Lmax1, ∑︁ WjT2). The problem appeared to be strongly 
+NP-hard, and hence branch-and-bound, Ant Colony 
+Optimization, and Simulated Annealing were developed 
+to solve the problem.
+YinCYW2015 (Yin, Cheng, Y ang, et al. 2015) investi-
+gated the integrated production and delivery scheduling 
+in a single machine system with two agents, where the 
+delivery date of agent A is the decision variable, dynami-
+cally adjusted to minimise the delivery cost and weighted 
+delayed jobs, while limiting the maximum cost or delayed 
+job count of Agent B (1|2A, due date assignment|D1cost +
+U1, f2 ≤ Q). Showing that the problem is strongly NP-
+hard, they designed polynomial and pseudo-polynomial-
+time algorithms for specific variants.
+YinCWWL2015 (Yin, Cheng, W an, et al. 2015) ana-
+lyzed the deteriorating jobs in MAS, reflecting the prac-
+tical feature of decreased job efficiency due to waiting. 
+In their model, each agent aims to minimise a specific 
+objective function derived from the completion time of 
+their own jobs, considering combinations of six objec-
+tives (1|2A, deteriorating jobs|f1, f2 ≤ Q). A constrained 
+optimization approach was developed to minimise one 
+agent’ s objective while limiting the other’ s maximum cost 
+(or lead time). The authors explore the solvability of the 
+problems and establish conditions for polynomial time 
+solvability or NP-hardness.
+W angYCCW2016 (Du-Juan W ang et al. 2016) studied 
+the integrated due-date assignment and scheduling prob-
+lem in a single machine environment with two agents 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 15
+that have independent objectives (1|2A, common/slack/
+unrestricted due date|w1 · f1 + w2 · f2 or f1, f2 ≤ Q). Three 
+due-date assignment strategies, common, slack, and 
+unrestricted, were considered to design two optimiza-
+tion models. For the linear combinatorial model, a 
+polynomial-time dynamic programming algorithm was 
+developed, and the constrained models were proven to 
+be ordinarily NP-hard, which can be tackled using a Fully 
+Polynomial-Time Approximation Scheme.
+YinCWW2016 (Yin, Cheng, et al. 2016) explored 
+the Just-In-Time concept in MAS, considering multiple 
+unrelated parallel machines used by two agents. Agent 
+A aims to maximise the weighted number of just-in-
+time completed jobs, while Agent B seeks to maximise 
+either revenue or the weighted number of just-in-time 
+jobs (Rm|2A| ∑︁ WjEj, ∑︁ WjTj, JIT objectives). When the 
+number of machines is a fixed constant, the problem of 
+maximizing the weighted on-time performance of A and 
+the maximum profit of B can be solved in polynomial 
+time. The other variants of the same problem appeared 
+to be NP-hard.
+YinWWC2016 (Yin, W ang, et al. 2016) studied the 
+integrated batch production and delivery scheduling in 
+a make-to-order system with two agents, to minimise 
+the objective function of one agent based on comple-
+tion time, while restricting the objective value of the 
+other agent (1|2A, batch delivery, setup time|f1, f2 ≤ Q). 
+In this variant, jobs from the same agent can be com-
+bined into batches, where the completion time of all jobs 
+in the batch is the batch’ s completion time. A polynomial-
+time algorithm was developed for solvable scenarios, and 
+a fully polynomial-time approximation algorithm was 
+further developed for feasible problems.
+YinWWC2017 (Yin et al. 2017) explored MAS 
+when machines have a fixed unavailability period 
+with the overall objective of minimizing the sum of 
+the ‘delivery cost and weighted delayed job count’ 
+for the last agent, while restricting the total comple-
+tion time, and weighted delayed job count of others 
+(1|MA, machine unavailability, due date assignment |Dk
+cost + Uk, ∑︁ Fj ≤ Q). The authors analyzed the compu-
+tational complexity and proposed a pseudo-polynomial-
+time dynamic programming algorithm to solve it.
+LiCNY2017 (Shisheng Li et al. 2017) considered a sin-
+gle, sequential, and compatible batching machine with 
+two agents, with the model allowing jobs from different 
+agents to be processed sequentially in the same batch, 
+with each batch requiring a fixed setup time before 
+processing (1|2A, compatible batching|f1, f2 ≤ Q). Both 
+agents minimised their maximum cost, total comple-
+tion time, and (weighted) delayed job count. The sec-
+ond agent’ s objective value was considered a constraint. 
+A fully polynomial time approximation algorithm was 
+developed for the case when both agents are aiming for 
+a weighted delayed job count.
+W angFZZL2017 (Jun Qiang W ang et al. 2017) studied 
+a parallel-batching machine with two agents, where jobs 
+have the same processing time but different sizes. The 
+objective was to minimise the makespan of the first agent 
+and limit the second (PBM|2A, equal processing time,
+variable job size|Cmax1, Cmax2 ≤ Q). It was proven that 
+there is no polynomial approximation algorithm with a 
+finite worst-case ratio to solve this problem unless P =
+NP. They developed a lower bound algorithm and two 
+heuristics for optimization.
+YinYWCW2018 (Yin et al. 2018) incorporated inven-
+tory management variables into integrated scheduling 
+of production and batch delivery operations in a sin-
+gle machine environment, where the first agent’ s opera-
+tions are determined by the decision-maker, and the due-
+date of the second agent is exogenous (1|2A, batching,
+inventory, due date assignment |f1, f2 ≤ Q). Computa-
+tional complexity was analyzed for various scenarios, and 
+both exact and approximate solutions were developed to 
+solve the problem for different objective functions.
+4.3. Advanced modeling and algorithmic 
+developments
+Earlier branches emphasised model theory and basic 
+assumptions; the more recent studies extend the theoret-
+ical foundations of two-agent and multi-agent schedul-
+ing by incorporating increasingly complex schedul-
+ing features, heterogeneous objectives, and resource-
+sharing constraints, together with the development of 
+exact, approximation, and pseudo-polynomial solution 
+methods.
+LiuDLWKCW2019 (Liu et al. 2018) explored a two-
+agent non-preemptive single machine scheduling prob-
+lem with release time conditions, aiming to minimise 
+the linear combination of the makespans of the agents 
+(1|2A, rj|α · Cmax1 + β · Cmax2). A new approximation 
+algorithm was first developed to solve the problem. A 
+fully polynomial-time approximation scheme is con-
+tributed to improve the solution quality.
+Y angL2019 (Y ang and Lu 2019) studied a two-agent 
+scheduling problem with position-dependent process-
+ing time, accounting for the learning and deteriorating 
+effects, to minimise the makespan of one agent when 
+the maximum makespan of the other is constrained 
+(1|2A, PDPT|Cmax1, Cmax2 ≤ Q). They showed that the 
+problem is NP-hard and designed a polynomial-time 
+algorithm to handle scenarios with learning or deteri-
+orating characteristics. Besides, dynamic programming 
+and fully polynomial-time approximation methods were 
+developed to minimise the total makespan of a single 
+16 
+ K.-C. YING ET AL.
+agent. They extended the model for parallel-machine 
+environments and solved it using dynamic programming.
+Y uanNC2020 (Y uan, Ng, and Cheng 2020) ana-
+lyzed single machine MAS problems with release dates 
+and preemption features, when each agent’ s objec-
+tive is to minimise its own max-form regular objec-
+tives (1|MA, rj, pmtn|f1, f2, . . .). Three models are defined 
+based on the nature of the job sets: Non-Disjoint Agent 
+(ND-agent), Identical Jobs Agent (ID-agent), and Com-
+pletely Disjoint Agent (CO-agent). Besides, three prob-
+lem architectures of the restricted minimization problem, 
+the weighted sum minimization problem, and the Pareto 
+optimization problem were investigated. While the first 
+problem could be solved in polynomial time, the other 
+two were perceived as strongly NP-hard even under sim-
+plifications. For lateness objectives (e.g. Cmax, Fmax, Lmax, 
+Tmax, WCmax), however, the problem can still be solved 
+in polynomial time under a fixed number of objectives.
+ZhangGY2020 (Y uan Zhang, Geng, and Y uan 2020) 
+analyzed the Pareto optimization problem of (1|2A| ∑︁
+WjCj1, ∑︁ WjLj2) in single machine dual-agent schedul-
+ing, with Agent A aiming to minimise the total weighted 
+completion time of its jobs, while Agent B seeks the 
+minimization of the total weighted late work of jobs 
+with common delivery dates. As an NP-hard problem, 
+two pseudo-polynomial-time exact algorithms were pro-
+posed to construct the Pareto frontier, and an approxima-
+tion algorithm capable of generating (1 + ϵ) approximate 
+solutions was designed to obtain a high-quality non-
+dominated solution set within an acceptable computation 
+time.
+LiCT2020 (Shi-Sheng Li, Chen, and Tian 2020) 
+explored a dual-agent scheduling problem with a mul-
+titasking feature (1|2A, multitasking|f1, f2 ≤ Q). In this 
+model, while a task is being executed, it may be inter-
+rupted by other unfinished tasks, and the interruption 
+time is proportional to the remaining processing time 
+of the interrupted task. This characteristic underlines 
+the impact of resource contention and job interleaving 
+on scheduling performance in a multitasking environ-
+ment. Each agent aims to minimise its job completion 
+time-oriented objective function, encompassing maxi-
+mum regular cost, total completion time, and (weighted) 
+number of delayed tasks. The overall optimization objec-
+tive is to minimise the other agent’ s objective while lim-
+iting one agent’ s objective value to a specified threshold.
+FreudM2021 (Freud and Mosheiov 2021) studies a 
+single machine dual-agent scheduling problem, where 
+one agent aims to minimise total lateness, while the 
+other agent must hold its maximum cost within a pre-
+set threshold (1|2A| ∑︁ Lj1, f2 ≤ Q). This problem is NP-
+hard; a pseudo-polynomial-time dynamic programming 
+algorithm was, therefore, developed to solve it. This 
+study was further extended to allow for job rejection. 
+The authors could solve the problem, for medium-sized 
+instances, within a reasonable timeframe.
+The article of Y uW2021 (Shaohua Y u and Wu 2021) 
+focused on a multi-objective reconciliation model that 
+simultaneously incorporates the overall benefits and the 
+interests of individual agents. In the model, the work-
+shop’ s cost function is minimised first, primarily con-
+sidering total completion time and maximum delay, 
+ensuring that the other agent’ s fitness function does 
+not exceed a threshold (1|2A, workshop objectives|f1 +
+f2, f3 ≤ Q). The authors also contributed two polyno-
+mial and pseudo-polynomial-time algorithms for vari-
+ous combined objectives, analyzed their solvability, and 
+investigated computational complexity.
+LiC2023 (Shi-Sheng Li and Chen 2023) explored 
+a single machine dual-agent scheduling problem with 
+release time and interruptibility features. The first 
+agent’ s objective was a normal sum-form function, 
+while the second agent’ s objective consisted of a max-
+form formula or a weighted number of delayed jobs, 
+exhibiting a typical heterogeneous objective structure 
+(1|2A, rj, pmtn|f1, f2 or Pareto set ). The study ana-
+lyzed the problem considering (1) a restricted scenario, 
+where the first agent’ s objective was optimised subject 
+to constraints for the second agent, and (2) a Pareto 
+version, aiming to find all Pareto optimal solutions and 
+their corresponding schedules. Polynomial and pseudo-
+polynomial time solutions were developed for various 
+combinations of objective functions.
+PhosavanhO2024 (Phosavanh and Oron 2024) stud-
+ied a single machine dual-agent scheduling problem, 
+where job processing times can vary due to resource 
+upgrades or machine maintenance, with the so-called 
+‘rate-modifying activity’ (1|2A, rate − modifying activity|
+Cmax, Uj, ∑︁ Lj). In this problem, the agents compete 
+for the same resource, with the objective of minimiz-
+ing delivery-related metrics (i.e. makespan, number of 
+delayed jobs, and total late work). They proved that the 
+model under the total late jobs objective is binary NP-
+hard and proposed a pseudo-polynomial-time dynamic 
+programming algorithm to solve it. Other combinations 
+of objectives were shown to be solved in polynomial time.
+These studies introduced more flexible and variable 
+features, such as release time, interruptible scheduling, 
+rate adjustment, job rejection, and multi-task interfer-
+ence, thereby broadening the modelling scope of two-
+agent and multi-agent scheduling beyond their basic for-
+mulations. T o address the increased computational com-
+plexity associated with these model extensions, approxi-
+mation algorithms, pseudo-polynomial-time algorithms, 
+and dynamic programming approaches were developed. 
+Lastly, Pareto optimization and other problem-specific 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 17
+solution strategies further extended the methodologi-
+cal capabilities for solving increasingly complex multi-
+objective scheduling problems.
+Overall, the research focus has evolved from ‘solvabil-
+ity exploration and model expansion’ toward increasingly 
+sophisticated model extensions and algorithmic devel-
+opments for more complex two-agent and multi-agent 
+scheduling settings. This phase deepened the mathe-
+matical and computational foundations of the field by 
+incorporating more realistic scheduling features, het-
+erogeneous objectives, and increasingly complex opera-
+tional constraints. These theoretical and methodological 
+advances also provide a foundation for the subsequent 
+development of application-oriented and intelligence-
+enabled MAS research.
+5. Main areas of interest and future trends
+Building on the development momentum observed 
+across the main application clusters, this section provides 
+an overview of representative contributions that are likely 
+to shape future research directions within each cluster. 
+Keyword analysis, which forms the basis for clustering, 
+is presented in Figure 6.
+5.1. Dual-agent scheduling in generic single 
+machine environments
+Figure 7 presents the keyword co-occurrence net-
+work constructed based on both occurrence and co-
+occurrence frequencies. Unlike the frequency-based 
+visualization in Figure 6, this network explicitly captures 
+the structural relationships among keywords, includ-
+ing their co-occurrence strength, thematic groupings, 
+and topological proximity. In this figure, node size rep-
+resents the frequency of keyword occurrences, node 
+colors denote thematic categories, and edge thickness 
+reflects the intensity of co-occurrence between keyword 
+pairs. The spatial proximity between nodes indicates the 
+degree of relatedness. Larger nodes and thicker edges 
+correspond to higher occurrence frequency and stronger 
+co-occurrence relationships, respectively. By integrating 
+keyword co-occurrence networks with CA, the revised 
+visualization provides a more coherent and systematic 
+interpretation of the knowledge structure and thematic 
+evolution of MAS. The following observations can be 
+drawn. 
+• The red nodes, notably ‘two-agent scheduling, ’ ‘total 
+completion time, ’ and ‘Pareto optimization, ’ corre-
+spond to objective function optimization and multi-
+objective scheduling in traditional two-agent prob-
+lems.
+• The green nodes revolve around ‘single machine, ’ 
+‘makespan, ’ and ‘approximation algorithm, ’ focusing 
+on heuristic and algorithmic development in single 
+machine scheduling environments.
+• The blue nodes include keywords such as ‘tardiness, ’ 
+‘due-date assignment, ’ and ‘weighted number’ , empha-
+sizing issues related to due-date assignment and per-
+formance indicators.
+• The yellow nodes encompass terms such as ‘multi-
+agent, ’ ‘flowshop, ’ ‘learning effect, ’ and ‘resource allo-
+cation’ , which present research trends in intelligent 
+manufacturing and dynamic resource coordination.
+• The purple nodes of ‘scheduling, ’ ‘model, ’ and ‘system’ 
+represent the fundamental theoretical construction 
+and modelling development in MAS.
+This cluster primarily focused on the application 
+of MAS in single machine scheduling environments. 
+Most studies in this cluster concentrated on constrained 
+optimization and trade-off reconciliation among com-
+peting agents, rather than on collaborative intelligence 
+in the stronger operational and organizational sense 
+involving decentralised coordination, adaptive learn-
+ing, or negotiation-based interaction mechanisms. The 
+core issues revolved around optimization strategies for 
+resource allocation and scheduling fairness under com-
+petitive multi-objective scheduling scenarios. Research 
+under this cluster generally explored how to balance 
+the scheduling needs of different agents in competi-
+tive settings and to reconcile these competing require-
+ments through the systematic design of composite objec-
+tive functions and multi-objective optimization frame-
+works. Some studies further incorporate advanced deci-
+sion features, such as learning effects, due-date assign-
+ment, controllable processing times, and job rejec-
+tion, thereby significantly enhancing the practical rele-
+vance of MAS models. These extensions can be inter-
+preted as application-driven mechanisms that enable 
+agents to dynamically adjust temporal commitments 
+(due-date assignment), adapt processing capabilities at 
+an additional cost (controllable processing times), or 
+selectively reject jobs under resource constraints (job 
+rejection), thereby capturing more realistic operational 
+decision-making processes in decentralised environ-
+ments. From an application perspective, these domains 
+represent critical extensions of MAS beyond tradi-
+tional scheduling formulations. Due-date assignment 
+transforms deadlines into endogenous decision vari-
+ables, thereby enabling agents to negotiate service levels 
+and timing commitments. Controllable processing times 
+introduce resource–time trade-offs, whereby agents can 
+accelerate or compress operations at an additional cost, 
+a phenomenon that is particularly relevant in project 
+18 
+ K.-C. YING ET AL.
+Figure 6. Keywords analysis of the main clusters (the font size represents the frequency of the word used in the keywords analysis).
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 19
+Figure 7. Overview of the keyword co-occurrence network in Cluster I. (Node size and link thickness represent keyword importance 
+based on occurrence and co-occurrence frequencies, while the proximity between nodes indicates the strength of their correlation.).
+scheduling and manufacturing systems. Job rejection, 
+on the other hand, models capacity-limited environ-
+ments in which agents must prioritise tasks and selec-
+tively discard lower-value jobs to optimise system per-
+formance. Collectively, these domains underscore the 
+expanding role of MAS in enabling flexible, adaptive, 
+and economically rational decision-making in com-
+plex and decentralised multi-agent environments. The 
+branch-and-bound, Lagrangian relaxation, and Pareto 
+front methods were central to solving the problems under 
+this cluster.
+Of the 249 papers in the first cluster, 21 structured 
+the Local Main Path, 19 of which are reviewed in Sec-
+tions 3–4, demonstrating the central role of this cluster 
+in the advancement of MAS. The application of MAS 
+(1|3A, real − virtual hybrid |W3, f1, f2 ≤ Q) in analyz-
+ing collaborative intelligence (i.e. driven by the physical 
+and virtual interaction scenarios in the service sector) 
+was conducted by ChenW2024 (Y u-Chuan Chen and 
+W ang 2024). GuLL2024 (Gu, Liu, and Lu 2024)’ s ver-
+sion of MAS 
+(︁
+Qm|2A, pmtn|C1 max or ∑︁ Cj1, C2 max ≤ T )︁
+addressed a uniform parallel-machine environment for 
+preemptive jobs. In the most recent development,
+Y uLLG2025 (Jin Y u et al. 2025) focused on the theoret-
+ical analysis of the ‘price of fairness’ in the dual-agent 
+scheduling problem, exploring how to achieve a relatively 
+fair scheduling result.
+Manifestation of collaborative intelligence. Unlike 
+the later MAS research streams characterised by decen-
+tralised communication and adaptive learning, collabo-
+rative intelligence in this cluster is primarily manifested 
+through fairness-oriented coordination, objective recon-
+ciliation, and shared-resource negotiation under shared 
+machine resources. In general, due-date assignment, con-
+trollable processing times, and job rejection serve as 
+coordination mechanisms that enable agents to nego-
+tiate commitments, balance resource–time trade-offs, 
+and prioritise tasks under shared resource constraints. 
+These mechanisms can facilitate information exchange 
+and coordinated decision-making while enhancing the 
+practical relevance of MAS by supporting flexible, adap-
+tive, and economically rational scheduling decisions in 
+decentralised systems. Representative studies establish 
+mechanisms for balancing competing objectives while 
+20 
+ K.-C. YING ET AL.
+preserving schedule feasibility, thereby enabling system-
+level coordination and providing the theoretical founda-
+tions for subsequent coordination-oriented MAS devel-
+opments.
+5.2. Multi-agent scheduling for dynamic production 
+planning
+The most frequently occurring keywords in Figure 8 are 
+‘Schedules, ’ ‘System, ’ ‘ Algorithm, ’ and ‘Flexible, ’ reflecting 
+a focus on scheduling system design, algorithm appli-
+cations, and flexible manufacturing. The correlation of 
+these keywords with ‘Multi-Agent, ’ ‘Reinforcement, ’ and 
+‘Job Shop’ highlights the link between multi-agent tech-
+nology, reinforcement learning, and collaborative intelli-
+gence in decentralised shop-floor coordination and adap-
+tive scheduling. 
+• In this figure, the red nodes ‘deep reinforcement 
+learning, ’ ‘real-time scheduling, ’ ‘dispatching rules, ’ 
+and ‘flexible job shop’ demonstrate that reinforcement 
+learning technology is an emergent trend in flexible 
+manufacturing and MAS.
+• The blue nodes ‘model, ’ ‘time, ’ ‘algorithm, ’ and ‘sys-
+tems, ’ with ‘tabu search’ and ‘evolutionary algorithms, ’ 
+form a design-oriented theme.
+• The green nodes ‘multi-agent systems, ’ ‘job shop 
+scheduling, ’ ‘negotiation, ’ and ‘simulation’ represent 
+the practical applications of MAS in manufacturing 
+systems.
+• The purple and yellow nodes focus on system 
+design and operation mechanisms such as ‘architec-
+ture, ’ ‘ontology, ’ ‘framework, ’ ‘integration, ’ ‘rules, ’ and 
+‘assignment’ , showcasing research hotspots in intelli-
+gent and collaborative decision-making.
+This cluster contains 215 papers, of which twelve are 
+identified as highly influential studies. This cluster is 
+structured around MAS research emphasizing collabo-
+rative intelligence in dynamic manufacturing environ-
+ments, where distributed scheduling architectures rely on 
+negotiation, learning, and adaptive coordination among 
+intelligent agents, while incorporating Deep Reinforce-
+ment Learning (DRL), fuzzy logic, negotiation proto-
+cols, and swarm-intelligence-based optimization mecha-
+nisms. Notably, several influential studies in this branch – 
+such as ZhangZTZG2022, QinJL2023, HuangGLZ2023,
+SiLGL2024, and DongRQWBYW2024 – do not appear 
+on the Global Main Path, yet they clearly represent an 
+emerging learning-enabled developmental trajectory in 
+MAS research. The following studies and methodological 
+developments further support this interpretation. 
+• Integrated process planning and production schedul-
+ing by WongLMF2006 (W ong et al. 2006)
+• Integration model for responsive fault tolerance in dis-
+tributed computational systems by LeungWMF2010
+(Leung et al. 2010)
+• A proxy negotiation mechanism for distributed manu-
+facturing systems by HuangL2012 (Ching-Jen Huang 
+and Liao 2012)
+• Collaboration mechanism and distributed, autono-
+mous mechanism of blocks and jobs for tackling 
+dynamic order arrival and machine breakdowns by
+Kaplanoglu2014 (Kaplanoˇglu 2014)
+• Fuzzy constraint-directed negotiation mechanism for 
+distributed manufacturing systems by HsuKHL2016 
+(Hsu et al. 2016)
+• Swarm intelligence integrated into a decentralised 
+negotiation architecture for job shop scheduling by
+ZhangW2017 (Sicheng Zhang and W ong 2017)
+• Bargaining-game-based negotiation for MAS consid-
+ering Flexible Job Shops by W angZLW2019 (Jin W ang 
+et al. 2019).
+• Smart manufacturing architecture, integrating DRL 
+into MAS for job shop environments by ZhangZTZG-
+2022 (Yi Zhang et al. 2022)
+• Reinforcement learning-based MAS for self-
+organizing manufacturing networks by QinJL2023
+(Qin, Johnson, and Lu 2023)
+• DRL-based MAS for distributed manufacturing sys-
+tems (job shop) by HuangGLZ2023 (Jiang Ping 
+Huang et al. 2023)
+• The centralised training and decentralised execution 
+architecture for scalable and robust multi-agent learn-
+ing in job shop environments by SiLGL2024 (Si et al. 
+2024)
+• A DRL-based method, named graph transformer net-
+work for the multi-agent job shop scheduling problem 
+by DongRQWBYW2024 (Zhuoran Dong et al. 2025)
+Manifestation of collaborative intelligence. Collab-
+orative intelligence in this cluster is manifested through 
+adaptive decentralised coordination and autonomous 
+decision-making in dynamic manufacturing systems. 
+Overall, this research cluster focuses on flexible schedul-
+ing and dynamic rescheduling mechanisms to address 
+unexpected changes in manufacturing environments. 
+Furthermore, the studies demonstrate diverse applica-
+tions of multi-agent learning-based strategies in smart 
+manufacturing environments, particularly within the 
+context of Industry 4.0 and Industry 5.0. Intelligent 
+agents continuously exchange production information, 
+negotiate scheduling decisions, respond autonomously 
+to disruptions, and adaptively learn improved schedul-
+ing policies through reinforcement learning and other 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 21
+Figure 8. Overview of the keyword co-occurrence network in Cluster II. (Node size and link thickness represent keyword importance 
+based on occurrence and co-occurrence frequencies, while the proximity between nodes indicates the strength of their correlation.).
+adaptive optimization mechanisms. Consequently, col-
+laborative intelligence in this cluster emerges through 
+adaptive decentralised coordination, continuous infor-
+mation sharing, autonomous decision-making, and rein-
+forcement learning, resulting in enhanced manufactur-
+ing flexibility, responsiveness, scheduling robustness, and 
+overall system resilience.
+5.3. Multi-agent scheduling for energy 
+management systems
+‘Reinforcement, ’ ‘Learning, ’ ‘Multi-Agent, ’ and ‘System’ 
+are central in the third cluster, as shown in Figure 9. This 
+indicates that the main path of MAS research in energy 
+management is also engaged in incorporating reinforce-
+ment learning and deep learning to identify collaborative 
+intelligence through multi-agent learning-based coordi-
+nation that supports decentralised scheduling decisions. 
+• The green nodes ‘electric vehicles, ’ ‘operation, ’
+‘energy, ’ and ‘multi-agent reinforcement learning’ 
+demonstrate the correlation between MAS and elec-
+tric vehicle scheduling and energy planning, with a 
+focus on collaborative scheduling strategies;
+• The blue nodes ‘reinforcement learning, ’ ‘multi-agent 
+systems, ’ ‘optimization, ’ and ‘energy management’ 
+show that reinforcement learning methods are grad-
+ually penetrating energy management.
+• The red nodes ‘deep reinforcement learning, ’ ‘stor-
+age, ’ ‘system, ’ and ‘management’ indicate the emergent 
+focus on energy storage systems.
+A total of 52 papers were grouped into the third clus-
+ter; from this, nine articles were identified as influen-
+tial. These articles primarily address challenges in smart 
+energy systems and integrated power grid–transport net-
+works. These studies employ deep learning methods, 
+such as soft actor-critic, proximal policy optimization, 
+graph reinforcement learning, and hierarchical hybrid 
+learning architectures, in combination with Markov deci-
+sion processes to model system behaviour and identify 
+collaborative intelligence arising from agent interaction. 
+Although most of these studies do not appear on the 
+Global Main Path, they nonetheless constitute an influen-
+tial recent branch that extends MAS toward low-carbon 
+energy scheduling, EV charging coordination, and multi-
+microgrid management. This observation further illus-
+trates that structurally peripheral, yet recent studies may 
+not immediately emerge on the Global Main Path due to 
+22 
+ K.-C. YING ET AL.
+Figure 9. Overview of the keyword co-occurrence network in Cluster III. (Node size and link thickness represent keyword importance 
+based on occurrence and co-occurrence frequencies, while the proximity between nodes indicates the strength of their correlation.).
+citation-network latency, despite their significant techni-
+cal contributions. 
+• SilvaDSB2019 (Lopes Silva et al. 2019) incorpo-
+rated reinforcement learning into the agent’ s learning 
+strategy, enabling it to modify its actions based on 
+past interaction experiences in integrated routing and 
+scheduling
+• FangWSHZC2020 (Fang et al. 2019) put forward a 
+scheduling model based on Multi-Agent Reinforce-
+ment Learning (MARL) to improve the autonomy and 
+fairness of microgrid market operations
+• W angQS2022 (Yi W ang, Qiu, and Strbac 2022) 
+applied MARL for resilience-driven routing and 
+scheduling of mobile energy storage systems
+• QiuWSS2022 (Qiu et al. 2022) developed a hybrid 
+MARL method for the planning of EV charging in 
+integrated power and transportation systems
+• GaoLWW2023 (Gao et al. 2023) introduced the 
+multi-agent soft actor-critic scheduling model for 
+a multi-microgrid network composed of renewable 
+sources.
+• MaoJX2024 (Mao, Jin, and Xu 2024) modelled a 
+decentralised partially observable Markov decision 
+process based on MAS in the context of battery swap-
+ping stations.
+• QiuWDWS2024 (Qiu et al. 2024) extended MARL, 
+integrated with graph convolutional networks for 
+MAS in the context of electric vehicle charging oper-
+ations.
+• ChenSWZ2024 (Ming Chen et al. 2024) explored the 
+carbon capture and utilization scheme based on the 
+so-called Peer-to-Peer, collaborative method for inte-
+grating renewable energy sources into the power grid.
+• WuLHWD2025 (Hongbin Wu et al. 2025) con-
+tributed to the MAS application in vehicle-road-grid 
+collaborative operation scheduling to optimise the 
+spatiotemporal distribution of EV charging load and 
+alleviate charging station congestion and power grid 
+overload.
+Manifestation of collaborative intelligence. Collab-
+orative intelligence in this cluster is manifested through 
+cooperative and adaptive learning mechanisms among 
+distributed energy agents. Overall, these studies demon-
+strate how collaborative intelligence enables decen-
+tralised coordination in complex energy systems, includ-
+ing energy management and electric vehicle schedul-
+ing. Advanced artificial intelligence techniques (e.g. DRL, 
+graph convolutional networks, and hybrid learning archi-
+tectures) enable distributed agents to optimise oper-
+ational decisions while addressing system-level chal-
+lenges, including grid overload, renewable energy inte-
+gration, and carbon emission reduction. Rather than 
+optimizing isolated scheduling decisions, autonomous 
+agents collaboratively coordinate charging schedules, 
+renewable energy utilization, energy storage, and power 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 23
+Figure 10. Overview of the keyword co-occurrence network in Cluster IV. (Node size and link thickness represent keyword importance 
+based on occurrence and co-occurrence frequencies, while the proximity between nodes indicates the strength of their correlation.).
+dispatch under dynamically changing operating con-
+ditions through continuous information sharing and 
+adaptive decision-making. Consequently, the collec-
+tive intelligence emerging from distributed learning 
+enhances system-wide operational efficiency, load bal-
+ancing, scheduling fairness, resource utilization, and 
+low-carbon energy management, thereby illustrating the 
+defining characteristics of collaborative intelligence in 
+this research cluster.
+5.4. Resource allocation to agents in edge 
+computing
+The cluster shown in Figure 10 is formed around the 
+application of reinforcement learning and deep learn-
+ing for computational resource management. In this 
+figure, the red nodes ‘multi-agent deep reinforcement, ’ 
+‘reinforcement learning, ’ ‘optimization, ’ and ‘resource-
+allocation’ emphasise the key role of reinforcement 
+learning architecture in handling distributed decision-
+making. The green sub-cluster comprises ‘dynamic 
+scheduling, ’ ‘resource management, ’ ‘task analysis, ’ and 
+‘internet’; the backbone of the fourth cluster is ‘edge com-
+puting resource management’ and ‘reinforcement learn-
+ing strategy planning’ .
+The fourth cluster contains 35 papers, six of which 
+represent the main developments in medical Internet 
+of Things (IoT) and smart edge computing. In particu-
+lar, real-time processing strategies for latency-sensitive 
+tasks in highly dynamic environments are central to 
+this cluster. These studies represent another influential 
+non-main-path trajectory, in which MAS evolves toward 
+computational offloading, task allocation, and resource 
+coordination in edge environments. 
+• WuWCYZWF2021 (Jing Wu et al. 2021) explored 
+the application of multi-agent learning to address the 
+communication bottlenecks and insufficient comput-
+ing resources faced by latency-sensitive applications 
+on the Internet of V ehicles.
+• W aqarHMDDG2022 (W aqar et al. 2022) studied 
+MAS in mobile edge computing and proposed an 
+aerial-terrestrial architecture to address the issue of 
+computing offloading interruptions in remote areas
+• JuCCLPXODL2023 (Ju et al. 2023) proposed a dou-
+ble deep Q-learning algorithm to solve the multi-
+agent collaborative decision-making problem, aiming 
+to minimise system processing latency and ensure 
+communication security.
+• W angLZ2024 (Lei W ang, Liang, and Zhao 2024) 
+developed a multi-agent deep deterministic policy 
+gradient algorithm to learn from the time-dependent 
+states in highly dynamic connected vehicle environ-
+ments to enhance the accuracy of power allocation 
+decisions.
+• DongSSHLT2024 (Chongwu Dong et al. 2024) intro-
+duced a decentralised partially observable Markov 
+24 
+ K.-C. YING ET AL.
+decision process, integrated with multi-agent rein-
+forcement learning for mobile edge computing in 
+smart healthcare.
+• ShuDWGWZM2024 (Shu et al. 2024) contributed a 
+multi-agent deep reinforcement learning method to 
+solve the long-term task offloading scheduling prob-
+lem in relay-assisted multiaccess edge computing.
+Manifestation of collaborative intelligence. Col-
+laborative intelligence in this cluster is manifested 
+through decentralised computational coordination and 
+adaptive resource management among distributed edge 
+devices. Overall, this research cluster focuses on decen-
+tralised resource management problems in vehicular net-
+works, mobile edge computing, and IoT . The collabo-
+rative intelligence observed in this cluster is primarily 
+reflected in decentralised task-offloading and resource-
+coordination capabilities, which emerge from unsta-
+ble network topologies, user mobility, task uncertainty, 
+and Quality-of-Service (QoS) requirements. Intelligent 
+agents continuously exchange information and coop-
+erate in task offloading, computational resource allo-
+cation, and communication management while adapt-
+ing to dynamic network conditions, user mobility, and 
+QoS requirements. Consequently, scheduling intelligence 
+emerges from continuous coordination, information 
+sharing, and interaction among distributed agents rather 
+than from isolated optimization of individual computa-
+tional tasks, thereby illustrating the defining characteris-
+tics of collaborative intelligence in this research cluster.
+5.5. Negotiation mechanisms in decentralized 
+multi-project scheduling problems
+As shown in Figure 11, the last cluster is charac-
+terised by the most frequently used keywords, includ-
+ing ‘Genetic, ’ ‘ Algorithm, ’ ‘Model, ’ ‘Scheduling, ’ and 
+‘Multi-Agent, ’ which are strongly associated with project 
+scheduling or cross-departmental collaboration scenar-
+ios. Eight are identified as influential from the 32 articles 
+grouped in the fifth cluster. Projects in engineering con-
+struction, R&D, equipment manufacturing, and consult-
+ing industries are examined to explore collaborative intel-
+ligence arising from decentralised negotiation, bidding, 
+and resource-sharing interactions across different task 
+levels and organizational units. Although these studies 
+are not located on the Global Main Path, they nonethe-
+less represent an important complementary stream that 
+broadens MAS toward decentralised multi-project coor-
+dination and negotiation-intensive scheduling contexts. 
+• ConfessoreGR2007 (Confessore, Giordani, and
+Rismondo 2007) discovered (P|prec, multi − agent|
+Cmax), where an independent agent controls each 
+project, and a combinatorial auction coordination 
+mechanism regulates the negotiations.
+• Araúzo-AraúzoGPL2009 developed a multi-project 
+scheduling method for engineering and consulting 
+projects, where bidding and resource pricing mech-
+anisms form the intelligence required for balancing 
+supply and demand.
+• Araúzo-AraúzoPL2010 (Araúzo, Pajares, and Lopez-
+Paredes 2010) aimed at developing a collaborative 
+model based on MAS, where a dynamic negotiation 
+platform guided the resource agents to provide ser-
+vices considering their availability and capabilities.
+• AdhauMM2012 (Adhau, Mittal, and Mittal 2012) 
+studied a distributed multi-agent auction negotiation 
+system to resolve resource conflicts and scheduling 
+bottlenecks caused by limited shared resources using 
+a multi-unit combinatorial auction architecture, cou-
+pled with heuristics.
+• AgnetisBBS2015 (Alessandro Agnetis et al. 2015) 
+investigated a scenario where agents are owners of 
+activities in the project network, and the processing 
+times can be compressed by incurring additional costs, 
+exploring intelligence in a non-cooperative game.
+• BriandNS2017 (Briand, Ngueveu, and Šůcha 2017) 
+contributed to project scheduling with multiple con-
+tractors, where each contractor controls the duration 
+of the assigned activities, i.e. compressing them at 
+the cost of additional resources in a non-cooperative 
+environment.
+• T osselliBM2020 (T osselli, Bogado, and Martínez 
+2020) proposed a multi-agent decentralised project 
+scheduling architecture, enabling automated negotia-
+tion in enterprise networks and project-oriented frac-
+tal organizations (client-server relationships).
+• W angLQHL2024 (Xinyue W ang, Lu, et al. 2024) 
+explored a decentralised research and development 
+project scheduling problem in high-end manufactur-
+ing enterprises based on pre-generated local sched-
+ules. The collaborative intelligence in this setting is 
+manifested in real-time coordination under resource 
+constraints and multi-project conflicts.
+Manifestation of collaborative intelligence. Collab-
+orative intelligence in this cluster is primarily manifested 
+through negotiation-driven coordination and decen-
+tralised decision-making. Overall, this research clus-
+ter focuses on integrating system-level modelling with 
+decentralised multi-project management. The studies 
+in this cluster illustrate the transition from centralised 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 25
+Figure 11. Overview of the keyword co-occurrence network in Cluster V. (Node size and link thickness represent keyword importance 
+based on occurrence and co-occurrence frequencies, while the proximity between nodes indicates the strength of their correlation.).
+project management to intelligent, decentralised collab-
+orative scheduling. Autonomous project agents contin-
+uously exchange information, negotiate resource avail-
+ability, coordinate conflicting project priorities, and col-
+laboratively construct feasible schedules through dis-
+tributed bidding, auction-based coordination, and adap-
+tive negotiation mechanisms. Unlike centralised project 
+scheduling approaches, system-level scheduling effec-
+tiveness emerges from continuous decentralised coor-
+dination, information sharing, and negotiation among 
+project participants, thereby improving resource utiliza-
+tion, conflict resolution, scheduling flexibility, and overall 
+project coordination.
+6. Concluding remarks and future research
+This study employed the MPA and CA methods to 
+provide a systematic review of MAS. Given 628 arti-
+cles directly related to the topic, the study mapped 
+the backbone of scientific developments and identified 
+the main research branches emerging from it. W e pro-
+vided a structured understanding of the evolution of 
+MAS and offered actionable insights for designing MAS 
+systems in modern industrial environments, particu-
+larly by identifying how different coordination, nego-
+tiation, information-sharing, and learning mechanisms 
+contribute to system-level scheduling intelligence across 
+different operational contexts. Statistical analysis using 
+a logistic growth model indicates that research on MAS 
+has increased steadily since 2004, with particularly rapid 
+growth after 2015. This trend reflects growing interest 
+in multi-agent scheduling across application areas such 
+as smart manufacturing, energy storage, supply-chain 
+management, and resource sharing in cloud-computing 
+environments. The main findings are as follows.
+Considered collectively, the evidence reveals a broader 
+transformation in the MAS domain: the field is evolv-
+ing from viewing multiple agents primarily as competing 
+mathematical entities toward treating them as interacting 
+decision-making entities capable of coordination, nego-
+tiation, adaptation, information sharing, and collective 
+learning. Early two-agent scheduling research established 
+the mathematical foundations for reconciling compet-
+ing objectives under shared resources, but collabora-
+tive intelligence becomes increasingly explicit as MAS 
+research moves toward dynamic manufacturing, energy 
+management, edge computing, and decentralised project 
+scheduling. Across these settings, the central challenge 
+is no longer simply to optimise multiple agent-specific 
+objectives; it is to design mechanisms through which 
+distributed agents can exchange information, reconcile 
+conflicts, adapt to environmental changes, and gener-
+ate system-level scheduling performance. W e therefore 
+view the emerging frontier of MAS as a transition from 
+multi-agent optimization toward interaction-driven col-
+laborative scheduling intelligence.
+Analysis of the development paths revealed that the 
+knowledge transfer in MAS has evolved from sin-
+gle machine and dual-agent models with a focus on 
+investigating computational complexity of the problems 
+(2006–2012), modelling enrichment for production envi-
+ronments with flow shops (2012–2017), advanced com-
+putational methods and multi-objective optimization 
+(2017–2020), and, most recently, application-oriented 
+MAS (2020-now). This trajectory reflects not merely 
+an expansion of scheduling models and solution tech-
+niques, but a progressive shift in the role assigned to 
+agents – from passive carriers of competing objectives to 
+autonomous decision-making entities whose interactions 
+increasingly determine system-level scheduling perfor-
+mance. Additionally, two major branches emerged along 
+the main development: (1) inter-agent strategic interac-
+tions and game-theoretic behaviour in scheduling; (2) 
+including artificial intelligence methods, such as deep 
+reinforcement learning and evolutionary algorithms for 
+autonomous decision-making with dynamic adaptabil-
+ity. Conceptually, these two branches represent comple-
+mentary dimensions of the field’ s evolution: the former 
+formalises how autonomous agents interact strategically 
+26 
+ K.-C. YING ET AL.
+under conflicting interests, whereas the latter enhances 
+their capacity to learn, adapt, and make decentralised 
+decisions in dynamic environments. T ogether, they indi-
+cate that the development of MAS is increasingly shaped 
+by both interaction mechanisms and adaptive intelli-
+gence rather than by optimization performance alone.
+Analysis of the keywords discovered five major focus 
+areas: Cluster I: Dual-agent scheduling in generic single 
+machine environments. Cluster II: MAS for dynamic pro-
+duction planning. Cluster III: MAS for energy manage-
+ment systems. Cluster IV: Resource allocation to agents in 
+smart edge systems (edge computing). Cluster V: Negotia-
+tion mechanisms in decentralised multi-project schedul-
+ing problems. Viewed collectively, these clusters indicate 
+that collaborative intelligence is not a single schedul-
+ing technique but a family of interaction mechanisms 
+whose form depends on the operational context. It ranges 
+from fairness-oriented objective reconciliation in generic 
+two-agent scheduling, through adaptive decentralised 
+coordination in manufacturing and collaborative learn-
+ing in energy systems, to real-time distributed resource 
+coordination in edge computing and negotiation-driven 
+conflict resolution in multi-project environments. The 
+common denominator is that scheduling performance 
+increasingly emerges from interactions among agents 
+rather than from the isolated optimization of individual 
+objectives.
+From a production-system design and managerial 
+perspective, this synthesis further implies that the value 
+of MAS does not arise merely from decomposing a 
+scheduling problem among multiple agents. Effective 
+MAS design requires explicit consideration of how agents 
+communicate, what information they share, how con-
+flicts are reconciled, how decisions adapt to disruptions, 
+and how local actions contribute to system-level objec-
+tives. Accordingly, the choice of coordination architec-
+ture should be aligned with the dominant operational 
+challenge: fairness mechanisms for competing objec-
+tives, negotiation and adaptive rescheduling for dynamic 
+manufacturing, collaborative learning for energy coordi-
+nation, distributed resource-allocation mechanisms for 
+edge environments, and negotiation-based protocols for 
+decentralised project systems.
+On this basis, several directions for future research 
+were suggested, the most important of which are sum-
+marised as follows.
+(1) Existing studies predominantly focus on static 
+scheduling and generally assume that planning is 
+conducted under complete-information environ-
+ments. Future MAS models should accommodate 
+dynamic task arrivals, resource interruptions, and 
+demand fluctuations by integrating real-time data 
+processing and adaptive rescheduling mechanisms 
+to provide intelligent decision support in smart fac-
+tory and smart energy market environments. An 
+important future research question concerns how 
+decentralised agents can learn adaptive rescheduling 
+policies under incomplete and time-varying infor-
+mation environments while simultaneously main-
+taining coordination stability, decision consistency, 
+and computational scalability.
+(2) The operational effectiveness of complex multi-
+agent systems relies heavily on self-learning and 
+decentralised decision-making capabilities. Deep 
+reinforcement learning, fuzzy-control mechanisms, 
+and reinforcement-game strategies should be
+systematically integrated to achieve adaptive
+decision-making and cross-agent coordination in 
+decentralised scheduling systems. Future method-
+ological developments may further explore graph 
+neural networks, multi-agent proximal policy opti-
+mization, and explainable reinforcement learning 
+frameworks to improve scalability, interpretability, 
+coordination transparency, and decision trustwor-
+thiness in decentralised scheduling environments.
+(3) Real-time simulation and system-prediction capa-
+bilities should be systematically integrated with 
+MAS models to facilitate simulation-based veri-
+fication and optimization for digital-twin appli-
+cations. Future studies may further investigate 
+hybrid simulation–optimization architectures that 
+integrate digital twins, predictive analytics, and rein-
+forcement learning mechanisms to support proac-
+tive rescheduling, adaptive decision-making, and 
+autonomous operational control in Industry 5.0 sys-
+tems.
+(4) Considering the global trend toward carbon-credit 
+mechanisms and low-carbon energy management, 
+energy load balancing and charge–discharge plan-
+ning for energy-storage systems are expected to 
+receive growing research attention. In sustain-
+able and low-carbon operational systems, future 
+MAS studies may further explore carbon-aware 
+scheduling strategies, renewable-energy coordina-
+tion mechanisms, and energy-storage-integrated 
+production systems. Methodologically, integrating 
+graph-based reinforcement learning and distributed 
+optimization frameworks may enable more scalable 
+and adaptive coordination among heterogeneous 
+agents operating across interconnected energy and 
+manufacturing infrastructures.
+(5) Another promising research direction involves
+human–AI collaborative scheduling, where human 
+operators and intelligent agents jointly participate 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 27
+in decentralised and adaptive decision-making pro-
+cesses. Future research may further investigate how 
+human preferences, fairness considerations, and 
+explainability requirements can be systematically 
+incorporated into MAS coordination mechanisms 
+without significantly compromising optimization 
+efficiency and coordination performance.
+In addition, building upon the mapping of MAS 
+evolution (see Figure 4), a structured research agenda 
+can be derived to guide future developments in the 
+field. First, following the principle of progressive real-
+ism, future studies should incorporate more dynamic and 
+uncertain features, such as stochastic job arrivals, real-
+time disruptions, and adaptive resource availability, to 
+better reflect real-world operational environments. Sec-
+ond, under the conflict-coordination trade-off principle, 
+future research should develop more advanced multi-
+objective and game-theoretic models that explicitly cap-
+ture negotiation, cooperation, and competition dynam-
+ics among heterogeneous agents. Third, in line with 
+the complexity-driven methodological transition, future 
+research should further integrate artificial intelligence 
+techniques – such as deep reinforcement learning, graph 
+neural networks, and hybrid metaheuristics – to effi-
+ciently solve large-scale and computationally intractable 
+MAS problems. Finally, consistent with the theory-to-
+application transition principle, greater emphasis should 
+be placed on deploying MAS models in real-world sys-
+tems, including smart manufacturing, energy systems, 
+and cloud/edge computing, with particular attention to 
+scalability, interpretability, and real-time decision sup-
+port.
+Overall, the findings suggest that MAS should be 
+viewed not simply as a means of sequencing com-
+peting jobs, but increasingly as a system-level capa-
+bility for coordinating decentralised operations. From 
+this perspective, collaborative intelligence emerges when 
+autonomous or semi-autonomous agents interact
+through information sharing, negotiation, coordination, 
+adaptation, and collective learning under shared resource 
+constraints. Its operational value lies in reconciling local 
+objectives with system-level performance across dynamic 
+production and service environments.
+This research agenda provides a systematic roadmap 
+for advancing both the theoretical and practical fron-
+tiers of MAS. More fundamentally, these directions sug-
+gest that the next stage of MAS research should move 
+beyond increasingly sophisticated optimization algo-
+rithms toward the development of interaction-driven 
+collaborative scheduling systems that integrate decen-
+tralised decision making with adaptive intelligence and 
+system-level performance. This review is limited to 
+papers indexed by W oS, and the analysis considers arti-
+cles published until early 2025. Although it demon-
+strates high academic quality and representativeness, it 
+may overlook some high-quality research from other 
+databases, such as Scopus and IEEE. Path analysis of pub-
+lished articles and patents indexed by Google Scholar 
+may provide a more comprehensive perspective for 
+practitioners. Furthermore, MPA and CA rely on the 
+construction of citation relationships and keyword co-
+occurrence relationships, respectively. Moreover, because 
+MPA is based on citation linkages, very recent stud-
+ies may be underrepresented owing to the temporal lag 
+of citation network formation. Other types of literature 
+reviews may deepen our understanding of theoretical 
+viewpoints and cross-domain applications of methodolo-
+gies. In addition to the five dominant research streams 
+identified in this review, the smaller research clusters 
+revealed by the CA method deserve continued atten-
+tion because they may represent emerging interdisci-
+plinary research areas at an early stage of knowledge 
+diffusion. Unlike the five dominant clusters, which rep-
+resent mature and well-established research streams that 
+define the current knowledge structure of the field, these 
+smaller clusters capture the initial stages of knowledge 
+development and therefore provide valuable early sig-
+nals of future research directions, interdisciplinary con-
+vergence, and potential paradigm shifts. As collabo-
+rative intelligence continues to evolve, these currently 
+fragmented research areas may gradually mature into 
+major research streams and potentially reshape future 
+scheduling paradigms. Therefore, continuous sciento-
+metric monitoring of these emerging clusters will be 
+valuable for tracking the future evolution of collabora-
+tive intelligence, identifying emerging research opportu-
+nities, and providing a systematic basis for understand-
+ing how emerging collaborative-intelligence technolo-
+gies progressively diffuse into mainstream multi-agent 
+scheduling research. Finally, CA was employed to pro-
+vide a basis for an objective review of academic litera-
+ture. Constructing an open-access platform to visualise 
+the knowledge graph and provide a semantic search tool 
+based on Natural Language Processing (NLP) may help 
+provide more actionable suggestions. This will help draw 
+the big picture across different fields of study and iden-
+tify hotspots where new researchers can more objec-
+tively contribute to the development of that field. As 
+the final notable limitation of the research method, the 
+logistic growth model was used to predict future trends; 
+despite the S-curve’ s merits for estimating trendlines, 
+the model cannot predict the shifts caused by disruptive 
+events and game-changing innovations. Machine learn-
+ing algorithms can come in handy to partially address this 
+limitation.
+28 
+ K.-C. YING ET AL.
+Author contributions
+CRediT: Kuo-Ching Ying: Conceptualization, Formal analysis, 
+Methodology, Resources, Software, Supervision, V alidation, 
+Writing – review & editing; Pourya Pourhejazy: Conceptu-
+alization, Formal analysis, Funding acquisition, Investigation, 
+Project administration, V alidation, Writing – original draft;
+Bo-Cheng Chen: Data curation, Formal analysis, Methodol-
+ogy, Visualization
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+Funding
+This study is partially supported by the Interreg North-W est 
+Europe Aurora Program through the project RESILIFY – 
+Energy storage to enable a resilient, electrified society – with 
+grant reference number 20366468.
+Notes on contributors
+Kuo-Ching Ying is a Distinguished Pro-
+fessor in the Department of Industrial 
+Engineering and Management at National 
+Taipei University of T echnology, Taiwan. 
+His research focuses on operations
+scheduling and combinatorial optimiza-
+tion. He serves on the editorial boards of 
+18 international journals and has reviewed 
+manuscripts for more than 50 journals. He has published over 
+150 articles in leading international journals, including Euro-
+pean Journal of Operational Research, Computers & Operations 
+Research, International Journal of Production Research, Omega, 
+and Transportation Research Part E. Recognised for his schol-
+arly contributions, he has been included in the Stanford/Else-
+vier science-wide database of the world’ s top 100,000 scientists 
+and was named among the ‘Best Computer Science Scientists 
+2026’ by Research.com.
+Pourya Pourhejazy is a senior researcher 
+in industrial engineering in the Faculty 
+of Engineering Science and T echnology 
+at UiT – the Arctic University of Nor-
+way. His research interests include opti-
+misation and decision analysis in produc-
+tion and supply chain management. He 
+serves on the editorial board of Engineer-
+ing Applications of Artificial Intelligence and has published 
+over 75 articles in leading international journals.
+Bo-Cheng Chen received his M.S. degree 
+from the Department of Industrial Engi-
+neering and Management at National 
+Taipei University of T echnology, Taiwan. 
+He is currently employed by Taiwan 
+Semiconductor Manufacturing Company 
+(TSMC) Limited at the Southern Tai-
+wan Science Park in Tainan, Taiwan. His 
+research interests include production scheduling and combina-
+torial optimisation.
+Data availability statement
+The data that support the findings of this study are available 
+from the corresponding author upon reasonable request.
+ORCID
+Kuo-Ching Ying 
+ http://orcid.org/0000-0002-9549-5290
+Pourya Pourhejazy 
+ http://orcid.org/0000-0002-1207-3587
+References
+Adhau, Sunil, M. L. Mittal, and Abhinav Mittal. 2012. “ A Multi-
+agent System for Distributed Multi-project Scheduling: An 
+Auction-based Negotiation Approach. ” Engineering Applica-
+tions of Artificial Intelligence 25 (8): 1738–1751. https://doi.
+org/10.1016/J.ENGAPPAI.2011.12.003.
+Agnetis, Alessandro, Cyril Briand, Jean-Charles Billaut, and 
+Přemysl Šůcha. 2015. “Nash Equilibria for the Multi-agent 
+Project Scheduling Problem with Controllable Processing 
+Times. ” Journal of Scheduling 18 (1): 15–27. https://doi.org/
+10.1007/s10951-014-0393-x .
+Agnetis, Alessandro, Gianluca de Pascale, and Dario Pac-
+ciarelli. 2009. “ A Lagrangian Approach to Single-machine 
+Scheduling Problems with Two Competing Agents. ” Jour-
+nal of Scheduling 12 (4): 401–415. https://doi.org/10.1007/
+s10951-008-0098-0.
+Agnetis, Allesandro, Pitu B. Mirchandani, Dario Pacciarelli, 
+and Andrea Pacifici. 2004. “Scheduling Problems with Two 
+Competing Agents. ” Operations Research 52 (2): 229–242. 
+https://doi.org/10.1287/opre.1030.0092.
+Agnetis, Alessandro, Dario Pacciarelli, and Andrea Pacifici. 
+2007. “Multi-agent Single Machine Scheduling. ” Annals of 
+Operations Research 150 (1): 3–15. https://doi.org/10.1007/
+s10479-006-0164-y .
+Araúzo, José Alberto, Javier Pajares, and Adolfo Lopez-Paredes. 
+2010. “Simulating the Dynamic Scheduling of Project Port-
+folios. ” Simulation Modelling Practice and Theory 18 (10): 
+1428–1441. https://doi.org/10.1016/J.SIMPAT .2010.04.008.
+Bai, Danyu, Ali Diabat, Xinyue W ang, Dandan Y ang, Y ao Fu, 
+Zhi-Hai Zhang, and Chin-Chia Wu. 2022. “Competitive Bi-
+agent Flowshop Scheduling to Minimise the W eighted Com-
+bination of Makespans. ” International Journal of Produc-
+tion Research 60 (22): 6750–6771. https://doi.org/10.1080/
+00207543.2021.1923854.
+Binyamin, Sami Saeed, and Sami Ben Slama. 2022. “Multi-agent 
+Systems for Resource Allocation and Scheduling in a Smart 
+Grid. ” Sensors (Basel, Switzerland) 22 (21): 8099. https://doi.
+org/10.3390/s22218099.
+Briand, Cyril, Sandra Ulrich Ngueveu, and Přemysl Šůcha. 
+2017. “Finding an Optimal Nash Equilibrium to the Multi-
+agent Project Scheduling Problem. ” Journal of Scheduling 20 
+(5): 475–491. https://doi.org/10.1007/s10951-017-0516-2.
+Chen, Ming, Zhirong Shen, Lin W ang, and Guanglin Zhang. 
+2024. “Combined Carbon Capture and Utilization with Peer-
+to-peer Energy Trading for Multimicrogrids Using Multia-
+gent Proximal Policy Optimization. ” IEEE Transactions on 
+Control of Network Systems 11 (4): 2173–2186. https://doi.
+org/10.1109/TCNS.2024.3393642.
+Chen, Y u-Chuan, and Jen-Y a W ang. 2024. “ A Lower Bound 
+for Minimizing W aiting Time in Coexisting Virtual and 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 29
+Physical W orlds. ” IEEE Access 12 (2024): 73470–73480. https:
+//doi.org/10.1109/ACCESS.2024.3404032.
+Cheng, T . C. E., Shuenn Ren Cheng, W en Hung Wu, Peng 
+Hsiang Hsu, and Chin Chia Wu. 2011. “ A Two-agent 
+Single-machine Scheduling Problem with Truncated Sum-
+of-processing-times-based Learning Considerations. ” Com-
+puters & Industrial Engineering 60 (4): 534–541. https://doi.
+org/10.1016/J.CIE.2010.12.008.
+Cheng, T . C. E., Chih Y u Liu, W en Chiung Lee, and M. Ji. 
+2014. “Two-agent Single-machine Scheduling to Minimize 
+the W eighted Sum of the Agents’ Objective Functions. ” Com-
+puters & Industrial Engineering 78:66–73. https://doi.org/10.
+1016/J.CIE.2014.09.028.
+Cheng, T . C. E., C. T . Ng, and J. J. Y uan. 2006. “Multi-agent 
+Scheduling on a Single Machine to Minimize T otal W eighted 
+Number of Tardy Jobs. ” Theoretical Computer Science 362 
+(1–3): 273–281. https://doi.org/10.1016/J.TCS.2006.07.011.
+Cheng, T . C. E., C. T . Ng, and J. J. Y uan. 2008. “Multi-agent 
+Scheduling on a Single Machine with Max-form Criteria. ” 
+European Journal of Operational Research 188 (2): 603–609. 
+https://doi.org/10.1016/j.ejor.2007.04.040.
+Confessore, Giuseppe, Stefano Giordani, and Silvia Rismondo. 
+2007. “ A Market-based Multi-agent System Model for 
+Decentralized Multi-project Scheduling. ” Annals of Oper-
+ations Research 150 (1): 115–135. https://doi.org/10.1007/
+s10479-006-0158-9.
+Dong, Zhuoran, Tao Ren, Fang Qi, Jiacheng W eng, Danyu 
+Bai, Jie Y ang, and Chin-Chia Wu. 2025. “ A Reinforce-
+ment Learning-based Approach for Solving Multi-agent Job 
+Shop Scheduling Problem.. ” International Journal of Produc-
+tion Research 63 (10): 3512–3537. https://doi.org/10.1080/
+00207543.2024.2423807.
+Dong, Chongwu, Y anbin Sun, Muhammad Shafiq, Ning Hu, 
+Y uan Liu, and Zhihong Tian. 2024. “Optimizing Mobility-
+aware Task Offloading in Smart Healthcare for Internet of 
+Medical Things through Multiagent Reinforcement Learn-
+ing. ” IEEE Internet of Things Journal 11 (8): 13677–13691. 
+https://doi.org/10.1109/JIOT .2023.3338718.
+Eck, Nees Jan van, and Ludo W altman. 2010. “Software Sur-
+vey: VOSviewer, a Computer Program for Bibliometric Map-
+ping. ” Scientometrics 84 (2): 523–538. https://doi.org/10.
+1007/s11192-009-0146-3.
+Fang, Xiaohan, Jinkuan W ang, Guanru Song, Yinghua Han, 
+Qiang Zhao, and Zhiao Cao. 2019. “Multi-agent Reinforce-
+ment Learning Approach for Residential Microgrid Energy 
+Scheduling. ” Energies 13 (1): 123. https://doi.org/10.3390/
+en13010123.
+Freud, David, and Gur Mosheiov. 2021. “Scheduling with Com-
+peting Agents, T otal Late W ork and Job Rejection. ” Com-
+puters & Operations Research 133:105329. https://doi.org/10.
+1016/j.cor.2021.105329.
+Gao, Jiankai, Y ang Li, Bin W ang, and Haibo Wu. 2023. “Multi-
+microgrid Collaborative Optimization Scheduling Using an 
+Improved Multi-agent Soft Actor-critic Algorithm. ” Energies
+16 (7): 3248. https://doi.org/10.3390/en16073248.
+Gholami, Hadis, Amir Azizi, Majid Sabzehparvar, and Davood 
+Jafari. 2025. “ A Fuzzy Multi-agent Model of Project Port-
+folio Scheduling and Selection Taking into Account Envi-
+ronmental Resilience. ” Results in Control and Optimization
+19:100544. https://doi.org/10.1016/j.rico.2025.100544.
+Girvan, M., and M. E. J. Newman. 2002. “Community Struc-
+ture in Social and Biological Networks. ” Proceedings of the 
+National Academy of Sciences 99 (12): 7821–7826. https://
+doi.org/10.1073/pnas.122653799.
+Gu, Manzhan, Peihai Liu, and Xiwen Lu. 2024. “Opti-
+mal Algorithms for Preemptive Two-agent Scheduling on 
+Uniform Parallel Machines. ” Theoretical Computer Science
+1012:114729. https://doi.org/10.1016/J.TCS.2024.114729.
+Hsu, Chia Y u, Bo Ruei Kao, V an Lam Ho, and K. Robert Lai. 
+2016. “ Agent-based Fuzzy Constraint-directed Negotiation 
+Mechanism for Distributed Job Shop Scheduling. ” Engineer-
+ing Applications of Artificial Intelligence 53:140–154. https:
+//doi.org/10.1016/J.ENGAPPAI.2016.04.005.
+Huang, Jiang Ping, Liang Gao, Xin Y u Li, and Chun Jiang 
+Zhang. 2023. “ A Cooperative Hierarchical Deep Reinforce-
+ment Learning Based Multi-agent Method for Distributed 
+Job Shop Scheduling Problem with Random Job Arrivals. ” 
+Computers & Industrial Engineering 185:109650. https://doi.
+org/10.1016/J.CIE.2023.109650.
+Huang, Ching-Jen, and Li-Man Liao. 2012. “ A Multi-agent-
+based Negotiation Approach for Parallel Machine Schedul-
+ing with Multi-objectives in an Electro-etching Process. ” 
+International Journal of Production Research 50 (20): 5719–
+5733. https://doi.org/10.1080/00207543.2011.617394.
+Hummon, Norman P ., and Patrick Dereian. 1989. “Connectiv-
+ity in a Citation Network: The Development of DNA The-
+ory. ” Social Networks 11 (1): 39–63. https://doi.org/10.1016/
+0378-8733(89)90017-8 .
+Ju, Ying, Y uchao Chen, Zhiwei Cao, Lei Liu, Qingqi Pei, Ming 
+Xiao, Kaoru Ota, Mianxiong Dong, and Victor C. M. Leung. 
+2023. “Joint Secure Offloading and Resource Allocation for 
+V ehicular Edge Computing Network: A Multi-agent Deep 
+Reinforcement Learning Approach. ” IEEE Transactions on 
+Intelligent Transportation Systems 24 (5): 5555–5569. https:
+//doi.org/10.1109/TITS.2023.3242997.
+Kaplano&gcaron;lu, V ahit. 2014. “Multi-agent Based Approach 
+for Single Machine Scheduling with Sequence-dependent 
+Setup Times and Machine Maintenance. ” Applied Soft Com-
+puting 23:165–179. https://doi.org/10.1016/J.ASOC.2014.
+06.020.
+Lang, Fabian, Andreas Fink, and T obias Brandt. 2016. “Design 
+of Automated Negotiation Mechanisms for Decentralized 
+Heterogeneous Machine Scheduling. ” European Journal of 
+Operational Research 248 (1): 192–203. https://doi.org/10.
+1016/j.ejor.2015.06.058.
+Lee, W en Chiung, Shiuan Kang Chen, Cheng W ei Chen, and 
+Chin Chia Wu. 2011. “ A Two-machine Flowshop Problem 
+with Two Agents. ” Computers & Operations Research 38 (1): 
+98–104. https://doi.org/10.1016/J.COR.2010.04.
+002.
+Leung, C. W ., T . N. W ong, K. L. Mak, and R. Y . K. Fung. 2010. 
+“Integrated Process Planning and Scheduling by an Agent-
+based Ant Colony Optimization. ” Computers & Industrial 
+Engineering 59 (1): 166–180. https://doi.org/10.1016/J.CIE.
+2009.09.003.
+Leutwiler, Florin, and Francesco Corman. 2023. “ A Review 
+of Principles and Methods to Decompose Large-scale Rail-
+way Scheduling Problems. ” EURO Journal on Transportation 
+and Logistics 12 (2023): 100107. https://doi.org/10.1016/j.
+ejtl.2023.100107.
+Li, Shi-Sheng, and Ren-Xia Chen. 2023. “Competitive Two-
+agent Scheduling with Release Dates and Preemption on a 
+Single Machine. ” Journal of Scheduling 26 (3): 227–249. https:
+//doi.org/10.1007/s10951-023-00779-5.
+30 
+ K.-C. YING ET AL.
+Li, Shi-Sheng, Ren-Xia Chen, and Ji Tian. 2020. “Multitask-
+ing Scheduling Problems with Two Competitive Agents. ” 
+Engineering Optimization 52 (11): 1940–1956. https://doi.
+org/10.1080/0305215X.2019.1678609.
+Li, Shisheng, T . C. E. Cheng, C. T . Ng, and Jinjiang Y uan. 2017. 
+“Two-Agent Scheduling on a Single Sequential and Compat-
+ible Batching Machine. ” Naval Research Logistics (NRL) 64 
+(8): 628–641. https://doi.org/10.1002/nav.21779.
+Li, Der Chiang, and Peng Hsiang Hsu. 2012. “Solving a 
+Two-agent Single-machine Scheduling Problem considering 
+Learning Effect. ” Computers & Operations Research 39 (7): 
+1644–1651. https://doi.org/10.1016/J.COR.2011.09.018.
+Li, Shi-Sheng, and Jin-Jiang Y uan. 2020. “Single-machine 
+Scheduling with Multi-agents to Minimize T otal W eighted 
+Late W ork. ” Journal of Scheduling 23 (4): 497–512. https:
+//doi.org/10.1007/s10951-020-00646-7.
+Liu, Shang-Chia, Jiahui Duan, Win-Chin Lin, W en-Hsiang 
+Wu, Jan-Y ee Kung, Hau Chen, and Chin-Chia Wu. 2018. 
+“ A Branch-and-bound Algorithm for Two-agent Scheduling 
+with Learning Effect and Late W ork Criterion. ” Asia-Pacific 
+Journal of Operational Research 35 (05): 1850037. https://doi.
+org/10.1142/S0217595918500379.
+Liu, John S., and Louis Y .Y . Lu. 2012. “ An Integrated Approach 
+for Main Path Analysis: Development of the Hirsch Index as 
+an Example. ” Journal of the American Society for Information 
+Science and T echnology 63 (3): 528–542. https://doi.org/10.
+1002/asi.21692.
+Liu, John S., Louis Y . Y . Lu, and Mei Hsiu-Ching Ho. 2019. “ A 
+Few Notes on Main Path Analysis. ” Scientometrics 119 (1): 
+379–391. https://doi.org/10.1007/s11192-019-03034-x.
+Liu, Peng, Lixin Tang, and Xiaoye Zhou. 2010. “Two-agent 
+Group Scheduling with Deteriorating Jobs on a Single 
+Machine. ” The International Journal of Advanced Manu-
+facturing T echnology 47 (5–8): 657–664. https://doi.org/10.
+1007/s00170-009-2224-3.
+Liu, Peng, Xiaoye Zhou, and Lixin Tang. 2010. “Two-agent 
+Single-machine Scheduling with Position-dependent Pro-
+cessing Times. ” The International Journal of Advanced Man-
+ufacturing T echnology 48 (1–4): 325–331. https://doi.org/10.
+1007/s00170-009-2259-5.
+Lopes Silva, Maria Amélia, Sérgio Ricardo de Souza, Mar-
+cone Jamilson Freitas Souza, and Ana Lúcia C. Bazzan. 
+2019. “ A Reinforcement Learning-based Multi-agent Frame-
+work Applied for Solving Routing and Scheduling Prob-
+lems. ” Expert Systems with Applications 131:148–171. https:
+//doi.org/10.1016/J.ESW A.2019.04.056.
+Mao, Shuai, Jiangliang Jin, and Y unjian Xu. 2024. “Routing 
+and Charging Scheduling for EV Battery Swapping Systems: 
+Hypergraph-based Heterogeneous Multiagent Deep Rein-
+forcement Learning. ” IEEE Transactions on Smart Grid 15 
+(5): 4903–4916. https://doi.org/10.1109/TSG.2024.3386609.
+McAllister, M. 1998. “Bayesian Stock Assessment: A Review 
+and Example Application Using the Logistic Model. ” ICES 
+Journal of Marine Science 55 (6): 1031–1060. https://doi.org/
+10.1006/jmsc.1998.0425.
+Mor, Baruch, and Gur Mosheiov. 2010. “Scheduling Problems 
+with Two Competing Agents to Minimize Minmax and 
+Minsum Earliness Measures. ” European Journal of Opera-
+tional Research 206 (3): 540–546. https://doi.org/10.1016/j.
+ejor.2010.03.003.
+Mor, Baruch, and Gur Mosheiov. 2011. “Single Machine Batch 
+Scheduling with Two Competing Agents to Minimize T otal 
+Flowtime. ” European Journal of Operational Research 215 (3): 
+524–531. https://doi.org/10.1016/j.ejor.2011.06.037.
+Mor, Baruch, and Gur Mosheiov. 2016. “Minimizing Max-
+imum Cost on a Single Machine with Two Compet-
+ing Agents and Job Rejection. ” Journal of the Operational 
+Research Society 67 (12): 1524–1531. https://doi.org/10.
+1057/s41274-016-0003-8.
+Mor, Baruch, and Gur Mosheiov. 2017. “ A Two-agent Single 
+Machine Scheduling Problem with Due-window Assign-
+ment and a Common Flow-allowance. ” Journal of Combi-
+natorial Optimization 33 (4): 1454–1468. https://doi.org/10.
+1007/s10878-016-0049-1.
+Mrvar, Andrej, and Vladimir Batagelj. 2016. “ Analysis and 
+Visualization of Large Networks with Program Package 
+Pajek. ” Complex Adaptive Systems Modeling 4 (1): 6. https:
+//doi.org/10.1186/s40294-016-0017-8.
+Ng, C. T ., T . C. E. Cheng, and J. J. Y uan. 2006. “ A Note on the 
+Complexity of the Problem of Two-agent Scheduling on a 
+Single Machine. ” Journal of Combinatorial Optimization 12 
+(4): 387–394. https://doi.org/10.1007/s10878-006-9001-0.
+Perez-Gonzalez, Paz, and Jose M. Framinan. 2014. “ A Com-
+mon Framework and Taxonomy for Multicriteria Schedul-
+ing Problems with Interfering and Competing Jobs: Multi-
+agent Scheduling Problems. ” European Journal of Opera-
+tional Research 235 (1): 1–16. https://doi.org/10.1016/j.ejor.
+2013.09.017.
+Phosavanh, Johnson, and Daniel Oron. 2024. “Two-agent 
+Single-machine Scheduling with a Rate-modifying Activity. ” 
+European Journal of Operational Research 312 (3): 866–876. 
+https://doi.org/10.1016/J.EJOR.2023.08.002.
+Qin, Zhaojun, Dazzle Johnson, and Y uqian Lu. 2023. “Dynamic 
+Production Scheduling towards Self-organizing Mass Per-
+sonalization: A Multi-agent Dueling Deep Reinforcement 
+Learning Approach. ” Journal of Manufacturing Systems
+68:242–257. https://doi.org/10.1016/J.JMSY .2023.03.003.
+Qiu, Dawei, Yi W ang, Zhaohao Ding, Yi W ang, and Goran 
+Strbac. 2024. “Graph Reinforcement Learning for Carbon-
+aware Electric V ehicles in Power-transport Networks. ” IEEE 
+Transactions on Smart Grid 15 (4): 3919–3935. https://doi.
+org/10.1109/TSG.2024.3359289.
+Qiu, Dawei, Yi W ang, Mingyang Sun, and Goran Strbac. 2022. 
+“Multi-service Provision for Electric V ehicles in Power-
+transportation Networks towards a Low-carbon Transi-
+tion: A Hierarchical and Hybrid Multi-agent Reinforcement 
+Learning Approach. ” Applied Energy 313:118790. https://doi.
+org/10.1016/J.APENERGY .2022.118790.
+Shu, Zhenyang, Xiaoheng Deng, Leilei W ang, Jinsong Gui, 
+Shaohua W an, Honggang Zhang, and Geyong Min. 2024. 
+“Relay-assisted Edge Computing Framework for Dynamic 
+Resource Allocation and Multiple-access Task Processing 
+in Digital Divide Regions. ” IEEE Internet of Things Journal
+11 (21): 35724–35741. https://doi.org/10.1109/JIOT .2024.
+3439332.
+Si, Jinghua, Xinyu Li, Liang Gao, and Peigen Li. 2024. “ An 
+Efficient and Adaptive Design of Reinforcement Learning 
+Environment to Solve Job Shop Scheduling Problem with 
+Soft Actor-critic Algorithm. ” International Journal of Produc-
+tion Research 62 (23): 8260–8275. https://doi.org/10.1080/
+00207543.2024.2335663.
+T osselli, Laura, V erónica Bogado, and Ernesto Martínez. 2020. 
+“ A Repeated-negotiation Game Approach to Distributed 
+(Re)Scheduling of Multiple Projects Using Decoupled 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 31
+Learning. ” Simulation Modelling Practice and Theory 98:101980. 
+https://doi.org/10.1016/J.SIMPAT .2019.101980.
+W ang, Jun Qiang, Guo Qiang Fan, Yingqian Zhang, Cheng Wu 
+Zhang, and Joseph Y .T . Leung. 2017. “Two-agent Scheduling 
+on a Single Parallel-batching Machine with Equal Process-
+ing Time and Non-identical Job Sizes. ” European Journal of 
+Operational Research 258 (2): 478–490. https://doi.org/10.
+1016/J.EJOR.2016.10.024.
+W ang, Lei, Hongbin Liang, and Dongmei Zhao. 2024. “Deep-
+reinforcement-learning-based Computation Offloading and 
+Power Allocation within Dynamic Platoon Network. ” IEEE 
+Internet of Things Journal 11 (6): 10500–10512. https://doi.
+org/10.1109/JIOT .2023.3327712.
+W ang, Xinyue, Shaojun Lu, Xiaofei Qian, Chaoming Hu, and 
+Xinbao Liu. 2024. “Dynamic Scheduling of Decentralized 
+High-end Equipment R&D Projects via Deep Reinforcement 
+Learning. ” Computers & Industrial Engineering 190:110018. 
+https://doi.org/10.1016/J.CIE.2024.110018.
+W ang, Yi, Dawei Qiu, and Goran Strbac. 2022. “Multi-agent 
+Deep Reinforcement Learning for Resilience-driven Routing 
+and Scheduling of Mobile Energy Storage Systems. ” Applied 
+Energy 310:118575. https://doi.org/10.1016/j.apenergy.2022.
+118575.
+W ang, Xinyue, Tao Ren, Danyu Bai, Feng Chu, Y aodong Y u, 
+Fanchun Meng, and Chin-Chia Wu. 2024. “Scheduling a 
+Multi-agent Flow Shop with Two Scenarios and Release 
+Dates. ” International Journal of Production Research 62 (1–2): 
+421–443. https://doi.org/10.1080/00207543.2023.2188646.
+W ang, Xinyue, Tao Ren, Danyu Bai, Chinenye Ezeh, Haodong 
+Zhang, and Zhuoran Dong. 2022. “Minimizing the Sum 
+of Makespan on Multi-agent Single-machine Scheduling 
+with Release Dates. ” Swarm and Evolutionary Computation
+69:100996. https://doi.org/10.1016/J.SWEVO.2021.100996.
+W ang, Du-Juan, Y unqiang Yin, Cheng Shuenn-Ren, T . C. E. 
+Cheng, and Chin-Chia Wu. 2016. “Due Date Assignment 
+and Scheduling on a Single Machine with Two Compet-
+ing Agents. ” International Journal of Production Research
+54 (4): 1152–1169. https://doi.org/10.1080/00207543.2015.
+1056317.
+W ang, Jin, Yingfeng Zhang, Y ang Liu, and Naiqi Wu. 
+2019. “Multiagent and Bargaining-game-based Real-time 
+Scheduling for Internet of Things-enabled Flexible Job 
+Shop. ” IEEE Internet of Things Journal 6 (2): 2518–2531. 
+https://doi.org/10.1109/JIOT .2018.2871346.
+W aqar, Noor, Syed Ali Hassan, Aamir Mahmood, Kapal Dev, 
+Dinh-Thuan Do, and Mikael Gidlund. 2022. “Computation 
+Offloading and Resource Allocation in MEC-enabled Inte-
+grated Aerial-terrestrial V ehicular Networks: A Reinforce-
+ment Learning Approach. ” IEEE Transactions on Intelligent 
+Transportation Systems 23 (11): 21478–21491. https://doi.
+org/10.1109/TITS.2022.3179987.
+W ong, T . N., C. W . Leung, K. L. Mak, and R. Y . K. Fung. 
+2006. “Dynamic Shopfloor Scheduling in Multi-agent Man-
+ufacturing Systems. ” Expert Systems with Applications 31 (3): 
+486–494. https://doi.org/10.1016/J.ESW A.2005.09.073.
+Wu, Hongbin, Xinjie Lan, Y e He, Andrew Y . Wu, and Ming 
+Ding. 2025. “Orderly Charging of Electric V ehicles: A Two-
+stage Spatial-temporal Scheduling Method Based on User-
+personalized Navigation. ” Applied Energy 378:124800. https:
+//doi.org/10.1016/J.APENERGY .2024.124800.
+Wu, Jing, Juzhen W ang, Qimei Chen, Zenghui Y uan, Pan 
+Zhou, Xiumin W ang, and Cai Fu. 2021. “Resource Allocation 
+for Delay-sensitive V ehicle-to-multi-edges (V2Es) Com-
+munications in V ehicular Networks: A Multi-agent Deep 
+Reinforcement Learning Approach. ” IEEE Transactions on 
+Network Science and Engineering 8 (2): 1873–1886. https:
+//doi.org/10.1109/TNSE.2021.3075530.
+Wu, W en-Hung, Y unqiang Yin, W en-Hsiang Wu, Chin-Chia 
+Wu, and Peng-Hsiang Hsu. 2014. “ A Time-dependent 
+Scheduling Problem to Minimize the Sum of the T otal 
+W eighted Tardiness among Two Agents. ” Journal of Indus-
+trial & Management Optimization 10 (2): 591–611. https:
+//doi.org/10.3934/jimo.2014.10.591.
+Xu, Ke, Peng Liu, and Hua Gong. 2023. “Coordinated Schedul-
+ing of Two-agent Production and Transportation Based 
+on Non-cooperative Game. ” Intelligent Automation & Soft 
+Computing 36 (3): 3279–3294. https://doi.org/10.32604/iasc.
+2023.036007.
+Y ang, Liya, and Xiwen Lu. 2019. “Two-agent Scheduling Prob-
+lems with the General Position-dependent Processing Time. ” 
+Theoretical Computer Science 796:90–98. https://doi.org/10.
+1016/J.TCS.2019.08.023.
+Yin, Y unqiang, Shuenn Ren Cheng, T . C. E. Cheng, Du Juan 
+W ang, and Chin Chia Wu. 2016. “Just-in-time Schedul-
+ing with Two Competing Agents on Unrelated Paral-
+lel Machines. ” Omega 63:41–47. https://doi.org/10.1016/J.
+OMEGA.2015.09.010.
+Yin, Y unqiang, Shuenn Ren Cheng, T . C. E. Cheng, W en Hung 
+Wu, and Chin Chia Wu. 2013. “Two-agent Single-machine 
+Scheduling with Release Times and Deadlines. ” International 
+Journal of Shipping and Transport Logistics 5 (1): 75. https:
+//doi.org/10.1504/IJSTL.2013.050590.
+Yin, Y unqiang, T . C. E. Cheng, Long W an, Chin Chia Wu, 
+and Jun Liu. 2015. “Two-agent Single-machine Scheduling 
+with Deteriorating Jobs. ” Computers & Industrial Engineer-
+ing 81:177–185. https://doi.org/10.1016/J.CIE.2015.01.002.
+Yin, Y unqiang, T . C. E. Cheng, Xiaoqin Y ang, and Chin 
+Chia Wu. 2015. “Two-agent Single-machine Scheduling with 
+Unrestricted Due Date Assignment. ” Computers & Industrial 
+Engineering 79:148–155. https://doi.org/10.1016/J.CIE.2014.
+10.025.
+Yin, Y unqiang, Y an W ang, T . C. E. Cheng, Du Juan W ang, and 
+Chin Chia Wu. 2016. “Two-agent Single-machine Schedul-
+ing to Minimize the Batch Delivery Cost. ” Computers & 
+Industrial Engineering 92:16–30. https://doi.org/10.1016/J.
+CIE.2015.12.003.
+Yin, Y unqiang, W enyi W ang, Dujuan W ang, and T . C. E. 
+Cheng. 2017. “Multi-agent Single-machine Scheduling and 
+Unrestricted Due Date Assignment with a Fixed Machine 
+Unavailability Interval. ” Computers & Industrial Engineering
+111:202–215. https://doi.org/10.1016/j.cie.2017.07.013.
+Yin, Y unqiang, W en Hsiang Wu, Shuenn Ren Cheng, and Chin 
+Chia Wu. 2012. “ An Investigation on a Two-agent Single-
+machine Scheduling Problem with Unequal Release Dates. ” 
+Computers & Operations Research 39 (12): 3062–3073. https:
+//doi.org/10.1016/J.COR.2012.03.012.
+Yin, Y unqiang, Y ongjian Y ang, Dujuan W ang, T . C. E. Cheng, 
+and Chin-Chia Wu. 2018. “Integrated Production, Inventory, 
+and Batch Delivery Scheduling with Due Date Assignment 
+and Two Competing Agents. ” Naval Research Logistics (NRL)
+65 (5): 393–409. https://doi.org/10.1002/nav.21813.
+Ying, Kuo-Ching, Pourya Pourhejazy, and Chuan-En Sung. 
+2024. “Two-agent Proportionate Flowshop Scheduling with 
+Deadlines: Polynomial-time Optimization Algorithms. ”
+32 
+ K.-C. YING ET AL.
+Annals of Operations Research 343 (1): 543–558. https://doi.
+org/10.1007/s10479-024-06275-z.
+Y u, Jin, Peihai Liu, Xiwen Lu, and Manzhan Gu. 2025. “ Analyz-
+ing the Price of Fairness in Scheduling Problems with Two 
+Agents. ” European Journal of Operational Research 321 (3): 
+750–759. https://doi.org/10.1016/J.EJOR.2024.10.023.
+Y u, Shaohua, and Zigao Wu. 2021. “ A Three Criteria Schedul-
+ing Problem with Two Competing Agents. ” Computers & 
+Industrial Engineering 162:107754. https://doi.org/10.1016/
+j.cie.2021.107754.
+Y uan, Jinjiang, C. T . Ng, and T . C. E. Cheng. 2020. “Scheduling 
+with Release Dates and Preemption to Minimize Multiple 
+Max-form Objective Functions. ” European Journal of Oper-
+ational Research 280 (3): 860–875. https://doi.org/10.1016/j.
+ejor.2019.07.072.
+Zhang, Y uan, Zhichao Geng, and Jinjiang Y uan. 2020. “Two-
+agent Pareto-scheduling of Minimizing T otal W eighted 
+Completion Time and T otal W eighted Late W ork. ” Mathe-
+matics 8 (11): 2070. https://doi.org/10.3390/math8112070.
+Zhang, Sicheng, and Tak Nam W ong. 2017. “Flexible Job-
+shop Scheduling/Rescheduling in Dynamic Environment: 
+A Hybrid MAS/ACO Approach. ” International Journal of 
+Production Research 55 (11): 3173–3196. https://doi.org/10.
+1080/00207543.2016.1267414.
+Zhang, Yi, Haihua Zhu, Dunbing Tang, T ong Zhou, and 
+Y ong Gui. 2022. “Dynamic Job Shop Scheduling Based on 
+Deep Reinforcement Learning for Multi-agent Manufac-
+turing Systems. ” Robotics and Computer-Integrated Man-
+ufacturing 78:102412. https://doi.org/10.1016/J.RCIM.2022.
+102412.
+Zuo, Jianing, Y an Jin, and W eibo Liu. 2024. “Outpatient 
+Scheduling Problem in Smart Hospital with Two-agent Deep 
+Reinforcement Learning Algorithm. ” Discover Computing 27 
+(1): 41. https://doi.org/10.1007/s10791-024-09474-1.

@@ -84,7 +84,7 @@
     "established journal",
     "practice signals: manufacturer, real-world, retailer"
    ],
-   "text_file": ""
+   "text_file": "papers/W7225117494.txt"
   },
   {
    "openalex": "W7220372069",
@@ -128,7 +128,7 @@
     "practice signals: industrial",
     "reports a quantified result"
    ],
-   "text_file": ""
+   "text_file": "papers/W7220372069.txt"
   },
   {
    "openalex": "W7216198559",
@@ -167,7 +167,7 @@
     "established journal",
     "practice signals: case study, empirical, swedish"
    ],
-   "text_file": ""
+   "text_file": "papers/W7216198559.txt"
   },
   {
    "openalex": "W7224456260",
@@ -208,7 +208,7 @@
     "practice signals: manufacturer",
     "reports a quantified result"
    ],
-   "text_file": ""
+   "text_file": "papers/W7224456260.txt"
   },
   {
    "openalex": "W7216078518",
@@ -247,7 +247,7 @@
     "established journal",
     "reports a quantified result"
    ],
-   "text_file": ""
+   "text_file": "papers/W7216078518.txt"
   },
   {
    "openalex": "W7225561281",
@@ -288,54 +288,7 @@
     "established journal",
     "practice signals: field, real-world"
    ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225202756",
-   "doi": "https://doi.org/10.1080/00207543.2026.2757111",
-   "title": "Energy-efficient scheduling of a single resource with production requirements: a joint simulation and scenario-based mathematical programming approach",
-   "date": "2026-11-02",
-   "type": "article",
-   "venue": "International Journal of Production Research",
-   "publisher": "Taylor & Francis",
-   "authors": [
-    "Siamak Khayyati",
-    "Oktay Karabağ",
-    "Berk Berkman",
-    "Sebnem Demirtas",
-    "Barış Tan"
-   ],
-   "institutions": [
-    "University of Liège",
-    "University of Mannheim",
-    "Özyeğin University",
-    "Erasmus University Rotterdam",
-    "Koç University"
-   ],
-   "countries": [
-    "BE",
-    "DE",
-    "NL",
-    "TR"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1080/00207543.2026.2757111",
-   "pdfs": [
-    "https://madoc.bib.uni-mannheim.de/99305/1/Energy-efficient%20scheduling%20of%20a%20single%20resource%20with%20production%20requirements%20a%20joint%20simulation%20and%20scenario-based%20mathematical%20programming%20approach.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Motivated by paint oven on-off scheduling in an automotive plant, this study investigates the control of a single energy-intensive resource that can operate in on, off, warm-up, and multiple idle modes. The problem is to determine the energy mode of the resource over a finite planning horizon so as to minimise the average total cost of energy consumption and product waiting. We propose a data-driven on-off scheduling procedure that collects real-time upstream vehicle locations at the beginning of each shift, uses a digital twin to generate arrival scenarios conditional on these locations, and then determines the resource schedule. Two solution approaches are developed and used in parallel. The first is a scenario-based mathematical programming formulation strengthened by a scenario reduction technique based on clustering, and the second is a problem-specific genetic algorithm that encodes the resource schedule directly. Numerical experiments show that incorporating advance arrival information into multi-mode scheduling can reduce the normalised energy cost per vehicle by up to 41% relative to benchmark policies, with energy measured in equivalent on-mode operating minutes. The results highlight the value of digital-twin-based arrival information for energy-intensive manufacturing systems.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 7.0,
-   "why": [
-    "Nordic/DACH authors (DE)",
-    "established journal",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7225202756.txt"
+   "text_file": "papers/W7225561281.txt"
   },
   {
    "openalex": "W7222029693",
@@ -376,7 +329,7 @@
     "established journal",
     "reports a quantified result"
    ],
-   "text_file": ""
+   "text_file": "papers/W7222029693.txt"
   },
   {
    "openalex": "W7213316681",
@@ -574,7 +527,7 @@
     "Nordic/DACH authors (SE)",
     "established journal"
    ],
-   "text_file": "papers/W7207792209.txt"
+   "text_file": ""
   },
   {
    "openalex": "W7115599487",
@@ -663,7 +616,7 @@
     "preprint, not peer-reviewed",
     "reports a quantified result"
    ],
-   "text_file": "papers/W7214065991.txt"
+   "text_file": ""
   },
   {
    "openalex": "W7207664691",
@@ -749,7 +702,7 @@
     "practice signals: case study",
     "reports a quantified result"
    ],
-   "text_file": "papers/W4414595207.txt"
+   "text_file": ""
   },
   {
    "openalex": "W7204458324",
@@ -957,7 +910,7 @@
     "practice signals: industrial",
     "reports a quantified result"
    ],
-   "text_file": "papers/W7221604450.txt"
+   "text_file": ""
   },
   {
    "openalex": "W7223012601",
@@ -1030,6 +983,47 @@
    "abstract": "The transition toward low-carbon freight transportation requires coordinated planning of hydrogen production, refueling infrastructure, and freight-service operations under substantial technological, economic, and policy uncertainty. In this study, we develop a risk-averse, multi-period stochastic mixed-integer linear programming framework for planning hydrogen refueling infrastructure along freight corridors. Our proposed model jointly determines station-opening schedules, capacity investments, hydrogen production and supply by technology, hydrogen freight adoption, diesel fallback, and emission-policy compliance. We utilize the Conditional Value-at-Risk (CVaR) approach to limit exposure to unfavorable high-cost scenarios involving uncertain freight demand, hydrogen availability, operating costs, and carbon-policy conditions. We demonstrate the applicability of the proposed framework on a U.S. Midwest freight-corridor case study. The optimal base-case solution opens 9 of 12 candidate stations and increases hydrogen adoption in the Base scenario from 12.7% in 2026 to 87.3% in 2035. Annual Base-scenario emissions decrease from 90.4 to 37.1 kt CO 2 e, representing a 58.9% reduction. Compared with the risk-neutral solution, the CVaR-based plan increases the number of opened stations from 8 to 9 and reduces the high-cost tail exposure by $19.3 million. Our sensitivity analysis further shows that clean hydrogen availability and early investment flexibility have stronger effects on emission compliance and tail-risk reduction than carbon pricing alone. We believe that our findings provide guidance and decision support for policymakers, infrastructure developers, hydrogen suppliers, and freight carriers seeking to coordinate resilient and lower-carbon freight-corridor investments.",
    "lanes": [
     "Resilience and risk"
+   ],
+   "score": 4.7,
+   "why": [
+    "established journal",
+    "practice signals: case study",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7212026277",
+   "doi": "https://doi.org/10.1007/s10479-026-07397-2",
+   "title": "A sustainability-aware optimization framework for port-hinterland truck scheduling",
+   "date": "2026-09-09",
+   "type": "article",
+   "venue": "Annals of Operations Research",
+   "publisher": "Springer Science+Business Media",
+   "authors": [
+    "Ali Mokhtari Moghadam",
+    "Trung Thành Nguyễn",
+    "Massoud Mohsendokht",
+    "Jin Wang",
+    "Zaili Yang"
+   ],
+   "institutions": [
+    "Liverpool John Moores University"
+   ],
+   "countries": [
+    "GB"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1007/s10479-026-07397-2",
+   "pdfs": [
+    "https://link.springer.com/content/pdf/10.1007/s10479-026-07397-2.pdf",
+    "https://researchonline.ljmu.ac.uk/id/eprint/29486/1/A%20sustainability-aware%20optimization%20framework%20for%20port-hinterland%20truck%20scheduling.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Abstract Ports are critical gateways for trade and regional growth but also generate substantial externalities such as emissions, congestion, and safety risks. Growing maritime transport and port throughput intensify long-haul diesel truck traffic on hinterland access roads, causing peak-hour bottlenecks, long queues, and higher environmental impacts. Despite many proposed operational strategies, these challenges remain insufficiently addressed. This paper develops a mixed-integer linear programming (MILP) model for sustainable port-hinterland truck scheduling within an integrated chassis-based remote gate (CRG) and battery-electric trucks (BET) framework for short-haul transport. Using a major UK port case study with real traffic data, the model minimizes total logistics costs, including fixed investments, transport, waiting and idling times for short- and long-haul trucks, and $$\\hbox {CO}_2$$ CO 2 emissions. To handle large-scale instances, a two-stage adaptive genetic algorithm (TS-AGA) is proposed and benchmarked against the MILP and a two-stage simulated annealing approach. Collaborative and non-collaborative scheduling strategies are compared to assess the benefits of coordinated decision-making. Results show that collaborative scheduling reduces total system costs by about 13.6% by better synchronizing long-haul diesel truck arrivals with short-haul battery-electric truck operations. Sensitivity analysis further examines how long-haul travel-time uncertainty affects congestion and economic performance. Overall, the proposed MILP model and TS-AGA solution approach demonstrate that coordinated truck scheduling can substantially improve the operational efficiency and sustainability of CRG-BET-based port-hinterland systems. By jointly optimizing long-haul and short-haul operations under collaborative and uncertainty-aware strategies, the study offers a practical and scalable scheduling methodology to reduce logistics costs, congestion, and emissions while supporting sustainable port-city connectivity.",
+   "lanes": [
+    "Production planning and scheduling"
    ],
    "score": 4.7,
    "why": [

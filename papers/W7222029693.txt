@@ -1,0 +1,2917 @@
+TITLE: A causal analytics approach for interpretable supply chain risk and supplier performance evaluation
+AUTHORS: Ishwar Gupta, Harshitha Konduru, Sergio Correa, Hendro Wicaksono
+VENUE: Supply Chain Analytics (2026-10-15)
+DOI: https://doi.org/10.1016/j.sca.2026.100248
+LICENCE: cc-by
+LINK: https://doi.org/10.1016/j.sca.2026.100248
+
+ 
+Contents lists available at ScienceDirect
+Supply Chain Analytics
+journal homepage: www.sciencedirect.com/journal/supply-chain-analytics 
+Full length article
+A causal analytics approach for interpretable supply chain risk and supplier 
+performance evaluation
+Ishansh Gupta a, Harshitha Konduru b, Sergio Correa a, Hendro Wicaksono b
+ ,∗
+a BMW Group, Germany
+b Constructor University Bremen gGmbH, Bremen, Germany
+A R T I C L E I N F O
+Keywords:
+Supply chain
+Causal machine learning
+Risk analytics
+Supplier performance
+Text analytics
+Decision support
+ A B S T R A C T
+Traditional machine learning (ML) techniques are widely used to support operational supply chain decisions, 
+but their ‘‘black box’’ nature limits transparency and actionability. This study addresses this challenge by 
+exploring the effectiveness of causal discovery methods and large language models (LLMs) in supply chain 
+management with a focus on the automotive industry. Six causal discovery algorithms- Peter–Clark (PC), 
+Fast Causal Inference (FCI), Greedy Equivalence Search (GES), DirectLiNGAM, NOTEARS, and Regression 
+with Subsequent Independence Test (RESIT) are benchmarked against an expert-validated ground-truth graph 
+constructed from 18 domain experts with a combined 300+ years of experience, using 12 months of internal 
+supplier Key Performance Indicator (KPI) data. RESIT achieves the closest alignment with expert knowledge, 
+with a False Discovery Rate of 0.1429, Structural Hamming Distance of 1, precision and recall of 0.8571 and an 
+F1-score of 0.85, outperforming all other algorithms on every metric. Robustness of the estimated causal effect 
+of Backlog on Escalation is confirmed through three refutation tests-random common cause, random subset 
+and placebo treatment returning high p-values of 0.96, 0.76, and 0.98 respectively, indicating insensitivity to 
+spurious confounders and random perturbations. Counterfactual simulation shows that reducing Backlog by 
+50%–70% consistently lowers escalation levels across suppliers. LLMs contribute by extracting causal factors 
+from unstructured external event data, accelerating causal graph construction, and reducing dependence on 
+manual expert input. LLM-derived causal graphs are further compared with expert-validated models to ensure 
+alignment and reliability, and are operationalized through a Weighted Sum Model risk score linking external 
+drivers to internal KPIs for actionable supplier escalation decisions.
+1. Introduction
+In today’s globalized world, supply chains are becoming increas-
+ingly complex as they encompass multiple geographies, stakeholders, 
+and technologies involved [1]. Events such as terrorist attacks, wars, 
+earthquakes, economic crises, currency devaluations, pandemics, nat-
+ural disasters, strikes, and cyberattacks have been shown to disrupt 
+supply chains [2]. For example, the COVID-19 pandemic caused se-
+vere disruption of global supply-chain operations, with consequences 
+spreading across almost every sector of the economy. As countries 
+closed their borders and ports experienced long backlogs of orders, 
+supply shipments were delayed. This caused demand for products to 
+fluctuate drastically. This dynamic resulted in many problems, such as 
+consumer hoarding [3,4].
+Digitalization and the rise of data analytics have brought both new 
+opportunities and challenges for operational supply chains in managing 
+the daily flow of goods, services, and information. Modern supply 
+∗ Corresponding author.
+E-mail address: hwicaksono@constructor.university (H. Wicaksono).
+chains must cope with uncertainties, which demand more sophisticated 
+management approaches. The need for efficient, data-driven solutions 
+to navigate these complexities is more urgent than ever.
+Traditional machine learning (ML) approaches, while providing 
+predictive outputs, often fail to provide understandable and actionable 
+results, especially in the context of decision-making under uncertainty 
+[5–7]. To address these shortcomings, researchers and practitioners 
+have begun to take an interest in applying causal machine learning 
+(CML). CML does not use the correlation between variables as a basis 
+for inferring causal relationships [8,9]. Understanding the true causal 
+relationships is critical to planning actions for risk management in the 
+supply chain.
+Causal discovery and inference are two fundamental elements in 
+CML to extract and analyze causal relationships from observed prob-
+lems [8]. Causal discovery refers to the process of identifying causal 
+relationships between variables from observational data. Causal infer-
+ence refers to the process of estimating the effect of an intervention 
+https://doi.org/10.1016/j.sca.2026.100248
+Received 23 January 2026; Received in revised form 28 April 2026; Accepted 4 October 2026
+Supply Chain Analytics 16 (2026) 100248 
+Available online 15 October 2026 
+2949-8635/© 2026 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+Open access funding enabled and organized by Projekt DEAL. 
+I. Gupta et al.
+on an outcome variable within an established causal structure. CML 
+defines cause-and-effect relationships through structural causal models. 
+These models represent causal relationships in data [9]. The main 
+output of CML is to determine the impact of changing one variable 
+on the change in the outcome variable. This approach often involves 
+counterfactual analysis, asking questions such as, ‘‘What if the action 
+taken was different from what was done?’’ [10]. For example, how 
+would the supplier escalation rate change if the backlog were reduced 
+by X%? Decision-makers seek to understand the causes and reasons 
+derived from the data to address deficiencies and weaknesses in the 
+current system and guide how to make needed improvements.
+Causal modeling requires intensive manual effort from domain ex-
+perts who understand the cause-and-effect relationships among vari-
+ables. These relationships are represented in a causal graph, a directed 
+acyclic graph (DAG) [11]. Causal discovery algorithms automatically 
+uncover causal relationships from observational data. These algorithms 
+can only be applied with structured input data, such as cross-sectional 
+or time-series data [12]. In the context of supply chains, such structured 
+data is often not available, especially data on external factors such as 
+conflicts, strikes, and other disruptions [13]. This limitation is a major 
+challenge for modeling cause and effect to analyze the supply chain as 
+a whole, which involves many external factors.
+Recent work in Supply Chain Analytics highlights (i) how unstruc-
+tured online text can be mined to improve supply chain risk visibility 
+and decision support and (ii) how generative AI and large language 
+models are emerging as a decision layer for supply chain transformation 
+[14,15].
+Large Language Models (LLMs) can be an effective tool to aid causal 
+analysis by extracting cause-and-effect relationships from unstructured 
+data, such as news reports, economic forecasts, or supplier communi-
+cation documents. This allows companies to comprehensively analyze 
+supply chains so that they can act appropriately in managing risks. 
+The study by Kıcıman et al. [16] explored the relationship between 
+causal inference and LLMs. They found that recent developments in 
+LLMs have significantly improved the ability of AI to engage in complex 
+tasks. One of the main aspects discussed in their study is the ability 
+of LLMs to explain things plausibly. LLMs can even adjust their con-
+clusions even when new information is introduced [16]. In addition, 
+LLMs can construct counterfactual scenarios, which indicate an implicit 
+understanding of causal relationships. This study shows that LLMs can 
+be a tool for domain experts to reduce the initial effort to construct 
+causal graphs.
+Beyond this individual capability of LLMs, recent work in supply 
+chain risk management reinforces why pairing them with causal ma-
+chine learning matters. Systematic reviews of AI in SCRM show that 
+while predictive accuracy has improved, a lack of model transparency 
+and of ways to incorporate unstructured external event data continues 
+to limit managerial uptake [14,17]. In parallel, recent evidence that 
+causal machine learning can move SCM from correlation-based pre-
+diction to intervention-planning [18] underscores the case for causal 
+approaches, but leaves open how such approaches should be cou-
+pled with LLMs to incorporate the external, unstructured drivers that 
+dominate real supplier risk. This study addresses that coupling directly.
+The overarching objective of this study is therefore to enhance 
+decision-making in supply chain management by integrating causal ma-
+chine learning (CML) and large language models (LLMs) for discovering 
+and analyzing causal relationships, ultimately leading to improved 
+risk management and operational efficiency. Specifically, our approach 
+addresses three key challenges:
+• Validated causal discovery, not abstract benchmarking: Prior 
+CML work in SCM is overwhelmingly single-algorithm and lacks 
+validation against expert-derived ground truth. We benchmark 
+six causal discovery algorithms from four methodological families 
+against an 18-expert ground-truth graph on real automotive sup-
+plier KPIs, with three formal refutation tests, establishing which 
+family of algorithms actually aligns with domain reality.
+• Operationalized LLM-based external-factor extraction: LLMs 
+have been shown to extract causal relations from text in gen-
+eral settings but have not been connected to supplier KPIs in 
+an auditable SCM pipeline. We combine LLM-generated causal 
+structure with a Node-RED workflow that makes every edge 
+inspectable, and align the extracted external factors with internal 
+KPIs so that the LLM contribution is verifiable rather than opaque.
+• Decision-relevant risk score, not just a causal graph: Causal 
+graphs alone do not support managerial action. We translate 
+the validated structure into a Weighted Sum Model risk score 
+that quantifies how external disruptions propagate into internal 
+KPIs, supporting concrete supplier escalation and de-escalation 
+decisions.
+To address the overarching objective and key challenges, this study 
+investigates the following research questions:
+1. How much more effectively do different causal discovery algo-
+rithms identify causal relationships in operational automotive 
+supply chains compared to expert-derived causal graphs?
+2. To what extent can LLMs enhance and accelerate causal discov-
+ery in supply chains, and how closely do the causal graphs they 
+generate align with ground truth data from experts?
+3. How can causal relationships identified through LLMs and expert 
+interviews improve supplier risk assessment and performance 
+simulations for better decision-making in risk escalation and 
+mitigation?
+Thus, this study contributes to the body of knowledge on CML in 
+SCM as follows:
+1. To assess the effectiveness of the performance of various causal 
+discovery algorithms in identifying causal relationships in op-
+erational supply chains by comparing them with causal graphs 
+obtained from experts. This study also selects the criteria and 
+metrics to evaluate their effectiveness. 
+2. To evaluate the potential of LLM in accelerating causal discovery 
+in supply chains and measure how closely the causal graph 
+obtained from LLM aligns with the ground truth obtained from 
+experts. 
+3. To apply causal-effect relationships identified from expert inter-
+views and LLM to improve supplier risk assessments and conduct 
+performance simulations. This will support more accurate and 
+actionable decision-making for risk escalation and mitigation in 
+supply chains. 
+The novelty of this study lies in combining a systematic evaluation 
+of multiple causal discovery algorithms with validation against expert-
+derived ground truth graphs and extending this with the integration 
+of large language models. The use of LLMs to extract and structure 
+causal factors from external event data complements the internal KPI 
+analysis, creating a comprehensive view of supply chain risks. In line 
+with a design science perspective, the study positions this integra-
+tion of LLMs with a causal discovery algorithm particularly suited for 
+nonlinear, high-dimensional KPI data (RESIT, as highlighted in prior 
+literature) as the proposed approach, while the remaining algorithms 
+and expert-derived models serve as benchmarks. In addition, embed-
+ding robustness checks through refutation tests and linking the causal 
+structures directly to decision-relevant KPIs and supplier escalation 
+outcomes ensures both methodological rigor and practical applicability. 
+This integrated formulation distinguishes the work from more generic 
+causal modeling contributions and provides a domain-specific pipeline 
+for resilient supply chain decision-making.
+The structure of the paper is organized as follows: Section 2 provides 
+a comprehensive literature review and identifies research gaps in apply-
+ing causal machine learning and large language models to supply chain 
+management. Section 3 introduces the proposed approach (integration 
+Supply Chain Analytics 16 (2026) 100248 
+2 
+I. Gupta et al.
+of LLMs with RESIT) and describes the experimental design, including 
+datasets, benchmarks, preprocessing, and evaluation metrics. Section 4 
+presents the results, with emphasis on the comparative performance 
+of algorithms and the contribution of LLMs to accelerating causal 
+discovery and improving interpretability. Section 5 discusses the impli-
+cations of the findings for supply chain risk management, highlighting 
+managerial insights and practical applications in the automotive indus-
+try. Section 6 concludes the paper by summarizing contributions and 
+presenting limitations and directions for future research.
+2. Literature review
+2.1. Related work
+Modern supply chains have evolved into global and complex net-
+works. These networks are influenced by factors such as globalization, 
+stakeholder relationships, technological advancements, and sustainabil-
+ity challenges [19]. Global supply chains now span multiple regions 
+and markets worldwide, creating logistical, regulatory, and cultural 
+challenges. Technology, especially IoT and big data, adds to the com-
+plexity. Cybersecurity and data privacy are critical concerns [20,21]. 
+In addition, environmental issues [22] and natural disasters such as 
+pandemics highlight the vulnerabilities of supply chains, requiring ro-
+bust and adaptive management strategies [23,24]. The data generated 
+in supply chains has the potential to provide valuable insights, but 
+challenges remain in their effective integration, analysis, and use to 
+improve supply chain resilience and agility.
+Many organizations face challenges in obtaining actionable insights 
+from an extensive collection of data because traditional predictive 
+analytics produces predictions but not prescriptive guidance [25]. AI 
+and ML technologies are valuable for data processing, as well as pre-
+dictive and logistics optimization capabilities. They play an essential 
+role in improving supply chain performance by enhancing demand 
+forecast accuracy, system resilience, and performance management. 
+These technologies enable the prediction from hidden patterns in data 
+using artificial neural networks to improve supply chain operations per-
+formance [26]. They can also optimize production and manufacturing 
+operations and supply chain networks, as well as address integration 
+and collaboration issues [27]. However, translating AI and ML out-
+puts into proactive decision-making is still challenging [28]. Advanced 
+decision support systems are needed to address this gap by not only pre-
+dicting outcomes but also recommending actions. This enables supply 
+chain managers to respond to uncertainty effectively [19].
+ML plays an important role in the shift from traditional to proactive 
+analytics in the supply chain [29,30], enabling strategies that can 
+improve the accuracy of demand forecasting, inventory management, 
+and logistics optimization [31]. ML models uncover data patterns, help 
+anticipate disruptions, and facilitate real-time responses [32]. ML is 
+increasingly essential in helping manage complex supply chains. This is 
+shown by the ML market being valued at USD 1.5 billion by 2023 and a 
+projected compound annual growth rate (CAGR) of 29% by 2032 [28]. 
+In supply chain risk management, ML can improve risk prediction and 
+mitigation [33,34], and also drive supply chain agility and resilience 
+[35,36].
+While ML has its advantages in general, traditional ML models often 
+act as a ‘‘black box’’. This lack of transparency leads to a lack of 
+practically actionable guidance. Many models are predictive in this way 
+but not prescriptive [37,38]. As a result, interpretable machine learning 
+has attracted significant attention, focusing on prescriptive analytics 
+that provide clearer actions and increased model transparency [39,40]. 
+Models that provide interpretable results are especially important in 
+complex supply chains, where clear, actionable insights are critical for 
+decision-making. Table 1 summarizes the limitations of traditional ML 
+compared to the needs of modern supply chains.
+CML is a step beyond traditional ML. It focuses on cause-and-effect 
+relationships rather than correlations [41,42]. This feature is important 
+Table 1
+Limitations of traditional ML with the needs of modern supply chain require-
+ments.
+ Aspect Traditional ML Supply chain requirements 
+ Prediction Accurate forecasts based on 
+data patterns
+Accurate, but often lacking 
+actionability
+ 
+ Interpretability Black box; limited 
+transparency
+High interpretability for 
+decision-makers
+ 
+ Actionable 
+Insights
+Predictive but not prescriptive Requires actionable, 
+prescriptive guidance
+ 
+ Causality Correlations rather than 
+causality
+Needs causal reasoning for 
+decision-making
+ 
+to help analyze the impact of actions in complex systems [43,44]. CML 
+combines domain knowledge with data-driven techniques to provide 
+more interpretable and reliable predictions [45,46]. CML models do not 
+only improve accuracy but also enable risk mitigation and resilience 
+in the supply chain by supporting informed decision-making based on 
+causal relationships.
+LLM has been used as a tool to enhance causal inference capabilities 
+through natural language processing [16]. Unlike traditional methods, 
+LLM can infer causal structure from text and metadata, aiding causal 
+pattern discovery even from unstructured data [16,41]. This integration 
+with CML increases the speed of causal discovery and enables the 
+supply chain to adapt faster to disruptions, a key advantage in today’s 
+volatile environment.
+2.2. Research gaps
+Causal Machine Learning (CML) has been applied across medicine 
+[47], molecular genetics [48], sustainability [49], manufacturing [50], 
+and the natural sciences [51]. In Supply Chain Management (SCM), 
+prior work spans counterfactual disruption analysis [52], mixed CML–
+deep learning for interpretability [53], and ‘‘what-if’’ scenario planning 
+[18]. Parallel to these, Large Language Models (LLMs) have recently 
+shown ability to infer causal relations from unstructured text and 
+metadata [16], offering a path to extract external drivers at scale.
+Despite these advances, three gaps remain for SCM: (i) a lack of an 
+end-to-end, empirically validated workflow that benchmarks multiple 
+causal discovery algorithms and grounds them in expert knowledge; (ii) 
+limited integration of unstructured external event data using LLMs; and 
+(iii) scarce validation of learned graphs against expert-derived ground 
+truth. Table 2 summarizes representative approaches and contrasts 
+them with our design-science framework that integrates CML with LLM-
+based external factor extraction and expert validation, and links the 
+resulting structures to KPI-based supplier risk scoring (cf. Research 
+Objectives 1, 2, 3).
+Beyond the novelty of the integrated pipeline, each component 
+also advances the state of the art within its own stream. On the 
+CML side, prior SCM applications [18,52,53] typically commit to a 
+single causal discovery method and do not benchmark alternatives, 
+validate against expert-derived ground truth, or apply formal refuta-
+tion tests. Our contribution is a systematic comparison of six causal 
+discovery algorithms-spanning constraint-based (PC, FCI), score-based 
+(GES), linear non-Gaussian (DirectLiNGAM), and nonlinear additive-
+noise approaches (NOTEARS, RESIT)— evaluated against an expert 
+graph constructed from 18 domain experts and subjected to three 
+refutation tests (random common cause, random subset, placebo) in the 
+automotive supply-chain context. This lifts CML in SCM from single-
+algorithm case studies to a benchmarked, empirically validated design. 
+On the LLM side, Kıcıman et al. [16] established that LLMs can extract 
+causal relations from unstructured text in general settings, but did 
+not translate this capability into an operational SCM pipeline. Our 
+contribution is to (i) apply LLM-based causal extraction specifically 
+to automotive supplier risk using external event data (GDELT), (ii) 
+embed the LLM in a Node-RED workflow that renders every generated 
+Supply Chain Analytics 16 (2026) 100248 
+3 
+I. Gupta et al.
+Table 2
+Representative approaches vs. our proposed CML+LLM design-science framework. DL = Deep Learning; CI = Causal Inference.
+ Study/Domain Approach Key insight vs. our work 
+ Ombadi et al. [51] (Natural 
+sciences)
+CML for climate Predicts natural phenomena; domain-specific; no SCM application, 
+LLM integration, or expert-grounded validation.
+ 
+ Sokolova et al. [47] 
+(Medicine)
+CI Improved treatment-effect estimation on structured healthcare 
+data; not scalable; no KPI linkage or external drivers.
+ 
+ Kelly et al. [48] (Genetics) CI in biology Identifies genetic causal factors; narrow domain; lacks SCM graphs 
+or KPI validation.
+ 
+ Nesro et al. [49] 
+(Sustainability)
+CML for sustainability Links causal factors to sustainability metrics; largely conceptual; 
+lacks expert-grounded tests.
+ 
+ Vuković and Thalmann [50] 
+(Manufacturing)
+CI in production optimizes processes; narrow scope; no external event integration 
+or LLM text analysis.
+ 
+ Mechai and Wicaksono [52] 
+and Wyrembek et al. [18] 
+(SCM)
+Counterfactual (‘‘what-if’’) Evaluates disruption impacts and scenario-based SCM risk 
+planning; limited benchmarking; no LLM-based external data 
+integration.
+ 
+ Bodendorf et al. [53] (SCM) CML + DL Enhances interpretability in disruptions using hybrid DL+CI; but 
+lacks systematic benchmarking or expert ground-truth validation.
+ 
+ Cohrs et al. [54], Yu et al. 
+[55], Gilligan-Lee et al. [56], 
+Dixit et al. [57], Chiba et al. 
+[58] and Lee et al. [59] 
+(Method critique)
+Data-driven CI critiques Highlight challenges: causal sufficiency violations, noise, data 
+drift, exogeneity issues; motivate expert validation and robustness 
+tests.
+ 
+ Kıcıman et al. [16] (General 
+LLM)
+LLM for causal extraction LLMs extract causal links from unstructured text; not yet applied 
+to SCM graphs with KPI-based risk linkage.
+ 
+ Proposed study (Automotive 
+SCM)
+Integrated CML + LLM, 
+design-science pipeline
+End-to-end: benchmarks multiple discovery algorithms; 
+integrates LLM-extracted external drivers (GDELT); validates 
+against expert graphs; applies robustness/refutation; links to 
+KPI-based supplier escalation simulations (Obj. 1–3).
+ 
+edge auditable and editable, and (iii) link LLM-derived external drivers 
+to internal KPIs through a Weighted Sum Model risk score — none 
+of which is present in prior LLM-for-causal-discovery work. The inte-
+gration reported in this study therefore rests on two component-level 
+advances, not only on their combination.
+Table 2 situates these component-level contributions against repre-
+sentative prior work. Prior approaches are fragmented across domain-
+specific applications, hybrid conceptual frameworks, or partial pipeline 
+elements, and none combine the three elements of benchmarked causal 
+discovery, LLM-based external factor extraction, and expert-grounded 
+validation linked to decision-relevant KPIs. This gap motivates our 
+proposed approach.
+3. Methods and materials
+Building on the extensive insights from related work and identified 
+research gaps discussed in Section 2.2, we now present our empirical 
+approach.
+3.1. Proposed approach
+The following section details a robust methodology that integrates 
+causal machine learning (CML) and large language models (LLMs) to 
+tackle supply chain risk management challenges. We begin by dis-
+cussing the selected data preprocessing techniques and causal discovery 
+algorithms, then by exploring evaluation metrics for assessing causal 
+discovery outcomes. Additionally, we cover key aspects of causal esti-
+mand identification, causal effect estimation, and refutation techniques 
+to ensure the robustness of our findings. Recognizing the dynamic 
+nature of supply chains, we also include methods for analyzing external 
+factors that may influence risk and decision-making. Beyond detailing 
+the mechanics of these algorithms and techniques, this section empha-
+sizes the rationale behind their selection—highlighting why they are 
+particularly suited for tackling complex, real-world supply chain risks.
+In our research, we developed a comprehensive methodology to 
+integrate causal machine learning (CML) and large language models 
+(LLMs) for supply chain risk management. The methodology covers all 
+steps from data collection to simulation and risk score development 
+with the help of LLM. The methodology is illustrated in the flowchart 
+for the analysis depicted in Fig. 1. The flow is divided into two main 
+parts: Internal KPI analysis flow (cf. blue rectangle in Fig. 1) and exter-
+nal (cf. green rectangle in Fig. 1). Internal KPI analysis uses CML, while 
+the analysis of external factors influencing internal KPIs combines LLM 
+and CML. Solid arrows indicate the relationships between steps and 
+dashed arrows indicate the techniques applied at each step. The outputs 
+of LLM-based external factor extraction and expert-derived ground 
+truth are compared at the Graph Comparison & Evaluation Interface (cf. 
+purple rectangle, Step 12, Fig. 1), which represents the design-science 
+artefact integrating the CML and LLM pipelines before proceeding to 
+the Causal NLP and risk score development stages.
+The process in the developed methodology begins with collecting 
+data from internal and external sources. Internal data is supplier KPI 
+data from a leading automotive company. Meanwhile, external data is 
+obtained from GDELT. More details about data collection are presented 
+in Section 3.2. The internal KPI analysis aims to understand and mea-
+sure the factors influencing supplier performance and identify causal 
+relationships between various performance indicators using CML. Each 
+step of this internal analysis is described in Section 3.3. In contrast, 
+analyzing external factors aims to evaluate and understand their im-
+pact on supplier performance and overall supply chain operations by 
+utilizing LLMs. The steps for analyzing external KPIs are described in 
+Section 3.4
+3.2. Experimental design
+3.2.1. Data collection and preprocessing
+As illustrated in Fig. 1, step 1, the first step of our methodology 
+begins with collecting data related to both internal KPIs and external 
+factors. A leading automotive industry provided the internal KPI data, 
+while the external data was obtained from Global Data on Events, 
+Location, and Tone (GDELT) [60] make up the external data (cf.
+Table 3).
+The data collection followed a two-track protocol reflecting the two 
+data sources. For the internal track, supplier KPI data was obtained as a 
+direct extract from the automotive company’s operational systems, cov-
+ering a continuous twelve-month window and comprising the five KPIs 
+listed in Table 3: Backlog, Special_Transport, Missing_Parts, Wrong_De-
+liveries, and Escalation. Access was granted under the company’s in-
+ternal data-handling rules, and all data was held within the agreed 
+Supply Chain Analytics 16 (2026) 100248 
+4 
+I. Gupta et al.
+Fig. 1. Design-science framework integrating CML and LLM pipelines for supply chain risk evaluation.
+Table 3
+Description of the data collected from the automotive giant and external factors affecting the supplier internal KPI.
+ Features Description Data type 
+ Internal KPI of the automotive Giant
+ Backlog Indicate the amount of unfulfilled new orders [61]. Continuous numeric 
+ Special_Transport Urgent requirements or backlogs are usually the reason for the 
+necessity for parts shipment on short notice [62]. This frequently 
+entails the air delivery of parts.
+Continuous numeric 
+ Missing_Parts Occur when a single part is absent, leading to the shutdown of 
+the automotive assembly line [63]. This results in incomplete 
+vehicles and prevents shipping.
+Continuous numeric 
+ Wrong_Deliveries Involve delivering products to the wrong consumer at the wrong 
+time or location [64].
+Continuous numeric 
+ Escalation According to the system’s history of supplier escalations, an 
+assignment is considered escalated if it is not completed within 
+the allotted time [65].
+Discrete numeric 
+ External data from GDELT
+ External factors Factors affecting internal KPI Text 
+ Covariate Covariates, also known as confounding factors, can induce bias 
+into causal estimations and impact the analysis’s accuracy if they 
+are not controlled [66].
+Text 
+ KPI Impact Indicates the external factors impact in terms of low medium high Categorical 
+research scope; supplier identifiers are not reproduced in this paper. 
+For the external track, event data was collected from the public GDELT 
+2.0 event database [60] over the same twelve-month window, so that 
+internal KPI observations and external event observations share a com-
+mon temporal frame. Because GDELT is a real-time, open-access source, 
+no additional access negotiation was required, and all retrievals are 
+reproducible from the GDELT API using the collection window reported 
+here. The two tracks were held as separate datasets during collection 
+and only brought together at the analysis stage (Section 3.4.2), ensuring 
+that internal KPI preprocessing and external event preprocessing could 
+be validated independently before any joint modeling.
+Developed by Leetaru & Schrodt (2013) [60], GDELT is a compre-
+hensive database useful for open research. It keeps track of news across 
+multiple languages and nations from broadcast, print, and online me-
+dia. Aspects of human society worldwide, such as individuals, places, 
+groups, themes, sources, feelings, quotations, and occasions, are all 
+identified and tracked in the database. The GDELT database provides 
+an extensive and current view of our global civilization and is a free 
+and public platform for performing computational analysis of global 
+data [67].
+Table 3 indicates that the internal data is entirely numeric, while the 
+external data consists of text and categorical formats. Therefore, differ-
+ent analytical approaches are required: CML techniques will be applied 
+to the numerical data representing internal KPIs (cf. Section 3.3), 
+whereas LLMs will be used to analyze the text data describing external 
+factors (cf. Section 3.4).
+To ensure reproducibility and address data quality concerns, this 
+study applied a robust preprocessing pipeline to GDELT data. Re-
+dundant or irrelevant events were removed, and noise was reduced 
+using text-cleaning steps: eliminating low-quality entries, standardizing 
+text format and encoding, removing special/non-printable characters, 
+and applying lemmatization and stemming for better semantic under-
+standing. Redundant events were filtered via automated deduplication 
+Supply Chain Analytics 16 (2026) 100248 
+5 
+I. Gupta et al.
+algorithms and rule-based criteria. Noisy entries were detected and re-
+moved using statistical outlier detection and threshold filtering, refined 
+by tokenization and stopword removal.
+For the internal dataset, which covers 12 months, missing values 
+were addressed with suitable imputation techniques to maintain in-
+tegrity. These steps prepared external and internal data for effective 
+analysis and causal discovery. This aligns with Cohrs et al. [54], 
+who emphasize scalable preprocessing as crucial for reducing bias and 
+improving causal inference accuracy in unstructured data. By incorpo-
+rating such practices, this study ensures seamless integration of GDELT 
+data into the causal discovery process while mitigating inconsistency 
+and noise.
+To validate event completeness, randomly sampled preprocessed 
+records were manually checked to confirm that critical events (e.g.,
+geopolitical crises, natural disasters) were retained and accurately cat-
+egorized. Key attributes were verified against raw data to ensure con-
+sistency and reliability.
+These preprocessing steps enhance the scalability and robustness 
+of causal discovery, particularly when leveraging LLMs for extracting 
+insights from text. They also address limitations of traditional methods, 
+such as the PC algorithm, by ensuring that the input data is both clean 
+and representative of real-world conditions.
+3.2.2. Data exploration
+The second step of the process is data exploration (cf. Fig. 1, step 2) 
+that aims to analyze the relationships between various supplier perfor-
+mance KPIs in the internal data using correlation analysis. In this study, 
+we calculate the Pearson Correlation Coefficient, which measures the 
+linear relationship between pairs of variables. The choice of Pearson 
+over rank-based alternatives (Spearman, Kendall) or nonlinear mea-
+sures (e.g., distance correlation, mutual information) is deliberate and 
+reflects the narrow role the correlation step plays here: it is used only 
+as an exploratory screen to show that pairwise linear associations are 
+weak or missing for some of the pairs of interest (notably Wrong_De-
+liveries and Backlog), motivating the shift to causal discovery. 
+Rank-based metrics such as Spearman and Kendall would have added 
+monotonicity robustness but would not have changed this conclusion, 
+and nonlinear association measures would have blurred the specific 
+point being made — namely, that a linear screen is insufficient for this 
+data and a structural causal-discovery step is needed, which is precisely 
+why RESIT (a nonlinear additive-noise method) was selected for the 
+subsequent analysis (Section 3.3.1). The Pearson correlation coefficient 
+quantifies the strength and direction of the linear relationship between 
+two continuous variables [68]. It ranges from −1 to +1, where +1 
+indicates a perfect positive linear relationship, −1 signifies a perfect 
+negative linear relationship, and 0 means no linear association. We 
+use this coefficient for preliminary data analysis to identify potential 
+relationships between supplier KPIs before conducting more complex 
+analyzes, such as regression or causal inference. Mathematically, the 
+Pearson correlation coefficient 𝑟 between two variables 𝑋 and 𝑌 is 
+defined in Eq. (1). 
+𝑟 =
+∑𝑛
+𝑖=1(𝑋𝑖 − ̄𝑋)(𝑌𝑖 − ̄𝑌 ) √∑𝑛
+𝑖=1(𝑋𝑖 − ̄𝑋)2 ∑𝑛 𝑖=1(𝑌𝑖 − ̄𝑌 )2 (1)
+where ̄𝑋 and ̄𝑌 are the mean values of 𝑋 and 𝑌 , respectively. This 
+formula captures the covariance of the variables normalized by the 
+product of their standard deviations, thus measuring how changes 
+in one variable are linearly related to changes in another. Prior to 
+conducting causal discovery, the Pearson correlation is calculated to de-
+termine the initial relationships and dependencies among the variables 
+in the dataset. In this framework, Pearson correlation is used strictly 
+as an exploratory tool. It provides a quick preliminary evaluation of 
+the direction and strength of linear associations between KPIs, helping 
+to identify potentially meaningful relationships for further testing. 
+Importantly, it does not establish causality but guides the subsequent 
+causal discovery process by focusing attention on variables that show 
+initial statistical association and by supporting expert validation. To 
+illustrate this role, we elaborate on the results of step 2 in Fig. 1. We 
+calculated the Pearson correlations among variables and presented in 
+Table 4. The table shows a strong correlation (0.77) between Back-
+logs and Special_Transport, suggesting that an increase in one 
+will inevitably increase the other. Comparably, there is a strong corre-
+lation (0.73) between Missing_Parts and Special_Transport, 
+indicating that an increase in one is associated with an increase in the 
+other. Furthermore, Backlogs and Missing_Parts have a moder-
+ate association (0.64). Moreover, the study shows a negative correlation 
+between Missing_Parts and Wrong_Deliveries, meaning that 
+a rise in Missing_Parts will result in a fall in Wrong_Deliv-
+eries and a fall in Missing_Parts will result in an increase in
+Wrong_Deliveries and vice versa. This gives an initial idea of the 
+relationship between variables.
+The data display a nonlinear connection, as seen in Fig. 2. This 
+means that an increase in Backlog may not necessarily translate into 
+an increase in Special_Transport. This observation is accurate 
+for every variable in the dataset. These data correlations form the 
+foundation for creating causal discovery algorithms. As a result, it 
+becomes essential to comprehend the relationships within the data, 
+as they provide the exploratory context for selecting algorithms and 
+guiding the subsequent causal discovery analysis.
+3.3. Internal KPIs analysis using causal machine learning
+3.3.1. Causal discovery
+Causal discovery is depicted in Fig. 1 (step 3) and aims to uncover 
+causal relationships from observational data [12]. We benchmark six 
+algorithms — PC, FCI, GES, DirectLiNGAM, RESIT, and NOTEARS — 
+selected against three explicit criteria: (a) coverage of the four major 
+methodological families in causal discovery (constraint-based, score-
+based, linear non-Gaussian, and functional/additive-noise), so that the 
+comparison is not biased toward any single assumption set [12,69]; 
+(b) suitability for the mixed continuous and discrete KPIs present in 
+operational supply-chain data; and (c) availability of mature, peer-
+reviewed open-source implementations to ensure reproducibility. Table 
+5 summarizes the assumptions and the strengths and limitations of each 
+algorithm with canonical references, so that the reader can judge when 
+each method is expected to perform well and when its assumptions 
+would be violated. In line with a design science perspective, we ad-
+vance the integration of RESIT with LLMs as the proposed approach, 
+while the remaining algorithms and the expert-derived graph serve 
+as benchmarks. The integration between LLM and CML occurs at the
+Graph Comparison & Evaluation Interface (Step 12 in Fig. 1), where 
+outputs from both pipelines are evaluated against the expert ground-
+truth graph. Specifically, the study employed the CausalLearn1 and
+LiNGAM2 packages for constraint-based, score-based, and functional 
+causal modeling methods. These standardized libraries enabled con-
+sistent benchmarking across PC, FCI, GES, DirectLiNGAM, RESIT, and 
+NOTEARS, reducing implementation bias and facilitating replication of 
+results.
+A comparative overview is provided in Table 5, which summarizes 
+the assumptions, strengths, and limitations of each algorithm with 
+canonical references.
+1 https://causal-learn.readthedocs.io/.
+2 https://pypi.org/project/lingam/.
+Supply Chain Analytics 16 (2026) 100248 
+6 
+I. Gupta et al.
+Table 4
+Correlation matrix of the supplier performance KPIs.
+ Features Backlog Special_Transport Missing_Parts Wrong_Deliver-
+ies
+Escalation 
+ Backlog 1 0.77 0.64 0.21 0.28 
+ Special_Transport 0.77 1 0.73 0.1 0.31 
+ Missing_Parts 0.64 0.73 1 −0.01 0.16 
+ Wrong_Deliveries 0.21 0.1 −0.01 1 0.29 
+ Escalation 0.28 0.31 0.16 0.29 1 
+Fig. 2. Scatter plot for the data visualization.
+Table 5
+Overview of causal discovery algorithms used in this study.
+ Algorithm Assumptions/Model type Strengths Limitations 
+ PC [70] Conditional independence tests; 
+causal sufficiency (no latent 
+confounders)
+Efficient, scalable, interpretable Degrades with latent variables; 
+CI test sensitivity
+ 
+ FCI [71] Allows latent confounding and 
+selection bias; PAG output
+Robust to hidden variables Higher computational cost; 
+partial orientations
+ 
+ GES [72] Score-based search (e.g., BIC) 
+over DAG equivalence classes
+Captures complex structures; 
+global scoring
+Sensitive to score choice; 
+potential overfitting
+ 
+ DirectLiNGAM 
+[73]
+Linear SEM with non-Gaussian 
+errors
+Identifies direction in linear 
+non-Gaussian settings
+Limited in nonlinear systems; 
+noise assumption critical
+ 
+ NOTEARS 
+[12,74]
+Continuous optimization with 
+acyclicity constraint
+Works in high dimensions; 
+differentiable objective
+Computationally heavy; 
+performance varies with 
+nonlinearity
+ 
+ RESIT [75,76] Additive Noise Model; nonlinear 
+regression + residual 
+independence
+Handles nonlinear, 
+high-dimensional interactions
+Less efficient in small purely 
+linear systems
+ 
+Supply Chain Analytics 16 (2026) 100248 
+7 
+I. Gupta et al.
+Table 6
+Ground truth causal relationships of internal KPIs based on literature.
+ Causal relationship Description Source 
+ Wrong_Deliveries → Backlog Delivery errors could lead to customer 
+dissatisfaction and potentially cause backlog.
+Paluzzi et al. [77] and Chang 
+et al. [78]
+ 
+ Wrong_Deliveries →
+Special_Transport
+Delivery errors could require special transport to 
+rectify the situation.
+Paluzzi et al. [77] and 
+Sanchez-Rodrigues et al. [79]
+ 
+ Wrong_Deliveries →
+Missing_Parts
+Demand information distortion, delivery 
+constraints, and insufficient supply chain 
+integration could potentially contribute to wrong 
+deliveries, leading to missing parts and backlog 
+in the supply chain.
+Sanchez-Rodrigues et al. [79] 
+and Chang et al. [78]
+ 
+ Missing_Parts →
+Special_Transport
+Bullwhip effect resulting in missing parts could 
+potentially result in backlogs or the need for 
+special transport.
+Chang et al. [78] and 
+Anderson et al. [80]
+ 
+ Missing_Parts → Backlog Capacity management, e.g., missing parts, can 
+affect backlogs in supply chains.
+Anderson et al. [80] 
+ Backlog → Escalation Backlog can cause escalation in the form of 
+delayed or less thorough investigations.
+Bonsall et al. [81] 
+3.3.1.1. RESIT (Main approach). RESIT models each variable as a non-
+linear function of its parents plus independent noise and tests residual 
+independence [75,76]: 
+𝑋𝑖 = 𝑓 (Pa(𝑖)) + 𝑒𝑖 (2)
+where 𝑓 is a nonlinear regressor and 𝑒𝑖 is independent of Pa(𝑖). This 
+enables discovery under nonlinear dependencies common in high-
+dimensional KPIs. Given these properties and prior evidence on non-
+linear additive-noise settings [69], we select RESIT as the core of the 
+proposed LLM + CML pipeline; other algorithms function as bench-
+marks.
+3.3.2. Ground truth graph construction
+This step aims to create a causal graph representing the ground truth 
+to be compared with causal graphs generated by causal discovery algo-
+rithms. A combination of literature analysis, surveys, and interviews 
+was conducted to construct the causal graph for the external factors 
+influencing the KPIs (cf. Fig. 1, step 10) as well as the internal KPIs (cf. 
+Fig. 1, step 4). Table 6 lists ground truth causal relationships among 
+variables in the internal KPI dataset based on literature, whereas Table 
+7 shows ground truth causal relationships among external factors and 
+internal KPIs.
+The causal relationships identified from the literature were val-
+idated through expert interviews to ensure that the literature-based 
+ground truth accurately reflects real-world conditions. Twenty experts 
+were interviewed; eighteen took part and completed the questionnaire. 
+These experts, with a combined professional experience exceeding 300 
+years, represented diverse domains such as logistics, quality manage-
+ment, material planning, supply chain operations, and data science. 
+Table 8 provides more details regarding the expertise of the experts 
+and their corresponding titles. This diversity in expertise was critical 
+to capturing the multifaceted nature of supply chain challenges and 
+ensuring a robust causal model. For instance, material planners offered 
+deep insights into how seasonal leaves and hiring temporary workers 
+contribute to human errors, while logistics managers refined causal 
+connections between strikes, roadblocks, and their cascading impact on 
+backlogs.
+Moreover, experts were deliberately selected based on their exten-
+sive industry experience and proven expertise in critical supply chain 
+domains. The selection process was designed to cover all key areas of 
+supply chain operations, ensuring that sectors such as procurement, 
+logistics, material planning, quality management, and data analytics 
+were thoroughly represented. This comprehensive approach provided a 
+well-rounded perspective that enriched the construction of the ground 
+truth causal graph and reinforced the robustness of our model.
+The importance of this diversity in expert selection aligns with 
+findings by Sezer et al. [96], who emphasize that knowledge-based 
+supply chains enriched by expert inputs play a critical role in enhancing 
+resilience and sustainability. Their study demonstrates that engaging 
+experts from varied domains contributes significantly to building com-
+prehensive and reliable causal models by incorporating a wide range of 
+perspectives and domain-specific knowledge. Following this principle, 
+our approach ensured that each expert’s unique perspective enriched 
+the causal diagram construction process, minimizing potential biases 
+and improving the model’s validity.
+To minimize bias introduced by human judgment, the ground-truth 
+construction followed a documented protocol with three elements. (1)
+Standardized instrument : every expert received the same questionnaire 
+and interview script, so that differences in responses reflect differences 
+in judgment rather than in how the question was asked. (2) Independent 
+review before aggregation: experts completed the questionnaire individ-
+ually, without seeing each other’s responses, so that consensus (when 
+it arose) was not an artefact of social conformity or the first-speaker 
+effect common in group elicitation. (3) Multi-expert agreement threshold: 
+a causal link was retained in the ground-truth graph only when en-
+dorsed by multiple experts; links supported by a single respondent were 
+flagged for discussion rather than accepted. Functional diversity across 
+logistics, material planning, quality management, procurement, and 
+supply chain analytics (cf. Table 8) further reduced the risk that a single 
+operational lens would dominate the resulting structure. This protocol 
+aligns with the best practices outlined by Sezer et al. [96] for engaging 
+diverse expert knowledge in supply chain causal modeling, and is 
+consistent with the broader emphasis on structured expert elicitation 
+and human bias as an explicit evaluation dimension applied in our prior 
+work on the same automotive supply-chain domain [97].
+We note one residual source of bias that the above protocol does 
+not fully eliminate: all 18 experts are employed by the same automo-
+tive company that provided the internal KPI data. Within-organization 
+functional diversity mitigates single-function groupthink, but cross-
+organizational perspectives — for example from tier-2 suppliers, logis-
+tics providers, or other OEMs are not represented in the ground-truth 
+graph. This limitation is acknowledged again in Section 6.1, where we 
+identify cross-organizational expert elicitation as a direction for future 
+work.
+3.3.3. Causal discovery evaluation
+The evaluation of causal discovery (cf. Fig. 1, step 5) assesses how 
+well algorithms identify causal structures by comparing the generated 
+causal graph to a ground-truth graph. We report False Discovery Rate 
+(FDR), precision, recall, F1, Structural Hamming Distance (SHD), and 
+Structural Intervention Distance (SID). Precision, recall, and F1 follow 
+their standard definitions [98,99] and are computed on edges of the 
+estimated graph against the ground truth; we do not restate the equa-
+tions here. Two conventions specific to the causal-graph setting are 
+worth noting: an edge estimated with a reversed direction is counted 
+Supply Chain Analytics 16 (2026) 100248 
+8 
+I. Gupta et al.
+Table 7
+Ground truth causal relationships involving external factors and internal KPIs based on literature.
+ Causal relationship Description Source 
+ Crime → Border Closure →
+Transportation Disruption
+Cargo theft, piracy, and other security events can 
+cause port closures and thus transportation 
+disruptions.
+Ilyas et al. [82] 
+ Availability of Ships → Transport 
+Disruption
+Demand for container transportation that is 
+higher than ship capacities can cause transport 
+disruption.
+Bilican et al. [83], Ilyas et al. 
+[82] and Rogerson et al. [84]
+ 
+ Availability of Containers →
+Transport Disruption
+Container and ship availability issues can cause 
+transport disruptions due to port closures, travel 
+restrictions, and reduced workforce.
+Ilyas et al. [82] 
+ Supplier Shutdown → Backlog Poorly performing suppliers and shutdowns are 
+associated with frequent delays and backlog.
+Burkhart and Bode [85] 
+ Semi-Conductor Issues → Missing 
+Parts/Backlog
+Disruptions in semiconductor supply can lead to 
+missing parts and backlog.
+Pellegrino et al. [86] 
+ Human Error → Wrong 
+Deliveries/Special Transport
+Latent managerial and operational errors can 
+cause wrong deliveries or the need for special 
+transport.
+Atkinson [87] and 
+Whittingham [88]
+ 
+ Pandemic-Related Demand → Missing 
+Parts/Backlog
+Fluctuations in customer demand during 
+COVID-19 caused supply chain issues like 
+missing parts and backlog.
+Barman et al. [89] 
+ Political Issues → Border Issues →
+Delay
+Political instability can disrupt manufacturing 
+supply chains, causing delays
+Kanike [90], Parast and 
+Subramanian [91] and 
+Sanchez-Rodrigues et al. [79]
+ 
+ Supplier Capacity Use → Missing 
+Parts/Backlog
+Underused supplier capacity or excess inventory 
+may indirectly lead to missing parts or backlog.
+Chang et al. [78], Anderson 
+et al. [80] and Debnath et al. 
+[92]
+ 
+ Distribution Dependency → Backlog Greater supplier dependency can increase the 
+bullwhip effect, leading to backlog.
+Zhao et al. [93] and Chang 
+et al. [78]
+ 
+ Transportation Cost Increase → Delay Rising freight rates and commodity prices can 
+reduce shipping capacity, causing delays or 
+backlog.
+Tsioumas and Papadimitriou 
+[94]
+ 
+ Inflation → Backlog Inflation and supply chain pressures can disrupt 
+operations and lead to backlog.
+Asadollah et al. [95] and Ilyas 
+et al. [82]
+ 
+Table 8
+Experts designation and experience.
+ Sl.No Expertise Year of experience 
+ 1 Purchasing/Material planning 42 years 
+ 2 Material planning 29 years 
+ 3 Supply chain analyst 29 years 
+ 4 Logistics 26 years 
+ 5 Material planning 25 years 
+ 6 Overseas supply chain 21 years 
+ 7 Logistics quality specialist 20 years 
+ 8 Overseas supply chain 21 years 
+ 9 Purchasing/Material planning 14 years 
+ 10 Business analyst 11 years 
+ 11 Supply chain specialist 11 years 
+ 12 Manager 10 years 
+ 13 Logistics/Consulting 7 years 
+ 14 Logistics specialist 7 years 
+ 15 Supply chain specialist 6 years 
+ 16 Logistic/Supplier selection 4.5 years 
+ 17 Supply chain business operations 20 years 
+ 18 Supply chain specialist 16 years 
+separately as Reverse, and FDR in this paper includes reversed edges 
+in the numerator, since directional errors are substantive failures in a 
+causal setting.
+3.3.3.1. False Discovery Rate (FDR). FDR measures the proportion of 
+incorrect causal links among all identified interactions [100,101], and 
+is computed as in Eq. (3): 
+𝐹 𝐷𝑅 = (Reverse + 𝐹 𝑃)∕(𝑇 𝑃 + 𝐹 𝑃) (3)
+Lower values indicate fewer false positives and fewer directional errors.
+3.3.3.2. Structural Hamming Distance (SHD). SHD calculates the num-
+ber of edge additions, deletions, or reversals needed to align the esti-
+mated graph with the true graph [102–104]. Lower SHD values indicate 
+closer alignment. SHD is defined in Eq. (4). 
+SHD = extra edges + missing edges + reversed edges (4)
+3.3.3.3. Structural Intervention Distance (SID). SID evaluates the dif-
+ference between two DAGs specifically for intervention-based applica-
+tions, focusing on the causal inference statements each graph provides 
+[104]. SID is the number of discrepancies in intervention distributions, 
+and expressed in Eq. (5). 
+SID(𝐺, ̂𝐺) = ∑
+𝑖∈𝑉
+|(𝐺, 𝑖) ▵ ( ̂𝐺, 𝑖)| (5)
+where ▵ denotes symmetric difference, 𝑉 is the true graph, and ̂𝐺 is the 
+estimated graph. Lower SID values indicate that the estimated graph 
+better approximates the true causal structure after intervention.
+3.3.3.4. Subset-based robustness test. To assess the robustness of the 
+discovered causal structure, we conducted a subset-based stability anal-
+ysis. Specifically, we randomly sampled 𝐾 subsets from the full dataset 
+, each containing 𝑝% of the original observations (in our case, 𝑝 = 80
+and 𝐾 = 50 ). For each subset 𝑘, where 𝑘 ∈ {1 , 2, … , 𝐾}, we applied 
+the selected causal discovery algorithm to generate a graph 𝑘. We then 
+computed each metric discussed above between each 𝑘 and the ground 
+truth causal graph groundtruth.
+The average metric across all subsets (𝑀) is given by Eq. (6). 
+M = 1 𝐾
+𝐾∑
+𝑘=1
+M(𝑘, groundtruth) (6)
+To implement these robustness tests and subsequent causal infer-
+ence steps consistently, we relied on standardized software tools rather 
+than ad hoc implementations. Specifically, we employed the Python 
+Supply Chain Analytics 16 (2026) 100248 
+9 
+I. Gupta et al.
+package PyWhy.3 This library provides robust and flexible tools for es-
+timand identification, effect estimation, and refutation. Its use ensures 
+reproducibility and efficiency while allowing us to focus on applying 
+and validating causal models rather than re-implementing established 
+algorithms. Moreover, PyWhy offers standardized robustness checks, 
+such as placebo interventions and random common cause tests, which 
+were later applied to validate our results. The use of PyWhy ensured 
+reproducibility across robustness checks and inference steps, forming 
+the foundation for the estimand identification process described next.
+3.3.4. Causal estimand identification
+Having completed the causal discovery process to identify relation-
+ships between variables, we now move to causal inference methods to 
+estimate and validate causal effects.
+Causal estimand identification (cf. Fig. 1, step 6) defines which vari-
+ables and paths to adjust for isolating the causal effect of a treatment 
+(cause) on an outcome (effect) [105]. This process ensures accurate 
+estimation of the causal impact of an intervention by using criteria 
+based on causal assumptions. Key criteria to identify a causal estimand 
+include:
+1. Back-door criterion adjusts for confounders to block non-causal 
+paths between treatment and outcome, isolating the direct causal 
+effect [106].
+2. Front-door criterion uses mediators to capture the causal path-
+way when direct confounder adjustment is not feasible [107].
+3. Instrumental Variables (IV) employs external variables that 
+influence the treatment without affecting the outcome directly, 
+useful when unobserved confounders are present [108].
+4. Mediation (Direct and indirect effect identification) decom-
+poses the total causal effect into direct and indirect effects, 
+where intermediaries mediate the influence on the outcome 
+[109].
+In this study, the back-door criterion is applied. The choice is 
+deliberate: the front-door criterion requires a fully mediating variable 
+not confounded with the outcome, which our KPI set does not cleanly 
+provide; instrumental variables require an external variable affecting 
+the treatment but not the outcome, which is difficult to justify in 
+our operational supplier data; and mediation decomposition targets 
+direct-versus-indirect effect separation, which is not the quantity of 
+interest here. With the main confounders of Backlog on Escalation 
+(Missing Parts, Wrong Deliveries, Special Transport) observable in the 
+internal KPI dataset, the back-door criterion is the appropriate and 
+minimally assumption-laden choice. This approach blocks non-causal 
+paths, isolating the true causal effect. For a set of variables 𝑍 satisfying 
+the back-door criterion, the causal effect of treatment 𝑇 on outcome 𝑌
+is represented in Eq. (7). 
+𝑃 (𝑌 ∣ do(𝑇 )) =
+∑
+𝑧
+𝑃 (𝑌 ∣ 𝑇 , 𝑍 = 𝑧)𝑃 (𝑍 = 𝑧), (7)
+where do(𝑇 ) denotes intervention on 𝑇 , and summing over 𝑍 adjusts 
+for confounding, yielding a causal rather than correlational effect.
+3.3.5. Causal effect estimation
+Causal effect estimation (cf. Fig. 1 step 7) quantifies the effect of a 
+treatment on an outcome, isolating it from confounding factors [110]. 
+With the back-door criterion selected, methods such as linear regres-
+sion, propensity score matching, inverse probability weighting, and 
+stratification can estimate causal effects. Linear regression was chosen 
+for three reasons: (i) the back-door adjustment set is low-dimensional, 
+so more flexible estimators such as doubly robust estimation or match-
+ing offer limited benefit in this regime; (ii) the coefficient 𝛽1 is di-
+rectly interpretable as the adjusted causal effect, which is useful for 
+3 https://www.pywhy.org/.
+managerial communication; and (iii) the refutation tests reported in 
+Section 3.3.6 provide an empirical check on the stability of the estimate 
+under alternative specifications. The assumption this choice carries is 
+standard: given the back-door adjustment set, the conditional relation-
+ship between treatment and outcome is approximately linear at the 
+margin. We do not claim the full system is linear — the nonlinearity 
+among KPIs is precisely why RESIT was selected for structural discovery 
+in Section 3.3.1 — but once confounders are adjusted for, the con-
+ditional treatment-outcome relationship is well approximated by the 
+linear form used here. This separation of concerns, nonlinear discovery 
+with linear effect estimation, is consistent with standard practice in 
+applied causal inference.
+The linear regression model estimating the causal effect is expressed 
+in Eq. (8). 
+𝑌 = 𝛽0 + 𝛽1𝑇 +
+𝑛∑
+𝑖=2
+𝛽𝑖𝑍𝑖 + 𝜀 (8)
+where 𝑌 is the outcome, 𝑇 is the treatment, 𝑍𝑖 are confounders, 𝛽0 is 
+the intercept, 𝛽1 represents the causal effect of 𝑇 on 𝑌 , 𝛽𝑖 represents 
+the causal effect of 𝑍𝑖 on 𝑌 , and 𝜀 is the error term. Here, 𝛽1 captures 
+the average change in 𝑌 for a unit change in 𝑇 , holding confounders 
+constant.
+3.3.6. Refutation of the obtained estimate
+Causal refutation (cf. Fig. 1, step 8) is the sensitivity-analysis stage 
+of the pipeline: it tests the robustness of causal effect estimates by 
+perturbing the inputs and assumptions and asking whether the estimate 
+moves. Three complementary perturbations are applied — an added 
+random confounder (sensitivity to unobserved confounding), a random 
+data subset (sensitivity to the specific sample), and a placebo treatment 
+(sensitivity to spurious signal) giving a three-way check on the stability 
+of any reported effect [111].
+3.3.6.1. Add a random common cause (Confounder refuter). This method 
+introduces a random variable as a ‘‘fake confounder’’ to check the 
+sensitivity of the causal estimate to irrelevant variables [112]. If adding 
+this random confounder changes the causal estimate significantly, it 
+suggests that the model is sensitive to confounders. The original model 
+is defined in Eq. (9). 
+𝑌 = 𝛽0 + 𝛽1𝑋 + 𝛽2𝑍 + 𝜀, (9)
+is refitted through Eq. (10). 
+𝑌 = 𝛽0 + 𝛽1𝑋 + 𝛽2𝑍 + 𝛽3𝑅 + 𝜀, (10)
+where 𝑅 is the random variable. Observing significant changes in 𝛽1
+may indicate model instability.
+3.3.6.2. Use subset of data (Random subset refuter). This method es-
+timates the causal effect on random data subsets to test consistency 
+across samples [113]. Let 𝜃 be the estimated causal effect from the full 
+dataset. For each subset 𝑆𝑖, calculate 𝜃𝑆𝑖 using Eq. (11). 
+𝜃𝑆1 , 𝜃𝑆2 , … , 𝜃𝑆𝑛 . (11)
+Significant variation among 𝜃𝑆𝑖 values suggests that the initial 
+estimate 𝜃 may lack robustness.
+3.3.6.3. Use a placebo treatment (Placebo test). This method tests the 
+model with a placebo treatment, a random variable, to see if it mis-
+takenly identifies a causal effect [114]. Replacing 𝑋 with placebo 𝑃 is 
+expressed in Eq. (12). 
+𝑌 = 𝛽0 + 𝛽1𝑃 + 𝛽2𝑍 + 𝜀. (12)
+If 𝛽1 for 𝑃 is significant, the model may be capturing spurious 
+associations rather than actual causal relationships.
+Supply Chain Analytics 16 (2026) 100248 
+10 
+I. Gupta et al.
+3.3.7. Counterfactual scenario - supplier performance simulations
+Causal estimation quantifies the effect of a treatment (intervention) 
+on an outcome, while counterfactual inference simulates alternative 
+scenarios to predict what might have happened had the treatment 
+been different. Together, these methodologies provide a robust un-
+derstanding of both observed and hypothetical causal dynamics [42,
+115]. Counterfactual inference, as a natural extension of causal effect 
+estimation, plays a critical role in simulating hypothetical outcomes 
+based on causal models. Building on the causal estimates derived in 
+Sections 3.3.4 and 3.3.5, counterfactual scenarios allow exploration of 
+alternative realities by altering treatment variables (T) and assessing 
+their impact on outcome variables (Y).
+The goal of a counterfactual scenario (cf. Fig. 1, step 9) is to 
+simulate alternative outcomes by altering certain variables (interven-
+tions) within the system to understand their potential impact on the 
+observed data. This process helps predict how changes in supplier 
+performance metrics would affect the overall system, providing insights 
+for decision-making and strategic planning.
+In this research, we employ the DoWhy-GCM4 package that has 
+a whatif module for counterfactual analysis. It computes counter-
+factuals and forecasts the consequences of interventions [44]. The 
+input of the counterfactual analysis is a directed acyclic graph (DAG) 
+showing the causal links among the variables in the system, together 
+with tabular observational data for these variables, to use DoWhy-
+GCM. What-if simulations and causal queries can be done, including 
+assessments of complex interventions and counterfactuals at the point 
+or population level, once a graphical causal model (GCM) has been 
+fitted.
+counterfactual_samples function in the DoWhy-GCM pack-
+age is used to develop the counterfactual scenario. It explores ‘‘what-if’’ 
+scenarios by predicting what would have happened if certain conditions 
+in a system were different. It allows us to simulate changes (inter-
+ventions) in a variable and observe how that change would impact 
+the outcome, all based on an established causal model. For instance, 
+it can help answer questions like ‘‘What if a supply chain delay had 
+not occurred?’’ and estimate the resulting impact on other performance 
+metrics. Mathematically, a counterfactual scenario can be represented 
+in Eq. (13). 
+𝑌𝑋=𝑥 = 𝑓 (𝑋 = 𝑥, 𝑈) (13)
+where 𝑌𝑋=𝑥 is the outcome (𝑌 ) that would happen if the intervention 𝑋
+were set to a specific value 𝑥, 𝑓 is the function (causal model or causal 
+graph) that describes how variables interact, and 𝑈 represents the other 
+factors or random influences that stay the same in the counterfactual 
+scenario.
+The result of the function is the estimated counterfactual data. 
+Using the counterfactual_samples function, we can compute 
+counterfactuals in three steps, as described by [116].
+• Step 1 (Abduction): Inferring the latent variables or unobserved 
+factors (𝑈 ) from the observed data.
+• Step 2 (Action): Simulating the effect of an intervention (e.g., set-
+ting 𝑋 = 𝑥) by altering the values in the structural equations.
+• Step 3 (Prediction): Make predictions about the future (𝑌 ) based 
+on a better understanding of the past and the newly created 
+condition (𝑋 = 𝑥), and calculating the counterfactual response.
+3.4. Analysis of external factors affecting the suppliers’ internal KPI
+3.4.1. Causal graph construction using LLM
+The idea behind the causal graph construction using LLM (cf. Fig. 1, 
+step 11) is to use large language models (LLMs) — like GPT-3.5 — to 
+4 https://www.pywhy.org/dowhy/v0.10.1/user_guide/modeling_gcm/
+index.html.
+analyze massive volumes of textual data in order to identify causal links 
+inside a system. Large-scale internet data is used to train LLMs, and they 
+are then refined through reinforcement learning with human feedback 
+(RLHF). This allows LLMs to process natural language prompts and 
+offer intricate causal insights that might be difficult to obtain with 
+conventional data analysis techniques.
+3.4.1.1. Prompt design and refinement for causal discovery. The prompt 
+design is a key aspect of utilizing LLMs like GPT-3.5 for generating 
+causal diagrams. In this study, the prompts were structured to guide 
+the LLM in identifying and expanding causal relationships, as well as 
+integrating new external factors such as strikes, holiday seasons, and 
+other disruptions. For instance, the prompts explicitly required the LLM 
+to process causal links in the format expressed in Eq. (14)
+[𝑉 𝑎𝑟𝑖𝑎𝑏𝑙𝑒𝐴] ⟶ [𝑉 𝑎𝑟𝑖𝑎𝑏𝑙𝑒𝐵] (14)
+while considering external factors like 
+[𝐻𝑜𝑙𝑖𝑑𝑎𝑦𝑆𝑒𝑎𝑠𝑜𝑛 ] ⟶ [𝐻𝑢𝑚𝑎𝑛𝑅𝑒𝑠𝑜𝑢𝑟𝑐𝑒𝑆ℎ𝑜𝑟𝑡𝑎𝑔𝑒 ] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠 ] (15)
+and expanding upon them. Furthermore, the prompts instructed the 
+LLM to generate causal diagrams with at least 25 levels of depth and a 
+minimum of six parent nodes for each variable.
+To refine the LLM’s causal inference capability, we tested a se-
+quence of prompt styles. We began with a direct prompt asking the 
+model to identify causal links, but results were often vague or incom-
+plete. To improve this, we introduced step-by-step prompts using a 
+chain-of-thought approach.
+Next, we enforced structured output — clearly defined ‘‘Cause →
+Effect’’ pairs — to reduce ambiguity and increase interpretability. Later, 
+we added contextual examples to guide the model with templates 
+of correct causal inferences. This iterative refinement improved the 
+accuracy, clarity, and completeness of generated causal graphs.
+Each prompt adjustment led to measurable gains in result quality. 
+The shift from open-ended prompts to structured reasoning helped the 
+model better capture variable relationships, reducing omissions and 
+logical errors. The explicit format enabled easier validation of causal 
+claims.
+The ‘‘A causes B’’ structure made outputs more precise and readable. 
+Including contextual examples reduced common errors like confusing 
+correlation with causation. These refinements addressed limitations of 
+earlier approaches, yielding causal diagrams that were more logical and 
+aligned with real-world dynamics.
+This process aims to auto-generate a comprehensive causal network, 
+incorporating known and novel causal links, particularly from external 
+factors. Using Node-RED and GPT-3.5, we systematically explored how 
+external disruptions (e.g., strikes, seasonal changes) impact supplier 
+KPIs (e.g., backlogs, delivery delays), producing an updated causal 
+model. This enhances understanding of external–internal supply chain 
+interactions, supporting better decisions and interventions.
+We provide detailed examples of the prompts used to generate the 
+initial causal structure, how they were refined step by step, and how 
+the resulting causal graphs were integrated into the required Node-RED 
+flow structure in Appendix.
+3.4.1.2. Alignment with structured prompt design research. This approach 
+aligns with recent advancements in structured prompt design. Wang 
+et al. [117] propose a Hierarchical Prompt Tuning (HPT) method, 
+emphasizing that ‘‘the structured linguistic knowledge significantly im-
+proves the generated outputs by integrating explicit hierarchies into the 
+model’s prompt understanding’’ [117]. Although their work focuses on 
+vision-language models, the principle of leveraging structured prompts 
+to guide models effectively applies to causal diagram generation as 
+well. In the context of supply chain risk management, HPT can be 
+used to design prompts that reflect hierarchical dependencies among 
+disruptions and key performance indicators. For example, a top-level 
+prompt could represent external disruptions such as strikes leading 
+Supply Chain Analytics 16 (2026) 100248 
+11 
+I. Gupta et al.
+to delivery delays, while nested prompts capture their downstream 
+effects on backlogs and escalation. Similarly, hierarchical prompt de-
+sign can help capture cascading risks from macroeconomic shocks, 
+such as inflation leading to supplier financial stress, which in turn 
+causes late deliveries. By structuring prompts in this layered way, 
+HPT helps large language models capture both high-level risks and 
+their propagation through supply chain operations, resulting in more 
+realistic and actionable causal graphs.
+3.4.1.3. Leveraging GPT-3.5 and Node-RED for causal graph generation. 
+The GPT 3.5 model5 was utilized in this research (OpenAI). According 
+to Kasneci et al. [118], the GPT (Generative Pre-trained Transformer) 
+model developed by OpenAI was the first LLM that was publicly re-
+leased in 2018 [118,119]. GPT answers queries, generates writing that 
+reads like human speech and assists with activities like summarizing 
+and translating by achieving human-like completion. The GPT-2 and 
+GPT-3 models, which have more sophisticated features built upon the 
+original model, were eventually created by OpenAI. Natural language 
+processing (NLP) has come a long way since the advent of GPT, which 
+also created many new opportunities for distribution in both academic 
+and industrial settings. These model revisions have been crucial ad-
+vancements in the field of NLP since they have broadened the model’s 
+potential and uses.
+Key innovations, such as extensive pre-training that incorporates 
+knowledge from the entire World Wide Web, fine-tuning through in-
+struction, and Reinforcement Learning from Human Feedback (RLHF), 
+have significantly enhanced the adaptability and performance of LLMs 
+[120].
+We used Node-RED,6 an open-source solution developed by IBM 
+Emerging Technology to generate the causal graph. We chose Node-
+RED because it offers a visual, user-friendly way to connect different 
+components without requiring extensive coding. Its flexible, modular 
+design made integrating GPT-3.5 with other tools easy, allowing us to 
+automate the process of generating causal graphs. Plus, its drag-and-
+drop interface made testing and refining our setup much faster, helping 
+us focus on the insights rather than spending time on complex coding. 
+The setup involves posing a question, processing it using the GPT 3.5 
+model, and automatically generating the corresponding causal graph.
+LLMs generate a causal graph by analyzing variables and deter-
+mining their cause–effect relationships. The causal diagrams gener-
+ated through this method were subsequently validated against expert-
+verified ground truth models to ensure their accuracy and relevance. 
+This iterative combination of prompt design and expert validation 
+highlights the reliability of LLMs in advancing causal modeling for 
+dynamic, real-world scenarios. The following is the LLM prompt used 
+to generate the causal graph in this research.
+3.4.1.4. Causal reasoning. For causal reasoning, the LLM can answer 
+specific questions based on a given causal graph or model. The prompt 
+can be designed to provide causal relationships and ask the LLM to 
+reason about potential outcomes or interventions. The following is an 
+example of the prompt for causal reasoning used in our research.
+The resulting causal graphs from this step are then compared with 
+the ground truth causal graph generated using expert knowledge as 
+described in Section 3.3.2 (cf. Fig. 1, step 12).
+5 https://platform.openai.com/docs/models.
+6 https://nodered.org.
+Listing 1: Prompt for reasoning.
+You are a helpful assistant for
+counterfactual reasoning and causal
+reasoning . Answer the question based
+on the causal links given in the
+updated causal model
+3.4.1.5. Reconciling LLM use with the interpretability goal. A reasonable 
+concern arises from embedding an LLM inside a pipeline whose purpose 
+is to improve interpretability over black-box ML: LLMs are themselves 
+opaque, layered models, and their internal reasoning is not directly 
+inspectable [121]. Our design mitigates this tension at three levels 
+rather than by treating the LLM itself as interpretable.
+First, the LLM is not used as the decision model. Its role is confined 
+to proposing causal structure from unstructured text; the resulting graph 
+is a symbolic, fully inspectable DAG that is then subjected to the 
+same expert validation, refutation testing, and counterfactual analysis 
+as the CML-derived graphs (cf. Sections 3.3.6 and 3.3.7). The decision-
+relevant artefact — the graph and the risk score built on it — is 
+transparent even when its upstream source is not.
+Second, the LLM output is structurally constrained and externally 
+auditable. Prompts require a fixed [A] --> [B] syntax
+(Section 3.4.1.1), and the Node-RED workflow renders every generated 
+edge as a visible node in a flow that a user can inspect, edit, or 
+reject. This converts free-form LLM generation into a step that produces 
+traceable, diff-able artefacts rather than opaque embeddings or scores.
+Third, we triangulate LLM output against expert ground truth 
+both structurally (edge-level overlap, Section 4.2.1) and qualitatively 
+(domain-expert review of interpretability and actionability,
+Section 4.2.1). Where the LLM and experts disagree, the expert struc-
+ture is retained—the LLM accelerates construction but does not over-
+ride domain validation.
+This layered approach aligns with recent work on LLM interpretabil-
+ity, which argues that for high-stakes applications the practical route 
+is not to make LLMs internally transparent but to constrain their 
+outputs to auditable forms and validate them externally [121,122]. Our 
+pipeline instantiates that principle: the LLM is a generative proposer, 
+the DAG is the interpretable object, and the experts remain the final 
+arbiters. With these safeguards in place, the validated LLM-derived 
+structure can be operationalized in downstream decision artefacts such 
+as the risk score described next.
+To build the risk score application, we utilized textual data (cf. 
+Table 3) from the GDELT, applying Causal NLP techniques to estimate 
+causal effects, and the Weighted Sum Model (WSM) to compute the risk 
+score.
+3.4.2. Causal NLP
+This step applies natural language processing (NLP) techniques to 
+estimate causal effects from textual data in the GDELT using
+CausalNLP,7 a toolkit for causal inference with observational data that 
+includes text [66]. CausalNLP applies causal inference techniques to 
+text data, making it possible to extract meaningful cause-and-effect re-
+lationships from unstructured sources like GDELT. Its built-in tools for 
+handling observational data, estimating causal effects, and mitigating 
+confounders made it a practical choice to integrate natural language 
+processing with causal analysis, ensuring that our findings were data-
+driven and interpretable. Based on a comparison of the LLM-generated 
+causal graph and the ground truth, the LLM-generated graph was 
+chosen for this study (see Section 4.2.1). While GDELT data had some 
+gaps relative to the ideal variables indicated by the LLM-generated 
+7 https://github.com/amaiya/causalnlp.
+Supply Chain Analytics 16 (2026) 100248 
+12 
+I. Gupta et al.
+graph, it provided enough information to support the development of 
+the risk score application.
+In this study, the Average Treatment Effects (ATE) were calculated 
+using data from GDELT, employing the S-learner meta-learner. The S-
+learner was selected over T-learner and X-learner variants because the 
+external-event treatments extracted from GDELT are sparse — many 
+event types have few treated observations — and the T- and X-learners, 
+which fit separate outcome models on the treated and control groups, 
+are known to be unstable in this regime. The S-learner, by fitting a 
+single model with treatment as a feature, pools information across 
+groups and is more robust when the treated sample is small. The 
+assumption carried by this choice is that the outcome model is flexible 
+enough to capture any treatment-effect heterogeneity present; this is 
+supported here by the gradient-boosted learners used internally by 
+CausalNLP. The S-learner model is defined in Eq. (16). 
+𝜇(𝑥, 𝑤) = 𝐸[𝑌𝑜𝑏𝑠 ∣ 𝑋 = 𝑥, 𝑊 = 𝑤] (16)
+Here:
+• 𝑊 represents the treatment (e.g., whether a disruption occurred),
+• 𝑌𝑜𝑏𝑠 denotes the observed outcomes (e.g., Internal KPI such as 
+backlog),
+• 𝑋 refers to the other features or variables describing each indi-
+vidual or instance.
+The estimated treatment effect for an individual, called the Individ-
+ual Treatment Effect (ITE), is calculated using Eq. (17). 
+̂ 𝜏(𝑥) = ̂ 𝜇(𝑥, 1) − ̂ 𝜇(𝑥, 0) (17)
+In this equation:
+• ̂ 𝜏(𝑥) is the ITE, which measures the difference in predicted out-
+comes when the treatment is applied (𝑤 = 1 ) versus not applied 
+(𝑤 = 0).
+• ̂ 𝜇(𝑥, 𝑤) is the predicted outcome based on the features 𝑥 and the 
+treatment status 𝑤, derived from the S-learner model trained on 
+the observed data.
+The ATE, which represents the average impact of the treatment 
+across all individuals, is calculated by averaging the ITEs (cf. Eq. (18)) 
+ATE = 1 𝑛
+𝑛∑
+𝑖=1
+̂ 𝜏(𝑥𝑖) (18)
+where:
+• 𝑛 is the total number of individuals (sample size),
+• ̂ 𝜏(𝑥𝑖) is the ITE for the 𝑖th individual.
+In the context of this study, the ATE quantifies the average differ-
+ence in Internal KPI (e.g., backlog) between the treated group (where 
+a disruption occurred) and the untreated group (where no disruption 
+occurred).
+3.4.3. Weighted sum model
+Our research determines the risk score using the Weighted Sum 
+Model (WSM) (cf. Fig. 1, step 14). WSM was selected over more elabo-
+rate multi-criteria decision-making methods such as AHP or TOPSIS, 
+including recent hybrid ML+MCDM designs for explainable supplier 
+evaluation in Supply Chain Analytics [123], for three reasons: (i) our cri-
+teria weights are derived from causal ATE values rather than pairwise 
+expert comparisons, so the pairwise-comparison machinery central to 
+AHP is not required and would introduce an additional elicitation step 
+not otherwise needed; (ii) WSM produces a transparent, additive score 
+that is directly interpretable by supply-chain managers as ‘‘weighted 
+causal impact’’, in keeping with the interpretability goal of the overall 
+pipeline; and (iii) because WSM is linear in the weights, any change 
+in an ATE or a weight propagates into the score in a traceable way, 
+which is essential for the auditable risk-score use case. The assumption 
+WSM carries is that the criteria contribute additively and independently 
+to the overall risk score; given that the causal DAG already separates 
+direct from indirect paths, this assumption is consistent with how the 
+ATE values enter the score. The score for each alternative (labeled as 
+𝑊 𝑆𝑖) is calculated by adding together the values of different criteria 
+(labeled as 𝑎𝑖𝑗 ), where each criteria value is multiplied by its respective 
+weight (labeled as 𝑤𝑗 ), reflecting its importance [124].
+The WSM-score is defined in Eq. (19). 
+𝑊 𝑆𝑖 =
+𝑛∑
+𝑗=1
+𝑤𝑗 ⋅ 𝑎𝑖𝑗 (19)
+where 𝑊 𝑆𝑖 is the weighted score of the 𝑖th alternative. 𝑤𝑗 is the weight 
+of the 𝑗th criterion. 𝑎𝑖𝑗 is the score of the 𝑖th alternative on the 𝑗th 
+criterion.
+In our research, 𝑎𝑖𝑗 represents the Average Treatment Effect (ATE), 
+which quantifies the average impact of a disruption or treatment 𝑗 on 
+the internal KPI or outcome 𝑖 under varying conditions. For example, 
+𝑗 may represent the disruptions (e.g., supplier shutdown, pandemic), 
+affecting the outcome 𝑖, such as Backlog. 𝑤𝑗 denotes the importance 
+of the external factor 𝑗 affecting the outcome (e.g., the pandemic has 
+a higher weight than weather conditions) that affects the internal KPI 
+outcome. Weights 𝑤𝑗 are allocated to the computed ATE values (𝑎𝑖𝑗 ), 
+with the weighting based on expert judgment. Subsequently, the overall 
+risk score 𝑊 𝑆𝑖 was obtained by summing the weighted ATE values of 
+all variables.
+4. Results
+To evaluate the outcomes of our methodology, a proof-of-concept 
+(POC) was created to show the potential of CML in supply chain 
+decision-making. The POC investigates the connection between sup-
+plier performance key performance indicators (KPIs) namely Wrong 
+Deliveries, Backlog, Missing Parts, and Special Transport and supplier 
+escalation levels. Through an interactive Jupyter notebook, the results 
+of this POC demonstrate how various KPIs are causally related to one 
+another (cf. Research Objective 1 and Fig. 1, steps 3–5) and how 
+KPI changes, like lowering backlogs, can have a significant impact on 
+supplier escalation levels, demonstrating how it can be used as supplier 
+performance simulations (cf. Research Objective 3 and Fig. 1, steps 
+6–9).
+The POC’s application of Causal Inference sheds important light on 
+the intricate workings of the operational supply chain. This underscores 
+the capacity of CML to facilitate well-informed decision-making. Fur-
+thermore, we applied causal discovery using LLMs to determine the 
+external factors influencing the internal Key Performance Indicators 
+(KPIs) (cf. Research Objective 2 and Fig. 1 steps 10–12). We then 
+incorporated these discoveries into an application to evaluate the risks 
+posed by the providers by calculating risk scores (cf. Research Objective 
+3 and Fig. 1 steps 13–14). The final section of the results presents the 
+discussion of internal supplier KPIs (cf. Research Objectives 1 and 3, 
+Fig. 1 steps 2–9) and the external factors influencing the internal KPIs 
+(cf. Research Objectives 2 and 3, Fig. 1 steps 10–14).
+4.1. Supplier performance internal KPI results
+Data collected from the leading automotive company was cleaned 
+and prepared for analysis. As detailed in Section 3.2.2, exploratory 
+analyzes (including correlation analysis and visualizations) were used 
+to understand initial variable relationships and to guide the choice of 
+causal discovery algorithms. Building on this preparatory work, the 
+results presented here focus on the causal discovery outcomes and their 
+validation against expert-derived ground truth graphs.
+4.1.1. Ground-truth graph of supplier internal KPI
+The ground-truth graph (cf. Fig. 3) was extracted after interviewing 
+the domain experts (cf. Section 3.3.3 and Fig. 1 step 4).
+Supply Chain Analytics 16 (2026) 100248 
+13 
+I. Gupta et al.
+Fig. 3. Ground-truth graph of supplier Internal KPIs.
+4.1.2. Causal discovery results
+The causal discovery experiments were implemented using the li-
+braries described in Section 3.3.1, applied to supplier performance 
+KPIs (cf. Table 4). These experiments aimed to uncover meaningful 
+cause–effect relationships while benchmarking the algorithms in terms 
+of accuracy, interpretability, and alignment with expert-derived causal 
+graphs.
+Table 9 presents the comparative results of the causal discovery 
+methods and their interpretation.
+As shown in Table 9, the PC algorithm identifies Escalation
+as influenced by Backlog, Wrong_Deliveries, and Special_
+Transport, with Missing_Parts indirectly impacting via Spe-
+cial_Transport. This reflects how multiple inefficiencies
+contribute to escalation. Circular edges in the FCI graph imply un-
+certainty or unmeasured confounders, suggesting more data or refine-
+ment is needed to clarify links involving Missing_Parts, Wrong_
+Deliveries, and Special_Transport. The GES graph displays 
+undirected edges between Backlog and Escalation, and Wrong_
+Deliveries and Escalation, indicating association without
+causal direction.
+DirectLiNGAM shows Special_Transport, Missing_Parts, 
+and Wrong_Deliveries as contributors to Backlog, with Wrong_
+Deliveries directly affecting Escalation. These dependencies as-
+sume linear relationships where changes in one variable proportionally 
+affect another.
+RESIT highlights Wrong_Deliveries as a key intermediary, in-
+fluenced by Missing_Parts and affecting Backlog, Special_
+Transport, and Escalation, capturing complex non-linear de-
+pendencies. In NOTEARS, Backlog is central affected by Wrong_
+Deliveries and Special_Transport and drives escalation dy-
+namics. Wrong_Deliveries remains directly linked to Escala-
+tion.
+While these algorithms handle linear and non-linear relations, PC, 
+GES, and NOTEARS diverged from the expert-defined ground truth (cf. 
+Fig. 3). RESIT performed best by handling mixed data types and iden-
+tifying valid causal directions through independence tests. However, 
+it incorrectly identified Missing_Parts as causing Wrong_ De-
+liveries. Expert validation reversed this, reaffirming that Wrong_
+Deliveries leads to Missing_Parts. This emphasizes the need 
+for human-in-the-loop systems.
+Supporting this, da Silva et al. [125] note that causal discovery 
+algorithms may misalign with expert knowledge under limited data. 
+Similarly, Ghai and Mueller [126] emphasize that human-in-the-loop 
+models outperform automated ones in trust and interpretability.
+Correlation analysis (Table 4) shows Missing_Parts and Spe-
+cial_Transport are strongly correlated with Backlog, but not 
+with Wrong_Deliveries. Yet, the causal graph reveals Wrong_
+Deliveries influences Backlog, and Backlog affects Escala-
+tion, despite weak correlations. This confirms that correlation alone 
+may not capture true dependencies, whereas causal graphs offer deeper 
+insight.
+4.1.3. Causal discovery evaluation metrics
+We assessed the causal discovery graphs by comparing them to 
+the ground truth graph using the metrics elaborated in Section 3.3.3 
+(cf. Fig. 1 step 5). We implemented the metrics using gCastle Python 
+module [127]. The ground truth and causal discovery graphs are com-
+pared, and the findings are displayed below in Table 10 (see Research 
+Objective 1). When comparing the performance of the algorithms for 
+producing causal graphs to the ground truth graph, these metrics are 
+useful tools.
+In the context of supply chain risk management, these evaluation 
+metrics provide clear insights into the reliability of discovered causal 
+relationships. For example, low FDR and SHD values indicate fewer 
+spurious or missing causal links; high precision confirms the reliabil-
+ity of identified dependencies (e.g., Backlog →Escalation); and 
+high recall ensures that no critical drivers (e.g., Missing Parts
+→Backlog) are overlooked. A balanced F1-score reflects both relia-
+bility and completeness. As shown in Table 10, RESIT outperformed 
+the other algorithms across these measures, with FDR of 0.1429, SHD 
+of 1, and high precision and recall (both 0.8571). This makes RESIT 
+especially suitable for data-driven supply chain decision-making where 
+accuracy and interpretability are essential.
+4.1.4. Causal inference results
+Causal Estimand Identification, Estimation, and Refutation 
+The causal inference analysis produced results for estimand iden-
+tification, effect estimation, and robustness refutation. Following the 
+procedures outlined in Sections 3.3.4–3.3.6, estimands were identified 
+using the backdoor criterion, causal effects were estimated through 
+linear regression, and robustness was examined with refutation tests.
+This section presents the results of steps 6–8 in Fig. 1. As explained 
+in Section 3.3.4, we chose backdoor criterion to identify causal es-
+timand. We employed linear regression for the causal estimation as 
+elaborated in Section 3.3.5. In this research, we calculated the causal 
+effect to check whether our assumption about reducing the backlog and 
+its effect on escalation is valid. The result of causal estimation using 
+backdoor linear regression is illustrated as follows.
+ ## Estimate
+ Mean value: 9.203951309988412e-07
+ Causal Estimate is 9.203951309988412e-07
+The ground truth graph (cf. Fig. 3) along with internal KPI data was 
+estimated before proceeding with the counterfactual analysis. The re-
+sults of the causal estimation above also support our hypothesis that an 
+increase in Backlogs leads to an increase in Escalation. The treat-
+ment variable (Backlog) and the outcome variable (Escalation) 
+show a marginally positive association on average, with an estimated 
+Average Treatment Effect (ATE) of 9.2 × 10−7. Specifically, an increase 
+of one unit in Backlog is associated with an estimated increase of 
+9.2 × 10 −7 units in Escalation. Conversely, a projected decrease of 
+the same magnitude but opposite sign in Escalation is linked to a 
+one-unit decrease in Backlog.
+The causal refutation was performed using three methods explained 
+in Section 3.3.6. The following shows the results of those three meth-
+ods.
+Supply Chain Analytics 16 (2026) 100248 
+14 
+I. Gupta et al.
+Table 9
+Causal discovery results that discovered causal relations using different methods.
+ Causal discovery method Causal graph Interpretation 
+ PC
+ Missing_Parts has a causal impact on Special_Transport
+Wrong_Deliveries and Special_Transport have a causal 
+impact on Backlog. 
+Wrong_Deliveries, Special_Transport, and Backlog
+have a causal impact on Escalation.
+ 
+ FCI
+ Missing_Parts and Wrong_Deliveries have a causal 
+impact on Backlog. 
+Missing_Parts and Wrong_Deliveries have a causal 
+impact on Special_Transport.
+Impact of Backlog on Special_Transport is not clear.
+Special_Transport, Wrong_Deliveries, and Backlog
+have a causal impact on Escalation.
+ 
+ GES
+ Backlog and Wrong_Deliveries have a causal impact on
+Special_Transport and Missing_Parts.
+No causal impact on Escalation.
+ 
+ DirectLiNGAM
+ Wrong_Deliveries has a causal impact on Escalation. 
+Wrong_Deliveries, Special_Transport, and
+Missing_Parts have a causal impact on Backlog.
+ 
+ RESIT
+ Missing_Parts has a causal impact on Backlog,
+Wrong_Deliveries, and Special_Transport.
+Wrong_Deliveries has a causal impact on Backlog and
+Special_Transport.
+Backlog has a causal impact on Escalation and
+Special_Transport.
+ 
+ (continued on next page)
+Supply Chain Analytics 16 (2026) 100248 
+15 
+I. Gupta et al.
+Table 9 (continued).
+ Causal discovery method Causal graph Interpretation 
+ NOTEARS
+ Backlog has a causal impact on Wrong_Deliveries,
+Special_Transport, Escalation, and Missing_Parts. 
+Wrong_Deliveries and Special_Transport have a causal 
+impact on Escalation.
+Special_Transport has a causal impact on Missing_Parts.
+ 
+Table 10
+Causal discovery evaluation metrics results.
+ Causal discovery algorithms FDR SHD Precision Recall F1 score 
+ PC 0.5 6 0.5 0.4286 0.4615 
+ NOTEARS 0.7143 7 0.2857 0.2857 0.28 
+ DirectLiNGAM 0.5 6 0.5 0.2857 0.3636 
+ RESIT 0.1429 1 0.8571 0.8571 0.85 
+ Refute: Add a random common cause
+ Estimated effect: 9.203951309988412e-07
+ New effect: 9.289232150067051e-07
+ p value: 0.96
+ Refute: Use a subset of data
+ Estimated effect: 9.203951309988412e-07
+ New effect: 9.31837840978042e-07
+ p value: 0.76
+ Refute: Use a Placebo Treatment
+ Estimated effect: 9.203951309988412e-07
+ New effect: -8.765743187977294e-07
+ p value: 0.98
+The high p-values across refutation methods indicate that the
+changes in the estimated effect are not statistically significant. It gives 
+the confidence in the robustness and validity of the original causal 
+estimate.
+4.1.5. Counterfactual scenario
+This section presents the results of the counterfactual scenario anal-
+ysis described in Section 3.3.7 (cf. Fig. 1, Step 9). Causal estimation 
+results, as presented in Section 4.1.4, indicate that decreasing backlogs 
+will lower escalation levels. To verify this, we conducted a counter-
+factual analysis using the counterfactual_samples function from 
+the DoWhy-GCM Python package, as introduced in Section 3.3.7.
+Data gathered over the designated period is displayed in Fig. 4. 
+The counterfactual scenario’s tabular and graphical representations 
+of the outcomes are displayed in an interactive Jupyter Notebook 
+in Figs. 4 and 5, respectively. Backlog Percentage Change is repre-
+sented by the abbreviated form ‘‘BklPerCng’’ slider. It enables the user 
+to apply a percentage decrease to the backlog; for instance, in Fig. 
+4, 0.50 denotes a 50% reduction. As the slider moves, the tabular 
+and graphical results update dynamically. The user can customize 
+the theme and color scheme to produce visually appealing and user-
+friendly outputs. The effect of decreasing the backlog is shown in 
+the column ‘‘perc_increase_deescalation’’ in Fig. 4. Fig. 4(a), (b), and 
+(c) show that decreasing backlog (i.e., increasing ‘‘BklPerCng") leads 
+to decreasing escalation (i.e., increasing de-escalation or increasing 
+‘‘perc_increase_deescalation’’). Therefore, the counterfactual scenario 
+aligns with the causal estimation results.
+Finally, we investigated the effects of an X% reduction in the 
+backlog number on escalation levels in the counterfactual analysis (cf. 
+Research Objective 3). For some suppliers, escalation levels drop to 
+(a) Counterfactual result without backlog reduction.
+(b) Counterfactual result with backlog reduction by 50%.
+(c) Counterfactual result with backlog reduction by 70%.
+Fig. 4. Counterfactual results in tabular.
+fully de-escalated when backlogs are reduced by 70% while others 
+show a percentage rise in de-escalation (cf. Fig. 4). Because backlog 
+affects both Escalation and Special_Transport (cf. Table 9, 
+RESIT causal graph), reducing Backlogs also reduces Escalation
+levels and automatically reduces Special_Transport KPI (cf. Fig. 
+5). The graphical representation shown in Fig. 5 shows what happens 
+Supply Chain Analytics 16 (2026) 100248 
+16 
+I. Gupta et al.
+ 
+(a) Visualization of counterfactual results when backlog is 
+reduced by 50%.
+ 
+(b) Visualization of counterfactual results when backlog is 
+reduced by 70%.
+ 
+Fig. 5. Counterfactual results in graphical representation.
+when backlogs are reduced by 50% and 70%. This technique provides 
+insightful information on how changes to one variable in observational 
+data may affect other variables in the dataset.
+4.1.6. Sensitivity analysis summary
+The internal-KPI results above rest on four sensitivity checks, re-
+ported earlier in their respective contexts and consolidated here. (i)
+Effect-estimate stability under added confounding : the random-common-
+cause refuter (Section 3.3.6.1) introduced a synthetic confounder and 
+recomputed the ATE; the estimate moved negligibly (𝑝 = 0 .96), indi-
+cating insensitivity to the kind of unobserved confounder that would 
+most worry a decision-maker. (ii) Effect-estimate stability under data 
+subsampling : the random-subset refuter (Section 3.3.6.2) recomputed 
+the ATE on random subsets of the dataset (𝑝 = 0 .76), confirming that 
+the Backlog → Escalation effect is not driven by a narrow slice of ob-
+servations. (iii) Specificity against spurious signal: the placebo-treatment 
+refuter (Section 3.3.6.3) replaced the treatment with a random variable 
+and verified that no causal effect was detected (𝑝 = 0 .98), ruling out 
+a model that mistakes noise for causation. (iv) Intervention-magnitude 
+sensitivity: the counterfactual analysis (Section 3.3.7) simulated Backlog 
+reductions at two magnitudes (50% and 70%), demonstrating that 
+the direction and sign of the Escalation response are stable across 
+intervention sizes and not tied to one specific reduction level.
+4.2. External factors affecting suppliers internal KPIs - results
+4.2.1. Comparison of the LLM causal graph and ground-truth graph
+As described in Fig. 1 step 12, we compared the expert-generated 
+graph and the graph generated by LLM. The expert knowledge graph 
+was (cf. Fig. 6(a)) created after interviewing 18 domain experts (cf. 
+Table 8). The graph is a ground truth causal graph (cf. Fig. 1 step 
+10) representing how external factors directly (cf. blue rectangles) and 
+indirectly (cf. gray rectangles) affect internal KPIs represented in yellow 
+rectangles. The LLM-generated graph showed strong structural overlap 
+with the expert ground truth, as it consistently identified disruptions 
+such as strikes, inflation, and supplier-related failures that were also 
+emphasized by domain experts. This confirms the accuracy of LLMs in 
+capturing relevant external causal factors. In addition, the LLM-based 
+pipeline generated draft graphs within minutes, whereas developing 
+comparable structures through expert elicitation required several hours 
+of interviews and iterative refinement. Together, these results demon-
+strate that LLMs enhance both the accuracy and the efficiency of causal 
+graph construction, directly supporting the overarching claims of this 
+study.
+The GPT-3.5 generated graph (cf. Fig. 6(b)) presents a more linear, 
+structured view of causal relationships, while the expert-generated 
+graph (cf. Fig. 6(a)) reflects more complexity and interdependencies be-
+tween external and internal factors. The expert graph captures indirect 
+relationships, offering a nuanced view of supply chain dynamics. GPT-
+3.5’s graph is useful in scenarios requiring a hierarchical, simplified 
+perspective, whereas the expert version suits cases needing in-depth 
+analysis of disruptions.
+Despite differences, both graphs show strong similarities. Each high-
+lights the role of external disruptions (e.g., weather, strikes) in affecting 
+internal indicators like Backlog and Special Transport. Customer Op-
+erations Disruption appears as a central node in both, showing its 
+importance in resilience planning. While the GPT-3.5 graph is more 
+compact, the expert version includes a broader set of external factors. 
+Since GPT-3.5 output aligns well with the ground truth, we used it to 
+test LLM capabilities in causal discovery.
+To evaluate GPT-3.5’s reasoning, we asked several questions using 
+the generated graph (Fig. 6(b)). This method sped up the process 
+Supply Chain Analytics 16 (2026) 100248 
+17 
+I. Gupta et al.
+(a) Graph reflecting the relationships among external factors and internal KPIs after interviewing domain experts.
+(b) Graph generated through GPT 3.5 in Node-RED tool.
+Fig. 6. Causal graphs from the domain knowledge and generated through GPT 3.5 in Node-RED.
+Supply Chain Analytics 16 (2026) 100248 
+18 
+I. Gupta et al.
+compared to consulting domain experts, who typically require more 
+time for similar insights.
+• Question: How does Product obsolescence lead to Market Demand 
+Increase and then to backlogs?
+When a product becomes obsolete, demand for updated alter-
+natives rises. This spike in demand can exceed supply capacity, 
+especially during disruptions like supplier shutdowns or transport 
+issues, leading to backlogs. Shortages of staff or strikes may 
+further amplify the problem.
+• Question: Will the backlog increase or decrease?
+Based on the model, the following causal chain holds: 
+[𝑃 𝑟𝑜𝑑𝑢𝑐𝑡𝑂𝑏𝑠𝑜𝑙𝑒𝑠𝑐𝑒𝑛𝑐𝑒 ] ⟶ [𝑀𝑎𝑟𝑘𝑒𝑡𝐷𝑒𝑚𝑎𝑛𝑑𝐼𝑛𝑐𝑟𝑒𝑎𝑠𝑒 ] (20)
+[𝑀𝑎𝑟𝑘𝑒𝑡𝐷𝑒𝑚𝑎𝑛𝑑𝐼𝑛𝑐𝑟𝑒𝑎𝑠𝑒 ] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠 ] (21)
+Thus, product obsolescence increases demand, which increases 
+backlogs.
+• Question: Rate the impact of natural disasters on the Borgwarner 
+backlog. High, moderate, or low?
+Natural disasters lead to supplier shutdowns, which cause back-
+logs. The impact is high due to major disruptions in fulfilling 
+customer orders.
+• Question: Rate the impact of strikes on the Borgwarner backlog. High, 
+moderate, or low?
+Based on the model: 
+[𝑆𝑡𝑟𝑖𝑘𝑒𝑠] ⟶ [𝐶𝑢𝑠𝑡𝑜𝑚𝑒𝑟𝑂𝑝𝑒𝑟𝑎𝑡𝑖𝑜𝑛𝑠𝐷𝑖𝑠𝑟𝑢𝑝𝑡𝑖𝑜𝑛 ] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠 ] (22)
+Strikes affect operations and contribute to backlogs, but less 
+directly than natural disasters. The impact is moderate.
+GPT-3.5 graph (cf. Fig. 6(b)) showed noticeable alignment with ex-
+pert knowledge (cf. Fig. 6(a)), addressing Research Objective 2. While 
+not identical, it accelerated the discovery process compared to building 
+from scratch. This use case echoes findings from Kıcıman et al. [16], 
+confirming GPT-3.5 ability to support causal discovery and reasoning. 
+Leveraging LLMs reduces reliance on expert time, enabling faster, cost-
+effective insights for complex domains like supply chain analytics. In 
+our evaluation, experts also noted that the LLM-assisted graphs required 
+fewer refinements during validation and were consistently described as 
+more interpretable and actionable. This indicates that the contribution 
+of LLMs extends beyond structural alignment, providing measurable 
+efficiency and usability gains in practice.
+4.2.2. Risk score application
+In addition, we developed an application (cf. Fig. 7) that integrated 
+external textual-data from GDELT with causal graphs generated from 
+GPT-3.5. This application utilized a Weighted Sum Model (WSM) to 
+compute a risk score (cf. Section 3.4.3). The key to this approach 
+was assigning weights to the variables based on Average Treatment 
+Effects (ATE), which were determined from the GDELT data using 
+the CausalNLP package (cf. Section 3.4.2). The combination of these 
+causal graphs and real-world data allowed us to create a risk score that 
+captured the underlying causal relationships between the variables, 
+offering a data-driven measure of risk.
+4.3. Interactive risk score application
+The developed application (cf. Fig. 7) corresponds to the risk evalua-
+tion stage in Fig. 1 (steps 13–14), demonstrating how the outputs from 
+the design-science artefact (Step 12) are operationalized for decision 
+support. These include supplier-specific risks like financial instability 
+(e.g., bankruptcy) and operational disruptions (e.g., shutdowns), as 
+well as external risks such as natural disasters, pandemics, and labor 
+shortages. Each edge in the causal graph reflects a dependency, making 
+complex relationships clearer.
+Users can explore these links by selecting internal KPIs and cor-
+responding external factors via dropdown menus and adjusting edge 
+strengths using a slider (cf. Fig. 7). The selected weight is assigned 
+to the WSM formula as 𝑤𝑗 (cf. Eq. (19)). For example, modifying 
+the weight between bankruptcy and shutdown enables users to assess 
+how one factor impacts another, offering a dynamic view of cascading 
+effects across the supply chain. Risk scores are updated in real-time. If 
+risk score is less, the graph highlights the score and edge in green (cf. 
+Fig. 7(a)). Scores trigger red highlights to alert users of elevated risk 
+(cf. Fig. 7(b)).
+This interface enables what-if simulations, allowing users to test 
+how different risk intensities affect the supply chain’s overall vulner-
+ability. By facilitating proactive analysis, the tool supports data-driven 
+decisions that enhance supply chain resilience.
+The contribution of this application to the literature is twofold. First, 
+it is, to the best of our knowledge, the first supply-chain risk-scoring 
+tool that derives its variable set and causal structure from an LLM-
+generated graph aligned against an expert ground truth, rather than 
+from a fixed predefined taxonomy of risk factors. This makes the set of 
+factors the score responds to extensible without re-modeling. Second, 
+the score is not a black-box output: because it is built on an auditable 
+DAG with explicit ATE-based weights, managers can trace any change 
+in the score back to a specific causal path and a specific external driver, 
+addressing the transparency gap repeatedly flagged in recent SCM-AI 
+reviews [17,35].
+Although preliminary, this risk score prototype demonstrates how 
+LLM-derived causal graphs and external data can inform risk evalua-
+tion. The approach remains adaptable and can be refined for domain-
+specific applications. Future implementations may integrate more nu-
+anced factors or revised weight schemes to suit different industries.
+In supply chain contexts, the score aids in forecasting and mitigating 
+risks tied to unpredictable external drivers, such as geopolitical shifts or 
+economic volatility. By providing causal insights, the tool helps organi-
+zations preempt disruptions and operate more effectively in uncertain 
+environments (cf. Research Objective 3).
+5. Discussion
+5.1. Summary of findings and interpretation
+In this study, various causal discovery algorithms (PC, GES, FCI, 
+DirectLiNGAM, RESIT, and NOTEARS) have been explored. The results 
+show that RESIT performed the best due to its ability to discover 
+nonlinear and additive causal relationships. This makes sense since 
+our data represents complex and nonlinear supply chain performance 
+metrics and interactions. The performance of each algorithm varied, but 
+FDR and SHD metrics support the superiority of RESIT. Additionally, 
+the LLM-generated causal graph indicated significant overlap with the 
+expert-derived ground truth. Thus, it validates the potential of LLMs 
+in causal discovery for supply chains. In addition to structural align-
+ment with expert graphs, experts reported that LLM-augmented outputs 
+required fewer refinements during validation and were consistently 
+described as more interpretable and actionable. These process efficien-
+cies represent quantifiable advantages of LLM support, complementing 
+traditional accuracy metrics such as FDR or SHD.
+Incorporating external data (GDELT) with internal KPIs demon-
+strates that while external factors influence supply chain operations, 
+they are not always evident through traditional methods. By applying 
+causal NLP and the Weighted Sum Model, we calculated risk scores 
+that help quantify the influence of these factors on internal KPIs such 
+as backlog and escalation. This integration of CML and LLMs provided 
+more comprehensive insights into supply chain risk management. This 
+cannot be achieved using traditional machine learning models [26,33,
+35,36].
+Furthermore, both direct and indirect causal relationships could 
+be identified by integrating CML and LLMs. The traditional ML and 
+Supply Chain Analytics 16 (2026) 100248 
+19 
+I. Gupta et al.
+(a) Screenshot of the application with a risk score of 1.07.
+(b) Screenshot of the application with a risk score of 1.57.
+Fig. 7. Snapshots of risk score application.
+statistical techniques, e.g., correlation, could not detect such rela-
+tionships. For instance, while some KPIs exhibited strong correlations 
+(e.g., backlog and special transport), CML revealed hidden dependen-
+cies that were not obvious from correlation alone. This supports our 
+hypothesis that correlation-based analyzes in supply chain contexts 
+have limitations and underscores the value of causal discovery for 
+strategic decision-making.
+Through counterfactual analysis, we also evaluated the effects of 
+interventions, such as lowering backlog levels, on supplier escalation. 
+Supply chain managers can use this approach to proactively adjust 
+strategies based on causal inferences, as this analysis provides helpful 
+information to take action directly. For example, managers might po-
+tentially improve overall supply chain resilience by reducing the risk 
+of escalation by taking initiatives to reduce backlogs.
+In our research, LLM-based causal discovery is used to identify 
+external factors that are not present in the internal dataset, enriching 
+the causal graphs with additional insights. Because of this, directly 
+comparing it to traditional causal discovery methods is not always 
+straightforward or flexible. Instead, LLM-based causal discovery serves 
+as a complementary approach, enhancing traditional methods such as 
+PC, GES, FCI, DirectLiNGAM, RESIT, and NOTEARS, by incorporating 
+external knowledge that structured data alone may not capture.
+Taken together, these findings position the proposed pipeline against 
+three concrete alternatives a supply-chain manager might otherwise 
+rely on, and they behave differently on real data. First, against correla-
+tion-based analysis: Table 4 shows strong pairwise correlations among 
+Backlog, Special_Transport, and Missing_Parts, but the causal graph 
+(Fig. 3, Table 10) reveals that Wrong_Deliveries drives Escalation 
+through Backlog — a chain that correlation alone misses, and that a 
+manager acting on correlations would miss as well. Second, against 
+traditional machine learning: prior SCM ML work [33,35,36] optimizes 
+predictive accuracy but does not tell a manager which lever to pull to 
+reduce escalation; our counterfactual results (Section 3.3.7) produce 
+exactly that kind of lever-level recommendation (reducing Backlog by 
+50%–70% lowers escalation across suppliers), which is a qualitatively 
+different decision artefact. Third, against existing expert-driven deci-
+sion practice: our companion study on the same automotive domain 
+[97] formally compared causal machine learning, traditional ML, and 
+the company’s current escalation practice using AHP with 25 experts 
+across accuracy, business impact, explanation capability, human bias, 
+Supply Chain Analytics 16 (2026) 100248 
+20 
+I. Gupta et al.
+and stress-test dimensions, and found that experts consistently pre-
+ferred the causal approach on explanation capability and human-bias 
+resistance. The present work extends that comparison from method 
+selection to pipeline design: once the causal approach is preferred, the 
+question is how to operationalize it with external factor extraction and 
+a decision-relevant risk score, which is what this paper contributes.
+5.2. Key considerations
+Our findings, though encouraging, require careful interpretation in 
+light of several critical considerations, including model uncertainty, 
+the evolving nature of large language models (LLMs), data quality, 
+reproducibility, and practical implementation challenges. Model un-
+certainty remains a core issue in predictive analytics. Understanding 
+the confidence levels associated with model outputs is fundamental for 
+scientific rigor and decision-making [128]. By acknowledging forecast 
+uncertainty, we align our methodology with established best practices 
+in model validation. In real-world applications, predictions should be 
+contextualized using confidence intervals or predictive ranges to inform 
+actions, preventing overreliance on deterministic outputs. Such trans-
+parency is crucial for building trust in AI-driven systems, particularly 
+where erroneous decisions may carry high operational or financial costs 
+[129].
+The integration of LLMs adds both capabilities and concerns. These 
+models offer advanced language comprehension and generation, sig-
+nificantly enriching analysis. However, they are prone to limitations 
+including absorption of data biases and generation of hallucinated 
+content [130,131]. This necessitates rigorous human oversight. In our 
+study, all LLM-generated insights were reviewed by domain experts and 
+subjected to structured verification protocols. We recommend caution 
+when interpreting surprising outputs from LLMs and suggest corrobo-
+rating them through additional data or expert consultation.
+Data quality is another foundational pillar [7]. Our pipeline in-
+cluded extensive preprocessing noise filtering, deduplication, and stan-
+dardization to ensure consistency and reduce bias propagation. Nonethe-
+less, potential issues like hidden confounders or representational gaps 
+could impact findings. Hence, future adopters should emphasize data 
+governance through continuous validation, cleaning, and representa-
+tiveness assessments.
+Due to confidentiality and policy constraints, we have withheld 
+certain experimental details, including exact time spans, heteroge-
+neous data fusion processes, and proprietary code. While we provide 
+transparency in terms of preprocessing steps and evaluation criteria, 
+replication may be partially limited. Future research should prioritize 
+open science practices to improve reproducibility and foster robust, 
+generalizable AI systems.
+A further consideration concerns computational cost and scalability. 
+The pipeline reported here runs on a standard laptop without spe-
+cialized hardware: the six causal discovery algorithms, the refutation 
+tests, and the counterfactual simulations all operate on a small number 
+of KPIs over 12 months of internal data, and none of these steps is 
+the bottleneck. The two components most sensitive to scale are the 
+LLM call and the expert validation loop. The LLM is accessed as an 
+external service, so local compute is negligible, but wall-clock time 
+and cost grow linearly with prompt volume, and API-level rate limits 
+become the binding constraint when the framework is extended to 
+many suppliers or refreshed at high frequency. The expert validation 
+step scales even less gracefully: moving from 18 experts to a larger or 
+cross-organizational panel multiplies elicitation effort roughly linearly 
+in the number of experts and quadratically in the number of candidate 
+causal links under review. Real-time deployment with a larger KPI set 
+or a broader supplier portfolio would therefore require three additions 
+not tested here: batched or cached LLM calls to manage API throughput, 
+nonlinear causal discovery algorithms (RESIT in particular) run on a 
+server rather than a laptop as variable count grows, and an incre-
+mental validation workflow so that experts re-review only changed 
+edges rather than the full graph. These are engineering steps rather 
+than methodological barriers, but we flag them explicitly because the 
+results in this paper establish feasibility at the scale reported, not at 
+operational scale.
+5.3. Theoretical, managerial, and policy implications
+5.3.1. Theoretical implications
+This study contributes to the supply-chain analytics literature in 
+three ways. First, it extends causal machine learning in SCM from 
+single-algorithm case studies to a systematically benchmarked, expert-
+validated design, answering a gap flagged by recent SCM-CML work 
+[18,53]. Second, it shows that the expressive power of LLMs can 
+be combined with the structural discipline of causal DAGs without 
+surrendering interpretability, provided the LLM is used as a proposer 
+of structure rather than as a decision model (Section 3.4.1.5). This has 
+implications beyond SCM for any domain where unstructured exter-
+nal signals must enter a causal decision pipeline. Third, by showing 
+that RESIT aligns best with expert-derived ground truth on nonlinear 
+operational KPI data, the study offers empirical evidence for method-
+selection guidance in applied causal discovery — an area that has been 
+largely theoretical.
+5.3.2. Managerial implications
+For supply-chain managers, the findings translate into a concrete set 
+of practice changes. First, the pipeline produces lever-level recommen-
+dations (e.g., reducing Backlog by 50%–70% lowers escalation), which 
+is a different decision artefact from the accuracy-focused outputs of 
+traditional ML and is usable directly in supplier-escalation reviews. Sec-
+ond, the LLM step compresses the causal-graph construction cycle from 
+weeks of expert interviews to hours of review, which enables risk struc-
+tures to be refreshed as external conditions change rather than being 
+fixed at a point in time [16,132]. Third, adoption should be treated as a 
+strategic transformation rather than a technical upgrade: a phased roll-
+out with pilot studies, modular cloud-hosted components, and domain 
+experts kept in the validation loop is recommended, and staff should be 
+trained to interpret probabilistic outputs rather than read them as de-
+terministic predictions [133,134]. Finally, economic planning around 
+cost–benefit analyzes, milestone-based rollouts, and predefined success 
+metrics is essential to convert the pipeline’s analytical advantages into 
+durable value [135].
+5.3.3. Policy recommendations
+The study surfaces three issues that are better addressed at the 
+policy level than by individual firms. First, expert-grounded valida-
+tion of causal AI in operational contexts requires cross-organizational 
+knowledge sharing (tier-2 suppliers, logistics providers, OEMs), yet 
+current data-handling norms treat supplier data as strictly bilateral; 
+policy frameworks that enable structured, privacy-preserving knowl-
+edge pooling — building on established data-governance standards 
+such as GDPR, CCPA, and ISO 27001 — would materially improve the 
+robustness of industry-wide causal models [136,137]. Second, because 
+LLM-assisted pipelines depend on external event data (e.g., GDELT), 
+continued public investment in open event-data infrastructure is a 
+precondition for the external-factor branch of such pipelines to remain 
+viable. Third, as causal AI moves into supplier-escalation decisions, 
+regulators should consider minimum standards for auditability of AI-
+driven decisions: requiring that any AI-assisted supplier action be trace-
+able to an inspectable causal path, as our pipeline is designed to 
+support, would align emerging AI-governance expectations with the 
+operational reality of SCM adoption.
+Supply Chain Analytics 16 (2026) 100248 
+21 
+I. Gupta et al.
+6. Conclusions
+This study set out to enhance operational decision-making in supply-
+chain risk management by integrating causal machine learning (CML) 
+with large language models (LLMs), validated against expert-derived 
+ground truth in the automotive sector. The findings are presented point 
+by point below, together with the significance of each.
+1. RESIT is the best-aligned causal-discovery algorithm for 
+operational supplier KPIs. Among the six algorithms bench-
+marked (PC, FCI, GES, DirectLiNGAM, NOTEARS, RESIT), RESIT 
+achieved the closest alignment with the expert-derived ground-
+truth graph, with a False Discovery Rate of 0.1429, Structural 
+Hamming Distance of 1, precision and recall of 0.8571, and an 
+F1 score of 0.85 (Section 3.3.3). Significance: this provides the 
+first empirically anchored guidance in SCM on which family of 
+causal-discovery algorithms to prefer when KPIs are nonlinear 
+and mixed-type, shifting CML in SCM from single-algorithm case 
+studies to method-selection evidence.
+2. The estimated causal effect of Backlog on Escalation is ro-
+bust. Three refutation tests — random common cause, random 
+subset, and placebo — returned p-values of 0.96, 0.76, and 
+0.98 respectively (Section 4.1.6), indicating that the estimate is 
+insensitive to synthetic confounders, data subsampling, and spu-
+rious signal. Significance: the causal quantity on which supplier-
+escalation decisions would be based survives standard sensitivity 
+perturbations, which is the minimum bar for operational use.
+3. Counterfactual reduction of Backlog by 50%–70% consis-
+tently lowers escalation across suppliers. The counterfactual 
+analysis (Section 3.3.7) produces lever-level recommendations 
+rather than accuracy-focused predictions. Significance: this is a 
+qualitatively different decision artefact from traditional ML out-
+puts and directly supports the escalation/de-escalation choices 
+supply-chain managers actually have to make.
+4. LLM-generated causal graphs align structurally with the 
+expert ground truth and accelerate construction. The GPT-
+3.5-generated graph shows strong structural overlap with the 
+18-expert reference graph, and was produced in minutes rather 
+than the hours of interviews required for the expert baseline 
+(Section 4.2.1). Significance: LLMs can compress the causal-graph 
+construction cycle enough to make periodic refreshes feasible as 
+external conditions change, which is a prerequisite for keeping 
+risk models current.
+5. Interpretability is preserved when the LLM is used as a 
+proposer rather than a decision model. By confining the 
+LLM’s role to proposing causal structure and routing its output 
+through an auditable Node-RED DAG validated by experts (Sec-
+tion 3.4.1.5), the pipeline retains the transparency advantage 
+of CML despite incorporating an opaque upstream component.
+Significance: this resolves the apparent tension between CML 
+(transparent) and LLMs (opaque) and offers a reusable design 
+principle beyond SCM.
+6. LLM-derived external factors linked to internal KPIs through 
+a Weighted Sum Model produce an auditable, causally
+grounded risk score. The interactive application (Section 4.3) 
+lets managers trace any change in the risk score back to a specific 
+external driver and causal path. Significance: to the best of our 
+knowledge, this is the first SCM risk-scoring tool whose variable 
+set and causal structure are derived from an LLM-generated 
+graph validated against an expert ground truth, rather than from 
+a fixed predefined risk taxonomy.
+Taken together, these six findings constitute the contribution of the 
+paper: a CML + LLM pipeline that is benchmarked, expert-validated, 
+sensitivity-tested, and operationalized in a decision-relevant risk score 
+for the automotive supply chain, with each design choice anchored to 
+a specific problem in prior work. Despite these contributions, certain 
+limitations must be acknowledged.
+6.1. Limitations
+Firstly, the proposed methodology is validated within a specific 
+industry context using select models and datasets. Broader applicability 
+should be explored by testing across domains and varying data condi-
+tions. Relatedly, the expert panel used to construct the ground-truth 
+graph, while functionally diverse, was drawn from a single automotive 
+company; extending elicitation to experts from other organizations 
+(tier-2 suppliers, logistics providers, other OEMs) would further re-
+duce organizational bias in the reference graph. Secondly, although 
+model uncertainty was discussed, formal quantification (e.g., through 
+predictive intervals) was not performed. Additionally, we did not assess 
+stability metrics for LLM-generated graphs.
+Temporal and domain limitations in LLM training data may con-
+strain relevance in rapidly evolving contexts. Furthermore, while par-
+tial code and methods are shared, full reproducibility may be hindered 
+by proprietary elements and system-specific configurations.
+We also acknowledge that external datasets like GDELT may not 
+capture all factors influencing supply chains, particularly qualitative or 
+latent variables. While LLM-generated graphs showed alignment with 
+expert-derived structures, they require refinement in high-stakes or 
+domain-sensitive cases [134]. Hallucinations remain a known issue in 
+LLM outputs [138], necessitating mechanisms such as fact-checking, 
+ensemble modeling, or secondary validation layers. Building on these 
+limitations, future research can extend this work in several directions.
+6.2. Future directions
+Several concrete lines of work would extend this study.
+Cross-organizational expert validation. The ground-truth graph in 
+this paper was built from 18 experts within a single automotive com-
+pany. A natural next step is to replicate the elicitation with experts from 
+tier-2 suppliers, logistics providers, and other OEMs, to test whether 
+the expert-derived structure is stable across organizational perspec-
+tives or whether systematic disagreements emerge at organizational 
+boundaries. A successful outcome would be a cross-organizational ref-
+erence graph whose high-confidence edges are retained across panels, 
+and whose disagreements identify where firm-specific causal structure 
+begins.
+Comparative benchmarking of LLM-based versus traditional causal 
+inference. Future studies should conduct head-to-head evaluations of 
+LLM-proposed and algorithm-derived causal structures using outcome-
+relevant metrics — ATE bias against an agreed reference, intervention-
+success rate in controlled settings, and implementation cost — rather 
+than structural-overlap metrics alone. Given the known sensitivity 
+of LLM outputs to prompt wording [139], developing standardized 
+prompt templates for causal-graph elicitation, together with reporting 
+protocols that disclose the exact prompt and model version, is a 
+prerequisite for replicability.
+Stability metrics for LLM-generated causal graphs. The internal-
+KPI results in this paper include refutation-based sensitivity analysis of 
+the causal effect, but the stability of LLM-generated graphs themselves 
+was not quantified. Future work should measure LLM graph stability 
+under prompt perturbation, model version, and temperature setting 
+using metrics such as Jaccard similarity on edge sets and earth-mover 
+distance on adjacency distributions. Combined with uncertainty esti-
+mation (e.g., Bayesian networks or Monte Carlo dropout [140]), this 
+would allow risk scores to carry explicit confidence bands rather than 
+point values.
+Scalability testing beyond a single firm and a single time win-
+dow. The pipeline has been validated on one company’s data over 
+twelve months. Extending it across industries (e.g., aerospace, phar-
+maceuticals, consumer electronics) and across longer horizons would 
+test whether the method-selection finding (RESIT aligning best with 
+Supply Chain Analytics 16 (2026) 100248 
+22 
+I. Gupta et al.
+expert ground truth on nonlinear KPIs) generalizes, or whether different 
+domains call for different causal-discovery families. This also provides 
+the empirical base for engineering decisions on batched LLM calls and 
+server-hosted discovery discussed in Section 5.2.
+Richer causal structures and hybrid models. Beyond the six algo-
+rithms benchmarked here, future studies could explore hybrid models 
+that combine LLM-proposed structure with ontologies or symbolic-logic 
+constraints [141], compare across LLM families (GPT, BERT, domain-
+specific models [142,143]), and systematically incorporate counterfac-
+tual reasoning at the graph-construction stage [41]. The goal is to 
+identify which combinations yield more faithful causal structures for 
+specific supply-chain risk types.
+Decision-oriented evaluation in operational settings. Ultimately, 
+the validity of the pipeline should be judged not on structural metrics 
+alone but on its behavior in real decision contexts. We recommend 
+three evaluation modes: (i) user studies with supply-chain managers 
+measuring comprehension, trust, and decision quality on the interactive 
+risk-score application; (ii) controlled A/B comparisons between escala-
+tion decisions made with and without the pipeline; and (iii) long-term 
+deployment studies tracking economic outcomes, ethical issues, and 
+user acceptance over multi-quarter operational cycles. Visualization 
+work — color-coded causal types, edge thickness proportional to effect 
+magnitude, hierarchical views — will be part of this evaluation, since 
+interpretability in practice is inseparable from presentation.
+CRediT authorship contribution statement
+Ishansh Gupta: Writing – original draft, Visualization, Validation, 
+Software, Methodology, Investigation, Formal analysis, Conceptual-
+ization. Harshitha Konduru: Writing – original draft, Visualization, 
+Validation, Software, Resources, Methodology, Formal analysis, Data 
+curation, Conceptualization. Sergio Correa: Writing – review & edit-
+ing, Project administration, Methodology, Conceptualization. Hendro 
+Wicaksono: Writing – review & editing, Supervision, Project adminis-
+tration, Methodology, Funding acquisition, Conceptualization.
+Declaration of Generative AI and AI-assisted Technologies in the 
+Writing Process
+During the preparation of this work, the authors used ChatGPT 
+in order to improve language. After using this service, the authors 
+reviewed and edited the content as needed and take full responsibility 
+for the content of the publication.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to 
+influence the work reported in this paper.
+Appendix. Examples of prompts to create causal graph in Node-
+RED
+Initially, fundamental causal relationships were identified, estab-
+lishing a straightforward causal model linking key external factors 
+(e.g., Hurricane, Inflation, Pandemic) directly to BorgWarner’s produc-
+tion (cf. Listing A.1).
+Listing A.1: Prompt used to generate fundamental causal relation-
+ship.
+What external factors like strikes or
+particular holiday season and other
+complex relationships affect borgwarner
+production ? and the following existing
+causal model (DAG) in the form [ Variable A
+] - - > [ Variable B], are there any
+other causal relationships that are
+relevant to the research question or any
+thing that would affect the existing
+causal variables , provide at least 15
+levels or more in your answer and if
+possible at least 2 parents for each
+variable including the new ones you
+identify : Causal Model : [ Hurricane ] -->
+[ Borgwarner ], [ Inflation ] - -> [ Borgwarner
+], [ Pandemic ] - - > [ Borgwarner ]. Give
+the results back in the same format [A] -
+-> [B], result should only include this "
+Updated Causal Model : " which is the
+combination of existing model + new causal
+relationships found and nothing else and
+don ’t include any description about the
+causal relationship .
+Next, the causal model was enhanced by adding additional layers 
+of complexity, ensuring that each variable has at least two parent 
+variables. This refinement more accurately captures real-world dynam-
+ics, reflecting the interconnected nature of influencing factors and 
+improving the model’s ability to represent complex causal relationships 
+(cf. Listing A.2).
+Listing A.2: Prompt used to ensure that each variable has at least 
+two parent variables.
+What external factors like strikes or
+particular holiday season and other
+complex relationships affect borgwarner
+production ? and the following existing
+causal model (DAG) in the form [ Variable A
+] - - > [ Variable B], are there any
+other causal relationships that are
+relevant to the research question or any
+thing that would affect the existing
+causal variables , provide at least 15
+levels or more in your answer and if
+possible at least 2 parents for each
+variable including the new ones you
+identify : Causal Model : [ Hurricane ] -->
+[ Borgwarner ], [ Inflation ] - -> [ Borgwarner
+], [ Pandemic ] - - > [ Borgwarner ]. Give
+the results back in the same format [A] -
+-> [B], result should only include this "
+Updated Causal Model : " which is the
+combination of existing model + if
+possible at least the 2 parents for each
+variable including the new ones you
+identify and nothing else and don ’t
+include any description about the causal
+relationship .
+Finally, the focus was narrowed to specifically model BorgWarner’s 
+backlog, one of its key performance indicators (KPIs), in an effort to 
+make the causal graph more closely align with the ground truth (cf. 
+Listing A.3).
+Supply Chain Analytics 16 (2026) 100248 
+23 
+I. Gupta et al.
+Listing A.3: Prompt used to narrow the causal graph’s focus.
+What external factors like strikes or
+particular holiday season affect
+Borgwarner Backlogs ? and the following
+existing causal model (DAG) in the form [
+Variable A ] - - > [ Variable B] or [
+Variable C] - - >[ Variable A ] - - > [
+Variable B] , are there any other causal
+relationships that are relevant to the
+research question or any thing that would
+affect the existing causal variables ,
+provide at least 4 levels or more in your
+answer and provide at least 2 parents for
+each variable in the form [ Variable C] -
+-> [ Variable A] - - > [ Variable B]
+including the new ones you identify :
+Causal Model : [ Hurricane ] - ->[ Supplier
+Shut down ] - -> [ Borgwarner Backlog ], [
+Inflation ] - -> [ Borgwarner Backlog ], [
+Pandemic ] - - > [ Borgwarner Backlog ].
+Give the results back in the same format [
+A] - -> [B] or [C] - -> [A] - -> [B],
+result should only include this " Updated
+Causal Model : " which is the combination of
+existing model + new causal relationships
+found and nothing else and don ’t include
+any description about the causal
+relationship .
+Then, we started by building a basic Node-RED flow, setting up a 
+simple causal relationship to establish the foundation. In this setup, 
+each status node fed directly into a central function node, which was 
+clearly positioned to the right for better readability and organization. 
+Listing A.4 shows the prompt integrated into the code to build basic 
+Node-RED flow.
+Listing A.4: Prompt integrated into the code used to build a basic 
+Node-RED flow.
+msg. payload = result + " Create a JSON object
+that node red uses to create a flow in the
+form [ Variable A] --> [ Variable B] or [
+Variable C] - -> [ Variable A] - - > [
+Variable B] where Variable B should be
+function node and rest else should a
+status node . use this template of the JSON
+object to create the flow " +
+exampleString + " results should include
+only the flow following the template . the
+flow should look like where the function
+node should be in the right and all the
+status nodes should be behind the function
+node and should be connected to function
+node , the nodes should be named and don ’t
+add any comments in the JSON object " ;
+Next, we refined the Node-RED flow by explicitly defining the cen-
+tral node as a function node, ensuring that all status nodes connected 
+directly to it (cf. Listing A.5). This structured layout was designed to 
+better reflect real-world relationships, making the flow more intuitive 
+and logically organized.
+Listing A.5: Prompt integrated into the code used to refine 
+Node-RED flow.
+msg. payload = result + " Create a JSON object
+that node red uses to create a flow for
+example in the form [ Variable A] --> [
+Variable B] or [ Variable C] --> [ Variable
+A] --> [ Variable B] where common node is
+function node which is Variable B in the
+above example rest should be status nodes .
+use this template of the JSON object to
+create the flow " + exampleString + "
+results should include only the flow
+following the template . the flow should
+look like where the function node should
+be in the right and all the status nodes
+should be behind the function node and
+should be connected to function node , the
+nodes should be named and don ’t add any
+comments in the JSON object " ;
+Finally, we structured the Node-RED flow with a clear and consis-
+tent pattern, positioning status nodes on the left and arranging them 
+in sequential order, all leading into a central function node (cf. Listing 
+A.6). This approach provided a more intuitive visual representation of 
+both direct and indirect causal relationships, making the flow more 
+closely resemble the ground truth graph.
+Listing A.6: Prompt integrated into the code used to structure 
+Node-RED flow with a clear and consistent pattern.
+msg. payload = result + " Create a JSON object
+that node red uses to create a flow in the
+form [ Variable A] --> [ Variable B] where
+Variable A is status node and Variable B
+is function node or in the form [ Variable
+C] - -> [ Variable A] --> [ Variable B]
+where Variable C is status node and is
+connecting to [ Variable A] --> [ Variable
+B] . use this template of the JSON object
+to create the flow " + exampleString + "
+results should include only the flow
+following the template . the flow should
+look like where the function node should
+be in the right and all the status nodes
+should be to the left of the function node
+and should be connected , the nodes should
+be named and don ’t add any comments in
+the JSON object " ;
+Data availability statement
+The data that support the findings of this study are available from 
+the corresponding author upon reasonable request.
+References
+[1] C.S. Tang, Robust strategies for mitigating supply chain disruptions, Int. 
+J. Logist.: Res. Appl. 9 (1) (2006) 33–45, http://dx.doi.org/10.1080/
+13675560500405584.
+[2] B.d.O. Cardoso, T.C. Fontainha, A. Leiras, Looking back and forward to disaster 
+readiness of supply chains: A systematic literature review, Int. J. Logist. Res. 
+Appl. 27 (9) (2024) 1569–1595, http://dx.doi.org/10.1080/13675567.2023.
+2165052.
+[3] L. Veselovská, Supply chain disruptions in the context of early stages of the 
+global COVID-19 outbreak, Probl. Perspect. Manag. 18 (2) (2020) 490–500, 
+http://dx.doi.org/10.21511/ppm.18(2).2020.40.
+Supply Chain Analytics 16 (2026) 100248 
+24 
+I. Gupta et al.
+[4] B. Frieske, S. Stieler, The semiconductor crisis as a result of the COVID-19 
+pandemic and impacts on the automotive industry and its supply chains, World 
+Electr. Veh. J. 13 (10) (2022) 189, http://dx.doi.org/10.3390/wevj13100189.
+[5] R. Moraffah, M. Karami, R. Guo, A. Raglin, H. Liu, Causal interpretability 
+for machine learning-problems, methods and evaluation, ACM SIGKDD Explor. 
+Newsl. 22 (1) (2020) 18–33, http://dx.doi.org/10.1145/3400051.3400058.
+[6] W.J. Von Eschenbach, Transparency and the black box problem: Why we do 
+not trust AI, Philos. Technol. 34 (4) (2021) 1607–1622, http://dx.doi.org/10.
+1007/s13347-021-00477-0.
+[7] C. Gupta, Modern machine and deep learning systems as a way to achieve 
+man-computer symbiosis, 2021, http://dx.doi.org/10.48550/arXiv.2101.10534, 
+arXiv preprint arXiv:2101.10534.
+[8] A. Vashishtha, A.G. Reddy, A. Kumar, S. Bachu, V.N. Balasubramanian, A. 
+Sharma, Causal inference using LLM-guided discovery, 2023, http://dx.doi.org/
+10.48550/arXiv.2310.15117, arXiv preprint arXiv:2310.15117.
+[9] J. Kaddour, A. Lynch, Q. Liu, M.J. Kusner, R. Silva, Causal machine learning: 
+A survey and open problems, Found. Trends® Optim. 9 (1–2) (2025) 1–247, 
+http://dx.doi.org/10.1561/2400000052, URL https://dl.acm.org/doi/10.1561/
+2400000052.
+[10] Y. Zhao, J. Jones, D.J. MacKinnon, Causal learning to discover supply chain vul-
+nerability, in: Proceedings of the 11th International Conference on Knowledge 
+Discovery and Information Retrieval, KDIR, 2019, pp. 305–309.
+[11] M. Ashdown, G. Petrou, Development of a directed acyclic graph through 
+expert elicitation for causal inference in built environment research, in: Building 
+Simulation Conference Proceedings, Vol. 18, IBPSA, 2024.
+[12] A. Zanga, E. Ozkirimli, F. Stella, A survey on causal discovery: Theory and 
+practice, Internat. J. Approx. Reason. 151 (2022) 101–129, http://dx.doi.org/
+10.1016/j.ijar.2022.09.004.
+[13] C. Gong, D. Yao, C. Zhang, W. Li, J. Bi, L. Du, J. Wang, Causal discovery 
+from temporal data, in: Proceedings of the 29th ACM SIGKDD Conference on 
+Knowledge Discovery and Data Mining, 2023, pp. 5803–5804, http://dx.doi.
+org/10.1145/3580305.359955.
+[14] G. Gelastopoulos, C. Keramydas, A systematic review of text mining analytics 
+for supply chain risk management using online data, Supply Chain Anal. (2025) 
+100167, http://dx.doi.org/10.1016/j.sca.2025.100167.
+[15] Z. Bahroun, A. Saihi, R. As’ad, M. Tanash, A systematic analysis of generative 
+artificial intelligence for supply chain transformation, Supply Chain Anal. 
+(2025) 100188, http://dx.doi.org/10.1016/j.sca.2025.100188.
+[16] E. Kıcıman, R. Ness, A. Sharma, C. Tan, Causal reasoning and large language 
+models: Opening a new frontier for causality, Trans. Mach. Learn. Res. (2024) 
+URL https://openreview.net/forum?id=tp4M9P6nOd.
+[17] A.H. Ordibazar, O.K. Hussain, R.K. Chakrabortty, E. Irannezhad, M. Saberi, 
+Artificial intelligence applications for supply chain risk management considering 
+interconnectivity, external events exposures and transparency: A systematic 
+literature review, Mod. Supply Chain Res. Appl. 7 (2) (2025) 148–179, http:
+//dx.doi.org/10.1108/MSCRA-10-2024-0041.
+[18] M. Wyrembek, G. Baryannis, A. Brintrup, Causal machine learning for supply 
+chain risk prediction and intervention planning, Int. J. Prod. Res. 63 (17) (2025) 
+5629–5648, http://dx.doi.org/10.1080/00207543.2025.2458121.
+[19] M. Christopher, Logistics & Supply Chain Management, Pearson UK, 2016.
+[20] T. Sobb, B. Turnbull, N. Moustafa, Supply chain 4.0: A survey of cyber security 
+challenges, solutions and future directions, Electronics 9 (11) (2020) 1864, 
+http://dx.doi.org/10.3390/electronics9111864.
+[21] F. Kache, S. Seuring, Challenges and opportunities of digital information at 
+the intersection of big data analytics and supply chain management, Int. J. 
+Oper. Prod. Manage. 37 (1) (2017) 10–36, http://dx.doi.org/10.1108/IJOPM-
+02-2015-0078.
+[22] S. Seuring, M. Müller, From a literature review to a conceptual framework 
+for sustainable supply chain management, J. Clean. Prod. 16 (15) (2008) 
+1699–1710, http://dx.doi.org/10.1016/j.jclepro.2008.04.020.
+[23] S. Lund, J. Manyika, W. DC, Risk, resilience, and rebalancing in global value 
+chains, 2020.
+[24] C.S. Tang, B. Tomlin, The power of flexibility for mitigating supply chain risks, 
+Int. J. Prod. Econ. 116 (1) (2008) 12–27, http://dx.doi.org/10.1016/j.ijpe.2008.
+07.008.
+[25] S. Akter, R. Bandara, U. Hani, S.F. Wamba, C. Foropon, T. Papadopoulos, 
+Analytics-based decision-making for service systems: A qualitative study and 
+agenda for future research, Int. J. Inf. Manage. 48 (2019) 85–95, http://dx.doi.
+org/10.1016/j.ijinfomgt.2019.01.020.
+[26] G. Culot, M. Podrecca, G. Nassimbeni, Artificial intelligence in supply chain 
+management: A systematic literature review of empirical studies and research 
+directions, Comput. Ind. 162 (2024) 104132, http://dx.doi.org/10.1016/j.
+compind.2024.104132.
+[27] M.S. Sangari, A. Mashatan, A data-driven, comparative review of the academic 
+literature and news media on blockchain-enabled supply chain management: 
+Trends, gaps, and research needs, Comput. Ind. 143 (2022) 103769, http:
+//dx.doi.org/10.1016/j.compind.2022.103769.
+[28] A.M. Khedr, Enhancing supply chain management with deep learning and ma-
+chine learning techniques: A review, J. Open Innov.: Technol. Mark. Complex. 
+(2024) 100379, http://dx.doi.org/10.1016/j.joitmc.2024.100379.
+[29] R.Y. Zhong, X. Xu, E. Klotz, S.T. Newman, Intelligent manufacturing in the 
+context of Industry 4.0: A review, Engineering 3 (5) (2017) 616–630, http:
+//dx.doi.org/10.1016/J.ENG.2017.05.015.
+[30] D. Ivanov, A. Dolgui, B. Sokolov, The impact of digital technology and Industry 
+4.0 on the ripple effect and supply chain risk analytics, Int. J. Prod. Res. 57 
+(3) (2019) 829–846, http://dx.doi.org/10.1080/00207543.2018.1488086.
+[31] V. Pasupuleti, B. Thuraka, C.S. Kodete, S. Malisetty, Enhancing supply chain 
+agility and sustainability through machine learning: Optimization techniques 
+for logistics and inventory management, Logistics 8 (3) (2024) 73, http://dx.
+doi.org/10.3390/logistics8030073.
+[32] T.-M. Choi, S.W. Wallace, Y. Wang, Big data analytics in operations manage-
+ment, Prod. Oper. Manage. 27 (10) (2018) 1868–1883, http://dx.doi.org/10.
+1111/poms.12838.
+[33] G. Baryannis, S. Dani, G. Antoniou, Predicting supply chain risks using machine 
+learning: The trade-off between performance and interpretability, Future Gener. 
+Comput. Syst. 101 (2019) 993–1004, http://dx.doi.org/10.1016/j.future.2019.
+07.059.
+[34] A. Aljohani, Predictive analytics and machine learning for real-time supply 
+chain risk mitigation and agility, Sustainability 15 (20) (2023) 15088, http:
+//dx.doi.org/10.3390/su152015088.
+[35] M. Yang, M.K. Lim, Y. Qu, D. Ni, Z. Xiao, Supply chain risk management with 
+machine learning technology: A literature review and future research directions, 
+Comput. Ind. Eng. 175 (2023) 108859, http://dx.doi.org/10.1016/j.cie.2022.
+108859.
+[36] M. Schroeder, S. Lodemann, A systematic investigation of the integration of 
+machine learning into supply chain risk management, Logistics 5 (3) (2021) 
+62, http://dx.doi.org/10.3390/logistics5030062.
+[37] C. Rudin, Stop explaining black box machine learning models for high-stakes 
+decisions and use interpretable models instead, Nat. Mach. Intell. 1 (5) (2019) 
+206–215, http://dx.doi.org/10.1038/s42256-019-0048-x.
+[38] A.K. Sharma, D.M. Sharma, N. Purohit, S.K. Rout, S.A. Sharma, Analytics 
+techniques: descriptive analytics, predictive analytics, and prescriptive analytics, 
+in: Decision Intelligence Analytics and the Implementation of Strategic Business 
+Management, IGI Global, 2022, pp. 1–14, http://dx.doi.org/10.1007/978-3-030-
+82763-2_1.
+[39] S. Thapaliya, O.F. Valilai, H. Wicaksono, Power consumption and processing 
+time estimation of CNC machines using explainable artificial intelligence (XAI), 
+Procedia Comput. Sci. 232 (2024) 861–870, http://dx.doi.org/10.1016/j.procs.
+2024.01.086.
+[40] T. Aikenov, R. Hidayat, H. Wicaksono, Power consumption and process cost 
+prediction of customized products using explainable ai: A case in the steel 
+industry, in: International Conference on Flexible Automation and Intelligent 
+Manufacturing, Springer, 2023, pp. 1183–1193, http://dx.doi.org/10.1007/978-
+3-031-38165-2_135.
+[41] J. Peters, D. Janzing, B. Schölkopf, Elements of Causal Inference: Foundations 
+and Learning Algorithms, The MIT Press, 2017.
+[42] J. Pearl, Causal inference in statistics: An overview, Stat. Surv (2009) http:
+//dx.doi.org/10.1214/09-SS057.
+[43] S.A. Sloman, D. Lagnado, Causality in thought, Annu. Rev. Psychol. 66 (2015) 
+223–247, http://dx.doi.org/10.1146/annurev-psych-010814-015135.
+[44] P. Blöbaum, P. Götz, K. Budhathoki, A.A. Mastakouri, D. Janzing, DoWhy-GCM: 
+An extension of DoWhy for causal inference in graphical causal models, J. 
+Mach. Learn. Res. 25 (147) (2024) 1–7, URL http://jmlr.org/papers/v25/22-
+1258.html.
+[45] X. Chen, J. Abualdenien, M.M. Singh, A. Borrmann, P. Geyer, Introducing causal 
+inference in the energy-efficient building design process, Energy Build. 277 
+(2022) 112583, http://dx.doi.org/10.1016/j.enbuild.2022.112583.
+[46] M. Zheng, J. Marsh, J. Nickerson, S. Kleinberg, How causal information affects 
+decisions. Cognitive Research: Principles and Implications, 5, Article 6, 2020.
+[47] E. Sokolova, P. Groot, T. Claassen, D. von Rhein, J. Buitelaar, T. Heskes, 
+Causal discovery from medical data: dealing with missing values and a mixture 
+of discrete and continuous data, in: Artificial Intelligence in Medicine: 15th 
+Conference on Artificial Intelligence in Medicine, AIME 2015, Pavia, Italy, June 
+17-20, 2015. Proceedings 15, Springer, 2015, pp. 177–181, http://dx.doi.org/
+10.1007/978-3-319-19551-3_23.
+[48] J. Kelly, C. Berzuini, B. Keavney, M. Tomaszewski, H. Guo, A review of causal 
+discovery methods for molecular network analysis, Mol. Genet. Genom. Med. 
+10 (10) (2022) e2055, http://dx.doi.org/10.1002/mgg3.2055.
+[49] V.M. Nesro, T. Fekete, H. Wicaksono, Leveraging causal machine learning for 
+sustainable automotive industry: Analyzing factors influencing CO2 emissions, 
+Procedia CIRP (2024) http://dx.doi.org/10.1016/j.procir.2024.10.071.
+[50] M. Vuković, S. Thalmann, Causal discovery in manufacturing: A structured 
+literature review, J. Manuf. Mater. Process. 6 (1) (2022) 10, http://dx.doi.org/
+10.3390/jmmp6010010.
+[51] M. Ombadi, P. Nguyen, S. Sorooshian, K.-l. Hsu, Evaluation of methods for 
+causal discovery in hydrometeorological systems, Water Resour. Res. 56 (7) 
+(2020) e2020WR027251, http://dx.doi.org/10.1029/2020WR027251.
+[52] N. Mechai, H. Wicaksono, Causal inference in supply chain management: 
+How does ever given accident at the suez canal affect the prices of shipping 
+containers? Procedia Comput. Sci. 232 (2024) 3173–3182, http://dx.doi.org/
+10.1016/j.procs.2024.02.133.
+Supply Chain Analytics 16 (2026) 100248 
+25 
+I. Gupta et al.
+[53] F. Bodendorf, M. Sauter, J. Franke, A mixed methods approach to analyze and 
+predict supply disruptions by combining causal inference and deep learning, 
+Int. J. Prod. Econ. 256 (2023) 108708, http://dx.doi.org/10.1016/j.ijpe.2022.
+108708.
+[54] K.-H. Cohrs, G. Varando, E. Diaz, V. Sitokonstantinou, G. Camps-Valls, Large 
+language models for constrained-based causal discovery, 2024, http://dx.doi.
+org/10.48550/arXiv.2406.07378, arXiv preprint arXiv:2406.07378.
+[55] K. Yu, L. Liu, J. Li, H. Chen, Mining Markov blankets without causal sufficiency, 
+IEEE Trans. Neural Networks Learn. Syst. 29 (12) (2018) 6333–6347, http:
+//dx.doi.org/10.1109/tnnls.2018.2828982.
+[56] C.M. Gilligan-Lee, C. Hart, J. Richens, S. Johri, Leveraging directed causal 
+discovery to detect latent common causes in cause-effect pairs, IEEE Trans. 
+Neural Networks Learn. Syst. 35 (4) (2022) 4938–4947.
+[57] P.M. Dixit, H. Verbeek, J.C. Buijs, W.M. van der Aalst, Interactive data-
+driven process model construction, in: Conceptual Modeling: 37th International 
+Conference, ER 2018, Xi’an, China, October 22–25, 2018, Proceedings 37, 
+Springer, 2018, pp. 251–265, http://dx.doi.org/10.1007/978-3-030-00847-5_19.
+[58] D. Chiba, K. Tobe, T. Mori, S. Goto, Detecting malicious websites by learning 
+IP address features, in: 2012 IEEE/IPSJ 12th International Symposium on 
+Applications and the Internet, IEEE, 2012, pp. 29–39, http://dx.doi.org/10.
+1109/saint.2012.14.
+[59] B. Lee, A. Barua, A.B. Whinston, Discovery and representation of causal 
+relationships in MIS research: A methodological framework, MIS Q. (1997) 
+109–136, http://dx.doi.org/10.2307/249744.
+[60] K. Leetaru, P.A. Schrodt, Gdelt: Global data on events, location, and tone, 
+1979–2012, in: ISA Annual Convention, Vol. 2, Citeseer, 2013, pp. 1–49.
+[61] J. LaBelle, A.M. Santacreu, Global supply chain disruptions and inflation during 
+the COVID-19 pandemic, 2022, Available At SSRN 4029211.
+[62] S. Makris, D. Mourtzis, G. Chryssolouris, Supply chain adaptability in automo-
+tive, in: Proceedings of the 2nd CIRP Conference on Assembly Technologies 
+and Systems (Toronto, Canada), 2008, pp. 488–497.
+[63] R.R. Inman, D.E. Blumenfeld, Product complexity and supply chain design, Int. 
+J. Prod. Res. 52 (7) (2014) 1956–1969, http://dx.doi.org/10.1080/00207543.
+2013.787495.
+[64] A.M. Sanchez, M.P. Perez, The impact of EDI adoption on customer service in 
+the automotive supply chain, Int. J. Automot. Technol. Manag. 4 (4) (2004) 
+336–353, http://dx.doi.org/10.1504/IJATM.2004.006287.
+[65] S.D. Shivankar, R. Deivanathan, Product design change propagation in automo-
+tive supply chain considering product life cycle, CIRP J. Manuf. Sci. Technol. 
+35 (2021) 390–399, http://dx.doi.org/10.1016/j.cirpj.2021.07.001.
+[66] A.S. Maiya, Causalnlp: A practical toolkit for causal inference with text, 
+2021, http://dx.doi.org/10.48550/arXiv.2106.08043, arXiv preprint arXiv:
+2106.08043.
+[67] F. Qiao, P. Li, X. Zhang, Z. Ding, J. Cheng, H. Wang, Predicting social unrest 
+events with hidden Markov models using GDELT, Discrete Dyn. Nat. Soc. 2017 
+(1) (2017) 8180272, http://dx.doi.org/10.1155/2017/8180272.
+[68] P. Schober, C. Boer, L.A. Schwarte, Correlation coefficients: Appropriate use 
+and interpretation, Anesth. Analg. 126 (5) (2018) 1763–1768, http://dx.doi.
+org/10.1213/ANE.0000000000002864.
+[69] C. Glymour, K. Zhang, P. Spirtes, Review of causal discovery methods based 
+on graphical models, Front. Genet. 10 (2019) 524, http://dx.doi.org/10.3389/
+fgene.2019.00524.
+[70] P. Spirtes, C. Glymour, R. Scheines, Causation, Prediction, and Search, MIT 
+Press, 2001.
+[71] P.L. Spirtes, C. Meek, T.S. Richardson, Causal inference in the presence of 
+latent variables and selection bias, in: Proceedings of the 11th Conference 
+on Uncertainty in Artificial Intelligence, UAI, Morgan Kaufmann, 1995, pp. 
+499–506.
+[72] D.M. Chickering, Optimal structure identification with greedy search, J. Mach. 
+Learn. Res. 3 (Nov) (2002) 507–554.
+[73] S. Shimizu, T. Inazumi, Y. Sogawa, A. Hyvarinen, Y. Kawahara, T. Washio, 
+P.O. Hoyer, K. Bollen, P. Hoyer, DirectLiNGAM: A direct method for learning a 
+linear non-Gaussian structural equation model, J. Mach. Learn. Research-JMLR 
+12 (Apr) (2011) 1225–1248.
+[74] M. Kaiser, M. Sipos, Unsuitability of NOTEARS for causal graph discovery 
+when dealing with dimensional quantities, Neural Process. Lett. 54 (3) (2022) 
+1587–1595, http://dx.doi.org/10.1007/s11063-021-10694-5.
+[75] P. Hoyer, D. Janzing, J.M. Mooij, J. Peters, B. Schölkopf, Nonlinear causal 
+discovery with additive noise models, Adv. Neural Inf. Process. Syst. 21 (2008).
+[76] J. Peters, J.M. Mooij, D. Janzing, B. Schölkopf, Causal discovery with contin-
+uous additive noise models, J. Mach. Learn. Res. (2014) http://dx.doi.org/10.
+15496/publikation-1672.
+[77] H. Paluzzi, H. Chen, M. Howe, P.J. Daugherty, T. Tokar, Consumer impatience 
+in the e-commerce home delivery context: A consumer-centric supply chain 
+perspective for time-based competition, Int. J. Phys. Distrib. Logist. Manage. 
+55 (1) (2025) 1–21, http://dx.doi.org/10.1108/ijpdlm-03-2024-0102.
+[78] H. Chang, J. Chen, S.-W. Hsu, R. Mashruwala, The impact of the bullwhip effect 
+on sales and earnings prediction using order backlog, Contemp. Account. Res. 
+35 (2) (2018) 1140–1165, http://dx.doi.org/10.1111/1911-3846.12401.
+[79] V. Sanchez-Rodrigues, A. Potter, M.M. Naim, The impact of logistics uncertainty 
+on sustainable transport operations, Int. J. Phys. Distrib. Logist. Manage. 40 
+(1/2) (2010) 61–83, http://dx.doi.org/10.1108/09600031011018046.
+[80] E.G. Anderson Jr., D.J. Morrice, G. Lundeen, The physics of capacity and 
+backlog management in service and custom manufacturing supply chains, Syst. 
+Dyn. Rev.: J. Syst. Dyn. Soc. 21 (3) (2005) 217–247, http://dx.doi.org/10.1002/
+sdr.319.
+[81] S.B. Bonsall, E.R. Holzman, B.P. Miller, Wearing out the watchdog: The impact 
+of SEC case backlog on the formal investigation process, Account. Rev. 99 (1) 
+(2024) 81–104, http://dx.doi.org/10.2308/tar-2020-0157.
+[82] M. Ilyas, Z. Jin, I. Ullah, A.A. Jafri, Investigation of risk factors influencing 
+the safety of maritime containers supply chain: In the period of the pandemic, 
+Sustainability 15 (11) (2023) 8803, http://dx.doi.org/10.3390/su15118803.
+[83] M.S. Bilican, Ç. Iris, M. Karatas, A collaborative decision support framework for 
+sustainable cargo composition in container shipping services, Ann. Oper. Res. 
+342 (1) (2024) 79–111, http://dx.doi.org/10.1007/s10479-024-05827-7.
+[84] S. Rogerson, M. Svanberg, C. Altuntas Vural, S. von Wieding, J. Woxenius, 
+Comparing flexibility-based measures during different disruptions: evidence 
+from maritime supply chains, Int. J. Phys. Distrib. Logist. Manage. 54 (2) (2024) 
+163–191.
+[85] D. Burkhart, C. Bode, On supplier resilience: How supplier performance, 
+disruption frequency, and disruption duration are interrelated, J. Purch. Sup-
+ply Manag. 30 (3) (2024) 100921, http://dx.doi.org/10.1016/j.pursup.2024.
+100921.
+[86] R. Pellegrino, B. Gaudenzi, A. Qazi, Capturing key interdependences among 
+supply chain disruptions and mitigation strategies to enhance firm performance, 
+Int. J. Qual. Reliab. Manag. 42 (1) (2025) 254–284, http://dx.doi.org/10.1108/
+ijqrm-10-2023-0328.
+[87] A.R. Atkinson, The pathology of building defects; a human error approach, 
+Eng. Constr. Archit. Manag. 9 (1) (2002) 53–61, http://dx.doi.org/10.1108/
+eb021206.
+[88] R. Whittingham, The Blame Machine: Why Human Error Causes Accidents, 
+Routledge, 2004, http://dx.doi.org/10.4324/9780080472126.
+[89] A. Barman, R. Das, P.K. De, Logistics and supply chain management of food 
+industry during COVID-19: disruptions and a recovery plan, Environ. Syst. 
+Decis. (2022) 1–12, http://dx.doi.org/10.1007/s10669-021-09836-w.
+[90] U.K. Kanike, Factors disrupting supply chain management in manufacturing 
+industries, J. Supply Chain Manag. Sci. 4 (1–2) (2023) 1–24, http://dx.doi.org/
+10.18757/jscms.2023.6986.
+[91] M.M. Parast, N. Subramanian, An examination of the effect of supply chain 
+disruption risk drivers on organizational performance: evidence from Chinese 
+supply chains, Supply Chain Manag.: An Int. J. 26 (4) (2021) 548–562, http:
+//dx.doi.org/10.1108/scm-07-2020-0313.
+[92] M. Debnath, S.K. Mazumder, M.B. Hossain, A. Garai, C.B. Illes, Optimal 
+base-stock inventory-management policies of cement retailers under supply-
+side disruptions, Mathematics 11 (18) (2023) 3971, http://dx.doi.org/10.3390/
+math11183971.
+[93] R. Zhao, R. Mashruwala, S. Pandit, J. Balakrishnan, Supply chain relational 
+capital and the bullwhip effect: An empirical analysis using financial disclosures, 
+Int. J. Oper. Prod. Manage. 39 (5) (2019) 658–689, http://dx.doi.org/10.1108/
+ijopm-03-2018-0186.
+[94] V. Tsioumas, S. Papadimitriou, The dynamic relationship between freight mar-
+kets and commodity prices revealed, Marit. Econ. Logist. 20 (2018) 267–279, 
+http://dx.doi.org/10.1057/s41278-016-0005-0.
+[95] O. Asadollah, L.S. Carmy, M.R. Hoque, H. Yilmazkuday, Geopolitical risk, 
+supply chains, and global inflation, World Econ. 47 (8) (2024) 3450–3486, 
+http://dx.doi.org/10.1111/twec.13585.
+[96] M.D. Sezer, M. Ozbiltekin-Pala, Y. Kazancoglu, J.A. Garza-Reyes, A. Kumar, 
+V. Kumar, Investigating the role of knowledge-based supply chains for supply 
+chain resilience by graph theory matrix approach, Oper. Manag. Res. 16 (3) 
+(2023) 1220–1230, http://dx.doi.org/10.1007/s12063-023-00391-y.
+[97] I. Gupta, A. Martinez, S. Correa, H. Wicaksono, A comparative assessment of 
+causal machine learning and traditional methods for enhancing supply chain 
+resiliency and efficiency in the automotive industry, Supply Chain Anal. (2025) 
+100116, http://dx.doi.org/10.1016/j.sca.2025.100116.
+[98] C.C. Aggarwal, C.C. Aggarwal, An Introduction to Outlier Analysis, Springer, 
+2017, http://dx.doi.org/10.1007/978-3-319-47578-3_1.
+[99] N. Tatbul, T.J. Lee, S. Zdonik, M. Alam, J. Gottschlich, Precision and recall for 
+time series, Adv. Neural Inf. Process. Syst. 31 (2018).
+[100] Y. Benjamini, D. Yekutieli, The control of the false discovery rate in multiple 
+testing under dependency, Ann. Stat. (2001) 1165–1188, doi:https://www.jstor.
+org/stable/2674075.
+[101] J.D. Storey, A direct approach to false discovery rates, J. R. Stat. Soc. Ser. 
+B Stat. Methodol. 64 (3) (2002) 479–498, http://dx.doi.org/10.1111/1467-
+9868.00346.
+[102] S. Acid, L.M. de Campos, Searching for Bayesian network structures in the space 
+of restricted acyclic partially directed graphs, J. Artificial Intelligence Res. 18 
+(2003) 445–490, http://dx.doi.org/10.1613/jair.1061.
+[103] I. Tsamardinos, L.E. Brown, C.F. Aliferis, The max-min hill-climbing Bayesian 
+network structure learning algorithm, Mach. Learn. 65 (2006) 31–78, http:
+//dx.doi.org/10.1007/s10994-006-6889-7.
+Supply Chain Analytics 16 (2026) 100248 
+26 
+I. Gupta et al.
+[104] J. Peters, P. Bühlmann, Structural intervention distance for evaluating causal 
+graphs, Neural Comput. 27 (3) (2015) 771–799, http://dx.doi.org/10.1162/
+NECO_a_00708.
+[105] N. Greifer, E.A. Stuart, Matching methods for confounder adjustment: An ad-
+dition to the epidemiologist’s toolbox, Epidemiol. Rev. 43 (1) (2022) 118–129, 
+http://dx.doi.org/10.1093/epirev/mxab003.
+[106] F. Elwert, Graphical causal models, in: Handbook of Causal Analysis for Social 
+Research, Springer, 2013, pp. 245–273, http://dx.doi.org/10.1007/978-94-007-
+6094-3_13.
+[107] R. Bhattacharya, R. Nabi, On testability of the front-door model via Verma 
+constraints, in: Proceedings of the Thirty-Eighth Conference on Uncertainty 
+in Artificial Intelligence, UAI, in: Proceedings of Machine Learning Research, 
+vol. 180, PMLR, 2022, pp. 202–212, URL https://proceedings.mlr.press/v180/
+bhattacharya22a.html.
+[108] J.D. Angrist, G.W. Imbens, D.B. Rubin, Identification of causal effects using 
+instrumental variables, J. Amer. Statist. Assoc. 91 (434) (1996) 444–455.
+[109] K. Imai, L. Keele, T. Yamamoto, Identification, inference and sensitivity analysis 
+for causal mediation effects, Statist. Sci. 25 (1) (2010) 51–71, http://dx.doi.org/
+10.1214/10-STS321.
+[110] D. Cheng, J. Li, L. Liu, K. Yu, T.D. Le, J. Liu, Toward unique and unbiased 
+causal effect estimation from data with hidden variables, IEEE Trans. Neural 
+Networks Learn. Syst. 34 (9) (2022) 6108–6120, http://dx.doi.org/10.1109/
+TNNLS.2021.3133337.
+[111] A. Sharma, E. Kiciman, DoWhy: An end-to-end library for causal in-
+ference, 2020, http://dx.doi.org/10.48550/arXiv.2011.04216, arXiv preprint 
+arXiv:2011.04216.
+[112] W. Spohn, On reichenbachs principle of the common cause, Log. Lang. Sci. 
+Theor. 31 (1994) 211.
+[113] Y. Wang, D.M. Blei, The blessings of multiple causes, J. Amer. Statist. Assoc. 114 
+(528) (2019) 1574–1596, http://dx.doi.org/10.1080/01621459.2019.1686987.
+[114] A.C. Eggers, G. Tuñón, A. Dafoe, Placebo tests for causal inference, Am. J. 
+Political Sci. 68 (3) (2024) 1106–1121, http://dx.doi.org/10.1111/ajps.12818.
+[115] G.W. Imbens, D.B. Rubin, Causal Inference in Statistics, Social, and Biomedical 
+Sciences, Cambridge University Press, 2015.
+[116] J. Pearl, Causal and counterfactual inference, Handb. Ration. 427 (2021).
+[117] Y. Wang, X. Jiang, D. Cheng, D. Li, C. Zhao, Learning hierarchical prompt with 
+structured linguistic knowledge for vision-language models, in: Proceedings of 
+the AAAI Conference on Artificial Intelligence, Vol. 38, 2024, pp. 5749–5757, 
+http://dx.doi.org/10.1609/aaai.v38i6.28387.
+[118] E. Kasneci, K. Seßler, S. Küchemann, M. Bannert, D. Dementieva, F. Fischer, U. 
+Gasser, G. Groh, S. Günnemann, E. Hüllermeier, et al., ChatGPT for good? On 
+opportunities and challenges of large language models for education, Learn. 
+Individ. Differ. 103 (2023) 102274, http://dx.doi.org/10.1016/j.lindif.2023.
+102274.
+[119] A. Radford, K. Narasimhan, T. Salimans, I. Sutskever, et al., Improving language 
+understanding by generative pre-training, OpenAI (2018).
+[120] Y. Liu, T. Han, S. Ma, J. Zhang, Y. Yang, J. Tian, B. Ge, Summary of 
+ChatGPT/GPT-4 research and perspective towards the future of large language 
+models, 2023, arXiv:2304.01852, URL https://arxiv.org/pdf/2304.01852, arXiv 
+preprint arXiv:2304.01852.
+[121] H. Zhao, H. Chen, F. Yang, N. Liu, H. Deng, H. Cai, S. Wang, D. Yin, M. Du, 
+Explainability for large language models: A survey, ACM Trans. Intell. Syst. 
+Technol. 15 (2) (2024) 1–38, http://dx.doi.org/10.1145/3639372.
+[122] C. Singh, J.P. Inala, M. Galley, R. Caruana, J. Gao, Rethinking interpretability 
+in the era of large language models, 2024, http://dx.doi.org/10.48550/arXiv.
+2402.01761, arXiv preprint arXiv:2402.01761.
+[123] A. Abdulla, G. Baryannis, A hybrid multi-criteria decision-making and machine 
+learning approach for explainable supplier selection, Supply Chain Anal. 7 
+(2024) 100074, http://dx.doi.org/10.1016/j.sca.2024.100074.
+[124] D. Handoko, M. Mesran, S.D. Nasution, Y. Yuhandri, H. Nurdiyanto, Application 
+of weight sum model (WSM) in determining special allocation funds recipients, 
+IJICS (International J. Informatics Comput. Science) 1 (2) (2017).
+[125] T. da Silva, E. Silva, A. Góis, D. Heider, S. Kaski, D. Mesquita, A. Ribeiro, 
+Human-in-the-loop causal discovery under latent confounding using ancestral 
+gFlowNets, 2023, http://dx.doi.org/10.48550/arXiv.2309.12032, arXiv preprint 
+arXiv:2309.12032.
+[126] B. Ghai, K. Mueller, D-BIAS: A causality-based human-in-the-loop system for 
+tackling algorithmic bias, IEEE Trans. Vis. Comput. Graphics 29 (1) (2022) 
+473–482, http://dx.doi.org/10.1109/TVCG.2022.3209484.
+[127] K. Zhang, S. Zhu, M. Kalander, I. Ng, J. Ye, Z. Chen, L. Pan, Gcastle: A 
+python toolbox for causal discovery, 2021, http://dx.doi.org/10.48550/arXiv.
+2111.15155, arXiv preprint arXiv:2111.15155.
+[128] D. Amodei, C. Olah, J. Steinhardt, P. Christiano, J. Schulman, D. Mané, Concrete 
+problems in AI safety, 2016, http://dx.doi.org/10.48550/arXiv.1606.06565, 
+arXiv preprint arXiv:1606.06565.
+[129] J. Gawlikowski, C.R.N. Tassi, M. Ali, J. Lee, M. Humt, J. Feng, A. Kruspe, R. 
+Triebel, P. Jung, R. Roscher, et al., A survey of uncertainty in deep neural 
+networks, Artif. Intell. Rev. 56 (Suppl 1) (2023) 1513–1589, http://dx.doi.org/
+10.1007/s10462-023-10562-9.
+[130] J. Li, J. Chen, R. Ren, X. Cheng, W.X. Zhao, J.-Y. Nie, J.-R. Wen, The dawn 
+after the dark: An empirical study on factuality hallucination in large language 
+models, in: Proceedings of the 62nd Annual Meeting of the Association for 
+Computational Linguistics, ACL, 2024, http://dx.doi.org/10.18653/v1/2024.acl-
+long.586.
+[131] T. Hu, Y. Kyrychenko, S. Rathje, N. Collier, S. van der Linden, J. Roozenbeek, 
+Generative language models exhibit social identity biases, Nat. Comput. Sci. 5 
+(1) (2025) 65–75, http://dx.doi.org/10.1038/s43588-024-00741-1.
+[132] M. Riad, M. Naimi, C. Okar, Enhancing supply chain resilience through 
+artificial intelligence: Developing a comprehensive conceptual framework for 
+AI implementation and supply chain optimization, Logistics 8 (4) (2024) 111, 
+http://dx.doi.org/10.3390/logistics8040111.
+[133] D. Ivanov, A. Dolgui, A digital supply chain twin for managing the disruption 
+risks and resilience in the era of Industry 4.0, Prod. Plan. Control 32 (9) (2021) 
+775–788, http://dx.doi.org/10.1080/09537287.2020.1768450.
+[134] R. Bommasani, D.A. Hudson, E. Adeli, R. Altman, S. Arora, S. von Arx, M.S. 
+Bernstein, J. Bohg, A. Bosselut, E. Brunskill, et al., On the opportunities 
+and risks of foundation models, 2021, http://dx.doi.org/10.48550/arXiv.2108.
+07258, arXiv preprint arXiv:2108.07258.
+[135] R. Biloslavo, D. Edgar, E. Aydin, C. Bulut, Artificial intelligence (AI) and 
+strategic planning process within vuca environments: A research agenda and 
+guidelines, Manag. Decis. (2024) http://dx.doi.org/10.1108/MD-10-2023-1944.
+[136] N. Sambasivan, S. Kapania, H. Highfill, D. Akrong, P. Paritosh, L.M. Aroyo, 
+Everyone wants to do the model work, not the data work, data cascades in 
+high-stakes AI, in: Proceedings of the 2021 CHI Conference on Human Factors 
+in Computing Systems, 2021, pp. 1–15, http://dx.doi.org/10.1145/3411764.
+3445518.
+[137] N. Singh, Y. Do, Y. Yu, I. Fouad, J. Kim, H. Kim, Crumbled cookies: Exploring 
+E-commerce websites cookie policies with data protection regulations, ACM 
+Trans. the Web 19 (1) (2025) 1–24, http://dx.doi.org/10.1145/3708515.
+[138] J. Maynez, S. Narayan, B. Bohnet, R. McDonald, On faithfulness and factuality 
+in abstractive summarization, in: Proceedings of the 58th Annual Meeting 
+of the Association for Computational Linguistics, ACL, 2020, pp. 1906–1919, 
+http://dx.doi.org/10.18653/v1/2020.acl-main.173.
+[139] A. Razavi, M. Soltangheis, N. Arabzadeh, S. Salamat, M. Zihayat, E. Bagheri, 
+Benchmarking prompt sensitivity in large language models, in: Advances in 
+Information Retrieval – 47th European Conference on Information Retrieval, 
+ECIR, Springer, 2025, http://dx.doi.org/10.1007/978-3-031-88714-7_29, URL 
+https://dl.acm.org/doi/10.1007/978-3-031-88714-7_29.
+[140] Y. Gal, Z. Ghahramani, Dropout as a bayesian approximation: Representing 
+model uncertainty in deep learning, in: International Conference on Machine 
+Learning, PMLR, 2016, pp. 1050–1059.
+[141] A. d’Avila Garcez, M. Gori, L.C. Lamb, L. Serafini, M. Spranger, S.N. Tran, 
+Neural-symbolic computing: An effective methodology for principled integration 
+of machine learning and reasoning, J. Appl. Logics 6 (4) (2019) 611–632.
+[142] T.B. Brown, et al., Language models are few-shot learners, in: Advances in 
+Neural Information Processing Systems, NeurIPS, Vol. 33, 2020, pp. 1877–1901.
+[143] J. Devlin, M.-W. Chang, K. Lee, K. Toutanova, BERT: Pre-training of deep 
+bidirectional transformers for language understanding, in: Proceedings of 
+NAACL-HLT 2019, 2019, pp. 4171–4186, http://dx.doi.org/10.18653/v1/N19-
+1423.
+Supply Chain Analytics 16 (2026) 100248 
+27 

@@ -1,0 +1,2682 @@
+TITLE: Mitigating supply chain transparency barriers with blockchain: a dynamic capabilities perspective
+AUTHORS: Eric Ragan, Mohammad H. Eslami
+VENUE: International Journal of Production Research (2026-10-02)
+DOI: https://doi.org/10.1080/00207543.2026.2738915
+LICENCE: cc-by
+LINK: https://doi.org/10.1080/00207543.2026.2738915
+
+International Journal of Production Research
+ISSN: 0020-7543 (Print) 1366-588X (Online) Journal homepage: www.tandfonline.com/journals/tprs20
+Mitigating supply chain transparency barriers
+with blockchain: a dynamic capabilities
+perspective
+Eric Ragan & Mohammad H. Eslami
+To cite this article: Eric Ragan & Mohammad H. Eslami (02 Oct 2026): Mitigating supply chain
+transparency barriers with blockchain: a dynamic capabilities perspective, International Journal
+of Production Research, DOI: 10.1080/00207543.2026.2738915
+To link to this article: https://doi.org/10.1080/00207543.2026.2738915
+© 2026 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group.
+Published online: 02 Oct 2026.
+Submit your article to this journal 
+Article views: 346
+View related articles 
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tprs20
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH
+https://doi.org/10.1080/00207543.2026.2738915
+ 
+Mitigating supply chain transparency barriers with blockchain: a dynamic 
+capabilities perspective
+Eric Ragan 
+ a and Mohammad H. Eslami 
+ b
+aDepartment of Business Administration, University of Gothenburg, Gothenburg, Sweden; bSupply Chain Management Department, Asper 
+School of Business, University of Manitoba, Winnipeg, Canada
+ABSTRACT
+The complexity and risk uncertainty stemming from supply disruptions underscore the need for 
+enhanced transparency in supply chain management. Although blockchain technologies offer 
+promising solutions through secure, immutable ledgers, adoption rates remain low, and extant 
+research focuses primarily on theoretical frameworks lacking empirical substantiation. Addressing 
+this gap, the present study reconceptualises transparency barriers as capability frictions, system-
+atic impediments that prevent firms from effectively deploying sensing, seizing, and transformation 
+capabilities. Through an in-depth case study of a Swedish OEM and its suppliers, four transparency 
+barriers are identified: information inaccuracy, risks of information sharing, lack of communica-
+tion protocols, and future communications compatibility. Analysis demonstrates how these barriers 
+create capability frictions by weakening sensing through information asymmetry, constraining seiz-
+ing through limited collaboration, and restricting transformation through weak data governance. 
+The findings reveal how blockchain’s distinctive properties, immutability, transparency, and decen-
+tralised consensus, systematically reduce these frictions, enabling firms to transition from weakened 
+to enhanced dynamic capabilities. Five propositions are developed theorising the mechanisms 
+through which blockchain serves as a digital enabler for capability transformation, contributing to 
+dynamic capabilities theory and supply chain management practice .
+ARTICLE HISTORY
+Received 1 March 2024
+Accepted 26 August 2026
+KEYWORDS
+Supply chain management; 
+blockchain; transparency; 
+information sharing; 
+dynamic capabilities
+SUBJECT 
+CLASSIFICATIONS
+Supply chain collaboration; 
+supply chain management; 
+blockchain
+Introduction
+Research interest in supply chain transparency, infor-
+mation sharing, tracking and tracing has increased in 
+recent years due to the marked changes in global sup-
+ply networks triggered by events such as the worldwide 
+pandemic and the expansion of e-commerce (Budler, 
+Quiroga, and Trkman 2024; Pournader et al. 2020). 
+Ongoing challenges including material shortages, pro-
+duction interruptions, and increased costs in both sourc-
+ing and logistics have led to research about the advan-
+tages, disadvantages and barriers to supply chain trans-
+parency for firms (Guan et al. 2020; Mol 2015; W ognum 
+et al. 2011; Y ang, Fu, and Zhang 2021). These concerns 
+are reflected in recent findings showing that while 77% of 
+procurement experts consider supply chain transparency 
+to be crucial, only 31% are satisfied with their organisa-
+tion’ s current transparency efforts (Procurement Leaders 
+2022).
+Despite its critical importance, increasing trans-
+parency in supply chains faces persistent challenges such 
+as the lack of available resources and accurate informa-
+tion, and the need to create an integrated and common 
+CONTACT Eric Ragan 
+ eric.ragan@gu.se
+ Department of Business Administration, University of Gothenburg, Gothenburg 405 30, Sweden
+strategy when it comes to information systems and man-
+agement systems (Mol 2015; W ognum et al. 2011). These 
+challenges are further intensified by the increasing com-
+plexity of supply chains, with numerous suppliers spread 
+across the globe, complicating oversight and the ability 
+to predict the impact of market disruption (Serdarasan 
+2013). In addition, emerging government regulations, 
+such as the European Union’ s Regulation on Ecode-
+sign for Sustainable Products, which mandates Digital 
+Product Passports for all regulated products, are com-
+pelling firms to enhance their product origin track-
+ing and stakeholder reporting (European Union 2022). 
+Therefore, transparency in supply chains is seen as a 
+strategic and dynamic capability in supply chain manage-
+ment research, highlighting how increased transparency 
+can create governance systems that can reduce opera-
+tional risk (Bai and Sarkis 2020; Montecchi, Plangger, and 
+W est 2021; Y ao and Zhu 2020).
+In response to these challenges, many firms are relying 
+on digital technologies to increase information sharing, 
+accuracy, and speed. T echnologies such as blockchain, 
+through decentralised and immutable record-keeping, 
+© 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, 
+distribution, and reproduction in any medium, provided the original work is properly cited. The terms on which this article has been published allow the posting of the Accepted 
+Manuscript in a repository by the author(s) or with their consent.
+2 
+ E. RAGAN AND M. H. ESLAMI
+have shown promise in enhancing transparency in com-
+plex supply chain networks through enhanced real-time 
+information flow, reducing information asymmetries 
+and enabling more standardised access to information 
+(Addo-T enkorang and Helo 2016; Choi and Siqin 2022 
+; Kumar et al. 2022; Pattanayak, Ramkumar, et al. 2024; 
+Saberi et al. 2019). However, the widespread adoption 
+of blockchain technologies is hindered by barriers such 
+as insufficient IT infrastructure, lack of implementation 
+knowledge, misunderstanding of the technology, and 
+financial constraints (Rad et al. 2022; Raj et al. 2024; Tran-
+Dang et al. 2022). Moreover, empirical evidence shows 
+that successful blockchain implementation requires spe-
+cific organisational capabilities. Recent research on elec-
+tronics companies in Bangladesh confirms that three key 
+capabilities are particularly critical: innovation capability, 
+information-sharing capability, and technological capa-
+bility (Polas et al. 2025).
+Despite some recent case studies on technology accep-
+tance and implementation (Balzarova, Dyer, and Falta 
+2022; Centobelli et al. 2022), research on transparency 
+facilitated by blockchain use remains largely theoretical, 
+with limited empirical evidence (Chou et al. 2023; Guo, 
+Sun, and Lam 2023; Iranmanesh et al. 2023). Addressing 
+this gap, the present study examines the barriers to trans-
+parency and information sharing within the supply chain 
+of a Swedish Original Equipment Manufacturer (OEM) 
+and its first-tier suppliers. Through qualitative case study 
+analysis involving interviews and document analysis, 
+four key barriers were identified: information inaccu-
+racy, risk of information sharing, lack of communication 
+standards, and the need for future communications com-
+patibility. These transparency barriers are interpreted as 
+capability deficits that restrict firms’ ability to sense, seize, 
+and transform information flows effectively. Blockchain 
+adoption is examined as a digital enabler that diminish 
+these deficits and thus creates dynamic capabilities for 
+adaptability and transparency.
+This study advances both theoretical and practi-
+cal understanding in several important ways. Theoreti-
+cally, it provides much-needed empirical evidence in a 
+field dominated by conceptual frameworks (e.g. Chou 
+et al. 2023; Guo, Sun, and Lam 2023). Practically, it 
+moves beyond generic blockchain discussions to examine 
+specific transparency barriers within an actual OEM-
+supplier network, offering actionable insights for imple-
+mentation. The dynamic capabilities framework helps 
+explain how the four identified barriers, information 
+inaccuracy, sharing risks, communication standards, and 
+future compatibility, represent capability deficits that 
+blockchain technology can help organisations systemat-
+ically address and transform. Moreover, recent research 
+has shown that practitioners can benefit from strong the-
+oretical foundations, enhancing strategy implementation 
+and more effectively identifying key success factors and 
+potential barriers (Goertler, Papert, and Fischer 2024).
+This study employs dynamic capabilities theory as 
+its theoretical lens because transparency challenges in 
+supply chains fundamentally affect a firm’ s abilities to 
+sense, seize, and transform its information-sharing and 
+collaboration capabilities in response to environmen-
+tal changes. This framework is particularly suited for 
+analysing blockchain’ s impact as it outlines the activ-
+ities required to digitalise processes of transparency 
+and information sharing (Hallikas, Immonen, and Brax 
+2021), building on the dynamic capabilities frame-
+work that identifies sensing, seizing, and reconfiguring 
+as essential capacity drivers enabling corporations to 
+enhance their resilience in environments of rapid change
+(T eece 2007).
+This study addresses the lack of empirical evidence 
+on transparency barriers in supply chains and proposes 
+actionable blockchain strategies for their mitigation. W e 
+argue that transparency barriers manifest as capabil-
+ity frictions, systematic impediments to sensing, seiz-
+ing, and transformation, and that blockchain adoption 
+serves as a digital enabler that reduces these frictions, 
+thereby enabling enhanced dynamic capabilities and sup-
+ply chain resilience. Through an in-depth case study of a 
+Swedish OEM and its suppliers, we identify four trans-
+parency barriers, demonstrate how they create capability 
+frictions, and develop five propositions articulating how 
+blockchain systematically transforms these frictions into 
+enhanced dynamic capabilities, contributing to both the-
+oretical understanding and practical supply chain man-
+agement knowledge.
+The remainder of the paper is structured as follows. 
+First, a literature review is conducted exploring trans-
+parency and blockchain in supply chains, focusing on 
+both barriers and benefits to its adoption, and con-
+cluding with a discussion on dynamic capabilities the-
+ory in supply chains. Second, the focal firm and the 
+blockchain project of focus in this case study are intro-
+duced, followed by the data collection and analysis meth-
+ods used to interpret the empirical data. Third, a presen-
+tation of the study’ s empirical evidence supporting the 
+four key barriers discovered, followed by five proposi-
+tions relating to the utilisation of blockchain technolo-
+gies to mitigate these barriers is presented. The paper 
+concludes with a summary of its theoretical and prac-
+tical contributions and a discussion of future research
+opportunities.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 3
+Review of literature
+Transparency in supply chains
+Supply chain transparency can encompass reporting and 
+communicating information to key stakeholders, trac-
+ing products along the supply chain, or making current 
+activities more visible to different stakeholders in the net-
+work (Morgan, Richey, and Ellinger 2018). As a part of 
+this process, management, regulatory, consumer, and/or 
+public information is shared with different upstream and 
+downstream supply chain members (Mol 2015). The level 
+of transparency applied to communication with differ-
+ent supply chain actors, both internally and externally, 
+is often context-driven, with a particular purpose, for 
+example sustainable supply chain information (Schafer 
+2023). According to Bai and Sarkis (2020), transparency 
+practices are mainly applied to product tracking and trac-
+ing, as well as to participant activities (i.e. sustainability 
+initiatives) in supply chains. However, the inconsistent 
+utilisation of transparency practices across different tiers 
+of suppliers presents a key challenge, particularly in fos-
+tering trust and collaboration between firms and their 
+supply chain partners. It is thus important to under-
+stand how firms can manage technical and organisational 
+barriers to implementing transparency initiatives.
+Product tracing, from source to customer delivery, 
+forms a complete product provenance record. This can 
+demonstrate to the consumer, for example, that prod-
+ucts are authentic and/or that ethical procedures were 
+being followed during manufacturing, increasing the 
+likelihood of repurchasing (Bai and Sarkis 2020; Kshetri 
+2017). Supply chain members can also benefit from prod-
+uct tracking, as this facilitates the analysis of product 
+movements and delivery paths. Using this information, 
+it is possible to determine whether a particular prod-
+uct was incorrectly processed, placed in the wrong loca-
+tion, or failed to meet the delivery deadline (Koetsier 
+2017). Thus, increased visibility of upstream and down-
+stream supply chain processes enhances the governance 
+and coordination of supply chain operations (Lumineau, 
+W ang, and Schilke 2021; Tran-Dang et al. 2022).
+Despite these benefits, for supply chain transparency 
+to be effective, all firms and partner agents in the supply 
+network must be involved. As most businesses have little 
+to no information about their own second- and third-tier 
+suppliers, transparency is a significant business challenge 
+(Bai and Sarkis 2020). Thus, firms must foster coordi-
+nation with global supply chain stakeholders to deepen 
+their transparency in relation to these suppliers (Rad 
+et al. 2022). This needs to include information sharing on 
+upper-tier supply chain disruptions, including internal 
+shortages, recalls, and bankruptcies, as well as external 
+issues due to natural disasters and pandemics (Sodhi 
+and Tang 2019). Enhanced supply chain transparency 
+will function as a governance system that lowers opera-
+tional risks for different stakeholders within the network 
+(Mol 2015). Effective transparency initiatives may also 
+lessen supply chain partners’ uncertainties and support 
+a collaborative information sharing culture, leading to 
+more in-depth product tracking and tracing (Montecchi, 
+Plangger, and W est 2021).
+T oday’ s supply networks are composed of thousands 
+of suppliers spread all over the world, making it diffi-
+cult for firms to gather accurate, timely, and trustworthy 
+information. This fragmentation is caused by focal firms 
+looking for ways to lower their costs, putting pressure on 
+suppliers to outsource their production to less developed 
+countries, leading to little or no transparency and to neg-
+ative externalities in supply chains (Kamble et al. 2019; 
+Sodhi and Tang 2019). These drawbacks can be over-
+come by increasing the transparency of supply partner 
+operations, and through timely sharing of information 
+about current supply states and sustainability conditions 
+(Baah et al. 2022; Benstead et al. 2024). Greater trans-
+parency improves trust among the various stakeholders, 
+which is conducive to better collaboration and decision-
+making, thereby increasing supply chain performance 
+and resilience (Barratt and Oke 2007). Collaboration also 
+creates a competitive advantage through cost reductions, 
+improved problem-solving capabilities, quicker adjust-
+ments to market fluctuations, risk sharing, and faster 
+knowledge acquisition. These benefits have been shown 
+to mitigate supply chain risks stemming from market 
+volatility, essentially creating more agile supply chains 
+(Baah et al. 2022; Barratt and Oke 2007).
+While it is indisputable that increasing transparency in 
+supply chains is beneficial to all stakeholders, achieving 
+this aim can be difficult due to the growing complexity of 
+supply chains, the technical deficiencies of stakeholders, 
+and multiple standards of communication (V enkatesh 
+et al. 2020). These challenges can be mitigated using 
+digital technologies that facilitate the timely availabil-
+ity of information to all stakeholders, the rapid tracing 
+of product history, secure information transmission, and 
+the automation of manual processes across the entire net-
+work (Li, Lee, and Gharehgozli 2023). Blockchain is one 
+such solution, known for its ability to improve trans-
+parency and trust in supply chain networks through 
+trusted and immutable ledgers that can be visible to 
+everyone (Addo-T enkorang and Helo 2016; Boone, Skip-
+per, and Hazen 2017; Y ang, Fu, and Zhang 2021).
+Blockchain in supply chains
+Blockchain is defined as ‘a digital, decentralized and dis-
+tributed ledger in which transactions are logged and 
+4 
+ E. RAGAN AND M. H. ESLAMI
+added in chronological order with the goal of creating 
+permanent and tamperproof records’ (Treiblmaier 2018, 
+547). Its main benefits stem from the implicit consen-
+sus achieved through the verification of transactions with 
+other blockchain copies in the ledger and through digital 
+smart contracts for data sharing and transaction gate-
+keeping (Agrawal et al. 2023). Since its development, 
+blockchain technologies have been extensively used in 
+cryptocurrency transactions because of the security it can 
+provide through data encryption and immutability (Y aga 
+et al. 2019). Currently available blockchain networks are 
+either permissionless (meaning that everybody can join) 
+or permissioned (users need to be authorised before 
+joining), with the latter being more common in private 
+blockchain solutions used in supply chains (Agrawal et al. 
+2021; Y aga et al. 2019). Blockchain’ s benefits in supply 
+chains include secure data sharing, permanent trans-
+action recording, and automation with smart contracts 
+(Rejeb, Keogh, and Treiblmaier 2019; Saberi et al. 2019). 
+As shown by Agrawal et al. (2023), smart contracts are 
+particularly useful in this context, as they allow focal 
+firms to impose tailored rules to encourage cooperation 
+among certain actors in the supply network and facilitate 
+the sharing of resources among them.
+According to Saberi et al. (2019), transparency created 
+through blockchain reduces the opportunistic behaviour 
+of supply chain partners and creates efficiencies by elimi-
+nating the need for intermediaries. Smart contracts can 
+create additional efficiencies through automation and 
+the use of real-time information, while reducing paper-
+work and mitigating supply chain disruptions such as 
+the bullwhip effect (Bodkhe et al. 2020; Rejeb, Keogh, 
+and Treiblmaier 2019). Additional benefits of blockchain 
+adoption in supply chains are attained through greater 
+transparency, traceability, and scalability, difficult to 
+achieve via traditional centralised tracking and trac-
+ing systems (Sunny, Undralla, and Madhusudanan Pil-
+lai 2020). Lastly, tracking and tracing in combination 
+with secured data flows through blockchain improve the 
+authenticity of information around a product’ s prove-
+nance (Bodkhe et al. 2020).
+Data is an essential component of supply chains, and 
+the seamless integration of information flows throughout 
+the supply chain is vital for generating value. There-
+fore, any technology that promotes a prompt and pre-
+cise transmission of information is expected to have a 
+substantial influence on the efficiency of supply chain 
+operations beyond the capabilities of existing Enterprise 
+Resource Planning (ERP) systems (Benstead et al. 2024 
+). Blockchain fulfills the necessary criteria for facilitating 
+the efficient integration of supply chains, while lower-
+ing transaction costs by reducing regulatory bottlenecks 
+and the potential for human error (Bai and Sarkis 2020; 
+Benstead et al. 2024). Additional cost savings can be 
+realised through efficiency gains in identifying and eval-
+uating trading partners, as well as reducing the need 
+for supplier governance and simplifying dispute resolu-
+tions (Lumineau, W ang, and Schilke 2021). Indeed, as 
+shown by Centobelli et al. (2022), supply chains that do 
+not incorporate a blockchain system necessitate a sig-
+nificant number of human inspections and transactions, 
+requiring multiple intermediaries to build trust.
+Blockchain allows for better connectivity with supply 
+chain partners and their networks (Bai and Sarkis 2020), 
+thus improving compliance with regulatory require-
+ments, consumer and investor trust, and the external 
+auditing process (Sodhi and Tang 2019). Additionally, 
+databases utilising blockchain technology organise data 
+in a more structured manner, thereby simplifying its use 
+and analysis (Choi, Guo, and Luo 2020). Furthermore, 
+the tracing and transparency provided by blockchain 
+technology enables better prediction of variations in 
+demand within the supply chain, making it possible to 
+effectively manage costs and minimise supply swings 
+(Centobelli et al. 2022). However, despite its benefits, 
+blockchain adoption can have unintended consequences. 
+For instance, the transparencies enabled by blockchain 
+may reveal vulnerabilities such as unethical sourcing 
+practices, labour exploitation, counterfeit goods, or inef-
+ficiencies in supply chain operations that might damage a 
+firm’ s reputation (Bodkhe et al. 2020; Montecchi, Plang-
+ger, and W est 2021). The negative externalities from sup-
+ply chain partners can result in production challenges, 
+disruptions, unethical practices, environmental issues, 
+and poor working conditions in factories, all of which 
+must be managed effectively to prevent further issues. 
+This highlights the importance of governance mecha-
+nisms and collaboration among firms and supply chain 
+partners to mitigate these risks (Montecchi, Plangger, and 
+W est 2021).
+Accordingly, when digital technologies such as block
+chain are coupled with governance mechanisms, cap-
+turing pertinent supply chain information promotes an 
+environment of openness that is beneficial for all sup-
+ply chain stakeholders (Lumineau, W ang, and Schilke 
+2021; Montecchi, Plangger, and W est 2021). However, 
+despite these advantages, many firms remain reluctant 
+to increase information sharing with supply chain stake-
+holders, leading existing research in this field to focus 
+predominantly on the enablers and obstacles to broader 
+blockchain adoption (Han and Fang 2024; Li, Lee, and 
+Gharehgozli 2023). There are limited empirical stud-
+ies exploring the barriers to increased transparency and 
+information sharing in supply chains with blockchain, 
+with a few exceptions (Dubey et al. 2020; Fosso W amba, 
+Queiroz, and Trinchera 2020).
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 5
+Transparency and blockchain barriers in supply 
+chains
+Barriers to transparency in supply chains can be both 
+technical and social in nature. For many firms, the costs 
+associated with the adoption of a new technology, its 
+merging with legacy systems, and personnel training can 
+be prohibitive (Rathee et al. 2021; Sharma et al. 2021). For 
+others, the barriers stem from the lack of communication 
+protocols and/or sharing standards, software compati-
+bility issues, and poor internet connectivity. Even firms 
+that proceed with blockchain adoption need to design 
+governance mechanisms to manage the huge amounts 
+of data collected through the system, which could hin-
+der transparency efforts (Iddris 2018; Kamble et al. 2019; 
+Lumineau, W ang, and Schilke 2021; Sharma et al. 2021). 
+While these challenges are acknowledged by existing 
+studies, there is little empirical research investigating 
+how governance mechanisms can manage these issues, 
+particularly in multi-tiered supply chains.
+Some firms are also hesitant to reveal supplier infor-
+mation for fear of losing their competitive advantage, 
+while others indicate security concerns as a barrier to 
+greater transparency (Sharma et al. 2021; Sodhi and Tang 
+2019; Y adav et al. 2020). Reputational damage is also 
+a cause for concern, as the discovery of issues such as 
+poor work environments in the supply chains or prod-
+uct provenance issues (e.g. conflict minerals) could create 
+unnecessary bad press for the supply chain stakehold-
+ers. Transparency can put firms in a position where they 
+are either guilty by association due to upstream sup-
+plier problems or guilty for not disclosing information 
+about suppliers when issues arise; they are thus reluctant 
+to be pushed into loss of deniability about their supply 
+networks (Sodhi and Tang 2019).
+From an inter-organisational perspective, critical fac-
+tors in blockchain adoption include lack of common 
+standards, lack of trust in the system, and lack of faithful 
+information sharing (Choi and Siqin 2022). Standard-
+isation protocols related to blockchain technology can 
+encompass industry, communication, legal, and regula-
+tory standards, many of which are closely tied to gov-
+ernmental regulations on implementation and interoper-
+ability risks (Keoh, Kumar, and T schofenig 2014; Kumar 
+et al. 2022; Saberi et al. 2019). As was shown by Mis-
+try et al. (2020), lack of communication and technical 
+standardisation creates interoperability issues as it pre-
+cludes direct data transfer across different ledgers. The 
+absence of common communication standards among 
+supply chain partners also limits blockchain informa-
+tion sharing capability, resulting in knowledge gaps 
+between stakeholders (Rejeb, Keogh, and Treiblmaier 
+2019). Intra-organisational barriers such as lack of capi-
+tal, technical knowledge, support and commitment from 
+management, and adequate IT infrastructure are further 
+issues that hinder blockchain adoption in supply chains 
+(Choi and Siqin 2022; Saberi et al. 2019). For exam-
+ple, private blockchains require skilled workers, robust 
+IT infrastructure, capital, and commitment across all 
+departments (Kumar et al. 2022). Depending on how 
+a blockchain is set up, scalability mandated by increas-
+ingly longer chains increases the storage space require-
+ments, and additional nodes necessitate greater process-
+ing resources which may increase synchronisation times, 
+reducing overall system performance (Reyna et al. 2018).
+Dynamic capabilities in supply chains
+According to T eece (2007), ‘The enterprise will need 
+sensing, seizing, and transformational/reconfiguring
+capabilities to be simultaneously developed and applied 
+for it to build and maintain competitive advantage’ 
+(1341). In this context, the term ‘sensing’ refers to the 
+process of capturing, sifting, and filtering data, uncov-
+ering changes in markets, and creating new knowledge 
+to respond to supply chain demand shifts (Hallikas, 
+Immonen, and Brax 2021; T eece 2007). Through seiz-
+ing, firms evaluate and reorganise resources to facilitate 
+information-sharing and decision-making procedures, 
+capitalising on opportunities, and creating additional 
+value with current resources (Foerstl et al. 2021; Zhu, Bai, 
+and Sarkis 2022). The ability of a firm to adjust, reorgan-
+ise, and create new or replace old business models is thus 
+foundational to its dynamic capabilities (Hallikas, Immo-
+nen, and Brax 2021; T eece 2007). On the other hand, new 
+competitive advantage can only be attained by transform-
+ing business models through the continuous realignment 
+and reassessment of assets, both tangible and intangible, 
+managing knowledge, and creating governance mecha-
+nisms to manage threats and respond to opportunities 
+(T eece 2007). T o remain competitive in rapidly changing 
+supply chain markets, firms need to quickly create new 
+knowledge. However, uncertainty regarding the veracity 
+of available information, market volatility, and security 
+concerns cause managers to adjust slowly to these rapid 
+changes (Eisenhardt and Martin 2000).
+The concept of dynamic and volatile markets, as 
+defined by Eisenhardt and Martin (2000), is characterised 
+by unclear market boundaries, frequent, sporadic, and 
+often unpredictable changes, and not always clearly dis-
+cernible market players. This definition is particularly 
+applicable to supply chains, which can be regarded as 
+dynamic markets due to their inherent complexity, the 
+lack of visibility of the entire supply network, and the 
+prevailing disruptions they face, in which factors such 
+6 
+ E. RAGAN AND M. H. ESLAMI
+as pandemics can introduce additional layers of unpre-
+dictability and disruption. Research has found that firms 
+may create dynamic capabilities by collaborating with 
+supply partners and reconfiguring their operational rou-
+tines to increase efficiencies (Aslam et al. 2020; Hallikas, 
+Immonen, and Brax 2021; Rajaguru and Matanda 2019). 
+However, Schilke (2014), found that capabilities such as 
+the management of alliances and new product develop-
+ment are not necessarily linear when considering highly 
+dynamic markets. He found that a U-shaped contingent 
+relationship exists wherein the impact of dynamic capa-
+bilities on competitive advantage is most pronounced in 
+moderately dynamic situations, while it diminishes in 
+both low and high levels of environmental dynamism 
+(Schilke 2014). Firms will need to distinguish between 
+what Fainshmidt et al. (2016) referred to as higher-order 
+and lower-order capabilities. Higher-order capabilities 
+allow firms to make transformational changes to organi-
+sational performance by enhancing lower-order capabili-
+ties. Firms that can distinguish between higher-order and 
+lower-order capabilities will enhance problem-solving 
+and increase the likelihood of driving organisational 
+changes within their dynamic environments (Fainshmidt 
+et al. 2016).
+However, this process necessitates that all supply chain 
+members develop the skills required to appropriately 
+adapt to shifting market demands and environmental 
+changes (Bojesson and Fundin 2021; Eslami et al. 2024). 
+As the world becomes more interconnected, the ability 
+to share timely and accurate information becomes crit-
+ical for responsiveness in supply chains (Dubey et al. 
+2020). Digital technologies such as blockchain offer sig-
+nificant potential for enhancing transparency through 
+the facilitation of secure, real-time information sharing 
+with supply chain partners (Eslami et al. 2024). By cre-
+ating more accurate, reliable, and trusted information, 
+blockchain can support managers in making better deci-
+sions, thereby strengthening the organisation’ s dynamic 
+capabilities.
+Transparency barriers as capability frictions
+Building on the dynamic capability’ s framework dis-
+cussed above, transparency barriers in the current study 
+are conceptualised as capability frictions, systematic 
+impediments that prevent firms from effectively deploy-
+ing their sensing, seizing, and transformation capabilities 
+in supply chain environments. While prior research has 
+documented various barriers to transparency in supply 
+chain management (Sharma et al. 2021; Sodhi and Tang 
+2019), these barriers have largely been treated as opera-
+tional or technological challenges rather than as funda-
+mental constraints on the development and deployment 
+of organisational capabilities. This represents a gap in 
+the theoretical understanding of how transparency chal-
+lenges impair dynamic capabilities and, consequently, 
+how digital technologies such as blockchain can address 
+these capability deficiencies.
+The present study theorises that capability frictions 
+emerge through three interconnected mechanisms that 
+directly impair the dynamic capabilities essential for 
+supply chain resilience. First, information asymmetry 
+created by inaccurate data and incompatible commu-
+nication protocols prevent reliable environmental scan-
+ning, thereby weakening sensing capabilities (Hallikas, 
+Immonen, and Brax 2021; T eece 2007). When firms can-
+not trust the information received from supply chain 
+partners or cannot efficiently gather intelligence due 
+to system incompatibility, their ability to detect mar-
+ket changes, identify emerging risks, and recognise new 
+opportunities becomes fundamentally impaired. This 
+diminished sensing capacity constrains the knowledge 
+creation and environmental awareness necessary for 
+responding to supply chain disruptions. Second, lim-
+ited collaboration stemming from information-sharing 
+risks constrains resource coordination and opportu-
+nity exploitation, thereby weakening seizing capabilities 
+(Foerstl et al. 2021; Zhu, Bai, and Sarkis 2022). When 
+stakeholders withhold critical operational information 
+due to competitive concerns or security fears regarding 
+data breaches, firms cannot effectively realign resources 
+or engage in collaborative decision-making processes in 
+response to sensed environmental changes. This col-
+laboration deficit prevents firms from capitalising on 
+opportunities and responding swiftly to market dynam-
+ics. Third, weak data governance structures and con-
+cerns about future compatibility restrict organisational 
+adaptability and process reconfiguration, thereby weak-
+ening transformation capabilities (T eece 2007). With-
+out robust, future-proof information infrastructure capa-
+ble of accommodating evolving regulatory requirements 
+and technological advancements, firms cannot continu-
+ously realign assets or develop the governance mecha-
+nisms necessary for sustained competitive advantage in 
+dynamic supply chain environments.
+Blockchain technology, through its distinctive prop-
+erties of immutability, transparency, and decentralised 
+consensus (Treiblmaier 2018; Y aga et al. 2019), offers 
+a systematic approach to reducing these capability fric-
+tions. Its capacity for secure data sharing addresses infor-
+mation asymmetry by ensuring data accuracy and relia-
+bility; permissioned access controls and smart contracts 
+enable trusted collaboration by protecting proprietary 
+information while facilitating information exchange; and 
+standardised protocols with extensible architecture sup-
+port adaptive governance by providing a flexible platform 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 7
+Figure 1. Theoretical framework.
+Notes: Transparency barriers create capability frictions that weaken dynamic capabilities across sensing, seizing, and transformation dimensions. Blockchain 
+adoption acts as a digital enabler, reducing these frictions and strengthening dynamic capabilities, which leads to enhanced supply chain transparency.
+for evolving requirements. However, despite the theoret-
+ical potential of blockchain to address these challenges, 
+the specific mechanisms through which blockchain 
+adoption transforms capability frictions into enhanced 
+dynamic capabilities remain empirically underexplored 
+in supply chain management research. Accordingly, the 
+present study investigates these transformation mecha-
+nisms through the following research questions:
+RQ1: What transparency barriers create capability fric-
+tions in supply chains?
+RQ2: How does blockchain adoption reduce these fric-
+tions and enhance dynamic capabilities?
+Theoretical framework
+Figure 1 presents the theoretical framework guiding the 
+present investigation, integrating transparency barriers, 
+capability frictions, and blockchain-enabled capability 
+enhancement within supply chain contexts. The frame-
+work builds on dynamic capabilities theory (T eece 2007; 
+T eece, Pisano, and Shuen 1997) to illustrate how trans-
+parency barriers generate capability frictions through 
+three distinct mechanisms, how these frictions mani-
+fest as weakened dynamic capabilities across the dimen-
+sions of sensing, seizing, and transformation, and how 
+blockchain’ s distinctive technological properties system-
+atically address these weaknesses to enable enhanced 
+capabilities necessary for supply chain resilience.
+As illustrated in the framework, transparency barri-
+ers generate capability frictions through distinct mecha-
+nisms that directly impair the dynamic capabilities essen-
+tial for supply chain management. Information inaccu-
+racy and the absence of standardised communication 
+protocols create information asymmetry, thereby pre-
+venting firms from accurately sensing their environment 
+(Hallikas, Immonen, and Brax 2021; T eece 2007). When 
+data is incomplete, delayed, or incompatible across sys-
+tems, firms cannot reliably monitor supplier operations, 
+identify critical dependencies across multiple tiers, or 
+detect emerging disruptions in their supply networks. 
+The risks associated with information sharing limit stake-
+holder collaboration, thereby constraining the seizing of 
+opportunities through coordinated resource alignment 
+(Foerstl et al. 2021; Sharma et al. 2021; Sodhi and Tang 
+2019). When supply chain partners withhold operational 
+intelligence due to competitive concerns or security vul-
+nerabilities, firms cannot effectively realign resources 
+or engage in collaborative decision-making processes in 
+response to sensed market changes. W eak data gover-
+nance structures and concerns about future compatibility 
+restrict organisational transformation by limiting adapt-
+ability across the supply chain (T eece 2007). Without 
+robust, future-proof information infrastructure capable 
+of accommodating evolving regulatory and technological 
+requirements, firms face repeated disruptive system over-
+hauls rather than the continuous capability development 
+necessary for sustained competitive advantage.
+Blockchain technology systematically addresses these 
+capability frictions through its distinctive technological 
+properties (Treiblmaier 2018; Y aga et al. 2019), as shown 
+in the framework. The immutability and transparency 
+8 
+ E. RAGAN AND M. H. ESLAMI
+characteristics of blockchain reduce information asym-
+metry by ensuring data accuracy and enabling real-time 
+visibility across supply chain tiers, thereby enhancing 
+sensing capabilities (Bai and Sarkis 2020; Pattanayak, 
+Arputham, et al. 2024). Smart contracts and permis-
+sioned access controls enable secure collaboration by 
+protecting proprietary information while simultaneously 
+facilitating the information exchange necessary for coor-
+dination (Rejeb, Keogh, and Treiblmaier 2019; Saberi 
+et al. 2019), thereby strengthening seizing capabilities. 
+Standardised communication protocols and extensible 
+architectural design support both governance and adapt-
+ability by providing a future-proof platform that accom-
+modates evolving regulatory requirements and techno-
+logical advancements (Benstead et al. 2024; Centobelli 
+et al. 2022), thereby facilitating transformation capabil-
+ities.
+This framework positions blockchain adoption not 
+merely as a technological implementation, but rather 
+as a catalyst for fundamental capability transforma-
+tion in supply chain management. By systematically 
+reducing frictions across all three capability dimen-
+sions, blockchain enables firms to transition from weak-
+ened capabilities, characterised by delayed sensing, frag-
+mented seizing, and constrained transformation, to 
+enhanced capabilities that support supply chain resilience 
+in dynamic and uncertain environments (Fainshmidt 
+et al. 2016; Zhu, Bai, and Sarkis 2022). Importantly, these 
+capability enhancements are interconnected and mutu-
+ally reinforcing improved sensing capabilities provide the 
+reliable information foundation necessary for effective 
+seizing, which in turn enables the organisational trans-
+formation required for sustained competitive advantage 
+(T eece 2007). The empirical investigation presented in 
+this study examines this framework through an in-depth 
+case study analysis of blockchain implementation in an 
+OEM supply chain context.
+Methodology
+Case study design and context
+T o explore and understand the concept of transparency 
+and how blockchain can be used to increase transparency 
+in an OEM supply chain, a single in-depth case study 
+technique was adopted in this research. Case study meth-
+ods can be used when the objective is to understand 
+more clearly a phenomenon of interest in a complex real-
+life context where boundaries between the context and 
+the phenomenon might not be clear (Yin 2009). This 
+strategy was suitable for addressing the research ques-
+tions guiding this investigation since it makes it possible 
+to have a thorough grasp of how supply chain partners 
+define transparency and see its strategic advantage, and 
+to identify the technologies used to increase information 
+sharing. Additionally, according to Ketokivi and Choi 
+(2014), the case study approach should be utilised when 
+the empirical data is analysed not just to confirm a theory 
+but also to elaborate on its postulates, based on the empir-
+ical findings. In this research, concentrating on a specific 
+case also provided the opportunity to understand trans-
+parency in supply chains and the perspective of the focal 
+firm on the adoption of blockchain as well as the perspec-
+tives of its key suppliers (Eslami, Lakemond, and Brusoni 
+2018).
+The focal firm is an international corporation with 
+over 15,000 employees that is headquartered in Swe-
+den. It is a leading manufacturer of construction equip-
+ment used in rock quarries and in infrastructure projects 
+such as road construction. At the time of the study, like 
+many other industrial manufacturing firms, the focal 
+firm had experienced supply chain shortages and disrup-
+tions, prompting the adoption of digital technologies to 
+improve collaboration with suppliers, as well as to sense 
+disruptions in their supply lines early for quicker deci-
+sion making. Many supply chain members had developed 
+deep long-term relationships with the focal firm.
+The focal firm’ s supply chain contains approximately 
+4,000 Tier 1 suppliers from various parts of the world and 
+an unknown number of Tier N suppliers. These suppli-
+ers are categorised in groups such as business partners, 
+supply partners, suppliers, and backup suppliers, depend-
+ing on their internal scores and relationship strengths. 
+Blockchain technology is being utilised in a project called 
+Material Data System (MDS) Sponsoring and involves all 
+Tier 1 suppliers. A prioritised rollout of the blockchain 
+project to suppliers started with those in the ‘business 
+partners’ category, since the focal firm has the strongest 
+relationship with those suppliers. MDS is a universal 
+information-sharing platform designed for the manufac-
+turing industry, allowing users to report on vehicle con-
+tents as required by governmental regulations and to help 
+with afterlife recycling and reuse programmes (Euro-
+pean Automobile Manufacturers’ Association 2018). The 
+focal firm has implemented a compliance data exchange 
+(CDX) system developed with input from other manu-
+facturers and provided by DXC T echnologies. DXC T ech-
+nologies assists multinational corporations in managing 
+their essential systems and operations, as well as updat-
+ing IT infrastructure, optimising data frameworks, and 
+assuring security and scalability in public, private, and 
+hybrid cloud environments (CDX 2023).
+By October 2023, approximately 2,000 of these Tier 
+1 suppliers had signed on to the service, with the focal 
+firm covering all associated fees, allowing the suppliers 
+to implement the system with their own Tier 1 supply 
+networks. The ultimate aim of this initiative was to make 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 9
+the blockchain available to all suppliers to comply with 
+the product provenance governance requirements and to 
+discover unknown critical suppliers.
+Against this background, the current study focused on 
+the internal operations of the focal firm and its inter-
+actions with supply chain partners. More specifically, 
+the investigation sought to understand how these bar-
+riers manifest as capability frictions, systematic imped-
+iments to sensing, seizing, and transformation, and how 
+blockchain adoption serves to reduce these frictions and 
+enable enhanced dynamic capabilities. During these ini-
+tial discussions, the focal firm representatives pointed 
+to the lack of knowledge among upstream supply chain 
+members as the main challenge, coupled with production 
+disruptions and forecasting misalignments between sup-
+pliers and the focal firm. Many of the digital technologies 
+used for sharing this information were considered inad-
+equate by all participants. Additionally, the upcoming 
+implementation of new European Union (EU) regula-
+tions required the focal firm to share product provenance 
+information with downstream stakeholders. Under this 
+new legislation, this information would need to include 
+all materials in products, the location of all production 
+processes and facilities, and a detailed report on any con-
+flicts involving minerals, labour rights, or resource utili-
+sation in the supply chain. Being a large OEM, the focal 
+firm was solely responsible for gathering and provid-
+ing this information to government agencies and other 
+stakeholders.
+Data collection
+Data collection was conducted through a semi-structu
+red interview process. Interviews allow researchers to 
+investigate a topic through discussion with participants 
+about their experiences, viewpoints, and understandings 
+of the subject matter. This process allows the researchers 
+to acquire extensive, intricate, and nuanced data that 
+might not be obtainable using alternative techniques. T o 
+obtain a wide range of viewpoints on the subject, the 
+researchers conducted interviews with management per-
+sonnel from both the focal firm and its Tier 1 suppliers. 
+Professionals with expertise in procurement, logistics, 
+IT , and supply chain management contributed valuable 
+perspectives and experiences that enhance the quali-
+tative data. Interviewees were first chosen by conve-
+nience to the researchers, with additional interviewees 
+discovered through a snowball technique. As intervie-
+wees were located in various parts of the world, inter-
+views were conducted over the internet and were digitally 
+recorded. During their individual interviews, all infor-
+mants were presented with the same open-ended ques-
+tions, with slight question variations to focus on their 
+business expertise. The interviews lasted 27−60 min, and 
+commenced with questions related to transparency, fol-
+lowed by questions focusing on their business exper-
+tise and finishing with technology-related questions. Ini-
+tially, 17 interviews were conducted between March 2023 
+and mid-May 2023, and this empirical data was sup-
+plemented by two follow-up interviews conducted in 
+October 2023, as shown in Table 1.
+After data collection, representatives from the focal 
+firm received a summary of research results so that they 
+might assess and leave comments and feedback. Upon 
+receipt of this feedback, the report was refined through 
+iteration and then sent back to the focal firm for valida-
+tion. As this was a long-term project for the focal firm, 
+two key representatives in the overall project’ s timeline 
+from focal firm were interviewed a second time to follow 
+up on how the blockchain implementation project was 
+proceeding, the follow-up interviews served to capture 
+the evolving nature of the blockchain implementation 
+and were analysed as supplementary data rather than 
+additional primary interviews. This ensured that the per-
+spectives of Procurement B and Engineering A were not 
+overweighted in the final analysis established from the 
+initial 17 interviews, as follow-up insights used to track 
+project developments and confirm our earlier findings 
+only.
+Data analysis
+Data analysis followed the Gioia method of data analy-
+sis (Gioia, Corley, and Hamilton 2013), where first order 
+analysis took the form of exact quotes pulled from the 
+transcripts. From here the quotes were distilled into cat-
+egories and subcategories that pertained to the different 
+transparency barriers discussed in the literature. Themes 
+were then abstracted from these categories to encompass 
+an overall description of the transparency barriers uncov-
+ered during the interview process. Lastly, an aggregation 
+of these themes was created to align the findings with the 
+dynamic capabilities of sensing, seizing, and transforma-
+tion (T eece 2007). The Gioia analysis method is a process 
+of taking data terminology, themes, and dimensions and 
+creating a structure through which to present the data 
+analysis process of the researchers in a more rigorous 
+manner (Gioia, Corley, and Hamilton 2013).
+All interviews first transcribed manually by the 
+research group and later re-coded in Nvivo© software. 
+Coding commenced with the use of broad keywords 
+found in the literature on transparency and blockchain 
+use in supply chain management (Montecchi, Plangger, 
+and W est 2021; Rejeb, Keogh, and Treiblmaier 2019; 
+Schafer 2023; Sodhi and Tang 2019). Initially, the aim 
+10 
+ E. RAGAN AND M. H. ESLAMI
+Table 1. Interview list.
+Interviewees, responsibilities, location Duration No. of interviews
+Procurement A, Senior Buyer-Sourcing Global Commodities, Sweden 73 min 1
+Procurement B, Global Purchasing Development Director, Germany 120 min 2
+Procurement C, Business Manager, Sweden 55 min 1
+Procurement D, Sustainability Project Lead – Purchasing, Sweden 27 min 1
+Logistics A, Head of Logistics, Sweden 55 min 1
+Logistics B, Supply Chain Specialist, U.S.A. 58 min 1
+Logistics C, Logistics Manager, Sweden 55 min 1
+Logistics D, Global Inbound Logistics Manager, Sweden 46 min 1
+Logistics E, Global Head of Material Supply, Germany 53 min 1
+Engineering A, Chief Enterprise Architect, Sweden 96 min 2
+Engineering B, IT Specialist, Sweden 53 min 1
+Engineering C, Function Developer 43 min 1
+Engineering D, Enterprise Architect 58 min 1
+Supplier A, VP of Sales, France 52 min 1
+Supplier B, Head of SC Europe, Netherlands 45 min 1
+Supplier B, Business Planner, Netherlands 45 min 1
+Supplier D, Operations Planning, Belgium 40 min 1
+Total 16 hrs 14 min 19
+Table 2. Coding structure example.
+Sample quote 1st order codes
+2nd order themes, 
+transparency barriers
+Aggregate to dynamic 
+capabilities
+‘Plants are stopped due to lack of material as we 
+don’t have visibility with tier 1 or 2’s sourcing. 
+Quality issues sometimes to as suppliers change 
+source of supply without telling us. ’ 
+(Procurement D, Sustainability Project Lead)
+Supply Chain Complexity 
+- Many suppliers
+- No visibility beyond Tier 1
+- Risk management difficult
+- Lack of resources
+Information accuracy Sensing
+‘The second thing that we are seeing, maybe not 
+as a disruption but as a big barrier, are the 
+increasing protectionism of different commercial 
+blocks and the kind of cold commercial war 
+being held right now between China and the 
+USA. ’ (Procurement B, Global Purchasing 
+Development Director)
+Information Sharing Barrier 
+- No communications standards
+- Lack of communication from 
+supplier
+- Information overload
+- To many databases
+- Information protectionism
+Risk of information sharing 
+Communications protocol
+seizing
+was to determine how the interviewees defined trans-
+parency and what level of transparency they perceived 
+they had in their supply line. The interview protocol was 
+expanded to include questions about digital technologies 
+such as blockchain and the Internet of Things. Coding 
+was therefore expanded to include digital technology fail-
+ures and adoptions within the matrix. A sample of the 
+coding scheme is shown in Table 2.
+Findings
+Transparency barriers and blockchain solutions
+Drawing on the empirical findings and applying the the-
+oretical framework presented in Figure 1, this section 
+explores how transparency barriers function as capa-
+bility frictions that systematically weaken the dynamic 
+capabilities of the focal firm and its supply chain part-
+ners. The analysis identified four primary transparency 
+barriers, information inaccuracy, risks of information 
+sharing, lack of communication protocols, and the need 
+for future communications compatibility, each of which 
+creates specific friction patterns that impede the deploy-
+ment of sensing, seizing, or transformation capabilities 
+within supply chain environments. As illustrated in the 
+theoretical framework, information inaccuracy creates 
+sensing friction through information asymmetry, thereby 
+preventing accurate environmental scanning; risks asso-
+ciated with information sharing create seizing friction 
+by limiting stakeholder collaboration and constraining 
+resource coordination; the absence of standardised com-
+munication protocols creates friction across both sensing 
+and seizing capabilities through system incompatibility; 
+and concerns regarding future communications com-
+patibility create transformation friction by constraining 
+organisational adaptability and the capacity for continu-
+ous reconfiguration.
+The presentation of findings in this section is struc-
+tured to systematically demonstrate the friction-to-
+capability transformation mechanism central to the theo-
+retical framework. For each transparency barrier, empiri-
+cal evidence is first presented to illustrate how the barrier 
+manifests within the focal firm’ s supply chain operations 
+and its relationships with first-tier suppliers. This is fol-
+lowed by an analysis of the specific capability friction 
+generated by the barrier, explicating how it systemati-
+cally impairs the firm’ s ability to sense environmental 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 11
+changes, seize market opportunities, or transform organ-
+isational processes. Subsequently, the discussion demon-
+strates how blockchain adoption, through its distinctive 
+technological properties of immutability, transparency, 
+decentralised consensus, and smart contract functional-
+ity, addresses these capability frictions and enables the 
+transformation from weakened to enhanced dynamic 
+capabilities. This analytical structure facilitates the devel-
+opment of five propositions that theorise the mechanisms 
+through which blockchain implementation systemati-
+cally enhances dynamic capabilities across the sensing, 
+seizing, and transformation dimensions, thereby con-
+tributing to supply chain resilience in dynamic and 
+uncertain environments.
+Information inaccuracy
+During their individual interviews, upstream supplier 
+activities, plans, and risks were frequently discussed by 
+the focal firm representatives, who reported that these 
+factors became increasingly more important during the 
+pandemic. They further pointed out that most of their 
+Tier 1 suppliers did not have complete information about 
+their own upstream supplier’ s production challenges. 
+Many Tier 1 suppliers also lacked the resources to accu-
+rately map their supply chains, requiring the focal firm to 
+utilise its own resources for this process. The focal firm 
+relied on its suppliers to understand their long-term fore-
+casts, which often fluctuated with market demand. The 
+focal firm also relied on suppliers to provide accurate 
+delivery information to manage their production process 
+more efficiently. In this context, Senior Buyer−Sourcing 
+Global Commodities at the firm (labelled as Procurement 
+A, see Table 1) noted, ‘ . . . the quality of information that 
+we received from our suppliers wasn’t perfect and there 
+were a lot of gaps . . . . ’
+Additionally, the focal firm was worried that they did 
+not know where the critical suppliers were positioned 
+along the chain, as was the case with they mapped one of 
+their electronic supply lines back to Tier 7 to determine 
+critical weak points in the chain. This brought to light the 
+lack of knowledge of where the critical points in their sup-
+ply line were, as was discussed by Procurement B, Global 
+Purchasing Development Director: ‘ . . . for us the most 
+important thing is when you get all this information, to 
+understand who [is] in your supplier chain and maybe 
+what we know today about the supply chain is totally 
+wrong. ’ This person continued, ‘So that’ s what we count 
+on, this full transparency, to understand exactly who our 
+suppliers are, the most critical ones, the ones that maybe 
+we never heard about. ’ This lack of knowledge of critical 
+suppliers or incorrect understanding of critical suppli-
+ers added to the inaccuracy of procurement information. 
+Through dissemination of blockchain throughout their 
+supply chain, the focal firm was counting on finding those 
+critical suppliers that might not be known today but that 
+might have a large impact on business in the future.
+Trusting the accuracy of information was another 
+source of concern for the focal firm. Their forecasts were 
+developed through production meetings with down-
+stream customers, but often did not include upstream 
+supply chain partners. Forecast information was shared 
+via spreadsheets that were emailed to suppliers as updates 
+were made, causing delays in information sharing and 
+requiring suppliers to read complex datasheets to deter-
+mine changes to forecasts. One of the focal firm repre-
+sentatives expressed their concerns as follows: ‘ . . . first 
+problem that you see when lack of transparency or even 
+having the transparency, the accuracy of the information 
+you provide to others’ (Logistics B, Supply Chain Spe-
+cialist, Focal Firm). These concerns were echoed by one 
+supplier, who noted: ‘Either you rely on the information 
+provided by your supplier, your transport supplier, but 
+the reliability of that information is not at the level we 
+want everywhere in the world’ (Supplier A, VP of Sales).
+The focal firm utilised blockchain to handle its infor-
+mation sharing with upper-tier suppliers with whom the 
+focal firm does not have a direct relationship. Accord-
+ingly, one of the goals of the MDS Sponsoring project 
+was to bring to light those unknown suppliers and use 
+the trust in blockchain to provide correct information. A 
+representative from the focal firm elaborated on this issue 
+as follows:
+‘Due to some reasonable risks, we decide to trust the 
+blockchain technology to do this as we don’t really need 
+to spend so much time on double checking, triple check-
+ing what the supplier is telling us because we know that 
+this is from a trustworthy source and we know any-
+way that if something does not go okay, there are plenty 
+of possibilities for them to be replaced’ (referring to 
+non-key suppliers). (Procurement B, Global Purchasing 
+Development Director, Focal Firm)
+Additionally, the focal firm utilised blockchain to cre-
+ate trust with Tier 1 suppliers, ensuring that their infor-
+mation is safe and will be accessed only by those who 
+need to see it. This blockchain functionality, based on 
+smart contracts and permissions, was the driving force 
+for improving information accuracy and sharing, rather 
+than monitoring suppliers: ‘ . . . we are using this kind of 
+technology, this is protected all the way, no one can access 
+it except the person who really needs it, and this is the 
+way we are somehow paving the road to build this kind of 
+trust’ (Procurement B, Global Purchasing Development 
+Director, Focal Firm).
+12 
+ E. RAGAN AND M. H. ESLAMI
+Although the concept of trust is often associated with 
+blockchain, for the focal firm, it was more about trust-
+ing the data and its security, and less about building trust 
+in relationships through improved communication and 
+shared data, as noted by one of the focal firm represen-
+tatives: ‘For us building trust is really talking to people, 
+having relationships. So, we cannot really say that we trust 
+someone because it’ s coming through blockchain’ (Pro-
+curement B, Global Purchasing Development Director, 
+Focal Firm).
+Risks of information sharing
+The reticence of some suppliers to share adequate infor-
+mation was another transparency barrier uncovered dur-
+ing the interviews. From the perspective of the focal firm, 
+protectionism is widespread in this supply chain, as most 
+of its suppliers are located in China and Russia, so trade 
+tensions can compromise supply efficiency. The focal 
+firm and its suppliers were also concerned with sharing 
+proprietary information with other actors in the supply 
+chain. Many of the suppliers manufactured components 
+designed by the focal firm, and their apprehension about 
+these designs getting into the hands of their competitors 
+or other unauthorised entities was a real concern. This 
+was highlighted by the focal firm representative when he 
+remarked, ‘ . . . not as a disruption but as a big barrier, 
+are the increasing protectionism of different commercial 
+blocks and the kind of cold commercial war being held 
+right now between China and the US’ (Procurement B, 
+Global Purchasing Development Director, Focal Firm). 
+These concerns were also mentioned by one of their sup-
+pliers, who stated: ‘How much are we willing to share? 
+Because some of it is proprietary, some of it is considered 
+internal. So, one barrier is the will to share, the ability to 
+share based on guidelines’ (Supplier B, Head of Supply 
+Chain Europe).
+As discussed by the IT specialist from the focal firm, 
+one of the key reasons for protectionism is the risk of 
+cyber-attacks, as well as misinformation about shipping 
+dates coming downstream and/or misinformation about 
+production needs going upstream:
+. . . suppliers might get the wrong idea about future fore-
+casts or what we actually need and when we need it, 
+which may disrupt our operations in our factory, or it 
+may create conflicts that are not supposed to be there if 
+we get a middleman manipulating the data. (Engineering 
+A, Chief Enterprise Architect, Focal Firm)
+As a part of the MDS Sponsoring project initiated by 
+the focal firm, blockchain was utilised to address these 
+barriers. Blockchain was seen as the most suitable tech-
+nology for streamlining information flows in the supply 
+chain and overcoming obstacles such as cost and data 
+misuse concerns, particularly from Tier 1 supply chain 
+partners. The Global Purchasing Development Director 
+of the focal firm (denoted as Procurement B in Table 1) 
+explained their rationale:
+. . . we will have to go to the supplier and ask them to 
+disclose information of every possible nature you can 
+imagine. So, if we do not have a solid ecosystem sup-
+ported by a good technology, it would be very difficult 
+to convince or to get the supplier buy-in to start this 
+disclosing for the same reasons we have already talked 
+about.
+The focal firm also acknowledges that blockchain 
+technology can facilitate early recognition of changes in 
+supply and demand within their supply chain, as dis-
+cussed by Procurement B, Global Purchasing Develop-
+ment Director:
+The arguments that we are using in order to convince 
+our supplier base to follow us in this particular initia-
+tive (implementing blockchain) is that the more trans-
+parency you get, the more early warnings you get for your 
+business. [. . . ]
+By having early access to both supply and demand 
+changes, firms can better coordinate resources and han-
+dle disruptions. The focal firm discussed how shipping 
+companies scrapped container ships because they could 
+not see the larger picture that demand for containers 
+would be increasing in a few months. With all firms 
+on the same system, here the blockchain, the focal firm 
+was confident that the early detection of changes in the 
+market would be beneficial to managing resources more 
+effectively for all stakeholders in the supply chain, not just 
+the OEM. This future state of increased transparency was 
+considered crucial to combating future disruptions such 
+as those seen during the pandemic.
+Concern over risk is always present when implement-
+ing new technology, especially when confidential infor-
+mation is shared across the entire supply chain. The 
+focal firm acknowledges these risks but believes that 
+blockchain provides a sufficiently secure platform for 
+information sharing. One of its representatives empha-
+sised the importance of demonstrating this security to 
+their suppliers to encourage wider adoption:
+W e needed to really take a reasonable risk. So, if we all 
+agree that this technology (Blockchain) is safe to a cer-
+tain extent, there is nothing 100% safe, we all need to 
+accept that. But if we know that the risk is reasonable, 
+I don’t think there should be any kind of concerns, and 
+it is important that someone starts doing that. (Procure-
+ment B, Global Purchasing Development Director, Focal 
+Firm)
+This statement reflects the focal firm’ s approach to 
+managing risk and fostering trust in new technologies 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 13
+such as blockchain. T o them there is no 100% safe tech-
+nology, but blockchain has the most potential to keep 
+information safe.
+During the interview, the complexity of information 
+sharing was highlighted by one of the suppliers, who 
+stated, ‘What we need is the supplier to put that infor-
+mation in their own database and to share the database 
+with us. So, this is the piece we are missing, having access 
+to that information from all our customers’ (Supplier A, 
+VP of Sales). This final statement indicates that the lack 
+of information sharing and transparency was prevalent 
+among the suppliers and not just a local issue with the 
+focal firm. This highlighted the desire for suppliers to 
+also want to increase information sharing with their own 
+suppliers, which provides support for implementing a 
+blockchain solution throughout the entire supply chain.
+Lack of communication protocols
+The absence of a common communication protocol was 
+identified by several interviewees as an additional trans-
+parency barrier. The focal firm, being a part of the indus-
+try known for creating standards like the Electronic Data 
+Interchange (EDI) system, views the establishment of 
+standard rules for information sharing as a critical issue 
+to be addressed. Reflecting on this, the focal firm’ s Logis-
+tics Manager (Logistics C) stated, ‘If we talk about trans-
+parency, we would like to have one common standard 
+such as an API interface and interaction, defining exactly 
+the technical specification and what kind of informa-
+tion should be exchanged and how . . . . ’ This observation 
+highlights their desire for a streamlined, standardised 
+approach to data exchange and transparency. This sen-
+timent was shared by one of their suppliers, who noted: 
+‘Europe is working differently from North America with 
+different information systems and practices and then 
+between products also you may have differences because 
+of industry’ (Supplier A, VP of Sales).
+Furthermore, while the lack of infrastructure to sup-
+port this transparency was acknowledged as a barrier by 
+both the focal firm and the suppliers, it was seen as a 
+challenge that needed addressing rather than as a major 
+obstacle. This viewpoint is reinforced by the Head of 
+Supply Chain Europe at Supplier B, who noted, ‘ Another 
+barrier obviously are the systems, the infrastructure, the 
+technology. ’ This comment underscores the technologi-
+cal aspects of the transparency barrier, indicating that, 
+while the infrastructure is a concern, it is considered 
+manageable within the broader context of improving the 
+communication and transparency standards in the indus-
+try.
+T o contribute to this industry-wide endeavour, the 
+focal firm collaborates closely with other OEMs in the 
+manufacturing industry to standardise communication 
+processes and considers blockchain technology as benefi-
+cial for this process. Renowned for originally implement-
+ing the EDI system now widely used in manufacturing 
+industry supply chains, the focal firm is taking a simi-
+lar pioneering role with blockchain. They are using this 
+technology to track material data sheets in the industry, 
+a task undertaken by DXC, a firm with significant pene-
+tration in the automotive industry and with partnerships 
+with all major OEMs. Reflecting on the transition to this 
+new technology, one of the focal firm’ s representatives 
+stated, ‘So this is what we expect blockchain to become, 
+this kind of protocol where you say, come on, you cannot 
+challenge this. Are you trying to tell me that they’re going 
+to do business and not use blockchain?’ (Procurement B, 
+Global Purchasing Development Director):
+. . . now everything is kind of more user-friendly for 
+everyone to use. So, we are removing a lot of barriers 
+that were there preventing us from getting the flow of 
+information. (Procurement B, Global Purchasing Devel-
+opment Director)
+The overarching objective of this strategy is to have 
+all major OEMs using this unified system, which will 
+subsequently be extended to upper-tier suppliers. Given 
+the shared supplier base in the manufacturing industry, 
+the goal is for everyone to adopt the same system, as 
+this standardisation would facilitate communication and 
+cost sharing. This vision of creating an industry-wide 
+ecosystem was a recurring theme during the interviews, 
+as shown in the following example:
+. . . once the big OEMs are all in the same setup, they 
+start sharing with Tier 2, Tier 3, Tier 4, and at one point 
+in time, everything will be covered. Some will sponsor 
+the MDS anyway. So, if you have first tier or second tier 
+suppliers and they don’t want to invest in this kind of 
+services, then your OEM at the very top of the chain 
+will be paying for that for sure. (Procurement B, Global 
+Purchasing Development Director)
+This statement underscores the focal firm’ s commit-
+ment to an inclusive, standardised communication sys-
+tem across the industry, facilitating easier and more effi-
+cient information sharing for all participants, both sup-
+pliers and other OEMs in the industry.
+Future communications compatibility
+Having a solid trusted platform to support information 
+sharing and strong supplier relationships will be key to 
+future improvements in information sharing. The focal 
+firm understands that future government regulations 
+relating to modern slavery, CO2 emissions, and conflict 
+minerals will necessitate asking their suppliers to disclose 
+more and more information, as was elaborated by the 
+14 
+ E. RAGAN AND M. H. ESLAMI
+focal firm. The discussion around how this relationship 
+with disclosure and the security of competitive advan-
+tage would work, as discussed before, was reiterated as a 
+future need by Procurement B, Global Purchasing Devel-
+opment Director: ‘They all agree that it’ s the right thing to 
+do, but they all agree that they can jeopardize their busi-
+ness if this information is used in an inappropriate way. 
+So that’ s why our big hope is blockchain. ’ The focal firm 
+initially adopted blockchain to provide provenance infor-
+mation for products in the supply chain (i.e. material data 
+sheets) to comply with the upcoming EU governmental 
+regulations. However, as discussed earlier, they are plan-
+ning to expand on this initiative in the future to include 
+more detailed supply chain information.
+The focal firm understands that the implementation 
+of blockchain technology and the increased sharing of 
+information will ultimately change the way they conduct 
+business. They also understand that blockchain will be 
+necessary to be competitive in the future. This was dis-
+cussed by Procurement B, Global Purchasing Develop-
+ment Director when they discussed the future changes to 
+the organisation after the implementation of blockchain 
+into the supply chain:
+I see it (blockchain) as one of the things that we will 
+need to have in the future. Now from my perspective, as 
+part of these kind of investments we’re talking about, we 
+need to think on the transformation of the organization, 
+the organization of purchasing that we have right now, 
+compared to the ones 40 years ago, changed completely.
+Lastly, the focal firm also understands that to create 
+the transformation that will be needed for future supply 
+chain management, other technologies such as artificial 
+intelligence will be needed to help employees understand 
+the data and augment decision making, as discussed by 
+Procurement B, Global Purchasing Development Direc-
+tor:
+W e still see strategies like where to buy from or which 
+suppliers to involve will always be part of the human 
+decision. But [we need to be] able to hear alternative 
+strategies coming from artificial intelligence, showing 
+data that you probably never put into those kinds of 
+parameters or into these kinds of dimensions.
+As transformative as blockchain could be for supply 
+chains, using other technologies to augment the tech-
+nology and create more opportunities to understand the 
+information provided will be beneficial.
+Discussion
+Our research provides interesting findings around firms 
+lacking trust in sharing information among different sup-
+ply partners, thereby reducing collaboration and long-
+term commitment beyond first tier suppliers, as high-
+lighted in Choi and Siqin (2022), Dubey et al. (2020), 
+Kumar et al. (2022), and Qian and Papadonikolaki 
+(2021). Our study reveals that trust is still needed to 
+manage the business relationships, but blockchain, with 
+its smart contracts, can be used to mitigate the lack of 
+trust with upper tier suppliers, a point discussed by Bai 
+and Sarkis (2020), Sodhi and Tang (2019), and Mon-
+tecchi, Plangger, and W est (2021). This in turn creates 
+a communication platform and protocol for increas-
+ing capabilities of information symmetry, information 
+sharing, collaborative decision making, and standardised 
+communications. Through increased information shar-
+ing, firms can adjust their resources and mitigate many 
+supply chain disruption risks, while enhancing their col-
+laboration with supply chain partners. These capabilities, 
+created with blockchain, will contribute to increased trust 
+in the technology and the platform, and more widespread 
+adoption in the supply chain. How blockchain can create 
+sensing, seizing, and transformational capabilities within 
+a firm’ s supply chain will now be discussed along with a 
+presentation of the research propositions.
+Sensing capability with blockchain
+Firms that can capture and identify opportunities in their 
+outside environment (i.e. supply chains) through the util-
+isation of blockchain technology and enhance their capa-
+bility to create value from business opportunities (Zhu, 
+Bai, and Sarkis 2022). T o attain these benefits, firms must 
+continuously capture and filter information from their 
+professional contacts (i.e. supply chain partners), while 
+sensing changes in customer needs and market condi-
+tions, and making business decisions that respond to 
+this new operating environment (Hallikas, Immonen, 
+and Brax 2021; T eece 2007). While the focal firm exam-
+ined in this study was aware of these requirements, the 
+quality of the information provided by its suppliers was 
+inadequate for performing the aforementioned tasks. The 
+information received from the supply chain partners was 
+often incomplete or in diverse formats, as Procurement 
+A, Senior Buyer−Sourcing Global Commodities noted, 
+‘the quality of information that we received from our sup-
+pliers wasn’t perfect and there were a lot of gaps, ’ resulting 
+in disruptions and inefficiencies, while posing a risk of 
+breaching regulatory standards. Additionally, the infor-
+mation provided by the focal firm was often too complex 
+for suppliers to interpret, leading to issues when forecast 
+changes and increased purchase orders for components 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 15
+were not accurately identified or adequately planned 
+for by suppliers. Thus, inadequate information, whether 
+in terms of accuracy, completeness, or uniformity, was 
+recognised as a barrier and created capability frictions 
+with asymmetric information. T o overcome these chal-
+lenges, firms can adopt blockchain technology to create 
+a trustworthy platform for information and knowledge 
+sharing. Pattanayak, Ramkumar, et al. (2024) came to 
+similar conclusions in their research, where they found 
+that suppliers want accurate, timely, and relevant infor-
+mation and are more willing to share information when 
+these criteria are met. By integrating blockchain into their 
+systems, firms can enhance their sensing capabilities, as 
+trust in data is implicit, and such reliable information 
+can be used for rapid identification of and response to 
+supply chain disruptions. Here the blockchain technol-
+ogy as a digital enabler can enhance weakened capa-
+bilities of sensing, helping firms sense disruptions early 
+through better visibility of accurate and timely informa-
+tion (Pattanayak, Arputham, et al. 2024). For the focal 
+firm’ s forecast, smart contracts with blockchain can be 
+used to reduce the complexity of Excel sheets, only exe-
+cuting instructions when certain conditions at the focal 
+firm were met, for example releasing POs to suppliers as 
+per actual customer demand, thereby reducing the need 
+for large, complex Excel sheets. Smart contracts them-
+selves do not directly highlight information, but they 
+can be designed to manage and process data in a way 
+that makes important information more accessible and 
+actionable (Samanta, Sarkar, and Chaki 2021), decreasing 
+the issue of missing important forecasting information 
+between suppliers.
+Through blockchain implementation, the focal firm 
+transforms from information uncertainty to informa-
+tion confidence, a fundamental enhancement in sens-
+ing capability. This enhanced sensing capability mani-
+fests in several ways: First, the focal firm gains real-time 
+visibility into supplier operations across multiple tiers, 
+enabling early identification of critical dependencies. As 
+Procurement B, Global Purchasing Development Direc-
+tor explained, the goal is ‘to understand exactly who 
+our suppliers are, the most critical ones, the ones that 
+maybe we never heard about. ’ Second, smart contracts 
+transform complex forecast communication into auto-
+mated, actionable information, reducing supplier inter-
+pretation errors and enabling proactive production plan-
+ning. Third, the trusted platform enables continuous 
+environmental scanning rather than periodic, manually 
+verified reporting (i.e. excel spreadsheets). The focal firm 
+no longer needs to ‘spend so much time on double check-
+ing, triple checking what the supplier is telling us’ (Pro-
+curement B, Global Purchasing Development Director), 
+freeing resources for strategic analysis rather than data 
+verification. This transformation represents a shift from 
+reactive gap-filling to proactive, comprehensive supply 
+chain intelligence, the essence of enhanced sensing capa-
+bility. Therefore, the first proposition arising from the 
+current study findings is:
+Proposition 1: Blockchain implementation in supply 
+chains enhances supply chain partners’ sensing capabilities 
+by providing real-time access to accurate and immutable 
+transaction data across the entire supply chain.
+Empirical evidence further indicates that the risk of 
+share information, often due to fears of losing compet-
+itive advantage or data breaches, intensifies information 
+sharing challenges, limiting the flow of crucial data across 
+the supply chain (Sharma et al. 2021; Sodhi and Tang 
+2019; Y adav et al. 2020). Protectionism by supply part-
+ners, the risk of proprietary information leakage, and 
+information security concerns also create frictions with 
+the focal firms sensing capabilities by limiting timely 
+access to the information needed to make better deci-
+sions. This lack of trust in relation to sharing informa-
+tion reduces the collaboration among different suppli-
+ers and the focal firm, thereby reducing their ability to 
+form long term relationships and commitment (Dubey 
+et al. 2020; Qian and Papadonikolaki 2021). These issues 
+can be overcome by adopting blockchain technology, as 
+its encryption and smart contracts capabilities ensure 
+that information is only accessible to authorised sup-
+ply chain partners, mitigating the risk of data breaches 
+(Rejeb, Keogh, and Treiblmaier 2019; Saberi et al. 2019). 
+This secure environment fosters a culture of trust among 
+the supply chain partners, thus facilitating the sharing of 
+timely and accurate information, reducing supply chain 
+stakeholders’ uncertainties, and promoting closer collab-
+oration (Montecchi, Plangger, and W est 2021).
+Blockchain’ s secure architecture transforms the focal 
+firm’ s sensing capability from a limited, first-tier perspec-
+tive to a multi-tier collaborative intelligence network. 
+Previously, as Supplier B, Head of Supply Chain Europe 
+noted, firms faced the dilemma: ‘How much are we will-
+ing to share? Because some of it is proprietary, some of 
+it is considered internal. ’ This reluctance, coupled with 
+protectionism concerns, particularly relevant given the 
+focal firm’ s suppliers located in China and Russia amid 
+‘increasing protectionism of different commercial blocks’ 
+(Procurement B, Global Purchasing Development Direc-
+tor), severely constrained information flow and collabo-
+rative sensing.
+Through blockchain adoption, this barrier dissolves. 
+The enhanced sensing capability that emerges is charac-
+terised by: (1) Reciprocal information exchange: suppli-
+ers now willingly share sensitive operational data because 
+16 
+ E. RAGAN AND M. H. ESLAMI
+smart contracts ensure controlled access, creating what 
+Lin, Su, and Higgins (2016) describe as a reciprocal 
+information base for acquiring knowledge about market 
+changes and opportunities; (2) Extended visibility: the 
+focal firm gains sensing capability beyond direct relation-
+ships, accessing upstream intelligence that was previously 
+obscured by trust deficits; (3) Early warning systems: as 
+Procurement B, Global Purchasing Development Direc-
+tor emphasised, ‘the more transparency you get, the more 
+early warnings you get for your business, ’ enabling suppli-
+ers and the focal firm to sense disruptions collaboratively 
+rather than in isolation; (4) Collaborative risk monitor-
+ing: reduced information asymmetry allows all partners 
+to jointly identify emerging risks, transforming sensing 
+from an individual firm activity to a network capability.
+This could potentially represents a fundamental shift 
+from fragmented, siloed sensing, where each firm holds 
+on to information for competitive advantage, to net-
+worked, collaborative environmental scanning where 
+secure sharing amplifies everyone’ s ability to detect and 
+respond to market changes. As was shown in our analy-
+ses, the focal firm is using blockchain to create a more 
+secure information channel with its supply partners, 
+thereby developing additional sensing capabilities. By 
+controlling who has access to information, it is provid-
+ing a more reliable and secure communication channel, 
+leading to the following proposition:
+Proposition 2: Blockchain adoption fosters a high degree 
+of trust and willingness among supply chain partners to 
+share information, thereby enhancing their sensing capa-
+bilities and knowledge creation.
+Building on this premise, we contend that enhanc-
+ing supply chain transparency will serve as a governance 
+mechanism that reduces operational risks for firms, their 
+supply chain partners, and stakeholders. Furthermore, 
+greater visibility into upstream supply chain processes 
+ensures improved control over all supply chain oper-
+ations (Tran-Dang et al. 2022). These benefits can be 
+attained through blockchain adoption, as this technology 
+has the potential to boost supplier relationship manage-
+ment by improving the relational and technological cap-
+ital in buyer−supplier partnerships, serving as a catalyst 
+for leveraging the internal capabilities of all stakehold-
+ers (Zhu, Bai, and Sarkis 2022). Dynamic capabilities can 
+incur significant expenses through the development of 
+new resources, the modification of existing ones, or a 
+combination of the two. If firms are constantly reconfig-
+uring their resources, additional costs will occur due to 
+the hindering of ongoing learning through disruptions 
+of reconfiguration (Schilke 2014). By firms not shar-
+ing valuable information, it can be difficult for them to 
+implement efficient resource reconfigurations, hindering 
+the creation of dynamic sensing capabilities. Blockchain, 
+through secure and smart contract-driven communica-
+tion, can reduce the risk of sharing and increase the 
+potential for the creation of dynamic sensing capabilities 
+in the supply chain.
+The focal firm understood that they needed to man-
+age risk and foster trust in new technologies such as 
+blockchain. T o them there is no 100% safe technology, but 
+blockchain has the most potential to keep information 
+safe. Through smart contracts, they could share informa-
+tion with certain suppliers and not with others, minimis-
+ing protectionism and concern over the sharing of pro-
+prietary information. As a future concern, the focal firm 
+was already planning on more disclosures (i.e. conflict 
+minerals, modern day slavery concerns), and the solid 
+information-sharing foundation built on blockchain was 
+a path forward to meeting this future need.
+From the perspective of dynamic capability, where 
+firms capture, process, and filter data to uncover market 
+changes and create new knowledge (Hallikas, Immonen, 
+and Brax 2021; T eece 2007), having accurate informa-
+tion from which to build this knowledge will enhance the 
+sensing capabilities of firms. Blockchain can provide this 
+through the immutability of information and the use of 
+smart contracts to alert suppliers to potential issues due 
+to disruptions, thereby enhancing a firm’ s lower-order 
+capabilities and its capacity to adjust resources efficiently 
+(Fainshmidt et al. 2016).
+Seizing capability with blockchain
+The dynamic capabilities framework underscores the 
+necessity for organisations not only to sense environ-
+mental changes but also to seize opportunities arising 
+from these changes. seizing ability refers to the capacity 
+to assess and control the specifications needed to recon-
+figure resources to effectively respond to new opportu-
+nities (Zhu, Bai, and Sarkis 2022). This involves shar-
+ing the information gathered during the sensing stage 
+with suppliers to adjust resource allocation (i.e. to miti-
+gate a supply disruption). seizing is a fundamental ability 
+of a firm to create and use decision-making processes 
+to exploit opportunities and create value with existing 
+resources (Foerstl et al. 2021). Transparency provided by 
+blockchain technology could increase the level of trust 
+among the supply chain partners, which is crucial for 
+seizing opportunities. When suppliers trust the accuracy 
+and authenticity of the information the focal firm makes 
+available through the blockchain, they are more likely 
+to engage in collaborative efforts to reconfigure supply 
+chain operations in response to disruptions and mar-
+ket demand fluctuations. The current body of research 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 17
+consistently highlights the crucial importance of trust in 
+fostering collaboration across the supply chain (Dubey 
+et al. 2020; Qian and Papadonikolaki 2021).
+The transparency and trust enabled by blockchain 
+transform seizing capability by creating the conditions 
+necessary for rapid, coordinated resource reconfigura-
+tion. Previously, even when supply chain disruptions 
+were sensed, the lack of trusted information prevented 
+swift collaborative response. Suppliers questioned the 
+authenticity of focal firm communications, and the focal 
+firm doubted supplier commitments, creating friction 
+in resource realignment. As discussed by Procurement 
+B, Global Purchasing Development Director said: ‘if we 
+know that the risk is reasonable, I don’t think there should 
+be any kind of concerns, and it is important that someone 
+starts doing that. ’
+Blockchain implementation creates enhanced seizing 
+capability characterised by: (1) Collaborative decision-
+making through openness and trust: when suppliers 
+trust the information provided through blockchain’ s 
+immutable ledger and governance mechanisms (Mon-
+tecchi, Plangger, and W est 2021) they are more likely to 
+engage in joint decision making and information shar-
+ing; (2) Rapid resource alignment: the resources needed 
+to engage with intermediaries (Centobelli et al. 2022), can 
+now be redirected to coordinating responses, enabling 
+faster adjustment of production schedules, inventory lev-
+els, and logistics.
+Blockchain’ s role in ensuring data integrity and trust 
+enables the focal firm to move from sensing to seizing by 
+facilitating informed decision making and rapid resource 
+alignment. Thus, we propose:
+Proposition 3: Blockchain’s transparency and trust-
+enhancing features significantly contribute to the focal 
+firm’s seizing capabilities by fostering collaborative decision 
+making and resource reconfiguration in response to sensed 
+opportunities.
+Our findings further indicate that having a communi-
+cations system with a standard protocol that can bridge 
+the various systems used by stakeholders in the supply 
+chain is fundamental to the firm’ s seizing capabilities. 
+Blockchain can contribute to this endeavour as it offers 
+a common platform for information exchange, overcom-
+ing the challenges posed by disparate systems and data 
+formats. The standardisation of communication proto-
+cols through blockchain transforms seizing capability by 
+eliminating the friction of disparate systems and incom-
+patible data formats. As Logistics C, Logistics Manager 
+articulated, the desire for ‘one common standard such 
+as an API interface and interaction, defining exactly 
+the technical specification and what kind of informa-
+tion should be exchanged and how’ reflects the recogni-
+tion that information-sharing barriers prevent effective 
+opportunity seizing. By enabling seamless integration 
+and interoperability, blockchain supports the efficient 
+reallocation of resources and coordination of actions, 
+thereby enhancing the supply chain’ s responsiveness to 
+emerging opportunities. Hence, digital technologies such 
+as blockchain ensure a timely and accurate transfer of 
+information that will significantly impact the effective-
+ness of supply chain operations beyond the capacity of 
+current ERP systems (Benstead et al. 2024). Supply chains 
+incorporating blockchain technology are considered flex-
+ible and adaptable, enabling the integration, construc-
+tion, and adjustment of both internal and external skills 
+and resources to effectively respond to rapidly evolving 
+circumstances (Zhu, Bai, and Sarkis 2022).
+The enhanced seizing capability that emerges from 
+blockchain-enabled standardisation is characterised by: 
+(1) Seamless information exchange: as Procurement B 
+noted, ‘now everything is kind of more user-friendly for 
+everyone to use. So, we are removing a lot of barriers 
+that were there preventing us from getting the flow of 
+information’ enabling better supplier connectivity coor-
+dination (Bai and Sarkis 2020) rather than delayed, man-
+ual data translation; (2) Interoperable resource coordina-
+tion: creates what Pattanayak, Ramkumar, et al. (2024) 
+referred to as a common platform, allowing suppliers 
+across different regions (Europe vs. North America, as 
+Supplier A noted) and different technical infrastruc-
+tures to coordinate resource adjustments efficiently; (3) 
+Network wide collaboration: the focal firm’ s strategy of 
+partnering with other OEMs to create an industry-wide 
+ecosystem (‘once the big OEMs are all in the same setup, 
+they start sharing with Tier 2, Tier 3, Tier 4, ’ Procurement 
+B, Global Purchasing Development Director) creates net-
+work effects where seizing capability compounds, the 
+more participants using the standard, the more effectively 
+opportunities can be seized collectively; (4) Reduced 
+response latency: standardised protocols enable auto-
+mated information flows with smart contracts, that sup-
+ports decision-making and resource sharing, transform-
+ing supply chain responsiveness (Agrawal et al. 2023).
+This transformation represents a shift from frag-
+mented, manually-intensive coordination to automated, 
+standardised collaboration, enabling supply chains to 
+seize opportunities with the agility and precision that 
+dynamic markets demand (Zhu, Bai, and Sarkis 2022). 
+The focal firm and its partners move from struggling with 
+‘different information systems and practices’ (Supplier A) 
+to operating within a unified framework that facilitates 
+quick, coordinated action leading us to propose:
+18 
+ E. RAGAN AND M. H. ESLAMI
+Proposition 4: By mitigating information-sharing risks 
+and standardising communication protocols, blockchain 
+technology renders supply chains more adaptable and 
+responsive, facilitating the seizing of dynamic market 
+opportunities.
+Acquiring the skills to effectively respond to shift-
+ing market needs and environmental changes is essential 
+for effective supply chain management, as demonstrated 
+by empirical data. Through greater information shar-
+ing, firms increase their capacity for sensing changes 
+in the markets and in customer requirements. Through 
+enhanced collaboration with stakeholders, they are also 
+better equipped to gather business and regulatory intel-
+ligence. According to T eece, Pisano, and Shuen (1997), 
+this high level of information sharing is essential for sur-
+vival in rapidly changing environments, allowing firms to 
+continuously reorganise, incorporate, and develop new 
+knowledge and skills, using both internal and external 
+resources. The increased transparency resulting from the 
+greater sharing of information related to operations, sup-
+ply states, and sustainability conditions increases trust 
+among various stakeholders, enhancing collaboration, 
+decision-making capabilities, and performance (Baah 
+et al. 2022; Barratt and Oke 2007; Benstead et al. 2024).
+Once information is captured and filtered, and knowl-
+edge is created, firms need to disseminate that infor-
+mation to all stakeholders. Firms assess and restruc-
+ture resources by seizing them, exchanging informa-
+tion, and adjusting decision-making processes to capi-
+talise on opportunities and enhance value using exist-
+ing resources (Foerstl et al. 2021; Zhu, Bai, and Sarkis 
+2022). As one of the key dynamic capabilities, seizing 
+enables companies to adapt, restructure, innovate, and 
+change their decision-making models (Hallikas, Immo-
+nen, and Brax 2021; T eece 2018). Through blockchain’ s 
+decentralised, flexible, and unified framework, this infor-
+mation can be shared more efficiently, while enhancing 
+connectivity with supply chain partners and their net-
+works (Bai and Sarkis 2020). T o attain these benefits, 
+the focal firm must establish common communication 
+protocols, while tracking the information sharing within 
+a supply chain will facilitate more rapid and accurate 
+responses to changes in demand (Centobelli et al. 2022). 
+This continued information-sharing cycle is how stake-
+holders collaborate and realign their resources for better 
+risk management, contributing to a more resilient supply 
+chain.
+Dynamic capabilities of seizing, whereby firms eval-
+uate and reconfigure resources and facilitate information 
+sharing and decision making, thereby taking advantage of 
+opportunities and creating value with current resources 
+(Foerstl et al. 2021; Zhu, Bai, and Sarkis 2022), can 
+be enhanced using common communication protocols. 
+According to Fainshmidt et al. (2016), these lower-order 
+dynamic capabilities can be disseminated easily through-
+out the organisation and can allow better adjustments to 
+be made in changing environments. Blockchain can facil-
+itate this dissemination of information throughout the 
+supply chain, thereby creating a basis for the creation of 
+dynamic capabilities.
+Transformation with blockchain
+The empirical evidence emphasises the ability of a firm 
+to integrate, build, and reconfigure its internal and exter-
+nal competences to address rapidly changing environ-
+ments. In the context of organisational transformation, 
+blockchain and other digital technologies, such as AI and 
+IoT , can leverage this transformation in the procurement 
+process.
+The focal firm recognised that future regulatory 
+demands, including modern slavery, CO2 emissions, and 
+conflict minerals disclosure, would require increasingly 
+comprehensive information sharing. As Procurement B 
+explained, suppliers would need to ‘disclose information 
+of every possible nature you can imagine, ’ yet ‘they all 
+agree that they can jeopardize their business if this infor-
+mation is used in an inappropriate way. So that’ s why our 
+big hope is blockchain. ’ Without a future-proof platform, 
+firms face repeated, disruptive system overhauls with 
+each new requirement, weakening their transformation 
+capability, the ability to continuously realign assets and 
+create adaptive governance mechanisms (T eece 2018). 
+Additionally, having a system that allows for trusted and 
+governed information sharing (Montecchi, Plangger, and 
+W est 2021) is paramount to not creating opportunities for 
+information to me misused in the process.
+Blockchain’ s flexible architecture addresses these bar-
+riers through extensible smart contracts that accom-
+modate evolving disclosure requirements without fun-
+damental restructuring (Rejeb, Keogh, and Treiblmaier 
+2019; Saberi et al. 2019). Permission-based access con-
+trols (Agrawal et al. 2021; Y aga et al. 2019), enable selec-
+tive transparency, sharing regulatory data while protect-
+ing proprietary information, resolving the transparency-
+confidentiality paradox.
+Through blockchain adoption, enhanced transforma-
+tion capability emerges across three dimensions: First, 
+organisational adaptability shifts from reactive compli-
+ance to anticipatory capability building. As Procurement 
+B said, ‘the organization of purchasing that we have 
+right now, compared to the ones 40 years ago, changed 
+completely, ’ signalling the ability to envision fundamen-
+tal organisational change. Second, network orchestration 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 19
+extends beyond internal transformation to ecosystem-
+wide capability development. By sponsoring blockchain 
+adoption for all suppliers with cascading implementa-
+tion (‘once the big OEMs are all in the same setup, they 
+start sharing with Tier 2, Tier 3, Tier 4’) (Procurement B), 
+the firm transforms entire networks rather than isolated 
+operations. Third, technology integration enables contin-
+uous enhancement. The focal firm recognises blockchain 
+must be augmented with AI to ‘hear alternative strategies 
+coming from artificial intelligence, showing data that you 
+probably never put into those kinds of parameters’ (Pro-
+curement B). This has been highlighted in blockchain lit-
+erature; most research points to augmenting blockchain 
+with AI, IoT sensors, and other technologies (Alamri, 
+Jhanjhi, and Humayun 2019; Paul, Qu, and W en 2021; 
+Rejeb, Keogh, and Treiblmaier 2019).
+The focal firms acknowledgement of blockchain as 
+critical for future competitiveness underscores their will-
+ingness to identify and exploit new technologies as facil-
+itators of organisational change. Research by Pattanayak, 
+Ramkumar, et al. (2024) found similar results, stating 
+blockchain is transformational in creating a trustwor-
+thy ecosystem for all supply chain partners, enhancing 
+critical capabilities. This transformation, from reactive, 
+regulation-driven system changes to proactive, platform-
+based adaptability, represents enhanced transformation 
+capability. The focal firm’ s recognition of blockchain’ s 
+potential to reduce risks linked to transparency barriers 
+leads us to the following proposition:
+Proposition 5: The implementation of blockchain tech-
+nology in procurement processes will drive organisational 
+transformation by necessitating the reconfiguration of sup-
+plier relationships and internal processes to meet new reg-
+ulatory demands and market disruptions.
+Organisations that can differentiate between higher-
+order and lower-order capabilities will improve problem-
+solving and facilitate organisational changes within 
+dynamic environments (Fainshmidt et al. 2016). Through 
+increased information sharing enabled by blockchain, 
+firms can adjust resources and mitigate supply chain dis-
+ruption risks while enhancing collaboration. The data 
+immutability of blockchain increases trust among part-
+ners, helping firms comply with current and future gov-
+ernmental regulations, such as the EU product pass-
+port initiative, while responding to consumer demand 
+for transparency regarding product provenance (Bai 
+and Sarkis 2020; Kshetri 2017). As supply chains 
+become more complex and global, understanding how 
+blockchain and other digital technologies can increase 
+information sharing will be strategically important for 
+future researchers and practitioners.
+Theoretical contributions
+This study makes four primary theoretical contributions 
+to supply chain management and dynamic capabilities 
+literature, advancing understanding of how digital tech-
+nologies enable organisational capabilities in complex, 
+dynamic environments. In a rapidly evolving global envi-
+ronment, where supply chain disruptions and regulatory 
+pressures increasingly demand adaptability, the strate-
+gic use of digital technologies is critical. By integrat-
+ing insights from the dynamic capability’ s framework, 
+including the contingent value of blockchain under vary-
+ing environmental conditions (Schilke 2014) and the 
+hierarchical interplay between higher- and lower-order 
+capabilities (Fainshmidt et al. 2016), this study offers a 
+nuanced understanding of how firms can align technol-
+ogy adoption with strategic decision-making to navigate 
+complexity and volatility effectively.
+Supply chain transparency barriers drive what we 
+term ‘capability frictions, ’ a state where informational 
+asymmetries, lack of transparency, and weak data gov-
+ernance impede the firm’ s ability to effectively deploy 
+dynamic capabilities. This friction manifests through 
+four mechanisms that directly weaken sensing, seizing, 
+and transformation capabilities: information inaccuracy 
+prevents reliable environmental scanning; risks associ-
+ated with information sharing limit stakeholder collabo-
+ration; absent communication protocols hinder resource 
+coordination; and compatibility concerns about future 
+communications reduce the firm’ s capacity for organisa-
+tional adaptation and process reconfiguration.
+These transparency barriers create distinct patterns 
+of capability deficiencies across three dimensions. First, 
+when information flows are characterised by inaccuracy 
+and delays (information asymmetries, lack of communi-
+cations protocols), firms experience diminished capac-
+ity for regulatory monitoring, environmental scanning, 
+and business knowledge creation (Hallikas, Immonen, 
+and Brax 2021; T eece 2007), causing managers to adjust 
+slowly to rapid changes in their operating environments 
+(Eisenhardt and Martin 2000). Second, lack of trans-
+parency capability friction undermines seizing capabil-
+ities by constraining stakeholder collaboration, limiting 
+resource realignment, and compromising risk manage-
+ment effectiveness (Foerstl et al. 2021; Zhu, Bai, and 
+Sarkis 2022). The reluctance to share information (risk 
+of information sharing), stemming from fears of com-
+promising competitive advantage or experiencing data 
+breaches, intensifies these challenges, restricting the flow 
+of crucial data across the supply chain (Sharma et al. 
+2021; Sodhi and Tang 2019; Y adav et al. 2020). This is 
+particularly problematic given that alliance management 
+20 
+ E. RAGAN AND M. H. ESLAMI
+capabilities create competitive advantages most effec-
+tively under moderate environmental dynamism (Schilke 
+2014), precisely when information sharing becomes crit-
+ical. Third, inadequate data governance constrains trans-
+formation capabilities by limiting organisational adapta-
+tion (future communications compatibility) and process 
+reconfiguration potential (Hallikas, Immonen, and Brax 
+2021; T eece 2007). Without visibility into partner opera-
+tions and reliable data, firms cannot effectively redesign 
+supply chain networks or implement the business model 
+innovations necessary for sustained competitive advan-
+tage (T eece 2018).
+Blockchain technology serves as a digital enabler that 
+systematically addresses these weakened dynamic capa-
+bilities by mitigating the underlying transparency barri-
+ers. Through its distinctive properties of immutability, 
+transparency, and decentralised consensus (Treiblmaier 
+2018; Y aga et al. 2019), blockchain establishes a tech-
+nological foundation for enhanced sensing, seizing, and 
+transformation capabilities across supply chain networks. 
+Its capacity for secure data sharing, permanent transac-
+tion recording, and process automation through smart 
+contracts (Rejeb, Keogh, and Treiblmaier 2019; Saberi 
+et al. 2019) enables firms to overcome the informational 
+asymmetries and governance weaknesses that generate 
+capability frictions.
+Blockchain adoption facilitates transformation from 
+weakened to enhanced dynamic capabilities across 
+three interconnected dimensions. First, firms develop 
+improved environmental scanning capabilities that facil-
+itate real-time monitoring of regulatory changes, mar-
+ket conditions, and supply chain operations, thereby 
+enhancing their ability to sense disruptions early through 
+superior visibility of accurate and timely information 
+(Pattanayak, Arputham, et al. 2024). Second, enhanced 
+opportunity alignment emerges as blockchain facili-
+tates coordinated responses among supply chain part-
+ners through standardised communication protocols and 
+secure information-sharing mechanisms (Benstead et al. 
+2024), enabling firms to seize market opportunities 
+rapidly through synchronised resource deployment and 
+collaborative decision-making processes (Foerstl et al. 
+2021; Zhu, Bai, and Sarkis 2022). Third, agile transfor-
+mation capacity develops as firms acquire the capabil-
+ity to reconfigure supply chain networks, adapt business 
+processes, and respond to environmental volatility with 
+greater speed and precision (Centobelli et al. 2022). These 
+enhanced capabilities represent a fundamental shift from 
+reactive, friction-constrained operations towards proac-
+tive, seamlessly coordinated supply chain management.
+T echnologies create contingent value across differ-
+ent levels of the supply chain due to varying envi-
+ronmental volatilities. As the focal firm implemented 
+blockchain to comply with new EU regulations rather 
+than in response to crisis, the resulting capabilities 
+become potentially more valuable, enabling proactive 
+resource adaptation. Expanding on Schilke’ s (2014) 
+research showing that alliance management capabili-
+ties create competitive advantage under moderate envi-
+ronmental dynamism, blockchain technology mitigates 
+transparency barriers and creates more collaboration 
+among supply chain stakeholders, thereby enhancing 
+value creation and jointly reducing risks. From a strate-
+gic decision-making perspective, firms that understand 
+the contingent value created through blockchain-enabled 
+dynamic capabilities can allocate resources more effec-
+tively and choose strategies best suited to the current 
+business environment.
+By addressing capability frictions at both hierarchi-
+cal levels, blockchain adoption supports both higher-
+order dynamic capabilities (designing adaptive supply 
+chain networks) and lower-order dynamic capabilities 
+(executing real-time transparency solutions). Blockchain 
+enhances lower-order capabilities by facilitating access 
+to accurate information, enabling trust building among 
+partners, and supporting cooperative decision-making 
+processes related to production scheduling and inven-
+tory management (Bai and Sarkis 2020). As Fainsh-
+midt et al. (2016) observe, these lower-order dynamic 
+capabilities can be disseminated readily throughout 
+the organisation, enabling more effective adjustments 
+in response to changing environmental conditions. By 
+transforming capability friction into seamless coordi-
+nation through decentralised and immutable record-
+keeping (Addo-T enkorang and Helo 2016; Choi and 
+Siqin 2022), blockchain technologies reduce the need 
+for human intervention in processes, allowing firms to 
+expand operations without the risk of inefficiencies or 
+human error (W olf, Louw, and Palm 2024).
+Lastly, this study contributes to understanding how 
+firms should collaborate with suppliers to increase trans-
+parency and overcome both transparency barriers and 
+resulting capability frictions, a research opportunity 
+discussed in Sodhi and Tang (2019). For successful 
+blockchain deployment, focal firms must lead in design-
+ing and implementing networks across the supply chain 
+to ensure benefits for all stakeholders (W ang, Chen, 
+and Zghari-Sales 2021). Blockchain governance relies 
+on automated, code-based regulations rather than legal 
+enforcement (contractual governance) or future relation-
+ship value (relational governance) (Lumineau, W ang, and 
+Schilke 2021). The empirical evidence demonstrates how 
+focal firms can leverage both relational mechanisms with 
+Tier 1 suppliers and blockchain’ s built-in protocols to 
+govern suppliers where contracts or trusted relationships 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 21
+are absent, providing the governance mechanism neces-
+sary for transparency across all supply chain tiers.
+Practical implications
+The results yielded by our study also have several practi-
+cal implications. Our capability frictions framework and 
+empirical findings offer actionable guidance for man-
+agers and policymakers seeking to enhance supply chain 
+transparency and resilience through blockchain adop-
+tion. Rather than viewing blockchain as a generic tech-
+nological solution, practitioners should understand it as 
+a digital enabler that systematically addresses capability 
+deficiencies by reducing frictions across sensing, seiz-
+ing, and transformation dimensions. First, blockchain 
+shows promise as a solution capable of overcoming bar-
+riers to transparency in the supply chain. By providing 
+an accurate, secure, and immutable record of transac-
+tions, blockchain technology can foster a collaborative 
+trust-based environment, prompting the supply chain 
+partners to more readily share the pertinent information 
+needed for collaborative planning and demand forecast-
+ing with other stakeholders. Blockchain’ s use in cryp-
+tocurrency applications for secure data transfers has been 
+extensively studied (Agrawal et al. 2021; Rejeb, Keogh, 
+and Treiblmaier 2019; Saberi et al. 2019; Y aga et al. 
+2019); this study expands knowledge of how managers 
+can leverage blockchain technology to enhance strategic 
+decision-making capabilities in the automotive manu-
+facturing industry. Companies that can recognise and 
+seize possibilities in their external environment (e.g. sup-
+ply chains) by leveraging blockchain technology improve 
+their potential to generate value from business prospects 
+(Zhu, Bai, and Sarkis 2022). T o achieve these advan-
+tages, companies must consistently gather and analyse 
+information from their professional networks (i.e. sup-
+ply chain partners), while perceiving shifts in customer 
+demands and market dynamics, and making business 
+decisions that adapt to this evolving operational land-
+scape (Hallikas, Immonen, and Brax 2021). Given the 
+dynamic nature of global supply chains, which require 
+agility and flexibility from managers, blockchain tech-
+nology can serve as a tool for achieving these objectives. 
+Blockchain solutions ensure data immutability, enhanc-
+ing trust in information reliability and promoting effi-
+cient information sharing. They also empower firms to 
+rapidly adapt to market changes and sustain their sensing 
+and seizing skills.
+Existing supply chains, particularly in the automotive 
+industry, are built on long-term relationships with key 
+suppliers, working together to effectively respond to sup-
+ply disruptions and demand fluctuations. This research 
+has shown that such trust-based relationships are impor-
+tant for firms planning to implement digital technolo-
+gies, such as blockchain, to increase transparency and 
+information sharing. By leveraging these trusted supplier 
+relationships, managers can more effectively implement 
+blockchain into their supply chains, highlighting the ben-
+efits of increased information sharing. Additionally, these 
+supplier partnerships will be of paramount importance 
+for expanding the adoption of blockchain farther up the 
+supply chain, which was the goal of the focal company in 
+this study. From this perspective, blockchain is primarily 
+seen as a trusted, secure, and common communication 
+channel for information sharing, rather than as a way of 
+decreasing stakeholder opportunism. Accordingly, man-
+agers can use their existing relationships with suppliers 
+to build a blockchain system that works for everyone 
+involved, allowing all stakeholders to contribute to a 
+more secure and trusted collaborative ecosystem.
+From a policy perspective, government regulators 
+could help firms to implement blockchain technology 
+through more financial incentives and knowledge cre-
+ation. The focal firm opted to finance the rollout of 
+blockchain internally to all suppliers in their supply 
+chain. This was driven by new regulations that require 
+more detailed material data sheets for manufactured 
+equipment to facilitate afterlife recycling. This additional 
+cost could be an undue burden for other firms in sup-
+ply chains affected by similar government regulations. 
+More incentive programmes and education through gov-
+ernment subsidised programmes could lead to more 
+widespread adoption of blockchain, as well as other dig-
+ital technologies. More funding opportunities, similar to 
+the EU blockchain funding and investment programme 
+(European Commission 2024), could ease the barrier of 
+cost to blockchain implementation. Additionally, edu-
+cation programmes discussing privacy issues that hin-
+der organisations from adopting blockchain technologies 
+could be beneficial.
+Conclusion and future research
+This study demonstrates that supply chain transparency 
+barriers function as capability frictions that system-
+atically weaken firms’ dynamic capabilities, and that 
+blockchain adoption serves as a digital enabler that trans-
+forms these frictions into enhanced sensing, seizing, and 
+transformation capabilities. Through an in-depth case 
+study of a Swedish OEM and its suppliers, four trans-
+parency barriers were identified – information inaccu-
+racy, risks of information sharing, lack of communica-
+tion protocols, and future communications compatibil-
+ity – demonstrating how each creates specific friction 
+22 
+ E. RAGAN AND M. H. ESLAMI
+patterns that impair organisational capabilities. The pri-
+mary theoretical contribution is the capability frictions 
+framework, which reconceptualises transparency barri-
+ers not merely as operational challenges but rather as 
+systematic capability deficiencies that prevent firms from 
+effectively deploying dynamic capabilities in supply chain 
+environments.
+The five propositions developed through this inves-
+tigation theorise the mechanisms through which block
+chain’ s distinctive properties – immutability, trans-
+parency, smart contracts, and standardised protocols 
+– systematically reduce capability frictions, thereby 
+enabling cascading capability enhancement across sens-
+ing, seizing, and transformation dimensions. Through 
+blockchain integration, firms can overcome inefficien-
+cies caused by incomplete or inaccurate data, foster 
+trust through secure information sharing, and facil-
+itate improved decision-making and resource align-
+ment through real-time, accurate data across the supply 
+chain. This enhanced transparency strengthens collab-
+oration with supply chain partners while positioning 
+firms to meet evolving regulatory requirements and con-
+sumer demands for greater accountability. Furthermore, 
+blockchain’ s potential to transform procurement pro-
+cesses and supplier relationships underscores its role as a 
+catalyst for organisational change and sustained compet-
+itive advantage in dynamic supply chain environments.
+The findings emphasise the strategic importance of 
+blockchain as a foundational technology for modern sup-
+ply chain management. As global supply chains become 
+increasingly interconnected and complex, blockchain 
+adoption will play a pivotal role in enabling firms to 
+remain competitive, comply with regulatory demands, 
+and respond effectively to market dynamics and disrup-
+tions. Future research should explore how blockchain can 
+be further integrated with emerging technologies such 
+as artificial intelligence and Internet of Things sensors 
+to optimise supply chain transparency and collaborative 
+capabilities.
+When interpreting these findings, however, several 
+limitations must be considered. The findings are based 
+on analysis of a single OEM in the Swedish manufac-
+turing industry sector operating within a specific regu-
+latory context (EU product passport compliance), thus 
+limiting generalisability across industries and regulatory 
+environments. Additionally, the focal firm’ s blockchain 
+adoption was motivated by proactive compliance rather 
+than crisis response, which may affect transferability 
+to reactive implementation scenarios. Future research 
+should explore blockchain implementation under vary-
+ing conditions of environmental dynamism, such as post-
+disruption recovery or when tracking responsible labour 
+practices and carbon emission compliance. Longitudi-
+nal studies examining how capability frictions evolve 
+as blockchain technology matures would provide valu-
+able insights into the temporal dynamics of capability 
+transformation. Lastly, complementary theoretical per-
+spectives beyond dynamic capabilities warrant investiga-
+tion. Agency theory and network theory could illuminate 
+mechanisms preventing transparency and information 
+sharing, while institutional theory might explain how 
+regulatory and normative pressures shape blockchain 
+adoption patterns across different organisational and 
+institutional contexts.
+Acknowledgements
+The authors would like to acknowledge the contributions of 
+Kevin Oliver Friess in early drafts of this paper.
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+The authors used Claude 3.7 Sonnet (Anthropic) to assist 
+with language refinement, stylistic consistency, and structural 
+organisation during manuscript preparation. All conceptual 
+development, theoretical contributions, empirical analysis, and 
+interpretation of findings were conducted solely by the authors, 
+who reviewed all content and take full responsibility for the 
+publication.
+Notes on contributors
+Eric Ragan is a Ph.D. candidate in Busi-
+ness Administration at the University 
+of Gothenburg, Sweden. He holds an 
+M.Sc. in International Logistics and Sup-
+ply Chain Management from Jönköping 
+International Business School (JIBS) and 
+an M.B.A. in Information Systems from 
+Keller Graduate School of Management. 
+He brings over 21 years of experience in logistics automation 
+and robotics, including physical AI, working with leading retail 
+and e-commerce organisations.
+Mohammad H. Eslami is an associate pro-
+fessor at Asper School of Business, Uni-
+versity of Manitoba. His research interests 
+are in the field of supply chain and inno-
+vation management. He has participated 
+in various research projects focusing on 
+supply chain collaboration with a focus on 
+the role of digital technologies and sus-
+tainability. His research has been published in several peer-
+reviewed academic journals including International Journal 
+of Production Research, International Journal of Production 
+Economics and Supply Chain Management: An International 
+Journal.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 23
+Data availability statement
+The data that support the findings of this study are available 
+from the corresponding author, [ER], upon reasonable request.
+ORCID
+Eric Ragan 
+ https://orcid.org/0009-0006-8044-6126
+Mohammad H. Eslami 
+ http://orcid.org/0000-0002-6803-
+8780
+References
+Addo-T enkorang, R., and P . T . Helo. 2016. “Big Data Applica-
+tions in Operations/Supply-Chain Management: A Litera-
+ture Review. ” Computers & Industrial Engineering 101:528–
+543. https://doi.org/10.1016/j.cie.2016.09.023.
+Agrawal, T . K., J. Angelis, W . A. Khilji, R. Kalaiarasan, and 
+M. Wiktorsson. 2023. “Demonstration of a Blockchain-
+Based Framework Using Smart Contracts for Supply Chain 
+Collaboration. ” International Journal of Production Research
+61 (5): 1497–1516. https://doi.org/10.1080/00207543.2022.
+2039413.
+Agrawal, T . K., V . Kumar, R. Pal, L. W ang, and Y . Chen. 2021. 
+“Blockchain-Based Framework for Supply Chain Traceabil-
+ity: A Case Example of T extile and Clothing Industry. ” Com-
+puters & Industrial Engineering 154:107130. https://doi.org/
+10.1016/j.cie.2021.107130.
+Alamri, M., N. Z. Jhanjhi, and M. Humayun. 2019. “Blockchain 
+for Internet of Things (IoT) Research Issues Challenges & 
+Future Directions: A Review. ” International Journal of Com-
+puter Science and Network Security 19 (1): 244–258.
+Aslam, H., C. Blome, S. Roscoe, and T . M. Azhar. 2020. “Deter-
+mining the Antecedents of Dynamic Supply Chain Capa-
+bilities. ” Supply Chain Management 25 (4): 427–442. https:
+//doi.org/10.1108/SCM-02-2019-0074.
+Baah, C., D. Opoku Agyeman, I. S. K. Acquah, Y . Agyabeng-
+Mensah, E. Afum, K. Issau, D. Ofori, and D. Faibil. 2022. 
+“Effect of Information Sharing in Supply Chains: Under-
+standing the Roles of Supply Chain Visibility, Agility, Col-
+laboration on Supply Chain Performance. ” Benchmarking: 
+An International Journal 29 (2): 434–455. https://doi.org/10.
+1108/BIJ-08-2020-0453.
+Bai, C., and J. Sarkis. 2020. “ A Supply Chain Transparency and 
+Sustainability T echnology Appraisal Model for Blockchain 
+T echnology. ” International Journal of Production Research
+58 (7): 2142–2162. https://doi.org/10.1080/00207543.2019.
+1708989.
+Balzarova, M., C. Dyer, and M. Falta. 2022. “Perceptions of 
+Blockchain Readiness for Fairtrade Programmes. ” T echno-
+logical Forecasting & Social Change 185:122086. https://doi.
+org/10.1016/j.techfore.2022.122086.
+Barratt, M., and A. Oke. 2007. “ Antecedents of Supply Chain 
+Visibility in Retail Supply Chains: A Resource-Based The-
+ory Perspective. ” Journal of Operations Management 25 (6): 
+1217–1233. https://doi.org/10.1016/j.jom.2007.01.003.
+Benstead, A. V ., D. Mwesiumo, H. Moradlou, and A. Bof-
+felli. 2024. “Entering the W orld behind the Clothes That 
+W e W ear: Practical Applications of Blockchain T echnology. ” 
+Production Planning & Control 35 (9): 947–964. https://doi.
+org/10.1080/09537287.2022.2063173.
+Bodkhe, U., S. Tanwar, K. Parekh, P . Khanpara, S. Tyagi, N. 
+Kumar, and M. Alazab. 2020. “Blockchain for Industry 4.0: A 
+Comprehensive Review. ” IEEE Access 8:79764–79800. https:
+//doi.org/10.1109/ACCESS.2020.2988579.
+Bojesson, C., and A. Fundin. 2021. “Exploring Microfounda-
+tions of Dynamic Capabilities – Challenges, Barriers, and 
+Enablers of Organizational Change. ” Journal of Organiza-
+tional Change Management 34 (1): 206–222. https://doi.org/
+10.1108/JOCM-02-2020-0060.
+Boone, C. A., J. B. Skipper, and B. T . Hazen. 2017. “ A Frame-
+work for Investigating the Role of Big Data in Service Parts 
+Management. ” Journal of Cleaner Production 153:687–691. 
+https://doi.org/10.1016/j.jclepro.2016.09.201.
+Budler, M., B. F . Quiroga, and P . Trkman. 2024. “ A Review of 
+Supply Chain Transparency Research: Antecedents, T ech-
+nologies, Types, and Outcomes. ” Journal of Business Logistics
+45 (1): e12368. https://doi.org/10.1111/jbl.12368.
+CDX Compliance Data Exchange. 2023. “DXC T echnol-
+ogy. ” Accessed October 20, 2023. https://public.cdxsys-
+tem.com/en/web/cdx/home.
+Centobelli, P ., R. Cerchione, P . D. V ecchio, E. Oropallo, and G. 
+Secundo. 2022. “Blockchain T echnology for Bridging Trust, 
+Traceability, and Transparency in Circular Supply Chain. ” 
+Information & Management 59 (7): 103508. https://doi.org/
+10.1016/j.im.2021.103508.
+Choi, T .-M., S. Guo, and S. Luo. 2020. “When Blockchain 
+Meets Social-Media: Will the Result Benefit Social Media 
+Analytics for Supply Chain Operations Management?” 
+Transportation Research. Part E, Logistics and Transporta-
+tion Review 135:101860. https://doi.org/10.1016/j.tre.2020.
+101860.
+Choi, T .-M., and T . Siqin. 2022. “Blockchain in Logistics and 
+Production from Blockchain 1.0 to Blockchain 5.0: An Intra-
+inter-organizational Framework. ” Transportation Research. 
+Part E, Logistics and Transportation Review 160:102653. 
+https://doi.org/10.1016/j.tre.2022.102653.
+Chou, C.-C., N.-C. Richard Hwang, C.-W . Li, T . W ang, and Y .-Y . 
+W ang. 2023. “Implementing a Multichain Framework Using 
+Hyperledger for Supply Chain Transparency in a Dynamic 
+Partnership: A Feasibility Study. ” Computers & Industrial 
+Engineering 175:108906. https://doi.org/10.1016/j.cie.2022.
+108906.
+Dubey, R., A. Gunasekaran, D. J. Bryde, Y . K. Dwivedi, and T . 
+Papadopoulos. 2020. “Blockchain T echnology for Enhancing 
+Swift-Trust, Collaboration and Resilience within a Humani-
+tarian Supply Chain Setting. ” International Journal of Produc-
+tion Research 58 (11): 3381–3398. https://doi.org/10.1080/
+00207543.2020.1722860.
+Eisenhardt, K. M., and J. A. Martin. 2000. “Dynamic
+Capabilities: What Are They?” Strategic Management Jour-
+nal 21 (10–11): 1105–1121. https://doi.org/10.1002/
+1097-0266(200010/11)21:10/11<1105::AID-SMJ133>3.0.
+CO;2-E.
+Eslami, M. H., H. Jafari, L. Achtenhagen, J. Carlbäck, and 
+A. W ong. 2024. “Financial Performance and Supply Chain 
+Dynamic Capabilities: The Moderating Role of Industry 4.0 
+T echnologies. ” International Journal of Production Research
+62 (22): 8092–8109. https://doi.org/10.1080/00207543.2021.
+1966850.
+Eslami, M. H., N. Lakemond, and S. Brusoni. 2018. “The 
+Dynamics of Knowledge Integration in Collaborative Prod-
+uct Development: Evidence from the Capital Goods Indus-
+try. ” Industrial Marketing Management 75:146–159. https://
+doi.org/10.1016/j.indmarman.2018.05.001.
+24 
+ E. RAGAN AND M. H. ESLAMI
+European Automobile Manufacturers’ Association. 2018.
+“REACH: Automotive Industry Guideline. ” https://www.
+acea.auto/publication/reach-automotive-industry-
+guideline/.
+European Commission. 2024. “Blockchain Funding. ” Accessed 
+January 2, 2025. https://digital-strategy.ec.europa.eu/en/
+policies/blockchain-funding.
+European Union. 2022. Green Deal: New Proposals to Make 
+Sustainable Products the Norm and Boost Europe’s Resource 
+Independence. European Commission. https://ec.europa.eu/
+commission/presscorner/detail/en/ip_22_2013.
+Fainshmidt, S., A. Pezeshkan, M. Lance Frazier, A. Nair, and 
+E. Markowski. 2016. “Dynamic Capabilities and Organiza-
+tional Performance: A Meta-analytic Evaluation and Exten-
+sion. ” Journal of Management Studies 53 (8): 1348–1380. 
+https://doi.org/10.1111/joms.12213.
+Foerstl, K., A.-K. Kähkönen, C. Blome, and M. Goellner. 
+2021. “Supply Market Orientation: A Dynamic Capability of 
+the Purchasing and Supply Management Function. ” Supply 
+Chain Management 26 (1): 65–83. https://doi.org/10.1108/
+SCM-06-2019-0233.
+Fosso W amba, S., M. M. Queiroz, and L. Trinchera. 2020. 
+“Dynamics between Blockchain Adoption Determinants 
+and Supply Chain Performance: An Empirical Investigation. ” 
+International Journal of Production Economics 229:107791. 
+https://doi.org/10.1016/j.ijpe.2020.107791.
+Gioia, D. A., K. G. Corley, and A. L. Hamilton. 2013. “Seek-
+ing Qualitative Rigor in Inductive Research: Notes on the 
+Gioia Methodology. ” Organizational Research Methods 16 
+(1): 15–31. https://doi.org/10.1177/1094428112452151.
+Goertler, T ., M. Papert, and I. Fischer. 2024. “Theorizing Supply 
+Chain Management and Logistics Research: A Comprehen-
+sive Review of Trends, Gaps, and Future Directions. ” Opera-
+tions and Supply Chain Management: An International Jour-
+nal 17 (4): 329–343. https://doi.org/10.31387/oscm0590445.
+Guan, D., D. W ang, S. Hallegatte, S. J. Davis, J. Huo, S. Li, Y . 
+Bai, et al. 2020. “Global Supply-Chain Effects of COVID-19 
+Control Measures. ” Nature Human Behaviour 4 (6): 577–587. 
+https://doi.org/10.1038/s41562-020-0896-8.
+Guo, S., X. Sun, and H. K. S. Lam. 2023. “ Applications 
+of Blockchain T echnology in Sustainable Fashion Sup-
+ply Chains: Operational Transparency and Environmen-
+tal Efforts. ” IEEE Transactions on Engineering Manage-
+ment 70 (4): 1312–1328. https://doi.org/10.1109/TEM.2020.
+3034216.
+Hallikas, J., M. Immonen, and S. Brax. 2021. “Digitalizing Pro-
+curement: The Impact of Data Analytics on Supply Chain 
+Performance. ” Supply Chain Management 26 (5): 629–646. 
+https://doi.org/10.1108/SCM-05-2020-0201.
+Han, Y ., and X. Fang. 2024. “Systematic Review of Adopt-
+ing Blockchain in Supply Chain Management: Bibliomet-
+ric Analysis and Theme Discussion. ” International Journal 
+of Production Research 62 (3): 991–1016. https://doi.org/10.
+1080/00207543.2023.2236241.
+Iddris, F . 2018. “Digital Supply Chain: Survey of the Literature. ” 
+International Journal of Business Research and Management
+9 (1): 47–61.
+Iranmanesh, M., P . Maroufkhani, S. Asadi, M. Ghobakhloo, 
+Y . K. Dwivedi, and M.-L. T seng. 2023. “Effects of Supply 
+Chain Transparency, Alignment, Adaptability, and Agility on 
+Blockchain Adoption in Supply Chain among SMEs. ” Com-
+puters & Industrial Engineering 176:108931. https://doi.org/
+10.1016/j.cie.2022.108931.
+Kamble, S. S., A. Gunasekaran, H. Parekh, and S. Joshi. 2019. 
+“Modeling the Internet of Things Adoption Barriers in Food 
+Retail Supply Chains. ” Journal of Retailing and Consumer Ser-
+vices 48:154–168. https://doi.org/10.1016/j.jretconser.2019.
+02.020.
+Keoh, S. L., S. S. Kumar, and H. T schofenig. 2014. “Securing 
+the Internet of Things: A Standardization Perspective. ” IEEE 
+Internet of Things Journal 1 (3): 265–275. https://doi.org/10.
+1109/JIOT .2014.2323395.
+Ketokivi, M., and T . Choi. 2014. “Renaissance of Case Research 
+as a Scientific Method. ” Journal of Operations Manage-
+ment 32 (5): 232–240. https://doi.org/10.1016/j.jom.2014.
+03.004.
+Koetsier, J. 2017. “Blockchain Beyond Bitcoin: How Blockchain 
+Will Transform Business in 3–5 years. ” Accessed January 17, 
+2024. https://www.inc.com/john-koetsier/How-blockchain-
+Will-transform-business-in-3-to-5-years.html.
+Kshetri, N. 2017. “Blockchain’ s Roles in Strengthening Cyber-
+security and Protecting Privacy. ” T elecommunications Policy
+41 (10): 1027–1038. https://doi.org/10.1016/j.telpol.2017.09.
+003.
+Kumar, S., R. D. Raut, N. Agrawal, N. Cheikhrouhou, M. 
+Sharma, and T . Daim. 2022. “Integrated Blockchain and 
+Internet of Things in the Food Supply Chain: Adoption 
+Barriers. ” T echnovation 118:102589. https://doi.org/10.1016/
+j.technovation.2022.102589.
+Li, K., J.-Y . Lee, and A. Gharehgozli. 2023. “Blockchain in Food 
+Supply Chains: A Literature Review and Synthesis Analysis 
+of Platforms, Benefits and Challenges. ” International Journal 
+of Production Research 61 (11): 3527–3546. https://doi.org/
+10.1080/00207543.2021.1970849.
+Lin, H.-F ., J.-Q. Su, and A. Higgins. 2016. “How Dynamic 
+Capabilities Affect Adoption of Management Innovations. ” 
+Journal of Business Research 69 (2): 862–876. https://doi.org/
+10.1016/j.jbusres.2015.07.004.
+Lumineau, F ., W . W ang, and O. Schilke. 2021. “Blockchain Gov-
+ernance – a New W ay of Organizing Collaborations?” Orga-
+nization Science 32 (2): 500–521. https://doi.org/10.1287/
+orsc.2020.1379.
+Mistry, I., S. Tanwar, S. Tyagi, and N. Kumar. 2020. “Blockchain 
+for 5G-Enabled IoT for Industrial Automation: A System-
+atic Review, Solutions, and Challenges. ” Mechanical Systems 
+and Signal Processing 135:106382. https://doi.org/10.1016/j.
+ymssp.2019.106382.
+Mol, A. P . J. 2015. “Transparency and V alue Chain Sustain-
+ability. ” Journal of Cleaner Production 107:154–161. https:
+//doi.org/10.1016/j.jclepro.2013.11.012.
+Montecchi, M., K. Plangger, and D. C. W est. 2021. “Supply 
+Chain Transparency: A Bibliometric Review and
+Research Agenda. ” International Journal of Production 
+Economics 238:108152. https://doi.org/10.1016/j.ijpe.2021.
+108152.
+Morgan, T . R., R. G. Richey, Jr., and A. E. Ellinger. 2018. 
+“Supplier Transparency: Scale Development and V ali-
+dation. ” International Journal of Logistics Management
+29 (3): 959–984. https://doi.org/10.1108/IJLM-01-2017-
+0018.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 25
+Pattanayak, S., R. M. Arputham, M. Goswami, and N. P . 
+Rana. 2024. “Blockchain T echnology and Its Relation-
+ship with Supply Chain Resilience: A Dynamic Capabil-
+ity Perspective. ” IEEE Transactions on Engineering Manage-
+ment 71:10398–10412. https://doi.org/10.1109/TEM.2023.
+3235771.
+Pattanayak, S., M. Ramkumar, M. Goswami, and N. P . Rana. 
+2024. “Blockchain T echnology and Supply Chain Perfor-
+mance: The Role of Trust and Relational Capabilities. ” Inter-
+national Journal of Production Economics 271:109198. https:
+//doi.org/10.1016/j.ijpe.2024.109198.
+Paul, A. K., X. Qu, and Z. W en. 2021. “Blockchain – a Promising 
+Solution to Internet of Things: A Comprehensive Analy-
+sis, Opportunities, Challenges, and Future Research Issues. ” 
+Peer-to-Peer Networking and Applications 14 (5): 2926–2951. 
+https://doi.org/10.1007/s12083-021-01151-0.
+Polas, M. R. H., A. Afshar Jahanshahi, M. E. Islam, A. I. 
+Kabir, A. S. M. Sohel-Uz-Zaman, and A. A. Fahad. 2025. 
+“ A Journey from Traditional Supply Chain Processes to 
+Sustainability-Oriented Blockchain Supply Chain: The Crit-
+ical Role of Organizational Capabilities. ” Business Strategy 
+and the Environment 34 (3): 3522–3543. https://doi.org/10.
+1002/bse.4159.
+Pournader, M., Y . Shi, S. Seuring, and S. C. L. Koh. 2020. 
+“Blockchain Applications in Supply Chains, Transport and 
+Logistics: A Systematic Review of the Literature. ” Interna-
+tional Journal of Production Research 58 (7): 2063–2081. 
+https://doi.org/10.1080/00207543.2019.1650976.
+Procurement Leaders. 2022. Data-Enabled Supply Chain Trans-
+parency: Network Edition. Procurement Leaders. https://
+www.procurementleaders.com.
+Qian, X., and E. Papadonikolaki. 2021. “Shifting Trust in Con-
+struction Supply Chains through Blockchain T echnology. ” 
+Engineering, Construction, and Architectural Management
+28 (2): 584–602. https://doi.org/10.1108/ECAM-12-2019-
+0676.
+Rad, F . F ., P . Oghazi, M. Palmié, K. Chirumalla, N. Pashke-
+vich, P . C. Patel, and S. Sattari. 2022. “Industry 4.0 and 
+Supply Chain Performance: A Systematic Literature Review 
+of the Benefits, Challenges, and Critical Success Factors of 
+11 Core T echnologies. ” Industrial Marketing Management
+105:268–293. https://doi.org/10.1016/j.indmarman.2022.06.
+009.
+Raj, R., A. Singh, V . Kumar, and P . V erma. 2024. “Challenges in 
+Adopting Blockchain T echnology in Supply Chain Manage-
+ment: A T oo far Fetched Idea?” The International Journal of 
+Quality & Reliability Management 41 (8): 2146–2180. https:
+//doi.org/10.1108/IJQRM-12-2022-0366.
+Rajaguru, R., and M. J. Matanda. 2019. “Role of Compatibility 
+and Supply Chain Process Integration in Facilitating Supply 
+Chain Capabilities and Organizational Performance. ” Sup-
+ply Chain Management 24 (2): 301–316. https://doi.org/10.
+1108/SCM-05-2017-0187.
+Rathee, G., M. Balasaraswathi, K. P . Chandran, S. D. Gupta, and 
+C. S. Boopathi. 2021. “ A Secure IoT Sensors Communica-
+tion in Industry 4.0 Using Blockchain T echnology. ” Journal 
+of Ambient Intelligence and Humanized Computing 12 (1): 
+533–545. https://doi.org/10.1007/s12652-020-02017-8.
+Rejeb, A., J. G. Keogh, and H. Treiblmaier. 2019. “Leveraging 
+the Internet of Things and Blockchain T echnology in Supply 
+Chain Management. ” Future Internet 11 (7): 161. https://doi.
+org/10.3390/fi11070161.
+Reyna, A., C. Martín, J. Chen, E. Soler, and M. Díaz. 
+2018. “On Blockchain and Its Integration with IoT . Chal-
+lenges and Opportunities. ” Future Generation Computer 
+Systems 88:173–190. https://doi.org/10.1016/j.future.2018.
+05.046.
+Saberi, S., M. Kouhizadeh, J. Sarkis, and L. Shen. 2019. 
+“Blockchain T echnology and Its Relationships to Sustainable 
+Supply Chain Management. ” International Journal of Pro-
+duction Research 57 (7): 2117–2135. https://doi.org/10.1080/
+00207543.2018.1533261.
+Samanta, A. K., B. B. Sarkar, and N. Chaki. 2021. “ A Blockchain-
+Based Smart Contract towards Developing Secured Uni-
+versity Examination System. ” Journal of Data, Information 
+and Management 3 (4): 237–249. https://doi.org/10.1007/
+s42488-021-00056-0.
+Schafer, N. 2023. “Making Transparency Transparent: A Sys-
+tematic Literature Review to Define and Frame Supply Chain 
+Transparency in the Context of Sustainability. ” Management 
+Review Quarterly 73 (2): 579–604. https://doi.org/10.1007/
+s11301-021-00252-7.
+Schilke, O. 2014. “On the Contingent V alue of Dynamic Capa-
+bilities for Competitive Advantage: The Nonlinear Moderat-
+ing Effect of Environmental Dynamism. ” Strategic Manage-
+ment Journal 35 (2): 179–203. https://doi.org/10.1002/smj.
+2099.
+Serdarasan, S. 2013. “ A Review of Supply Chain Complex-
+ity Drivers. ” Computers & Industrial Engineering 66 (3): 
+533–540. https://doi.org/10.1016/j.cie.2012.12.008.
+Sharma, M., S. Kamble, V . Mani, R. Sehrawat, A. Belhadi, and 
+V . Sharma. 2021. “Industry 4.0 Adoption for Sustainabil-
+ity in Multi-tier Manufacturing Supply Chain in Emerg-
+ing Economies. ” Journal of Cleaner Production 281:125013. 
+https://doi.org/10.1016/j.jclepro.2020.125013.
+Sodhi, M. S., and C. S. Tang. 2019. “Research Opportunities 
+in Supply Chain Transparency. ” Production and Operations 
+Management 28 (12): 2946–2959. https://doi.org/10.1111/
+poms.13115.
+Sunny, J., N. Undralla, and V . Madhusudanan Pillai. 2020. “Sup-
+ply Chain Transparency through Blockchain-Based Trace-
+ability: An Overview with Demonstration. ” Computers & 
+Industrial Engineering 150:106895. https://doi.org/10.1016/
+j.cie.2020.106895.
+T eece, D. J. 2007. “Explicating Dynamic Capabilities: The 
+Nature and Microfoundations of (Sustainable) Enterprise 
+Performance. ” Strategic Management Journal 28 (13): 1319–
+1350. https://doi.org/10.1002/smj.640.
+T eece, D. J. 2018. “Business Models and Dynamic Capabilities. ” 
+Long Range Planning 51 (1): 40–49. https://doi.org/10.1016/
+j.lrp.2017.06.007.
+T eece, D. J., G. Pisano, and A. Shuen. 1997. “Dynamic Capa-
+bilities and Strategic Management. ” Strategic Management 
+Journal 18 (7): 509–533. https://doi.org/10.1002/(SICI)1097-
+0266(199708)18:7<509::AID-SMJ882>3.0.CO;2-Z.
+Tran-Dang, H., N. Krommenacker, P . Charpentier, and D.-S. 
+Kim. 2022. “The Internet of Things for Logistics: Perspec-
+tives, Application Review, and Challenges. ” T echnical Review 
+– IETE 39 (1): 93–121. https://doi.org/10.1080/02564602.
+2020.1827308.
+Treiblmaier, H. 2018. “The Impact of the Blockchain on the 
+Supply Chain: A Theory-Based Research Framework and a 
+Call for Action. ” Supply Chain Management 23 (6): 545–559. 
+https://doi.org/10.1108/SCM-01-2018-0029.
+26 
+ E. RAGAN AND M. H. ESLAMI
+V enkatesh, V . G., K. Kang, B. W ang, R. Y . Zhong, and A. Zhang. 
+2020. “System Architecture for Blockchain Based Trans-
+parency of Supply Chain Social Sustainability. ” Robotics and 
+Computer-Integrated Manufacturing 63:101896. https://doi.
+org/10.1016/j.rcim.2019.101896.
+W ang, Z. J., C. H. Chen, and A. Zghari-Sales. 2021. “Designing 
+a Blockchain Enabled Supply Chain. ” International Journal 
+of Production Research 59 (5): 1450–1475. https://doi.org/10.
+1080/00207543.2020.1824086.
+W ognum, P . M., H. Bremmers, J. H. Trienekens, J. G. A. J. van 
+der V orst, and J. M. Bloemhof. 2011. “Systems for Sustain-
+ability and Transparency of Food Supply Chains – Current 
+Status and Challenges. ” Advanced Engineering Informatics 25 
+(1): 65–76. https://doi.org/10.1016/j.aei.2010.06.001.
+W olf, D. E., L. Louw, and D. Palm. 2024. “ An Analysis 
+of Blockchain versus Relational Databases for Digitalis-
+ing Information Flows in Global Supply Chains Using the 
+Analytic Network Process. ” International Journal of Produc-
+tion Research 62 (14): 5016–5035. https://doi.org/10.1080/
+00207543.2023.2282751.
+Y adav, G., S. Luthra, S. K. Jakhar, S. K. Mangla, and D. P . 
+Rai. 2020. “ A Framework to Overcome Sustainable Supply 
+Chain Challenges through Solution Measures of Industry 
+4.0 and Circular Economy: An Automotive Case. ” Journal 
+of Cleaner Production 254:120112. https://doi.org/10.1016/j.
+jclepro.2020.120112.
+Y aga, D., P . Mell, N. Roby, and K. Scarfone. 2019. “Blockchain 
+T echnology Overview. ” arXiv.org. https://doi.org/10.6028/
+NIST .IR.8202.
+Y ang, M., M. Fu, and Z. Zhang. 2021. “The Adoption of 
+Digital T echnologies in Supply Chains: Drivers, Process, 
+and Impact. ” T echnological Forecasting & Social Change
+169:120795. https://doi.org/10.1016/j.techfore.2021.120795.
+Y ao, S., and K. Zhu. 2020. “Combating Product Label Mis-
+conduct: The Role of Traceability and Market Inspection. ” 
+European Journal of Operational Research 282 (2): 559–568. 
+https://doi.org/10.1016/j.ejor.2019.09.031.
+Yin, R. K. 2009. Case Study Research: Design and Methods. 4th 
+ed. Thousand Oaks, CA: Sage.
+Zhu, Q., C. Bai, and J. Sarkis. 2022. “Blockchain T echnology and 
+Supply Chains: The Paradox of the Atheoretical Research 
+Discourse. ” Transportation Research. Part E, Logistics and 
+Transportation Review 164:102824. https://doi.org/10.1016/
+j.tre.2022.102824.

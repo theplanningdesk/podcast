@@ -1,0 +1,1387 @@
+TITLE: Learning from forecast revisions for inventory replenishment under non-stationary demand
+AUTHORS: Saadinur Azisbek uulu, Yılmaz Uygun
+VENUE: Operations Research Perspectives (2026-10-02)
+DOI: https://doi.org/10.1016/j.orp.2026.100419
+LICENCE: cc-by-nc-nd
+LINK: https://doi.org/10.1016/j.orp.2026.100419
+
+ 
+Contents lists available at ScienceDirect
+Operations Research Perspectives
+journal homepage: www.elsevier.com/locate/orp 
+Learning from forecast revisions for inventory replenishment under 
+non-stationary demand
+Saadinur Azisbek uulu a,∗, Yilmaz Uygun b
+a Logistics Engineering, Processes and Technology, Constructor University, South Hall 111, Bremen, 28759, Germany
+b Logistics Engineering, Technologies, and Processes, Constructor University, Bremen, 28759, Germany
+A R T I C L E I N F O
+Dataset link: https://github.com/eager1999/fr-
+ppo-replenishment
+Keywords:
+Inventory control
+Deep reinforcement learning
+Forecast revisions
+Change-point detection
+Adaptation lag
+FR-PPO
+ A B S T R A C T
+Forecast revisions contain information about emerging demand changes that is typically discarded in inventory-
+control policies. Our two main contributions are (i) a POMDP state augmentation that pairs the history 
+of forecast revisions with Bayesian change-point and forecast-uncertainty signals, and (ii) FR-PPO (Forecast 
+Revision Proximal Policy Optimization), a two-level recurrent architecture that encodes this revision history 
+through a GRU inside a RecurrentPPO controller centred on an uncertainty-adjusted base-stock reference. We 
+evaluated FR-PPO against two classical and six reinforcement learning benchmarks in five synthetic demand 
+scenarios and seven regime-active M5 SKUs. FR-PPO is the best PPO-family policy in all five synthetic scenarios 
+and achieves the lowest overall cost on three of them, reducing cost by 72.2% relative to adaptive BaseStock 
+under seasonal demand while reducing adaptation lag by 63%. The method is not uniformly dominant: off-
+policy SAC baselines retain an advantage under sparse, intermittent demand, delimiting where the revision 
+signal is most valuable. On real M5 data, FR-PPO reduces cost relative to adaptive BaseStock on all seven 
+SKUs (4.2%–23.0%). These findings identify forecast-revision histories as useful, low-cost decision information 
+for replenishment under demand non-stationarity.
+1. Introduction
+1.1. Motivation
+Inventory management under non-stationary demand remains a 
+central problem in supply chain management. Classical inventory the-
+ory base-stock policies, (𝑠, 𝑆) rules and the newsvendor formula delivers 
+near-optimal solutions when demand is stationary and Normal [1,
+2]. Real demand, however, is neither. It exhibits abrupt level shifts 
+driven by promotions, seasonality, product introductions, and macroe-
+conomic shocks; gradual trend reversals; and intermittent bursts. The 
+practitioner’s default response is to widen safety stocks and accept 
+chronic over- or under-stocking as a cost of robustness. This volatil-
+ity has also motivated a growing organisational literature on supply 
+chain resilience and ambidexterity, that is the firm-level capability to 
+balance efficiency with adaptability under environmental uncertainty 
+[3,4]. That literature addresses strategic and organisational-capability 
+questions, while this paper instead addresses the operational and al-
+gorithmic question of how a single replenishment policy should react, 
+period by period, to demand non-stationarity once it occurs.
+∗ Corresponding author.
+E-mail addresses: sazisbekuu@constructor.university (S.A. uulu), yuygun@constructor.university (Y. Uygun).
+Recent advances in deep reinforcement learning (RL) offer a com-
+plementary approach: training a policy directly from simulated in-
+ventory dynamics so that the neural network learns the mapping 
+from observed state to order quantity without closed-form assumptions 
+[5–7]. These methods have demonstrated significant cost reductions 
+over classical policies on stationary and mildly non-stationary demand. 
+However, they share a critical limitation: they treat the forecasting 
+system as a black box, consuming its point forecast ̂𝑑𝑡+ℎ|𝑡 but discarding 
+the forecast revision, i.e., the update 𝛥 ̂𝑑𝑡+ℎ|𝑡 = ̂𝑑𝑡+ℎ|𝑡 − ̂𝑑𝑡+ℎ|𝑡−1 that the 
+forecaster makes when new demand arrives.
+Forecast revisions are not merely noise. Under exponential smooth-
+ing (ETS), they are a sufficient statistic for the forecaster’s surprise: 
+𝛥 ̂𝑑𝑡+ℎ|𝑡 = 𝛼𝜀𝑡(1+ ℎ𝛽𝑠) where 𝜀𝑡 is the one-step forecast error (Proposition 
+1, Section 3). A large positive revision signals an upward shift in 
+demand that has not yet worked through the ETS level; a sequence 
+of revisions of the same sign signals a sustained regime change. This 
+information is actionable: a policy that detects a shift early can raise 
+orders before backorders accumulate, reducing the adaptation lag 
+which is the number of periods between a regime change and cost 
+https://doi.org/10.1016/j.orp.2026.100419
+Received 9 June 2026; Received in revised form 27 August 2026; Accepted 17 September 2026
+Operations Research Perspectives 17 (2026) 100419 
+Available online 2 October 2026 
+2214-7160/© 2026 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+Open access funding enabled and organized by Projekt DEAL. 
+S.A. uulu and Y. Uygun
+stabilisation which we identify as the primary performance driver in 
+non-stationary settings.
+1.2. Related work
+1.2.1. Reinforcement learning for inventory control
+The application of deep reinforcement learning to inventory control 
+has matured rapidly since 2020. Gijsbrechts et al. [5] establish the first 
+systematic benchmark evidence, demonstrating that DRL is effective 
+for stationary inventory problems including lost-sales, dual-sourcing, 
+and multi-echelon structures, while concluding that performance ad-
+vantages over classical heuristics are most pronounced when no ana-
+lytically tractable policy structure is available. Vanvuchelen et al. [7] 
+demonstrate that Proximal Policy Optimization (PPO) can learn near-
+optimal joint replenishment policies in multi-item settings, establishing 
+PPO as a strong benchmark algorithm for inventory RL. The conceptual 
+roadmap of Boute et al. [6] synthesises the design choices such as 
+state representation, action parameterisation, reward specification, and 
+simulation design that determine whether DRL succeeds in inventory 
+control.
+The systematic review of Bergsma et al. [8], covering 122 machine 
+learning papers on inventory control, identifies non-stationary demand 
+with structural breaks as the most underexplored area in the DRL 
+inventory literature. The review notes that few papers explicitly model 
+demand regime shifts or measure the policy’s adaptation speed follow-
+ing a structural change. This gap motivates the experimental design 
+of the present paper, which introduces adaptation lag as a primary 
+performance metric alongside total cost and service level.
+1.2.2. Forecast signals and change-point detection
+A key architectural decision in RL-based replenishment is the role of 
+demand forecasts in the policy’s information structure. Dehaybe et al. 
+[9] introduce 𝐻-step rolling forecast windows as explicit state com-
+ponents for a PPO policy trained on non-stationary lot-sizing problems, 
+enabling the policy to condition replenishment decisions on anticipated 
+future demand. However, Dehaybe et al. treat the forecast as a point-
+in-time prediction at each period, without modelling the sequence of 
+revisions to that prediction. The dynamics through which a forecast 
+changes from one period to the next are therefore discarded.
+This paper proposes a revision as a signal approach. Rather than 
+treating the forecast as a fixed snapshot, we model the full sequence 
+of forecast updates and extract revision embeddings as explicit policy 
+inputs. The revision 𝛥 ̂𝑑𝑡+ℎ|𝑡 = ̂𝑑𝑡+ℎ|𝑡 − ̂𝑑𝑡+ℎ|𝑡−1 reflects the forecaster’s 
+posterior update upon observing demand 𝐷𝑡. Under ETS, this revision 
+is analytically proportional to the current forecast error 𝜀𝑡, with mag-
+nitude increasing in the forecast horizon ℎ. A large positive revision 
+indicates that observed demand exceeded the prior forecast as evidence 
+of upward demand pressure or regime transition. We are not aware of 
+a prior RL paper for inventory replenishment that explicitly constructs 
+and exploits the temporal revision history as a separate encoded signal.
+Kou et al. [10] augment the state with a Bayesian Online Change-
+Point Detection (BOCPD) signal 𝑍𝑡 ∈ [0 , 1], a continuous posterior 
+probability that a regime change has recently occurred, but discard 
+the revision itself. We combine these complementary signals: a GRU 
+encodes the rolling revision history into a compact embedding, while 𝑍𝑡
+modulates exploration via adaptive entropy scheduling. The distinction 
+from Dehaybe et al. [9] is that we condition on {𝛥 ̂𝑑𝑡} in addition to 
+{ ̂𝑑𝑡}; the distinction from Kou et al. [10] is that we build a structured 
+revision embedding rather than using 𝑍𝑡 as the sole regime signal.
+The bullwhip literature [11] has long studied forecast revision 
+propagation as a source of order amplification. Graves [12] derives 
+the optimal policy under demand signal processing. Our contribution 
+is to operationalise the revision signal as an RL state representation, 
+turning a source of amplification into a tool for early regime detection 
+(see Table 1). 
+1.3. Research gap, research questions, and contributions
+Despite the centrality of forecast revisions to supply chain practice, 
+the RL for inventory literature has not yet systematically conditioned 
+policies on the history of forecast revisions as a structured signal. 
+The closest prior work is Dehaybe et al. [9], who pass the difference 
+between two consecutive forecasts as a scalar to a PPO policy, and Kou 
+et al. [10], who augment the state with a change-point detection signal 
+𝑍𝑡 but discard the revision itself. Neither paper encodes the temporal 
+pattern of revisions, the shape of the update sequence over the past 𝑘
+periods, which is the signal that distinguishes a transient spike from 
+a sustained regime change. Without this structured history, the policy 
+can only react to shifts already reflected in the forecast level; it cannot 
+anticipate them.
+This gap motivates two research questions. RQ1: does conditioning 
+a replenishment policy on the history of forecast revisions, rather 
+than only the current forecast level or a contemporaneous change-
+point signal, reduce adaptation lag and cost under regime-switching 
+demand? RQ2: under what demand and cost conditions does a revision-
+conditioned policy outperform strong off-policy alternatives, and where 
+does this advantage fail to hold? We show that encoding the revision 
+pattern reduces adaptation lag by 63% on seasonal demand and yields 
+statistically significant cost reductions against all 8 baselines on that 
+scenario, supported by a value-of-information argument (Proposition 
+2); we also show that the advantage does not hold uniformly, delimiting 
+the answer to RQ2.
+This paper introduces Forecast-Revision Proximal Policy Optimiza-
+tion (FR-PPO), a recurrent RL policy for inventory replenishment under 
+non-stationary demand. We formulate the inventory problem as a 
+partially observable Markov decision process with state
+𝑠𝑡 = (𝐼𝑡, 𝑃𝑡, ̂𝑑𝑡, 𝛥 ̂𝑑𝑡, 𝑈𝑡, 𝑍𝑡 ) ,
+where 𝐼𝑡 denotes inventory, 𝑃𝑡 the outstanding order pipeline, ̂𝑑𝑡 the 
+ETS forecast, 𝛥 ̂𝑑𝑡 its revision, 𝑈𝑡 forecast uncertainty, and 𝑍𝑡 the BOCPD 
+posterior probability of a recent structural change. Rather than relying 
+only on the current forecast or a contemporaneous change-point signal, 
+FR-PPO conditions its decisions on the recent revision history
+𝑡 = (𝛥 ̂𝑑𝑡−𝑘+1, … , 𝛥 ̂𝑑𝑡 ) .
+This representation enables the policy to distinguish isolated forecast 
+corrections from persistent revision patterns that indicate a developing 
+demand shift. Proposition 2 formalises this information advantage: 
+access to revision histories cannot reduce the optimal attainable value 
+and provides strict improvement whenever those revisions contain 
+decision-relevant information about regime transitions.
+This paper makes four contributions:
+1. State representation (Section 2). We propose a POMDP state 
+𝑠𝑡 = ( 𝐼𝑡, 𝑃𝑡, ̂𝑑𝑡, 𝛥 ̂𝑑𝑡, 𝑈𝑡, 𝑍𝑡) that pairs the ETS forecast ̂𝑑𝑡 with 
+its revision 𝛥 ̂𝑑𝑡, the ETS prediction interval 𝑈𝑡 (forecast uncer-
+tainty), and the BOCPD soft change-point probability 𝑍𝑡. We 
+show (Proposition 2) that conditioning on the 𝑘-step revision his-
+tory 𝑡 = ( 𝛥 ̂𝑑𝑡−𝑘+1, … , 𝛥 ̂𝑑𝑡) weakly improves the optimal value 
+relative to a policy class that cannot observe revisions; strict 
+improvement requires the revisions to carry decision-relevant 
+information about regime changes.
+2. Architecture (Section 3). We introduce FR-PPO (Forecast-
+Revision PPO): a two-level recurrent architecture in which an 
+inner GRU encodes 𝑡 into a compact revision embedding 𝑒𝑡, 
+and an outer LSTM (RecurrentPPO) processes the augmented 
+state (𝐼𝑡, 𝑃𝑡, ̂𝑑𝑡, 𝑒𝑡, 𝑈𝑡, 𝑍𝑡) across episode time steps. The inner 
+GRU is stateless across episode steps—it operates on the stored 
+𝑘-step window—separating revision encoding from the policy’s 
+temporal memory.
+Operations Research Perspectives 17 (2026) 100419 
+2 
+S.A. uulu and Y. Uygun
+Table 1
+Methodological positioning: this paper versus closely related work. 3 = present; 7 = absent.
+ Dimension Classical OR RL + Forecast
+(Dehaybe et al.)
+CPD-RL
+(Kou et al.)
+This paper 
+ Non-stationary demand 3(ltd) 3 3 3 
+ Multi-horizon forecast in state 7 3 7 3 
+ Forecast revision vector in state 7 7 7 3 
+ Dedicated revision sequence encoder 7 7 7 3 
+ Online change-point detection 7 7 3(binary) 3(soft) 
+ Uncertainty-adjusted action reference 7 7 7 3 
+ Adaptation lag as primary metric 7 7 3 3 
+ Real-data validation 7 7 7 3 
+3. Uncertainty-adjusted action reference (Sections 2 and 3). We 
+centre the learned action on an adaptive base-stock reference 
+𝑎ref 𝑡 = [ 𝑦∗ 𝑡 − IP 𝑡]+, where the target 𝑦∗ 𝑡 increases with the ETS 
+prediction uncertainty 𝑈𝑡 when shortage costs dominate holding 
+costs. The policy therefore learns context-dependent deviations 
+from an interpretable inventory control reference rather than 
+unrestricted order quantities. During training, a change-point-
+conditional directional shaping term rewards deviations aligned 
+with recent forecast innovations.
+4. Empirical evaluation (Section 4). We evaluate against eight 
+baselines (two classical, six RL) across five synthetic demand 
+scenarios and seven regime-active M5 Walmart SKUs, with 20 
+independent training seeds per synthetic scenario and 10 per M5 
+SKU. FR-PPO achieves a 72.2% cost reduction on the seasonal 
+scenario relative to adaptive BaseStock—16.7% below the 
+strongest recurrent ablation (FlatRevision-PPO)—with statistical 
+significance against all 8 baselines after Bonferroni correction 
+(𝑝Bonf ≤ 0.023, Wilcoxon signed-rank test). It is the best PPO-
+family policy in all five synthetic scenarios and the lowest-cost 
+policy overall on three (level shift, trend change, seasonal); the 
+off-policy SAC baselines retain an edge only under intermit-
+tent demand. Adaptation lag is reduced by 63% on seasonal 
+demand relative to adaptive BaseStock (26.3 → 9.8 periods). 
+On real M5 data, the model outperforms adaptive BaseStock on 
+all seven regime-active SKUs (4.2%–23.0% cost reduction); the 
+SAC-based RL baseline diverges on one rapidly alternating SKU, 
+reproducing a synthetic failure mode on held-out real data.
+1.4. Paper organisation
+Section 2 formalises the inventory model and forecasting frame-
+work. Section 3 presents the methodology and theoretical analysis. 
+Section 4 reports computational experiments, ablation, sensitivity anal-
+ysis, and M5 real-data validation. Section 5 concludes with managerial 
+implications and limitations.
+2. Model
+2.1. System description
+We consider a single-echelon, periodic-review inventory system 
+operating over a finite planning horizon of 𝑇 periods. In each period 
+𝑡 ∈ {1, … , 𝑇 }, the decision-maker observes the current system state and 
+places a non-negative replenishment order 𝑎𝑡 ≥ 0. Replenishment orders 
+placed at period 𝑡 arrive at the beginning of period 𝑡+𝐿, where 𝐿 ≥ 1 is 
+a fixed, deterministic lead time. The decision-maker does not observe 
+the latent demand regime directly; it must be inferred from observable 
+signals.
+2.2. Demand model
+Demand is generated by a regime-switching process with 𝐾 latent 
+regimes. Let 𝜉𝑡 ∈ {1 , … , 𝐾} denote the active regime at period 𝑡, 
+governed by a time-homogeneous Markov chain with transition matrix 
+𝛱 ∈ [0 , 1]𝐾×𝐾 . The agent never observes 𝜉𝑡; it is a latent variable 
+throughout.
+Within regime 𝑘, period-𝑡 demand is drawn from: 
+𝐷𝑡 ∣ 𝜉𝑡 = 𝑘 ∼ 𝐹𝑘(𝜇𝑘, 𝜎𝑘), (1)
+where 𝐹𝑘 is a non-negative distribution with regime-specific mean 𝜇𝑘 >
+0 and standard deviation 𝜎𝑘 > 0. In baseline experiments, 𝐹𝑘 is taken as 
+a Normal distribution truncated at zero, consistent with Dehaybe et al. 
+[9]. Extensions to Negative Binomial distributions are evaluated in the 
+intermittent demand scenario (Section 4).
+Regime transitions generate the structural demand changes the 
+framework is designed to detect. Section 4 evaluates five baseline 
+demand scenarios: level shift (two-regime), trend change (ramp-and-
+plateau), seasonal (periodic regime), promotion shock (spike-and-
+return), and intermittent demand (Negative Binomial, alternating
+phases).
+2.3. Inventory dynamics
+The system operates under a backlogging assumption: unmet de-
+mand accumulates as backorders, with no lost sales. Let 𝐼𝑡 ∈ R denote 
+the net inventory at the beginning of period 𝑡 (positive = on-hand stock; 
+negative = outstanding backorders).
+Inventory update: 
+𝐼𝑡+1 = 𝐼𝑡 + 𝐴𝑡 − 𝐷𝑡, (2)
+where 𝐴𝑡 = 𝑎𝑡−𝐿 is the quantity received at the start of period 𝑡 (the 
+order placed 𝐿 periods earlier).
+Pipeline inventory: 𝑃𝑡 tracks all orders placed but not yet received, 
+𝑃𝑡 =
+𝐿∑
+𝑙=1
+𝑎𝑡−𝑙, 𝑃 𝑡+1 = 𝑃𝑡 + 𝑎𝑡 − 𝑎𝑡−𝐿. (3)
+The inventory position IP𝑡 = 𝐼𝑡 + 𝑃𝑡 satisfies the tracking identity 
+IP𝑡+1 = IP 𝑡 + 𝑎𝑡 − 𝐷𝑡, independent of lead time 𝐿 [13].
+Initialisation. At 𝑡 = 1 we set 𝐼1 = 𝐼0 (a warm-start inventory 
+level sampled uniformly from [0, 2 ̄ 𝜇], where ̄ 𝜇 is the cross-regime mean 
+demand) and 𝑃1 = 0.
+2.4. Forecasting module
+In each period 𝑡, an Exponential Smoothing (ETS) module generates 
+multi-horizon demand forecasts ̂𝑑𝑡+ℎ|𝑡 for ℎ = 1 , … , 𝐻. We use Holt’s 
+linear trend method (ETS(A,A,N) in the Hyndman taxonomy):
+𝓁𝑡 = 𝛼 ⋅ 𝐷𝑡 + (1 − 𝛼)(𝓁𝑡−1 + 𝑏𝑡−1), (4)
+𝑏𝑡 = 𝛽𝑠(𝓁𝑡 − 𝓁𝑡−1) + (1 − 𝛽𝑠)𝑏𝑡−1, (5)
+̂𝑑𝑡+ℎ|𝑡 = 𝓁𝑡 + ℎ ⋅ 𝑏𝑡, (6)
+Operations Research Perspectives 17 (2026) 100419 
+3 
+S.A. uulu and Y. Uygun
+with smoothing parameters 𝛼 ∈ (0 , 1) and 𝛽𝑠 ∈ (0 , 1) estimated by 
+minimising one-step-ahead SSE on a warm-up window of 20 periods. 
+ETS is preferred because it produces closed-form prediction intervals 
+and its revisions decompose analytically into forecast errors (Section 3), 
+directly underpinning the information-value argument.
+Forecast uncertainty. Under Holt’s method, the ℎ-step-ahead pre-
+diction variance is: 
+̂ 𝜎2 𝑡+ℎ|𝑡 = ̂ 𝜎2 𝜀 ⋅ 𝑐ℎ, 𝑐 ℎ = 1 + ( ℎ − 1)[𝛼2 + 𝛼𝛽𝑠 + 𝛽2 𝑠 3 ], (7)
+where ̂ 𝜎2 𝜀 is a rolling estimate updated as ̂ 𝜎2 𝜀 ← 𝜌𝜀 ̂ 𝜎2 𝜀 + (1 − 𝜌𝜀)𝜀2 𝑡 with 
+𝜌𝜀 = 0.97. The uncertainty feature vector is: 
+𝑈𝑡 = [ ̂ 𝜎𝑡+1|𝑡, ̂ 𝜎𝑡+2|𝑡, … , ̂ 𝜎𝑡+𝐻|𝑡 ] ∈ R𝐻 . (8)
+2.5. Forecast revisions
+The forecast revision at horizon ℎ, issued at period 𝑡, is the change 
+in the forecast for the same calendar demand period after observing 𝐷𝑡: 
+𝛥 ̂𝑑𝑡+ℎ|𝑡 = ̂𝑑𝑡+ℎ|𝑡 − ̂𝑑𝑡+ℎ|𝑡−1. (9)
+Under ETS, this revision decomposes as 𝛥 ̂𝑑𝑡+ℎ|𝑡 = 𝛼𝜀𝑡(1 + ℎ𝛽𝑠) (Propo-
+sition 1): it is a scaled version of the current forecast error, with 
+magnitude that increases with horizon ℎ and carries the most recent 
+forecast innovation relative to the forecast level ̂𝑑𝑡. The 𝐻-step revision 
+vector fed to the policy is: 
+𝛥 ̂𝑑𝑡 = [𝛥 ̂𝑑𝑡+1|𝑡, 𝛥 ̂𝑑𝑡+2|𝑡, … , 𝛥 ̂𝑑𝑡+𝐻|𝑡 ] ∈ R𝐻 . (10)
+2.6. Bayesian online change-point detection module
+In each period 𝑡, the BOCPD module [14] maintains a posterior 
+distribution over the run length 𝜌𝑡—the number of periods elapsed since 
+the most recent demand regime change. The BOCPD recursion is: 
+𝑃 (𝜌𝑡 ∣ 𝑥1∶𝑡) ∝
+∑
+𝜌𝑡−1
+𝑃 (𝑥𝑡 ∣ 𝜌𝑡, 𝑥(𝑡−𝜌𝑡+1)∶𝑡) ⋅ 𝑃 (𝜌𝑡 ∣ 𝜌𝑡−1) ⋅ 𝑃 (𝜌𝑡−1 ∣ 𝑥1∶𝑡−1), (11)
+with transition prior: 
+𝑃 (𝜌𝑡 = 𝜌𝑡−1 + 1 ∣ 𝜌𝑡−1) = 1 − 𝜆ℎ, 𝑃 (𝜌𝑡 = 0 ∣ 𝜌𝑡−1) = 𝜆ℎ, (12)
+where 𝜆ℎ ∈ (0, 1) is the hazard rate hyperparameter. The predictive like-
+lihood 𝑃 (𝑥𝑡 ∣ 𝜌𝑡, 𝑥(𝑡−𝜌𝑡+1)∶𝑡) is evaluated under a Normal-Inverse-Gamma 
+conjugate model, enabling closed-form updates.
+The regime-shift indicator is: 
+𝑍𝑡 = 𝑃 (𝜌𝑡 < 𝜏 ∣ 𝑥1∶𝑡) =
+𝜏−1∑
+𝜌=0
+𝑃 (𝜌𝑡 = 𝜌 ∣ 𝑥1∶𝑡), (13)
+for 𝜏 = 5 periods by default. 𝑍𝑡 ∈ [0, 1] is the posterior probability that 
+a regime change occurred within the last 𝜏 periods. 𝑍𝑡 is continuous 
+and can be passed directly as a scalar feature to the policy network, 
+preserving gradient flow during training. The hazard rate 𝜆ℎ = 1∕50
+corresponds to an expected run length of 50 periods, consistent with 
+the 𝑝stay = 0.98 default scenario.
+2.7. State space, action space, and POMDP structure
+The complete observable state vector is: 
+𝑠𝑡 = (𝐼𝑡, 𝑃 𝑡, ̂𝑑𝑡, 𝛥 ̂𝑑𝑡, 𝑈 𝑡, 𝑍 𝑡), (14)
+with total dimension dim(𝑠𝑡) = 3 𝐻 + 3 (𝐻 = 𝐿 + 1 covers the full replen-
+ishment pipeline). The latent regime 𝜉𝑡 is not observed; the agent infers 
+it from ( ̂𝑑𝑡, 𝛥 ̂𝑑𝑡, 𝑈𝑡, 𝑍𝑡), which together form an informative observable 
+summary of regime state. All components are normalised before input: 
+inventory and pipeline by historical mean demand; forecast, revision, 
+and uncertainty vectors by historical standard deviation; 𝑍𝑡 ∈ [0 , 1]
+requires no normalisation.
+The replenishment quantity is a continuous, non-negative scalar 
+𝑎𝑡 ≥ 0. For the proposed policy, it is parameterised as a bounded learned 
+deviation around an adaptive base-stock reference defined below. The 
+system constitutes a Partially Observable MDP (POMDP): the transition 
+is Markovian in the full state (𝐼𝑡, 𝑃𝑡, 𝜉𝑡) but 𝜉𝑡 is hidden, so the agent 
+operates on the observable approximation 𝑠𝑡.
+2.8. Reward function
+The operational cost in period 𝑡 is: 
+𝐶𝑡 = ℎ ⋅ 𝐼 + 𝑡 + 𝑏 ⋅ 𝐵𝑡 + 𝑐𝑜 ⋅ 𝟏𝑎𝑡>0 + 𝑐𝑢 ⋅ 𝑎𝑡, (15)
+where 𝐼 + 𝑡 = max(0 , 𝐼𝑡) is on-hand inventory, 𝐵𝑡 = max(0 , −𝐼𝑡) is 
+backorder level, ℎ > 0 is holding cost, 𝑏 > 0 is backorder cost, 𝑐𝑜 ≥ 0 is 
+fixed ordering cost, and 𝑐𝑢 ≥ 0 is per-unit order cost.
+Uncertainty-adjusted base-stock reference. Define the order-up-
+to target: 
+𝑦∗ 𝑡 =
+𝐿∑
+𝑙=0
+̂𝑑𝑡+𝑙+1|𝑡 + 𝑧𝛽
+√√√√ 𝐿∑
+𝑙=0
+̂ 𝜎2 𝑡+𝑙+1|𝑡, (16)
+where 𝑧𝛽 = 𝛷−1(𝑏∕(ℎ + 𝑏)) is the critical-ratio quantile. Let IP𝑡 = 𝐼𝑡 + 𝑃𝑡
+be the pre-decision inventory position. The associated reference order 
+is: 
+𝑎ref 𝑡 = max(0, 𝑦 ∗ 𝑡 − IP𝑡 ). (17)
+When shortage costs dominate holding costs, 𝑧𝛽 > 0, so larger forecast 
+uncertainty raises 𝑦∗ 𝑡 and consequently the reference order. The pro-
+posed policy observes 𝑈𝑡 and outputs a bounded normalised deviation 
+𝛿𝑡 around this reference: 
+𝑎𝑡 = clip(𝑎ref 𝑡 + 𝑑dev𝛿𝑡, 0, ̄ 𝑎) , 𝛿 𝑡 ∈ [−1, 1], (18)
+where 𝑑dev controls the maximum physical deviation and ̄ 𝑎 is the 
+order cap. Thus, uncertainty enters the implemented policy both as 
+observed context and through its interpretable action reference; it is not 
+introduced through an additional quadratic cost term in the reported 
+experiments.
+Direction-aware shaping during training. To encourage rapid 
+adjustment after detected changes, the training reward augments op-
+erational cost with a bounded shaping signal: 
+𝑟𝑡 =
+−𝐶𝑡 + 𝜂 𝟏{𝑍𝑡 > 𝜁 } tanh
+(
+̄ 𝜀𝑡(𝑎𝑡−𝑎ref 𝑡 )
+𝑑scale
+)
+𝑑scale
+, (19)
+where ̄ 𝜀𝑡 is a recent average forecast innovation, 𝑑scale > 0 normalises 
+reward magnitude, 𝜂 = 0 .2 is the shaping weight, and 𝜁 = 0 .3 is 
+the BOCPD activation threshold. When a change is sufficiently likely, 
+positive innovations reward upward deviations from the base-stock 
+reference and negative innovations reward downward deviations. The 
+empirical cost reported in Section 4 contains only holding and backo-
+rder costs; the shaping signal is used during learning and is not included 
+in the headline cost metric.
+3. Methodology
+3.1. Two-level architecture
+The proposed model implements a two-level recurrence that sepa-
+rates what changed (the revision encoder) from what to do about it (the 
+policy LSTM):
+𝑒𝑡 = GRU𝜃(𝑡) ∈ R𝑑enc , (20)
+̂ 𝑠𝑡 = MLP(𝐼𝑡, 𝑃𝑡, ̂𝑑𝑡, 𝑒𝑡, 𝑈𝑡, 𝑍𝑡) ∈ R𝑑enc+2𝐻+3, (21)
+ℎ𝑡, 𝑐𝑡 = LSTM𝜙( ̂ 𝑠𝑡, ℎ𝑡−1, 𝑐𝑡−1), (22)
+𝜋(𝑎𝑡 ∣ ℎ𝑡), 𝑉 (ℎ𝑡) = Actor − Critic( ℎ𝑡). (23)
+Operations Research Perspectives 17 (2026) 100419 
+4 
+S.A. uulu and Y. Uygun
+Here 𝑡 = ( 𝛥 ̂𝑑𝑡−𝑘+1, … , 𝛥 ̂𝑑𝑡) is the 𝑘-step revision history, and 𝑒𝑡
+is its compressed embedding. The inner GRU (Eq. (20)) is stateless 
+across episode time steps, i.e., it re-encodes the stored 𝑘-step window 
+at each 𝑡 independently. The outer LSTM (Eqs. (22)–(23)) maintains 
+temporal context across the episode. This separation makes the revision 
+embedding interpretable and decouples it from the policy memory.
+The GRU encoder provides two practical benefits over feeding 𝑡
+as a flat vector. First, it temporally aggregates: under ETS, revisions 
+accumulate over a 𝑘-step window as the level corrects after a change 
+point, and the GRU learns to weight recent revisions more when 𝑍𝑡
+is high. Second, it performs dimension reduction: without encoding, 
+the observation grows by 𝑘 × 𝐻 dimensions; for 𝑘 = 5 , 𝐻 = 5 , the 
+GRU compresses 25 additional dimensions to 𝑑enc = 32 while preserving 
+temporal structure.
+3.2. Revision signal: Theoretical analysis
+Proposition 1 (ETS Revision Decomposition). Under ETS(A,A,N) with 
+smoothing parameters 𝛼 ∈ (0 , 1) and 𝛽𝑠 ∈ (0 , 𝛼), the ℎ-step-ahead forecast 
+revision at time 𝑡 satisfies: 
+𝛥 ̂𝑑𝑡+ℎ|𝑡 ∶= ̂𝑑𝑡+ℎ|𝑡 − ̂𝑑𝑡+ℎ|𝑡−1 = 𝛼𝜀𝑡 (1 + ℎ𝛽𝑠 ), ℎ ≥ 1. (24)
+Proof. Let 𝓁𝑡, 𝑏𝑡 denote the ETS level and trend at time 𝑡. The standard 
+ETS(A,A,N) update gives:
+𝓁𝑡 = 𝓁𝑡−1 + 𝑏𝑡−1 + 𝛼𝜀𝑡,
+𝑏𝑡 = 𝑏𝑡−1 + 𝛼𝛽𝑠𝜀𝑡.
+The ℎ-step-ahead forecast is ̂𝑑𝑡+ℎ|𝑡 = 𝓁𝑡 + ℎ ⋅ 𝑏𝑡. The previous forecast 
+for the same calendar period was issued at horizon ℎ + 1, so ̂𝑑𝑡+ℎ|𝑡−1 =
+𝓁𝑡−1 + (ℎ + 1)𝑏𝑡−1. Therefore:
+̂𝑑𝑡+ℎ|𝑡 − ̂𝑑𝑡+ℎ|𝑡−1 = (𝓁𝑡 − 𝓁𝑡−1 − 𝑏𝑡−1) + ℎ(𝑏𝑡 − 𝑏𝑡−1)
+= 𝛼𝜀𝑡 + ℎ𝛼𝛽𝑠𝜀𝑡 = 𝛼𝜀𝑡(1 + ℎ𝛽𝑠). □
+Corollary 1.1. The entire revision vector 𝛥 ̂𝑑𝑡 = ( 𝛥 ̂𝑑𝑡+1|𝑡, … , 𝛥 ̂𝑑𝑡+𝐻|𝑡)
+is determined by the single scalar 𝛼𝜀𝑡, scaled linearly across horizons. 
+Consequently, observing 𝛥 ̂𝑑𝑡 is equivalent to observing 𝜀𝑡 (given 𝛼, 𝛽𝑠), 
+justifying inclusion of 𝛥 ̂𝑑𝑡 in 𝑠𝑡 instead of a raw demand history buffer.
+Proposition 2 (Information Value of Revisions). Let 𝛱() denote the set of 
+Markov policies operating on state space , and define the optimal expected 
+cost: 
+𝐽 ∗() = inf
+𝜋∈𝛱()
+E𝜋
+[ 𝑇∑
+𝑡=0
+𝐶𝑡
+]
+, (25)
+where 𝐶𝑡 = ℎ ⋅ 𝐼 + 𝑡 + 𝑏 ⋅ 𝐵𝑡 denotes the operational holding/backorder 
+cost. Let ̃ 𝑠𝑡 = ( 𝐼𝑡, 𝑃𝑡, ̂𝑑𝑡, 𝑈𝑡, 𝑍𝑡) denote the no-revision state. Then under 
+regime-switching demand with at least two regimes (𝐾 ≥ 2) and 𝛼 > 0: 
+𝐽 ∗( ̃ ∪ {𝑡}) ≤ 𝐽 ∗( ̃), (26)
+with strict inequality only when the revision history changes the optimal 
+action with positive probability.
+Proof (Proof sketch). The inclusion 𝛱( ̃) ⊆ 𝛱 ( ̃ ∪ {𝑡}) is immediate: 
+any no-revision policy is also a revision-aware policy that ignores 𝑡, 
+so the augmented information set cannot increase the optimal expected 
+cost. For strict improvement:
+(1) By Proposition 1, 𝑡 contains the sequence (𝛼𝜀𝑡−𝑘+1, … , 𝛼𝜀𝑡).
+(2) Under a Markov-switching demand process, the ETS innovation 
+𝜀𝑡 carries information about the latent regime: specifically, E[𝜀𝑡 ∣
+𝜉𝑡 ≠ 𝜉𝑡−1] ≠ 0 with positive probability after a regime transition.
+(3) By the value of information argument [15], conditioning on an 
+additional informative signal cannot worsen the best achievable 
+decision rule. If the posterior distribution of the latent regime 
+changes enough to alter the cost-minimising order quantity, the 
+revision-augmented state supports a strictly lower expected cost 
+in regime-transition periods. □
+Remark 1 (Scope of Proposition 2). The result holds for the class of 
+exact Markov policies over the stated state spaces. In the deployed 
+architecture, the policy is approximated by a neural network trained 
+via PPO, and the GRU encodes 𝑡 into a finite-dimensional embed-
+ding 𝑒𝑡. The proposition motivates including 𝑡 in the state—it is not 
+a guarantee that the trained approximate policy achieves the exact 
+optimum, nor that it recovers the full informational advantage under 
+every demand process. The strict-inequality condition in Proposition 2 
+holds only when the revision history changes the optimal action with 
+positive probability; whether a PPO-trained approximation realises this 
+advantage in practice depends jointly on the demand process and 
+the learning architecture, not on the proposition alone. Empirically 
+(Section 4), the advantage is realised with statistical significance in 
+four of five synthetic scenarios, but not under intermittent, sparse-
+reward demand, where an off-policy SAC baseline remains competitive 
+or superior—consistent with a conditional, rather than universal, infor-
+mational advantage. The empirical confirmation that encoding revision 
+history reduces cost and adaptation lag in the scenarios where the 
+condition holds provides the primary evidence that the approximation 
+preserves the informational advantage in practice.
+3.3. Uncertainty-adjusted reference and directional shaping
+Forecast uncertainty enters FR-PPO through the order reference and 
+through the observed policy state. With
+𝑆𝑡 =
+√√√√ 𝐿∑
+𝑙=0
+̂ 𝜎2 𝑡+𝑙+1|𝑡,
+Eq. (16) can be written as
+𝑦∗ 𝑡 =
+𝐿∑
+𝑙=0
+̂𝑑𝑡+𝑙+1|𝑡 + 𝑧𝛽 𝑆𝑡.
+In the evaluated setting, 𝑏 > ℎ and hence 𝑧𝛽 > 0, implying
+𝜕𝑦∗ 𝑡
+𝜕𝑆𝑡
+= 𝑧𝛽 > 0.
+The reference decision 𝑎ref 𝑡 = [𝑦∗ 𝑡 − IP𝑡]+ therefore increases with predic-
+tive uncertainty whenever the inventory position lies below the target.
+FR-PPO does not directly replace this reference; it learns the bounded 
+deviation in Eq. (18). This parameterisation preserves an interpretable 
+uncertainty-sensitive centre for the action distribution while allowing 
+the recurrent policy to adjust orders using the revision embedding and 
+change-point evidence.
+The training-only shaping component in Eq. (19) is activated when 
+the BOCPD probability exceeds 𝜁. Its sign is determined by
+̄ 𝜀𝑡(𝑎𝑡 − 𝑎ref 𝑡 ).
+After positive recent forecast innovations, orders above the reference 
+receive a positive shaping signal; after negative innovations, orders 
+below the reference do so. The tanh(⋅) transformation bounds this 
+auxiliary incentive and prevents it from dominating the operational 
+holding and backorder costs. It encourages adaptation in the direction 
+suggested by recent forecast errors only when the change-point module 
+indicates elevated transition risk.
+Operations Research Perspectives 17 (2026) 100419 
+5 
+S.A. uulu and Y. Uygun
+Table 2
+Implemented architecture and training hyperparameters for FR-PPO. ‘‘Same’’ indicates that the M5 validation uses the synthetic-
+experiment value.
+ Parameter Synthetic M5 Role in implementation 
+ Architecture and action mapping
+ 𝑘 (revision window) 5 Same Stored revision vectors supplied to the GRU 
+ 𝑑enc (GRU hidden size) 32 Same Dimension of revision embedding 𝑒𝑡 LSTM hidden size/layers 64/1 Same Recurrent policy memory 
+ Actor–critic MLP head [64] Same Network after the LSTM output 
+ Deviation scale factor 1.0 Same Scales bounded action deviation around 𝑎ref 𝑡 Log standard deviation initialisation −1.0 Same Initial stochasticity of the normalised action 
+ PPO optimisation
+ Training steps 300,000 Same Steps per independent training run 
+ 𝑛steps (rollout length) 200 Same One complete simulated episode per rollout Mini-batch size/epochs 50/10 Same PPO updates per rollout 
+ Learning rate/discount 𝛾 10−4/0.99 Same Optimisation rate and discount factor 
+ Clipping range 0.15 Same PPO policy-update clipping 
+ Target KL divergence 0.02 Same Early stopping threshold for PPO updates 
+ Observation/reward normalisation no/yes Same VecNormalize configuration 
+ Auxiliary signals and exploration
+ 𝜂 (directional shaping weight) 0.2 Same Weight in Eq. (19) 
+ 𝜁 (shaping activation threshold) 0.3 Same Activates shaping when 𝑍𝑡 > 𝜁 Auxiliary CPD loss coefficient 0.5 Same Trains the revision encoder to predict 𝑍𝑡 𝛼min ent /𝛼max ent 0.005/0.05 Same Adaptive entropy-coefficient bounds 𝛼𝑍 (entropy EMA smoothing) 0.1 Same Smooths rollout-level BOCPD evidence 
+3.4. Adaptive entropy scheduling
+Rather than use a fixed PPO entropy coefficient, FR-PPO modulates 
+exploration intensity via an online exponential moving average (EMA) 
+of the BOCPD signal 𝑍𝑡. After each rollout of 𝑛steps transitions, the EMA 
+is updated as: 
+̃𝑍𝜏+1 = (1 − 𝛼𝑍 ) ̃𝑍𝜏 + 𝛼𝑍 ⋅ 𝑍𝜏 , (27)
+where 𝜏 indexes rollouts, 𝑍𝜏 = 𝑛−1 steps ∑ 𝑡 𝑍𝑡 is the mean BOCPD prob-
+ability over the rollout, and 𝛼𝑍 = 0 .1 is the EMA decay. The entropy 
+coefficient is then set to: 
+𝛼ent,𝜏+1 = 𝛼min ent + (𝛼max ent − 𝛼min ent ) ⋅ ̃𝑍𝜏+1, (28)
+with 𝛼min ent = 0 .005 (stable regime; exploit) and 𝛼max ent = 0 .05 (confirmed 
+regime change; explore). When 𝑍𝑡 ≈ 0 throughout the rollout the 
+policy converges towards exploitation; when 𝑍𝑡 → 1 (BOCPD detects 
+a recent change) the entropy ceiling is reached, concentrating stochas-
+tic exploration at regime-transition windows where discovering the 
+new optimum is most valuable. The EMA smoothing prevents noisy 
+per-rollout jumps from destabilising training.
+3.5. Training and hyperparameters
+Hyperparameters for FR-PPO are summarised in Table 2; the
+baseline-specific training budgets are reported in Table 4. The proposed 
+policy is trained using the sb3-contrib RecurrentPPO implementa-
+tion. Its GRU encoder is optimised jointly through the PPO objective 
+and through the auxiliary change-point prediction update.
+4. Computational experiments
+4.1. Experimental setup
+4.1.1. Simulation environment
+All experiments use the custom Gymnasium environment Inven-
+toryEnv, which implements periodic-review inventory control with 
+lead time 𝐿 = 4 periods (weeks), holding cost ℎ = 1 .0, backorder cost 
+𝑏 = 9 .0 (critical ratio 𝑏∕(ℎ + 𝑏) = 0 .9), episode length 𝑇 = 200 periods, 
+and forecast horizon 𝐻 = 𝐿 + 1 = 5 . The ETS(A,A,N) forecaster uses 
+warm-up period 𝑊 = 20 periods with 𝛼 = 0 .3, 𝛽𝑠 = 0 .1. BOCPD uses 
+a Normal-Inverse-Gamma prior with 𝜏 = 5 , 𝜅0 = 1 , 𝛼0 = 2 , and hazard 
+rate 𝜆ℎ = 1∕50.
+4.1.2. Demand scenarios
+Five regime-switching demand scenarios are evaluated (Table 3).
+4.1.3. Baselines
+Classical baselines.
+• BaseStock (adaptive) — analytical base-stock with ETS-derived 
+parameters
+• (𝑠, 𝑆) policy — adaptive reorder point with base-stock approxima-
+tion
+RL baselines. Each RL baseline is trained with 20 seeds and the 
+training budget reported in Table 4.
+4.1.4. Evaluation metrics
+For each policy × scenario × seed, metrics are averaged across 10 
+evaluation episodes with seeds drawn from [106, 2 × 106), disjoint from 
+training seeds:
+Mean Cost = 1 𝑇
+𝑇∑
+𝑡=1
+(ℎ ⋅ (𝐼𝑡)+ + 𝑏 ⋅ (−𝐼𝑡)+), (29)
+Fill Rate = 1 𝑇
+𝑇∑
+𝑡=1
+𝟏[𝐼𝑡 ≥ 0], (30)
+Adaptation Lag = 1 || ∑ 𝜏∈ min
+{
+𝑡 > 𝜏 ∶
+||||| ̄𝐶𝑡∶𝑡+𝑤 − ̄𝐶 ∗ ̄𝐶 ∗ ||||| < 0.15 } − 𝜏, (31)
+where  is the set of regime-change periods, 𝑤 = 10 , and ̄𝐶 ∗ is a 
+local post-change-point steady-state reference: the rolling 𝑤-period cost 
+mean at min(𝑇 , 𝜏 + 5𝑤), i.e. 50 periods after the change point (capped 
+at the episode end). Reported values are mean and standard deviation 
+across 20 independent training seeds. The 15% threshold defines a 
+recovery corridor around this steady-state reference: tighter bands 
+are increasingly dominated by sampling noise in the 𝑤 = 10 -period 
+rolling mean rather than genuine convergence, while looser bands 
+credit convergence before the transient has meaningfully resolved.
+Adaptation lag at this and two alternative thresholds, for all nine 
+policies across all five scenarios, is reported in Table 6 (Section 4.2).
+4.1.5. Training stability
+FR-PPO completed all 20 × 5 = 100 training runs with zero diver-
+gences using 300,000 training steps, 40% fewer than the PPO baselines 
+(ForecastOnly-PPO, ForecastUncCPD-PPO, RNN-PPO, FlatRevision-
+Operations Research Perspectives 17 (2026) 100419 
+6 
+S.A. uulu and Y. Uygun
+Table 3
+Demand scenarios. 𝑝stay is the per-regime self-transition probability; ‘‘–’’ denotes a deterministic seasonal cycle.
+ Scenario Regimes 𝜇𝑘 𝜎𝑘 𝑝stay 
+ Level shift 2 20, 40 4, 6 0.98 
+ Trend change 3 20, 40, 30 4, 6, 5 0.98 (absorbing final) 
+ Seasonal 1 (±40%) 25 4 – 
+ Promotion shock 3 (spiky) 20, 60, 10 3, 8, 3 0.97/0.80/0.90 
+ Intermittent 2 1, 18 1.5, 7 0.85/0.80 
+Table 4
+RL baseline policies and training budgets. FR-PPO and SAC baselines use 300k steps; the PPO baselines use 500k steps.
+ Label Observation Algorithm Steps 
+ ForecastOnly-PPO (𝐼, 𝑃 , ̂𝑑) PPO (MlpPolicy) 500k 
+ ForecastOnly-SAC (𝐼, 𝑃 , ̂𝑑) SAC (MlpPolicy) 300k 
+ CPD-SAC (𝐼, 𝑃 , ̂𝑑, 𝑍) SAC — Kou et al. [10] proxy 300k 
+ ForecastUncCPD-PPO (𝐼, 𝑃 , ̂𝑑, 𝑈 , 𝑍) PPO — full state, no 𝛥 ̂𝑑 500k 
+ RNN-PPO (𝐼, 𝑃 , ̂𝑑, 𝑍) RecurrentPPO — recurrence ablation 500k 
+ FlatRevision-PPO (𝐼, 𝑃 , ̂𝑑, 𝛥 ̂𝑑, 𝑈 , 𝑍) RecurrentPPO — flat 𝛥 ̂𝑑 500k 
+ FR-PPO Full + history RecurrentPPO + GRU encoder + adaptive 𝛼ent 300k 
+Table 5
+Main results: mean cost ± standard deviation (20 seeds). Bold = best overall; † = best PPO-family policy when it differs from the 
+overall best. Superscripts denote statistical significance of the difference from FR-PPO (Bonferroni-corrected Wilcoxon signed-rank 
+test, Table 11).
+ Policy Level Shift Trend Change Seasonal Promo Shock Intermittent 
+ Classical
+ BaseStock 69.4 ± 5.3*** 50.4 ± 2.9* 116.8 ± 2.2*** 136.8 ± 12.9 81.1 ± 3.3*** 
+ (𝑠, 𝑆) 80.9 ± 5.7*** 65.9 ± 2.9*** 124.0 ± 2.4*** 137.2 ± 12.7* 79.8 ± 3.3*** 
+ RL Baselines
+ ForecastOnly-PPO 74.4 ± 17.3* 62.0 ± 15.6** 97.5 ± 26.8*** 152.8 ± 58.9* 83.3 ± 9.4*** 
+ ForecastOnly-SAC 66.0 ± 3.8 50.1 ± 3.7 103.5 ± 99.8*** 130.7 ± 6.9 66.3 ± 2.5*‡ 
+ CPD-SAC 66.9 ± 5.9 49.8 ± 5.2 132.4 ± 139.6*** 128.6 ± 8.5 66.1 ± 2.5*‡ 
+ ForecastUncCPD-PPO 76.4 ± 20.4*** 55.4 ± 8.7* 62.3 ± 10.0*** 144.8 ± 15.4** 92.3 ± 49.5*** 
+ RNN-PPO 68.1 ± 8.4 88.3 ± 118.4** 43.3 ± 10.3*** 136.5 ± 13.6 78.5 ± 6.5*** 
+ FlatRevision-PPO 68.3 ± 6.2 53.2 ± 10.7 39.0 ± 9.6* 134.5 ± 9.2 78.0 ± 4.7*** 
+ Proposed
+ FR-PPO 63.8 ± 3.9 47.6 ± 3.8 32.5 ± 3.2 †129.1 ± 8.1 †68.7 ± 4.2 
+no marker = not significant. On intermittent demand, ForecastOnly-SAC and CPD-SAC are significantly better than FR-PPO (marked ‡); all other 
+marked cells denote a significant FR-PPO advantage.
+*** 𝑝 < 0.001.
+** 𝑝 < 0.01.
+* 𝑝 < 0.05.
+PPO), which each used 500,000 steps. Despite this shorter budget, FR-
+PPO outperforms all four PPO baselines in all five scenarios. The consis-
+tently low standard deviation on seasonal demand (±3.2) versus CPD-
+SAC seasonal (±139.6) suggests that the revision encoder and adaptive 
+entropy schedule stabilise training across random initialisations.
+4.2. Main results
+Table 5 reports mean cost ± standard deviation across 20 seeds for 
+all policies and scenarios. Bold denotes the best mean cost within each 
+scenario; † denotes the best PPO-family policy when it differs from the 
+overall best. Zero training divergences were observed.
+Fig. 1 visualises the same seed-level evidence as Table 5. It high-
+lights the main empirical pattern: FR-PPO is the best PPO-family 
+method in all five scenarios and the lowest-cost policy overall on level 
+shift, trend change, and seasonal demand, while CPD-SAC has lower 
+mean costs on promotion shock and intermittent demand.
+Table 6 reports adaptation lag for all nine policies across all five 
+scenarios, computed at the 15% threshold used throughout this paper 
+(defined in Section 4.1) together with two alternative thresholds (10%, 
+20%) that show the result is not an artefact of that specific choice: 
+lag decreases monotonically as the threshold widens in every scenario, 
+and the relative ordering of policies is stable across all three — in-
+cluding FR-PPO’s second-lowest lag on seasonal demand after CPD-SAC 
+(Finding 3), which holds at every threshold tested.
+Finding 1. Level shift: FR-PPO achieves the lowest mean cost 
+among the nine evaluated policies. FR-PPO achieves a mean cost 
+of 63.8, the lowest among the nine policies on this scenario, 8.1% 
+below adaptive BaseStock (69.4). Margins over SAC-based methods 
+are small: 3.3% over ForecastOnly-SAC (66.0) and 4.6% over CPD-
+SAC (66.9). These differences do not survive Bonferroni correction 
+against SAC methods (Table 11), reflecting high between-seed overlap 
+at this effect size. Significant gains are achieved over BaseStock, (𝑠, 𝑆), 
+ForecastOnly-PPO, and ForecastUncCPD-PPO (Table 11).
+Finding 2. Trend change: FR-PPO achieves the lowest mean cost 
+among all policies. FR-PPO achieves a mean cost of 47.6, the lowest 
+of the nine policies on this scenario, 5.6% below adaptive BaseStock 
+(50.4) and 27.9% below (𝑠, 𝑆) (65.9), both statistically significant after 
+Bonferroni correction. It also outperforms every RL baseline: CPD-
+SAC (49.8, +4.4%), ForecastOnly-SAC (50.1, +5.1%), FlatRevision-PPO 
+(53.2), ForecastUncCPD-PPO (55.4), and ForecastOnly-PPO (62.0). The 
+margins over CPD-SAC and ForecastOnly-SAC do not survive Bonfer-
+roni correction (high between-seed overlap), whereas the gains over 
+ForecastOnly-PPO, ForecastUncCPD-PPO, and RNN-PPO are significant. 
+RNN-PPO remains unstable under gradual drift (mean 88.3, std 118.4).
+Finding 3. Seasonal scenario: FR-PPO achieves lowest cost of 
+all policies. FR-PPO achieves a mean cost of 32.5 which is the lowest 
+among the nine policies, reducing cost by 72.2% relative to adaptive 
+BaseStock (116.8), 16.7% relative to FlatRevision-PPO (39.0), and
+47.8% relative to ForecastUncCPD-PPO (62.3). The adaptation lag of
+Operations Research Perspectives 17 (2026) 100419 
+7 
+S.A. uulu and Y. Uygun
+Fig. 1. Synthetic benchmark performance by scenario. Bars show mean cost across 20 seeds; error bars show ±1 standard deviation. Stars mark the lowest 
+mean cost per scenario; FR-PPO attains the lowest mean cost on level shift, trend change, and seasonal demand, while CPD-SAC leads on promotion shock and 
+intermittent.
+9.8 periods is the second lowest of any policy (CPD-SAC: 9.7), com-
+pared to 11.3 for FlatRevision-PPO (−13.3%) and 26.3 for BaseStock 
+(−62.7%). CPD-SAC performs worst among RL methods on seasonal 
+(132.4), because BOCPD’s hazard model fires spuriously at seasonal 
+amplitude peaks and destabilises the SAC policy.
+Finding 4. Promotion shock: FR-PPO is best among the PPO-
+family methods. FR-PPO achieves 129.1, the best among all PPO-
+based methods and 5.6% below adaptive BaseStock (136.8). CPD-SAC 
+(128.6) leads among RL methods by a narrow margin; the gap of 0.5% 
+versus the proposed model is not statistically significant (𝑝Bonf = 1.000), 
+reflecting competitive performance under high-variance spiky demand.
+Finding 5. Intermittent demand: FR-PPO is the best PPO-family 
+policy. FR-PPO achieves 68.7, placing best among PPO-based poli-
+cies and 15.3% below adaptive BaseStock (81.1). ForecastOnly-SAC 
+(66.3) and CPD-SAC (66.1) lead overall; the ≈ 3 .9% gap reflects SAC’s 
+structural advantage under sparse reward landscapes.
+Figs. 2 and 3 illustrate the mechanism behind the seasonal result. 
+Rather than amplifying the seasonal peaks into large base-stock swings,
+FR-PPO keeps inventory closer to zero while preserving service levels, 
+which lowers both holding and backorder costs.
+4.3. Ablation study
+Table 7 isolates each architectural component by progressively 
+augmenting the observation and architecture on the level-shift scenario 
+(𝐿 = 4, ℎ = 1, 𝑏 = 9, 20 seeds).
+The ablation reveals four noteworthy patterns:
+1. Adding CPD and uncertainty to a non-recurrent MLP does 
+not improve performance (ForecastUncCPD-PPO: 76.4 vs.
+ForecastOnly-PPO: 74.4, a regression). Without recurrence, the 
+policy cannot integrate 𝑍𝑡 over time and the noisy uncertainty 
+signal introduces variance without providing predictive benefit.
+2. Recurrence is the largest single contribution (RNN-PPO: 68.1 
+vs. ForecastOnly-PPO: 74.4, −8.5%). The LSTM hidden state 
+effectively tracks regime context, achieving most of the available 
+gain even without revision signals.
+3. Adding the flat revision vector does not improve over re-
+currence alone (FlatRevision-PPO: 68.3 vs. RNN-PPO: 68.1, 
+−0.2%). Raw revision vectors are near-zero-mean in steady state; 
+without encoding their history, the policy cannot extract direc-
+tional information from them on the level-shift scenario.
+4. The GRU revision encoder and adaptive entropy scheduling 
+jointly reduce cost by 6.6% (FR-PPO: 63.8 vs. FlatRevision-
+PPO: 68.3). The GRU encoder distils the rolling revision history 
+into a compact embedding that enables the policy to track 
+directional demand signals; the adaptive entropy mechanism 
+concentrates exploration at detected regime-transition windows 
+(𝑍𝑡 → 1) and exploits stable periods (𝑍𝑡 ≈ 0 ). The combined 
+effect raises fill rate from 87.8% to 90.2% and eliminates the 
+instability visible in the flat-revision baseline.
+4.4. Sensitivity analysis
+We conduct two sweeps on the trend-change scenario with 20 
+independent seeds per cell. Three policies are compared: BaseStock, 
+CPD-SAC (RL baseline), and FR-PPO. Results are shown in Table 8 and 
+Figs. 4–5. 𝛥% reports FR-PPO vs. CPD-SAC.
+Cost-ratio sweep (𝑏 ∈ {1 , 3, 5, 9, 14, 19}, ℎ = 1 fixed). FR-PPO
+remains competitive with CPD-SAC across all six backorder-cost levels. 
+At moderate ratios (𝑏 ≤ 9), the gain over CPD-SAC ranges from
+4.7%–7.3% at 𝑏 = 1 and 𝑏 = 9 ; at 𝑏 = 5 the two are statistically 
+indistinguishable (−0.9%, overlapping standard deviations). At high 
+ratios (𝑏 ≥ 14) both RL policies converge to similar costs, with FR-
+PPO essentially tied with CPD-SAC (≤ 1.1% gap in either direction). 
+The small +0.5% gap at 𝑏 = 14 suggests that the revision encoder is 
+most useful at low to moderate shortage penalties rather than uniformly 
+dominant across cost asymmetries.
+Lead-time sweep (𝐿 ∈ {1 , 2, 4, 6, 8}). The advantage of FR-PPO
+over CPD-SAC emerges at longer lead times. At short horizons (𝐿 ≤ 4) 
+both policies are effectively tied, with small CPD-SAC advantages at 
+𝐿 = 1 and 𝐿 = 2 ; revision signals have limited lead time to be acted 
+upon. At 𝐿 = 6 the gap opens to 4.0%; at 𝐿 = 8 FR-PPO outperforms 
+Operations Research Perspectives 17 (2026) 100419 
+8 
+S.A. uulu and Y. Uygun
+Fig. 2. Seasonal-demand trajectory for a representative evaluation seed. Panels show: (a) realised demand and ETS forecast, (b) forecast revisions, (c) order 
+quantities, and (d) inventory positions for BaseStock, (𝑠, 𝑆), and FR-PPO.
+CPD-SAC by 13.8%, with lower variance (±8.22 vs. ±16.44). This 
+pattern reflects the increasing value of early regime detection as the 
+order-to-delivery horizon lengthens.
+FR-PPO is broadly competitive with CPD-SAC across the tested 
+cost ratios and lead times. Its clearest advantage appears at long lead 
+times (𝐿 ≥ 6), where early forecast-revision signals provide the most 
+actionable planning horizon.
+4.5. Real-data validation: M5 Walmart dataset
+4.5.1. Data and SKU selection
+We use the M5 Accuracy Competition dataset [16], comprising 
+30,490 daily SKU-level sales across 10 Walmart stores. We aggre-
+gate daily data to weekly totals consistent with the periodic-review 
+assumption (𝑇 = 200 weeks per episode).
+From the full catalogue we retain SKUs satisfying: weekly mean 
+demand 𝜇 ∈ [3, 60], at least 200 active weeks, zero-rate below 10%, and 
+per-regime coefficient of variation CV𝑘 ∈ [0 .12, 0.55] for both BOCPD-
+estimated regimes. We apply two selection criteria derived from the 
+sensitivity analysis:
+• Rapid regime alternation: minimum persistence probability 
+𝑃 min stay ∈ [0 .82, 0.94] with regime separation sep = |𝜇1 − 𝜇0|∕
+max(𝜇0, 𝜇1) ≥ 0.30.
+• Strong annual periodicity: lag-52 autocorrelation 𝑟52 ≥ 0.35.
+The scan identifies 97 SKUs meeting the alternation criterion and 202 
+meeting the periodicity criterion; 61 SKUs satisfy both. We select seven 
+SKUs using the following prespecified criteria:
+1. Overlap SKU (both alternation and periodicity criteria): rank 
+by 𝑟52 descending; take the top SKU. This represents the high-
+est non-stationarity intensity in the M5 catalogue under both 
+criteria.
+2. Pure-alternation SKUs (alternation criterion only, 𝑟52 < 0.35): 
+filter to sep > 0.44 and 𝑛chg ≥ 6; rank by sep descending; take the 
+top 6. These are the SKUs with the sharpest and most frequent 
+regime transitions in the alternation candidate set.
+Calibrated parameters are reported in Table 9.
+These criteria deliberately select SKUs at the high end of regime 
+activity in the M5 catalogue: of the 7303 SKUs passing the basic 
+Operations Research Perspectives 17 (2026) 100419 
+9 
+S.A. uulu and Y. Uygun
+Table 6
+Adaptation lag by threshold, all nine policies (mean periods, 20 seeds). The 
+15% column is the threshold used throughout the paper; bold marks FR-PPO.
+ Scenario Policy 10% 15% 20% 
+ 
+Level shift
+BaseStock 19.4 16.9 15.5 
+ (𝑠, 𝑆) 18.6 15.6 14.2 
+ ForecastOnly-PPO 17.3 15.3 13.6 
+ ForecastOnly-SAC 14.0 12.5 11.0 
+ CPD-SAC 14.2 12.2 10.9 
+ ForecastUncCPD-PPO 17.0 14.6 13.4 
+ RNN-PPO 16.6 14.8 13.2 
+ FlatRevision-PPO 17.0 14.9 13.6 
+ FR-PPO 17.1 14.0 13.8 
+ 
+Trend change
+BaseStock 14.8 13.4 11.8 
+ (𝑠, 𝑆) 16.0 13.1 10.9 
+ ForecastOnly-PPO 13.3 11.2 9.6 
+ ForecastOnly-SAC 13.1 10.8 9.4 
+ CPD-SAC 14.7 12.5 10.8 
+ ForecastUncCPD-PPO 14.7 13.0 11.3 
+ RNN-PPO 15.8 14.0 12.7 
+ FlatRevision-PPO 17.3 15.5 13.5 
+ FR-PPO 17.1 14.0 13.7 
+ 
+Seasonal
+BaseStock 28.6 26.3 24.1 
+ (𝑠, 𝑆) 25.8 23.4 21.5 
+ ForecastOnly-PPO 14.2 12.6 10.9 
+ ForecastOnly-SAC 13.5 11.3 9.9 
+ CPD-SAC 11.6 9.7 8.5 
+ ForecastUncCPD-PPO 16.2 14.3 13.0 
+ RNN-PPO 12.1 10.8 9.7 
+ FlatRevision-PPO 12.9 11.3 10.0 
+ FR-PPO 12.3 9.8 9.4 
+ 
+Promotion shock
+BaseStock 21.9 20.4 19.1 
+ (𝑠, 𝑆) 22.1 20.6 19.4 
+ ForecastOnly-PPO 20.2 18.6 17.3 
+ ForecastOnly-SAC 15.2 13.7 12.5 
+ CPD-SAC 17.0 15.2 14.0 
+ ForecastUncCPD-PPO 21.8 20.2 19.0 
+ RNN-PPO 18.2 16.6 15.5 
+ FlatRevision-PPO 20.9 19.5 18.4 
+ FR-PPO 20.5 19.0 17.3 
+ 
+Intermittent
+BaseStock 14.8 12.9 11.2 
+ (𝑠, 𝑆) 14.7 12.8 11.3 
+ ForecastOnly-PPO 15.3 13.2 11.5 
+ ForecastOnly-SAC 14.9 12.8 11.2 
+ CPD-SAC 15.1 13.0 11.4 
+ ForecastUncCPD-PPO 15.3 13.2 11.4 
+ RNN-PPO 15.8 13.7 12.0 
+ FlatRevision-PPO 15.0 13.0 11.3 
+ FR-PPO 16.1 13.6 12.1 
+quality filter, only 100 (1.4%) meet the alternation criterion and 284 
+(3.9%) meet the periodicity criterion, and the seven selected SKUs 
+sit at the 66th–87th percentile of regime separation sep among that 
+eligible population. The reported gains should therefore be read as 
+evidence that the mechanism works where it is designed to work 
+— on demand with genuine, detectable regime structure — rather 
+than as a catalogue-average effect. On more stable SKUs, where the 
+revision magnitude is small relative to the ETS residual noise floor 
+(Corollary 1.1) and regime transitions are infrequent or absent, FR-PPO
+is expected to converge towards adaptive BaseStock behaviour with 
+little cost advantage, consistent with Proposition 2’s strict-inequality 
+condition: the informational value of the revision history is realised 
+only when revisions actually change the optimal action, which requires 
+the underlying demand process to exhibit detectable regime transitions 
+in the first place.
+4.5.2. M5 results
+Table 10 reports mean cost ± standard deviation over 10 inde-
+pendent seeds. 𝛥% is relative to BaseStock for the proposed model; †
+denotes CPD-SAC seeds diverged (cost > 750) (see Figs. 6 and 7). 
+Fig. 3. Seasonal-demand cost decomposition across 20 seeds. Bars decompose 
+mean cost into holding and backorder components; error bars show ±1
+standard deviation of total cost.
+FR-PPO outperforms adaptive BaseStock on all seven SKUs, with 
+cost reductions ranging from 4.2% to 23.0%, and records zero diver-
+gences across all 70 training runs (10 seeds × 7 SKUs).
+CPD-SAC diverges on FOODS_3_734_WI_2 (3 of 10 seeds, mean 
+cost 798.98), mirroring the instability observed in the synthetic exper-
+iments under rapid regime alternation: with 9 regime transitions and 
+𝑃 min stay = 0.839, BOCPD fires frequently and destabilises SAC training. FR-
+PPO achieves a mean cost of 132.60 on this SKU (−9.7% vs. BaseStock), 
+degrading gracefully where SAC fails.
+HOUSEHOLD_1_151_WI_3 yields the largest gain (−23.0%). Its 
+fast alternation (𝑃 min stay = 0 .824, expected run 5.6 weeks) and moderate 
+separation (sep= 0 .48) closely match the conditions that maximise the 
+lead-time advantage in the sensitivity analysis (−13.8% at 𝐿 = 8 , 
+Section 4.4). HOUSEHOLD_1_344_TX_2 and FOODS_3_449_CA_2
+record the next largest gains (−21.2% and −18.4%), with FR-PPO
+closing to within 6.2% and 9.0% of CPD-SAC respectively on those 
+two SKUs. On FOODS_3_042_WI_2 (alternating + periodic profile), 
+CPD-SAC leads in mean cost; FR-PPO narrows the gap to 0.6 cost 
+units (−12.1% vs. BaseStock) while maintaining broadly comparable 
+variance.
+4.6. Statistical significance
+All 40 pairwise comparisons between FR-PPO and each of the eight 
+baselines are tested using the Wilcoxon signed-rank test (two-sided, 𝑛 =
+20 seeds paired by seed index). 𝑝-values are adjusted using the Bonfer-
+roni correction (𝑚 = 40 tests). Effect sizes are reported as rank-biserial 
+correlations 𝑟rb computed from the paired signed ranks (positive values 
+indicate lower cost for the proposed model). Significance codes: *** 
+𝑝Bonf < 0.001, ** 𝑝Bonf < 0.01, * 𝑝Bonf < 0.05, ns = not significant.
+Seasonal: strong and significant across all 8 baselines. All eight 
+comparisons are statistically significant after Bonferroni correction, 
+with rank-biserial correlations equal to 1.00 for all baselines except 
+FlatRevision-PPO (𝑟rb = 0.82, 𝑝Bonf = 0.023).
+Intermittent: strong against PPO-family and classical,
+marginally worse than SAC. FR-PPO beats all PPO baselines and 
+both classical policies (𝑟rb = 1 .00, all 𝑝Bonf < 0.001) on intermittent 
+demand. It is significantly worse than ForecastOnly-SAC (𝑟rb = −0 .80, 
+𝑝Bonf = 0 .034) and CPD-SAC (𝑟rb = −0 .78, 𝑝Bonf = 0 .048), though the 
+gap is quite narrow at ≈ 3.9%. This reflects SAC’s structural advantage 
+under sparse reward landscapes.
+Operations Research Perspectives 17 (2026) 100419 
+10 
+S.A. uulu and Y. Uygun
+Table 7
+Ablation study: level-shift scenario (mean cost ± standard deviation, 20 seeds).
+ Model Observation Notes Mean Cost ↓ Fill Rate Adapt. Lag 
+ BaseStock 𝑦∗ Analytical target 69.4 82.9% 16.9 
+ ForecastOnly-PPO (𝐼, 𝑃 , ̂𝑑) No CPD, uncertainty, revision 74.4 83.0% 15.3 
+ ForecastUncCPD-PPO (𝐼, 𝑃 , ̂𝑑, 𝑈 , 𝑍) + uncertainty + CPD, no revision, no recurrence 76.4 81.8% 14.6 
+ RNN-PPO (𝐼, 𝑃 , ̂𝑑, 𝑍) + recurrence, no revision 68.1 90.3% 14.8 
+ FlatRevision-PPO (𝐼, 𝑃 , ̂𝑑, 𝛥 ̂𝑑, 𝑈 , 𝑍) + flat revision in obs 68.3 87.8% 14.9 
+ FR-PPO Full + history + GRU encoder + adaptive 𝛼ent 63.8 90.2% 14.0 
+Table 8
+Sensitivity analysis: mean cost (20 seeds). Standard deviation for RL policies is across seeds; BaseStock is a fixed policy (no 
+training randomness). 𝛥% = FR-PPO vs. CPD-SAC. Default: 𝑏 = 9, 𝐿 = 4.
+ Sweep Value BaseStock CPD-SAC FR-PPO 𝛥% 
+ 
+Cost ratio
+𝑏 = 1 25.18 25.74 ± 2.79 23.85 ± 3.50 −7.3% 
+ 𝑏 = 3 36.34 35.51 ± 3.74 33.44 ± 4.16 −5.8% 
+ 𝑏 = 5 42.83 40.50 ± 3.65 40.12 ± 4.06 −0.9% 
+ 𝑏 = 9 (default) 51.81 49.76 ± 5.18 47.43 ± 4.62 −4.7% 
+ 𝑏 = 14 60.21 54.62 ± 5.41 54.89 ± 5.39 +0.5% 
+ 𝑏 = 19 67.26 60.70 ± 5.46 60.02 ± 6.00 −1.1% 
+ 
+Lead time
+𝐿 = 1 23.46 22.16 ± 1.31 22.28 ± 1.51 +0.6% 
+ 𝐿 = 2 32.19 30.21 ± 2.12 30.72 ± 2.16 +1.7% 
+ 𝐿 = 4 (default) 51.81 49.76 ± 5.18 49.76 ± 7.12 0.0% 
+ 𝐿 = 6 73.98 70.83 ± 6.73 67.98 ± 6.13 −4.0% 
+ 𝐿 = 8 97.99 96.31 ± 16.44 83.01 ± 8.22 −13.8% 
+Fig. 4. Sensitivity to backorder cost ratio 𝑏∕ℎ. Shaded bands: ±1 std across seeds.
+Level shift: significant gains over 4 of 8 baselines. FR-PPO
+achieves the lowest mean cost among all policies (63.8), with statisti-
+cally significant gains over BaseStock (***), (𝑠, 𝑆) (***), ForecastOnly-
+PPO (*), and ForecastUncCPD-PPO (***). SAC-based methods remain 
+non-significant due to between-seed overlap at this effect size.
+Promotion shock: significant wins over 3 of 8 baselines, es-
+sentially tied with CPD-SAC. FR-PPO achieves significant wins over 
+(𝑠, 𝑆) (*), ForecastOnly-PPO (*), and ForecastUncCPD-PPO (**), with no 
+significant losses. CPD-SAC is essentially tied (𝛥 = −0 .5%, 𝑟rb = −0 .12, 
+𝑝Bonf = 1.000).
+Trend change: significant wins over 5 of 8 baselines, no losses.
+FR-PPO achieves the lowest mean cost on trend change (47.6) and 
+significantly outperforms adaptive BaseStock (𝛥 = +5 .6%, 𝑟rb = +0 .78, 
+𝑝Bonf = 0 .048), (𝑠, 𝑆) (***), ForecastOnly-PPO (𝑟rb = +0 .90, 𝑝Bonf =
+0.004), ForecastUncCPD-PPO (𝑟rb = +0 .81, 𝑝Bonf = 0 .028), and the 
+unstable RNN-PPO (𝑟rb = +0 .94, 𝑝Bonf = 0 .001). The gains over CPD-
+SAC (𝛥 = +4 .4%, 𝑟rb = +0 .64, 𝑝Bonf = 0 .428) and ForecastOnly-SAC 
+(𝛥 = +5 .1%, 𝑝Bonf = 0 .126) are positive but do not survive Bonferroni 
+correction owing to between-seed overlap. No comparison shows a 
+significant loss.
+Summary is provided at Table 12.
+4.7. Practical deployment considerations
+4.7.1. Inference cost, memory footprint, and integration
+Section 4.1 reported training cost (FR-PPO needs 40% fewer en-
+vironment interactions than the PPO baselines); the complementary 
+question for a practitioner is the cost of running an already-trained 
+policy in production. Table 13 reports inference latency and total 
+learned parameters for FR-PPO, CPD-SAC, and adaptive BaseStock, 
+each instantiated from its architecture specification (untrained weights; 
+latency and parameter count depend on network architecture, not on 
+the trained values) and timed on a single CPU core over 2000 forward 
+passes following a 50-call warm-up.
+Operations Research Perspectives 17 (2026) 100419 
+11 
+S.A. uulu and Y. Uygun
+Fig. 5. Sensitivity to lead time 𝐿. The advantage of FR-PPO over CPD-SAC emerges at longer lead times, reaching −13.8% at 𝐿 = 8.
+Table 9
+M5 selected SKUs and calibrated demand parameters.
+ SKU 𝜇0 𝜎0 𝜇1 𝜎1 𝑃 min stay sep 𝑟52 Type 
+ FOODS_3_042
+WI_2
+64.6 17.4 42.2 12.7 0.840 0.35 0.38 alt. + periodic 
+ HOUSE-
+HOLD_1_344
+TX_2
+21.2 14.8 31.4 15.0 0.844 0.32 0.06 rapid alt. 
+ HOUSE-
+HOLD_1_151
+WI_3
+28.0 11.2 53.6 19.6 0.824 0.48 0.04 rapid alt. 
+ FOODS_3_734
+WI_2
+70.9 21.6 39.6 15.7 0.839 0.44 0.28 rapid alt. 
+ FOODS_3_449
+CA_2
+22.7 10.1 40.7 17.7 0.931 0.44 0.00 rapid alt. 
+ HOUSE-
+HOLD_1_434
+WI_2
+6.5 3.0 12.7 3.7 0.903 0.49 0.01 rapid alt. 
+ FOODS_3_042
+CA_3
+16.0 7.7 30.6 10.1 0.900 0.48 −0.24 rapid alt. 
+Table 10
+M5 validation results (10 seeds × 7 SKUs). 𝛥% is FR-PPO vs. BaseStock. Bold = best per SKU. † = diverged CPD-SAC seeds (cost 
+> 750).
+ SKU Type BaseStock CPD-SAC FR-PPO 𝛥% 
+ FOODS_3_042
+WI_2
+alt. + periodic 100.53 ± 3.49 𝟖𝟕.𝟕𝟓 ± 𝟒.𝟓𝟕 88.39 ± 8.45 −12.1% 
+ HOUSE-
+HOLD_1_344
+TX_2
+rapid alt. 95.74 ± 3.24 𝟕𝟏.𝟎𝟕 ± 𝟒.𝟕𝟕 75.47 ± 4.53 −21.2% 
+ HOUSE-
+HOLD_1_151
+WI_3
+rapid alt. 92.94 ± 3.42 72.90 ± 5.75 𝟕𝟏.𝟓𝟐 ± 𝟒.𝟑𝟑 −23.0% 
+ FOODS_3_734
+WI_2
+rapid alt. 146.82 ± 6.92 798.98 ± 1026.25†3 𝟏𝟑𝟐.𝟔𝟎 ± 𝟏𝟎.𝟖𝟓 −9.7% 
+ FOODS_3_449
+CA_2
+rapid alt. 112.82 ± 3.53 101.17 ± 16.41 𝟗𝟐.𝟎𝟖 ± 𝟖.𝟏𝟑 −18.4% 
+ HOUSE-
+HOLD_1_434
+WI_2
+rapid alt. 30.19 ± 1.25 30.39 ± 3.22 𝟐𝟖.𝟗𝟑 ± 𝟏.𝟑𝟓 −4.2% 
+ FOODS_3_042
+CA_3
+rapid alt. 73.24 ± 2.99 72.65 ± 4.64 𝟔𝟖.𝟕𝟔 ± 𝟑.𝟕𝟒 −6.1% 
+Even the slowest policy resolves one ordering decision in under 
+0.2 ms, roughly four orders of magnitude below the cadence of any 
+periodic-review replenishment cycle (daily at the fastest, weekly in our 
+experiments and in the M5 validation). FR-PPO’s raw weight footprint 
+is on the order of 300 KB (78,120 float32 parameters), well within 
+the memory budget of a standard planning server and requiring no 
+Operations Research Perspectives 17 (2026) 100419 
+12 
+S.A. uulu and Y. Uygun
+Fig. 6. M5 validation: mean cost per SKU for three policies (10 seeds each). Error bars show ±1 standard deviation; per-seed jitter is overlaid. Red × marks 
+diverged CPD-SAC seeds (cost > 750) on FOODS_3_734_WI_2.
+Table 11
+Wilcoxon signed-rank tests: FR-PPO vs. each of the eight baselines (𝑛 = 20 seeds, Bonferroni-corrected, 𝑚 = 40). Tests are run on 
+the unified seed-level table used to generate Table 5; each seed-level value is the mean over the evaluation episodes for that seed.
+ Scenario Baseline 𝛥% 𝑟rb 𝑝raw 𝑝Bonf 
+ Level shift BaseStock +8.1 +0.97 <0.001 <0.001 *** 
+ (𝑠, 𝑆) +21.2 +1.00 <0.001 <0.001 *** 
+ ForecastOnly-PPO +14.3 +0.85 <0.001 0.013 * 
+ ForecastOnly-SAC +3.3 +0.54 0.033 1.000 ns 
+ CPD-SAC +4.6 +0.64 0.011 0.428 ns 
+ ForecastUncCPD-PPO +16.5 +0.99 <0.001 <0.001 *** 
+ RNN-PPO +6.4 +0.68 0.006 0.256 ns 
+ FlatRevision-PPO +6.6 +0.71 0.004 0.146 ns 
+ Trend change BaseStock +5.6 +0.78 0.001 0.048 * 
+ (𝑠, 𝑆) +27.9 +1.00 <0.001 <0.001 *** 
+ ForecastOnly-PPO +23.3 +0.90 <0.001 0.004 ** 
+ ForecastOnly-SAC +5.1 +0.72 0.003 0.126 ns 
+ CPD-SAC +4.4 +0.64 0.011 0.428 ns 
+ ForecastUncCPD-PPO +14.1 +0.81 <0.001 0.028 * 
+ RNN-PPO +46.1 +0.94 <0.001 0.001 ** 
+ FlatRevision-PPO +10.6 +0.51 0.044 1.000 ns 
+ Seasonal BaseStock +72.2 +1.00 <0.001 <0.001 *** 
+ (𝑠, 𝑆) +73.8 +1.00 <0.001 <0.001 *** 
+ ForecastOnly-PPO +66.7 +1.00 <0.001 <0.001 *** 
+ ForecastOnly-SAC +68.6 +1.00 <0.001 <0.001 *** 
+ CPD-SAC +75.5 +1.00 <0.001 <0.001 *** 
+ ForecastUncCPD-PPO +47.8 +1.00 <0.001 <0.001 *** 
+ RNN-PPO +25.0 +1.00 <0.001 <0.001 *** 
+ FlatRevision-PPO +16.7 +0.82 <0.001 0.023 * 
+ Promotion shock BaseStock +5.6 +0.75 0.002 0.079 ns 
+ (𝑠, 𝑆) +5.9 +0.80 <0.001 0.034 * 
+ ForecastOnly-PPO +15.5 +0.86 <0.001 0.010 * 
+ ForecastOnly-SAC +1.2 +0.46 0.076 1.000 ns 
+ CPD-SAC −0.5 −0.12 0.648 1.000 ns 
+ ForecastUncCPD-PPO +10.8 +0.93 <0.001 0.001 ** 
+ RNN-PPO +5.4 +0.67 0.007 0.292 ns 
+ FlatRevision-PPO +4.0 +0.73 0.003 0.108 ns 
+ Intermittent BaseStock +15.3 +1.00 <0.001 <0.001 *** 
+ (𝑠, 𝑆) +13.9 +1.00 <0.001 <0.001 *** 
+ ForecastOnly-PPO +17.5 +1.00 <0.001 <0.001 *** 
+ ForecastOnly-SAC −3.6 −0.80 <0.001 0.034 * 
+ CPD-SAC −3.9 −0.78 0.001 0.048 * 
+ ForecastUncCPD-PPO +25.6 +1.00 <0.001 <0.001 *** 
+ RNN-PPO +12.5 +1.00 <0.001 <0.001 *** 
+ FlatRevision-PPO +11.9 +1.00 <0.001 <0.001 *** 
+Operations Research Perspectives 17 (2026) 100419 
+13 
+S.A. uulu and Y. Uygun
+Fig. 7. Weekly demand profiles for the seven M5 SKUs. Shading indicates BOCPD-estimated regime boundaries; dashed lines show per-regime mean ± one 
+standard deviation. Statistics (sep, 𝑃 min stay , 𝑟52, 𝜎∕𝜇) are annotated per panel.
+Table 12
+Summary of statistically significant test outcomes (𝑚 = 40 tests).
+ Scenario Sig. wins Sig. losses 
+ Seasonal 8/8 baselines 0 
+ Intermittent 6/8 baselines 2 (vs. SAC-family, both *) 
+ Level shift 4/8 (BaseStock, (𝑠, 𝑆), ForecastOnly-PPO, ForecastUncCPD-PPO) 0 
+ Promotion shock 3/8 ((𝑠, 𝑆), ForecastOnly-PPO, ForecastUncCPD-PPO) 0 
+ Trend change 5/8 (BaseStock, (𝑠, 𝑆), ForecastOnly-PPO, ForecastUncCPD-PPO, RNN-PPO) 0 
+specialised inference hardware. The added cost of the GRU revision 
+encoder and outer LSTM relative to CPD-SAC’s feed-forward actor is 
+real in relative terms (roughly 2.5× the latency, 3× the parameter count) 
+but negligible in absolute terms for this decision cadence.
+Integration cost is likewise low because the revision signal is not 
+new data: the forecast revision 𝛥 ̂𝑑𝑡+ℎ|𝑡 is a by-product of any period-
+by-period re-forecast, so a firm already running ETS-based demand 
+planning needs no additional data collection to compute it. The state 
+Operations Research Perspectives 17 (2026) 100419 
+14 
+S.A. uulu and Y. Uygun
+Table 13
+Inference latency and parameter count, measured on CPU (mean over 2000 
+calls, single core, no GPU). BaseStock is a closed-form 𝑂(𝐻) computation with 
+no learned parameters.
+ Policy Parameters Latency (ms/decision) 
+ BaseStock (adaptive) 0 0.025 
+ CPD-SAC 25,606 0.076 
+ FR-PPO 78,120 0.189 
+augmentation (𝑍𝑡, 𝛥 ̂𝑑𝑡, 𝑈𝑡) is modular, meaning that the change-point 
+detector, the forecaster, and the revision encoder can each be re-
+placed independently, so FR-PPO can be deployed as a lightweight 
+learned controller that consumes signals already produced by a stan-
+dard demand-planning pipeline.
+4.7.2. When to prefer FR-PPO over an off-policy SAC baseline
+The results in this section do not support a uniform ranking between 
+revision-conditioned PPO and off-policy SAC; Tables 5 and 11 show FR-
+PPO winning outright on three of five synthetic scenarios (level shift, 
+trend change, seasonal) while CPD-SAC and ForecastOnly-SAC remain 
+competitive or superior on promotion shock and significantly better on 
+intermittent demand.
+FR-PPO is preferable when the regime signal is inferable from a 
+level or trend shift that the ETS forecaster tracks cleanly, and when 
+lead time gives the revision signal room to act. The lead-time sensitivity 
+sweep (Section 4.4) shows the gap over CPD-SAC widening monoton-
+ically with 𝐿 from parity at 𝐿 ≤ 4 to a 13.8% advantage at 𝐿 = 8 , 
+because a longer pipeline gives an early revision-based signal more 
+periods in which to change the realised order before the corresponding 
+demand arrives. The seasonal and level-shift results, where FR-PPO’s 
+advantage is largest and statistically significant against all eight base-
+lines (Table 11), share this structure: the underlying regime process 
+produces a clean, low-noise revision trajectory that the GRU encoder 
+can exploit.
+SAC’s off-policy, entropy-regularised structure is preferable under 
+sparse, high-variance reward landscapes, most clearly intermittent de-
+mand. With mean demand near zero for long stretches punctuated by 
+backlog spikes, the reward signal is sparse and heavy-tailed; SAC’s 
+replay buffer reuses each transition many times and its entropy bonus 
+maintains exploration through long quiet periods, whereas FR-PPO’s 
+on-policy revision encoder sees a near-zero-mean revision signal for 
+most of the episode and has comparatively little gradient signal to 
+learn from. This is consistent with FR-PPO remaining the best PPO-
+family policy on intermittent demand while still losing significantly to 
+both SAC variants (Table 11), and with Proposition 2’s scope restric-
+tion (Section 3.2): the informational advantage of revision histories is 
+conditional on the demand process producing revisions that are actually 
+decision-relevant, a condition that holds less cleanly under intermittent 
+demand than under the other four scenarios.
+For a practitioner choosing between the two architectures without 
+running both, the practical rule implied by these results is to condition 
+the choice on the dominant type of non-stationarity in the target SKU: 
+revision-conditioned PPO for demand governed by discrete regime 
+shifts, trends, or seasonal cycles with moderate-to-long lead times, 
+and an off-policy SAC baseline for sparse, intermittent, zero-inflated 
+demand. If the SKU population is heterogeneous and the type of non-
+stationarity is not known in advance, FlatRevision-PPO (Section 4.3) is 
+the more conservative single default: across the five scenarios it ranks 
+no worse than 5th of nine policies and its gap to the best policy ranges 
+from 4.6% (promotion shock) to 20.0% (seasonal), whereas both FR-
+PPO and the SAC baselines have at least one scenario where they are 
+significantly outperformed by a wider margin (Table 11). FlatRevision-
+PPO trades a larger typical gap to the best policy for the absence of a 
+scenario in which it is clearly the worst choice.
+5. Conclusion
+This paper studied single-item periodic-review replenishment un-
+der non-stationary, regime-switching demand, and asked whether the
+history of forecast revisions constitutes actionable information for the 
+ordering decision. We answered this question both analytically and 
+empirically. Analytically, we showed that under ETS the ℎ-step revision 
+is a scaled forecast innovation (Proposition 1) and that augmenting 
+the policy’s information set with the revision history cannot increase, 
+and reduces whenever the revisions carry decision-relevant information 
+about the latent regime, the optimal expected cost under regime-
+switching demand (Proposition 2). This condition held with statistical 
+significance in four of the five synthetic scenarios we studied and was 
+most valuable at longer lead times; it did not hold under sparse, inter-
+mittent demand, where an off-policy SAC baseline remained preferable, 
+delimiting the scope of the theoretical result rather than contradicting 
+it. Empirically, we operationalised this signal in FR-PPO, a recurrent 
+policy that encodes a rolling revision window through a GRU, condi-
+tions a RecurrentPPO controller on the resulting embedding together 
+with a Bayesian change-point probability, and centres its action on an 
+uncertainty-adjusted base-stock reference.
+Across five synthetic regime-switching scenarios and seven regime-
+active SKUs from the M5 dataset, conditioning on forecast revisions 
+yielded consistent gains. FR-PPO was the best PPO-family policy in all 
+five synthetic scenarios and attained the lowest cost overall on three of 
+them, including a 72.2% reduction over an adaptive base-stock policy 
+on seasonal demand, where it also cut adaptation lag from 26.3 to 
+9.8 periods. These gains were statistically significant against all eight 
+benchmarks on the seasonal scenario under a Bonferroni-corrected 
+Wilcoxon test, and the policy trained without a single divergence 
+using 40% fewer environment interactions than the PPO baselines. The 
+advantage was not uniform: an off-policy SAC benchmark remained 
+competitive under sparse, intermittent demand, delimiting where the 
+revision signal is most valuable. On held-out M5 data the policy re-
+duced cost relative to the adaptive base-stock benchmark for all seven 
+SKUs (4.2%–23.0%) and degraded gracefully on a rapidly alternating 
+SKU where the SAC benchmark diverged, indicating that the synthetic 
+findings transfer to empirical demand.
+From a managerial standpoint, the results reframe the cost of de-
+mand non-stationarity: the dominant penalty is less the regime shift 
+itself than the lag between the shift and the replenishment system’s 
+response, and this lag can be compressed by reading information that 
+firms already produce. Because the forecast revision 𝛥 ̂𝑑𝑡+ℎ|𝑡 is a by-
+product of any re-forecast, the approach requires no additional data col-
+lection and integrates with existing ETS-based planning. More broadly, 
+the state augmentation (𝑍𝑡, 𝛥 ̂𝑑𝑡, 𝑈𝑡) is modular: the change-point de-
+tector, the forecaster, and the revision encoder can each be replaced 
+independently, suggesting a deployable pattern in which a standard 
+demand-planning module streams revision signals to a lightweight 
+learned controller. The same revision dynamics long studied as a driver 
+of the bullwhip effect can thus be repurposed downstream to shorten 
+adaptation lag rather than to amplify it.
+Limitations and future work
+Several limitations bound these conclusions and motivate further 
+work.
+• Scope. The study addresses a single-echelon, single-item system 
+with stationary cost parameters and deterministic lead times. 
+Extending the framework to multi-echelon networks, joint re-
+plenishment, stochastic lead times, and continuous-review (𝑟, 𝑄)
+control are natural next steps, the first of which would require 
+propagating revision signals across echelons.
+Operations Research Perspectives 17 (2026) 100419 
+15 
+S.A. uulu and Y. Uygun
+• Demand model. The demand model is regime-switching Gaus-
+sian with a Normal–Inverse–Gamma change-point prior. Richer 
+priors that jointly capture trend, seasonality, and count-valued de-
+mand would likely close the remaining gap to off-policy methods 
+on intermittent items.
+• External validity. The M5 validation is selected for regime activ-
+ity rather than catalogue-representative (Section 4.5): the seven 
+SKUs sit at the 66th–87th percentile of regime separation among 
+the eligible population, and on the more stable majority of a real 
+SKU catalogue the method is expected to offer little advantage 
+over adaptive BaseStock, consistent with the conditional nature 
+of Proposition 2.
+• Forecaster dependence. The revision encoder is derived for 
+ETS output, for which the innovation decomposition is exact. 
+Generalising the revision signal to ARIMA, machine-learning, and 
+ensemble forecasters — defined simply as the difference between 
+successive forecasts — would broaden applicability, with the ETS 
+decomposition serving as a theoretical idealisation rather than a 
+requirement.
+• Observability. Demand is fully observed in every period of this 
+study. Real point-of-sale data is frequently censored during stock-
+outs, when realised sales understate true demand; extending the 
+revision signal and its ETS decomposition to censored or inter-
+mittently observed demand is a natural next step for retail and 
+e-commerce deployments, where stockout censoring is common.
+A replication package with code and configuration files accompa-
+nies the paper to support independent verification and these extensions.
+CRediT authorship contribution statement
+Saadinur Azisbek uulu: Writing – review & editing, Writing – orig-
+inal draft, Visualization, Validation, Supervision, Methodology, Formal 
+analysis, Data curation, Conceptualization. Yilmaz Uygun: Writing – 
+review & editing, Supervision, Conceptualization.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to 
+influence the work reported in this paper.
+Data availability
+Code and configuration files needed to reproduce the synthetic and 
+M5 experiments reported in this paper are available at https://github.
+com/eager1999/fr-ppo-replenishment. The M5 dataset itself is publicly 
+available from the M5 Forecasting Accuracy competition [16].
+References
+[1] Arrow KJ, Harris T, Marschak J. Optimal inventory policy. Econometrica 
+1951;19(3):250–72.
+[2] Scarf H. The optimality of (𝑠, 𝑠) policies in the dynamic inventory problem. 
+Mathematical methods in the social sciences. Stanford University Press; 1960.
+[3] Karki Dholi I. Supply chain resilience: a systematic review of resilience 
+capabilities. Scientometrica 2026b;2(3):211–22.
+[4] Karki Dholi I. Supply chain ambidexterity and organizational performance: a 
+systematic literature review. Scientometrica 2026a;2(4):267–80.
+[5] Gijsbrechts J, Boute RN, Van Mieghem JA, Zhang DJ. Can deep rein-
+forcement learning improve inventory management? performance on lost 
+sales, dual-sourcing, and multi-echelon problems. Manuf Serv Oper Manag 
+2022;24(3):1349–68.
+[6] Boute RN, Gijsbrechts J, van Jaarsveld W, Vanvuchelen N. Deep reinforcement 
+learning for inventory control: A roadmap. European J Oper Res 2022.
+[7] Vanvuchelen N, Gijsbrechts J, Boute RN. Use of proximal policy optimization for 
+the joint replenishment problem. Comput Ind 2020;119:103239.
+[8] Bergsma R, de Ruijt C, Bhulai S. A systematic review of machine learn-
+ing approaches in inventory control optimization. Oper. Res. Perspect. 
+2025;15:100367.
+[9] Dehaybe H, Catanzaro D, Chevalier P. Deep reinforcement learning for inventory 
+optimization with non-stationary uncertain demand. European J Oper Res 
+2024;314(2):433–45.
+[10] Kou A, Cheng Y, Huang X, Jin J. Dynamic replenishment policy for perishable 
+goods using change point detection-based soft actor-critic reinforcement learning. 
+Expert Syst Appl 2025;270:126556.
+[11] Lee HL, Padmanabhan V, Whang S. Information distortion in a supply chain: 
+The bullwhip effect. Manag Sci 1997;43(4):546–58.
+[12] Graves SC. A single-item inventory model for a nonstationary demand process. 
+Manuf Serv Oper Manag 1999;1(1):50–61.
+[13] Zipkin PH. Foundations of Inventory Management. McGraw-Hill; 2000.
+[14] Adams RP, MacKay DJC. Bayesian online changepoint detection. 2007, arXiv 
+preprint arXiv:0710.3742.
+[15] DeGroot MH. Uncertainty, information, and sequential experiments. Ann Math 
+Stat 1962;33(2):404–19.
+[16] Makridakis S, Spiliotis E, Assimakopoulos V. M5 accuracy competition: Results, 
+findings, and conclusions. Int J Forecast 2022;38(4):1346–64.
+Operations Research Perspectives 17 (2026) 100419 
+16 

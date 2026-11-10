@@ -1,0 +1,2197 @@
+TITLE: Energy- and labour-aware scheduling under uncertainty: a decomposition framework for stochastic batch-processing systems
+AUTHORS: Balwin Bokor, Roland Braune, Klaus Altendorfer, Ştefan Wagner
+VENUE: International Journal of Production Research (2026-10-28)
+DOI: https://doi.org/10.1080/00207543.2026.2752510
+LICENCE: cc-by
+LINK: https://doi.org/10.1080/00207543.2026.2752510
+
+International Journal of Production Research
+ISSN: 0020-7543 (Print) 1366-588X (Online) Journal homepage: www.tandfonline.com/journals/tprs20
+Energy- and labour-aware scheduling under
+uncertainty: a decomposition framework for
+stochastic batch-processing systems
+Balwin Bokor , Roland Braune , Klaus Altendorfer & Stefan Wagner
+To cite this article: Balwin Bokor , Roland Braune , Klaus Altendorfer & Stefan Wagner (28 Oct
+2026): Energy- and labour-aware scheduling under uncertainty: a decomposition framework
+for stochastic batch-processing systems, International Journal of Production Research, DOI:
+10.1080/00207543.2026.2752510
+To link to this article: https://doi.org/10.1080/00207543.2026.2752510
+© 2026 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group.
+View supplementary material 
+Published online: 28 Oct 2026.
+Submit your article to this journal 
+View related articles 
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tprs20
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH
+https://doi.org/10.1080/00207543.2026.2752510
+ 
+Energy- and labour-aware scheduling under uncertainty: a decomposition 
+framework for stochastic batch-processing systems
+Balwin Bokora, Roland Braunea,b, Klaus Altendorfera and Stefan Wagnerc
+aDepartment for Production and Operations Management, University of Applied Sciences Upper Austria, Steyr, Austria; bDepartment of 
+Business Decisions and Analytics, University of Vienna, Vienna, Austria; cDepartment for Software Engineering, University of Applied Sciences 
+Upper Austria, Hagenberg, Austria
+ABSTRACT
+Motivated by the energy-intensive heat-treatment operations of a European lead-acid battery manu-
+facturer, this study addresses energy- and labour-aware scheduling for a stochastic batch-processing 
+system with waiting-time constraints and programme-compatibility requirements. We formalise 
+the problem as a two-level optimisation decomposed into five sub-decisions and design a generic 
+scheduling framework spanning from simple Rule-Based Heuristics (RH) to rules automatically syn-
+thesised by Genetic Programming (GP) for a single sub-decision. All approaches are evaluated in an 
+agent-based discrete-event simulation mirroring the company’s production. Optimising all five sub-
+decisions using handcrafted rules (Best RH) significantly reduces costs by 40.8% at low and 85.4% 
+at high utilisation over Current Practice, with substantially improved solution robustness. Substitut-
+ing a single sub-decision with GP-evolved rules reveals both what evolved rules achieve alone and 
+what potential handcrafted rules leave. At high utilisation, it yields a significant 41.9% cost reduction 
+over Current Practice, whereas on the already optimised Best RH the cost gain is marginal and non-
+significant – but robustness still improves markedly, a critical advantage in stochastic environments. 
+The central contribution is methodological: partitioning the problem by decision structure rather 
+than machine structure reduces complexity enough for handcrafted rules to remain competitive with 
+evolved ones.
+ARTICLE HISTORY
+Received 2 April 2026
+Accepted 11 October 2026
+KEYWORDS
+Energy- and labour-aware 
+scheduling; batch-processing 
+systems; stochastic 
+scheduling; rule-based 
+heuristics; genetic 
+programming; discrete-event 
+simulation
+SUBJECT 
+CLASSIFICATIONS
+Genetic algorithms; 
+heuristics; discrete event 
+simulation
+1. Introduction
+Globalisation and price transparency pressure manufac-
+turers to deliver high-quality products at competitive 
+prices. In Europe, unit labour costs increased by 4.7% 
+in 2024 while productivity declined by 0.2% (European 
+Central Bank 2025). Energy represents an equally crit-
+ical cost driver, with industry accounting for 24.6% of 
+the European Union’ s final energy consumption (Eurostat 
+2025). With EU climate policy and carbon prices pro-
+jected to reach e126/tCO2 by 2030 (Glushchenko 2025), 
+these trends force manufacturers to lower energy use and 
+improve shop-floor productivity. Scheduling governs job 
+execution via machine allocation, batching, and sequenc-
+ing under operational constraints (Pinedo 2016), offering 
+significant cost reduction potential without major capital 
+expenditure (Noegraheni and Nuradli 2016). The follow-
+ing case from energy-intensive manufacturing illustrates 
+this.
+CONTACT Balwin Bokor 
+ balwin.bokor@fh-steyr.at
+ Department for Production and Operations Management, University of Applied Sciences Upper 
+Austria, Campus Steyr, Steyr A-4400, Austria
+Supplemental data for this article can be accessed online at https://doi.org/10.1080/00207543.2026.2752510.
+1.1. Real-world case: energy-intensive 
+manufacturing
+A European lead-acid battery manufacturer faces a 
+stochastic scheduling problem. Lead plates – the main 
+battery component – arrive stochastically from pre-
+production on pallets and must be assigned to cham-
+bers for energy-intensive heat-treatment within strict 
+waiting-time limits. Violations result in scrap. Each pallet 
+requires a specific heat-treatment programme defining a 
+temperature-humidity profile over time, which directly 
+governs energy consumption. While pallets with com-
+patible programmes can be batched together, programme 
+mixing may increase energy demand. Current Practice
+(CP) schedules by job ID, prohibits programme mix-
+ing, and often starts heat-treatment with residual cham-
+ber capacity. Heat-treatment serves two purposes: (1) 
+completing chemical curing and (2) reducing relative 
+humidity to target levels. Actual energy requirements 
+© 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, 
+distribution, and reproduction in any medium, provided the original work is properly cited. The terms on which this article has been published allow the posting of the Accepted 
+Manuscript in a repository by the author(s) or with their consent.
+2 
+ B. BOKOR ET AL.
+are batch-specific and stochastic – driven by moisture 
+content, paste thickness, and thermal losses – leading to 
+two stochastic stopping problems at the chamber level. 
+Because completion cannot be observed directly, opera-
+tors must inspect batches to determine when curing and 
+humidity targets are met. This inspection effort makes 
+labour a third cost driver, alongside scrap and energy. The 
+company currently addresses this uncertainty using con-
+servative, experience-based planned processing times.
+1.2. Research gap
+While energy-aware and labour-aware scheduling have 
+each received growing attention, integrated approaches 
+remain limited. In deterministic environments, Gong 
+et al. (2019) combine energy and labour in flexible 
+job shops, as do Shao, Shao, and Pi (2022) in dis-
+tributed hybrid flow shops. Most recently, Schorn and 
+Mönch (2026) combine energy, batch processing, and 
+waiting-time constraints, but do not consider labour. 
+None of these, however, address a stochastic batch-
+processing environment with programme-compatibility 
+requirements.
+Under uncertainty, prior work is sparser. Bokor et al. 
+(2026) address a stochastic job shop with a threshold-
+based heuristic for joint machine stopping and shift 
+staffing, but outside a batch-processing setting. The clos-
+est work, W ang et al. (2016), schedules heat-treatment 
+batches under energy uncertainty, but represents this 
+uncertainty through fuzzy rather than stochastic mod-
+elling and considers neither programme-compatibility 
+effects on energy nor labour. In our case, stochastic 
+resource consumption gives rise to stopping problems 
+that themselves drive the processing-time decisions, with 
+the subsequent inspection adding labour as a further cost 
+driver. T ogether with strict waiting-time constraints, this 
+process uncertainty raises both the scrap risk and the 
+scheduling difficulty – a combination that no existing 
+approach addresses.
+1.3. Contribution
+W e address this gap for a stochastic multi-item, multi-
+stage production system that jointly exhibits five char-
+acteristics: energy, labour, uncertainty, batch processing, 
+and waiting-time constraints. T o our knowledge, no prior 
+study addresses more than three of these jointly. The 
+core of our work is methodological: we decompose this 
+complex problem into a small set of well-defined sub-
+decisions – each addressed by a generic, energy- and 
+labour-aware approach. The study makes four contribu-
+tions.
+First, we formalise this problem from the real-world 
+heat-treatment operations of a lead-acid battery manu-
+facturer, yielding a decision aid that uniquely combines 
+all five characteristics.
+Second, we decompose the problem into a two-level 
+optimisation with five sub-decisions. At the system level, 
+three scheduling decisions are optimised: (1) Pallet Eval-
+uation, (2) Chamber Dispatching, and (3) Chamber Early-
+Start. At the chamber level, planned processing times are 
+optimised for (4) Main Process Steps and (5) Rework Pro-
+cess Steps to address two independent stochastic stopping 
+problems. An established decomposition approach in 
+scheduling is to split a multi-machine problem into mul-
+tiple single-machine subproblems (Mönch et al. 2007). 
+In contrast, we partition by decision, yielding function-
+ally distinct sub-decisions that can each be addressed by 
+a dedicated approach.
+Third, we design a generic scheduling framework 
+spanning from simple Rule-Based Heuristics (RH), rely-
+ing on basic shop-floor information, to rules automati-
+cally synthesised from real-time shop-floor conditions. 
+T o synthesise these rules, we employ Genetic Program-
+ming (GP) in its classical single-tree form (Koza 1992) 
+and use it as a benchmark for a single sub-decision.
+Fourth, we conduct a comprehensive empirical evalu-
+ation using an agent-based discrete-event simulation that 
+mirrors the case company’ s lead plate production. Per-
+formance is evaluated across three utilisation scenarios 
+in terms of total costs (i.e. scrap, energy, and labour), 
+production logistics indicators, and solution robustness, 
+measured by the coefficient of variation (CV) across 
+replications. W e evaluate all combinations of approaches 
+to identify the best-performing configuration (Best RH), 
+which is then benchmarked against Current Practice (CP 
+Base). Finally, we substitute Pallet Evaluation with GP-
+evolved priority rules while fixing all other sub-decisions, 
+in two configurations: (1) applied to CP Base and (2) inte-
+grated with the Best RH. This reveals both what evolved 
+rules achieve on their own and what potential hand-
+crafted rules leave.
+This study addresses the following research questions:
+1. How can a complex stochastic scheduling problem 
+be decomposed into well-defined sub-decisions?
+2. How can energy- and labour-related considerations 
+be jointly integrated into stochastic batch-processing 
+scheduling with waiting-time constraints?
+3. What is the cost and robustness performance of 
+Rule-Based Heuristics relative to Current Practice?
+4. What are the effects of Rule-Based Heuristics on 
+production logistics indicators?
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 3
+5. What is the cost and robustness performance 
+of Genetic Programming compared to Rule-Based 
+Heuristics?
+Results show that optimising all five sub-decisions 
+with handcrafted rules (Best RH) significantly reduces 
+costs by 40.8% at low and 85.4% at high utilisation com-
+pared to CP Base, with substantially improved robust-
+ness. At high utilisation, substituting a single sub-
+decision with GP-evolved rules significantly reduces 
+costs by 41.9% when applied to CP Base, whereas on the 
+already optimised Best RH the cost gain is marginal but 
+robustness still improves markedly.
+Although tailored to lead plate production, the 
+decomposition and framework are expected to generalise 
+to other energy-intensive batch-processing systems with 
+stochastic process completion, waiting-time constraints, 
+compatibility restrictions, and batch-composition effects. 
+Examples include semiconductor diffusion furnaces, 
+pharmaceutical batch reactors, food processing ovens, 
+automotive paint curing, and glass tempering furnaces.
+2. Related work
+Production scheduling research increasingly addresses 
+energy and labour as joint cost drivers. On the energy 
+side, Gahm et al. (2016) categorise energy-efficient 
+scheduling along three dimensions – energetic coverage, 
+energy supply, and energy demand – identifying energy 
+demand optimisation as the most widely studied. Within 
+this category, scheduling can reduce energy use during 
+non-value-added phases (e.g. idle times) and processing 
+(e.g. speed scaling, batch composition). On the labour 
+side, the dual-resource constrained literature (J. Xu, Xu, 
+and Xie 2011) treats workforce as a resource alongside 
+machines, typically as an allocation problem. This study 
+addresses both dimensions: batch composition affects 
+energy demand, and labour enters through the inspec-
+tion effort required to verify completion, which increases 
+with rework.
+Moreover, real production systems are subject to 
+uncertainty, for instance in demand, processing times, 
+and energy requirements (Li and Ierapetritou 2008). Y et 
+scheduling research has predominantly addressed deter-
+ministic settings, limiting practical applicability (Bassière 
+and Benatia 2025; Herroelen and Leus 2005). Under 
+such stochastic conditions, RH – also referred to as dis-
+patching or priority rules – offer a computationally effi-
+cient alternative, particularly as modelling complexity 
+increases (Pinedo 2016). More recently, such rules have 
+been complemented by learned dispatching policies for 
+dynamic settings (Liu, Piplani, and T oro 2022).
+Since their introduction in early scheduling theory 
+(Conway, Maxwell, and Miller 1967), these heuristics 
+select the next job using simple criteria based on system-
+state attributes (Panwalkar and Iskander 1977). Classical 
+rules such as first-in-first-out (FIFO), earliest-due-date 
+(EDD), or shortest-processing-time (SPT) remain widely 
+used for their simplicity and robustness. EDD even gains 
+theoretical support: Bryant, Lakner, and Pinedo (2022) 
+prove optimality of a preemptive EDD variant for min-
+imising expected tardiness on heterogeneous parallel 
+servers with exponentially distributed processing times, 
+motivating slack-based prioritisation.
+Batch processing adds a requirement: heuristics must 
+account for job compatibility and capacity utilisation 
+when forming batches (Fowler and Mönch 2022). W ahl, 
+Gahm, and T uma (2025) classify batch-scheduling prob-
+lems and review their solution methods. For incompat-
+ible job families – as in heat-treatment, where different 
+programmes cannot share a batch – Mehta and Uzsoy 
+(1998) show that dynamic programming yields optimal 
+solutions for fixed family counts and machine capacities, 
+though heuristics remain necessary for larger instances.
+The problem studied here is characterised by five 
+features that jointly drive its difficulty: energy con-
+sumption, labour effort, stochastic process completion, 
+batch processing with programme-compatibility require-
+ments, and strict waiting-time constraints. They have 
+been addressed effectively in isolation and partly linked, 
+but never jointly. Table 1 compares the approaches most 
+closely aligned with our problem, those sharing at least 
+two of its defining characteristics. 
+Several studies combine two or three of these char-
+acteristics, but always as partial subsets. Gong et al. 
+(2019) jointly optimise energy and labour cost in a flex-
+ible job shop, matching worker levels to shift-dependent 
+wages under time-varying electricity prices. Similarly, 
+Table 1. Comparison of related work by problem characteristics.
+Study Energy Labour Uncertainty Batch Waiting-Time
+Gong et al. 
+(2019)
+✓ ✓
+Shao, Shao, 
+and Pi (2022)
+✓ ✓
+Schorn and 
+Mönch 
+(2024)
+✓ ✓
+Yilmaz Eroglu 
+(2025)
+✓ ✓
+Wu et al. (2022) ✓ ✓
+Schorn and 
+Mönch 
+(2026)
+✓ ✓ ✓
+Xiang et al. 
+(2026)
+✓ ✓
+Wang et al. 
+(2016)
+✓ ✓ ✓
+This study ✓ ✓ ✓ ✓ ✓
+4 
+ B. BOKOR ET AL.
+Shao, Shao, and Pi (2022) address both in distributed 
+hybrid flow shops with factory heterogeneity and carbon-
+emission objectives.
+T urning to batch processing, Schorn and Mönch 
+(2024) use GP to learn energy-oriented priority rules 
+for parallel batch machines. Yilmaz Eroglu (2025) sched-
+ules real-world textile dyeing as a green batch-scheduling 
+problem, minimising carbon footprint alongside tardi-
+ness with a Genetic Algorithm validated against exact 
+solutions. Wu et al. (2022) schedule diffusion furnaces 
+under batch and waiting-time constraints, but target 
+throughput rather than energy. Schorn and Mönch 
+(2026) schedule semiconductor batches where time con-
+straints prevent surface oxidation, using a lead-time iter-
+ation and GP-evolved priority indices to avoid violations.
+All the above assume deterministic conditions. Unlike 
+these, Xiang et al. (2026) address wafer batch schedul-
+ing under dynamic arrivals, covering batch process-
+ing and uncertainty but not energy, labour, or waiting-
+time constraints. Similarly, W ang et al. (2016) schedule 
+heat-treatment batches for energy and tardiness, adding 
+uncertainty in heating times and consumption, though 
+modelled with fuzzy rather than stochastic parameters 
+and without labour or waiting-time constraints.
+Integrating these interacting requirements into a sin-
+gle set of handcrafted rules is difficult (Branke et al. 
+2016). A common strategy for managing this complexity 
+is decomposition. Existing approaches often decompose 
+along the machine structure, as in shifting-bottleneck 
+procedures solving one machine subproblem at a time 
+(Mönch et al. 2007). Others separate only a small num-
+ber of decisions, such as machine allocation from worker 
+assignment (Müller and Kress 2022) or batch formation 
+from job assignment (Xiang et al. 2026). What remains 
+missing is a decomposition along the decision struc-
+ture: a formalised partition of the full decision space into 
+a small set of functionally distinct sub-decisions, each 
+addressable by a dedicated approach.
+W e address each sub-decision with a rule-based 
+heuristic, which raises a natural question: how do auto-
+matically synthesised rules compare to such handcrafted 
+ones? Genetic Programming, introduced by Koza (1992), 
+has become an established method for evolving schedul-
+ing rules (Zhang et al. 2024). Such evolved rules have 
+been shown to outperform established priority rules in 
+dynamic flexible job shops, whether via gene expression 
+programming (Ozturk, Bahadir, and T eymourifar 2019) 
+or tree-based GP (Braune et al. 2022).
+3. Problem description
+This section introduces the lead plate production pro-
+cess, presents the scheduling decisions and chamber-level 
+processing, formalises the optimisation problem, and 
+illustrates their interaction in an example.
+3.1. Lead plate production at the case company
+Figure 1 presents the lead plate production process via 
+value stream mapping. The facility produces 21 distinct 
+lead plate types, first differentiated by electrical charge 
+(positive/negative), then by design-specific characteris-
+tics. As battery assembly withdraws plates from fin-
+ished inventory, this study’ s scope ends at heat-treatment
+completion.
+Lead plate demand is satisfied through production 
+jobs generated by a reorder-point system. A job is 
+released whenever the inventory position falls below 
+Figure 1. Value stream lead plate production process.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 5
+the reorder point (Hopp and Spearman 2011). Each job 
+corresponds to a single lead plate type with demand-
+dependent lot sizes.
+Pre-production involves two sequential operations: 
+plate forming and pasting (i.e. applying lead oxide and 
+additives). The process flow depends on the plate type: 
+negative plates use continuous forming with a subse-
+quent FIFO buffer, while positive plates use the expanded 
+metal technique with immediate pasting and no buffer-
+ing. Job assignment to one of four parallel lines depends 
+on charge type, with the lower-loaded line selected based 
+on standard-time shop load. As operations are stochas-
+tic, the schedule is updated dynamically after each pallet 
+completion using Drum-Buffer-Rope forward schedul-
+ing, as detailed in Bokor, Seiringer, and Altendorfer 
+(2025).
+After pre-production, plates are palletised and buff-
+ered, awaiting heat-treatment in one of the 31 chambers. 
+Heat-treatment must start within a maximum allow-
+able waiting-time to avoid scrap from improper curing 
+(see Figure 1), and serves two purposes: (1) strength-
+ening the paste microstructure through chemical cur-
+ing and (2) reducing relative humidity to ensure con-
+sistent acid ratios. Lead plate types follow one of four 
+predefined programmes – Negative, Positive, Positive-
+with-V aporisation, or Start/Stop – each with a unique 
+temperature-humidity profile over time. Details are 
+shown in Bokor, Altendorfer, and Matta (2025). These 
+profiles govern energy consumption; deviations reduce 
+efficiency and product quality. While energy input accu-
+mulates deterministically based on these profiles, actual 
+requirements are batch-specific and stochastic, driven by 
+moisture, thickness, and thermal losses.
+After processing, batches are inspected to verify com-
+pletion targets: curing is assessed via the proportion 
+of free metallic lead, while relative humidity is mea-
+sured directly. Failure to meet either target triggers a 
+rework cycle, incurring energy and labour penalties 
+from chamber reheating and repeated inspection. This 
+uncertainty creates two independent stopping problems: 
+determining the optimal times for (1) completing cur-
+ing and (2) reaching relative-humidity targets, all while 
+minimising energy consumption. An analytical solu-
+tion is intractable, as the minimum required energy 
+remains unknown until completion and varies stochas-
+tically across batches. Short planned processing times 
+increase rework probability, whereas excessive ones waste 
+energy and prolong chamber occupation.
+3.2. Scheduling decisions and chamber-level 
+processing
+The lead plate production process (see Figure 1) reveals 
+a naturally decomposable scheduling problem with two 
+levels and five sub-decisions. Scheduling occurs at the 
+system level across all chambers n ∈ N, while heat-
+treatment is executed at the chamber level to address two 
+independent stochastic stopping problems (see Section 
+3.1). Figure 2 illustrates this: blue-shaded elements 
+denote scheduling decisions, orange-shaded ones the 
+process steps where planned processing times are opti-
+mised. Table 2 summarises the notation.
+Let I be the set of all pallets and k ∈ { 1, . . . , K} the 
+index of decision points tk ∈ T during the observation 
+time T. Let I′(tk) ⊆ I represent the unassigned pallets 
+and I′′(tk) ⊆ I′(tk) those located at the buffer before 
+the chambers (see Figure 1). Available chambers are 
+denoted by n ∈ N′(tk) ⊆ N and running chambers by 
+n ∈ N′′(tk) ⊆ N. A decision point tk is triggered when an 
+unassigned pallet arrives at the buffer or a running cham-
+ber completes unloading (1). At each tk, the following 
+three scheduling decisions are made:
+1. Pallet Evaluation – for each unassigned pallet i ∈
+I′(tk) compute an evaluation score d(1) i (tk) ∈ R+ 0 (∈
+R under GP; see Section 4.3). A value of zero indi-
+cates that pallet i is not assignable at tk due to applied 
+rules, while higher values imply earlier assignment 
+priority.
+2. Chamber Dispatching – starting with the pallet i
+with the highest evaluation score, for each i ∈ I′(tk)
+evaluate all available chambers n ∈ N′(tk) by com-
+puting a pallet-chamber dispatching score d(2) i,n (tk) ∈
+R+ 0 . The highest-ranked chamber is selected for 
+assignment. A value of zero indicates that chamber 
+n is excluded for pallet i at tk, due to operational 
+infeasibility or applied rules.
+3. Chamber Early-Start – for each available chamber 
+n ∈ N′(tk), decide whether to start heat-treatment 
+after loading the last pallet, despite remaining capac-
+ity. Let d(3) n (tk) ∈ { 0, 1}, where 1 indicates early start 
+and 0 otherwise.
+At each tk, waiting-times of all buffered pallets i ∈
+I′′(tk) are evaluated, scrapping pallets violating the max-
+imum allowable waiting-time (2). Pallet Evaluation com-
+putes evaluation scores d(1) i (tk) for all unassigned pallets 
+i ∈ I′(tk), determining the assignment order (3). For each 
+assignable pallet i with d(1) i (tk) > 0, Chamber Dispatch-
+ing evaluates all available chambers n ∈ N′(tk) via dis-
+patching score d(2) i,n (tk). The highest-ranked chamber is 
+selected, and pallet i is assigned to current batch In,tk(4). 
+6 
+ B. BOKOR ET AL.
+Figure 2. Scheduling decisions and heat-treatment steps.
+If no feasible chamber is found, the pallet remains unas-
+signed. Assigned pallets at the buffer are loaded by a fork-
+lift operator. Once a chamber reaches its capacity during 
+assignment, heat-treatment starts after loading the last 
+pallet (5). For all other loaded, not-yet-full chambers 
+n ∈ N′(tk), Chamber Early-Start is evaluated, deciding 
+whether to start heat-treatment d(3) n (tk) = 1 or wait for 
+further assignments d(3) n (tk) = 0 (6). This process repeats 
+until I′(tk) = ∅ or N′(tk) = ∅ (7).
+Once heat-treatment starts, the first stochastic stop-
+ping problem – completing curing – is addressed. The 
+process begins with the maturation phase (8), followed by 
+metallic-lead inspection to assess curing completion (9). 
+If curing is not completed, rework is required (10). Since 
+inspection requires opening the chamber, rework con-
+sists of a re-warm-up phase followed by post-maturation, 
+and may repeat across multiple cycles until completion. 
+After curing, the relative-humidity stopping problem is 
+addressed by initiating drying, preceded by a manda-
+tory re-warm-up phase (11). Following the same prin-
+ciple, rework (i.e. post-drying preceded by re-warm-
+up) repeats until the relative-humidity target is reached 
+(12–13). Once both targets are met, the chamber is 
+unloaded (14). Re-warm-up durations are fixed by equip-
+ment settings. In contrast, planned processing times for 
+maturation, drying, post-maturation, and post-drying 
+are determined by predefined processing-energy factors. 
+Since identical factors apply to both stopping problems, 
+these are generalised into two chamber-level decisions. 
+Let d(4) ∈ R+ denote the processing-energy factor for 
+Main Process Steps (maturation/drying) and d(5) ∈ R+
+for Rework Process Steps (post-maturation/post-drying). 
+These factors specify the cumulative energy input as 
+a multiple of the expected minimum requirement. For 
+example, a factor of 1.1 corresponds to a processing time 
+supplying 10% more energy than the expected minimum.
+3.3. Optimisation model
+The objective is to minimise total cost over the observa-
+tion time T for a given throughput and available capacity, 
+defined by N chambers with their maximum capacities 
+gn. T otal costs include: (1) scrap costs from waiting-
+time violations, (2) energy costs for heat-treatment and 
+rework, and (3) labour costs for curing and relative-
+humidity inspections.
+Let [tk−1, tk) denote the interval between two con-
+secutive decision points k. These intervals are irregu-
+lar due to the event-triggered nature of decision points 
+(see Section 3.2). Each pallet i ∈ I is, at one k, either 
+assigned to a chamber n ∈ N′(tk) as part of batch In,tk, or 
+scrapped if waiting-time limits are exceeded. Let si(tk) ∈
+{0, 1} indicate if pallet i is scrapped at tk. Let fn([tk−1, tk))
+denote the cumulative energy consumption of cham-
+ber n over [tk−1, tk), and rn([tk−1, tk)) the number of 
+inspections performed during this interval, with υ the 
+average inspection duration. Cost parameters are: γ cost 
+per scrapped pallet, ϕ cost per kWh of energy used, and 
+δ labour cost per hour. The resulting Global Objective 
+Function is:
+min
+K∑︂
+k=1
+⎡
+⎢⎢⎢⎢⎢⎣ ∑︂ i∈I′(k) si(tk) γ ⏞ ⏟⏟ ⏞
+Scrap Costs
++
+∑︂
+n∈N
+fn([tk−1, tk)) ϕ
+⏞ ⏟⏟ ⏞
+Energy Costs
++
+∑︂
+n∈N
+rn([tk−1, tk)) v δ
+⏞ ⏟⏟ ⏞
+Labour Costs
+⎤
+⎥⎥⎥⎥⎥⎦
+(1)
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 7
+Table 2. Notation.
+Symbol Description
+Sets
+T Observation time (simulation horizon)
+K Set of decision points within T
+N Set of all chambers
+N′(tk) ⊆ N Set of available chambers (empty or accepting pallets) at tk
+˜Na i (tk) ⊆ N′(tk) Set of feasible chambers where pallet i can be assigned under approach a at tk
+ˆNa(tk) ⊆ N′(tk) Set of chambers triggering early-start decision under approach a at tk
+N′′(tk) ⊆ N Set of running chambers at tk
+I Set of pallets processed during T
+I′(tk) ⊆ I Set of unassigned pallets at tk
+I′′(tk) ⊆ I′(tk) Set of unassigned pallets in buffer at tk
+˜Ia(tk) ⊆ I′(tk) Set of assignable pallets under approach a at tk
+In,tk ⊆ I Set of pallets assigned to current batch at chamber n up to tk
+P Set of heat-treatment programmes
+O Set of jobs
+A Set of scheduling approaches
+C : P × P → { 0, 1} Compatibility matrix between heat-treatment programmes
+Indices
+k ∈ K Index of decision points
+tk ∈ T Timestamp of decision point k
+tn ∈ T Timestamp when the last pallet was loaded into chamber n
+n ∈ N Index for chambers
+i ∈ I Index for pallets
+o ∈ O Index for jobs
+a ∈ A Index for scheduling approaches
+tstart In,tk ∈ T Start timestamp of stopping problem for batch In,tk (including rework)
+tstop In,tk ∈ T Stop timestamp of stopping problem for batch In,tk (including rework)
+Scheduling Decision Variables
+d(1),a i (tk) ∈ R Evaluation score of unassigned pallet i under approach a at tk
+d(2),a i,n (tk) ∈ R+ 0 Pallet-chamber dispatching score between pallet i and chamber n under approach a at tk
+d(3),a n (tk) ∈ { 0, 1} Early-start decision for available chamber n under approach a at tk
+d(4) ∈ R+ Energy factor for planned processing times at Main Process Steps (maturation and drying)
+d(5) ∈ R+ Energy factor for planned processing times at Rework Process Steps (post-maturation and post-drying)
+Pallet-Related Variables
+si(tk) ∈ { 0, 1} Scrap indicator: 1 if pallet i is scrapped due to waiting-time violation, 0 otherwise
+wi(tk) Waiting-time of pallet i at tk (from pre-production completion to tk including loading time)
+¯w Maximum waiting-time for pallets in buffer before scrapping
+pi Heat-treatment programme of pallet i
+pϕ i Expected minimum energy requirement of pallet i’s programme pi
+oi Associated job of pallet i
+Batch-Related Variables
+c[pi, p(In,tk )] Compatibility indicator (1 if pallet programme pi is compatible with batch programme p(In,tk ), 0 otherwise)
+bi(In,tk ) ∈ { 0, 1} Current batch assignment indicator: 1 if pallet i is assigned to batch In,tk , 0 otherwise
+p(In,tk ) Heat-treatment programme of batch In,tk ; with p(In,tk ) ∈ P
+pϕ (In,tk ) Expected minimum energy requirement of batch In,tk depending on batch programme p(In,tk )
+pσ Standard deviation of the batch-level energy requirement (reflecting uncertainty)
+8(In,tk ) Stochastic minimum required energy of batch In,tk (true and unknown)
+Chamber-Related Variables
+Qn(t, p(In,tk , t)) Instantaneous power consumption of chamber n at time t depending on batch programme p(In,tk )
+fn([tk−1 , tk )) Cumulative energy consumption of chamber n over [tk−1 , tk )
+rn([tk−1, tk)) Total number of inspections performed at chamber n over [tk−1 , tk )
+gn(tk) Remaining pallet capacity of chamber n at tk
+gn Maximum pallet capacity of chamber n
+υ Average inspection duration (constant across all chambers)
+1ϕ i,n(tk) Expected energy increase of chamber n when assigning pallet i at tk
+1ϕ i,n(tk) Capacitated expected energy increase of chamber n when assigning pallet i at tk
+¯τ Maximum chamber waiting-time before triggering early-start (early-start threshold)
+Cost Parameters
+γ Cost per scrapped pallet
+ϕ Cost per kWh of energy used
+δ Cost per labour hour
+Note: d(4) and d(5) are approach-independent, hence no superscript a.
+8 
+ B. BOKOR ET AL.
+Here, the cumulative energy consumption fn([tk−1, tk))
+is obtained by integrating the instantaneous power con-
+sumption Qn(t, p(In,tk, t)) over the interval [tk−1, tk):
+fn([tk−1, tk)) =
+tk∫︂
+tk−1
+Qn(t, p(In,tk, t)dt
+Qn : R × P → R≥0 (2)
+The term Qn(t, p(·)) represents power consump-
+tion for chamber n at time t under the current 
+batch programme p(In,tk) ∈ P (Bokor, Altendorfer, and 
+Matta 2025). Accordingly, fn([tk−1, tk)) captures the 
+total energy over all process phases within the interval 
+(i.e. loading, maturation, drying, re-warm-up, rework, 
+unloading) and may be zero during standby, when no 
+power is consumed.
+Although the Global Objective Function (1) is the ideal 
+target, direct optimisation is intractable. Whether rework 
+is required, and how many rework cycles follow, depends 
+on the planned processing times. Thus, the realised 
+energy requirement is endogenous and unfolds only as 
+processing proceeds. Moreover, jobs arrive stochastically 
+and decisions are event-triggered, so there is no fixed 
+problem instance to optimise ahead of time. At each tk, 
+decisions are made on the information known so far, 
+which in turn shapes both the objective and the sub-
+sequent decisions. Since past costs are sunk, the Local 
+Objective Function (3) minimises costs influenceable at tk, 
+while accounting for long-term dynamics:
+min
+d(1) i (tk)
+d(2) i,n (tk)
+d(3) n (tk)
+d(4)
+d(5)
+⎛
+⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎝
+∑︂
+i∈I′(k)
+si(tk, d(1) i (tk), d(3) n (tk))γ
+⏞ ⏟⏟ ⏞
+Scrap Costs
++
+∑︁
+n∈N
+fn([tk−1, tk), d(1) i (tk), d(2) i,n (tk),
+d(3) n (tk), d(4), d(5))ϕ⏞ ⏟⏟ ⏞
+Energy Costs
++
+∑︂
+n∈N
+an([tk−1, tk), d(4), d(5))vδ
+⏞ ⏟⏟ ⏞
+Labour Costs
+⎞
+⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎠ (3)
+where Pallet Evaluation d(1) i (tk) and Chamber Early-
+Start d(3) n (tk) dictate the assignment sequence, directly 
+influencing scrap risks from waiting-time violations. 
+Energy costs depend on all five sub-decisions: Cham-
+ber Early-Start d(3) n (tk) and the processing-energy factors 
+d(4) and d(5) determine energy consumption durations, 
+whereas Pallet Evaluation d(1) i (tk) and Chamber Dispatch-
+ing d(2) i,n (tk) define the batch composition In,tk, determin-
+ing the batch programme p(In,tk) and the resulting power 
+consumption Qn. Labour costs for inspection depend on 
+d(4) and d(5), as process duration determines the like-
+lihood of additional rework (see Figure 2). Minimising 
+the Local Objective Function (3) requires satisfying four 
+Operational Requirements (A–D):
+A. W aiting-Time Constraint
+Buffered pallets i ∈ I′′ are subject to a maximum 
+allowable waiting-time ¯w. The current waiting-time 
+wi(tk) – elapsed time since pre-production completion 
+plus loading time – is evaluated against ¯w (see Section 
+3.2). Loading a pallet satisfies the constraint even if heat-
+treatment is delayed, allowing further assignments to 
+current batch In,tk. Accordingly, the scrap indicator si(tk)
+is:
+si(tk) =
+{︃1, if wi(tk) > ¯w
+0, otherwise ∀i ∈ I′′(tk) (4)
+B. Chamber Availability and Remaining Capacity
+Pallet assignments are restricted to available chambers 
+n ∈ N′(tk), provided that the batch size does not exceed 
+the chamber’ s maximum pallet capacity gn:
+|In,tk| ≤ gn ∀n ∈ N (5)
+Upon starting heat-treatment, chambers transition to N′′
+and cease accepting assignments, regardless of residual 
+capacity.
+C. Programme Compatibility
+Each pallet i ∈ I requires a specific heat-treatment 
+programme pi with an expected minimum energy 
+requirement pϕ i . Assignment to current batch In,tk (i.e. 
+bi(In,tk) = 1) requires programme pi to be compatible 
+with batch programme p(In,tk). Compatibility is defined 
+by:
+C : P × P → { 0, 1} (6)
+where c[pl, pm] = 1 indicates compatibility. The assign-
+ment restriction is:
+bi(In,tk) ≤ c[pi, p(In,tk)] ∀i ∈ I, ∀n ∈ N (7)
+Even when compatibility is satisfied, mixing programmes 
+may increase energy consumption as p(In,tk) is deter-
+mined by the most energy-intensive pallet programme 
+pi∗ in the batch (Fowler and Mönch 2022):
+i∗ = arg max
+i∈In,tk
+(pϕ i ), p(In,tk) = pi∗ (8)
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 9
+The batch follows the temperature-humidity profile of 
+pi∗, setting the batch-level expected minimum energy 
+requirement:
+pϕ(In,tk) = pϕ i∗ (9)
+Thus, mixing pallets of different programmes necessitates 
+longer planned processing times, higher energy costs, 
+and extended chamber occupation.
+D. Stochastic Stopping Problems
+The stochastic stopping problems and their energy 
+dynamics follow Bokor, Altendorfer, and Matta (2025), 
+who investigated the single-chamber case. After batch 
+formation In,tn, heat-treatment addresses two inde-
+pendent stochastic stopping problems (i.e. curing and 
+relative-humidity target; see Section 3.2). Completion 
+requires supplying a batch-specific minimum energy that 
+is unknown a priori, modelled as:
+8(In,tk) ∼ LogN(pϕ(In,tk), pσ ) (10)
+where 8(In,tk) is a log-normally distributed random vari-
+able derived from the expected minimum batch-level 
+energy requirement pϕ(In,tk) and standard deviation pσ , 
+reflecting uncertainty.
+During heat-treatment, chamber energy consumption 
+follows a deterministic temperature-humidity profile 
+defined by the current batch programme p(In,tk). Instan-
+taneous power consumption Qn(t, p(In,tk, t)) is integrated 
+from process start tstart In,tk ∈ T to stop tstop In,tk ∈ T, including 
+potential rework (see Figure 2). Both stopping problems 
+are satisfied when:
+tstop In,tk∫︂
+tstart In,tk
+Qn(t, p(In,tk, t))dt ≥ 8(In,tk) (11)
+3.4. Example application
+Figure 3 demonstrates the interaction between Schedul-
+ing Decisions (1–3, blue) and Operational Requirements 
+(A–D, gray). The system state at tk depicts pallets 
+from planning through pre-production, buffer, and four
+chambers.
+At tk, job 10 (three unassigned pallets) awaits its 
+planned start in production planning. In pre-production, 
+Line 1 processes pallet 8/1 and Line 4 processes pallet 9/1, 
+while Lines 2 and 3 are idle. Buffered pallets 6/1 and 7/1 
+await assignment, approaching their maximum allowable 
+waiting-time (A). Chamber 1 performs heat-treatment at 
+full capacity under the Positive programme, addressing 
+the stochastic stopping problems (D). Chambers 2 and 
+3 accept pallets and currently hold Negative and Positive 
+batch programmes, respectively. Chamber 4 is empty and 
+available (B).
+Pallet Evaluation (1) identifies pallets 6/1 and 7/1 for 
+assignment, prioritising 7/1 due to earlier buffer arrival. 
+Chamber Dispatching (2) evaluates and ranks feasible 
+chambers (C), assigning pallet 7/1 to Chamber 3 and pal-
+let 6/1 to Chamber 2. This assignment is energy-efficient, 
+as both pallets’ programmes match their chambers’ cur-
+rent batch programmes. Assigning pallet 6/1 fills Cham-
+ber 2, triggering heat-treatment after loading. For Cham-
+ber 3, Chamber Early-Start (3) is evaluated, deciding to 
+keep the chamber open for subsequent assignments.
+Figure 3. Abstracted scheduling decisions and production system relations.
+10 
+ B. BOKOR ET AL.
+4. Energy- and labour-aware scheduling 
+approaches
+T o minimise the Objective Functions (1) and (3), energy- 
+and labour-aware scheduling approaches a ∈ A are 
+developed for the three scheduling decisions. Figure 4 
+visualises these approaches and the processing-energy 
+factors for planned processing times within the schedul-
+ing framework.
+4.1. Current scheduling practice
+Let a = CP represent current company practice, serv-
+ing as the baseline. For Pallet Evaluation, the pallet i∗
+with the longest waiting-time wi among buffered pallets 
+is identified:
+i∗ = arg max
+i∈I′′ (tk) (wi), o∗ = oi∗ (12)
+where oi denotes the job of pallet i. Assignable pallets are 
+restricted to buffered pallets from job o∗:
+˜ICP(tk) = { i ∈ I′′(tk)|oi = o∗} (13)
+Pallets with longer waiting-times wi receive higher pri-
+ority. All other pallets receive score 0 (see Section 3.2). 
+The evaluation score is:
+d(1),CP i (tk) =
+{︄
+wi, if i ∈ ˜ICP(tk)
+0, otherwise ∀i ∈ I′′(tk)
+(14)
+For Chamber Dispatching, the score d(2) i,n (tk) is calcu-
+lated for each pallet i ∈ ˜Ia(tk) and available chamber 
+n ∈ N′(tk) to determine the feasible chambers ˜NCP i (tk). 
+The current rule restricts each batch In,tk to pallets from 
+exactly one job. Since all pallets of a job o share the same 
+heat-treatment programme pi, this prohibits programme 
+mixing, even if compatible (see Constraint 7).
+˜NCP i (tk) = { n ∈ N′(tk)|oj = oi ∀ j ∈ In,tk} (15)
+The pallet-chamber dispatching score is:
+d(2),CP i,n (tk) =
+{︃ 1
+n , if n ∈ ˜NCP i (tk)
+0, otherwise
+∀i ∈ ˜ICP(tk), ∀n ∈ N′(tk) (16)
+This inverse relationship prioritises chambers with lower 
+ID numbers due to their proximity to pre-production 
+lines, minimising forklift transport distance.
+Chamber Early-Start is triggered when all pallets of 
+job o∗ are assigned, regardless of remaining capacity. In 
+Figure 4. Scheduling framework with energy- and labour-aware approaches.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 11
+ˆNCP(tk), the upper condition selects the chamber hold-
+ing job o∗, which under CP contains a single job (see 
+Equation 15), while the lower condition requires that no 
+pallet of o∗ remains unassigned:
+ˆNCP(tk) =
+{︃
+n ∈ N′(tk)|oj = o∗∀j ∈ In,tk {i ∈ I′(tk)|oi = o∗} = ∅ }︃
+(17)
+d(3),CP n (tk) =
+{︄
+1, if n ∈ ˆN CP (tk)
+0, otherwise ∀n ∈ N′(tk)
+(18)
+For heat-treatment, the company applies static,
+experience-based planned processing times with conser-
+vative durations to minimise rework risk. The processing-
+energy factors are d(4) = 1.20 for Main Process Steps and 
+d(5) = 0.25 for Rework Process Steps (see Section 3.2).
+4.2. Rule-based heuristics
+W e propose nine Rule-Based Heuristics (RH) for the 
+three scheduling decisions: four address Pallet Evaluation
+d(1) i (tk), three address Chamber Dispatching d(2) i,n (tk), and 
+two address Chamber Early-Start d(3) n (tk).
+4.2.1. Pallet evaluation
+All Pallet Evaluation approaches restrict evaluation to 
+buffered pallets I′′(tk). Preliminary experiments showed 
+that extending evaluation to all unassigned pallets I′(tk)
+increased costs. Assigning pallets still in pre-production 
+blocks chamber slots prematurely, preventing more 
+urgent pallets from being loaded and increasing scrap 
+from waiting-time violations. For all approaches a, pal-
+lets within the assignable set ˜Ia(tk) are prioritised by 
+waiting-time wi (see Equation 14).
+4.2.1.1. Least pallet slack time (LS). At CP, assignable 
+pallets are restricted to the job o∗ of the pallet with the 
+longest waiting-time (see Equation 13). Since slack equals 
+the remaining time before waiting-time violation ( ¯w −
+wi), ranking by longest wi is equivalent to ranking by 
+least slack. However, only pallets of o∗ are considered. 
+T o remove this job-level restriction, a = LS considers 
+all buffered pallets I′′(tk). As the waiting-time limit ¯w is 
+identical for all pallets, LS corresponds to FIFO by buffer 
+arrival across jobs.
+4.2.1.2. Lowest total remaining work of job (L W). 
+Instead of focusing on slack-based sorting, a = L W
+selects the job o∗ with the lowest remaining workload, 
+defined as the total number of unassigned pallets:
+o∗ = arg min
+o∈O
+|{i ∈ I′(tk)|oi = o}| (19)
+Assignable pallets are then restricted to buffered pallets 
+from job o∗, yielding ˜IL W(tk) (see Equation 13).
+4.2.1.3. Lowest remaining work of job in buffer (L W). 
+At L W, jobs are prioritised for quick completion by con-
+sidering all unassigned pallets I′(tk). In contrast, a = L W
+only considers buffered pallets I′′(tk) when determining 
+o∗, yielding ˜IL W(tk). Pallet restriction follows a = L W.
+4.2.1.4. Highest remaining work of programme in buffer 
+(HW). The Pallet Evaluation heuristics a = CP, a = L W, 
+and a = L W are job-focused. Conversely, a = HW pri-
+oritises heat-treatment programme p∗ with the highest 
+number of unassigned pallets in the buffer:
+p∗ = arg max
+p∈P
+|{i ∈ I′′(tk)|pi = p}| (20)
+Replacing the job-based set definition (see Equation 13) 
+with a programme-based one:
+˜IHW(tk) = { i ∈ I′′(tk)|pi = p∗} (21)
+4.2.2. Chamber dispatching
+The Chamber Dispatching heuristics can be combined 
+with any Pallet Evaluation heuristic, where ˜Ia(tk) denotes 
+the assignable pallet set under approach a.
+4.2.2.1. Identical programme prioritising highest fill rate 
+(IH). At CP, each batch In,tk is restricted to pallets from 
+exactly one job (see Equation 15). In contrast, a = IH
+relaxes this constraint, allowing pallets from different 
+jobs provided they share identical heat-treatment pro-
+grammes:
+˜NIH i (tk) = { n ∈ N′(tk)|pj = pi ∀ j ∈ In,tk} (22)
+The pallet-chamber dispatching score is the chamber’ s fill 
+rate after assigning pallet i:
+d(2),IH i,n (tk) =
+⎧
+⎨
+⎩
+|In,tk| + 1
+gn
+, if n ∈ ˜NIH i (tk)
+0, otherwise
+∀i ∈ ˜Ia(tk), ∀n ∈ N′(tk) (23)
+Chambers with a higher fill rate receive priority, yielding 
+shorter loading times. The increment of one ensures that 
+empty chambers remain eligible with the lowest priority 
+rather than being excluded by a zero score. If chambers 
+tie, the inverse chamber ID ranking serves as a tiebreaker 
+(see Equation 16).
+12 
+ B. BOKOR ET AL.
+4.2.2.2. Compatible programme prioritising highest fill 
+rate (CH). T o further relax the assignment restriction, 
+a = CH only considers the compatibility restriction (see 
+Constraint 7):
+˜NCH i (tk) = { n ∈ N′(tk)|c[pi, p(In,tk)] = 1} (24)
+Empty chambers carry no batch programme and are 
+always feasible. Dispatching score and tiebreaker follow 
+a = IH.
+4.2.2.3. Compatible programme prioritising lowest
+energy delta (CE). The Chamber Dispatching heuris-
+tics a = IH and a = CH prioritise chambers by fill 
+rate (see Equation 23), neglecting energy considerations. 
+However, assigning pallets with higher expected mini-
+mum energy requirements pϕ i increases the batch-level 
+energy requirement pϕ(In,tk) (see Equation 9). T o incor-
+porate energy awareness, a = CE prioritises the chamber 
+with the lowest energy-requirement increase relative to 
+remaining capacity. Feasible chambers ˜NCE i are deter-
+mined by compatibility (see Constraint 7), where empty 
+chambers are always feasible with pϕ(In,tk) = 0. Then, the 
+expected energy increase 1ϕ i,n(tk) from assigning pallet i
+to chamber n is calculated:
+1ϕ i,n(tk) = max(pϕ i , pϕ(In,tk)) − pϕ(In,tk)
+∀n ∈ N′(tk) (25)
+Next, remaining pallet capacity is computed:
+gn(tk) = gn − |I n,tk| ∀n ∈ N′(tk) (26)
+The capacitated expected energy increase is then:
+1ϕ i,n(tk) = 1ϕ i,n(tk) gn(tk) ∀n ∈ N′(tk) (27)
+The pallet-chamber dispatching score is the inverse of 
+1ϕ i,n(tk) , ensuring the chamber with the lowest energy-
+to-capacity ratio receives priority:
+d(2),CE i,n (tk) =
+⎧
+⎨
+⎩
+1
+1 + 1ϕ i,n(tk) , if n ∈ ˜NCE i (tk)
+0, otherwise
+∀i ∈ ˜Ia(tk), ∀n ∈ N′(tk) (28)
+The increment of one avoids division by zero when 
+1ϕ i,n(tk) = 0, i.e. when the assigned pallet does not exceed 
+the batch-level energy requirement (see Equation 25); 
+such chambers receive the highest priority. When energy-
+to-capacity ratios are equal, chambers already holding 
+pallets of the same job are preferred, with chamber ID 
+as tiebreaker (see Equation 16).
+4.2.3. Chamber early-start
+The Chamber Early-Start heuristics can be combined 
+with any Pallet Evaluation and Chamber Dispatching
+heuristic.
+4.2.3.1. Time conditional start (TC). At CP, Chamber 
+Early-Start is triggered when all pallets of job o∗ are 
+assigned, regardless of remaining capacity (see Equation 
+17). This approach has two downsides: heat-treatment 
+may start with unused capacity, reducing throughput 
+potential, and chambers may wait excessively if pallet 
+arrivals are delayed, increasing lead times. T o address 
+this, a = TC replaces the job-completion condition with 
+a maximum chamber waiting-time ¯τ :
+ˆNTC(tk) = { n ∈ N′(tk)|(tk − tn)⟩ ¯τ } (29)
+where tn ∈ T denotes when the last pallet was loaded. 
+Chamber Early-Start is triggered using the CP decision 
+structure (see Equation 18) with ˆNTC(tk).
+4.2.3.2. Time and order conditional start (TO). Heuris-
+tic a = TO combines CP’s job-completion condition (see 
+Equation 17) and TC’s time limit (see Equation 29), trig-
+gering Chamber Early-Start when either is satisfied:
+d(3),TO n (tk) =
+{︄
+1, if n ∈ ˆN CP (tk) or n ∈ ˆN TC (tk)
+0, otherwise
+∀n ∈ N′(tk) (30)
+4.3. Genetic programming
+Under approach a = GP, evolved rules serve as a bench-
+mark for a single sub-decision – Pallet Evaluation. W e 
+adopt the single-tree representation of Braune et al. 
+(2022) and rely on the classical Genetic Programming
+paradigm (Koza 1992) to evolve priority rules for the 
+evaluation score d(1),GP i , using mathematical formulas 
+that dynamically combine system-state attributes. Unlike 
+the handcrafted rules, the GP-evolved score follows a 
+minimisation convention: a lower d(1),GP i indicates higher 
+assignment priority. Consistent with the RH approaches, 
+GP evaluation is restricted to buffered pallets ˜IGP(tk) =
+I′′(tk) (see Section 4.2.1).
+4.3.1. Function and terminal set
+T o synthesise these rules, GP evolves tree-based struc-
+tures representing arithmetic expressions consisting of 
+the four basic operators {+, −, ×, ÷} (with protected 
+division returning 1 to avoid division by zero), seven 
+terminal symbols, and a random G ∈ [−10, 10] ⊂ R
+(summarised in Table 3). T erminal symbols form the leaf 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 13
+Table 3. Terminal symbols used in genetic programming trees.
+Notation Terminal Name Normalisation Category
+I_ST Pallet Slack Times Max Slack (12 h) Pallet
+O_RUI Remaining Unassigned Pallets – Job Max Lot Size Job
+O_RUI_B Remaining Unassigned Pallets – Job in Buffer
+P_RUI Remaining Unassigned Pallets – Programme Total Unassigned Pallets Programme
+P_RUI_B Remaining Unassigned Pallets – Programme in Buffer
+P_RUIX Remaining Unassigned Pallets – Compatible Programme
+P_RUIX_B Remaining Unassigned Pallets – Compatible Programme in Buffer
+G Random Constant (number from −10 to 10) – –
+nodes describing the current system state, dynamically 
+recalculated at tk and categorised into three groups. As 
+these terminals have different scales (hours and pallet 
+counts), they are normalised by category-dependent ref-
+erence values (see Table 3) so that they enter the evolved 
+rules on a comparable scale. The terminal set is restricted 
+to pallet-, job-, and programme-related attributes. T ermi-
+nals describing the global system state were excluded, as 
+they assume identical values for all pallets at a given deci-
+sion point, providing no discriminating information in 
+arithmetic-only GP trees without conditional branching.
+4.3.1.1. Pallet-related terminals. For each pallet, slack 
+time I_ST measures the remaining time until waiting-
+time constraint violation, normalised by the maximum 
+allowable waiting-time (12 h). It captures the same infor-
+mation as LS (see Section 4.2.1), but as a continuous value 
+for arithmetic combination.
+4.3.1.2. Job-related terminals. Job-related terminals
+aggregate information across all pallets sharing the same 
+job identifier oi, normalised by the current maximum lot 
+size. O_RUI captures the total unassigned pallets per job 
+(analogous to L W) and O_RUI_B those remaining in the 
+buffer (analogous to L W), both as continuous pallet-level 
+values (see Section 4.2.1).
+4.3.1.3. Programme-related terminals. Programme-
+related terminals aggregate information across all pal-
+lets sharing the same heat-treatment programme pi, 
+normalised by the total number of unassigned pallets. 
+They include unassigned pallets of the same programme 
+P_RUI, those in the buffer P_RUI_B, pallets with com-
+patible programmes P_RUIX, and those both compatible 
+and in the buffer P_RUIX_B.
+4.3.2. Evolutionary process
+Figure 5 shows how the operators interact with the sim-
+ulation over the full cycle: blue steps denote Genetic Pro-
+gramming operations, orange steps the simulation-based 
+evaluation. Figure 6 details the four operators individu-
+ally on the problem’ s terminal set.
+The initial population is generated using the Proba-
+bilistic Tree Creator (PTC2) method (Luke 2000). Tree 
+Figure 5. Genetic programming procedure coupled with simulation-based evaluation.
+14 
+ B. BOKOR ET AL.
+Figure 6. Operator-level illustration of the genetic programming process.
+nodes are randomly selected (operators as internal nodes 
+and terminals as leaf nodes) until the maximum tree size 
+is reached, respecting the maximum tree depth. This pro-
+vides a controlled tree-size distribution and structural 
+diversity.
+The process then iterates over the four operators, each 
+illustrated in Figure 6. First, in the Evaluation step (A), 
+each individual is applied as a priority rule to compute 
+the evaluation score d(1),GP i for all i ∈ I′′(tk). The indi-
+vidual is then applied within the scheduling framework 
+(see Figure 4), and its fitness is obtained from a sim-
+ulation run using the Global Objective Function (1). T o 
+account for stochastic uncertainty, the fitness is aver-
+aged over multiple replications with different random 
+seeds. Second, Selection (B) via T ournament Selection
+chooses parents for recombination, as widely applied in 
+GP-based scheduling (M. Xu et al. 2025). The best indi-
+vidual is retained unchanged (elitism). Third, Crossover 
+(C) via Subtree Crossover (Koza 1992) is applied to the 
+selected parents: two trees exchange subtrees rooted at 
+randomly chosen cut points to form an offspring, inher-
+iting structural components from both. Fourth, Muta-
+tion (D) via Multi-Mutation is applied to each offspring, 
+randomly selecting one of five strategies (Scheibenpflug 
+et al. 2015): constant perturbation, node-type change, 
+subtree replacement, subtree removal, and full tree shak-
+ing. Finally, the best individuals are re-evaluated with 
+different random seeds to obtain a more reliable fitness 
+estimate.
+5. Simulation model
+T o evaluate the energy- and labour-aware scheduling 
+approaches, we developed an agent-based discrete-event 
+simulation model mirroring the lead plate production of 
+the case company (see Figure 1). Operational details are 
+covered in Sections 3–4; this section specifies parametri-
+sation and validation.
+The multi-item, multi-stage model includes four pre-
+production lines and 31 heat-treatment chambers (15 
+with 32-pallet capacity, 16 with 16-pallet capacity). 
+Real-world uncertainty is introduced via stochastic job 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 15
+Table 4. Simulation model parametrisation derived from company data.
+Job Generation Mean CV
+Inter-Arrival Time [Jobs / Day] Tested in Numerical Study 0.20†
+Lead Plate Types 0.14; 0.05; 0.01; 0.01; 0.03; 0.01; 0.01; –
+0.01; 0.14; 0.11; 0.06; 0.08; 0.03; 0.01;
+0.06; 0.01; 0.03; 0.13; 0.01; 0.05; 0.01
+Lot Size [Pallet] 153; 76; 49; 29; 48; 39; 28; 0.33; 0.47; 0.43; 0.31; 0.52; 0.43; 0.43;
+37; 159; 119; 77; 88; 49; 35; 0.00; 0.31; 0.36; 0.47; 0.42; 0.45; 0.37;
+76; 32; 62; 128; 32; 59; 44 0.36; 0.28; 0.32; 0.39; 0.32; 0.46; 0.00
+Pre-Production – Plate Forming Weighted Mean (Min / Max) CV
+Continuous Casting – Setup [Min. / Pallet] 43.15 (0.00–60.00) 0.20†
+Continuous Casting – Processing [Min. / Pallet] 11.82 (11.01–12.91)
+Expanded Metal – Setup [Min. / Pallet] 14.78 (0.00–60.00) 0.20†
+Expanded Metal – Processing [Min. / Pallet] 17.14
+Pre-Production – Pasting Weighted Mean (Min / Max) CV
+Continuous – Setup [Min. / Pallet] 67.43 (0.00–120.00) 0.20†
+Continuous – Processing [Min. / Pallet] 10.31 (6.30–71.30)
+Expanded Metal – Setup [Min. / Pallet] 68.83 (0.00–120.00) 0.20†
+Expanded Metal – Processing [Min. / Pallet] 14.22 (9.30–16.60)
+Heat-Treatment Mean CV
+Loading / Unloading [Min. / Pallet] 1 0.20†
+Maximum Waiting-Time [Hours] 12 –
+Inspection Duration υ [Min. / Inspection] 60 –
+Re-Warm-Up Time [Min. / Batch] 60 –
+Exp. Min. Energy Rqmt. – Curing [kWh] 308.84; 641.36; 934.36; 249.14 0.30
+Exp. Min. Energy Rqmt. – RH Target [kWh] 604.51; 582.58; 368.72; 1084.27 0.30
+Cost Parameters Value –
+Scrap Costs γ [e / Pallet] 2250.00 –
+Energy Costs ϕ [e / kWh] 0.197 –
+Labour Costs δ [e / hour] 40.90 –
+arrivals, lot sizes, pre-production setup/processing times, 
+loading/unloading times, and batch-specific minimum 
+energy requirements. Table 4 – derived from 2024 oper-
+ational data – summarises the parametrisations grouped 
+into job generation, pre-production, and heat-treatment. 
+Scrap costs reflect company calculations; energy and 
+labour costs are based on Austrian industrial aver-
+ages (Eurostat 2022a, 2022b). Where empirical data was 
+unavailable, CV = 0.20 was assumed (marked with †).
+5.1. Job generation
+Job inter-arrival times follow log-normal distributions 
+(CV = 0.20), with the mean varied across the three util-
+isation scenarios of the numerical study. Each job rep-
+resents one of 21 plate types with lot sizes sampled from 
+plate-specific log-normal distributions (see Table 4: selec-
+tion probabilities, means, CVs).
+5.2. Pre-production
+Setups at plate forming and pasting are required when 
+switching between most plate types, with asymmetric 
+changeover times depending on switching direction. Pro-
+cessing times are also plate-type-dependent. The simula-
+tion uses complete plate-type-specific setup matrices and 
+processing times; due to company disclosure restrictions 
+and the scope of this study (treating pre-production as a 
+stochastic input process), these are not reported in detail. 
+Table 4 reports demand-weighted means per operation 
+and process route (calculated as sum-product of required 
+times and plate-type selection probabilities), minimum, 
+and maximum values. Setup and processing times follow 
+log-normal distributions (CV = 0.20).
+5.3. Heat-treatment
+Loading and unloading follow log-normal distributions 
+(mean = 1 min/pallet, CV = 0.20), with loading priori-
+tised when both operations compete for the operator. 
+The maximum allowable waiting-time for buffered pal-
+lets is 12 h (see Equation 4). In contrast, all other heat-
+treatment steps are batch-based and deterministic (i.e. 
+realised and planned processing times match). Re-warm-
+up durations are fixed at 60 min per cycle. Planned pro-
+cessing times for Main Process Steps and Rework Process 
+Steps are set via processing-energy factors (see Section 
+3.2) and optimised in the numerical study.
+Table 4 reports expected minimum energy require-
+ments for each heat-treatment programme (CV = 0.30 
+for all programmes), derived from metallic-lead inspection 
+data (Bokor, Altendorfer, and Matta 2025). Batch-specific 
+16 
+ B. BOKOR ET AL.
+requirements are sampled from log-normal distributions. 
+The simulation declares curing complete or the relative-
+humidity target reached (stochastic stopping problem) 
+when cumulative energy input meets or exceeds the 
+batch-specific requirement (see Section 3.2).
+Inspection effort enters the objective through the 
+number of inspections and their average duration (see 
+Equation 1). At the case company, the two mandatory 
+inspections per batch – metallic lead after maturation and 
+relative humidity after drying – take about 30 min each, 
+while a rework inspection takes about 60 min due to a 
+more thorough examination. Accordingly, we count the 
+two mandatory inspections as one inspection of 60 min 
+per batch, so that every inspection – per batch and per 
+rework cycle – has a constant duration of 60 min.
+The programme compatibility matrix (see Equation 
+6) has a clear structure: Positive-with-V aporisation is 
+exclusively self-compatible, while Negative, Positive, 
+and Start/Stop are mutually compatible. Since batch-
+level energy is set by the most energy-intensive pro-
+gramme involved (see Equation 9), mixing programmes 
+increases energy consumption. This effect is strongest 
+for Start/Stop, which has the highest expected minimum 
+requirement for the relative-humidity target (see Table 
+4): assigning such a pallet to a Negative or Positive batch 
+forces the entire batch to adopt it, substantially increas-
+ing energy consumption and prolonging heat-treatment 
+time.
+5.4. Model validation
+The simulation model was validated in three steps. First, 
+all input parameters were drawn from the case com-
+pany’ s 2024 operational data, as specified in Sections 
+5.1–5.3 and Table 4, establishing input validity. Second, 
+the model structure and logic were refined with the com-
+pany’ s domain experts through plant visits, interviews, 
+and repeated feedback rounds, confirming that the model 
+represents the real production process and establishing 
+structural validity. Third, the resulting outputs were pre-
+sented to these experts, who assessed them as plausible 
+and consistent with operational experience, supporting 
+the model’ s face validity. Since the production process, 
+decision logic, and optimisation model of Section 3 are 
+implemented in this simulation, the validation includes 
+all of these aspects.
+6. Numerical study
+W e conduct a two-stage numerical study to quantify 
+cost-reduction potential and examine effects on system 
+behaviour via production logistics indicators.
+First, a full-factorial study evaluates all RH (includ-
+ing CP) introduced in Section 4 across three utilisation 
+scenarios, varied through mean job arrivals per day. The 
+lowest utilisation represents the current company sce-
+nario; medium and high scenarios increase utilisation by 
+approximately 10% and 20%, respectively. Five heuris-
+tics are assessed for Pallet Evaluation, four for Chamber 
+Dispatching, and three for Chamber Early-Start, with five 
+values tested for the maximum chamber waiting-time ¯τ
+(see Equation 29). T o keep the experimental design uni-
+form, all parameter combinations are enumerated even 
+for heuristics not requiring ¯τ . For Main Process Steps and 
+Rework Process Steps, five values are evaluated per factor 
+to set planned processing times. Table 5 lists the investi-
+gated parameters, their ranges (selected based on prelim-
+inary runs), and the resulting full-factorial design. This 
+design generates 22,500 parameter combinations, each 
+replicated 20 times to account for stochastic variability, 
+resulting in 450,000 simulation runs.
+Second, focusing on the high-utilisation scenario, 
+where tighter capacity makes scheduling more demand-
+ing, we substitute Pallet Evaluation with GP-evolved 
+priority rules (see Figure 4) in two configurations: 
+(1) applied to CP Base and (2) integrated with the 
+Best RH. The GP approach is implemented using 
+HeuristicLab 3.3,1 an open-source framework provid-
+ing predefined evolutionary algorithms and GP operators 
+(Scheibenpflug et al. 2015). The evolutionary process (see 
+Figure 5) generates an initial population of 50 individuals 
+using PTC2, with maximum tree depth 5 and maximum 
+tree size 20, set based on preliminary runs. This compact 
+configuration is a direct benefit of the decomposition: 
+because GP evolves only one of five sub-decisions, the 
+search space remains small, and compact trees already 
+yield strong rules. In these preliminary runs, we varied 
+Table 5. Parameters and experimental design for full-factorial 
+study.
+Parameters Min Max Step Size # Values
+Mean Jobs / Day 4.80 5.80 0.50 3
+Pallet Evaluation d(1) i – – – 5 Chamber Dispatching 
+d(2) i,n
+– – – 4
+Chamber Early-Start 
+d(3) n
+– – – 3
+Maximum Chamber 
+Waiting-Time ¯τ [h]
+10.00 30.00 5.00 5
+Processing-Energy 
+Factor – Main Process 
+Steps d(4)
+1.05 1.25 0.05 5
+Processing-Energy 
+Factor – Rework 
+Process Steps d(5)
+0.15 0.35 0.05 5
+Iterations 22,500
+Simulation Runs (20 
+Replications per 
+Iteration)
+450,000
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 17
+Table 6. Parametrisation and experimental design for GP experi-
+ments.
+Parameter Value
+Population Size 50
+Maximum Tree Depth 5
+Maximum Tree Size 20
+Tournament Size 2
+Elite Size 1
+Internal Crossover Point Probability 0.90
+Mutation Probability 0.30
+Number of Generations 100
+Simulation Runs per Configuration 15,000
+Re-evaluation Replications (Best Individuals) 20
+Number of Experimental Configurations 2
+Total Simulation Runs (including Re-evaluation) 30,400
+three numerical parameters (population size, maximum 
+tree depth, and number of generations) and tested condi-
+tional extensions of the function set (greater-than, less-
+than, and if-else). None improved solution quality, sup-
+porting the arithmetic-only function set and the chosen 
+configuration.
+Given the small population, a tournament size of 2 
+and a single elite individual keep selection pressure low, 
+preserving diversity. Crossover is applied with 90% inter-
+nal crossover point probability to favour larger subtree 
+exchanges, following the high-crossover convention of 
+GP (Koza 1992). With a small terminal set and single 
+sub-decision, the mutation probability is set to 30% to 
+sustain exploration and prevent premature convergence 
+to local optima. As the preliminary runs showed rapid 
+fitness convergence, evolution runs for 100 generations.
+T o account for stochastic variability, each individual’ s 
+fitness is averaged over three replications during evolu-
+tion (see Figure 5). Once evolution is completed, the best 
+ten individuals of each configuration are re-evaluated 20 
+times with different random seeds, adding 200 simulation 
+runs per configuration.
+Table 6 summarises this design. Each of the two con-
+figurations requires 15,000 runs, yielding 30,400 runs in 
+total, including re-evaluation.
+Each simulation run spans a half-year observation 
+period (first month as warm-up) and completes in 
+approximately 30 s. The observation period was deter-
+mined by monitoring cost stabilisation (i.e. steady-state 
+convergence). T o ensure fair comparison across schedul-
+ing approaches with different ending system states, no 
+demand is generated during the final two weeks, allowing 
+the production system to empty. Parameter combinations 
+are generated in Python, distributed across 20 networked 
+PCs for parallel execution in AnyLogic 8.9.2, with results 
+stored in a SQLite database for analysis.
+7. Numerical results
+W e identify the configurations minimising the mean 
+daily cost from the Global Objective Function (1), aver-
+aged over 20 replications and reported per day over the 
+150-day evaluation window. For each configuration, we 
+report individual cost components – scrap S, energy E, 
+labour L – along with four mean production logistics 
+indicators: chamber utilisation U, the fraction of time 
+a chamber is occupied; fill rate F, the ratio of loaded 
+to maximum pallet capacity; heat-treatment time H, the 
+chamber run time from first pallet loading until unload-
+ing completion; and loading time V, the loading phase as 
+a component of H.
+7.1. Performance of the rule-based heuristics
+W e compare the Base Setting with the Best Setting. For 
+the Base Setting, we alter one scheduling decision while 
+fixing all others at CP. For the Best Setting, we optimise 
+everything else around the RH under study: the other 
+two scheduling decisions and the processing-energy fac-
+tors. This allows us to (1) isolate individual RH effects, 
+(2) identify the best achievable solution for each RH, 
+and (3) analyse the improvement potential over CP 
+Base. Recall that under CP Base (see Section 4.1), each 
+scheduling decision follows current company practice: 
+single-job batching, waiting-time-based pallet ranking, 
+and processing-energy factors set to 1.20 and 0.25.
+W e focus on low (i.e. the current company scenario) 
+and high utilisation, as the medium scenario shows simi-
+lar but less pronounced effects. Results for medium utili-
+sation are provided in the Supplemental Online Material; 
+the configuration transfer in Section 7.3.2 covers all three 
+scenarios. Tables 7–9 show the performance of Pallet 
+Evaluation, Chamber Dispatching, and Chamber Early-
+Start heuristics, respectively. CP Base appears in the top-
+left cell in italic. Configurations with statistically lower 
+costs than CP are marked with (∗), while those not sig-
+nificantly worse than the best are bold (α = 0.05). V alues 
+are reported as (low/high utilisation).
+7.1.1. Effect of pallet evaluation
+Table 7 shows that at the Base Setting, slack-based heuris-
+tics (CP, LS) outperform the remaining heuristics (L W, 
+L W, HW), consistent with the effectiveness of due-date-
+related priority rules in stochastic scheduling (Bryant, 
+Lakner, and Pinedo 2022; Singh, Mehta, and Jain 2005). 
+Although statistically equivalent, LS (e4576/e20,899) 
+numerically outperforms CP (e4581/e24,057), partic-
+ularly at high utilisation. The difference stems from 
+relaxing the job-level restriction while keeping the slack-
+based ranking (see Section 4.2.1). At high utilisation, the 
+18 
+ B. BOKOR ET AL.
+Table 7. Performance of pallet evaluation heuristics at low and high utilisation.
+Low Utilisation
+Base Setting Best Setting
+CP e4581 S:22% E:63% L:15% e2714∗ S:0% E:77% L:23%
+U:85% F:59% H:57.8h V:3.7h U:73% F:92% H:60.4h V:9.7h
+LS e4576 S:22% E:63% L:15% e2710∗ S:0% E:79% L:21%
+U:85% F:59% H:57.7h V:3.6h U:74% F:92% H:61.6h V:9.6h
+LW e6125 S:42% E:47% L:11% e2713∗ S:0% E:77% L:23%
+U:85% F:58% H:57.9h V:3.7h U:73% F:92% H:60.4h V:9.7h
+LW e7883 S:55% E:36% L:9% e2715∗ S:0% E:77% L:23%
+U:85% F:58% H:57.9h V:3.7h U:73% F:92% H:60.4h V:9.7h
+HW e11,709 S:70% E:24% L:6% e2713∗ S:0% E:77% L:23%
+U:87% F:60% H:57.2h V:3.3h U:73% F:92% H:60.3h V:9.7h
+High Utilisation
+Base Setting Best Setting
+CP e24,057 S:83% E:14% L:3% e3542∗ S:2% E:75% L:23%
+U:96% F:60% H:56.5h V:2.4h U:84% F:95% H:58.4h V:7.8h
+LS e20,899 S:79% E:17% L:4% e3502∗ S:1% E:76% L:23%
+U:96% F:60% H:56.2h V:2.2h U:83% F:95% H:58.3h V:7.8h
+LW e35,568 S:88% E:10% L:2% e3947∗ S:12% E:67% L:21%
+U:95% F:58% H:57.0h V:2.6h U:83% F:94% H:58.1h V:7.8h
+LW e42,835 S:90% E:8% L:2% e4680∗ S:26% E:56% L:18%
+U:95% F:58% H:57.4h V:3.1h U:83% F:95% H:58.1h V:7.9h
+HW > e100k S:96% E:3% L:1% e3834∗ S:9% E:69% L:22%
+U:95% F:65% H:53.9h V:1.6h U:83% F:95% H:58.1h V:7.8h
+Note: CP base is shown in the top-left cell in italics. Configurations with statistically lower costs than CP are marked with (∗); configurations not significantly worse 
+than the best are shown in bold (α = 0.05). Values are reported as (low utilization / high utilization).
+Table 8. Performance of chamber dispatching heuristics at low and high utilisation.
+Low Utilisation
+Base Setting Best Setting
+CP e4581 S:22% E:63% L:15% e3631∗ S:2% E:75% L:23%
+U:85% F:59% H:57.8h V:3.7h U:81% F:58% H:54.5h V:3.9h
+IH e4660 S:22% E:63% L:15% e2710∗ S:0% E:79% L:21%
+U:85% F:58% H:57.3h V:3.2h U:74% F:92% H:61.6h V:9.6h
+CH e15,594 S:76% E:20% L:4% e2978∗ S:0% E:79% L:21%
+U:91% F:58% H:62.5h V:1.7h U:76% F:96% H:64.7h V:4.4h
+CE e13,588 S:72% E:23% L:5% e3009∗ S:1% E:78% L:21%
+U:91% F:58% H:62.2h V:2.0h U:77% F:92% H:65.1h V:5.6h
+High Utilisation
+Base Setting Best Setting
+CP e24,057 S:83% E:14% L:3% e9651∗ S:53% E:35% L:12%
+U:96% F:60% H:56.5h V:2.4h U:92% F:60% H:52.9h V:2.8h
+IH e24,204 S:83% E:14% L:3% e3502∗ S:1% E:76% L:23%
+U:96% F:59% H:56.0h V:2.0h U:83% F:95% H:58.3h V:7.8h
+CH e47,310 S:90% E:8% L:2% e5871∗ S:35% E:50% L:15%
+U:97% F:58% H:59.3h V:1.0h U:88% F:98% H:62.9h V:3.6h
+CE e45,860 S:90% E:8% L:2% e6002∗ S:34% E:49% L:17%
+U:97% F:58% H:59.2h V:1.1h U:88% F:94% H:62.6h V:4.1h
+Note: CP base is shown in the top-left cell in italics. Configurations with statistically lower costs than CP are marked with (∗); configurations not significantly worse 
+than the best are shown in bold (α = 0.05). Values are reported as (low utilization / high utilization).
+broader pallet eligibility pool enables preemptive assign-
+ment of the most time-critical pallets across all jobs, 
+reducing scrap (CP Base: 83% vs. LS Base: 79%).
+The remaining heuristics (L W , L W, HW) suffer from 
+the absence of slack-based urgency – prioritising job 
+completion (L W, L W) or programme workload (HW) 
+leads to increased waiting-time violations. Especially 
+for HW (e11,709/ > e100k), prioritising the highest-
+workload programme combined with CP’s job-level batch 
+restriction causes excessive scrap. Paradoxically, this also 
+results in the shortest heat-treatment time (53.9 h) and 
+highest fill rate (65%) at high utilisation. This is not 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 19
+Table 9. Performance of chamber early-start heuristics at low and high utilisation.
+Low Utilisation
+Base Setting Best Setting
+CP e4581 S:22% E:63% L:15% e3631∗ S:2% E:75% L:23%
+U:85% F:59% H:57.8h V:3.7h U:81% F:58% H:54.5h V:3.9h
+TC e7271 S:51% E:40% L:9% e2710∗ S:0% E:79% L:21%
+U:90% F:59% H:61.5h V:7.4h U:74% F:92% H:61.6h V:9.6h
+TO e4581 S:22% E:63% L:15% e3631∗ S:2% E:75% L:23%
+U:85% F:59% H:57.8h V:3.7h U:81% F:58% H:54.5h V:3.9h
+High Utilisation
+Base Setting Best Setting
+CP e24,057 S:83% E:14% L:3% e9651∗ S:53% E:35% L:12%
+U:96% F:60% H:56.5h V:2.4h U:92% F:60% H:52.9h V:2.8h
+TC e42,313 S:90% E:8% L:2% e3502∗ S:1% E:76% L:23%
+U:98% F:59% H:60.0h V:5.9h U:83% F:95% H:58.3h V:7.8h
+TO e24,057 S:83% E:14% L:3% e9651∗ S:53% E:35% L:12%
+U:96% F:60% H:56.5h V:2.4h U:92% F:60% H:52.9h V:2.8h
+Note: CP base is shown in the top-left cell in italics. Configurations with statistically lower costs than CP are marked with (∗); configurations not significantly worse 
+than the best are shown in bold (α = 0.05). Values are reported as (low utilization / high utilization).
+efficiency but a consequence of the company’ s demand 
+structure: the most demanded programme dominates 
+the buffer and has the shortest expected heat-treatment 
+time, so HW almost exclusively selects these pallets while 
+less demanded pallets accumulate and violate their con-
+straints.
+At the Base Setting, single-job batching yields a low 
+fill rate that requires more batches and increases cham-
+ber utilisation. With more chambers occupied, fewer are 
+available to process waiting pallets, resulting in high scrap 
+costs. While manageable at low utilisation, this esca-
+lates at high utilisation. Additional batches also increase 
+energy and labour costs through more heat-treatment 
+runs.
+At the Best Setting, this problem is resolved – cham-
+ber utilisation decreases while the fill rate increases across 
+all heuristics. All configurations significantly outperform 
+CP Base, converging at low utilisation (e2710–e2715), 
+including HW despite its poor Base Setting perfor-
+mance (e11,709). This confirms that heuristic choice 
+becomes less critical in optimised, low-congestion sys-
+tems (Baker and Kanet 1983; Sweeney, Sweeney, and 
+Campbell 2019). Comparing CP Base with CP Best, the 
+cost structure shifts from scrap-dominated to energy-
+dominated (scrap reduces from 22%/83% to 0%/2%). 
+Loading time increases (CP Base: 3.7 h/2.4 h vs. CP Best: 
+9.7 h/7.8 h) as chambers wait longer to achieve a higher 
+fill rate (CP Base: 59%/60% vs. CP Best: 92%/95%). Heat-
+treatment time increases only slightly, indicating that 
+lower processing-energy factors reduce chamber occu-
+pation sufficiently to offset longer run times. Thus, the 
+current setting is too conservative – excessive safety mar-
+gins cause unnecessarily long heat-treatment, increas-
+ing chamber occupation and energy costs. Reducing 
+these margins and accepting higher rework penalties 
+improves performance, confirming and extending the 
+single-chamber finding of Bokor, Altendorfer, and Matta 
+(2025). At high utilisation, LS Best (e3502) and CP Best
+(e3542) achieve statistically equivalent lowest costs, con-
+firming that slack-based prioritisation remains optimal 
+for Pallet Evaluation.
+7.1.2. Effect of chamber dispatching
+Table 8 shows that at the Base Setting, identical pro-
+gramme assignment (CP Base: e4581/e24,057, IH Base: 
+e4660/e24,204) outperforms programme mixing (CH 
+Base: e15,594/e47,310, CE Base: e13,588/e45,860). 
+Since Pallet Evaluation prioritises by job-level waiting-time 
+and Chamber Early-Start is triggered once all pal-
+lets of a job are assigned, relaxing the batch restric-
+tion from identical to compatible programmes intro-
+duces flexibility that cannot be exploited. Consequently, 
+the fill rate stays low and scrap rises sharply at high
+utilisation.
+At the Best Setting, the cost structure shifts analo-
+gously to Pallet Evaluation. All configurations signifi-
+cantly outperform CP Base, with IH emerging as the 
+best-performing heuristic (e2710/e3502). Notably, CP
+performs worst at the Best Setting (e3631/e9651), as 
+its single-job restriction cannot be compensated by opti-
+mising other sub-decisions. Although CH achieves the 
+highest fill rate, this comes at the cost of longer heat-
+treatment time (IH: 61.6 h/58.3 h vs. CH: 64.7 h/62.9 h) 
+due to programme mixing. This longer heat-treatment 
+raises chamber utilisation, reducing available capacity for 
+waiting pallets and increasing scrap, especially at high 
+utilisation. IH avoids this by restricting batches to iden-
+tical programmes. This causes the longest loading time 
+20 
+ B. BOKOR ET AL.
+(IH: 9.6 h/7.8 h vs. CH: 4.4 h/3.6 h), but yields shorter 
+heat-treatment and lower chamber utilisation.
+7.1.3. Effect of chamber early-start
+Table 9 shows that at the Base Setting, CP and TO
+yield identical costs (e4581/e24,057), as the time condi-
+tion is never reached and Chamber Early-Start is always 
+driven by job completion. TC, however, performs worse 
+(e7271/e42,313), as time-based triggering starts cham-
+bers before sufficient pallets are available. Chamber utili-
+sation increases and waiting-time violations occur due to 
+reduced chamber availability, driving up scrap. 
+At the Best Setting, all configurations significantly out-
+perform CP Base. Despite its poor Base Setting per-
+formance, TC emerges as the best-performing heuristic 
+(e2710/e3502). Since Pallet Evaluation and Chamber 
+Dispatching restrictions are relaxed, TC’s time-based trig-
+gering can be fully exploited, achieving the highest fill 
+rate (92%/95%) and outperforming CP/TO (58%/60%). 
+This higher fill rate increases loading time (CP/TO: 
+3.9 h/2.8 h vs. TC: 9.6 h/7.8 h) and heat-treatment time 
+(CP/TO: 54.5 h/52.9 h vs. TC: 61.6 h/58.3 h). However, 
+these are outweighed by reduced chamber utilisation 
+(CP/TO: 81%/92% vs. TC: 74%/83%), freeing capacity to 
+process waiting pallets and reducing scrap. CP/TO again 
+perform worst at the Best Setting (e3631/e9651), due to 
+the single-job restriction (see Section 7.1.2).
+7.2. Performance of genetic programming
+At high utilisation, we substitute Pallet Evaluation with 
+GP-evolved rules in two configurations (see Section 6): 
+applied to CP Base and integrated with the Best RH.
+7.2.1. Cost and robustness of evolved rules
+In the CP Base configuration, GP reduces costs from 
+e24,057 to e13,971, a statistically significant 41.9% 
+reduction (p < 0.001, α = 0.05). In addition, the CV 
+across replications decreases by 26.2%, indicating higher 
+robustness. In the Best RH configuration, the same substi-
+tution reduces costs from e3502 to e3484, a statistically 
+non-significant 0.5% reduction. Despite the marginal 
+cost effect, the CV across replications decreases by 20.7%, 
+substantially improving solution robustness. This limited 
+improvement points to the effect of the two-level decom-
+position: it reduces complexity to a point where the hand-
+crafted slack-based heuristics already capture the essen-
+tial scheduling logic, leaving little residual potential for 
+GP (Zhang et al. 2024).
+7.2.2. Analysis of evolved rules
+T o understand why the evolved rules perform well, we 
+examine their structure and the terminals they rely on. 
+Figure 7 shows the best-performing rule of each configu-
+ration as an expression tree (operators in blue, terminals 
+in black), while Equations (31–32) give the correspond-
+ing rules in compact form.
+In the CP Base configuration, the best-performing 
+evolved rule is:
+d(1),GP i = (4.17 + 3.11∗I_ST) (3.08∗ O_RUI_B) (31)
+The rule prioritises pallets by slack time I_ST in the 
+numerator (coefficient 3.11). A smaller I_ST means less 
+remaining slack, yielding a smaller score and thus higher 
+priority under the minimisation convention, analogous 
+to LS. The denominator O_RUI_B (coefficient 3.08) fur-
+ther lowers the score for pallets from jobs already well 
+represented in the buffer, accelerating their assignment.
+In the Best RH configuration, the best-performing 
+evolved rule is:
+d(1),GP i = (8.00 + 2.05∗I_ST − 0.12∗O_RUI)
+∗(2.37∗ I_ST − 0.12∗O_RUI) (32)
+Figure 7. Best-performing evolved rules for pallet evaluation.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 21
+The rule introduces a multiplicative structure in which 
+slack time I_ST dominates both factors (coefficients 2.05 
+and 2.37), again with less slack yielding higher priority. 
+The secondary term O_RUI (coefficient −0.12 in both 
+factors) gives slightly higher priority to pallets from jobs 
+with more remaining unassigned pallets. This is effec-
+tive because Best RH uses IH for Chamber Dispatching, 
+which lets same-programme pallets from different jobs 
+share a batch. Favouring high-workload jobs then raises 
+the chamber fill rate, reducing the number of batches and 
+thus energy and chamber utilisation.
+T o assess whether this pattern generalises, we exam-
+ine the terminals used across the best ten evolved rules 
+of each configuration. Slack time I_ST appears in all 
+twenty rules, confirming that GP consistently identifies 
+slack as the primary prioritisation signal. The secondary 
+terminal is always job-related (O_RUI_B under CP Base, 
+O_RUI under Best RH). Notably, none of the rules rely on 
+programme-related terminals.
+These patterns all follow from the decomposition. 
+Slack dominates because the waiting-time constraint 
+imposes an implicit deadline. Pallets close to their limit 
+must be assigned first, so slack directly captures the 
+relevant urgency. Programme-related terminals are dis-
+carded because programme compatibility is already gov-
+erned by a separate sub-decision – Chamber Dispatching
+– so programme information carries no useful signal at 
+the Pallet Evaluation level. The choice of job terminal 
+tracks the batching structure: under CP Base, batches are 
+limited to a single job, so only same-job pallets already 
+in the buffer can fill a batch; under Best RH, the IH
+relaxation and time-based early-start extend this to same-
+programme pallets across jobs shop-wide. In each case, 
+GP selects the job terminal capturing the batchable pal-
+lets (O_RUI_B when it is buffer-local, O_RUI when it is 
+shop-wide), confirming that the decomposition assigns 
+each concern to the sub-decision responsible for it.
+7.3. Synthesis of the best configuration
+After analysing the sub-decisions and the evolved rules 
+separately, we now synthesise the results into the best-
+performing configuration.
+7.3.1. Cost structure
+Table 10 summarises cost and robustness improvements 
+across utilisation levels. The Best RH configuration sig-
+nificantly outperforms CP Base – costs decrease by 40.8% 
+at low and 85.4% at high utilisation, while CV across 
+replications decreases by 86.6% and 87.1%, respectively. 
+Independent of the utilisation level, the best configura-
+tion combines LS for Pallet Evaluation, IH for Chamber 
+Dispatching, and TC for Chamber Early-Start with ¯τ =
+30h. Only the processing-energy factors differ, decreasing 
+as capacity tightens.
+Scrap is the dominant driver of this improvement, 
+falling from e1026/e19,780 to e6/e31 (low/high util-
+isation). At high utilisation – a 20% demand increase 
+on the same chamber capacity (see Section 6) – CP 
+Base is overwhelmed by scrap, whereas the optimised 
+schedule absorbs the additional demand almost without 
+scrap. Scheduling therefore unlocks substantial through-
+put potential through optimised decisions alone, without 
+adding capacity. Beyond scrap, energy decreases mod-
+erately at high utilisation while labour stays essentially 
+flat. At low utilisation, scrap remains the largest share, 
+but energy contributes a substantial part of the reduction. 
+The cost-component view also confirms the decompo-
+sition: since GP re-optimises only Pallet Evaluation, its 
+improvement over Best RH is confined to scrap (falling 
+from e31 to e13), while energy and labour remain 
+unchanged.
+However, the cost improvements reported above must 
+be interpreted with caution due to production system 
+stochastics (see Table 4), particularly in lot sizes. Cases 
+where lot sizes exceed chamber capacity by one pal-
+let would require manual planner intervention – such 
+exceptions are not covered in this study.
+7.3.2. Configuration transfer
+While Table 10 reports robustness across replications, 
+a further question is whether a configuration remains 
+effective when utilisation changes. Since the full-factorial 
+design evaluates every parameter combination in every 
+scenario (see Section 6), the performance of each opti-
+mum is known in all three. The scheduling decisions 
+are unaffected across all three scenarios, whereas the 
+processing-energy factors decrease. As the main factor 
+applies to every batch and the rework factor only to those 
+requiring additional cycles, the broader lever is used first: 
+d(4) decreases from 1.10 to 1.05 at medium utilisation, 
+while d(5) follows only at high utilisation, decreasing 
+from 0.35 to 0.30.
+Table 11 reports the resulting transfer matrix, with 
+rows denoting the scenario a configuration was opti-
+mised for and columns the scenario it is applied to. Trans-
+ferring a configuration costs at most 4.7%, and the loss is 
+asymmetric: only transfers into the high-utilisation sce-
+nario are significantly worse, while all others lie within 
+the confidence interval of the scenario optimum. These 
+losses are far below the 40.8% to 85.4% improvement 
+over CP Base, confirming that the configuration is robust 
+across utilisation scenarios.
+22 
+ B. BOKOR ET AL.
+Table 10. Cost and robustness summary across utilisation levels.
+Low Utilisation Costs S E L CV
+CP Base e4581 e1026 e2882 e673 0.201
+Best RH e2710∗ e6 e2143 e561 0.027
+1 vs. CP Base −40.8% −99.4% −25.6% −16.6% −86.6%
+High Utilisation Costs S E L CV
+CP Base e24,057 e19,780 e3464 e813 0.225
+Best RH e3502∗ e31 e2668 e803 0.029
+1 vs. CP Base −85.4% −99.8% −23.0% −1.2% −87.1%
+GP e3484∗ e13 e2668 e803 0.023
+1 vs. Best RH −0.5% −58.1% 0.0% 0.0% −20.7%
+Table 11. Configuration transfer across utilisation scenarios.
+Applied at
+Optimised for d(4)/d(5) Low Medium High
+Low 1.10 / 0.35 e2710 – e3099 (+0.0%) e3666 (+4.7%)
+Medium 1.05 / 0.35 e2720 (+0.4%) e3098 – e3636 (+3.8%)
+High 1.05 / 0.30 e2714 (+0.2%) e3118 (+0.6%) e3502 –
+Table 12. Cost and robustness across replications of pallet evalu-
+ation approaches at high utilisation.
+Base Setting Best Setting
+Costs [e] CV Costs [e] CV
+CP e24,057 0.225 e3542∗ 0.046
+LS e20,899 0.211 e3502∗ 0.029
+LW e35,568 0.210 e3947∗ 0.102
+LW e42,835 0.182 e4680∗ 0.132
+HW > e100k 0.316 e3834∗ 0.104
+Best RH e20,899 0.211 e3502∗ 0.029
+1 vs. CP −13.1% −6.2% −1.1% −37.0%
+GP e13,971∗ 0.166 e3484∗ 0.023
+1 vs. RH −33.1% −21.3% −0.5% −20.7%
+1 vs. CP −41.9% −26.2% −1.6% −50.0%
+Note: CP base is shown in italics. Configurations with statistically lower costs 
+than CP are marked with (∗); configurations not significantly worse than the 
+best are shown in bold (α = 0.05).
+7.3.3. Impact of sub-decisions
+T o identify the impact of the individual sub-decisions, 
+we take for each sub-decision its worst-performing rule 
+at the Best Setting. Comparing the resulting costs shows 
+what a poor choice imposes even under an other-
+wise optimal configuration. The single-job restriction 
+shared by Chamber Dispatching and Chamber Early-Start
+reaches e9651 at high utilisation (see Tables 8 and 9) 
+– more than double the e4680 reached by the weakest 
+Pallet Evaluation rule. The reason is that single-job batch-
+ing keeps the fill rate low, so chambers stay occupied 
+and fewer are available to process waiting pallets, which 
+drives scrap. By contrast, the choice of rule within Pal-
+let Evaluation – the only sub-decision addressed by both 
+handcrafted and evolved rules – is far less consequential. 
+Table 12 shows cost and robustness across replications of 
+all Pallet Evaluation approaches at high utilisation. At the 
+Best Setting, LS improves over CP by 1.1% in cost and 
+37.0% in CV , and substituting the rule with GP improves 
+over the already optimised Best RH by only 0.5% (see 
+Section 7.2.1).
+7.4. Managerial insights
+Six key insights for production managers emerge. (1) 
+Under high utilisation, items should be prioritised by 
+how close they are to their waiting-time limit (slack); 
+relaxing job-level restrictions adds only marginal benefit 
+(CP/LS). (2) Batches should group items with the same 
+process programme rather than mixing them to raise fill 
+rates. Mixed batches run longer and at higher energy 
+demand, and the resulting scrap outweighs the fill-rate 
+benefit (IH). (3) Switching from a completion-based to 
+a time-based trigger for starting a batch only pays off 
+once the upstream grouping and assignment decisions 
+are sound. On its own, a time trigger starts batches too 
+early and wastes capacity; combined with good grouping, 
+it raises fill rates and frees capacity (TC). (4) Some deci-
+sions are make-or-break: a restrictive dispatching rule 
+caps overall performance no matter how well the remain-
+ing decisions are tuned (CP). (5) Automated rule synthe-
+sis pays off where scheduling is currently poorly config-
+ured, delivering large cost and robustness gains (GP/CP 
+Base); once a decision is well handled by a simple rule, 
+the gain is mainly in robustness, not cost (GP/Best RH). 
+(6) When utilisation changes, the scheduling rules can 
+be kept and only the processing-energy factors adjusted; 
+tuning them for the highest expected level is the safer 
+choice.
+8. Conclusion
+Scheduling energy- and labour-aware batch processes 
+under uncertainty is difficult because several coupled 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 23
+decisions interact. W e addressed this for a European 
+lead-acid battery manufacturer, where lead plate heat-
+treatment must balance scrap, energy, and labour under 
+stochastic process completion, strict waiting-time con-
+straints, and programme-compatibility requirements. 
+The core of our work is methodological and problem-
+centric: we decomposed this complex problem into a 
+small set of well-defined sub-decisions – each addressed 
+by a generic, energy- and labour-aware approach. On this 
+basis, the study made four contributions.
+First, we formalised a real-world stochastic schedul-
+ing problem that jointly combines energy, labour, uncer-
+tainty, batch processing, and strict waiting-time con-
+straints – a combination not previously addressed 
+together. Second, we decomposed it into a two-level opti-
+misation with five sub-decisions: three at the system 
+level (Pallet Evaluation, Chamber Dispatching, Chamber 
+Early-Start) and two at the chamber level (Main Process 
+Steps, Rework Process Steps) that set planned processing 
+times for two independent stochastic stopping problems. 
+This partitions the problem along its decision structure 
+rather than its machine structure. Third, we designed 
+a generic scheduling framework spanning from simple 
+Rule-Based Heuristics (RH) to automatically synthesised 
+rules. Genetic Programming (GP) served as a benchmark 
+for a single sub-decision, testing whether its evolved rules 
+could outperform the handcrafted ones. Fourth, we con-
+ducted a comprehensive empirical evaluation grounded 
+in the real-world case, using an agent-based discrete-
+event simulation to identify the best-performing con-
+figurations and benchmark them against the company’ s 
+Current Practice.
+Results showed that optimising all five sub-decisions 
+with handcrafted rules (Best RH) significantly reduced 
+costs by 40.8% at low and 85.4% at high utilisa-
+tion (α = 0.05) over Current Practice, with substan-
+tially improved solution robustness. Substituting a sin-
+gle sub-decision with GP-evolved rules revealed both 
+what evolved rules achieve alone and what potential 
+handcrafted rules leave. Compared to Current Practice, 
+it significantly reduced costs by 41.9% at high utilisa-
+tion, whereas on the already optimised Best RH the cost 
+gain was marginal and non-significant – but robustness 
+still improved markedly, a critical advantage in stochas-
+tic environments. The best configuration further proved 
+robust across utilisation scenarios, requiring only lower 
+processing-energy factors as capacity tightened. The 
+analysis of the evolved rules showed that GP consistently 
+prioritised slack while ignoring programme information, 
+independently confirming that each sub-decision han-
+dles only what is relevant to it. For production managers, 
+these findings translate into concrete operating rules and 
+highlight which scheduling decisions are make-or-break. 
+Beyond this case, the decomposition and framework are 
+expected to generalise to other energy-intensive batch-
+processing systems with stochastic process completion, 
+waiting-time constraints, compatibility restrictions, and 
+batch-composition effects.
+Future research could pursue several directions. First, 
+comparing decomposed versus integrated GP approaches 
+would quantify the decomposition’ s contribution. Sec-
+ond, extending GP to other scheduling decisions, apply-
+ing simulation-based optimisation with rolling-horizon 
+re-evaluation, and exploring multi-objective formula-
+tions could reveal additional improvement potential. 
+Finally, validating the framework on further batch-
+processing cases would confirm its transferability.
+Note
+1. https://dev.heuristiclab.com.
+Author contributions
+CRediT: Balwin Bokor: Conceptualization, Formal analysis, 
+Funding acquisition, Investigation, Methodology, Software, 
+V alidation, Visualization, Writing – original draft, Writing – 
+review & editing; Roland Braune: Conceptualization, Method-
+ology, Software, Supervision, V alidation, Writing – review & 
+editing; Klaus Altendorfer: Conceptualization, Formal anal-
+ysis, Funding acquisition, Methodology, Project administra-
+tion, Supervision, V alidation, Writing – review & editing; Ste-
+fan W agner: Funding acquisition, Project administration, Soft-
+ware
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+While preparing this work, the authors used Claude and Gem-
+ini to improve readability and language, and to assist with the 
+literature review. After using these tools, the authors reviewed 
+and edited the content, taking full responsibility for the final 
+publication.
+Funding
+This work was supported by the Austrian Research Promo-
+tion Agency (FFG) under the ‘Produktion der Zukunft’ project 
+Sched-Energy [FO999891173] and under the Ph.D. funding 
+programme EE-Scheduling [FO999905125], the latter financed 
+by the Government of Upper Austria.
+Notes on contributors
+Balwin Bokor is a researcher and lec-
+turer at the University of Applied Sciences 
+Upper Austria (UAP), Steyr Campus, as 
+well as a PhD candidate at Johannes Kepler 
+University Linz. His research covers pro-
+duction planning, control and schedul-
+ing under stochastic conditions, com-
+bining discrete-event simulation, genetic 
+24 
+ B. BOKOR ET AL.
+programming-based heuristics and simulation-based optimi-
+sation. He is the corresponding author and can be contacted at: 
+balwin.bokor@fh-steyr.at
+Roland Braune is a Lecturer in Operations 
+Management at the University of Applied 
+Sciences Upper Austria (UAP) and the 
+University of Vienna. He holds a doctor-
+ate in Computer Science and a habilitation 
+in Business Administration. His research 
+focuses on mathematical and heuristic 
+optimisation in production scheduling, 
+supply chain management and integrated transportation logis-
+tics. His email address is roland.braune@fh-steyr.at
+Klaus Altendorfer is a Professor of Oper-
+ations Management at the University of 
+Applied Sciences Upper Austria (UAP). 
+He holds a PhD and a habilitation in 
+Logistics and Operations Management. 
+His research experience covers produc-
+tion planning and control, simulation of 
+production systems, stochastic inventory 
+models and energy consumption in manufacturing. His email 
+address is klaus.altendorfer@fh-steyr.at
+Stefan W agner is a Professor of Com-
+plex Software Systems and Dean of the 
+Hagenberg Campus of the University of 
+Applied Sciences Upper Austria (UAP), 
+where he also heads the Bachelor’ s Degree 
+Program in Software Engineering. He is 
+the head architect of HeuristicLab. His 
+research interests include heuristic and 
+evolutionary optimisation, with a focus on production and 
+logistics optimisation and Genetic Programming. His email 
+address is stefan.wagner@fh-ooe.at
+Data availability statement
+The data that support the findings of this study are available 
+in Zenodo at https://zenodo.org/records/19387236. Access is 
+granted upon reasonable request to the corresponding author.
+References
+Baker, Kenneth R., and John J. Kanet. 1983. “Job Shop Schedul-
+ing with Modified due Dates. ” Journal of Operations Manage-
+ment 4 (1): 11–22. https://doi.org/10.1016/0272-6963(83)
+90022-0.
+Bassière, Alicia, and David Benatia. 2025. “Moving Forward 
+Blindly: Uncertainty, Reliability, and the Energy Tran-
+sition. ” Energy Economics 151:108883. https://doi.org/10.
+1016/j.eneco.2025.108883.
+Bokor, Balwin, Klaus Altendorfer, and Andrea Matta. 2025. 
+“Optimizing Energy Consumption in Stochastic Production 
+Systems: Using a Simulation-Based Approach for Stopping 
+Policy. ” Journal of Cleaner Production 522:146335. https://
+doi.org/10.1016/j.jclepro.2025.146335.
+Bokor, Balwin, W olfgang Seiringer, and Klaus Altendorfer. 
+2025. “Integrating Simulation Budget Management into 
+Drum-Buffer-Rope: A Study on Parametrization and Reduc-
+ing Computational Effort. ” In Decision Sciences. V ol. 14778, 
+edited by Angel A. Juan, Javier Faulin, and David Lopez-
+Lopez, 220–234. Lecture Notes in Computer Science. Cham: 
+Springer Nature Switzerland.
+Bokor, Balwin, W olfgang Seiringer, Klaus Altendorfer, and 
+Roland Braune. 2026. “Energy-Efficient Shift Staffing and 
+Machine Stopping: A Threshold-Driven Two-Level Heuris-
+tic. ” Procedia Computer Science 277:443–452. https://doi.org/
+10.1016/j.procs.2026.02.086.
+Branke, Jurgen, Su Nguyen, Christoph W . Pickardt, and 
+Mengjie Zhang. 2016. “ Automated Design of Production 
+Scheduling Heuristics: A Review. ” IEEE Transactions on Evo-
+lutionary Computation 20 (1): 110–124. https://doi.org/10.
+1109/TEVC.2015.2429314.
+Braune, Roland, Frank Benda, Karl F . Doerner, and Richard F . 
+Hartl. 2022. “ A Genetic Programming Learning Approach 
+to Generate Dispatching Rules for Flexible Shop Schedul-
+ing Problems. ” International Journal of Production Economics
+243:108342. https://doi.org/10.1016/j.ijpe.2021.108342.
+Bryant, Richard, Peter Lakner, and Michael Pinedo. 2022. “On 
+the Optimality of the Earliest due Date Rule in Stochastic 
+Scheduling and in Queueing. ” European Journal of Opera-
+tional Research 298 (1): 202–212. https://doi.org/10.1016/j.
+ejor.2021.09.039.
+Conway, Richard W ., William L. Maxwell, and Louis W . Miller. 
+1967. Theory of Scheduling. Mineola, NY: Dover.
+European Central Bank. 2025. “Forecasted Increases in Unit 
+Labor Costs, Compensation per Employee, and Labor Pro-
+ductivity in the Eurozone Currency Area from 2024 to 2027 
+(in Percentage T erms). ” Statista. https://www.statista.com/
+statistics/1440599/forecasted-labor-cost-growth-rate-euro
+zone/.
+Eurostat. 2022a. “Electricity Prices for Non-household Con-
+sumers – Bi-annual Data (from 2007 Onwards). ”
+Eurostat. 2022b. “Labour Cost Levels by NACE Rev. 2 Activity. ”
+Eurostat. 2025. “Final Energy Consumption in Industry – 
+Detailed Statistics. ” Statistics Explained. https://ec.europa.eu/
+eurostat/statistics-explained/index.php?title = Final_energy
+_consumption_in_industry_-_detailed_statistics.
+Fowler, John W ., and Lars Mönch. 2022. “ A Survey of Schedul-
+ing with Parallel Batch (P-Batch) Processing. ” European Jour-
+nal of Operational Research 298 (1): 1–24. https://doi.org/10.
+1016/j.ejor.2021.06.012.
+Gahm, Christian, Florian Denz, Martin Dirr, and Axel T uma. 
+2016. “Energy-efficient Scheduling in Manufacturing Com-
+panies: A Review and Research Framework. ” European Jour-
+nal of Operational Research 248 (3): 744–757. https://doi.org/
+10.1016/j.ejor.2015.07.017.
+Glushchenko, Andrii. 2025. “Carbon Price in the EU ETS to Hit 
+e126/t by 2030. ” https://gmk.center/en/infographic/carbon-
+price-in-the-eu-ets-to-hit-e126-t-by-2030/.
+Gong, Xu, T oon de Pessemier, Luc Martens, and W out Joseph. 
+2019. “Energy- and Labor-Aware Flexible Job Shop Schedul-
+ing under Dynamic Electricity Pricing: A Many-Objective 
+Optimization Investigation. ” Journal of Cleaner Produc-
+tion 209:1078–1094. https://doi.org/10.1016/j.jclepro.2018.
+10.289.
+Herroelen, Willy, and Roel Leus. 2005. “Project Scheduling 
+under Uncertainty: Survey and Research Potentials. ” Euro-
+pean Journal of Operational Research 165 (2): 289–306. https:
+//doi.org/10.1016/j.ejor.2004.04.002.
+Hopp, W allace J., and Mark L. Spearman. 2011. Factory Physics: 
+Foundations of Manufacturing Management. 3rd ed. Long 
+Grove, IL: W aveland Press.
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 25
+Koza, John R.. 1992. Genetic Programming: On the Program-
+ming of Computers by Means of Natural Selection. Cam-
+bridge, MA: MIT Press.
+Li, Zukui, and Marianthi Ierapetritou. 2008. “Process Schedul-
+ing under Uncertainty: Review and Challenges. ” Computers 
+& Chemical Engineering 32 (4–5): 715–727. https://doi.org/
+10.1016/j.compchemeng.2007.03.001.
+Liu, Renke, Rajesh Piplani, and Carlos T oro. 2022. “Deep Rein-
+forcement Learning for Dynamic Scheduling of a Flexi-
+ble Job Shop. ” International Journal of Production Research
+60 (13): 4049–4069. https://doi.org/10.1080/00207543.2022.
+2058432.
+Luke, Sean. 2000. “Two Fast Tree-Creation Algorithms for 
+Genetic Programming. ” IEEE Transactions on Evolutionary 
+Computation 4 (3): 274–283. https://doi.org/10.1109/4235.
+873237.
+Mehta, Sanjay V ., and Reha Uzsoy. 1998. “Minimizing T otal 
+Tardiness on a Batch Processing Machine with Incompat-
+ible Job Families. ” IIE Transactions 30 (2): 165–178. https:
+//doi.org/10.1080/07408179808966448.
+Mönch, Lars, Rene Schabacker, Detlef Pabst, and John W . 
+Fowler. 2007. “Genetic Algorithm-Based Subproblem Solu-
+tion Procedures for a Modified Shifting Bottleneck Heuristic 
+for Complex Job Shops. ” European Journal of Operational 
+Research 177 (3): 2100–2118. https://doi.org/10.1016/j.ejor.
+2005.12.020.
+Müller, David, and Dominik Kress. 2022. “Filter-and-fan 
+Approaches for Scheduling Flexible Job Shops under 
+W orkforce Constraints. ” International Journal of Produc-
+tion Research 60 (15): 4743–4765. https://doi.org/10.1080/
+00207543.2021.1937745.
+Noegraheni, Enny, and Hasbi Nuradli. 2016. “ Aggregate Plan-
+ning to Minimize Cost of Production in Manufacturing 
+Company. ” Binus Business Review 7 (1): 39. https://doi.org/
+10.21512/bbr.v7i1.1448.
+Ozturk, Gurkan, Ozan Bahadir, and Aydin T eymourifar. 2019. 
+“Extracting Priority Rules for Dynamic Multi-objective Flex-
+ible Job Shop Scheduling Problems Using Gene Expression 
+Programming. ” International Journal of Production Research
+57 (10): 3121–3137. https://doi.org/10.1080/00207543.2018.
+1543964.
+Panwalkar, S. S., and W afik Iskander. 1977. “ A Survey of 
+Scheduling Rules. ” Operations Research 25 (1): 45–61. https:
+//doi.org/10.1287/opre.25.1.45.
+Pinedo, Michael L. 2016. Scheduling. Cham: Springer Interna-
+tional Publishing.
+Scheibenpflug, Andreas, Andreas Beham, Michael Kommenda, 
+Johannes Karder, Stefan W agner, and Michael Affenzeller. 
+2015. “Simplifying Problem Definitions in the HeuristicLab 
+Optimization Environment. ” In Proceedings of the Compan-
+ion Publication of the 2015 Annual Conference on Genetic and 
+Evolutionary Computation, edited by Sara Silva and Anna I. 
+Esparcia-Alcázar, 1101–1108. New Y ork: ACM.
+Schorn, Daniel S., and Lars Mönch. 2024. “Learning Prior-
+ity Indices for Energy-Aware Scheduling of Jobs on Batch 
+Processing Machines. ” IEEE Transactions on Semiconductor 
+Manufacturing 37 (1): 3–15. https://doi.org/10.1109/TSM.
+2023.3326865.
+Schorn, Daniel S., and Lars Mönch. 2026. “ A Genetic Program-
+ming Approach to Solve Energy-Aware Flexible Flow-Shop 
+Scheduling Problems with Batching and Time Constraints. ” 
+Flexible Services and Manufacturing Journal. Advance online 
+publication. https://doi.org/10.1007/s10696-026-09669-2.
+Shao, W eishi, Zhongshi Shao, and Dechang Pi. 2022. “ A Net-
+work Memetic Algorithm for Energy and Labor-Aware 
+Distributed Heterogeneous Hybrid Flow Shop Scheduling 
+Problem. ” Swarm and Evolutionary Computation 75:101190. 
+https://doi.org/10.1016/j.swevo.2022.101190.
+Singh, Amol, N. K. Mehta, and P . K. Jain. 2005. “Tardi-
+ness Based New Dispatching Rules for Shop Scheduling 
+with Unreliable Machines. ” International Journal of Simula-
+tion Modelling 4:5–16. https://doi.org/10.2507/IJSIMM04(1)
+1.036.
+Sweeney, Kevin D., Donald C. Sweeney, and James F . Campbell. 
+2019. “The Performance of Priority Dispatching Rules in a 
+Complex Job Shop: A Study on the Upper Mississippi River. ” 
+International Journal of Production Economics 216:154–172. 
+https://doi.org/10.1016/j.ijpe.2019.04.024.
+W ahl, Stefan, Christian Gahm, and Axel T uma. 2025. “Serial- 
+and Hierarchical-Batch Scheduling: A Systematic Review 
+and Future Research Directions. ” International Journal of 
+Production Research 63 (11): 4238–4268. https://doi.org/10.
+1080/00207543.2024.2432473.
+W ang, Junkai, Fei Qiao, Fu Zhao, and John W . Sutherland. 2016. 
+“Batch Scheduling for Minimal Energy Consumption and 
+Tardiness under Uncertainties: A Heat Treatment Applica-
+tion. ” CIRP Annals 65 (1): 17–20. https://doi.org/10.1016/j.
+cirp.2016.04.115.
+Wu, Kan, Edward Huang, Mengchang W ang, and Meimei 
+Zheng. 2022. “Job Scheduling of Diffusion Furnaces in 
+Semiconductor Fabrication Facilities. ” European Journal of 
+Operational Research 301 (1): 141–152. https://doi.org/10.
+1016/j.ejor.2021.09.044.
+Xiang, W enbin, Jie Zhang, Peng Zhang, and Ming W ang. 
+2026. “Dynamic Scheduling of W afer Batch Processing 
+Machines via Reinforcement Learning Enhanced by Expert-
+Guided Lightweight LLM. ” International Journal of Produc-
+tion Research 64 (7): 2731–2752. https://doi.org/10.1080/
+00207543.2025.2582768.
+Xu, J., X. Xu, and S. Q. Xie. 2011. “Recent Developments in 
+Dual Resource Constrained (DRC) System Research. ” Euro-
+pean Journal of Operational Research 215 (2): 309–318. https:
+//doi.org/10.1016/j.ejor.2011.03.004.
+Xu, Meng, Yi Mei, Fangfang Zhang, and Mengjie Zhang. 2025. 
+“Learn to Optimise for Job Shop Scheduling: A Survey with 
+Comparison between Genetic Programming and Reinforce-
+ment Learning. ” Artificial Intelligence Review 58 (6): 160. 
+https://doi.org/10.1007/s10462-024-11059-9.
+Yilmaz Eroglu, Duygu. 2025. “Green and On-Time Schedul-
+ing in Real-W orld T extile Production: A Genetic Algorithm 
+Approach V alidated by MIP and Benchmarked with ACO. ” 
+International Journal of Production Research 63 (24):
+10263–10290. https://doi.org/10.1080/00207543.2025.2549
+138.
+Zhang, Fangfang, Yi Mei, Su Nguyen, and Mengjie Zhang. 2024. 
+“Survey on Genetic Programming and Machine Learning 
+T echniques for Heuristic Design in Job Shop Scheduling. ” 
+IEEE Transactions on Evolutionary Computation
+28 (1): 147–167. https://doi.org/10.1109/TEVC.2023.3255
+246.
