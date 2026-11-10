@@ -49,8 +49,11 @@ _ARXIV_TERMS = ['"supply chain"', 'inventory', '"lot sizing"', '"production plan
                 '"production scheduling"', '"demand forecasting"', '"sales and operations"',
                 '"job shop"', '"network design"', '"facility location"', 'replenishment',
                 'newsvendor', '"safety stock"', '"capacity planning"', '"multi-echelon"', 'procurement']
+_ARXIV_CATS = ["math.OC", "cs.AI", "cs.LG", "cs.MA", "stat.ML", "stat.AP", "econ.GN", "econ.EM",
+               "eess.SY", "q-fin.RM"]
 ARXIV_API = ("https://export.arxiv.org/api/query?search_query="
-             + urllib.parse.quote(" OR ".join(f"ti:{t}" for t in _ARXIV_TERMS))
+             + urllib.parse.quote("(" + " OR ".join(f"ti:{t}" for t in _ARXIV_TERMS) + ") AND ("
+                                  + " OR ".join(f"cat:{c}" for c in _ARXIV_CATS) + ")")
              + "&sortBy=submittedDate&sortOrder=descending&max_results=60")
 
 # (name, url) or (name, [url, fallback url, ...]); the first URL that yields entries wins.
