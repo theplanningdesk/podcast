@@ -34,6 +34,8 @@ export const SEGMENT_LABELS = {
   cold_open: 'Top story',
   welcome: 'This week',
   lead_stories: 'Lead stories',
+  planning: 'Planning & network design',
+  management: 'Management & operations',
   ai_tech: 'AI & tech',
   nordics_dach: 'Nordics & DACH',
   market_moves: 'Market moves',

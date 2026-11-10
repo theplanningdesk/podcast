@@ -9,13 +9,23 @@ reachable, and writes:
   out/latest.md    the same, grouped by lane and source, for reading
   out/status.json  per-source result, so a broken feed shows up
 
-Three lanes:
-  logistics   trade press, freight, AI and tech (the original starting pages)
+Four lanes, written to the digest in this order (reordered 10 Nov 2026, when the
+briefs had drifted to about 70% freight news; see
+claude/research/rebalance-proposal-2026-11-10.md in the Project):
+  planning    planning, network design, AI and tech, and supply chain trade press
+              whose items are sorted planning-first
   management  operations research, planning research, working capital, efficiency,
               supply chain management press and recurring surveys (added 29 Oct 2026)
   companies   quarterly reports and releases from a watchlist of Nordic companies,
               with the sentences on inventory, working capital, cash flow and cost
               programmes pulled out as highlights (added 29 Oct 2026)
+  freight     the freight desk: carriers, shipping, rates, waterways and transport
+              trade press, capped per source (FREIGHT_CAP non-planning items plus up
+              to FREIGHT_PLANNING_CAP items that match planning terms). Read for the
+              Freight dashboard, not as a source of routine items.
+
+Within every lane, each source's items are sorted so those matching planning terms
+(PLAN_SORT_WORDS) come first, and marked "[planning terms]" in latest.md.
 
 Items found only as page links (no feed) are opened one by one to read the real
 publish date and the opening text, so the agents don't have to search for them.
@@ -36,38 +46,49 @@ import feedparser
 import requests
 
 # (name, url) or (name, [url, fallback url, ...]); the first URL that yields entries wins.
+# Dropped 10 Nov 2026 after failing every night (403 or timeout): SupplyChain247,
+# Logistics Management, Dagens Infrastruktur, Gartner Newsroom, ASCM. The scrobbler
+# reaches Gartner and ASCM through search.
 SOURCES = [
-    ("Supply Chain Dive", "https://www.supplychaindive.com/feeds/news/"),
     ("SupplyChainBrain", "https://www.supplychainbrain.com/rss/articles"),
     ("SCMR", "https://www.scmr.com/"),
-    ("The Loadstar", "https://theloadstar.com/"),
-    ("FreightWaves", "https://www.freightwaves.com/news"),
-    ("SupplyChain247", "https://www.supplychain247.com/"),
+    ("Supply Chain Dive", "https://www.supplychaindive.com/feeds/news/"),
     ("Supply Chain Digital", "https://supplychaindigital.com/news"),
-    ("Logistics Management", "https://www.logisticsmgmt.com/"),
-    ("DC Velocity", "https://www.dcvelocity.com/"),
-    ("Splash247", "https://splash247.com/"),
-    ("VerkehrsRundschau", "https://www.verkehrsrundschau.de/nachrichten"),
-    ("Logistik Journal", "https://www.logistik-journal.de/"),
-    ("BVL", "https://www.bvl.de/"),
-    ("Dagens Logistik", "https://dagenslogistik.se/nyheter/"),
-    ("Dagens Infrastruktur", "https://dagensinfrastruktur.se/"),
-    ("MT Logistikk", "https://www.mtlogistikk.no/"),
-    # Added 28 Oct 2026 after source vetting (claude/research/source-vetting-2026-10-28.md).
-    # Transportmagasinet dropped: paywalled.
+    # Added 10 Nov 2026: planning, footprint and operations sources.
+    ("Manufacturing Dive", "https://www.manufacturingdive.com/feeds/news/"),
+    ("demand-planning.com (IBF)", ["https://demand-planning.com/feed/", "https://demand-planning.com/"]),
+    ("Logistics Viewpoints", "https://logisticsviewpoints.com/"),
     ("SCM.dk", "https://scm.dk/feeds/articles"),
     ("SC Effect", "https://www.sceffect.se/en/category/nyheter/"),
     ("Osto&Logistiikka", "https://www.ostologistiikka.fi/"),
     ("BME", "https://www.bme.de/news/"),
-    ("Logistics Viewpoints", "https://logisticsviewpoints.com/"),
+    ("BVL", "https://www.bvl.de/"),
+    ("produktion.de", ["https://www.produktion.de/rss", "https://www.produktion.de/"]),
+    ("Ny Teknik", ["https://www.nyteknik.se/rss", "https://www.nyteknik.se/"]),
+    ("Dagens Industri", ["https://www.di.se/rss", "https://www.di.se/"]),
+    ("MIT Sloan Management Review", "https://sloanreview.mit.edu/feed/"),
+    ("arXiv math.OC (optimisation)", "https://rss.arxiv.org/rss/math.OC"),
+    ("arXiv cs.AI", "https://rss.arxiv.org/rss/cs.AI"),
+    ("arXiv stat.ML", "https://rss.arxiv.org/rss/stat.ML"),
     ("NVIDIA Technical Blog (optimisation)", "https://developer.nvidia.com/blog/feed/"),
-    ("Sea-Intelligence", "https://www.sea-intelligence.com/press-room"),
-    ("Xeneta", "https://www.xeneta.com/news"),
     ("Talking Logistics", "https://talkinglogistics.com/"),
     ("Supply Chain Shaman", "https://www.supplychainshaman.com/"),
     ("SAP News", "https://news.sap.com/"),
-    ("Gartner Newsroom", "https://www.gartner.com/en/newsroom"),
-    ("ASCM", "https://www.ascm.org/"),
+]
+
+# The freight desk (moved out of the main lane 10 Nov 2026). Nordic and DACH transport
+# press stays here too, but its items that match planning terms are kept beyond the cap.
+FREIGHT_SOURCES = [
+    ("The Loadstar", "https://theloadstar.com/"),
+    ("FreightWaves", "https://www.freightwaves.com/news"),
+    ("Splash247", "https://splash247.com/"),
+    ("DC Velocity", "https://www.dcvelocity.com/"),
+    ("Sea-Intelligence", "https://www.sea-intelligence.com/press-room"),
+    ("Xeneta", "https://www.xeneta.com/news"),
+    ("VerkehrsRundschau", "https://www.verkehrsrundschau.de/nachrichten"),
+    ("Logistik Journal", "https://www.logistik-journal.de/"),
+    ("Dagens Logistik", "https://dagenslogistik.se/nyheter/"),
+    ("MT Logistikk", "https://www.mtlogistikk.no/"),
 ]
 
 # Added 29 Oct 2026 (claude/research/source-vetting-2026-10-29-management.md).
@@ -86,6 +107,11 @@ MANAGEMENT_SOURCES = [
     ("Swedbank PMI", "https://mfn.se/all/a/swedbank.rss"),
     ("STT Info (Finnish releases)", "https://www.sttinfo.fi/rss/releases/latest"),
     ("DACH ad hoc releases (finanznachrichten)", "https://www.finanznachrichten.de/rss-aktien-adhoc/"),
+    # Added 10 Nov 2026: OR and planning-science journals' press releases.
+    ("INFORMS newsroom", ["https://www.informs.org/News-Room/INFORMS-Releases",
+                          "https://www.informs.org/News-Room"]),
+    ("EurekAlert! (business and economics)", ["https://www.eurekalert.org/rss/business_economics.xml",
+                                              "https://www.eurekalert.org/rss.xml"]),
 ]
 
 
@@ -141,11 +167,45 @@ GERMAN_WORDS = [
     "produktionsplanung", "beschaffung", "einkauf", "operations research", "wertschöpfungskette",
     "lieferengp", "materialmangel", "bedarfsprognose", "absatzprognose", "disposition",
 ]
+# Planning terms used to sort every source's items planning-first, and to let
+# planning items through the freight desk cap. Matched at word starts. An item counts
+# as planning when a term is in its title, or two different terms are in title plus
+# summary. English, Swedish, Norwegian, Danish, Finnish and German.
+PLAN_SORT_WORDS = [
+    "planning", "planner", "forecast", "s&op", "sales and operations", "integrated business planning",
+    "inventor", "working capital", "safety stock", "replenish", "network design", "network redesign",
+    "footprint", "distribution center", "distribution centre", "central warehouse", "nearshor",
+    "reshor", "dual sourcing", "optimization", "optimisation", "solver", "digital twin",
+    "decision intelligence", "agentic", "ai agent", "operations research", "scheduling",
+    "capacity planning", "production plan", "plant closure", "closes plant", "close plant",
+    "new plant", "factory", "factories", "consolidat", "procurement", "sourcing",
+    "planering", "prognos", "varulager", "centrallager", "lagerstyrning", "lageroptim",
+    "leveranskedj", "rörelsekapital", "fabrik", "produktionsplan", "nedläggning",
+    "planlegging", "planlægning", "forsyningskæde", "forsyningskjede", "lagerstyring",
+    "suunnittelu", "ennuste", "toimitusketju",
+    "planung", "prognose", "lagerbestand", "bestände", "werksschließung", "standort",
+    "lieferkette", "produktionsplanung", "disposition", "kapazitätsplanung", "beschaffung",
+]
+_PLAN_RE = [re.compile(r"(?<![a-zåäöæøüß])" + re.escape(w)) for w in PLAN_SORT_WORDS]
+ARXIV_WORDS = [
+    "supply chain", "inventory", "demand forecast", "lot sizing", "lot-sizing",
+    "production planning", "production scheduling", "job shop", "job-shop", "flow shop",
+    "sales and operations", "s&op", "network design", "facility location", "procurement",
+    "replenishment", "newsvendor", "safety stock", "capacity planning", "multi-echelon",
+    "supply network", "bullwhip", "order picking", "spare parts",
+]
+SWEDISH_PLAN_WORDS = [
+    "varulager", "lager", "centrallager", "logistikcenter", "fabrik", "produktion",
+    "leveranskedj", "nedläggning", "flyttar produktion", "kapacitet", "inköp", "underleverantör",
+]
+
 # Sources matched on title and summary only (their full text is long and noisy).
 TITLE_ONLY = {
     "TechXplore (business)", "TechXplore (all)", "Phys.org (economics and business)",
     "The Conversation (business)", "idw-online (DACH research)", "Industriemagazin",
-    "Placera (Swedish business news)",
+    "Placera (Swedish business news)", "arXiv math.OC (optimisation)", "arXiv cs.AI",
+    "arXiv stat.ML", "Ny Teknik", "Dagens Industri", "MIT Sloan Management Review",
+    "EurekAlert! (business and economics)",
 }
 
 # Sources whose feed is broad: keep only items whose title, summary or text matches.
@@ -175,6 +235,14 @@ KEYWORDS = {
     "DACH ad hoc releases (finanznachrichten)": [
         "prognose", "restrukturierung", "effizienz", "stellenabbau", "sparprogramm",
         "kostensenkung", "quartal", "werk", "lieferkette"],
+    "arXiv math.OC (optimisation)": ARXIV_WORDS,
+    "arXiv cs.AI": ARXIV_WORDS,
+    "arXiv stat.ML": ARXIV_WORDS,
+    "Ny Teknik": SWEDISH_PLAN_WORDS,
+    "Dagens Industri": SWEDISH_PLAN_WORDS,
+    "MIT Sloan Management Review": PLANNING_WORDS + ["operations", "supplier", "manufactur"],
+    "EurekAlert! (business and economics)": PLANNING_WORDS + ARXIV_WORDS,
+    "produktion.de": GERMAN_WORDS + ["werk", "standort", "fertigung", "kapazität", "verlager"],
 }
 
 # Link filters for sources read from page links: keep only article paths.
@@ -182,6 +250,7 @@ LINK_RULES = {
     "Xeneta": {"include": ["/news/", "/press/", "/blog/xeneta-weekly", "ocean-market-update"]},
     "Osto&Logistiikka": {"exclude": ["/mainos/"]},
     "KLU newsroom": {"include": ["/article/"]},
+    "INFORMS newsroom": {"include": ["/News-Room/INFORMS-Releases/"]},
 }
 
 # Company releases: skip routine notices; pull these words' sentences out as highlights.
@@ -216,7 +285,11 @@ RHINE_GAUGES = ["MAXAU", "KAUB", "KÖLN", "DUISBURG-RUHRORT", "EMMERICH"]
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/130.0 Safari/537.36 ThePlanningDeskBot/1.0")
 MAX_AGE_DAYS = 8
-MAX_PER_SOURCE = 40
+MAX_PER_SOURCE = 40          # per source, after keyword filtering
+MAX_RAW_PER_FEED = 600       # read this many feed entries before filtering (arXiv is large)
+PLANNING_LANE_CAP = 20       # per source in the planning lane, planning-first
+FREIGHT_CAP = 5              # freight desk: non-planning items per source
+FREIGHT_PLANNING_CAP = 10    # freight desk: planning-matched items per source, on top
 ARTICLES_PER_SOURCE = 15
 TIMEOUT = 25
 
@@ -349,8 +422,8 @@ def fetch_source(source, urls, cutoff):
             else:
                 items, total = parse_feed(source, url, resp.content, cutoff)
             if total:
-                items = items[:MAX_PER_SOURCE]
-                status.update(ok=True, url=url, method=f"feed {url}", items=len(items))
+                items = items[:MAX_RAW_PER_FEED]
+                status.update(ok=True, url=url, method=f"feed {url}", items=len(items), raw_items=len(items))
                 return items, status
             errors.append(f"{url}: empty feed")
             continue
@@ -361,14 +434,14 @@ def fetch_source(source, urls, cutoff):
                     continue
                 items, total = parse_feed(source, feed_url, fresp.content, cutoff)
                 if total:
-                    items = items[:MAX_PER_SOURCE]
-                    status.update(ok=True, url=url, method=f"feed {feed_url}", items=len(items))
+                    items = items[:MAX_RAW_PER_FEED]
+                    status.update(ok=True, url=url, method=f"feed {feed_url}", items=len(items), raw_items=len(items))
                     return items, status
             except Exception as exc:  # noqa: BLE001
                 errors.append(f"{feed_url}: {type(exc).__name__}")
         items = scrape_links(source, url, resp.text)[:MAX_PER_SOURCE]
         if items:
-            status.update(ok=True, url=url, method="page links (articles opened for dates)", items=len(items))
+            status.update(ok=True, url=url, method="page links (articles opened for dates)", items=len(items), raw_items=len(items))
             return items, status
         errors.append(f"{url}: no feed and no article links")
     status["error"] = "; ".join(errors)[:300] or "nothing read"
@@ -388,6 +461,28 @@ def keep(source, items):
     if rules.get("exclude"):
         items = [i for i in items if not any(k in i["link"] for k in rules["exclude"])]
     return items
+
+
+def plan_match(item):
+    title = item["title"].lower()
+    hay = title + " " + (item["summary"] or "").lower()
+    if any(r.search(title) for r in _PLAN_RE):
+        return 2
+    return 1 if sum(1 for r in _PLAN_RE if r.search(hay)) >= 2 else 0
+
+
+def plan_sort_and_cap(lane, items):
+    """Planning-first order within one source, then the lane's cap."""
+    for it in items:
+        it["planning_terms"] = plan_match(it) > 0
+    items = sorted(items, key=lambda i: (not i["planning_terms"], -(parse_date(i["published"]).timestamp() if i["published"] else 0)))
+    if lane == "freight":
+        plan = [i for i in items if i["planning_terms"]][:FREIGHT_PLANNING_CAP]
+        rest = [i for i in items if not i["planning_terms"]][:FREIGHT_CAP]
+        return plan + rest
+    if lane == "planning":
+        return items[:PLANNING_LANE_CAP]
+    return items[:MAX_PER_SOURCE]
 
 
 # --- reading single articles (for page-link items) --------------------------------
@@ -543,7 +638,7 @@ def company_items(name, items):
 def fetch_rhine():
     """Current water level (cm) at the Rhine gauges that matter for barge loads."""
     status = {"source": "Rhine gauges (Pegelonline)", "url": RHINE_API, "ok": False,
-              "method": "json api", "items": 0, "error": None, "lane": "logistics"}
+              "method": "json api", "items": 0, "error": None, "lane": "freight"}
     try:
         stations = get(RHINE_API).json()
     except Exception as exc:  # noqa: BLE001
@@ -568,7 +663,8 @@ def fetch_rhine():
 # --- main -----------------------------------------------------------------------------
 
 LANE_TITLES = {
-    "logistics": "Logistics, trade, AI and tech sources",
+    "planning": "Planning, network design, AI and tech sources (items matching planning terms first)",
+    "freight": "Freight desk (capped: for the Freight dashboard and genuine score-5 events, not routine items)",
     "management": "Management, operations research and planning research sources",
     "companies": "Company releases (watchlist: quarterly reports, programmes, restructurings)",
 }
@@ -584,7 +680,7 @@ def run_lane(lane, sources, cutoff, all_items, statuses):
             if status["ok"] and not items:
                 status["error"] = "no releases in the window (normal off-season)"
         elif source in KEYWORDS or source in LINK_RULES:
-            items = keep(source, items)
+            items = keep(source, items)[:MAX_PER_SOURCE]
             status["items"] = len(items)
             if not items and source in LINK_RULES and status["ok"]:
                 status.update(ok=False, error="no article links after filtering")
@@ -604,11 +700,18 @@ def main(out_dir):
     now = dt.datetime.now(dt.timezone.utc)
     cutoff = now - dt.timedelta(days=MAX_AGE_DAYS)
     all_items, statuses = [], []
-    run_lane("logistics", SOURCES, cutoff, all_items, statuses)
+    run_lane("planning", SOURCES, cutoff, all_items, statuses)
     run_lane("management", MANAGEMENT_SOURCES, cutoff, all_items, statuses)
     run_lane("companies", COMPANIES, cutoff, all_items, statuses)
+    run_lane("freight", FREIGHT_SOURCES, cutoff, all_items, statuses)
 
     all_items = enrich(all_items, cutoff)
+    # Planning-first sort and per-lane caps, after dates are known (companies keep their order).
+    capped = []
+    for s in statuses:
+        mine = [i for i in all_items if i["source"] == s["source"]]
+        capped += mine if s["lane"] == "companies" else plan_sort_and_cap(s["lane"], mine)
+    all_items = capped
     for s in statuses:
         if s["lane"] != "companies":
             s["items"] = sum(1 for i in all_items if i["source"] == s["source"])
@@ -628,7 +731,9 @@ def main(out_dir):
              f"{meta['sources_ok']} of {meta['sources_total']} sources read. Items from the last "
              f"{MAX_AGE_DAYS} days. Items from page links were opened to read their date and opening "
              "text; 'no date' means the article page didn't show one.", ""]
-    for lane in ("logistics", "management", "companies"):
+    counts = {lane: sum(1 for i in all_items if i["lane"] == lane) for lane in LANE_TITLES}
+    lines += ["Items per lane: " + ", ".join(f"{k} {v}" for k, v in counts.items()), ""]
+    for lane in ("planning", "management", "companies", "freight"):
         lines += [f"# {LANE_TITLES[lane]}", ""]
         for s in (s for s in statuses if s["lane"] == lane and s is not rhine_status):
             lines.append(f"## {s['source']}")
@@ -641,13 +746,14 @@ def main(out_dir):
                 continue
             for it in listed:
                 when = it["published"][:16].replace("T", " ") if it["published"] else "no date"
-                lines.append(f"- {when} | {it['title']} | {it['link']}")
+                tag = " [planning terms]" if it.get("planning_terms") and lane != "companies" else ""
+                lines.append(f"- {when} | {it['title']} | {it['link']}{tag}")
                 if it.get("highlights"):
                     lines.append(f"  Highlights: {it['highlights']}")
                 elif it["summary"]:
                     lines.append(f"  {it['summary']}")
             lines.append("")
-    lines.append("## Rhine gauges (Pegelonline, live)")
+    lines.append("## Rhine gauges (Pegelonline, live; freight desk)")
     if rhine:
         lines.append("Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.")
         for r in rhine:
