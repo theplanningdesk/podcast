@@ -1,0 +1,2310 @@
+TITLE: Energy-efficient scheduling of a single resource with production requirements: a joint simulation and scenario-based mathematical programming approach
+AUTHORS: Siamak Khayyati, Oktay Karabağ, Berk Berkman, Sebnem Demirtas, Barış Tan
+VENUE: International Journal of Production Research (2026-11-02)
+DOI: https://doi.org/10.1080/00207543.2026.2757111
+LICENCE: cc-by
+LINK: https://doi.org/10.1080/00207543.2026.2757111
+
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH
+https://doi.org/10.1080/00207543.2026.2757111
+ 
+Energy-efficient scheduling of a single resource with production requirements: a 
+joint simulation and scenario-based mathematical programming approach
+Siamak Khayyatia,b, Oktay Karabağ 
+ c,d, Berk Berkmane, Sebnem Demirtase and Barış Tan 
+ c,f
+aMannheim Bussiness School, University of Mannheim, Mannheim, Germany; bHEC-Liège Management School of the University of Liège, Liège, 
+Belgium; cFaculty of Engineering, Özyeğin University, Istanbul, Türkiye; dErasmus School of Economics, Erasmus University Rotterdam, 
+Rotterdam, the Netherlands; eCollege of Engineering, Koç University, İstanbul, Türkiye; fFaculty of Business, Özyeğin University, Istanbul, Türkiye
+ABSTRACT
+Motivated by paint oven on-off scheduling in an automotive plant, this study investigates the con-
+trol of a single energy-intensive resource that can operate in on, off, warm-up, and multiple idle 
+modes. The problem is to determine the energy mode of the resource over a finite planning horizon 
+so as to minimise the average total cost of energy consumption and product waiting. We propose 
+a data-driven on-off scheduling procedure that collects real-time upstream vehicle locations at the 
+beginning of each shift, uses a digital twin to generate arrival scenarios conditional on these loca-
+tions, and then determines the resource schedule. Two solution approaches are developed and used 
+in parallel. The first is a scenario-based mathematical programming formulation strengthened by 
+a scenario reduction technique based on clustering, and the second is a problem-specific genetic 
+algorithm that encodes the resource schedule directly. Numerical experiments show that incorpo-
+rating advance arrival information into multi-mode scheduling can reduce the normalised energy 
+cost per vehicle by up to 41% relative to benchmark policies, with energy measured in equivalent 
+on-mode operating minutes. The results highlight the value of digital-twin-based arrival information 
+for energy-intensive manufacturing systems.
+ARTICLE HISTORY
+Received 9 February 2026
+Accepted 19 October 2026
+KEYWORDS
+Optimal production and 
+energy control; energy 
+efficiency; digital twin; 
+resource scheduling; 
+scenario-based 
+mathematical programming; 
+scenario reduction
+SUBJECT 
+CLASSIFICATIONS
+Production control; energy 
+efficient manufacturing; 
+math programming
+1. Introduction
+In recent years, rising energy costs, stricter sustainability 
+regulations, and growing environmental concerns have 
+created a clear need to improve energy efficiency in 
+the manufacturing industry, which is among the largest 
+energy-consuming sectors worldwide (Duran, Ozturk, 
+and O’Sullivan 2025). In response to this need, energy-
+efficient production control policies have emerged as an 
+important way to reduce energy use while preserving reli-
+able and timely production. These policies decide when 
+machines should operate, stay in a low-energy standby 
+mode, or be switched off, so that energy is not wasted dur-
+ing idle periods while production requirements are still 
+met. Studies based on real industrial applications report 
+that such control policies can reduce energy-related pro-
+duction costs by about 20–30% (Gahm et al. 2016; Tan, 
+Karabağ, and Khayyati 2023b), while also contributing 
+to broader sustainability goals by reducing carbon diox-
+ide emissions. In addition, advances in automation and 
+information technologies, such as the Internet of Things 
+CONTACT Rolando Magnanini 
+ karabag@ese.eur.nl
+ Faculty of Engineering, Özyeğin University, Çekmeköy Campus, Nişantepe District, Orman Street, 
+Çekmeköy, Istanbul 34794, Türkiye; Erasmus School of Economics, Erasmus University Rotterdam, Burgemeester Oudlaan 50 Rotterdam 3000DR, the Netherlands
+Supplemental data for this article can be accessed at http://dx.doi.org/10.1080/00207543.2026.2757111.
+and Industry 4.0, make it increasingly feasible to imple-
+ment such policies in a data-driven manner over finite 
+planning horizons, enabling machines to flexibly switch 
+between energy modes in response to real-time produc-
+tion needs (Yin et al. 2026). Overall, these needs and 
+developments motivate the current study, which inves-
+tigates data-driven applications of multi-mode energy 
+control policies in the production environment of a major 
+automotive manufacturer.
+For the manufacturer considered in this study, the 
+paint shop accounts for 44% of production energy use, 
+while energy expenditures constitute nearly 12% of the 
+overall vehicle production cost. As a result, improving 
+energy efficiency has become one of the manufacturer’ s 
+foremost objectives. V ehicles entering the paint shop 
+are assigned to either a standard oven or a specialised 
+oven, depending on whether the requested colour is 
+regular or special. While the standard oven must oper-
+ate continuously to meet the daily demand of nearly 
+1000 vehicles, the specialised oven serving about 100 
+© 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, 
+distribution, and reproduction in any medium, provided the original work is properly cited. The terms on which this article has been published allow the posting of the Accepted 
+Manuscript in a repository by the author(s) or with their consent.
+2 
+ S. KHAYYATI ET AL.
+special-colour vehicles per day can be activated or deac-
+tivated according to system conditions. An advanced 
+manufacturing execution system, supported by a com-
+prehensive IoT infrastructure, provides real-time data 
+on vehicle positions and related information, enabling 
+dynamic control of the specialised oven. The infrastruc-
+ture also supports multi-mode operation, allowing the 
+oven to be maintained at predefined intermediate tem-
+peratures during low-demand periods rather than being 
+completely shut down. This flexibility reduces energy 
+use by shortening warm-up times when resuming full 
+operation and expands the range of control decisions, 
+facilitating more nuanced responses to real-time varia-
+tions in vehicle arrivals and production needs. Track-
+ing the real-time locations of cars at different process-
+ing stages upstream of the oven also enables near-term 
+vehicle arrival estimates, allowing identification of low-
+traffic periods and adjusting oven operations accordingly, 
+thereby further reducing energy consumption. Building 
+on this motivational context, our study aims to address 
+two key research questions relevant for such manufac-
+turers: (i) How can advance arrival information be lever-
+aged to control an energy-intensive resource with multiple 
+idle modes in a way that saves energy and meets produc-
+tion requirements? (ii) T o what extent can energy savings 
+be achieved by incorporating advance arrival information 
+and multiple stand-by modes, compared with benchmark 
+approaches such as threshold-based or always-on policies?
+T o address the first research question, we propose a 
+mathematical programming formulation that leverages 
+estimated vehicle arrival times to determine the opti-
+mal timing for activating the oven (setting it to opera-
+tional temperature), selecting an intermediary tempera-
+ture from a set of given options, or deactivating it entirely 
+(cooling it to room temperature) in the planning hori-
+zon. The expected arrival pattern at the oven changes as 
+vehicles move through the upstream system, new vehicles 
+enter, and random disruptions such as machine failures 
+occur. At each predefined scheduling epoch, a digital 
+twin of the production system is therefore initialised with 
+the observed upstream system state, including the cur-
+rent locations of vehicles. Stochastic replications of the 
+digital twin then generate arrival-time scenarios condi-
+tional on this state, capturing the uncertainty in sub-
+sequent vehicle arrivals. The mathematical formulation 
+uses these scenarios to determine a common oven sched-
+ule, which remains fixed until the next scheduling epoch. 
+The main contribution of this study lies in integrating 
+state-dependent advance arrival information generated 
+through a digital twin with multi-mode operational deci-
+sions for the control of an energy-intensive resource. 
+As the numbers of vehicles, scenarios, and operating 
+modes increase, however, solving the formulation to opti-
+mality may exceed the computation time available for 
+operational decision-making. T o address this computa-
+tional challenge, we develop a problem-specific genetic 
+algorithm and a scenario-reduction approach based on 
+clustering to obtain high-quality schedules within prac-
+tical computation times.
+Our mathematical formulation is capable of yielding 
+results that are more precise and adaptive in terms of 
+energy management, as it integrates predictive arrival 
+information generated by a digital twin along with multi-
+mode flexibility. In contrast, benchmark approaches such 
+as threshold-based and always-on policies rely solely on 
+the aggregate number of vehicles in the system, which 
+limits their responsiveness to real-time variations. Corre-
+spondingly, the comparison between the results of these 
+benchmark strategies and those obtained from our math-
+ematical model reveals how and under what conditions 
+the incorporation of advance arrival information and 
+multiple intermediate modes leads to notable energy sav-
+ings and improved operational responsiveness, thereby 
+allowing us to address the second research question. Our 
+numerical analyses further show that the benefits of using 
+advance arrival information are particularly pronounced 
+when warm-up periods are long and costly and sys-
+tem utilisation is high, with reductions of up to 41% in 
+normalised energy cost per vehicle, measured in units 
+equivalent to one minute of oven operation in the on 
+mode, relative to the benchmark policies considered. T o 
+the best of our knowledge, no prior study has incorpo-
+rated this question into a formal modelling framework, 
+which further reinforces the contribution of this study to 
+the literature on energy-efficient production control.
+The remainder of the paper is structured as follows. 
+Section 2 reviews the relevant literature. Section 3 defines 
+the problem setting and introduces its main compo-
+nents. Section 4 presents an overview of the mathematical 
+model and the proposed solution approach. Section 5 
+describes the digital twin and the scenario generation 
+procedure. Section 6 presents the scenario-based math-
+ematical programming formulation. Section 7 describes 
+the heuristic algorithm developed to solve the problem. 
+Section 8 reports the numerical results and manage-
+rial insights. Finally, Section 9 concludes the paper and 
+outlines directions for future research.
+2. Literature review
+In the literature review, we focus on studies that exam-
+ine on and off type energy control policies in production 
+systems and assess their performance through analyti-
+cal modelling approaches. More specifically, we organ-
+ise the reviewed studies into two groups: those that 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 3
+investigate such policies through Markovian Decision 
+Process (MDP) and learning based methods, and those 
+that examine them through simulation and digital twin 
+implementations.
+2.1. MDP and learning based studies on on and off 
+type energy control policies
+Several review studies discuss the state of the art and the 
+evolution of research on energy aware production con-
+trol, including Gahm et al. (2016), Römer (2021) and 
+Bänsch et al. (2021). Within this broader literature, how-
+ever, we focus specifically on studies that examine on and 
+off type energy control policies in production systems 
+and assess their performance through stochastic mod-
+elling approaches, particularly Markovian models and 
+learning based methods. In this stream, the literature can 
+be broadly divided into two groups. The first group con-
+siders single machine settings and develops structural 
+insights for relatively compact systems. The second group 
+examines multi machine or more complex production 
+settings, where the main emphasis shifts toward per-
+formance evaluation and control in higher dimensional 
+environments.
+A first group of studies examines single-machine 
+production systems and primarily focuses on infinite-
+horizon performance analysis rather than short-term, 
+data-driven operational control. Within this group, Tan, 
+Karabağ, and Khayyati (2023a) analyze the joint produc-
+tion and energy mode control problem in a make-to-
+stock system with multiple operational modes and expo-
+nentially distributed inter-event times, and show through 
+extensive numerical experiments that the optimal pol-
+icy has an inventory-position-based threshold structure. 
+Building on this result, Özkan and Tan (2025) provide 
+an analytical proof of the optimality of this policy under 
+heavy-traffic conditions. Extending this framework fur-
+ther, Tan, Karabağ, and Khayyati (2023b) incorporate 
+phase-type inter-event times and show that, unlike in 
+the exponential case, the optimal policy follows a thresh-
+old structure depending not only on the inventory posi-
+tion but also on the phases of the inter-arrival process. 
+Tan and Karabağ (2024) also study the deterministic 
+counterparts of the stochastic models proposed in Tan, 
+Karabağ, and Khayyati (2023a, 2023b) using a fluid mod-
+elling framework. By deriving closed-form results from 
+the deterministic setting, they develop an approximate 
+policy that is shown to be effective for systems in which 
+the production, warm-up, and demand processes have 
+exponential or phase-type distributions.
+A second group of studies addresses production set-
+tings with multiple machines or richer system interac-
+tions. Compared with the single-machine literature, this 
+stream of research remains relatively limited and places 
+greater emphasis on system-level performance evalua-
+tion and control in larger state spaces. In the corre-
+sponding group, Chen et al. (2012) provide one of the 
+earliest applications of a Markovian approach to energy-
+efficient production control by analyzing Bernoulli serial 
+lines under machine start-ups and shut-downs, with 
+a specific focus on automotive paint shop operations. 
+W ang et al. (2017) incorporate real-time machine and 
+buffer states into a Markovian framework to evaluate 
+on/off policies, offering a rigorous basis for performance 
+comparison. A few recent studies have also introduced 
+learning-based methods to address high-dimensional or 
+dynamically evolving production settings. For instance, 
+Li et al. (2021) adopt a reinforcement learning approach 
+for serial production systems and develop system-level 
+energy control policies. Their analysis, yet, focuses on 
+transient behaviour and does not address steady-state 
+performance. Heydar, Mardaneh, and Loxton (2022) 
+also develop an approximate dynamic programming 
+approach for an energy-aware unrelated parallel machine 
+scheduling problem with stochastic job arrivals, aiming 
+to minimise a weighted combination of makespan and 
+energy cost.
+2.2. Simulation and digital twin studies on on and 
+off type energy control policies
+Complementing these analytical and learning-based 
+studies, a few works rely on simulation-based approaches 
+to investigate energy control policies in different produc-
+tion settings. Such approaches become particularly use-
+ful when the production environment involves complex 
+interactions, operational constraints, or system dynamics 
+that are difficult to capture in a tractable analytical model. 
+As one of the earlier studies in this stream, W ang, Li, and 
+Liu (2013) attempt to identify energy-saving windows 
+for idle machines in serial production lines and demon-
+strate that using these windows can substantially reduce 
+energy consumption without compromising throughput. 
+Su, Frigerio, and Matta (2016) examine a comparable 
+production setting to that of W ang, Li, and Liu (2013), 
+but focus on the performance of buffer-based on/off 
+strategies under varying levels of information availabil-
+ity. Renna (2018) studies pull-controlled production lines 
+and develops a dynamic on/off policy that incorporates 
+downstream buffer and demand variability information, 
+showing that energy savings can be achieved without 
+harming service performance. Recently, Frigerio and 
+Matta (2019) and Frigerio, Tan, and Matta (2024) study 
+a serial system with finite buffers and examine machine-
+level and system-level energy control decisions, show-
+ing how the simultaneous control of multiple machines 
+4 
+ S. KHAYYATI ET AL.
+influences performance and providing exact benchmarks 
+for evaluating alternative policies. A comparable prob-
+lem setting in a parallel machine environment is also 
+examined by Loffredo et al. (2024).
+Beyond these simulation based studies, we also con-
+sider digital twin applications in energy aware pro-
+duction control. Although their use in this specific 
+area is relatively recent, digital twins have been dis-
+cussed and applied for a longer period in fields 
+such as healthcare (Katsoulakis et al. 2024; Zheng 
+et al. 2025), manufacturing (Kritzinger et al. 2018; Shao 
+and Helu 2020), and maintenance (V an Dinter, T ekiner-
+dogan, and Catal 2023). In manufacturing and energy 
+applications, the concept has gradually evolved from a 
+digital representation used mainly for monitoring and 
+visualisation into a broader decision-support framework 
+that integrates real-time data, predictive models, optimi-
+sation, and, more recently, AI-driven adaptation. General 
+discussions of this development and the conceptual foun-
+dations of digital twins can be found in Yildiz, Møller, 
+and Bilberg (2022) and Ivanov (2024, 2026). In the spe-
+cific context of energy aware production control, studies 
+that explicitly adopt a digital twin perspective are still 
+relatively limited, although this stream has been grow-
+ing steadily in recent years. An early contribution in a 
+related direction is Zou et al. (2017), which develop a 
+data driven modelling and real time distributed control 
+framework for energy efficient manufacturing systems. 
+Even though the study is not formulated explicitly as a 
+digital twin application, it shows how real time system 
+information can be integrated with control decisions to 
+improve energy performance metrics. A more explicit 
+digital twin application in this research stream is pre-
+sented by Karanjkar et al. (2018), which study energy 
+optimisation in a printed circuit board assembly line 
+based on surface mount technology and uses a digi-
+tal twin representation to evaluate alternative operating 
+decisions. W ang, Huang, and Tang (2021) consider real 
+time energy saving control in a serial production system 
+and develop a digital twin simulator in which real time 
+production data are transmitted to the digital model, can-
+didate energy saving strategies are evaluated in the virtual 
+environment, and the resulting control decisions are fed 
+back to the physical system. Xia et al. (2023) integrate 
+learning and real-time adaptation by developing a digital 
+twin-based optimisation model that explicitly accounts 
+for machine faults when making energy-related control 
+decisions. Recently, Billey and Wuest (2024) and Kasper 
+et al. (2024) examine energy digital twins in smart man-
+ufacturing through a case study and highlight their role 
+in monitoring, analysis, and decision support.
+2.3. Contribution to the literature
+Overall, this study differs from the ones reviewed above 
+in several important respects. First, we develop a novel 
+scenario-based mathematical programming model that 
+explicitly integrates advance arrival information gener-
+ated by a digital twin with multi-mode operational deci-
+sions for the control of an energy-intensive resource. 
+Second, unlike most studies that adopt infinite-horizon 
+optimisation frameworks based on simulation or Markov 
+decision process approaches, our formulation focuses on 
+short-term (finite-horizon) operational control, which 
+better aligns with real-time decision-making require-
+ments in energy-intensive production environments. 
+This integration and modelling perspective enable more 
+adaptive and energy-efficient operational decisions com-
+pared with traditional threshold-based or always-on con-
+trol policies, thereby representing a major methodolog-
+ical contribution of this study. Third, recognising the 
+computational complexity of the proposed model aris-
+ing from an increasing number of arrivals, scenarios, and 
+operating modes, we develop heuristic approaches based 
+on genetic and clustering algorithms that produce high-
+quality solutions within practical computation times. T o 
+the best of our knowledge, no prior study has attempted 
+to develop such an approach in a comparable problem 
+setting. Lastly, as far as we concerned, this is the first study 
+to examine how the incorporation of multiple interme-
+diate modes and advance arrival information leads to 
+notable energy savings and improved operational respon-
+siveness through a digital twin. This constitutes a practi-
+cal contribution, offering guidance to practitioners and 
+academics seeking to enhance the energy efficiency of 
+real-world production systems, and by bridging theoreti-
+cal modelling with implementable decision-support tools 
+for energy-intensive operations.
+3. Problem definition
+In this section, we first describe the problem setting, 
+including the dynamics and operational modes of the 
+resource and the associated energy and waiting cost 
+structure. W e then introduce the scenario-based rep-
+resentation used to capture uncertainty in upstream 
+arrivals.
+3.1. Resource dynamics and operating modes
+W e consider a dynamic control problem for implement-
+ing energy-efficient production strategies for a resource 
+that receives jobs from an upstream serial production 
+system and is capable of operating in three core oper-
+ational modes: the on mode, the warm-up mode, and 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 5
+multiple standby modes. Specifically, the resource’ s oper-
+ational mode is represented by m where m ∈ M =
+{1, 2 . . ., M, O, W}. Each operational mode entails a dis-
+tinct energy cost rate, reflecting the specific energy con-
+sumption characteristics of that mode.
+In the set of operational modes, m = O denotes the 
+mode in which the resource is at its operational temper-
+ature and able to actively process jobs, whereas m = 1 
+denotes the mode in which the resource is cooled to 
+ambient temperature and is completely shut down. That 
+is, m = 1 corresponds to the resource’ s off mode. When 
+the resource’ s mode is m = 1, that is, when it is in the 
+off mode, a warm-up delay is required to reach the 
+operational temperature upon a production decision. 
+When m ∈ {2, 3, . . ., M}, it represents a standby mode in 
+which the resource sustains the mth predefined interme-
+diate temperature level. Similar to m = 1, these standby 
+modes also require a warm-up delay before produc-
+tion starts. For all standby and off modes, i.e. m ∈ ˇM =
+{1, 2, 3,. . ., M}, the lower the index, the lower the tem-
+perature level maintained by the resource, and conse-
+quently, the longer the warm-up time needed for it to 
+resume operation.
+Of these operational modes, m = W denotes the 
+warm-up mode, which is activated when the resource 
+transitions either from m = 1, namely the off mode, to 
+m = O, or from an intermediate standby mode m ∈ ˇM \
+{1} to m = O. As the warm-up processes of industrial 
+resources are typically governed by standardised heat-
+ing protocols and inherent physical characteristics, their 
+durations remain highly consistent; thus, the variability 
+in heating time to reach the operational mode is generally 
+negligible. Accordingly, in our model, the warm-up delay 
+required when transitioning from any m where m ∈ ˇM to 
+m = O is assumed to be deterministic and strictly greater 
+than zero (for a similar assumption, see, e.g. Mashaei and 
+Lennartson 2012; Tan and Karabağ 2024). This delay is 
+represented as tm > 0, denoting the required warm-up 
+time for the corresponding operational mode m where 
+m ∈ ˇM. For some processes, particularly those involv-
+ing heating, as in our case, the cost rate of being in the 
+warm-up mode may even exceed that of the on mode, 
+since raising the resource to its operational temperature 
+requires a temporary surge of energy that can surpass 
+the steady-state consumption during regular production 
+operations.
+With respect to the transition structure, transitions are 
+allowed from m = O to any mode m ∈ ˇM and from any 
+mode m ∈ ˇM to m = O. Y et, transitions among differ-
+ent standby modes are not allowed, because the energy 
+required to raise the resource from one standby temper-
+ature level to a higher one would in any case be expended 
+when bringing it fully back to the operational state, i.e. 
+the m = O mode. Interrupting this process at an inter-
+mediate temperature level and then reheating it to the 
+operational temperature would therefore be suboptimal. 
+This is analytically proven under mild conditions, and 
+the corresponding results are presented the following 
+sections.
+3.2. Cost structure
+The energy cost rates associated with the on (m = O) and 
+warm-up (m = W) modes are denoted by eO and eW, 
+respectively, whereas the energy cost rate for a standby 
+mode m is denoted by em, where m ∈ ˇM. As full opera-
+tion engages all energy-demanding subsystems and most 
+subsystems remain deactivated in standby modes, the 
+energy consumption in the on mode is typically higher 
+than in any mode m ∈ ˇM. Accordingly, it is assumed that 
+eO > em for all m ∈ ˇM. When the resource is in the on 
+mode, it can transition either to a standby mode or be 
+completely shut down, with a cooling delay that depends 
+on the target mode. During this cooling process, the man-
+ufacturer incurs no additional cost, as no active energy 
+input is required. Hence, the cooling process is not repre-
+sented as a separate mode in the model, since its inclusion 
+would merely enlarge the state space without providing 
+any additional explanatory power. When the resource 
+is completely shut down, namely m = 1, its energy con-
+sumption is limited to a few essential functions, such as 
+maintaining network connectivity, supporting minimal 
+monitoring, and safety functions. Therefore, the energy 
+cost rate associated with the off mode, e1, is assumed to be 
+lower than those of all other modes, that is, eO, eW, em >
+e1 where m ∈ ˇM \ {1}. Furthermore, no specific relation-
+ship between eO and eW is imposed in our model, so we 
+allow both eO > eW and eO ≤ eW.
+The costs associated with warm-up, operation, and 
+standby are assumed to be linear in the time spent in the 
+corresponding modes over the planning horizon under 
+consideration. Accordingly, the energy-related cost of 
+each mode is defined as the product of its mode-specific 
+cost rate and the corresponding time spent in that mode, 
+while the total energy cost is obtained by summing these 
+mode-specific costs. This representation is consistent 
+with the physical setting, since the oven consumes energy 
+continuously while operating in each mode. It is also 
+supported by empirical evidence on time-based energy 
+consumption in manufacturing systems (e.g. Frigerio and 
+Matta 2014; W einert, Chiotellis, and Seliger 2011) and 
+aligns with related analytical studies that model energy 
+use through mode-dependent cost rates (e.g. Frigerio, 
+Tan, and Matta 2024; Karabağ 2026; Loffredo et al. 2024).
+In addition to energy costs, we associate a penalty with 
+the time each job spends waiting for processing in order 
+6 
+ S. KHAYYATI ET AL.
+to discourage excessive waiting and promote a smoother 
+flow through the system. This penalty, denoted by e1, 
+represents the per-unit-time cost of keeping a job in the 
+system before it is processed. In other words, e1 serves 
+as a policy parameter that reflects the relative impor-
+tance assigned to waiting versus energy savings. A higher 
+value of e1 places greater emphasis on completing the 
+required production within a shorter time span, whereas 
+a lower value of e1 allows the same production target 
+to be completed over a longer period and thereby cre-
+ates more room for energy saving opportunities. Thus, 
+e1 governs the trade off between production respon-
+siveness and energy efficiency. Incorporating this penalty 
+into the model allows us to account explicitly for the eco-
+nomic effect of waiting while aligning production control 
+decisions with both energy efficiency and operational 
+performance objectives. Section 8.1 presents numerical 
+experiments showing that e1 can be used effectively to 
+achieve significant reductions in energy consumption 
+while generating only limited operational inefficiencies.
+3.3. Upstream arrival process and scenarios
+It is assumed that the jobs to be processed by the resource 
+arrive from an upstream serial production system and 
+therefore reach the resource only after completing a 
+sequence of upstream operations. As a result, their arrival 
+process reflects the stochastic evolution of the upstream 
+system. V ariability in processing times, machine failures, 
+blocking, congestion, and other operational disturbances 
+in upstream stages may all affect job completion times 
+and hence the arrival epochs at the resource. Therefore, 
+the exact arrival times of jobs at the resource cannot be 
+known with certainty in advance. This arrival uncertainty 
+is central to the control problem, because the effective-
+ness of a given operating schedule depends on how well 
+the selected operating modes are aligned with the realised 
+arrival pattern at the resource. If arrivals occur later than 
+expected, keeping the resource in a high energy mode 
+may lead to unnecessary energy consumption. By con-
+trast, if arrivals occur earlier than expected or if multiple 
+jobs arrive within a short time interval, jobs may expe-
+rience additional waiting before being processed. The 
+model must therefore account explicitly for uncertainty 
+in upstream driven arrivals.
+T o achieve this, we adopt a scenario-based representa-
+tion in which the uncertainty in job arrivals is captured 
+through a set of alternative arrival scenarios generated by 
+the digital twin developed in this study. Each scenario 
+represents one possible realisation of job arrivals to the 
+resource in a system consisting of an upstream serial pro-
+duction line followed by the resource at its downstream 
+end. Formally, each scenario s ∈ S = {1, 2, . . ., S} speci-
+fies the arrival time of job j ∈ J = {1, 2, . . ., J}, denoted 
+by aj,s ≥ 0, together with its corresponding processing 
+time at the resource, denoted by dj,s > 0. This formu-
+lation allows us to evaluate alternative schedules under 
+different realisations of the arrival process and thereby 
+incorporate upstream uncertainty directly into the math-
+ematical model.
+4. Mathematical model and solution approach 
+overview
+In this section, we present the mathematical model and 
+the proposed solution approach. W e first formulate the 
+finite horizon control problem under scenario based 
+upstream arrival uncertainty. W e then outline the solu-
+tion approach used to solve the resulting scheduling 
+problem.
+4.1. Mathematical model
+W e study the problem of controlling an energy-intensive 
+resource by using information from upstream processes 
+to reduce both energy consumption and the waiting time 
+of parts in the system. Under a first-come-first-served 
+processing rule, a production control schedule is rep-
+resented by ψ = {(Mc, Uc, Wc) : c ∈ C = {1, 2, . . ., C}}, 
+where Mc denotes the energy mode selected in cycle c, 
+Uc denotes the start time of the warm-up process, and Wc
+denotes the time at which the resource stops in that cycle, 
+as illustrated in Figure 1. That is, the schedule deter-
+mines only the timing of the resource modes and does not 
+alter the first-come-first-served processing sequence or 
+the assignment of individual jobs. Consequently, changes 
+in the resource-mode schedule across successive schedul-
+ing epochs do not require the operational rearrangements 
+typically associated with revisions to job-level sched-
+ules and therefore do not give rise to the corresponding 
+schedule-adjustment costs. So, the objective is to deter-
+mine the optimal schedule ψ that minimises the average 
+total cost TC(ψ), comprising the average energy and 
+waiting costs over the finite planning horizon, as given 
+in Equation (1).
+ψ ∗ = arg min
+ψ
+TC(ψ) (1)
+The need for such a schedule follows directly from 
+the trade off between energy efficiency and production 
+responsiveness. When only a few job arrivals are expected 
+within a given time interval, the oven can be switched 
+to a standby mode to reduce energy consumption with-
+out causing excessive waiting in the system. By contrast, 
+when many jobs are expected to arrive within a given 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 7
+Figure 1. An example sample path of the temperature process in a multi-mode setting with vehicle arrivals and processing times.
+time interval, it becomes more attractive to switch the 
+oven to the operational mode so that parts can be pro-
+cessed without unnecessary delay. Since changing the 
+oven mode may require a considerable amount of time, 
+it is preferable to adjust the mode in anticipation of 
+expected arrivals rather than in response to realised 
+arrivals. T o represent this control problem over the plan-
+ning horizon, we define a production control schedule 
+in terms of operational cycles. Depending on the pro-
+duction requirements and costs, one or more cycles can 
+occur during the planning horizon. Given the problem 
+dynamics, we focus on schedules that follow a cyclic pat-
+tern composed of three distinct modes: a standby mode, a 
+warm-up mode, and an on mode. This restriction is moti-
+vated by the observation that transitions among standby 
+modes are suboptimal when advance arrival informa-
+tion is available, as discussed above. W e next describe the 
+structure of a cycle.
+A cycle c begins with a standby mode initiated at 
+time Ic. At time Uc, the warm-up process starts and is 
+completed by time Vc, thereby enabling the resource to 
+process jobs. The on mode then continues until Wc, when 
+the oven stops processing and is allowed to cool down to 
+the standby temperature corresponding to the mode of 
+the subsequent cycle, Mc+1. The cycle concludes at Ic+1, 
+which marks the beginning of the standby mode for cycle 
+c+1. The time between Wc and Ic+1 depends on Mc+1
+and is denoted by σMc+1. More specifically, σm denotes the 
+cool-down time required to move from the on mode to 
+standby mode m. Figure 1 provides an illustrative exam-
+ple of the resulting operational mode transitions and the 
+corresponding cycle structure.
+4.2. Solution approach overview
+Having introduced the scenario-based representation of 
+upstream arrival uncertainty, we now explain how these 
+scenarios are generated and used in the solution proce-
+dure. The digital twin plays a central role at this stage by 
+transforming real time information from the upstream 
+8 
+ S. KHAYYATI ET AL.
+Figure 2. Arrival times are estimated based on the system state 
+captured in the digital twin.
+system into scenario inputs for the scheduling problem. 
+Specifically, it uses the current locations of jobs in the 
+upstream system to generate alternative arrival scenar-
+ios, denoted by aj,s for j ∈ J = {1, 2, . . ., J} and s ∈ S =
+{1, 2, . . ., S}. Jobs located farther from the oven must 
+pass through more upstream stages and are therefore 
+exposed to more potential disruptions before reaching 
+the resource. Their arrival times consequently tend to 
+exhibit greater variability, as illustrated in Figure 2. The 
+digital twin captures this relationship by using real-time 
+job locations to generate arrival-time scenarios condi-
+tional on the observed upstream system state.
+Using these scenario inputs, we construct the resource 
+schedule at the beginning of each shift. In particular, 
+we first access the real time locations of upstream jobs, 
+then construct arrival scenarios from this information, 
+and finally determine the schedule that minimises the 
+average total cost over the planning horizon. In this 
+way, the digital twin provides the information layer of 
+the approach, enabling the scheduling model to account 
+for location-dependent arrival uncertainty when deter-
+mining the oven schedule over the planning horizon. 
+In practice, however, the digital twin may not cover the 
+entire upstream system. As a result, low-variability arrival 
+estimates may be available only for a subset of the jobs 
+in J, while the remaining jobs may have arrival esti-
+mates based only on the time at which they entered the 
+plant and therefore exhibit higher variability. T o study 
+the implications of this limited visibility, we assume 
+that reliable arrival time estimates are available for jobs 
+{1, 2, . . ., K}, and we refer to K ≤ J as the visibility win-
+dow. As K increases, more real time information becomes 
+available to the scheduling model. The effect of increasing 
+the visibility window is also discussed in Section 8.2.
+Once the scenario set has been constructed, we apply 
+two solution approaches to the resulting scheduling prob-
+lem: solving the MILP formulation with a commercial 
+solver and using a problem-specific genetic algorithm. In 
+practice, the time available to generate the schedule may 
+be limited. For example, the motivating application may 
+allow approximately 10 minutes to compute a schedule 
+before the start of a shift using the latest available sys-
+tem information. Both solution methods are therefore 
+run in parallel under the same time limit, and the feasi-
+ble schedule with the lowest average total cost is selected 
+for implementation. The selected schedule remains fixed 
+throughout the shift and is not revised in response to 
+operational data updates during that period. At the next 
+predefined scheduling epoch, updated information on 
+upstream job locations is used to generate a new sce-
+nario set, and the same solution procedure is repeated to 
+determine the schedule for the subsequent shift. Figure 3 
+depicts this process. Note that for the MILP approach, we 
+use the full scenario set when it can be handled within the 
+available computation time. If the number of scenarios 
+makes the full formulation too computationally demand-
+ing, we apply clustering to obtain a smaller set of repre-
+sentative scenarios and solve the corresponding reduced 
+formulation. T o ensure a consistent comparison between 
+the two solution approaches, schedules obtained using 
+the reduced set are evaluated over the original scenario 
+set. The details of the digital twin, the mathematical pro-
+gramming formulation, the genetic algorithm, and the 
+clustering approach are given in the following sections.
+5. Digital twin
+This section introduces the digital twin framework used 
+to support scheduling decisions in a stochastic pro-
+duction environment. W e begin by presenting the sys-
+tem model and operational baselines, then describe the 
+design of the digital twin and the generation of state-
+dependent arrival scenarios. The section concludes with 
+the scenario reduction procedure, namely the clustering 
+approach, employed to ensure computational tractability.
+5.1. System model and operational baselines
+In this section, we describe the digital twin developed in 
+this study, including the underlying system representa-
+tion and the main elements of its implementation. W e 
+model the upstream of the ovens as a serial production 
+line in which each station is represented as a delay block 
+with finite capacity and an infinite number of servers, i.e. 
+the number of servers at each station equals its maximum 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 9
+Figure 3. The flow of information between the physical system, the digital twin, and the oven control scheduler.
+capacity. Processing times at each station are determinis-
+tic. However, machine breakdowns introduce stochastic-
+ity through random up and down times. The serial line is 
+subject to blocking after completion of service, and delays 
+across stations may range from a few minutes to up to two 
+hours because of machine breakdowns, blocking, conges-
+tion, and other operational disruptions in the upstream 
+system. In addition, vehicle colour, classified as either 
+special or regular and known upon entry into the system, 
+is also random. On average, one quarter of the vehi-
+cles require processing in the oven for special colours. 
+For the scheduling problem considered here, however, 
+the relevant uncertainty does not lie in the final colour 
+assignment itself, but in the realised composition, tim-
+ing, and sequence of the vehicles reaching the specialised 
+oven. In other words, while vehicle colour determines 
+whether a vehicle requires the specialised oven, the main 
+source of uncertainty for the scheduling problem is when 
+such vehicles arrive and in what order they arrive from 
+the upstream system.
+W e consider two types of threshold-based con-
+trol policies as the benchmark for this system. These 
+threshold-based policies are implemented in the digital 
+twin so that system performance under the benchmark 
+policies can be evaluated and compared with the per-
+formance obtained using the schedules generated by the 
+proposed solution approach. The first is a buffer-based 
+threshold policy, under which the oven is turned on when 
+the number of vehicles in the system exceeds a speci-
+fied upper threshold. Once activated, the oven continues 
+processing vehicles until the system inventory falls below 
+a second (lower) threshold, at which point the oven is 
+turned off. The second policy is a time-based thresh-
+old policy. Under this approach, the oven is turned on 
+for a fixed duration (the first threshold), then turned 
+off and kept idle for another fixed duration (the second 
+threshold).
+5.2. Digital twin design
+T o generate stochastic arrival scenarios without using 
+current system information, a traditional offline simula-
+tion can be constructed by fitting the job arrival process 
+to historical data and simulating S realisations of the fit-
+ted process to obtain scenario-specific arrival times aj,s. 
+These scenarios can then be supplied to the scheduling 
+model to determine the oven schedule {(Mc, Uc, Wc) :
+c ∈ 1, 2, . . ., C} over a finite planning horizon. How-
+ever, reusing the fitted process across successive planning 
+intervals without conditioning on the current production 
+state means that the generated scenarios do not explicitly 
+account for changes in the upstream system. For exam-
+ple, the same fitted arrival-time distribution may be used 
+regardless of current vehicle locations or operating con-
+ditions. Such an offline approach therefore cannot exploit 
+current system information to represent the arrival pat-
+tern expected during a particular planning interval. This 
+limitation motivates generating arrival scenarios condi-
+tional on the current production state.
+The key distinction between the offline approach 
+described above and the digital twin used in this study 
+lies not in the use of simulation itself, but in how the 
+simulation is initialised and used to support scheduling 
+decisions. The digital twin is initialised with the most 
+recent information on vehicle locations, resource states, 
+and buffer contents. As illustrated in Figure 2, vehicle 
+location is particularly informative because it determines 
+how much of the upstream production line a vehicle must 
+still traverse before reaching the oven. V ehicles closer to 
+10 
+ S. KHAYYATI ET AL.
+the oven are therefore exposed to fewer potential disrup-
+tions and generally have lower arrival-time uncertainty, 
+whereas vehicles farther upstream remain exposed to 
+more processing stages, machine failures, blocking, and 
+congestion. Using the observed system state as its initial 
+condition, the digital twin generates arrival-time scenar-
+ios that capture these differences in uncertainty. These 
+scenarios are then supplied to the scheduling model, 
+allowing the oven schedule to reflect the current produc-
+tion configuration.
+T o implement this state-dependent scenario-
+generation approach, we develop a digital twin of the 
+upstream production system, represented as a serial line 
+with finite buffer capacities and unreliable stations. Each 
+vehicle entering the first upstream station is either a 
+special- or a regular-colour vehicle according to known 
+probabilities. The subsequent evolution of the upstream 
+system is therefore affected by both the stochastic com-
+position of arriving vehicles and operational disruptions 
+such as station breakdowns, blocking, and congestion. 
+Because the arrival scenarios must reflect the current pro-
+duction state, the digital twin is synchronised with the 
+physical system at predefined synchronisation epochs. 
+At each synchronisation epoch t, the current configu-
+ration of the upstream system is observed and used to 
+initialise the digital twin. This observed state includes 
+the positions of jobs along the line feeding the oven, the 
+operational status of the stations, the buffer contents, and 
+other factors that may affect future arrival times. Condi-
+tional on this observed state, let Aj denote the random 
+time from t until job j reaches the oven.
+Using the observed system state at epoch t as the 
+common initial condition, the digital twin generates S
+stochastic realisations of the subsequent evolution of the 
+upstream system. Each realisation s yields an arrival time 
+aj,s for each job j, corresponding to one realisation of Aj. 
+These scenario-specific arrival times are then supplied to 
+the scheduling model, which determines the oven sched-
+ule {(Mc, Uc, Wc) : c ∈ {1, 2, . . ., C}} that minimises the 
+expected total cost TC over the planning interval from 
+t until the next synchronisation epoch. The resulting 
+schedule remains fixed throughout this interval. At the 
+next synchronisation epoch, the newly observed sys-
+tem state is used to reinitialise the digital twin, generate 
+a new set of arrival-time scenarios conditional on the 
+updated system configuration, and determine a new oven 
+schedule by solving the same expected-cost minimisa-
+tion problem for the subsequent planning interval. In this 
+way, successive schedules reflect changes in the upstream 
+production state while no rescheduling is performed 
+between synchronisation epochs.
+5.3. Scenario reduction using clustering
+Accounting for stochasticity in complex optimisation 
+models often requires considering many scenarios, each 
+corresponding to a set of realisations of the random vari-
+ables. Since the system dynamics largely depend on these 
+realisations, incorporating scenarios generally requires 
+replicating a subset of the binary variables for each sce-
+nario, which can make the resulting formulation difficult 
+to solve with commercial solvers. In digital-twin-based 
+scheduling settings, this issue becomes particularly rele-
+vant when the digital twin generates a large number of 
+state dependent scenarios at each decision epoch, while 
+the optimisation problem must still be solved within 
+short computational times. If only a small number of sce-
+narios is sufficient to represent the relevant uncertainty, 
+the benefit of scenario reduction is naturally limited. 
+However, when a richer scenario set is needed to cap-
+ture system variability with adequate fidelity, the mathe-
+matical formulation can quickly become computationally 
+demanding. In such cases, clustering can provide a prac-
+tical way to preserve the main structure of uncertainty 
+while reducing the computational burden. Many scenario 
+reduction methods rely on clustering to group scenarios 
+so that those within the same group have a similar impact 
+on the problem (Grass et al. 2023). In this work, we treat 
+arrival times as features for each scenario. This is mainly 
+due to the fact that the processing times in the oven have 
+very low stochasticity, and the main effect of the stochas-
+ticity in the system is due to the arrival times. Hence, the 
+distance between for any given two scenarios s1 and s2 is 
+calculated as the euclidean distance ∑︁J j=1(as1,j − as2,j)2. 
+The scenarios are then clustered using this distance. W e 
+adopt the standard K-means algorithm because of its 
+computational efficiency. The K-means algorithm itera-
+tively updates the centres of the clusters and the assign-
+ments of the scenarios to the clustering. For a detailed 
+exposition of the algorithm, we refer the reader to Reddy 
+and Aggarwal (2018).
+6. Mathematical programming formulation
+In this section, we introduce the scenario-based math-
+ematical programming formulation of the energy-aware 
+production control problem described in Section 3. The 
+formulation captures the operational dynamics of the 
+machine, the stochastic nature of vehicle arrivals and 
+processing times, and the trade-off between energy con-
+sumption and service-level performance. For clarity and 
+ease of interpretation, all sets, parameters, and decision 
+variables used in the formulation are summarised in 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 11
+Table 1. Based on these definitions, the complete for-
+mulation is then constructed and presented in Equa-
+tions (2a)–(2x). 
+min TC =
+∑︂
+c∈C
+(eW(Vc − Uc) + eO(Wc − Vc) + Ec)
++ e1
+∑︂
+s∈S
+ps
+∑︂
+j∈J
+(Sj,s − aj,s), (2a)
+s.t. Uc ≥ 0, c ∈ C, (2b)
+Vc − Uc ≥ 0, c ∈ C, (2c)
+Vc − Uc ≥
+∑︂
+m∈M
+tmYc,m − BigM(1 − Zc),
+c ∈ C, (2d)
+Y1,1 = 1 (2e)
+Yc+1,1 ≥ 1 − Zc c ∈ C \ {C}, (2f)
+Wc ≥ Vc, c ∈ C, (2g)
+Sj,s ≥ Vc − BigM(1 − Xc,j,s),
+c ∈ C, j ∈ J, s ∈ S, (2h)
+Sj,s ≥ aj,s, j ∈ J, s ∈ S, (2i)
+Fj,s = Sj,s + dj,s, j ∈ J, s ∈ S, (2j)
+Sj+1,s ≥ Fj,s, j ∈ J \ {J}, s ∈ S, (2k)
+Wc ≥ Fj,s − BigM(1 − Xc,j,s),
+c ∈ C, j ∈ J, s ∈ S, (2l)
+Uc+1 ≥ Wc, c ∈ C \ {C}, (2m)
+Zc ≤
+∑︂
+s∈S
+∑︂
+j∈J
+Xc,j,s, c ∈ C, (2n)
+∑︂
+s∈S
+∑︂
+j∈J
+Xc,j,s ≤ BigMZc, c ∈ C, (2o)
+∑︂
+c∈C
+Xc,j,s = 1, j ∈ J, s ∈ S, (2p)
+∑︂
+m∈M
+Yc,m = 1, c ∈ C, (2q)
+Ic ≥ Wc−1, c ∈ C \ {1}, (2r)
+Ic ≥ 0, c ∈ {1}, (2s)
+Ic − Wc−1 ≤
+∑︂
+m∈M
+σmYc,m, c ∈ C \ {1}, (2t)
+Ic ≤ Uc, c ∈ C, (2u)
+Ec ≥ em(Uc − Ic) − BigM(1 − Yc,m),
+c ∈ C, m ∈ ˇM, (2v)
+Xc,j,s, Yc,m, Zc ∈ {0, 1},
+c ∈ C, j ∈ J, s ∈ S, m ∈ ˇM, (2w)
+Vc, Wc, TC, Uc, Sj,s, Fj,s, Ic, Ec ∈ R+,
+c ∈ C, j ∈ J, s ∈ S. (2x)
+In the given formulation, Equation (2a) specifies the 
+objective function, which minimises the total cost com-
+posed of warm-up, operation, standby, and waiting costs, 
+respectively. Equation (2b) imposes a non-negativity 
+constraint on the oven’ s start time, ensuring that pro-
+duction cannot begin before the planning horizon. 
+Equation (2c) imposes a positivity constraint on the 
+warm-up times, ensuring that each transition from a 
+standby mode to the on mode requires a strictly positive 
+duration. Equation (2d) specifies the warm-up time of 
+each cycle according to its corresponding standby mode. 
+Since the system starts in the off mode, Equation (2e) 
+enforces that the warm-up time of the first cycle cor-
+responds to that of standby mode m= 1. Equation (2f) 
+specifies that if a cycle is not used, the standby mode is 
+m = 1 for the next cycle. Equation (2g) enforces the logi-
+cal sequencing of operations by ensuring that the oven is 
+switched to the off mode in a cycle only after it has first 
+been switched to the on mode. Equation (2h) ensures that 
+if, in scenario s, vehicle j is assigned to cycle c, its pro-
+cessing begins only after the oven start time of that cycle. 
+Equation (2i) implies operational coherence by requiring 
+that vehicle processing may begin only after the corre-
+sponding vehicle has arrived. Equation (2j) specifies that, 
+for each vehicle j in scenario s, the completion time is 
+equal to the sum of its start time and processing time.
+Equation (2k) imposes a first-come-first-served pol-
+icy, ensuring that vehicles are processed sequentially one 
+at a time in their order of arrival. Note that the proposed 
+formulation does not optimise the processing sequence 
+of vehicles. Instead, vehicles are indexed according to 
+their realised arrival order in each scenario, and Con-
+straint (2k) enforces this order. The scheduling decisions 
+concern the timing of the oven’ s operating modes and 
+cycles, through variables such as Uc, Vc, Wc, Yc,m, and Zc, 
+together with the assignment of vehicles to these cycles 
+through Xc,j,s. Equation (2l) enforces that, in scenario s, 
+if vehicle j is assigned to cycle c, its processing is com-
+pleted prior to the termination of the on-mode portion 
+of cycle c. Equation (2m) ensures that cycles do not over-
+lap. Equation (2n) enforces that a cycle is utilised only 
+when there exists at least one vehicle belonging to it in 
+at least one scenario. Equation (2o) enforces that when-
+ever a cycle is inactive, no vehicle can be allocated to it. 
+Equation (2p) ensures that, in each scenario, every vehi-
+cle is assigned to only one cycle. Equation (2q) imposes 
+that, among the available options, only one standby mode 
+can be used within each cycle. Equation (2r) implies that 
+the standby mode of a cycle begins only after the oven 
+has been turned off in the preceding cycle. Equation (2s) 
+12 
+ S. KHAYYATI ET AL.
+Table 1. Summary of the notation for mathematical programming formulation.
+Sets and 
+parameters Decision Variables
+Sets and 
+parameters Decision Variables
+S: Set of scenarios, S = {1, 2, . . ., S} dj,s: Oven time for vehicle j ∈ J in scenario s ∈ S
+S: Total number of scenarios ps: Probability of scenario s
+ˇM: Set of standby modes given as {1, 2, . . ., M} Vc: Starting time of oven working in cycle c ∈ C
+M: Total number of modes Wc: Ending time of oven working in cycle c ∈ C
+C: Set of cycles, C = {1, 2, . . ., C} Xc,j,s: Binary variable denoting if vehicle j ∈ J is in cycle 
+c ∈ C in scenario s ∈ S (or not)C: Total number of allowed cycles
+J: Set of vehicles, J = {1, 2, . . ., J} Zc: Binary variable denoting if cycle c ∈ C is used (or not)
+J: Total number of vehicles TC: Total Cost
+BigM: Sufficiently large positive number Yc,m: Binary variable indicating if for cycle c the standby 
+mode is m or nottm: Required time of oven warming-up from mode m
+eW : Cost rate of oven warming-up Uc: Starting time of oven warming-up in cycle c ∈ C
+e1: Cost of vehicles waiting before oven Sj,s: Starting time of vehicle j ∈ J in scenario s ∈ S
+eO: Cost rate of oven working Fj,s: Finishing time of vehicle j ∈ J in scenario s ∈ S
+em: Standby cost rate for mode m Ic: Starting time of the standby for cycle c
+σm: Off time allowed between Wc and Ic+1 Ec: Total standby cost for cycle c
+aj,s: Arrival time of vehicle j ∈ J in scenario s ∈ S
+denotes a non-negativity constraint on the starting time 
+of the first cycle. Equation (2t) specifies the duration 
+for which the oven can remain off before it reaches the 
+relevant standby temperature and must be maintained 
+there. Equation (2u) establishes that, within each cycle, 
+the initiation of the warm-up mode must follow the start 
+of the associated standby mode. Equation (2v) speci-
+fies the energy consumed in cycle c during the standby. 
+Equation (2w) defines Xc,j,s, Yc,m, and Zc as binary vari-
+ables. These variables indicate, respectively, whether a 
+vehicle is assigned to a cycle in a given scenario, whether 
+a standby mode is selected for a cycle, and whether a cycle 
+is used.
+In what follows, we outline our solution approach 
+to the proposed scenario-based mathematical program-
+ming model, including relevant details. In particular, we 
+first examine the feasibility and computational limits of 
+solving the model directly with commercial solvers. W e 
+then establish structural properties of the optimal solu-
+tion and, based on these insights, propose several valid 
+inequalities that can strengthen the formulation.
+6.1. Computational limits of the mathematical 
+model
+The proposed mathematical model can be solved directly 
+with commercial solvers for small-scale instances, typi-
+cally in under a minute, consisting of up to 60 jobs, 5 sce-
+narios, and 3 operating modes. However, as the problem 
+scales, it quickly becomes computationally intractable 
+due to its mixed-integer structure. Specifically, the for-
+mulation consists of (C × J × S) + (C × M) + (2 × J ×
+S) + (7 × C) + 1 variables in total, of which (C × J ×
+S) + (C × M) + C are binary and (2 × J × S) + (6 ×
+C) + 1 are continuous, along with (2 × C × J × S) +
+(C × M) + (4 × J × S) + (11 × C) − S − 1 constraints.
+This rapid combinatorial growth in both decision vari-
+ables and constraints poses significant challenges for 
+exact optimisation, despite recent advances in state-of-
+the-art commercial solvers. In our case study, approxi-
+mately 100 vehicles are processed daily, which implies 
+that the solution approach must efficiently handle prob-
+lem instances of this scale while accounting for a large 
+number of scenarios to adequately represent system ran-
+domness. For instance, a problem with 100 vehicles, 5 
+cycles, and 100 scenarios results in nearly 500,000 binary 
+decision variables. On a machine equipped with an AMD 
+Ryzen 9 PRO CPU 4.00 GHz and 32 GB of RAM, using 
+CPLEX Optimiser (version 22.1.2), such an instance can 
+not be solved within one hour. This demonstrates that 
+solving the model at this scale with commercial solvers 
+is not feasible within practical time limits, as the solution 
+space expands exponentially and overwhelms available 
+computational resources.
+Overall, all these observations further underscore the 
+importance of leveraging problem structure, incorporat-
+ing valid inequalities, and employing heuristic methods 
+to obtain high-quality solutions for large-scale problem 
+instances encountered in practice.
+6.2. Solution properties and valid inequalities
+In this section, we establish several structural proper-
+ties of the optimal solution and formally prove their 
+validity. These properties can actually serve two key pur-
+poses. Firstly, they provide theoretical insights into the 
+behaviour of the optimal schedule, and they support the 
+derivation of valid inequalities that strengthen the math-
+ematical formulation. Note that the proofs for all valid 
+inequalities presented in this subsection are given in 
+Appendix A. Secondly, incorporating these valid inequal-
+ities can enhance the efficiency of exact solution methods 
+and reduce the search space of the heuristic algorithm, 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 13
+thereby likely contributing to faster and more reliable 
+solution generation.
+Proposition 6.1: In a system where (i) the temperature 
+increase during warm-up is linear in time, and (ii) for any 
+two modes m, m′ ∈ ˇM, the inequality
+(tm − tm′)cW > (tm − tm′ + σm − σm′)cm, (3)
+holds, an optimal solution exists in which no transition 
+occurs between modes m and m′ within ˇM.
+Proposition 6.1 implies that in an optimal schedule, 
+once the machine is set to a standby mode, it is not opti-
+mal to switch between different standby modes before 
+returning to the operating mode. In other words, tran-
+sitions from one standby temperature level to another 
+do not improve the objective value and are therefore 
+suboptimal. This result simplifies the problem structure, 
+since we can exclude such transitions without loss of 
+optimality, thereby reducing the solution space.
+Proposition 6.2: For each standby mode m ∈ ˇM, the 
+duration of its use (i.e. the interval from Wc−1 to Vc for 
+c > 1 when Yc,m = 1) should be at least
+LB1 m =
+[︃ tmcW − σmcm − tmcm
+cO − cm
+]︃+
+. (4)
+Proposition 6.2 provides a lower bound on the dura-
+tion for which each standby mode must be used in order 
+to be beneficial. The intuition is that switching to standby 
+mode is advantageous only if the energy savings dur-
+ing standby exceed the additional costs of warm-up and 
+waiting. Accordingly, the bound LB1 m specifies the min-
+imum time the oven must remain in standby mode m
+for the transition to be worthwhile, ensuring that the sav-
+ings outweigh the associated costs. If the standby period 
+falls below this threshold, the potential savings cannot 
+offset the extra costs, and it becomes more cost-efficient 
+to remain in the operating mode.
+Proposition 6.3: The start time of the first ON period, V1, 
+is bounded above by
+UB1 = min
+{︄
+u ≥ t1 : (u − t1) × cO ≤ e1
+S∑︂
+s=1
+ps
+×
+J∑︂
+j=1
+[︁
+u − max(t1, aj,s)
+]︁+
+⎫
+⎬
+⎭ , (5)
+which denotes the smallest feasible upper bound that pre-
+vents excessive waiting costs.
+Proposition 6.3 establishes that the system cannot 
+postpone the beginning of the first ON period indefi-
+nitely. Any delay of V1 beyond UB1 would result in wait-
+ing costs that outweigh the potential energy savings from 
+postponement. Correspondingly, UB1 represents a criti-
+cal threshold balancing these opposing effects, ensuring 
+that an optimal solution must initiate production no later 
+than this bound. Note that the value of UB1 can be effi-
+ciently determined by iteratively testing candidate values, 
+starting from UB1 = 0.
+Proposition 6.4: A recursive lower bound LB2 c on the start 
+time of each ON period Vc where c ∈ C can be expressed 
+as
+LB2 c =
+{︄
+t1, c = 1,
+LB2 c−1 + mins,j ds,j + minm LB1 m, c > 1. (6)
+Proposition 6.4 implies that each ON start time, Vc, 
+is bounded below by the completion of the preceding 
+cycle plus the minimum processing and standby dura-
+tions. This recursive bound ensures temporal consistency 
+across cycles, guaranteeing that no operational period 
+can begin earlier than what is physically feasible given the 
+processing and warm-up requirements.
+Proposition 6.5: The total time spent in the ON mode 
+across all cycles must be at least as large as the total oven 
+processing time in the worst-case scenario, i.e.
+∑︂
+c∈C
+(Wc − Vc) ≥ max s
+∑︂
+j∈J
+dj,s. (7)
+Proposition 6.5 ensures that the cumulative ON time 
+of the oven is sufficient to process all jobs in the sce-
+nario requiring the longest total processing time. Since 
+the same schedule must accommodate every scenario, the 
+ON periods must be long enough to cover the maximum 
+workload observed across all scenarios.
+Proposition 6.6: A lower bound on the ON time of each 
+cycle, except for the last cycle, can be expressed as
+LB3 m1,m2 = max
+{︃(︃ tm2eW
+maxj,s aj,s
+− em1
+)︃
+× minj,s dj,s
+e1
+, min
+j,s
+dj,s
+}︃
+, (8)
+where m1 and m2 denote the standby modes of two consec-
+utive cycles.
+14 
+ S. KHAYYATI ET AL.
+Proposition 6.6 provides a minimum required ON 
+time for each cycle (except the last) to ensure that switch-
+ing between two consecutive standby modes, m1 and m2, 
+is cost-effective. The bound LB3 m1,m2 balances the warm-
+up and standby costs against the processing and waiting 
+costs, thereby preventing ON periods that are too short 
+to be economically efficient.
+Proposition 6.7: An upper bound on the number of cycles 
+can be expressed as
+UB2 = 1 + (maxj,s aj,s) − t1
+minm LB1m + minm1,m2 LB3m1,m2 , (9)
+where maxj,s aj,s is the time of the last vehicle arrival.
+After the last arrival, maxj,s aj,s, it is preferable to keep 
+the machine ON until all jobs are processed. This obser-
+vation implies that no additional production cycles are 
+necessary beyond the last arrival, and therefore, the max-
+imum number of cycles is bounded by UB2. Thus, any 
+cycle beyond this limit becomes redundant.
+Based on these results, one can also derive additional 
+constraints (valid inequalities) that, while not required 
+for the feasibility of the resulting production control, 
+can improve computational efficiency. Depending on the 
+parameter values, such inequalities can provide tighter 
+bounds and thereby reduce the solution time. The con-
+straints are presented in Equations (10a)–(10h). 
+Z1 = 1, (10a)
+Zc+1 ≤ Zc, c ∈ C \ {C}, (10b)
+Vc − Wc−1 ≥ LB1 mYc,m, ∀c ∈ C \ {1},m ∈ ˇM, (10c)
+V1 ≤ UB1, (10d)
+Vc ≥ LB2 c , ∀c ∈ C, (10e) ∑︂
+c∈C
+Wc − Vc ≥ max s
+∑︂
+j∈J
+dj,s, (10f)
+LB3 m1,m2 ≤ Wc − Vc + BigM(3 − Zc+1 − Yc,m1
+− Yc+1,m2), ∀m1, m2 ∈ M, c ∈ C \ {C}, (10g)
+Zc = 0, ∀c ∈ C : c > UB2. (10h)
+Equation (10a) ensures that the first cycle is active, 
+reflecting the assumption that the scheduling problem 
+under consideration is not trivial, i.e. there is at least one 
+vehicle to be processed. If there is at least one vehicle 
+in the problem, it should be assigned to a cycle, so the 
+first cycle will always be used. Equation (10b) implies that 
+the cycles are used in increasing order; e.g. it prevents 
+solutions like Z1 = 0, Z2 = 1, Z3 = 1 and Z1 = 1, Z2 =
+0, Z3 = 1 with the same objective value from being feasi-
+ble at the same time. In this way, the constraint eliminates 
+symmetry in the problem and strengthens the formula-
+tion. Equation (10c) guarantees that if standby mode m is 
+selected at cycle c, then the duration between the end of 
+the previous cycle and the start of the current one must be 
+no shorter than the corresponding lower bound derived 
+in Proposition 6.2. Equation (10d) ensures that the first 
+cycle does not start later than the corresponding upper-
+bound derived in Proposition 6.3, designed to limit the 
+waiting cost generated by starting late. Equation (10e) 
+implies that Vc in each cycle is greater than the lower-
+bound given in Proposition 6.4. Equation (10f) imposes 
+that the total operating time for the oven is greater than 
+the total operating time required by the most demand-
+ing scenario based on the property given in Proposi-
+tion 6.5. Equation (10g) ensures a minimum operating 
+time for each cycle, as established in Proposition 6.6. 
+Equation (10h) incorporates the result of Proposition 6.7, 
+restricting the number of cycles that can be used.
+7. Approximate solution using a heuristic 
+algorithm
+T o utilise advance arrival information, the digital twin 
+generates arrival-time scenarios based on the system state 
+observed at a designated scheduling epoch. These scenar-
+ios are then used to determine the oven schedule for the 
+subsequent planning interval, and the resulting schedule 
+remains fixed until the next scheduling epoch. There-
+fore, the scenario set must capture the uncertainty in 
+how the upstream system may evolve over this interval. 
+In the motivating paint-shop setting, vehicle positions 
+and production conditions may change over relatively 
+short periods, and operational data are updated approx-
+imately every ten minutes. These data updates do not 
+trigger rescheduling. The oven schedule is recomputed 
+only at predefined decision epochs, such as the begin-
+ning of each shift. Accordingly, the scenario set gener-
+ated at each decision epoch must represent the range of 
+arrival patterns that may arise before the next schedule 
+is determined. Representing this uncertainty adequately 
+may require a large number of scenarios. As the num-
+ber of scenarios increases, the size and computational 
+burden of the scenario-based mathematical program also 
+increase, which may prevent exact optimisation from 
+generating a schedule within the available computation 
+time. This computational limitation motivates the devel-
+opment of the problem-specific genetic algorithm, which 
+provides high-quality schedules for larger scenario sets 
+within practical time limits.
+Before describing the problem-specific implementa-
+tion, we briefly outline the general logic of the genetic 
+algorithm used in this study. The genetic algorithm main-
+tains a population of candidate solutions, each associated 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 15
+with a fitness value, and improves this population itera-
+tively (Mitchell 1998). The population at each iteration is 
+referred to as a generation. At each iteration, candidate 
+solutions are evaluated based on their objective func-
+tion values. A stochastic selection mechanism is then 
+used to remove a subset of the population, with lower-
+quality solutions having a higher probability of removal. 
+The surviving solutions are modified through mutation 
+and used to generate new candidate solutions that replace 
+the discarded ones. This process continues until a stop-
+ping criterion is met, which is typically defined as either 
+a computational time limit or a maximum number of 
+iterations.
+Although this general structure provides the basis of 
+the solution approach, it cannot be applied directly to 
+the full mathematical formulation without further adap-
+tation. More specifically, in the present problem, directly 
+applying a generic genetic algorithm to the full math-
+ematical formulation would be inefficient. The formu-
+lation contains a large number of highly interdepen-
+dent variables, including cycle-level decisions, vehicle-
+to-cycle assignments, and scenario-dependent start and 
+finish times. If all these variables were encoded directly in 
+a chromosome, most randomly generated chromosomes 
+would be infeasible, and even small mutations would 
+frequently violate the temporal sequencing and assign-
+ment constraints of the model. Therefore, the proposed 
+algorithm exploits the structure of the problem by encod-
+ing only the cycle-level scheduling decisions that define 
+the oven schedule. More specifically, each chromosome 
+represents a candidate schedule through the standby 
+mode, warm-up start time, and on-mode finishing time 
+of each cycle. V ehicle-level decisions are not encoded 
+explicitly. Instead, once a candidate schedule is specified, 
+a dedicated evaluation procedure reconstructs the cor-
+responding processing start and finish times under each 
+scenario and computes the resulting objective value. This 
+design substantially reduces the dimension of the search 
+space while preserving the operational logic of the orig-
+inal mathematical model. For example, in an instance 
+with 100 vehicles, 100 scenarios, and 5 cycles, a direct 
+encoding of the full formulation would require more 
+than 50,000 decision components, whereas the proposed 
+encoding requires only 15 components. The algorithm is 
+also executed for a fixed number of cycles. This choice 
+is motivated by preliminary experiments showing that 
+treating the number of cycles as a mutable component 
+of the chromosome leads to weak search performance. 
+Therefore, instead of encoding the number of cycles as 
+part of the chromosome, we determine it through an 
+exhaustive search. The initialisation procedure also uses 
+structural information from the problem, particularly the 
+requirement that the total on-mode time must be at least 
+as large as the maximum total processing requirement 
+across scenarios. Overall, the proposed algorithm is not 
+a direct application of a generic genetic algorithm to the 
+full variable space; rather, it is a problem-specific heuris-
+tic that combines compact cycle-level encoding with a 
+fast schedule evaluation procedure.
+In particular, given a specified number of cycles, a new 
+chromosome is generated by first assigning a random 
+standby mode to each cycle. Subsequently, the warm-up 
+start times Uc are drawn randomly in increasing order, 
+ensuring Uc < Uc+1. Next, the total processing require-
+ment is randomly allocated across the cycles. For each 
+cycle, the completion time Wc is then computed as the 
+corresponding warm-up start time Uc plus the mode-
+dependent warm-up duration and the allocated process-
+ing time. On the other hand, in each iteration, chromo-
+somes can undergo mutation. T o perform a mutation, 
+one cycle is first selected at random. Then, the type of 
+mutation is determined randomly. Mutations may affect 
+Mc, Uc, or Wc. If the mutation affects Mc, the standby 
+mode of the selected cycle is replaced with a randomly 
+selected standby mode. If it affects either Uc or Wc, the 
+corresponding value is adjusted upward or downward 
+by a random amount drawn from a continuous uni-
+form distribution. After any modification is applied to a 
+chromosome, it must be verified that the resulting chro-
+mosome remains feasible. This is done by performing 
+a sequence of feasibility checks and applying corrective 
+adjustments when necessary. Whenever a correction is 
+made, all checks are repeated to confirm that no new vio-
+lations have been introduced. The checks include: (i) ver-
+ifying that Uc and Wc are positive and strictly increasing 
+in c, which keeps all warm-up start times and cycle com-
+pletion times nonnegative and properly ordered, and (ii) 
+verifying that Uc+1 ≥ Wc for all c, so that the warm-up 
+of a new cycle never begins before the previous cycle has 
+finished, thereby preventing infeasible overlaps between 
+consecutive cycles.
+The genetic algorithm also requires a measure, namely 
+the fitness value or objective function value, to evaluate 
+candidate chromosomes and eliminate those that per-
+form poorly, allowing computational effort to be focussed 
+on more promising solutions. T o compute the objec-
+tive function value for a chromosome {(Mc, Uc, Wc) : c ∈
+C}, all remaining problem variables must first be deter-
+mined. Specifically, the variables that are independent of 
+the scenario can be calculated as follows. The end of the 
+warm-up period in each cycle, Vc, is obtained by adding 
+the mode-dependent warm-up duration corresponding 
+to the cycle’ s standby mode, Mc, to its warm-up start 
+time, Uc. The start time of the standby mode in each 
+cycle, Ic, is determined by adding the cool-down time 
+required for the corresponding standby mode, σMc, to 
+16 
+ S. KHAYYATI ET AL.
+the finish time of the previous cycle, Wc−1, for c > 1, 
+while I1 is set to zero. Once these scenario-independent 
+quantities are computed, the remaining variables are 
+evaluated on a scenario-by-scenario basis. In particular, 
+each vehicle may be assigned to a different cycle under 
+different scenarios. Given a fixed chromosome and the 
+arrival and processing times generated for each scenario, 
+vehicle-level start and finish times can be recovered effi-
+ciently through a deterministic evaluation procedure. Let 
+ˆj denote the vehicle to be scheduled and ˆc denote the cycle 
+to which vehicle ˆj is tentatively assigned in scenario s. 
+The processing start time of vehicle ˆj in scenario s, Sˆj,s, is 
+calculated as the maximum of its arrival time, the finish 
+time of the preceding vehicle, and the start of the on-
+mode period in the tentative cycle, i.e. max aˆj,s, Fˆj−1,s, Vˆc. 
+The corresponding finish time is then computed as Fˆj,s =
+Sˆj,s + dˆj,s. If Fˆj,s ≤ Wˆc, assigning vehicle ˆj to cycle ˆc is 
+feasible, and the procedure proceeds to the next vehicle 
+by updating ˆj ← ˆj + 1. If Fˆj,s > Wˆc, the cycle index is 
+incremented, ˆc ← ˆc + 1, and the assignment is retried. 
+If no remaining cycle can accommodate the vehicle, the 
+chromosome is treated as infeasible. This process begins 
+with ˆj ← 1 and ˆc ← 1 and continues until all vehicles are 
+scheduled for scenario s. The procedure is then repeated 
+for the remaining scenarios. Given the resource schedule 
+and the resulting start and finish times of all vehicles in all 
+scenarios, the total cost is calculated using Equation (2a).
+Using the procedures described above and illustrated 
+in Figure 4, the genetic algorithm starts from a popula-
+tion of randomly generated chromosomes and iteratively 
+improves the schedules until the stopping criterion is 
+reached.
+8. Numerical experiments
+In this section, we examine the value of using the digital 
+twin by comparing the proposed method with two widely 
+used benchmark policies: the always-on policy and the 
+threshold policy. Although these benchmarks are simple 
+to implement, they do not use advance information on 
+future arrivals. By contrast, the proposed method uses 
+arrival information generated from real-time upstream 
+vehicle locations, enabling oven schedules to anticipate 
+scenario-dependent arrivals. This comparison allows us 
+to quantify the operational value of this information in 
+terms of energy savings and the associated waiting-time 
+trade-off. W e then extend the analysis to consider the role 
+of predictive accuracy by considering a visibility window 
+K, within which arrival times are known precisely using 
+the live information from the digital twin, while those 
+beyond are estimated only using the time the vehicle has 
+entered the shop. This setting enables us to examine how 
+varying degrees of information availability impact oper-
+ational efficiency and to determine the conditions under 
+which increased visibility yields substantial benefits. Fur-
+thermore, to address the computational challenges of 
+solving the exact model for large-scale instances involv-
+ing many vehicles and scenarios, we develop heuristic 
+approaches based on genetic algorithms and clustering 
+techniques. Their performance is compared against the 
+MILP results to evaluate both efficiency and solution 
+quality. Finally, we analyze how key system parameters, 
+such as the number of vehicles, scenarios, and opera-
+tional modes, etc., affect the computational performance 
+of the MILP model.
+8.1. Impact of using advance arrival information 
+from the digital twin on energy consumption and 
+system performance
+T o examine the value of advance arrival information for 
+energy performance, we compare the proposed MILP-
+based solution with two widely used benchmark strate-
+gies: the always-on policy and the threshold-based pol-
+icy. These benchmarks are commonly used in indus-
+try and the academic literature because of their ease 
+of implementation and intuitive appeal (see, e.g. Frige-
+rio, Tan, and Matta 2024; Karabağ 2026; Khayyati and 
+Tan 2020; Loffredo et al. 2024). Under the always-on
+policy, the oven is switched on at the beginning of the 
+planning horizon, typically at the start of a shift or day, 
+and remains in the operational mode until all jobs are 
+processed. Under the threshold-based policy, the oven 
+changes mode according to predefined thresholds based 
+either on the number of vehicles in the system or on 
+the elapsed time since the last mode change. Accord-
+ingly, we consider two variants of the threshold-based 
+policy, namely buffer-based and time-based policies. In 
+the buffer-based variant, the oven is switched on when 
+the number of vehicles in the system exceeds an upper 
+threshold and is switched off when it falls below a lower 
+threshold. In the time-based variant, the oven alternates 
+between on and off periods according to two time thresh-
+olds. In both variants, the threshold values are obtained 
+by searching over the corresponding two-dimensional 
+threshold space. Since the buffer-based policy outper-
+forms the time-based policy in all problem instances 
+considered, we use it as the threshold-based benchmark 
+in the comparative analyses.
+This comparison is designed to separate the value of 
+advance arrival information from the value of simple 
+reactive control rules. The benchmark policies repre-
+sent simple decision rules that operate without access 
+to advance information on future arrivals, whereas the 
+MILP model captures an idealised setting in which 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 17
+Figure 4. The procedure to assign the vehicles to cycles in all the scenarios.
+future vehicle arrivals are known in advance and can 
+be scheduled optimally. By comparing these approaches, 
+we actually quantify how much system performance can 
+improve when decision makers have advance knowl-
+edge of upcoming arrivals. In line with the motivating 
+industrial setting, the numerical analysis is not based 
+on arbitrary synthetic scenarios. Instead, the scenarios 
+are generated through a digital twin designed to reflect 
+the operational dynamics of the system under study. 
+Directly observed production data correspond to only 
+a limited number of realised production paths and are 
+therefore not sufficient, on their own, to represent the 
+state-dependent variability relevant to the scheduling 
+problem. In particular, this variability changes with the 
+current upstream configuration, since vehicles located 
+further from the oven are exposed to more potential dis-
+ruptions and therefore exhibit greater variability in their 
+arrival times. For this reason, the digital twin is calibrated 
+using expert input and available aggregate operational 
+data, including processing times and failure and repair 
+characteristics, and is then used to generate the sce-
+narios employed in the numerical experiments. For the 
+comparative analysis, we consider a base scenario whose 
+parameters are primarily aligned with the operational 
+characteristics of the company that motivates our study. 
+In the base scenario, we allow three production cycles, i.e. 
+C = 3, and consider three temperature modes, i.e. M = 3, 
+with all valid inequalities included in the formulation. 
+18 
+ S. KHAYYATI ET AL.
+Table 2. Comparison of the optimal, threshold-based, and always-
+on policies in terms of total cost and energy consumption cost.
+MILP Threshold-based policy Always-on
+Average total cost 6.84 9.87 10.50
+Average energy cost 5.06 8.56 10.08
+Average waiting time 178.08 131.51 42.07
+Building on the base case, we vary only the arrival pattern 
+by generating 50 arrival patterns from the digital twin, 
+resulting in 50 problem instances for analysis.
+W e next evaluate these policies using both the total 
+cost and its main performance components. For all three 
+policies, namely the MILP-based solution, the threshold-
+based policy, and the always-on policy, we track the total 
+cost as well as the cost components related to energy 
+consumption and waiting. The results are presented in 
+Table 2. In the table, waiting time is reported in sec-
+onds per vehicle. The energy cost measure is normalised 
+using the cost of operating the oven in the on mode 
+for one minute. Hence, it represents the equivalent on-
+mode operating minutes per vehicle. For example, a value 
+of 5.06 for the MILP-based solution indicates that the 
+energy consumed per vehicle is equivalent to 5.06 min-
+utes of oven operation in the on mode.
+In Table 2, one can clearly see that the MILP-based 
+optimal policy yields the lowest total cost, with an aver-
+age around 6.8 and relatively low variability. Nevertheless, 
+the threshold-based and always-on policies exhibit signifi-
+cantly higher costs, approximately 50–60% more on aver-
+age. On the other hand, Table 2 decomposes the total cost 
+into its energy-consumption and waiting-cost compo-
+nents, providing insight into whether these components 
+drive the performance differences observed across poli-
+cies. The table shows that the optimal policy significantly 
+reduces energy usage compared to both benchmark poli-
+cies, yielding roughly half the costs. Compared with the 
+threshold-based policy, the proposed approach can reduce 
+the normalised energy cost per vehicle, measured in units 
+equivalent to one minute of oven operation in the on 
+mode, by up to 40% when reliable predictions are gen-
+erated by the digital twin, while increasing the average 
+waiting time per vehicle by about 35%. This major dif-
+ference can be attributed to the usage of the digital twin, 
+as the benchmark policies can operate without the digital 
+twin; yet, capturing the snapshot of the system and using 
+it to generate predictions for the arrival times is possible 
+via the digital twin. This implies that the energy-saving 
+mechanism embedded in the optimal control strategy 
+plays a critical role in minimising costs. The threshold-
+based policy, despite being more responsive than the 
+always-on policy, fails to achieve significant reductions 
+in energy consumption, primarily because it still keeps 
+the oven active for extended periods to avoid delays and 
+cannot exploit the flexibility offered by the intermedi-
+ate modes. As expected, always-on performs worst from 
+the perspective of energy consumption. This observation 
+further reveals that the MILP solution not only results in 
+lower total costs but also achieves this by effectively bal-
+ancing service responsiveness and energy efficiency using 
+advance arrival information.
+8.1.1. Trade-off between reducing energy 
+consumption and production requirements
+In this subsection, we aim to assess the impact of the 
+allowed average waiting time on total energy consump-
+tion in a setting where the precise arrival time estimations 
+are available. T o this end, we solve the problem with dif-
+ferent values for e1 coming from the set {10−3 × 2i : i ∈
+{0, 1, . . ., 9}}, while keeping the rest of the parameters as 
+given in Subsection 8.1. For each value of e1, we repeat 
+the experiment for 100 replications.
+Figure 5(a) presents the results of this experiment. 
+With very high values of e1, waiting is not attractive and 
+as a result, the vehicles are being processed as soon as 
+possible (after they arrive and after the previous vehicle 
+has been processed). In this case, energy consumption 
+is at its highest. As e1 decreases and more waiting time 
+is tolerated, energy consumption is reduced to a great 
+extent. These results indicate that if reliable estimates 
+for the arrival times are available via the digital twin, by 
+allowing one hour more waiting time per vehicle, 20% 
+of energy consumption can be reduced. This highlights 
+that significant improvements in energy consumption are 
+possible without generating a large negative impact on 
+the performance of the system.
+8.2. Impact of visibility window size on system 
+performance
+In this section, we numerically investigate how the 
+size of the visibility window affects the system’ s long-
+run average cost in a dynamic production environ-
+ment such as ours. In settings where future arrivals 
+can be anticipated in advance, operational control poli-
+cies can be adjusted more proactively, resulting in 
+improved system efficiency. In our context, the visi-
+bility window refers to the number of incoming vehi-
+cles for which arrival times to the oven are known 
+in advance with Var(Aj) = 0 : j ∈ {1, 2, . . ., K} implying 
+aj,s = aj,s′, ∀s, s′ ∈ {1, 2, . . ., K}. For the vehicles outside 
+this window j ∈ {K + 1, K + 2, . . ., J}, the arrival time is 
+only estimated based on the time the vehicle has entered 
+the plant and not the online information about its loca-
+tion. As a result, for these vehicles, Var(Aj) >0 implying 
+aj,s can differ for different values of s. Correspondingly, 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 19
+Figure 5. (a)The effect of e1 on the energy consumption and waiting time. (b) The effect of the size of the visibility window, i.e. the 
+number of upstream vehicles J used to generate the arrival scenarios, on the average cost.
+the analysis offers valuable insights into the role of pre-
+dictive information in minimising unnecessary energy 
+expenditures and enhancing the responsiveness of con-
+trol decisions under uncertainty.
+For this numerical analysis, we select a base scenario 
+whose parameters are primarily based on the operational 
+characteristics of the company that motivated our study. 
+The base scenario includes three production cycles (C =
+3), three temperature modes (M = 3), and three arrival 
+scenarios (S = 3), with all valid inequalities included in 
+the formulation. W e vary the visibility window size from 
+0 to 90 in increments of 10, yielding 10 distinct prob-
+lem instances. W e solve each instance using the proposed 
+mathematical model, record the resulting long-run aver-
+age costs for this analysis, and present these results in 
+Figure 5(b).
+Figure 5(b) illustrates the impact of the visibility win-
+dow, which is defined as the number of vehicles for 
+which arrival times to the oven are known in advance, 
+on the system’ s long-run average cost. The figure shows 
+that as the visibility window increases, the average cost 
+steadily decreases. This observation highlights the ben-
+efit of foresight in operational decision-making, given 
+the anticipated arrival of vehicles. This decline in cost 
+stems from more informed control of the oven’ s opera-
+tional mode, enabling energy savings by avoiding unnec-
+essary heating when greater visibility is available. The 
+cost reduction is particularly pronounced as the visibil-
+ity increases from 40 to 70 vehicles; beyond this point, 
+marginal cost savings diminish, indicating a saturation 
+effect in the value of additional information. Overall, the 
+results show that an extended visibility window facilitates 
+more energy-efficient control policies, ultimately leading 
+to lower operational costs.
+8.3. Assessing the performance of the heuristic 
+algorithm
+W e use a heuristic algorithm to address problem 
+instances that are too large to be solved to optimality 
+by commercial solvers. T o evaluate its performance, we 
+compare the heuristic solutions with optimal solutions 
+obtained for smaller benchmark instances. Accordingly, 
+we consider problem sizes that can be solved to optimal-
+ity within a short computational time. For these bench-
+mark instances, the arrival process is represented by two 
+regimes, corresponding to high and low arrival rates. The 
+inter-arrival times in these regimes are assumed to follow 
+W eibull distributions with rate parameters of 1 and 0.14, 
+respectively, and a common shape parameter of 5. The 
+regime evolves according to a Markov chain with tran-
+sition matrix 
+[︁ 0.9 0.1
+0.8 0.2
+]︁
+. W e consider 100 vehicles and 10 
+scenarios. As noted above, using 10 scenarios allows the 
+MILP formulation to be solved to optimality and there-
+fore to serve as a benchmark for evaluating the heuristic 
+algorithm. For each problem instance, we conduct 20 
+replications.
+The results show that, for the benchmark instances 
+considered here, the heuristic algorithm yields an aver-
+age optimality gap of 2.46%. In these instances, the MILP 
+requires, on average, 30% more computational time than 
+the genetic algorithm with a population size of 250 chro-
+mosomes and 20 iterations. More information about the 
+effect of the system parameters on the performance of the 
+algorithm are given in Appendix B. In the following sub-
+sections, we consider larger problem instances, for which 
+the genetic algorithm becomes substantially faster than 
+solving the MILP directly.
+20 
+ S. KHAYYATI ET AL.
+Table 3. Comparison between the total cost for feeding all sce-
+narios to the solver TCa (benchmark), using the scenario cluster-
+ing approach with commercial solvers TCc, and using the genetic 
+algorithm with all scenarios TCg.
+V S TCa TCc TCg 100 × TCa−min (TCc,TCg) min (TCc,TCg)
+50 250 59.05 54.56 55.29 9.05
+50 500 59.43 55.10 55.61 9.05
+100 250 121.07 113.22 116.80 7.15
+100 500 113.02 109.05 111.75 4.00
+8.4. Assessing the performance of scenario 
+clustering
+In this section, we conduct numerical experiments 
+to evaluate the performance of the proposed solution 
+approaches, namely scenario reduction and the heuristic 
+algorithm, in large-scale problem instances. The prob-
+lem instances considered in this section cannot be solved 
+within one hour by the full mathematical formula-
+tion using commercial solvers. Therefore, we evaluate 
+two scalable alternatives, namely scenario reduction and 
+the heuristic algorithm, together with the best solution 
+obtained from the full formulation within the same time 
+limit. These approaches are run in parallel, and the solu-
+tion with the best objective value can be selected for 
+implementation. For comparability, we impose a ten-
+minute time limit on all three approaches and evaluate 
+the resulting schedules over the full scenario set using the 
+original objective function.
+In our experiments, we vary the number of vehicles in 
+{50, 100} and the number of scenarios in {250, 500}. W e 
+also consider systems with five cycles and three operat-
+ing modes, and vary the number of clusters in {2, 4, 6}. 
+For each resulting problem instance, we conduct five 
+independent replications. In these experiments, we use 
+the K-means algorithm for clustering the scenarios and 
+use the arrival times as the features used for calculating 
+the distance between two scenarios. The results of these 
+experiments are given in Table 3, where TCa denotes the 
+total cost for solving the MILP with all the scenarios, 
+TCc denotes the total cost of solving the MILP with the 
+reduced set of scenarios, and TCg denotes the total cost 
+using the heuristic algorithm.
+The results show that the scenario-reduction approach 
+achieves the lowest average total cost for all four com-
+binations of V and S. Compared with the solutions 
+obtained from the full MILP within the same time limit, 
+the corresponding reduction in total cost ranges from 
+approximately 4% to 9%. The genetic algorithm also 
+improves upon the time-limited MILP solutions, but its 
+average total cost remains higher than that obtained with 
+scenario reduction across all four instances. These find-
+ings indicate that reducing the scenario set enables the 
+Table 4. Parameter sets for the analysis of the effects of sys-
+tem parameters on the time performance of the mathematical 
+programming formulation.
+V ∈ {20, 40, 60} S ∈ {1, 2, 3, 4, 5, 10, 15, 20} C ∈ {1, 2, 3, 4} M ∈ {1, 2, 3}
+solver to obtain higher-quality schedules within the avail-
+able computational time. T o further assess the quality 
+of the best schedules relative to the unknown optimum, 
+Appendix C derives two lower bounds on the optimal 
+cost of the original problem and uses them to obtain 
+conservative upper bounds on the corresponding relative 
+optimality gaps. The resulting bounds further support 
+the quality of the reported solutions, as the correspond-
+ing upper bounds on the relative optimality gaps remain 
+within a relatively narrow range.
+8.5. Effects of system parameters on MILP solution 
+time
+In this section, we examine how the number of vehi-
+cles, the number of scenarios, the number of cycles, 
+the number of standby modes, and the presence of all 
+valid inequalities in the mathematical model influence 
+the solution time of the proposed model. T o this end, we 
+consider a different set of parameter values, presented in 
+detail in Table 4. It is worth noting that some of these 
+parameter values presented are intentionally set at rela-
+tively high levels to assess the model’ s computational per-
+formance under more demanding conditions. All previ-
+ously introduced valid inequalities are also incorporated 
+into the mathematical model simultaneously to assess 
+how their combined inclusion affects the model’ s com-
+putational performance, compared to solving the model 
+without any of these inequalities.
+Considering a full factorial experimental design over 
+these parameter sets, we generate a total of 3 × 8 × 4 ×
+3 × 2 = 576 problem instances for use in this numeri-
+cal analysis. For each instance, the corresponding solu-
+tion time, in seconds, is recorded. Also, for each prob-
+lem instance, a 10-minute time limit is imposed, i.e. 
+the optimisation routine is terminated if the solution 
+time exceeds this limit. The records obtained under this 
+experimental setting indicate that 146 problem instances 
+reached the time limit when the MILP without valid 
+inequalities was employed, corresponding to approxi-
+mately 13.4% of all instances. For each parameter, we 
+group the solution times by the distinct values that the 
+parameter takes, treating these values as factor levels. The 
+resulting data are visualised in Figure 6 using Minitab 
+version 21.1.0.
+Figure 6 illustrates how the model’ s computation time 
+varies with key system parameters and highlights the 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 21
+Figure 6. The effects of different parameters and the inclusion of all valid inequalities on the average runtime. For cases that take more 
+than one minutes to complete, the solver is on average more than six times slower without the valid inequalities.
+measurable impact of incorporating valid inequalities 
+into the formulation. Across all instances, the aver-
+age solution time without valid inequalities is 178.72 s, 
+whereas including all valid inequalities reduces this value 
+to 160 s. This difference is skewed to an extent by the 
+fact that many cases are solved in less than a minute. 
+Excluding those cases, the solver is on average more than 
+six times slower without the valid inequalities, indicat-
+ing that using the valid inequalities in very effective. 
+The figure also shows that larger problem sizes, reflected 
+by increases in the number of vehicles, scenarios, and 
+production cycles, consistently lead to longer computa-
+tion times. In contrast, the number of standby modes 
+does not materially affect solution time, as evidenced 
+by the nearly overlapping distributions across its factor 
+levels.
+Overall, the results demonstrate that the compu-
+tational burden scales primarily with the size of the 
+uncertainty and the system size, while valid inequal-
+ities provide a meaningful reduction in runtime by 
+tightening the feasible region. From a managerial per-
+spective, these findings indicate that planners should 
+22 
+ S. KHAYYATI ET AL.
+monitor the growth of scenarios and system complexity 
+to ensure timely decision support and prioritise formula-
+tions with strengthened constraints to maintain compu-
+tational tractability in operational environments.
+9. Conclusions
+Motivated by a real case study from a large automo-
+tive manufacturer, this study investigates the problem 
+of controlling energy-intensive operations in manufac-
+turing environments where part arrival times are par-
+tially predictable via a digital twin and multiple standby 
+modes with different warm-up characteristics are avail-
+able. W e propose a data-driven solution framework that 
+leverages real-time upstream information and predictive 
+arrival scenarios generated by a digital twin within a 
+finite-horizon optimisation setting to construct energy-
+efficient resource schedules at the beginning of each 
+shift and minimise the total average cost over the plan-
+ning horizon. The proposed framework operates by col-
+lecting real-time system information, generating arrival 
+scenarios through the digital twin, and determining an 
+energy-aware schedule that remains fixed until the next 
+predefined scheduling epoch. Two solution approaches 
+are employed in parallel: a scenario-based mathematical 
+programming formulation strengthened with a scenario-
+reduction technique based on the proposed clustering 
+method, and a tailored genetic algorithm that directly 
+encodes the system schedule. The schedule to be imple-
+mented is then selected by comparing the results of the 
+two approaches within a given time limit based on their 
+corresponding objective values, thereby balancing solu-
+tion quality and computational tractability. This process, 
+which consists of collecting the current locations of the 
+vehicles from the shop floor, using the digital twin with 
+the updated locations to generate arrival scenarios, deter-
+mining the oven schedule, and implementing the sched-
+ule, is repeated at each predefined scheduling epoch.
+Extensive numerical experiments based on real indus-
+trial parameters demonstrate the effectiveness of the pro-
+posed framework and provide several insights for both 
+practitioners and academicians. The results show that 
+exploiting predictive information generated by the digital 
+twin can lead to substantially lower energy consump-
+tion than both always-on and threshold-based bench-
+mark policies. While in infinite-horizon settings with 
+highly variable arrival time patterns, simple threshold-
+based policies are often near-optimal, the results indicate 
+that in finite-horizon environments with low to moderate 
+arrival variability, such policies can be significantly out-
+performed by predictive scheduling strategies. In partic-
+ular, when reliable arrival time predictions are available, 
+the production schedule can exploit low-traffic periods 
+by switching the resource to low-energy modes, thereby 
+achieving substantial energy savings. This highlights the 
+value of anticipative, data-driven control policies enabled 
+by digital twins in contrast to purely reactive state-based 
+rules.
+The numerical analysis further shows that the addi-
+tional waiting required to achieve non-negligible energy 
+savings remains limited and does not cause significant 
+disruptions to downstream operations. In particular, tol-
+erating an approximately 35% increase in average wait-
+ing time per vehicle can yield up to a 41% reduc-
+tion in normalised energy cost per vehicle, measured 
+in units equivalent to one minute of oven operation in 
+the on mode. This is critical from an operational per-
+spective, as it indicates that meaningful reductions in 
+energy use can be achieved without compromising ser-
+vice levels, throughput, or production stability. More-
+over, recognising that full digital twin coverage of the 
+entire production system may not always be feasible 
+in practice, we demonstrate that even partial upstream 
+visibility already provides highly valuable information. 
+Limited visibility windows are sufficient to support effec-
+tive energy-aware scheduling decisions, thereby lower-
+ing technological and organisational barriers to adoption 
+and enabling incremental implementation strategies in
+practice.
+From a computational and methodological perspec-
+tive, the study shows that high-quality schedules can be 
+generated within practical time limits, even for large-
+scale, realistic problem instances. The scenario-based 
+formulation provides a flexible modelling framework 
+for capturing stochastic arrivals, multi-mode operational 
+decisions, and finite-horizon control requirements. The 
+proposed structural properties and valid inequalities 
+yield insights into the nature of optimal schedules and 
+significantly strengthen the mathematical formulation. 
+The numerical results further show that the tailored 
+genetic algorithm is capable of identifying near-optimal 
+solutions in instances where optimal solutions can be 
+computed and that the combined use of valid inequalities 
+and scenario reduction significantly outperforms direct 
+solution of the original formulation, both in terms of 
+computation time and scalability, while preserving high 
+solution quality. These findings indicate that advanced 
+optimisation techniques can be effectively embedded in 
+real-time or near-real-time industrial decision-support 
+systems provided that problem structure is carefully 
+exploited and appropriate approximation strategies are 
+employed.
+Overall, the results highlight several important impli-
+cations for both practitioners and academicians. Predic-
+tive information generated by digital twins can be directly 
+translated into implementable control policies that 
+substantially reduce energy consumption while main-
+taining reliable production performance. The explicit 
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 23
+quantification of the trade-off between waiting time and 
+energy usage offers a tool for calibrating operational ser-
+vice levels in line with sustainability targets and cost 
+objectives. By combining real-time data collection, pre-
+dictive modelling, and optimisation within a unified 
+framework, the proposed approach provides a systematic 
+decision-support methodology that can be embedded 
+into existing manufacturing execution systems to reduce 
+energy costs, improve sustainability performance, and 
+enhance operational flexibility.
+Several extensions of the present work merit further 
+investigation. Many production systems operate multi-
+ple energy-intensive machines in parallel, where coordi-
+nated workload allocation and energy-mode scheduling 
+may reduce warm-up cycles and improve energy effi-
+ciency. Appendix D outlines how the formulation can be 
+extended to this setting, providing a starting point for 
+investigating these potential benefits. Similarly, although 
+the waiting-cost component penalises delayed process-
+ing, it does not explicitly control the probability of com-
+pleting specific batches by their due dates, which may be 
+required in settings with firm delivery commitments. The 
+chance-constrained extension examined in Appendix E 
+provides an initial basis for addressing this requirement, 
+and further research could build on it to analyze in 
+more detail the trade-off between timely batch comple-
+tion and the flexibility to exploit energy-saving operating 
+modes. Beyond these extensions, the interaction between 
+downstream energy control and upstream production 
+dynamics, including potential blocking effects and bulk-
+processing opportunities, deserves further investigation. 
+When downstream operating decisions affect upstream 
+material flow, the arrival process itself may depend on the 
+selected resource schedule. Accounting for this depen-
+dence would require jointly representing resource sched-
+ules, buffer dynamics, and upstream production, poten-
+tially increasing the computational effort required. Study-
+ing these interactions could broaden the applicability of 
+the framework to production systems with stronger inter-
+dependencies between resources. Finally, incorporating 
+time-varying electricity prices would allow the model to 
+evaluate opportunities to shift operating periods toward 
+lower-cost intervals while accounting for the resulting 
+effects on vehicle waiting times.
+In summary, this study proposes a comprehen-
+sive data-driven framework that integrates real-time 
+data acquisition, digital twin technology, mathemati-
+cal programming, and heuristic optimisation to gener-
+ate energy-efficient production schedules in industrial 
+settings. By bridging predictive modelling with imple-
+mentable scheduling policies, the proposed approach 
+provides both a practical roadmap for industrial adop-
+tion and a flexible methodological foundation for future 
+research on energy-aware production control in modern 
+manufacturing environments.
+Author contributions
+CRediT: Siamak Khayyati: Conceptualization, Data curation, 
+Formal analysis, Investigation, Methodology, Project admin-
+istration, Resources, Software, Supervision, V alidation, Visu-
+alization, Writing – original draft, Writing – review & edit-
+ing; Oktay Karabağ: Conceptualization, Data curation, For-
+mal analysis, Investigation, Methodology, Resources, Software, 
+Supervision, V alidation, Visualization, Writing – original draft, 
+Writing – review & editing; Berk Berkman: Formal analysis, 
+Software, V alidation, Visualization;
+Disclosure statement
+No potential conflict of interest was reported by the authors.
+Funding
+This work was supported by T ürkiye Bilimsel ve T eknolojik 
+Araştırma Kurumu TUBITAK (grant number 221M393).
+Notes on contributors
+Siamak Khayyati is an assistant profes-
+sor at HEC Liege (Management School 
+of the University of Liege). Before join-
+ing HEC Liege, he held postdoctoral posi-
+tions at the University of Mannheim and 
+at Koç University. He received a BS degree 
+in Industrial Engineering from Sharif Uni-
+versity of T echnology and PhD degree in 
+Industrial Engineering and Operations Management from Koç 
+University. His research interests are in design and control of 
+production systems and artificial intelligence applications in 
+manufacturing.
+Oktay Karabağ is an assistant profes-
+sor at Özyeğin University and a visiting 
+research fellow at Erasmus University Rot-
+terdam. Before joining OzU, he held sev-
+eral researcher and faculty member posi-
+tions in T ürkiye and the Netherlands. His 
+current research interests include stochas-
+tic modelling, design and control of manu-
+facturing systems, and maintenance optimisation. He received 
+a BS in Statistics from Ege University, an MSc in Intelligent 
+Production Systems Engineering from İzmir University of Eco-
+nomics, and a PhD in Industrial Engineering and Operations 
+Management from Koç University.
+Berk Berkman is currently a Sales Man-
+ager at Procter & Gamble T urkey. He holds 
+a BSc in Industrial Engineering and a BA 
+in Economics from Koç University. His 
+research focuses on the design and control 
+of manufacturing systems.
+24 
+ S. KHAYYATI ET AL.
+Sebnem Demirtas is a PhD Student in 
+Operations, Information and Decisions 
+Department at the Wharton School of the 
+University of Pennsylvania. She received 
+her BS degrees in Industrial Engineer-
+ing and Computer Engineering from Koç 
+University. Her research interests include 
+decision-making under uncertainty and 
+data-driven optimisation, focussing on resource allocation in 
+supply chains and service operations.
+Barış T an is a Professor of Operations 
+Management and Industrial Engineering 
+at Özyeğin University, Istanbul, T urkey. 
+His areas of expertise are in design 
+and control of production systems, sup-
+ply chain management, and stochastic 
+modelling. He received a BS degree in 
+Electrical&Electronics Engineering from 
+Boğazici University, and ME in Industrial and Systems Engi-
+neering, MSE in Manufacturing Systems, and PhD in Opera-
+tions Research from the University of Florida.
+ORCID
+Oktay Karabağ 
+ http://orcid.org/0000-0002-9068-1991
+Barış T an 
+ http://orcid.org/0000-0002-2584-1020
+Data, materials, and code availability
+The data, materials, and computational codes supporting 
+the findings of this study are available from the corre-
+sponding author upon request.
+References
+Aggarwal, C. C., and C. K. Reddy. 2018. Data Clustering: 
+Algorithms and Applications. Boca Raton: Chapman and 
+Hall/CRC.
+Bänsch, K., J. Busse, F . Meisel, J. Rieck, S. Scholz, T . V olling, 
+and M. G. Wichmann. 2021. “Energy-Aware Decision Sup-
+port Models in Production Environments: A Systematic 
+Literature Review. ” Computers & Industrial Engineering
+159:107456. https://doi.org/10.1016/j.cie.2021.107456.
+Billey, A., and T . Wuest. 2024. “Energy Digital Twins in 
+Smart Manufacturing Systems: A Case Study. ” Robotics and 
+Computer-Integrated Manufacturing 88:102729. https://doi.
+org/10.1016/j.rcim.2024.102729.
+Chen, G., L. Zhang, J. Arinez, and S. Biller. 2012. “Energy-
+Efficient Production Systems through Schedule-Based Oper-
+ations. ” IEEE Transactions on Automation Science and Engi-
+neering 10 (1): 27–37. https://doi.org/10.1109/TASE.2012.
+2202226.
+Duran, E., C. Ozturk, and B. O’Sullivan. 2025. “Planning and 
+Scheduling Shared Manufacturing Systems: Key Character-
+istics, Current Developments and Future Trends. ” Interna-
+tional Journal of Production Research 63 (13): 4958–4990. 
+https://doi.org/10.1080/00207543.2024.2442549.
+Frigerio, N., and A. Matta. 2014. “Energy-Efficient Control 
+Strategies for Machine T ools with Stochastic Arrivals. ” IEEE 
+Transactions on Automation Science and Engineering 12 (1): 
+50–61. https://doi.org/10.1109/TASE.2014.2344507.
+Frigerio, N., and A. Matta. 2019. “ Analysis of Production Lines 
+with Switch-off/on Controlled Machines. ” Eco-Factories 
+of the Future 147–172. https://doi.org/10.1007/978-3-319-
+93730-4.
+Frigerio, N., B. Tan, and A. Matta. 2024. “Simultaneous 
+Control of Multiple Machines for Energy Efficiency: A 
+Simulation-Based Approach. ” International Journal of Pro-
+duction Research 62 (3): 933–948. https://doi.org/10.1080/
+00207543.2023.2175175.
+Gahm, C., F . Denz, M. Dirr, and A. T uma. 2016. “Energy-
+Efficient Scheduling in Manufacturing Companies: A Review 
+and Research Framework. ” European Journal of Operational 
+Research 248 (3): 744–757. https://doi.org/10.1016/j.ejor.20
+15.07.017.
+Grass, E., J. Ortmann, B. Balcik, and W . Rei. 2023. “ A Machine 
+Learning Approach to Deal with Ambiguity in the Humani-
+tarian Decision-Making. ” Production and Operations Man-
+agement 32 (9): 2956–2974. https://doi.org/10.1111/poms.
+14018.
+Heydar, M., E. Mardaneh, and R. Loxton. 2022. “ Approxi-
+mate Dynamic Programming for an Energy-Efficient Paral-
+lel Machine Scheduling Problem. ” European Journal of Oper-
+ational Research 302 (1): 363–380. https://doi.org/10.1016/j.
+ejor.2021.12.041.
+Ivanov, D. 2024. “Conceptualisation of a 7-element Digital 
+Twin Framework in Supply Chain and Operations Manage-
+ment. ” International Journal of Production Research 62 (6): 
+2220–2232. https://doi.org/10.1080/00207543.2023.2217
+291.
+Ivanov, D. 2026. “ Agentic Digital Twins: Bridging Model-Based 
+and Ai-Driven Decision-Making Support for a New Era 
+of Supply Chain and Operations Management. ” Interna-
+tional Journal of Production Research 64 (15): 1–17. https://
+doi.org/10.1080/00207543.2026.2630277.
+Karabağ, O. 2026. “ An Analysis of Energy-Efficient Production 
+Control Strategies in Serial Systems with Two Nonidenti-
+cal Machines. ” Flexible Services and Manufacturing Journal
+1–27.
+Karanjkar, N., A. Joglekar, S. Mohanty, V . Prabhu, D. Raghu-
+nath, and R. Sundaresan. 2018. “Digital Twin for Energy 
+Optimization in an SMT-PCB Assembly Line. ” In 2018 IEEE 
+International Conference on Internet of Things and Intelli-
+gence System (IOTAIS), 85–89. IEEE.
+Kasper, L., P . Schwarzmayr, F . Birkelbach, F . Javernik, M. 
+Schwaiger, and R. Hofmann. 2024. “ A Digital Twin-Based 
+Adaptive Optimization Approach Applied to W aste Heat 
+Recovery in Green Steel Production: Development and 
+Experimental Investigation. ” Applied Energy 353:122192. 
+https://doi.org/10.1016/j.apenergy.2023.122192.
+Katsoulakis, E., Q. W ang, H. Wu, L. Shahriyari, R. Fletcher, 
+J. Liu, L. Achenie, et al. 2024. “Digital Twins for Health: A 
+Scoping Review. ” Nature - NPJ Digital Medicine 7 (1): 77. 
+https://doi.org/10.1038/s41746-024-01073-0.
+Khayyati, S., and B. Tan. 2020. “Data-Driven Control of a 
+Production System by Using Marking-Dependent Thresh-
+old Policy. ” International Journal of Production Economics
+226:107607. https://doi.org/10.1016/j.ijpe.2019.107607.
+Kritzinger, W ., M. Karner, G. Traar, J. Henjes, and W . 
+Sihn. 2018. “Digital Twin in Manufacturing: A Categori-
+cal Literature Review and Classification. ” IFAC-PapersOnline
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 
+ 25
+51 (11): 1016–1022. https://doi.org/10.1016/j.ifacol.2018.08.
+474.
+Li, Y ., P . H. Cui, J. Q. W ang, and Q. Chang. 2021. “Energy-saving 
+Control in Multistage Production Systems Using a State-
+Based Method. ” IEEE Transactions on Automation Science 
+and Engineering 19 (4): 3324–3337. https://doi.org/10.1109/
+TASE.2021.3118226.
+Loffredo, A., N. Frigerio, E. Lanzarone, and A. Matta. 
+2024. “Energy-Efficient Control in Multi-stage Production 
+Lines with Parallel Machine W orkstations and Produc-
+tion Constraints. ” IISE Transactions56 (1): 69–83. https://
+doi.org/10.1080/24725854.2023.2168321.
+Mashaei, M., and B. Lennartson. 2012. “Energy Reduction 
+in a Pallet-Constrained Flow Shop through on–off Control 
+of Idle Machines. ” IEEE Transactions on Automation Sci-
+ence and Engineering 10 (1): 45–56. https://doi.org/10.1109/
+TASE.2012.2225426.
+Mitchell, M. 1998. An Introduction to Genetic Algorithms. Cam-
+bridge: MIT Press.
+Özkan, E., and B. Tan. 2025. “ Asymptotically Optimal Energy 
+Consumption and Inventory Control in a Make-to-stock 
+Manufacturing System. ” European Journal of Operational 
+Research 320 (2): 375–388. https://doi.org/10.1016/j.ejor.20
+24.08.028.
+Renna, P . 2018. “Energy saving by Switch-off Policy in a Pull-
+Controlled Production Line. ” Sustainable Production and 
+Consumption 16:25–32. https://doi.org/10.1016/j.spc.2018.
+05.006.
+Römer, A. C. 2021. Simulation-Based Optimization of Energy 
+Efficiency in Production. Wiesbaden: Springer.
+Shao, G., and M. Helu. 2020. “Framework for a Digital Twin 
+in Manufacturing: Scope and Requirements. ” Manufacturing 
+Letters 24:105–107. https://doi.org/10.1016/j.mfglet.2020.
+04.004.
+Su, H., N. Frigerio, and A. Matta. 2016. “Energy saving 
+Opportunities and V alue of Information: A Trade-off in a 
+Production Line. ” Procedia CIRP 48:301–306. https://doi.
+org/10.1016/j.procir.2016.03.147.
+Tan, B., and O. Karabağ. 2024. “ A Deterministic Fluid Model for 
+Production and Energy Mode Control of a Single Machine. ” 
+International Journal of Production Economics 278:109418. 
+https://doi.org/10.1016/j.ijpe.2024.109418.
+Tan, B., O. Karabağ, and S. Khayyati. 2023a. “Energy-Efficient 
+Production Control of a Make-to-stock System with Buffer-
+and Time-Based Policies. ” International Journal of Produc-
+tion Research 62 (16): 1–19. https://doi.org/10.1080/002075
+43.2023.2298488.
+Tan, B., O. Karabağ, and S. Khayyati. 2023b. “Production 
+and Energy Mode Control of a Production-Inventory
+System. ” European Journal of Operational Research 308 (3): 
+1176–1187. https://doi.org/10.1016/j.ejor.2022.12.021.
+V an Dinter, R., B. T ekinerdogan, and C. Catal. 2023. “Reference 
+Architecture for Digital Twin-Based Predictive Maintenance 
+Systems. ” Computers & Industrial Engineering 177:109099. 
+https://doi.org/10.1016/j.cie.2023.109099.
+W ang, J., Y . Feng, Z. Fei, S. Li, and Q. Chang. 2017. “Markov 
+Chain Based Idle Status Control of Stochastic Machines 
+for Energy Saving Operation. ” In 13th IEEE Conference on 
+Automation Science and Engineering (CASE), 1019–1023. 
+IEEE.
+W ang, J., Y . Huang, and D. Tang. 2021. “ A Digital Twin Simu-
+lator for Real Time Energy Saving Control of Serial Manu-
+facturing System. ” In 2021 IEEE International Conference on 
+Real-Time Computing and Robotics (RCAR), 720–725. IEEE.
+W ang, J.f., S.q. Li, and J.h. Liu. 2013. “ A Multi-Granularity 
+Model for Energy Consumption Simulation and Con-
+trol of Discrete Manufacturing System. ” In 19th Interna-
+tional Conference on Industrial Engineering and Engineering 
+Management: Assistive T echnology of Industrial Engineering, 
+1055–1064. Springer.
+W einert, N., S. Chiotellis, and G. Seliger. 2011. “Methodol-
+ogy for Planning and Operating Energy-Efficient Production 
+Systems. ” CIRP Annals60 (1): 41–44. https://doi.org/10.10
+16/j.cirp.2011.03.015.
+Xia, T ., H. Sun, Y . Ding, D. Han, W . Qin, J. Seidelmann, and 
+L. Xi. 2023. “Digital Twin-Based Real-Time Energy Opti-
+mization Method for Production Line considering Fault Dis-
+turbances. ” Journal of Intelligent Manufacturing 36 (1): 1–25. 
+https://doi.org/10.1007/s10845-023-02219-9.
+Yildiz, E., C. Møller, and A. Bilberg. 2022. “Conceptual Foun-
+dations and Extension of Digital Twin-Based Virtual Fac-
+tory to Virtual Enterprise. ” The International Journal of 
+Advanced Manufacturing T echnology 121 (3): 2317–2333. 
+https://doi.org/10.1007/s00170-022-09462-z.
+Yin, Y ., F . Chu, A. Dolgui, D. W ang, J. Ignatius, and J. Jayaram. 
+2026. “ AI-enabled Evolution: Unveiling the Synergy between 
+Manufacturing and Services through Coordination and Inte-
+gration. ” International Journal of Production Research 64 (2): 
+1–6. https://doi.org/10.1080/00207543.2025.2592502.
+Zheng, R., S. T . Ng, Y . Shao, Z. Li, and J. Xing. 2025. “Lever-
+aging Digital Twin for Healthcare Emergency Manage-
+ment System: Recent Advances, Critical Challenges, and 
+Future Directions. ” Reliability Engineering & System Safety
+261:111079. https://doi.org/10.1016/j.ress.2025.111079.
+Zou, J., Q. Chang, J. Arinez, and G. Xiao. 2017. “Data-Driven 
+Modeling and Real-Time Distributed Control for Energy 
+Efficient Manufacturing Systems. ” Energy 127:247–257. 
+https://doi.org/10.1016/j.energy.2017.03.123.

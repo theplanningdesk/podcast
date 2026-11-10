@@ -2,15 +2,50 @@
  "generated": "2026-11-10",
  "since": "2026-08-27",
  "lanes": {
-  "Forecasting": 50,
-  "Inventory": 50,
-  "Production planning and scheduling": 50,
-  "S&OP and IBP": 42,
-  "Network design": 50,
-  "Resilience and risk": 50,
-  "AI in planning": 50
+  "Journals": 253,
+  "arXiv": 400
  },
  "papers": [
+  {
+   "openalex": "W7221014894",
+   "doi": "https://doi.org/10.1080/00207543.2026.2741380",
+   "title": "Plug and schedule: scalable and modular architecture for integrated and dynamic scheduling based on graph neural networks and reinforcement learning",
+   "date": "2026-10-08",
+   "type": "article",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
+   "authors": [
+    "Yannik Hermann",
+    "Vincent Schröttle",
+    "Benedikt Kaupp",
+    "Martin Benfer",
+    "Gisela Lanza"
+   ],
+   "institutions": [
+    "Karlsruhe Institute of Technology"
+   ],
+   "countries": [
+    "DE"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1080/00207543.2026.2741380",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Manufacturing companies increasingly require scheduling approaches that integrate practical constraints such as workforce availability, maintenance, setup dependencies, energy objectives, and uncertainty, yet existing research offers limited support for transferring them into heterogeneous industrial data landscapes. This paper proposes a scalable and modular architecture for integrated and dynamic scheduling that combines an Asset Administration Shell-based middleware for standardised data integration, a heterogeneous graph representation of scheduling instances, a graph neural network-based State Modeler, and a Proximal Policy Optimisation-based RL-Scheduler coupled with event-based simulation. The architecture is validated on the production system of a German machinery manufacturer with 59 manufacturing resources and 39 employees and on public benchmark instances. On the industrial instances, the learned policy reduces the makespan against the mean of seven dispatching baselines by 2.93% to 6.76% across six evaluation cells covering small-part, large-part, and combined production under deterministic and stochastic machine failures, with statistical significance in every scenario. The energy-aware configuration preserves this makespan performance while significantly reducing the relative energy cost in most scenarios. The findings indicate that the proposed architecture provides a practically transferable pathway for configurable RL-based scheduling in heterogeneous production environments.",
+   "lanes": [
+    "Production planning and scheduling",
+    "AI in planning"
+   ],
+   "score": 9.5,
+   "why": [
+    "Nordic/DACH authors (DE)",
+    "established journal",
+    "practice signals: german, industrial, manufacturer",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
   {
    "openalex": "W7225117494",
    "doi": "https://doi.org/10.1016/j.ijpe.2026.110258",
@@ -39,9 +74,11 @@
    "language": "en",
    "abstract": "Experiences from real-world supply chains as well as exhaustive research show that the lack of coordination within supply chains leads to bullwhip effect, in which the magnitude of fluctuations in orders increases in the upstream direction from retailer to the supplier. One potential solution for addressing this phenomenon is information sharing between supply chain actors that can reduce the impact of fluctuations in customer demand on the supply chain. However, sharing too much information might lead to higher vulnerability of stakeholders in negotiations with their partners or to an unwanted leakage of information to competitors. Therefore, relevant actors are often reluctant to share the necessary information. To overcome these problems, we propose a horizontal information sharing model where retailers share demand information in form of average values between each other without revealing the exact values of each individual partner. This could be achieved by, e.g., applying costly cryptographic methods. Therefore, we evaluate the potential effects of this type of information sharing on the whole supply chain by developing a simulation model representing a 4-echelon supply chain, which consists of multiple customers, each served by their own retailer, one wholesaler, one manufacturer and one supplier. We investigate the effect of horizontal information sharing of average customer demand among the retailers on the bullwhip effect and show its effects on the different supply chain actors. In addition, the influences of demand variability and demand correlations between customers, different forecasting methods, safety stock approaches, stochastic lead times and the number of retailers sharing the information on the bullwhip effect are analyzed.",
    "lanes": [
-    "Inventory"
+    "Forecasting",
+    "Inventory",
+    "Resilience and risk"
    ],
-   "score": 8.0,
+   "score": 8.5,
    "why": [
     "Nordic/DACH authors (AT)",
     "established journal",
@@ -50,854 +87,955 @@
    "text_file": ""
   },
   {
-   "openalex": "W7225424568",
-   "doi": "https://doi.org/10.21203/rs.3.rs-11261258/v1",
-   "title": "Dynamic Aggregate Planning of a Make-to-Order Production System",
-   "date": "2026-11-06",
-   "type": "preprint",
-   "venue": "Research Square",
-   "publisher": "",
+   "openalex": "W7220372069",
+   "doi": "https://doi.org/10.1080/00207543.2026.2741382",
+   "title": "Balancing and scheduling of transfer lines for cycle time and peak power minimisation: a learning-enhanced multi-objective variable neighbourhood search",
+   "date": "2026-10-05",
+   "type": "article",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
    "authors": [
-    "Valtteri Vironmäki",
-    "Joonas Ahola",
-    "Esko Niemi"
+    "Pedram Beldar",
+    "Ehsan Mahmoodi",
+    "Mostafa Kermani",
+    "Gary Linnéusson",
+    "Olga Battaïa"
    ],
    "institutions": [
-    "Aalto University"
+    "University of Skövde",
+    "Kedge Business School"
    ],
    "countries": [
-    "FI"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.21203/rs.3.rs-11261258/v1",
-   "pdfs": [
-    "https://www.researchsquare.com/article/rs-11261258/latest.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract In Make-to-Order (MTO) production, products and production are non-standard and incoming orders arrive variably, with varying work content and due dates. Aggregate Production Planning (APP) takes place in the medium run, and the purpose of it is to match resource capacity with demand. In APP, orders are roughly scheduled for processing so that the resource capacity constraints and deadlines can be met. The static resource constrained project scheduling problem is the conventional research approach, but real-world production planning requires dynamic scheduling to integrate new orders over time. The dynamic model in this study employs periodic scheduling, treating it as sequential static mixed integer linear optimization problems, focusing on minimizing tardiness and rescheduling disruptions. The model is applied in experiments concerning a Flexible Manufacturing System (FMS) -centered MTO production system. The experimentation focuses on the effects of replanning frequency, order arrival rate, delivery date slack, forward planning vs. backward planning, restrictions in order processing activity timing and activity workload allocation method on the planning results. Based on the results, conclusions and guidance applicable to practical production planning are provided.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 4.7,
-   "why": [
-    "Nordic/DACH authors (FI)",
-    "preprint, not peer-reviewed",
-    "practice signals: real-world"
-   ],
-   "text_file": "papers/W7225424568.txt"
-  },
-  {
-   "openalex": "W7225623450",
-   "doi": "https://doi.org/10.3390/healthcare14213831",
-   "title": "Perspectives on Health Logistics in Saudi Arabia: Progress and Challenges",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "Healthcare",
-   "publisher": "Multidisciplinary Digital Publishing Institute",
-   "authors": [
-    "Haytham A. Sheerah",
-    "Meraee Aljabri",
-    "Shouq M. Alzaaqi",
-    "Emad Lafi Almohammadi",
-    "Hebah Dada",
-    "Abdulrhman I. Mohana",
-    "Asmaa M. Altamimi",
-    "Khaled Alamri",
-    "Shahah Abu Thnain",
-    "Ashraf A. AlGrain",
-    "Ahmed H. Al-Jedai",
-    "Duncan Selbie"
-   ],
-   "institutions": [
-    "King Abdulaziz University",
-    "Ministry of Health",
-    "King Saud bin Abdulaziz University for Health Sciences",
-    "King Abdullah International Medical Research Center",
-    "National Guard Health Affairs",
-    "Saudi Commission for Health Specialties",
-    "Alfaisal University",
-    "Robert Koch Institute"
-   ],
-   "countries": [
-    "DE",
-    "SA"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.3390/healthcare14213831",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Saudi Arabia has identified healthcare supply chain transformation as a key component of the Health Sector Transformation Program under Vision 2030, yet evidence on these reforms remains fragmented across sectors and policy domains. Drawing on the published literature, policy documents, institutional reports, and the authors’ experience in national procurement, regulation, and public health, this perspective examines four interacting components of transformation—procurement governance, digital infrastructure, local manufacturing capacity, and emergency preparedness—and applies this framework to antimicrobial resistance. Substantial reforms have been implemented, notably centralized procurement through the National Unified Procurement Company, national digital surveillance and traceability systems, and the localization of strategic medicines such as insulin. We propose that interactions among these reforms may influence supply chain resilience, although weak public–private data integration, dependence on imported active pharmaceutical ingredients, and limited performance evaluations prevent firm conclusions about their system-level effects. Remaining challenges include recurrent medicine shortages, regulatory bottlenecks, workforce gaps, and the limited availability of public performance indicators. The Saudi experience suggests that centralized, state-led reform should balance efficiency with redundancy, prioritize localization selectively, and build transparent performance monitoring into reforms from the outset.",
-   "lanes": [
-    "Resilience and risk"
-   ],
-   "score": 4.0,
-   "why": [
-    "Nordic/DACH authors (DE)"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7218063460",
-   "doi": "",
-   "title": "Optimization of Pharmacy Supply Chains Using AI and Machine Learning",
-   "date": "2026-11-03",
-   "type": "article",
-   "venue": "International Journal of Medical Research And Innovation in Applied Science (IJMRIAS)",
-   "publisher": "",
-   "authors": [
-    "Er. Niharika Singh"
-   ],
-   "institutions": [
-    "ABES Engineering College"
-   ],
-   "countries": [
-    "IN"
-   ],
-   "licence": "cc-by-nc",
-   "landing": "https://ijmrias.org/index.php/ijmrias/article/view/48",
-   "pdfs": [
-    "https://ijmrias.org/index.php/ijmrias/article/download/48/131"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Pharmacy supply chains are under intensifying pressure to deliver the right medicine, in the right quantity, at the right time—while minimizing costs, preventing expiries, and complying with stringent regulatory and quality standards. Conventional forecasting and replenishment methods often struggle with volatile demand, multi-echelon dynamics (manufacturer–wholesaler–pharmacy), and constraints such as cold-chain integrity and controlled-substance regulations. This manuscript presents an integrated framework for optimizing pharmacy supply chains using artificial intelligence (AI) and machine learning (ML). We synthesize current methods in demand forecasting, inventory control, routing and scheduling, and risk management, and we propose a practical methodology that combines feature-rich forecasting (gradient-boosted trees and sequence models), stochastic inventory optimization, reinforcement learning for adaptive reorder policies, and constraint-aware vehicle routing. A detailed study protocol outlines quasi-experimental deployment across community and hospital pharmacies, including data governance, evaluation metrics, and change-management steps. Illustrative results (based on a realistic implementation scenario) indicate reductions in stockouts (30–50%), expiries (25–40%), and total holding costs (10–20%), with improvements in service level (3–10 percentage points) and forecast accuracy (MAPE reductions from ~22–28% to ~9–14%). We conclude with discussion on interpretability, workforce upskilling, and governance, emphasizing a socio-technical approach that blends human oversight with algorithmic optimization to achieve resilient, ethical, and efficient pharmacy supply chains.",
-   "lanes": [
-    "Inventory",
-    "AI in planning"
-   ],
-   "score": 3.9,
-   "why": [
-    "practice signals: implementation, manufacturer",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7218063460.txt"
-  },
-  {
-   "openalex": "W7225534048",
-   "doi": "",
-   "title": "Integration of Demand Forecasting, Production Planning and Control, Production Execution, and Quality Assurance through Cross-Functional Coordination for Operational Performance Improvement: A Case Study on Manufacturing Companies",
-   "date": "2026-11-05",
-   "type": "article",
-   "venue": "Jurnal Ilmu Manajemen Terapan",
-   "publisher": "",
-   "authors": [
-    "Yato Susilo",
-    "Sutoyo Sutoyo"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://dinastirev.org/JIMT/article/view/10053",
-   "pdfs": [
-    "https://dinastirev.org/JIMT/article/download/10053/4935"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Integration of operational functions is an important issue in manufacturing management because the missynchronization of information on demand, planning, production implementation, and quality can reduce performance. This study aims to analyze the effect of cross-functional coordination on the integration of operational processes and operational performance in one of the manufacturing companies in Surabaya. The study used a mixed-method explanatory sequential based on synthetic data, involving 180 respondents, 12 key informants, 96 interview answers, and 72 operational observations for 24 months on three product families. Quantitative data were analyzed through correlation, operational data through KPI comparison, and thematic qualitative data. The results showed a positive relationship between coordination–integration (r=0.444), integration–performance (r=0.627), and coordination–performance (r=0.396). MAPE decreased from 10.51% to 8.20%, schedule adherence increased from 88.27% to 92.45%, and on-time delivery increased from 89.69% to 93.57%. Interviews emphasized the importance of information synchronization, decision coordination, and quality feedback. Findings show that cross-functional coordination strengthens process integration and supports improved operational performance.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 3.4,
-   "why": [
-    "practice signals: case study, implementation",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7225534048.txt"
-  },
-  {
-   "openalex": "W7225307471",
-   "doi": "https://doi.org/10.17605/osf.io/9mha6",
-   "title": "Hospitality Raw Material Distribution Logistics and Supply Contract Certainty Reconstruction in Frontier 3T Regions: Empirical Case of Krui, Pesisir Barat",
-   "date": "2026-11-05",
-   "type": "article",
-   "venue": "Open Science Framework",
-   "publisher": "Center for Open Science",
-   "authors": [
-    "Ilham Pradani"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.17605/osf.io/9mha6",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Background: Tourism accommodation operators in Krui suffer from fragile overland fresh supply chains, erratic delivery schedules, and verbal agreements lacking enforceability. Objectives: To reconstruct contractual certainty under Articles 1320 and 1338 of the Indonesian Civil Code while optimizing multi-stop fresh produce distribution. Methods: Comprehensive field study across 40 hospitality operators in Tanjung Setia, Mandiri Beach, and Krui City with route optimization modeling. Results: Formalizing Service Level Agreements with stipulated liquidated damages (Article 1243) reduces supply disruption frequency by 54% and cuts aggregate logistical overhead by 22.8%. Conclusion: Demonstrates that legal enforceability is an indispensable prerequisite for supply chain resilience in emerging remote tourism clusters. Published in Journal of Coastal Frontiers and Applied Development (JCFAD). CERN Zenodo Record: https://doi.org/10.5281/zenodo.24028640. Publisher: PT CHAIN ASIA CONECT Research and Development Division.",
-   "lanes": [
-    "Resilience and risk"
-   ],
-   "score": 3.4,
-   "why": [
-    "practice signals: empirical, field",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225562578",
-   "doi": "https://doi.org/10.17605/osf.io/pxv7e",
-   "title": "An Empirical Juridical-Digital Twin Integrating Blockchain Traceability, Multi-Agent Reinforcement Learning, and Demand-Signal Optimization for Micro-Enterprise Supply Chains in Pesisir Barat",
-   "date": "2026-11-08",
-   "type": "article",
-   "venue": "Open Science Framework",
-   "publisher": "Center for Open Science",
-   "authors": [
-    "Ilham Pradani"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.17605/osf.io/pxv7e",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Background: Micro-enterprises operating along the Pesisir Barat coastline experience chronic product spoilage and demurrage because logistics are fragmented and contractual enforcement under the Indonesian Civil Code (KUHPerdata) is weak. Objectives: This study aims to construct a juridical-digital twin that (1) optimizes logistical performance through multi-agent reinforcement learning (MARL), (2) guarantees compliance with Articles 1320, 1338, and 1243 of the KUHPerdata, and (3) allocates risk transparently via blockchain-based smart contracts. Methods: A three-layer architecture was implemented. The physical layer collects high-frequency IoT data (GPS, temperature, wave height, fuel flow). The digital-twin layer simulates the supply-chain using a Markov decision process whose state vector S_t^i=[GPS_t,T_t,Hs_t,F_t,D_t] and action set A_t^i={route, temp}. Reward R_t^i= -alpha·Spoilage_t^i -beta·Demurrage_t^i -gamma·P_legal^i + δ·ServiceLevel_t^i incorporates a legally calibrated penalty P_legal derived from smart-contract clauses. Policy-gradient updates Delta θ=alpha∇_θ logπ_θ(A_t|S_t)(G_t-V_θ(S_t)) were trained on 12 months of pilot data. Demand forecasting employed a calibrated LSTM (24-h window, 128-unit hidden layer, MSE loss). Legal constraints were encoded as Solidity smart contracts: Clause 1 triggers liquidated-damage payments for temperature breaches; Clause 2 defines force-majeure based on BMKG wave-height advisories; Clause 3 enforces a good-faith risk-sharing rule limited to 10 % of contract value. Published in Journal of Coastal Frontiers and Applied Development (JCFAD). CERN Zenodo Record: https://doi.org/10.5281/zenodo.24047039. Publisher: PT CHAIN ASIA CONECT Research and Development Division.",
-   "lanes": [
-    "Forecasting",
-    "AI in planning"
-   ],
-   "score": 3.2,
-   "why": [
-    "practice signals: empirical",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225313089",
-   "doi": "https://doi.org/10.64388/ire1724780",
-   "title": "Retail Point of Sale and Inventory Management Systems",
-   "date": "2026-11-05",
-   "type": "article",
-   "venue": "Iconic Research and Engineering Journals",
-   "publisher": "",
-   "authors": [
-    "Jayvardhan Deepak Kamat",
-    "Siddhi Dattatray Joshi",
-    "Sahil Shantinath Magadum",
-    "Shrutika Sagar Chavan",
-    "Aniket Thorat"
-   ],
-   "institutions": [
-    "Sanjay Ghodawat University",
-    "Sanjay Ghodawat Institute",
-    "Swedish Geotechnical Institute"
-   ],
-   "countries": [
-    "IN",
+    "FR",
     "SE"
    ],
-   "licence": "",
-   "landing": "https://doi.org/10.64388/ire1724780",
-   "pdfs": [
-    "https://www.irejournals.com/formatedpaper/1724780.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "A retail point-of-sale (POS) system connects each sale with stock records, replenishment, tax documents and store reports. This review looks at recent research on inventory accuracy, POS data, replenishment, perishable goods and digital stock visibility. It then considers how those findings apply to DailyMart, a proposed platform for multiple retail outlets in India. We examined 21 research papers published between 2020 and 2025, comparing their methods, contributions and limitations. The studies show that transaction data can help with audits and forecasting, but a digital record cannot reveal every physical loss. Expiry details and differences in the way individual stores work create further challenges. Most of the papers focus on one decision, such as replenishment, shelf allocation, food-waste reduction or sharing stock across channels. Fewer explain how a practical retail application should connect checkout, purchasing, stock reversals, tax invoices and receipt delivery. DailyMart aims to address this gap by linking sales and stock updates with goods receipts, supplier returns, outlet-level access, expiry alerts, traceable cancellations and a separate messaging service. This is a proposed design, not proof of better performance. We suggest tests for transaction accuracy, simultaneous checkout, expiry tracking and usability.",
-   "lanes": [
-    "Inventory"
-   ],
-   "score": 3.0,
-   "why": [
-    "Nordic/DACH authors (SE)"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225301090",
-   "doi": "https://doi.org/10.24867/ijiem-426",
-   "title": "A Scheduling Framework for Green Supplier Selection and Dynamic Order Allocation: A Case Study in the Textile Industry",
-   "date": "2026-11-05",
-   "type": "article",
-   "venue": "International Journal of Industrial Engineering and Management",
-   "publisher": "Faculty of Technical Sciences",
-   "authors": [
-    "Rui G. Silva",
-    "Ana Cristina Ferreira",
-    "Bruna Ramos",
-    "António Araújo"
-   ],
-   "institutions": [
-    "Fundação Minerva - Cultura - Ensino e Investigação Científica",
-    "Universidade Lusíada de Vila Nova de Famalicão",
-    "Centro de Investigação em Organizações Mercados e Gestão Industrial",
-    "University of Minho"
-   ],
-   "countries": [
-    "PT"
-   ],
    "licence": "cc-by",
-   "landing": "https://doi.org/10.24867/ijiem-426",
+   "landing": "https://doi.org/10.1080/00207543.2026.2741382",
    "pdfs": [
-    "https://doi.org/10.24867/ijiem-426"
+    "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2026.2741382?needAccess=true"
    ],
    "cited_by": 0,
    "language": "en",
-   "abstract": "This study introduces an innovative framework for order allocation and scheduling in the textile industry, addressing the complex challenges of multi-objective production planning across diverse processes, multiple outsourcing entities, and interconnected production departments. The proposed approach uses advanced genetic algorithms to deliver efficient and sustainable scheduling solutions, integrating a state-of-the-art production process simulator. A core innovation of this research is a novel chromosome representation, complemented by refined genetic operators and a heuristic pruning and selection mechanism. Green supplier criteria are integrated through a lexicographic scoring mechanism that governs allocation tie-breaking, ensuring that sustainability preferences are structurally embedded in the decision process without displacing primary economic objectives. The production process simulator is designed to replicate real-world industrial dynamics, significantly boosting the model’s accuracy and practical applicability. The study pioneers advanced methodologies, including a gendered genetic algorithm and a hybrid genetic algorithm, specifically developed to optimize scheduling in multi-supply chain and open shop environments. These techniques improve computational efficiency and promote sustainable practices by optimizing resources, reducing waste and minimizing production costs. Validation using real industrial data underscores the model’s capability to outperform conventional practices, demonstrating higher performance relative to the company's prior manual scheduling practice, mostly in terms of operational efficiency, cost-effectiveness and sustainability. The framework offers substantial potential for practical implementation, providing robust tools to enhance market competitiveness and support greener and resilient production strategies within the textile industry and beyond.",
+   "abstract": "As global electricity demand surges due to industrial electrification and digitalisation, peak power (PP) management has emerged as a critical challenge in energy-intensive manufacturing, affecting operational costs and grid capacity. PP is defined as the maximum instantaneous total power demand across all workstations during the production cycle, and its minimisation is essential for reducing demand charges and avoiding grid overloads. This study introduces the balancing and scheduling of machining transfer lines as a bi-objective optimisation problem that simultaneously minimises cycle time (CT) and PP under precedence, inclusion/exclusion, and technological compatibility constraints. A multi-objective constraint programming (CP) model is formulated and solved via a bidirectional ε-constraint method, generating high-quality Pareto sets for small-scale instances. To overcome the computational intractability of CP for medium- and large-scale problems, a multi-objective variable neighbourhood search (MOVNS) enhanced with deep reinforcement learning (NN_MOVNS) is proposed, in which a Deep Q-Network adaptively guides neighbourhood operator selection throughout the search. Computational experiments on 55 benchmark instances demonstrate that NN_MOVNS consistently outperforms competing algorithms across all problem scales, with improvements becoming increasingly pronounced on larger instances, as confirmed by statistical significance tests. Peak shaving experiments confirm PP reductions ranging from 33% to 73% with modest CT increases averaging 5.7%. An industrial-scale test instance of a 148-task automotive cylinder head production line achieves an 11.8% CT reduction and a 63.1% PP reduction, lowering the peak-to-average power ratio from 2.35 to 1.49.",
    "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 3.0,
-   "why": [
-    "practice signals: case study, implementation, industrial, real-world"
-   ],
-   "text_file": "papers/W7225301090.txt"
-  },
-  {
-   "openalex": "W7225157884",
-   "doi": "https://doi.org/10.21203/rs.3.rs-10547898/v1",
-   "title": "Leveraging Intelligent Agents in Industrial Engineering: Use Cases in Predictive Maintenance and Supply Chain Optimization",
-   "date": "2026-11-03",
-   "type": "preprint",
-   "venue": "Research Square",
-   "publisher": "",
-   "authors": [
-    "Soma Prathibha",
-    "Supriya Ramesh",
-    "Sharanya Shree",
-    "Palani Kumar"
-   ],
-   "institutions": [
-    "Sri Sairam Engineering College"
-   ],
-   "countries": [
-    "IN"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.21203/rs.3.rs-10547898/v1",
-   "pdfs": [
-    "https://www.researchsquare.com/article/rs-10547898/latest.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract Industrial struggle with machine breakdown, inefficient processes, and supply chain.Disupts which are regular. These issues also produce delays and increased costs. And saw decreased productivity. Also it is the case that which traditional systems react only after a problem has Already present, which in turn puts pressure on businesses to become less efficient and less competitive. This Artificial intelligence and intelligent agents is the area where. In terms of Through use of machine learning and smart automation, which is what organizations do that have success in this area, they predict problems at an early stage. Streamline operations and improve decision speed and quality. This study Presents two case studies which in the first we see how AI plays a role in predictive maintenance. Machines break down less often which in turn allowsthem to run continuously. The second case study. Explores how AI is used in supply chain logistics. Both cases saw considerable and meaningful improvements with the implementation of artificial intelligence. In predictive maintenance, for example, the AI models were very effective in identifying early symptoms of equipment failure, which would significantly reduce machine downtime and lengthen the total lifespan of the equipment. In the Supply Chain , AI agents improved the interaction between supply chain stages which in turn enabled faster. Decision on which items to stock and also in how we handle stock levels which in turn leads to faster recovery from disruptions. These results present that which AI brings to the table in terms of efficiency, cost savings, and flexibility.",
-   "lanes": [
+    "Production planning and scheduling",
     "AI in planning"
    ],
-   "score": 3.0,
+   "score": 8.2,
    "why": [
-    "preprint, not peer-reviewed",
-    "practice signals: case study, implementation, industrial"
-   ],
-   "text_file": "papers/W7225157884.txt"
-  },
-  {
-   "openalex": "W7211958492",
-   "doi": "https://doi.org/10.18623/rvd.v23.8098",
-   "title": "STRENGTHENING PHARMACEUTICAL MANUFACTURING LOCALIZATION IN SAUDI ARABIA THROUGH PRODUCTION PLANNING AND CAPACITY OPTIMIZATION",
-   "date": "2026-09-07",
-   "type": "article",
-   "venue": "Veredas do Direito Direito Ambiental e Desenvolvimento Sustentável",
-   "publisher": "Editora Dom Helder",
-   "authors": [
-    "Mohammed Taqiuddin"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.18623/rvd.v23.8098",
-   "pdfs": [
-    "https://revista.domhelder.edu.br/index.php/veredas/article/download/8098/29350"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Saudi Arabia is pursuing pharmaceutical localization as part of a wider transformation of healthcare, industrial capability, supply-chain resilience, and the non-oil economy under Vision 2030. Yet localization is not achieved simply by constructing plants or transferring product licenses. It depends on the ability of domestic manufacturers to translate demand into executable production plans, allocate constrained resources, absorb new products, maintain regulatory compliance, and expand capacity at the right time. This review examines how production planning and capacity optimization can strengthen pharmaceutical manufacturing localization in Saudi Arabia. A structured integrative review was conducted using recent peer-reviewed literature on Saudi pharmaceutical manufacturing, production and capacity planning, pharmaceutical supply-chain resilience, operational excellence, and Pharma 4.0, together with official Saudi, WHO, ICH, and regulatory policy documents. The synthesis identifies five mutually reinforcing localization capabilities: demand-linked master production scheduling, integrated material and capacity planning, bottleneck and asset-performance management, technology-transfer readiness, and digital decision support. The paper proposes a Saudi pharmaceutical localization planning framework that connects national localization priorities with plant-level sales and operations planning, finite capacity decisions, quality systems, workforce development, and investment triggers. The analysis argues that localization performance should be measured not only by local content or the number of domestically produced products, but also by service level, schedule adherence, utilization, changeover performance, right-first-time quality, lead time, and resilience to supply disruptions. A phased implementation roadmap is proposed for 2026-2030. The review concludes that production planning and capacity optimization can function as strategic localization infrastructure, allowing Saudi manufacturers to convert installed assets, technology transfer, and policy incentives into reliable, scalable, and competitive domestic medicine supply.",
-   "lanes": [
-    "S&OP and IBP"
-   ],
-   "score": 3.0,
-   "why": [
-    "practice signals: implementation, industrial, manufacturer"
-   ],
-   "text_file": "papers/W7211958492.txt"
-  },
-  {
-   "openalex": "W7225611039",
-   "doi": "https://doi.org/10.31223/x53v5v",
-   "title": "Calibrated probabilistic ET0 forecasting with lightweight deep learning across northern and southern Xinjiang: seven-station evaluation and irrigation implications",
-   "date": "2026-11-09",
-   "type": "preprint",
-   "venue": "",
-   "publisher": "",
-   "authors": [
-    "Dachun Chen",
-    "Chunfang Yue"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by-nc-nd",
-   "landing": "https://doi.org/10.31223/x53v5v",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Accurate and calibrated reference evapotranspiration (ET0) forecasts are essential for irri-gation scheduling, yet many ET0 studies report deterministic point forecasts and evaluate only a limited number of forecast origins. This study compared deterministic and proba-bilistic ET0 forecasts at seven NCEI stations in northern and southern Xinjiang, including Kashi, Hotan, Korla and Turpan as external stations. Daily records from 1 January 1984 to 16 May 2025 were divided chronologically into 70% training, 10% validation and 20% testing. Four model families were evaluated: DLinear, ENMAMBA, CNNBiLSTM and Crossformer. H7, H30 and H180 forecasts were assessed at all feasible test origins using moving-block bootstrap inference and Holm correction. Rolling conformal calibration generated probabilistic forecasts evaluated by dense-grid CRPS, PICP80, PICP90, MPIW80 and MPIW90. A 2024 drip-irrigated cotton record was used to test how forecast strategies interact with actual irrigation deliveries and generic sandy-loam parameters. DLinear achieved the lowest H30 and H180 RMSE in the northern and external station groups. Overall PICP80/PICP90 was close to nominal, but spring and summer intervals remained under-covered. The irrigation simulation did not reproduce observed root-zone moisture; its decision implications are therefore treated as a bounded sensitivity analysis rather than a field-calibrated recommendation.",
-   "lanes": [
-    "Forecasting"
-   ],
-   "score": 2.7,
-   "why": [
-    "preprint, not peer-reviewed",
-    "practice signals: field",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225624363",
-   "doi": "https://doi.org/10.3390/buildings16214468",
-   "title": "Grouping-Driven Production Scheduling Optimization for Precast Concrete Components",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "Buildings",
-   "publisher": "Multidisciplinary Digital Publishing Institute",
-   "authors": [
-    "Junyong Liang",
-    "Shicen LIU",
-    "Yongzhong Zhang",
-    "Yu Fu",
-    "Baigang Du"
-   ],
-   "institutions": [
-    "Sichuan University of Science and Engineering",
-    "Wuhan University of Technology"
-   ],
-   "countries": [
-    "CN"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.3390/buildings16214468",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Precast component production is an important part of industrialization in construction. However, in actual production, it often faces problems such as high resource occupation, long production cycles, and high delivery costs caused by unreasonable scheduling arrangements. This study proposes a hybrid multi-objective optimization framework that combines Q-learning with the non-dominated sorting genetic algorithm, termed QL-NSGA-II, to address the highly coupled problem of component grouping on pallets and production scheduling in precast component manufacturing. The model aims to collaboratively minimize the number of pallets used, the makespan, and the penalty cost. The algorithm constructs a dual Q-table Markov decision architecture, in which the agent adaptively coordinates PC component grouping and scheduling strategies based on reward feedback from the evolutionary state. Through extreme-value tests on multiple benchmark instances from the literature, the results show that the proposed QL-NSGA-II not only achieves the accuracy of the benchmark solutions, but also, in some cases, reduces the makespan and penalty cost by 34.77% and 60.24%, respectively, compared with existing benchmark algorithms. In a real industrial order experiment with 87 components, the algorithm notably outperforms the comparison algorithms across comprehensive convergence metrics such as hypervolume and inverted generational distance, confirming its favorable practical application potential for balancing pallet resource consumption and flow cycle.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 2.7,
-   "why": [
+    "Nordic/DACH authors (SE)",
+    "established journal",
     "practice signals: industrial",
     "reports a quantified result"
    ],
    "text_file": ""
   },
   {
-   "openalex": "W7163071109",
-   "doi": "https://doi.org/10.1007/s44498-026-00196-9",
-   "title": "Evaluation criteria for AI-assisted product carbon footprinting systems: the cases of mapping and supply chain modeling",
-   "date": "2026-11-05",
+   "openalex": "W7216198559",
+   "doi": "https://doi.org/10.1080/00207543.2026.2738915",
+   "title": "Mitigating supply chain transparency barriers with blockchain: a dynamic capabilities perspective",
+   "date": "2026-10-02",
    "type": "article",
-   "venue": "Journal of Industrial Ecology",
-   "publisher": "Wiley",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
    "authors": [
-    "Shaena Ulissi",
-    "Andrew Dumit",
-    "P. James Joyce",
-    "Jacob Feintzeig",
-    "Krishna Rao",
-    "Steven Watson",
-    "Sangwon Suh"
+    "Eric Ragan",
+    "Mohammad H. Eslami"
    ],
    "institutions": [
-    "Tsinghua University"
+    "University of Gothenburg",
+    "University of Manitoba"
    ],
    "countries": [
-    "CN"
+    "CA",
+    "SE"
    ],
    "licence": "cc-by",
-   "landing": "https://doi.org/10.1007/s44498-026-00196-9",
+   "landing": "https://doi.org/10.1080/00207543.2026.2738915",
    "pdfs": [
-    "https://link.springer.com/content/pdf/10.1007/s44498-026-00196-9.pdf"
+    "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2026.2738915?needAccess=true"
    ],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Abstract Large language models (LLMs) are increasingly used to automate components of product carbon footprinting (PCF). However, the carbon footprinting literature lacks criteria for evaluating the quality, documentation, uncertainty indication, and reviewability of AI-assisted systems for specific PCF use cases. We developed a set of evaluation criteria for AI-assisted carbon footprinting (AI-CF) through standards review, structured stakeholder elicitation with corporate practitioners and verification specialists, and iterative pilot testing. The resulting criteria are organized around transparent logic, benchmarking against expert judgment, and uncertainty characterization. The criteria were then applied to two use cases: automated life-cycle-inventory proxy mapping and cradle-to-gate PCF generation. Applying the criteria to two deployed proprietary AI-CF systems demonstrates that the framework is operational and can identify where human review or better data are most needed. For automated mapping, well-specified (“non-vague”) inputs achieved a 91.2% expert-accepted mapping rate, whereas inputs with ambiguous or incomplete descriptions (“vague”; e.g., internal product codes or generic descriptors) achieved 59.7%; repeat-run entropy increased with input ambiguity. For cradle-to-gate modeling, end-to-end benchmarking against 269 Environmental Product Declarations yielded a 33% median relative error, while component-level benchmark checks, though unvalidated, showed relatively strong pass rates for proxy mappings, hotspots, and direct emissions and weaker performance for key input rates. The framework provides a practical reference for AI-CF developers, users, and reviewers to assess AI-CF system and output quality for these use cases.",
-   "lanes": [
-    "AI in planning"
-   ],
-   "score": 2.7,
-   "why": [
-    "practice signals: practitioner",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7163071109.txt"
-  },
-  {
-   "openalex": "W7225236001",
-   "doi": "https://doi.org/10.54097/jx9ms738",
-   "title": "Analysis of the Effect of Big Data on Supply Chain Optimization: A Case Study of JD Logistics' Freight and Warehousing Operations",
-   "date": "2026-11-03",
-   "type": "article",
-   "venue": "Journal of innovation and development",
-   "publisher": "",
-   "authors": [
-    "Sihan Yan"
-   ],
-   "institutions": [
-    "Sichuan University"
-   ],
-   "countries": [
-    "CN"
-   ],
-   "licence": "cc-by-nc",
-   "landing": "https://doi.org/10.54097/jx9ms738",
-   "pdfs": [
-    "https://drpress.org/ojs/index.php/jid/article/download/36079/35233"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "In the context of the deep integration of the digital economy, supply chain management is confronted with challenges such as demand fluctuations and information asymmetry. Big data technology is emerging as the core driving force for the precise transformation of supply chains. This paper takes JD Logistics as the research object and systematically analyzes the application paths and optimization effects of big data in the e-commerce supply chain. The research starts from the characteristics of supply chain big data, summarizes the development process and technical architecture of JD Logistics, and focuses on the specific practices of big data in inventory management, intelligent warehousing operations, and delivery optimization. Through a combination of case analysis and literature research, it demonstrates the significant role of big data technology in reducing JD’s warehousing costs and improving delivery efficiency, with a single delivery cost decreasing by 8.5%, unit warehousing cost decreasing by 12%, and order fulfillment rate increasing to 97%. The study shows that the supply chain management driven by big data achieves the unity of cost reduction, efficiency improvement, and service quality enhancement, providing a feasible practical path for the digital transformation of e-commerce logistics enterprises.",
-   "lanes": [
-    "Inventory"
-   ],
-   "score": 2.7,
-   "why": [
-    "practice signals: case study",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7225236001.txt"
-  },
-  {
-   "openalex": "W7225177506",
-   "doi": "https://doi.org/10.1038/s41598-026-78286-8",
-   "title": "Reliability improvement in CNC manufacturing through lean six sigma DMAIC: an empirical study on mean time between failures",
-   "date": "2026-11-03",
-   "type": "article",
-   "venue": "Scientific Reports",
-   "publisher": "Nature Portfolio",
-   "authors": [
-    "G. Shashi Kiran",
-    "M.R. Shivakumar",
-    "C. G. Ramachandra",
-    "K. Rameshbabu",
-    "H. K. Sachidananda"
-   ],
-   "institutions": [
-    "Ramaiah Institute of Technology",
-    "Presidency University",
-    "Manipal Academy of Higher Education, Dubai"
-   ],
-   "countries": [
-    "AE",
-    "IN"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1038/s41598-026-78286-8",
-   "pdfs": [
-    "https://www.nature.com/articles/s41598-026-78286-8_reference.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract Unplanned equipment failures at CNC manufacturing facilities create production delays that are difficult to schedule around, and published Lean Six Sigma DMAIC studies of Mean Time Between Failures (MTBF) rarely report variance reduction as an outcome in its own right, despite highly variable failure intervals being at least as disruptive to production planning as low average reliability. This study applies the DMAIC framework to MTBF at a Government Tool Room and Training Centre (GTTC) in Bengaluru, India, a public-sector precision manufacturing facility, using six months of maintenance work-order records (January–June 2025, 502 unplanned breakdown events). Because system-based failure tracking began at the start of this window with no prior failure history available, the first recorded failure for each of 52 machines could not be paired with a genuine previous failure and was excluded as a left-censored observation, yielding a final analysis dataset of 450 events with a median baseline MTBF of 402.34 h (mean 429.92 h; CV, calculated from the mean and standard deviation, = 65.2%, a level of dispersion that limits the practical use of any single figure for production scheduling). Non-parametric Mann-Whitney testing (required by confirmed non-normality, Anderson-Darling A-squared = 3.81, p < 0.005) identified three factors statistically associated with lower MTBF: incomplete daily operator maintenance (median gap 104.5 h, p < 0.001), preventive maintenance not completed on schedule (gap 99.3 h, p < 0.001), and delayed component replacement (gap 113.4 h, p < 0.001; observed in 66.9% of events). Interventions addressing each factor were piloted on CNC milling machines and extended to four further machine families. Median MTBF rose to 558.70 h (+ 38.9%; Mann-Whitney, p < 0.001), with CV falling from 65.2% to 6.3%. The improvement persisted over a subsequent four-month Control-phase observation ( n = 267): every individual month remained significantly better than baseline ( p < 1.3 × 10⁻⁷ in the weakest month), and the statistically appropriate one-sided regression test found no evidence of regression relative to the immediate post-improvement result ( p = 0.985), with the Control-phase median (564.03 h) in fact marginally exceeding it. This study’s principal contribution is methodological as much as empirical: it demonstrates that MTBF variance reduction, not only the mean or median shift, can be treated as a primary DMAIC outcome, and it reports a transparent left-censoring exclusion rule that other facilities beginning failure-tracking from a fixed start date can apply directly. Findings are presented from a single facility and are not claimed to be representative of a broader setting. As a before–after study with no concurrent control group, the results show an association with the interventions, not proof of causation, and four months of Control-phase data do not establish long-term stability.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 2.7,
-   "why": [
-    "practice signals: empirical",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7217681199",
-   "doi": "",
-   "title": "Digital Twin Frameworks for SMB Inventory and Demand Optimization",
-   "date": "2026-11-03",
-   "type": "article",
-   "venue": "E-Journal of Science and Emerging Technologies (EJSET)",
-   "publisher": "",
-   "authors": [
-    "Er. Shubham Jain"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://ejset.org/index.php/index/article/view/34",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Small and Medium-sized Businesses (SMBs) face unique challenges in inventory and demand management due to limited resources, volatile markets, and evolving consumer expectations. Digital Twin technology—a virtual representation of physical assets, processes, or systems—has emerged as a transformative tool enabling predictive analytics, real-time monitoring, and optimization. This manuscript explores Digital Twin frameworks tailored for SMBs, focusing on inventory and demand optimization. It delves into the architecture, integration strategies with existing Enterprise Resource Planning (ERP) systems, and artificial intelligence (AI) models facilitating predictive insights. A detailed literature review uncovers significant advancements and gaps in adopting Digital Twins for supply chain efficiency in SMB contexts. Statistical analysis is performed on data collected from 150 SMBs across retail, manufacturing, and e-commerce sectors, revealing improvements in forecast accuracy, stock-out reduction, and working capital utilization upon deploying Digital Twin solutions. The results highlight a mean forecast accuracy improvement of 18.4% and inventory cost savings averaging 12.7%. The paper concludes with a proposed Digital Twin framework customized for SMB operations, discusses practical implementation considerations, and outlines the technology’s scope, limitations, and potential future research directions. This comprehensive study underscores the transformative role of Digital Twins in modernizing SMB inventory and demand management, paving the way for competitive agility and resilience.",
-   "lanes": [
-    "AI in planning"
-   ],
-   "score": 2.7,
-   "why": [
-    "practice signals: implementation",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7224181360",
-   "doi": "https://doi.org/10.4102/jtscm.v20i0.1432",
-   "title": "The role of supply chain planning in enhancing customer satisfaction and loyalty in the South African steel manufacturing industry",
-   "date": "2026-10-29",
-   "type": "article",
-   "venue": "Journal of Transport and Supply Chain Management",
-   "publisher": "AOSIS",
-   "authors": [
-    "Lucky Shashaoka",
-    "Chengedzai Mafini",
-    "Gladys N. Mahache"
-   ],
-   "institutions": [
-    "Vaal University of Technology"
-   ],
-   "countries": [
-    "ZA"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.4102/jtscm.v20i0.1432",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Background: The steel manufacturing industry is widely recognised as a key contributor to both developed and developing economies. In South Africa, it contributes about 1.5% to the gross domestic product and remains important for employment and economic growth. It also supplies essential raw materials to downstream sectors. Despite this contribution, the industry faces ongoing challenges such as cheap imports, high transport costs, skills shortages, and weak economic growth. These pressures affect operational performance and threaten customer satisfaction (CS) and customer loyalty (CL), particularly in business-to-business (B2B) markets in which long-term supplier relationships and reliable service are essential for competitiveness and customer retention. In this context, supply chain planning (SCP) has become important for coordinating strategic, tactical, and operational decisions. Objectives: This study investigated the relationship among SCP, CS, and CL in the South African steel manufacturing industry. Method: A quantitative approach was used. SCP practices, including sales and operations planning, demand and supply planning (SP), production planning (PP), inventory management (IM), capacity planning (CP), and procurement planning (PL), were examined to assess their influence on CS and CL. Data were collected from key industry participants and analysed statistically using partial least squares structural equation modelling. Results: The findings show that SCP does not influence CS in a uniform way. Inventory management and PP had significant positive effects, whereas SP showed a significant inverse relationship with CS. Sales and operations planning, demand planning, CP, and PL were not significant. Customer satisfaction, however, had a strong positive effect on CL. Conclusion: The findings highlight the varying contributions of different SCP practices to CS, which suggests that some practices exert a stronger influence than others. Improving IM and PP remains important for supporting CS and CL within the South African steel manufacturing industry. Contribution: The study offers empirical insights into how different practices of SCP shape customer-related outcomes in a B2B manufacturing environment and informs managerial decision-making within the South African steel industry.",
-   "lanes": [
-    "S&OP and IBP"
-   ],
-   "score": 2.7,
-   "why": [
-    "practice signals: empirical",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225634454",
-   "doi": "https://doi.org/10.3390/su182111372",
-   "title": "AI-Based Pharmaceutical Demand Forecasting for Sustainable Production: A Hybrid BiLSTM–Transformer Approach to Prevent Overproduction",
-   "date": "2026-11-07",
-   "type": "article",
-   "venue": "Sustainability",
-   "publisher": "Multidisciplinary Digital Publishing Institute",
-   "authors": [
-    "Jesús Mares-Carreño",
-    "Arce-Gil Diego-Iván",
-    "Yunuén López-Grijalba",
-    "Juan Cruz-Castro",
-    "Abarca-Jiménez Griselda Stephany",
-    "Vega-Blanco Manuel Vladimir",
-    "Francisco Gutiérrez-Galicia"
-   ],
-   "institutions": [
-    "Instituto Politécnico Nacional"
-   ],
-   "countries": [
-    "MX"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.3390/su182111372",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Accurate pharmaceutical demand forecasting is essential to align production with actual market needs, reduce overproduction, prevent stockouts, and improve resource efficiency. This study develops a hybrid bidirectional long short-term memory (BiLSTM)–Transformer model to support sustainable pharmaceutical production through data-driven demand forecasting. We trained the model on real monthly sales and inventory data from a nationwide pharmaceutical company in Mexico, along with epidemiological, climatic, demographic, and economic variables. The study analyzed thirteen sodium naproxen and oseltamivir phosphate pharmaceutical products over forecasting horizons of 3, 6, and 12 months. We evaluated robust scaling and logarithmic transformation during preprocessing and compared the Adam, RMSprop, Nadam, and SGD optimizers. Nadam generally produced the lowest forecasting errors, especially at short- and medium-term horizons. Six of the thirteen evaluated pharmaceutical products achieved cumulative percentage errors below 10% at the three-month forecasting horizon. Compared with the Seasonal Naïve baseline, the proposed model achieved lower cumulative forecasting errors for 11 of 13 products at the 3-month horizon and 9 of 13 products at both the 6- and 12-month horizons, although the baseline performed better for certain products. Performance became more heterogeneous over longer horizons and for products with irregular or highly volatile demand, revealing important limitations for operational use. The findings suggest that hybrid AI-based forecasting may support production planning and inventory management decisions, provided that model selection accounts for product-specific characteristics and forecasting horizons. However, potential benefits related to reduced overproduction, excess inventory, product expiration, and environmental impacts remain prospective applications rather than outcomes directly demonstrated in this study.",
-   "lanes": [
-    "Forecasting",
-    "Inventory",
-    "Production planning and scheduling"
-   ],
-   "score": 2.5,
-   "why": [
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225268651",
-   "doi": "https://doi.org/10.20965/ijat.2026.p0595",
-   "title": "Gated Hybrid Network Using CRNN and RNN Models for Time-Series Forecasting and Case Studies",
-   "date": "2026-11-04",
-   "type": "article",
-   "venue": "International Journal of Automation Technology",
-   "publisher": "Fuji Technology Press Ltd.",
-   "authors": [
-    "Takayuki Kataoka",
-    "Tomonari Yomono",
-    "翔 山元",
-    "Takashi Nishi"
-   ],
-   "institutions": [
-    "Kindai University",
-    "Dai Nippon Printing (Japan)",
-    "Mazda Motor Corporation (Japan)"
-   ],
-   "countries": [
-    "JP"
-   ],
-   "licence": "cc-by-nd",
-   "landing": "https://doi.org/10.20965/ijat.2026.p0595",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Time-series forecasting is a critical challenge in industrial applications such as inventory management and energy planning. This paper proposes a gated hybrid network for time-series forecasting that combines feature vectors obtained from convolutional recurrent neural network (CRNN) and recurrent neural network (RNN) branches. Unlike conventional CRNN models, the proposed model feeds the original time-series sequence in parallel to both CRNN and independent RNN branches, enabling each branch to extract complementary temporal features. A squeeze-and-excitation-inspired gating mechanism then adaptively weights and integrates the two feature vectors. Experiments were conducted using six real-world datasets, including automotive sales, electricity consumption, and solar energy data. The proposed model achieved lower mean relative squared error and relative absolute error values averaged across four forecasting periods than autoregressive (AR), autoregressive integrated moving average (ARIMA), Holt–Winters, gated recurrent unit (GRU), and long short-term memory (LSTM) baseline models on most of the datasets, while also demonstrating superior prediction stability. These results suggest that the proposed architecture is suitable for practical industrial forecasting tasks.",
-   "lanes": [
-    "Inventory"
-   ],
-   "score": 2.4,
-   "why": [
-    "practice signals: industrial, real-world"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225131692",
-   "doi": "https://doi.org/10.14456/irr.2026.21",
-   "title": "Optimizing Production Planning in the Banbury Mixing Process via Modified FCMRP: A Tire Manufacturing Case Study",
-   "date": "2026-11-03",
-   "type": "article",
-   "venue": "Interdisciplinary Research Review",
-   "publisher": "",
-   "authors": [
-    "Anan Butrat"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by-nc-nd",
-   "landing": "https://ph02.tci-thaijo.org/index.php/jtir/article/view/267168",
-   "pdfs": [
-    "https://ph02.tci-thaijo.org/index.php/jtir/article/download/267168/174675"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Production planning in the Banbury mixing process presents unique scheduling challenges, primarily due to complex alternative Bill of Materials (BOM) routing and mandatory natural aging constraints. This study addresses the severe operational inefficiencies—specifically, excessive lead times and high machine idle time ratios—currently faced by a real-world tire manufacturing company. To resolve these issues, we propose a modified Finite Capacity Material Requirements Planning (FCMRP) framework. This approach dynamically calculates job release times based on predecessor due times and previous order finish times to effectively accommodate mandatory resting periods. To determine the most effective scheduling strategy, we systematically evaluate the company's baseline Highest Order Quantity (HOQ) rule against standard Earliest Release Time (ERT) and Shortest Processing Time (SPT) heuristics. Furthermore, we introduce a novel Non-Alternative Machine (NAM) sub-rule designed to intelligently isolate and reallocate movable excess jobs to alleviate machine bottlenecks. The experimental results demonstrate that combining the ERT rule with the NAM sub-rule successfully reduces bottleneck workloads and yields the optimal overall lead time. Conversely, applying ERT without the NAM logic provides the best machine idle time ratio. Ultimately, this research delivers a practical, data-driven framework for selecting priority rules to optimize complex mixing processes in the manufacturing industry.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 2.4,
-   "why": [
-    "practice signals: case study, real-world"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225202708",
-   "doi": "https://doi.org/10.62051/ijgem.v10n10.06",
-   "title": "Discussion on Paths to Enhance Supply Chain Resilience Based on ESG Concepts in Light of Global Value Chain Restructuring",
-   "date": "2026-11-03",
-   "type": "article",
-   "venue": "International Journal of Global Economics and Management",
-   "publisher": "",
-   "authors": [
-    "Yuanyuan Yang"
-   ],
-   "institutions": [
-    "Shanghai University of International Business and Economics"
-   ],
-   "countries": [
-    "CN"
-   ],
-   "licence": "cc-by-nc",
-   "landing": "https://doi.org/10.62051/ijgem.v10n10.06",
-   "pdfs": [
-    "https://ijgem.org/pdf/2026/10.62051-ijgem.v10n10.06.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "In recent years, the world's value chain has moved away from the pursuit of efficiency and is now paying more attention to security and resilience due to geopolitical risks, unstable trade policies, and extreme weather events. ESG has gone from being voluntary to required in the supply chain for governance. The European Union's Corporate Sustainability Due Diligence Directive is an example. According to the trend of value chain restructuring, this paper studies the inherent relationship between ESG and supply chain resilience, and proposes three paths for improvement in the dimensions of collaborative governance, digital empowerment and institutional transmission. Based on empirical evidence, ESG performance strengthens the resilience of the industrial chain and supply chain by improving information transparency and reducing financing constraints; the extraterritorial effects of regulations such as CSDDD are transmitted to Chinese export enterprises through procurement contracts and supplier guidelines. In order to continue to operate in the European market, Chinese enterprises have been required to integrate ESG standards into their supply chain management, and the capacity for ESG compliance is gradually becoming a condition for supplying major enterprises abroad. The company needs to integrate ESG into its daily operations of the supply chain, not just issue an annual report.",
+   "abstract": "The complexity and risk uncertainty stemming from supply disruptions underscore the need for enhanced transparency in supply chain management. Although blockchain technologies offer promising solutions through secure, immutable ledgers, adoption rates remain low, and extant research focuses primarily on theoretical frameworks lacking empirical substantiation. Addressing this gap, the present study reconceptualises transparency barriers as capability frictions, systematic impediments that prevent firms from effectively deploying sensing, seizing, and transformation capabilities. Through an in-depth case study of a Swedish OEM and its suppliers, four transparency barriers are identified: information inaccuracy, risks of information sharing, lack of communication protocols, and future communications compatibility. Analysis demonstrates how these barriers create capability frictions by weakening sensing through information asymmetry, constraining seizing through limited collaboration, and restricting transformation through weak data governance. The findings reveal how blockchain's distinctive properties, immutability, transparency, and decentralised consensus, systematically reduce these frictions, enabling firms to transition from weakened to enhanced dynamic capabilities. Five propositions are developed theorising the mechanisms through which blockchain serves as a digital enabler for capability transformation, contributing to dynamic capabilities theory and supply chain management practice.",
    "lanes": [
     "Resilience and risk"
    ],
-   "score": 2.4,
+   "score": 8.0,
    "why": [
-    "practice signals: empirical, industrial"
+    "Nordic/DACH authors (SE)",
+    "established journal",
+    "practice signals: case study, empirical, swedish"
    ],
    "text_file": ""
   },
   {
-   "openalex": "W7225097442",
-   "doi": "https://doi.org/10.3389/fsufs.2026.1989263",
-   "title": "Digital transformation, traceability, and supply chain resilience in food manufacturing SMEs: a review of AI, blockchain-IoT, and institutional mechanisms",
-   "date": "2026-11-02",
+   "openalex": "W7224456260",
+   "doi": "https://doi.org/10.1080/00207543.2026.2752510",
+   "title": "Energy- and labour-aware scheduling under uncertainty: a decomposition framework for stochastic batch-processing systems",
+   "date": "2026-10-28",
    "type": "article",
-   "venue": "Frontiers in Sustainable Food Systems",
-   "publisher": "Frontiers Media",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
    "authors": [
-    "Guang-Wen Zheng",
-    "Ayesha Mukhtar"
+    "Balwin Bokor",
+    "Roland Braune",
+    "Klaus Altendorfer",
+    "Ştefan Wagner"
    ],
    "institutions": [
-    "Shaanxi University of Science and Technology"
+    "University of Applied Sciences Upper Austria",
+    "University of Vienna"
    ],
    "countries": [
-    "CN"
+    "AT"
    ],
    "licence": "cc-by",
-   "landing": "https://doi.org/10.3389/fsufs.2026.1989263",
+   "landing": "https://doi.org/10.1080/00207543.2026.2752510",
    "pdfs": [
-    "https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2026.1989263/pdf"
+    "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2026.2752510?needAccess=true"
    ],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Food supply chains in China face persistent challenges of food safety risks, inadequate transparency, and supply disruptions, with food manufacturing small and medium-sized enterprises (SMEs) disproportionately vulnerable due to limited resources and non-standardized internal processes. Digital transformation encompassing artificial intelligence (AI), blockchain, Internet of Things (IoT), and digital twin technologies is increasingly regarded as a strategic solution to strengthen supply chain resilience, yet the organizational and institutional conditions under which these digital investments translate into tangible resilience improvements for food manufacturing SMEs remain poorly understood. This review conducts a PRISMA 2020-compliant systematic review and thematic synthesis of 40 multidisciplinary sources spanning the food safety, supply chain management, and information systems literatures. Drawing on Dynamic Capabilities Theory and Institutional Theory, we propose an integrative conceptual framework comprising six research propositions, in which traceability capability acts as a food-safety-specific mediating mechanism linking digital transformation to supply chain resilience, while regulatory stringency moderates the strength of this indirect pathway. A central argument of this framework is that deploying blockchain, IoT, or AI hardware does not itself constitute traceability capability the institutional and organisational conditions under which digital tools are adopted determine whether firms build substantive traceability capability or engage in symbolic compliance without genuine food safety governance improvement. Three key contributions distinguish this framework: conceptualizing traceability capability as a distinct dynamic capability rather than a generic digitalization mechanism; directing analytical focus explicitly toward food manufacturing SMEs, a population largely overlooked in existing large-firm panel studies; and introducing regulatory stringency as a first-stage moderator within a moderated mediation structure. Critical research gaps are identified, including the absence of SME-calibrated digital transformation measurement instruments, the lack of a validated multi-item traceability capability scale, and a complete empirical vacuum for testing the proposed moderated mediation model in food manufacturing SME contexts. This review provides a structured future research agenda for scholars and delivers actionable insights for practitioners and policymakers seeking to direct digital technology investments toward improved food safety governance in China’s food manufacturing sector.",
+   "abstract": "Motivated by the energy-intensive heat-treatment operations of a European lead-acid battery manufacturer, this study addresses energy- and labour-aware scheduling for a stochastic batch-processing system with waiting-time constraints and programme-compatibility requirements. We formalise the problem as a two-level optimisation decomposed into five sub-decisions and design a generic scheduling framework spanning from simple Rule-Based Heuristics (RH) to rules automatically synthesised by Genetic Programming (GP) for a single sub-decision. All approaches are evaluated in an agent-based discrete-event simulation mirroring the company's production. Optimising all five sub-decisions using handcrafted rules (Best RH) significantly reduces costs by 40.8% at low and 85.4% at high utilisation over Current Practice, with substantially improved solution robustness. Substituting a single sub-decision with GP-evolved rules reveals both what evolved rules achieve alone and what potential handcrafted rules leave. At high utilisation, it yields a significant 41.9% cost reduction over Current Practice, whereas on the already optimised Best RH the cost gain is marginal and non-significant – but robustness still improves markedly, a critical advantage in stochastic environments. The central contribution is methodological: partitioning the problem by decision structure rather than machine structure reduces complexity enough for handcrafted rules to remain competitive with evolved ones.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 7.7,
+   "why": [
+    "Nordic/DACH authors (AT)",
+    "established journal",
+    "practice signals: manufacturer",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7216078518",
+   "doi": "https://doi.org/10.1016/j.orp.2026.100419",
+   "title": "Learning from forecast revisions for inventory replenishment under non-stationary demand",
+   "date": "2026-10-02",
+   "type": "article",
+   "venue": "Operations Research Perspectives",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Saadinur Azisbek uulu",
+    "Yılmaz Uygun"
+   ],
+   "institutions": [
+    "Constructor University"
+   ],
+   "countries": [
+    "DE"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1016/j.orp.2026.100419",
+   "pdfs": [
+    "https://www.sciencedirect.com/science/article/pii/S2214716026000424/pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Forecast revisions contain information about emerging demand changes that is typically discarded in inventory-control policies. Our two main contributions are (i) a POMDP state augmentation that pairs the history of forecast revisions with Bayesian change-point and forecast-uncertainty signals, and (ii) FR-PPO (Forecast Revision Proximal Policy Optimization), a two-level recurrent architecture that encodes this revision history through a GRU inside a RecurrentPPO controller centered on an uncertainty-adjusted base-stock reference. We evaluated FR-PPO against two classical and six reinforcement learning benchmarks in five synthetic demand scenarios and seven regime-active M5 SKUs. FR-PPO is the best PPO-family policy in all five synthetic scenarios and achieves the lowest overall cost on three of them, reducing cost by 72.2% relative to adaptive BaseStock under seasonal demand while reducing adaptation lag by 63%. The method is not uniformly dominant: off-policy SAC baselines retain an advantage under sparse, intermittent demand, delimiting where the revision signal is most valuable. On real M5 data, FR-PPO reduces cost relative to adaptive BaseStock on all seven SKUs (4.2%–23.0%). These findings identify forecast-revision histories as useful, low-cost decision information for replenishment under demand non-stationarity.",
+   "lanes": [
+    "Forecasting",
+    "Inventory",
+    "AI in planning"
+   ],
+   "score": 7.5,
+   "why": [
+    "Nordic/DACH authors (DE)",
+    "established journal",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225561281",
+   "doi": "https://doi.org/10.1080/00207543.2026.2752521",
+   "title": "A systematic review of the collaborative intelligence in multi-agent scheduling",
+   "date": "2026-11-08",
+   "type": "article",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
+   "authors": [
+    "Kuo‐Ching Ying",
+    "Pourya Pourhejazy",
+    "Bo-Cheng Chen"
+   ],
+   "institutions": [
+    "National Taipei University of Technology",
+    "UiT The Arctic University of Norway",
+    "Taiwan Semiconductor Manufacturing Company (Taiwan)"
+   ],
+   "countries": [
+    "NO",
+    "TW"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1080/00207543.2026.2752521",
+   "pdfs": [
+    "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2026.2752521?needAccess=true"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Traditional scheduling assumes a single actor, while real-world scenarios often involve multiple decision-making units with conflicting objectives, requiring collaboration, coordination, negotiation, and collective intelligence. Multi-agent scheduling (MAS) provides a realistic framework for modelling such interactions under shared resources. This article presents a comprehensive scientometric and systematic review of two-agent and multi-agent scheduling, examining the field’s development paths, knowledge structure, and emerging research clusters. Main path, cluster, and keyword analyses are integrated to trace knowledge diffusion, identify influential studies and research branches, and examine how collaborative intelligence is manifested across scheduling contexts. The findings reveal an evolution from early complexity-oriented single-machine and dual-agent models toward richer production environments, advanced computational methods, and application-oriented MAS in smart manufacturing, energy systems, edge computing, and decentralised project scheduling. More importantly, the synthesis reveals a broader transition from optimizing competing agent-specific objectives toward interaction-driven collaborative scheduling intelligence based on coordination, negotiation, information sharing, adaptation, and collective learning. This domain-level perspective suggests that future MAS should integrate decentralised decision-making, adaptive intelligence, and system-level coordination to reconcile local objectives with system-wide performance.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 7.4,
+   "why": [
+    "Nordic/DACH authors (NO)",
+    "established journal",
+    "practice signals: field, real-world"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225202756",
+   "doi": "https://doi.org/10.1080/00207543.2026.2757111",
+   "title": "Energy-efficient scheduling of a single resource with production requirements: a joint simulation and scenario-based mathematical programming approach",
+   "date": "2026-11-02",
+   "type": "article",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
+   "authors": [
+    "Siamak Khayyati",
+    "Oktay Karabağ",
+    "Berk Berkman",
+    "Sebnem Demirtas",
+    "Barış Tan"
+   ],
+   "institutions": [
+    "University of Liège",
+    "University of Mannheim",
+    "Özyeğin University",
+    "Erasmus University Rotterdam",
+    "Koç University"
+   ],
+   "countries": [
+    "BE",
+    "DE",
+    "NL",
+    "TR"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1080/00207543.2026.2757111",
+   "pdfs": [
+    "https://madoc.bib.uni-mannheim.de/99305/1/Energy-efficient%20scheduling%20of%20a%20single%20resource%20with%20production%20requirements%20a%20joint%20simulation%20and%20scenario-based%20mathematical%20programming%20approach.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Motivated by paint oven on-off scheduling in an automotive plant, this study investigates the control of a single energy-intensive resource that can operate in on, off, warm-up, and multiple idle modes. The problem is to determine the energy mode of the resource over a finite planning horizon so as to minimise the average total cost of energy consumption and product waiting. We propose a data-driven on-off scheduling procedure that collects real-time upstream vehicle locations at the beginning of each shift, uses a digital twin to generate arrival scenarios conditional on these locations, and then determines the resource schedule. Two solution approaches are developed and used in parallel. The first is a scenario-based mathematical programming formulation strengthened by a scenario reduction technique based on clustering, and the second is a problem-specific genetic algorithm that encodes the resource schedule directly. Numerical experiments show that incorporating advance arrival information into multi-mode scheduling can reduce the normalised energy cost per vehicle by up to 41% relative to benchmark policies, with energy measured in equivalent on-mode operating minutes. The results highlight the value of digital-twin-based arrival information for energy-intensive manufacturing systems.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 7.0,
+   "why": [
+    "Nordic/DACH authors (DE)",
+    "established journal",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W7225202756.txt"
+  },
+  {
+   "openalex": "W7222029693",
+   "doi": "https://doi.org/10.1016/j.sca.2026.100248",
+   "title": "A causal analytics approach for interpretable supply chain risk and supplier performance evaluation",
+   "date": "2026-10-15",
+   "type": "article",
+   "venue": "Supply Chain Analytics",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Ishwar Gupta",
+    "Harshitha Konduru",
+    "Sergio Correa",
+    "Hendro Wicaksono"
+   ],
+   "institutions": [
+    "BMW (Germany)",
+    "BMW Group (Germany)",
+    "Constructor University"
+   ],
+   "countries": [
+    "DE"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1016/j.sca.2026.100248",
+   "pdfs": [
+    "https://www.sciencedirect.com/science/article/pii/S2949863526000579/pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Traditional machine learning (ML) techniques are widely used to support operational supply chain decisions, but their “black box” nature limits transparency and actionability. This study addresses this challenge by exploring the effectiveness of causal discovery methods and large language models (LLMs) in supply chain management with a focus on the automotive industry. Six causal discovery algorithms- Peter–Clark (PC), Fast Causal Inference (FCI), Greedy Equivalence Search (GES), DirectLiNGAM, NOTEARS, and Regression with Subsequent Independence Test (RESIT) are benchmarked against an expert-validated ground-truth graph constructed from 18 domain experts with a combined 300+ years of experience, using 12 months of internal supplier Key Performance Indicator (KPI) data. RESIT achieves the closest alignment with expert knowledge, with a False Discovery Rate of 0.1429, Structural Hamming Distance of 1, precision and recall of 0.8571 and an F1-score of 0.85, outperforming all other algorithms on every metric. Robustness of the estimated causal effect of Backlog on Escalation is confirmed through three refutation tests- random common cause, random subset and placebo treatment returning high p-values of 0.96, 0.76, and 0.98 respectively, indicating insensitivity to spurious confounders and random perturbations. Counterfactual simulation shows that reducing Backlog by 50%–70% consistently lowers escalation levels across suppliers. LLMs contribute by extracting causal factors from unstructured external event data, accelerating causal graph construction, and reducing dependence on manual expert input. LLM-derived causal graphs are further compared with expert-validated models to ensure alignment and reliability, and are operationalised through a Weighted Sum Model risk score linking external drivers to internal KPIs for actionable supplier escalation decisions.",
    "lanes": [
     "AI in planning"
    ],
-   "score": 2.4,
+   "score": 7.0,
    "why": [
-    "practice signals: empirical, practitioner"
+    "Nordic/DACH authors (DE)",
+    "established journal",
+    "reports a quantified result"
    ],
    "text_file": ""
   },
   {
-   "openalex": "W7223143508",
-   "doi": "https://doi.org/10.1016/j.htct.2026.108185",
-   "title": "NEW SUPPLY CHAIN PARADIGM TO STRENGTHEN THE BIOTECHNOLOGY-BASED PHARMACEUTICAL INDUSTRY",
-   "date": "2026-10-01",
+   "openalex": "W7213316681",
+   "doi": "https://doi.org/10.1080/01605682.2026.2730524",
+   "title": "Adaptive disaster relief logistics under uncertainty: a hybrid robust–fuzzy two‑stage mathematical model with inter‑regional sharing",
+   "date": "2026-09-15",
    "type": "article",
-   "venue": "Hematology Transfusion and Cell Therapy",
-   "publisher": "Elsevier BV",
+   "venue": "Journal of the Operational Research Society",
+   "publisher": "Palgrave Macmillan",
    "authors": [
-    "Amanda Damasceno Leão",
-    "Laianne Carla Batista Alencar",
-    "Raquel Gois Bastos"
+    "Ahmad Attar",
+    "Peiman Ghasemi",
+    "Seckin Ozkul",
+    "Okechukwu Okorie",
+    "Lina Zhang"
    ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by-nc-nd",
-   "landing": "https://doi.org/10.1016/j.htct.2026.108185",
+   "institutions": [
+    "University of Exeter",
+    "University of Vienna",
+    "University of South Florida",
+    "University of Manchester"
+   ],
+   "countries": [
+    "AT",
+    "GB",
+    "US"
+   ],
+   "licence": "cc-by",
+   "landing": "https://research.manchester.ac.uk/en/publications/6178fc60-c569-490a-8185-a919c1df31e8",
    "pdfs": [],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Introduction The pharmaceutical supply chain (SC) is extremely complex and highly regulated. It comprises an integrated network of stages, resources, and processes responsible for planning, manufacturing, and transporting medicines and inputs, extending from suppliers to the patient. The production of biotechnological medicines (BMs) involves the procurement of pharmaceutical inputs, Sales and Operations Planning (S&OP), quality control, and the biotechnological processing required for drug manufacturing. Objective To analyze the structure of the pharmaceutical SC in Brazil and evaluate the factors influencing BM production. Materials and Methods An integrative review was conducted using PubMed, ScienceDirect, and the AnvisaLegis, covering articles and regulatory standards published between 2020 and 2026.Results and Discussion An evolution from traditional logistics to a pharmaceutical SC model was observed in industries producing BMs. This shift was driven by the convergence of four major factors. The first relates to the increasing complexity of BMs, advancements in biotechnology have consolidated the transition from simple synthetic drugs to complex biological products, such as monoclonal antibodies, blood-derived products, and recombinant proteins. Due to the high thermosensitivity of these BMs, rigorous temperature control became necessary to prevent protein denaturation and the inactivation of the active pharmaceutical ingredient (API), necessitating a complete restructuring of the cold chain. The second factor was the evolution of sanitary responsibility, making manufacturers and distributors jointly accountable for product integrity up to the point of final delivery. The third factor concerns ANVISA’s integration into the Pharmaceutical Inspection Co-operation Scheme (PIC/S), which drove the alignment of Brazilian regulations with stricter global standards. The fourth factor lies in supply chain vulnerability, the concentration of API production in a few countries, such as India and China, combined with the potential for conflicts or health crises, creates instability and risks halting healthcare systems. In this context, these elements catalyzed the updating of regulations and the establishment of state policies, such as the Health Economic-Industrial Complex (CEIS). While RDC 430/2020 established Good Distribution, Storage, and Transport Practices for medicines, fostering the use of technologies such as telemetry, qualification, and risk management, the CEIS solidified its role as a public policy aimed at reducing external dependency and stimulating the domestic production of APIs, pharmaceutical inputs and medicines strategic to the Unified Health System (SUS). Conclusion Thus, it can be concluded that advances in the production of biological medicines, regulatory changes, and the risk of API supply shortages constitute a set of factors that drove the transition from a traditional logistics model toward the development of a robust pharmaceutical supply chain focused on medicine quality and industrial sovereignty.",
+   "abstract": "Disaster relief logistics presents major challenges. Uncertain demand, scarce resources, disrupted transportation networks, and rapidly evolving conditions make equitable and timely distribution extremely difficult. This paper proposes a hybrid robust-fuzzy two-stage programming framework for the procurement, allocation, and inventory management of essential relief commodities. A rolling horizon approach continuously updates decisions using real-time demand and inventory data, enhancing adaptability and responsiveness. The study makes three key contributions. First, it develops a hybrid robust-fuzzy approach that simultaneously addresses imprecision, incomplete data, and evolving multi-period demand, advancing beyond traditional deterministic and stochastic models. Second, it incorporates coordinated inter-regional sharing and dynamic transshipment of surplus supplies, improving efficiency in humanitarian logistics. Third, it validates the integrated rolling horizon and robust-fuzzy framework through an earthquake case study in Iran, where mountainous terrain and damaged roads intensify mobility challenges. Results show significant reductions in shortages and total cost compared to deterministic and traditional robust approaches. These findings offer actionable insights for policymakers and humanitarian organisations seeking adaptive disaster response systems.",
    "lanes": [
-    "S&OP and IBP"
+    "Inventory"
    ],
-   "score": 2.4,
+   "score": 6.7,
    "why": [
-    "practice signals: industrial, manufacturer"
+    "Nordic/DACH authors (AT)",
+    "established journal",
+    "practice signals: case study"
    ],
    "text_file": ""
   },
   {
-   "openalex": "W7214468780",
-   "doi": "https://doi.org/10.21474/ijar01/24148",
-   "title": "STRENGTHENING PHARMACEUTICAL MANUFACTURING LOCALIZATION IN SAUDI ARABIA THROUGH PRODUCTION PLANNING AND CAPACITY OPTIMIZATION",
-   "date": "2026-09-26",
-   "type": "article",
-   "venue": "International Journal of Advanced Research",
-   "publisher": "",
+   "openalex": "W7170159066",
+   "doi": "https://doi.org/10.1016/j.egyai.2026.100942",
+   "title": "Systematic evaluation of TabPFN-TS and Chronos-2 for zero-shot heat load forecasting in district heating networks",
+   "date": "2026-10-24",
+   "type": "preprint",
+   "venue": "Energy and AI",
+   "publisher": "Elsevier BV",
    "authors": [
-    "Mohammed Taqiuddin"
+    "Ben Spoek",
+    "Karim Ben Hicham",
+    "K Derzsi",
+    "Philipp Althaus",
+    "Alexander Mitsos",
+    "Dirk Müller"
    ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.21474/ijar01/24148",
+   "institutions": [
+    "RWTH Aachen University"
+   ],
+   "countries": [
+    "DE"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1016/j.egyai.2026.100942",
    "pdfs": [
-    "https://www.journalijar.com/uploads/2026/09/6ab39b83775e4_IJAR-59185.pdf"
+    "https://www.sciencedirect.com/science/article/pii/S2666546826002685/pdf",
+    "https://arxiv.org/pdf/2608.20024"
    ],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Saudi Arabia is pursuing pharmaceutical localization as part of a wider transformation of healthcare, industrial capability, supply-chain resilience, and the non - oil economy under Vision 2030. Yet localization is not achieved simply by constructing plants or transferring product licenses. It depends on the ability of domestic manufacturers to translate demand into executable production plans, allocate constrained resources, absorb new products, maintain regulatory compliance, and expand capacity at the right time. This review examines how production planning and capacity optimization can strengthen pharmaceutical manufacturing localization in Saudi Arabia. A structured integrative review was conducted using recent peer-reviewed literature on Saudi pharmaceutical manufacturing, production and capacity planning, pharmaceutical supply-chain resilience, operational excellence, and Pharma 4.0, together with official Saudi, WHO, ICH, and regulatory policy documents. The synthesis identifies five mutually reinforcing localization capabilities: demand-linked master production scheduling, integrated material and capacity planning, bottleneck and asset-performance management, technology-transfer readiness, and digital decision support. The paper proposes a Saudi pharmaceutical localization planning framework that connects national localization priorities with plant-level sales and operations planning, finite capacity decisions, quality systems, workforce development, and investment triggers.",
+   "abstract": "District heating energy hubs require reliable heat load forecasts for efficient operational scheduling. Forecasting models trained on historical data may require retraining as networks evolve. Zero-shot time-series foundation models and in-context forecasting therefore offer a promising alternative: they can adapt at inference time from recent observations rather than by repeated retraining. This study systematically evaluates TabPFN-TS and Chronos-2 for probabilistic heat load forecasting in two German district heating networks and compares them with trained baselines. Of particular interest is whether TabPFN-TS, whose underlying model is pretrained entirely on synthetic tabular rather than time-series data, can capture complex district heating dynamics. We analyze covariate choice, context length, temporal resolution, and forecast horizon on selected operating weeks, evaluate the selected configuration over the full year, and assess cross-network transfer. The principal benchmark assumes perfect weather forecasts; a separate sensitivity analysis uses retrospective weather predictions. Hourly 24-hour forecasting with a 12-week rolling context and ambient temperature provides a parsimonious configuration; longer context windows do not improve accuracy. Both TSFMs outperform all trained baselines in deterministic accuracy in the full-year benchmarks. Chronos-2 achieves the best deterministic scores, with TabPFN-TS remaining close: their CVRMSE values on the main data set are 12.48% and 13.07%, respectively. Chronos-2 also achieves lower continuous ranked probability scores in both networks, with TabPFN-TS remaining close. Finally, a TSFM-based Multi-Resolution Residual-Correction Forecaster combines an hourly base forecast with short-term high-resolution corrections. Relative to direct high-resolution forecasting, it generally reduces errors in total heat demand over 12-hour periods and recorded prediction times.",
    "lanes": [
-    "S&OP and IBP"
+    "Forecasting",
+    "Production planning and scheduling"
    ],
-   "score": 2.4,
+   "score": 6.2,
    "why": [
-    "practice signals: industrial, manufacturer"
+    "Nordic/DACH authors (DE)",
+    "preprint, not peer-reviewed",
+    "practice signals: german",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W7170159066.txt"
+  },
+  {
+   "openalex": "W7221808067",
+   "doi": "https://doi.org/10.1016/j.ijforecast.2026.09.009",
+   "title": "Long-lead forecasting of El Niño–Southern Oscillation using score-driven models with many predictors",
+   "date": "2026-10-01",
+   "type": "article",
+   "venue": "International Journal of Forecasting",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Janneke van Brummelen",
+    "Sebastian Jensen",
+    "Siem Jan Koopman",
+    "Desislava Petrova"
+   ],
+   "institutions": [
+    "Aarhus University",
+    "Vrije Universiteit Amsterdam",
+    "Barcelona Institute for Global Health"
+   ],
+   "countries": [
+    "DK",
+    "ES",
+    "NL"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1016/j.ijforecast.2026.09.009",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "We consider long-lead forecasting of the El Niño–Southern Oscillation (ENSO) climate phenomenon. This is widely seen as a challenging task from a methodological perspective. At the same time, ENSO events are of substantial societal importance. We adopt a class of score-driven models to capture the key dynamic features of the Niño 3.4 index and include a large set of previously designed predictors. We provide details of our forecasting methodology and assess the forecast accuracy for a range of different model specifications and estimation strategies. We conclude that a model with a good description of the dynamic features in the data is also able to provide accurate forecasts for almost all lead times, up to 18 months ahead. The large set of predictors is shown to support the provision of accurate long-range forecasts for specific lead times.",
+   "lanes": [
+    "Forecasting"
+   ],
+   "score": 6.0,
+   "why": [
+    "Nordic/DACH authors (DK)",
+    "established journal"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7214129241",
+   "doi": "https://doi.org/10.1016/j.ijpe.2026.110226",
+   "title": "Managing geopolitical risk in global supply chains: A qualitative study of European multinational enterprises",
+   "date": "2026-09-23",
+   "type": "article",
+   "venue": "International Journal of Production Economics",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Arnd Huchzermeier",
+    "Mark Kuppek"
+   ],
+   "institutions": [
+    "WHU – Otto Beisheim School of Management"
+   ],
+   "countries": [
+    "DE"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1016/j.ijpe.2026.110226",
+   "pdfs": [
+    "https://www.sciencedirect.com/science/article/pii/S0925527326003178/pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Geopolitical risk has emerged as a major disruptive risk to global supply chains and the operations of multinational enterprises (MNEs) today. Drawing on a qualitative content analysis of the annual reports of 20 European MNEs across five industries, supported by a Retrieval-Augmented Generation (RAG) pipeline, this study examines how companies strategically manage geopolitical risk in their supply chains. We extend an established supply chain risk framework by conceptualizing geopolitical risk management (GRM) as a distinct strategic risk management dimension centered on reducing geopolitical exposure, in contrast to supply chain risk management (SCRM), which enhances operational resilience within existing supply chain structures. Applying this distinction, we identify seven key GRM strategies, including localization, decentralized procurement and R&D, direct sourcing, supplier diversification, geographical production diversification, circular economy initiatives, and political engagement. Furthermore, applying the Triple-P framework in a disclosure-based setting suggests that companies facing different forms of supply chain complexity across the partnership, product, and process dimensions disclose distinct portfolios of GRM strategies. The findings of this study provide cross-industry insights into the strategic orientation of large European MNEs and support managerial decision making to strengthen resilience in the face of supply chain and geopolitical risk.",
+   "lanes": [
+    "Resilience and risk"
+   ],
+   "score": 6.0,
+   "why": [
+    "Nordic/DACH authors (DE)",
+    "established journal"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7207792209",
+   "doi": "https://doi.org/10.1007/s10479-026-07406-4",
+   "title": "Agents of collaborative adaptation: modelling temporal resilience in supply chains",
+   "date": "2026-09-03",
+   "type": "article",
+   "venue": "Annals of Operations Research",
+   "publisher": "Springer Science+Business Media",
+   "authors": [
+    "Ari Carisza Graha Prasetia"
+   ],
+   "institutions": [
+    "KTH Royal Institute of Technology"
+   ],
+   "countries": [
+    "SE"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1007/s10479-026-07406-4",
+   "pdfs": [
+    "https://link.springer.com/content/pdf/10.1007/s10479-026-07406-4.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Abstract Supply-chain disruptions vary in intensity, scale, and frequency, producing temporally heterogeneous impacts on network viability. The emphasis on exposure and topology has anchored resilience in network structure, obscuring how collaboration and trust govern its phase-specific temporal dynamics, including resistive capabilities, adaptation speed, containment, and recovery. This study thus develops an agent-based simulation of the Netherlands logistics network, in which nodes operate as autonomous agents that redistribute load under capacity, link, and trust constraints. Cascading failures are simulated with trust-gated, capacity-aware, and collaboration-dependent load reallocation, capturing both immediate contagion and multi-step redistribution dynamics. The framework compares rule-based heuristics with adaptive AI agents trained using supervised imitation, online multiplicative adaptation, and cross-entropy policy search. Temporal resilience is then measured across each phase specific metrics of absorptive, adaptive, and recovery phases across the collaboration structure. This points to the main contribution of this article, in which AI agents improve adaptation and cascade containment through targeted use of high-trust, high-capacity links, while recovery dynamics remain bounded by structural and exogenous constraints. This points to a layered view of resilience, where performance depends on the interaction between network configuration, trust-mediated coordination, and agent-level adaptation.",
+   "lanes": [
+    "Resilience and risk"
+   ],
+   "score": 6.0,
+   "why": [
+    "Nordic/DACH authors (SE)",
+    "established journal"
+   ],
+   "text_file": "papers/W7207792209.txt"
+  },
+  {
+   "openalex": "W7115599487",
+   "doi": "https://doi.org/10.1016/j.ejor.2026.09.002",
+   "title": "Collaborative routing problems in automated warehouses",
+   "date": "2026-09-01",
+   "type": "article",
+   "venue": "European Journal of Operational Research",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Julian Golak",
+    "Lara Nehrke",
+    "Dominik Kress",
+    "Malte Fliedner"
+   ],
+   "institutions": [
+    "Universität Hamburg",
+    "Helmut Schmidt University"
+   ],
+   "countries": [
+    "DE"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1016/j.ejor.2026.09.002",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "The pick-and-drive system is a novel solution for warehouse automation. It integrates two types of autonomous mobile robots (AMRs). Storage and supply AMRs (S-AMRs) navigate to a storage area, where they lift unit loads and transport them to a disposition area. Picking AMRs (P-AMRs) move freely within this disposition area. They carry bins and meet S-AMRs to collect items from the unit loads attached to the S-AMRs by means of robotic arms. We take an operational perspective on the pick-and-drive system and focus on the problem of determining and scheduling meeting locations and sequences of the AMRs, so that all required items are picked. This setting is interpreted as a vehicle routing problem, where the customers (S-AMRs) collaborate with the vehicles (P-AMRs). We consider two objective functions, minimizing the total distance driven by the AMRs and minimizing the sum of completion times of the P-AMRs. We translate these routing problems into a mathematical framework and provide theoretical insights by examining a specific case where the potential meeting points lie along a line. For this scenario, we present an approximation algorithm for the case of minimizing the overall distance traveled and demonstrate that minimizing the sum of completion times is strongly NP-complete. Additionally, we prove strong NP-completeness of the general case when minimizing the overall distance traveled. Leveraging the structural insights, we develop heuristics that are evaluated in a numerical study. Our results highlight the potential impact of the system in practice.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 6.0,
+   "why": [
+    "Nordic/DACH authors (DE)",
+    "established journal"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7214065991",
+   "doi": "https://doi.org/10.1029/2026av002524",
+   "title": "PROSWIN: Probabilistic Solar Wind Speed Forecasting Using Deep Distributional Regression From Solar Images",
+   "date": "2026-10-30",
+   "type": "preprint",
+   "venue": "AGU Advances",
+   "publisher": "Wiley",
+   "authors": [
+    "Daniel Collin",
+    "Yuri Shprits",
+    "Luca Chiarabini",
+    "Stefan J. Hofmeister",
+    "Nadja Klein",
+    "Guillermo Gallego"
+   ],
+   "institutions": [
+    "GFZ Helmholtz Centre for Geosciences",
+    "Technische Universität Berlin",
+    "University of California, Los Angeles",
+    "University of Potsdam",
+    "Deutsches Zentrum für Luft- und Raumfahrt e. V. (DLR)",
+    "Columbia University",
+    "Karlsruhe Institute of Technology",
+    "Einstein Center Digital Future"
+   ],
+   "countries": [
+    "DE",
+    "US"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1029/2026av002524",
+   "pdfs": [
+    "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2026AV002524",
+    "https://arxiv.org/pdf/2609.26683",
+    "https://gfzpublic.gfz.de/pubman/item/item_5038891_1/component/file_5040444/5038891.pdf"
+   ],
+   "cited_by": 1,
+   "language": "en",
+   "abstract": "Abstract Accurately predicting fast solar wind conditions is challenging, as uncertainties are large and unquantified by traditional single‐value prediction models. In particular, the risks of high‐speed solar wind streams (HSSs), which can cause damage to technological infrastructure, cannot be reliably assessed without probabilistic forecasts. We present PROSWIN, a probabilistic machine learning model that forecasts the hourly solar wind speed (SWS) at Earth with a 4‐day lead time. The approach combines solar images and magnetograms using a deep neural network coupled to a distributional regression algorithm. Because standard error metrics underweight the relevance of HSS peaks, we further introduce the prediction score (PS) , a model‐selection metric that jointly rewards timeline and HSS peak accuracy. On 14 years of data, our forecast achieves very well‐calibrated uncertainties (<1% average absolute coverage deviation). Using the continuous ranked probability score (CRPS), a metric that assesses distributional accuracy, we obtain a timeline CRPS of 41.0 km/s, an HSS peak CRPS of 45.3 km/s, and a PS of 42.3 km/s. We find that the 171 Å channel is an important complement to the typically used 193 and 211 Å channels and that the PS for model selection improves the applicability of the model. Compared to selected models from the literature, ours is the only one that is accurate for both timeline and HSS peak values, rather than trading one off against the other. These results support the advantages of probabilistic over single‐value solar wind models. The introduced methods are also transferable to other forecasting problems.",
+   "lanes": [
+    "Forecasting",
+    "AI in planning"
+   ],
+   "score": 5.6,
+   "why": [
+    "Nordic/DACH authors (DE)",
+    "preprint, not peer-reviewed",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W7214065991.txt"
+  },
+  {
+   "openalex": "W7207664691",
+   "doi": "https://doi.org/10.1108/ijpdlm-09-2026-566",
+   "title": "Guest editorial: Advancing the future of retail operations with cutting-edge technologies",
+   "date": "2026-09-03",
+   "type": "article",
+   "venue": "International Journal of Physical Distribution & Logistics Management",
+   "publisher": "Emerald Publishing Limited",
+   "authors": [
+    "Ha Ta",
+    "Adriana Rossiter Hofer",
+    "Yao “Henry” Jin",
+    "Simone T. Peinkofer",
+    "Anníbal C. Sodero"
+   ],
+   "institutions": [
+    "Florida International University",
+    "University of Arkansas at Fayetteville",
+    "Miami University",
+    "Michigan State University",
+    "The Ohio State University"
+   ],
+   "countries": [
+    "US"
+   ],
+   "licence": "",
+   "landing": "https://doi.org/10.1108/ijpdlm-09-2026-566",
+   "pdfs": [
+    "https://www.emerald.com/ijpdlm/article-pdf/56/8/885/11822178/ijpdlm-09-2026-566en.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "The retail industry is fundamentally changing due to emerging technologies (Morenza-Cinos et al., 2019; Ta et al., 2023). Machine learning (ML) and artificial intelligence (AI) for example, can help retailers improve demand forecasting accuracy (Modgil et al., 2021; Chou et al., 2023) and analyze data in real time, enabling them to better align their inventory decisions with their logistics network capabilities (Sodero et al., 2019). Other technologies such as blockchain, the Internet of Things (IoT) and augmented reality (AR) allow retailers to support product tracking and authenticity verification, real-time data accessibility and product visualization for customers, as well as the automation of processing product returns (Hartley et al., 2021). Furthermore, these technologies have also contributed to the rise of new retail formats and fulfillment models, such as reserve/buy online pick up/return in store, webrooming and buy in store/ship-to-home, which allow retailers to offer a more seamless customer experience across retail channels (Jin et al., 2023). Additionally, last-mile delivery is being reshaped by new delivery modes, including drones and autonomous delivery (Merkert et al., 2022).While these technological innovations offer many opportunities for retailers to improve their operational efficiency, their implementation often poses significant challenges for retailers (Angelopoulos et al., 2023). Adopting new technologies requires substantial financial investments, cross-functional coordination and changes to legacy systems. For example, while over 90% of retailers have adopted AI in some shape or form, often as pilots, most retailers struggle with rolling out this technology on a larger scale [1].Research on omnichannel retailing has shown that integrating physical and digital retail channels can improve customer service experience and convenience. However, it can also create tensions related to inventory visibility, order orchestration and last-mile cost management (Hubner et al., 2016; Melacini et al., 2018). Other technologies, such as IoT and blockchain, promise greater supply chain traceability and transparency. Yet these benefits often depend on system-wide participation and sustained investments from supply chain partners (Hartley et al., 2022). Moreover, work on data-driven retail processes suggests that these tools are only as effective as the underlying data quality and managerial capabilities that support their use (Sodero et al., 2019; Modgil et al., 2021). As such, the successful implementation of these technologies is highly dependent on foundational organizational processes and managerial capabilities.In addition to implementation issues, retailers struggle with fully realizing the promised and expected benefits associated with these emerging technologies. Research suggests that the performance outcomes of these emerging technologies are contingent on contextual factors such as retail format, product and service characteristics, channel configuration, customer expectations and retailers’ digital maturity (Gauri et al., 2021; Castelo-Branco et al., 2022). For instance, technologies designed to enrich customer experience, such as AR and other digital engagement tools, may improve customers’ purchase confidence and product evaluation. However, they might also generate limited value or even friction if they are poorly aligned with customer needs or retail channel design (Grewal and Roggeveen, 2020; Hilken et al., 2017; Poushneh and Vasquez-Parraga, 2017). Technologies designed to enhance fulfillment, such as automated delivery systems or autonomous solutions, can reduce lead time and expand service options, but they also introduce operational complexities, regulatory concerns and cost tradeoffs that might offset their benefits (Merkert et al., 2022). While prior work has enhanced our understanding of how emerging technologies have the potential to continue to transform retail operations and the customer experience, much of this work remains conceptual in nature or limited in scope (Guida et al., 2023; Modgil et al., 2022).The understanding of drivers, implementation issues and outcomes of technology adoption in retail operations varies significantly depending on the technology under investigation. For example, implementation issues related to AI or big data vary greatly from those related to IoT technologies which focus on enabling real-time monitoring and connectivity across supply chain and in-store operations. Similarly, the discussion of automation versus human input varies tremendously across these technologies. Thus, the diversity of technological contexts underscores the need for context-specific research investigations in order to offer in-depth insights into how specific technologies are implemented in the retail industry.Against this backdrop this special issue is positioned at the intersection of retail operations and emerging technologies. It seeks to explore the drivers to the adoption of these technologies, the considerations that shape their implementation and the ways in which the combination of these elements can redefine customer experience and, ultimately, reshape the industry.In this editorial we first introduce the six manuscripts included in the special issue, highlighting how each manuscript advances our understanding of how retailers engage in the adoption of these technologies, technology-specific implementation opportunities and challenges and retail, consumer and supply chain outcomes. Second, we identify avenues for future research structured around the three key dimensions of antecedents, implementation opportunities and challenges and outcomes. In doing so, this editorial provides a starting point for additional research to further explore the impacts of emerging technologies in retail operations while also encouraging research that is theoretically grounded and empirically rigorous.Employing a diverse set of empirical methods ranging from qualitative and survey to simulation and quantitative techniques, the six papers in this special issue collectively portray retail technology not as a set of isolated innovations, but as an interconnected ecosystem in which operational design, consumer behavior, organizational capabilities and channel integration jointly determine value creation. Across the studies, a common theme emerges: the success of emerging retail technologies depends not merely on technical feasibility, but on how effectively technologies are embedded within broader omnichannel systems and aligned with consumer expectations, organizational capabilities and strategic objectives. Yuan et al. (2026) challenge the assumption that omnichannel return strategies such as buy-online-return-in-store (BORIS) automatically create value, demonstrating that their benefits are highly conditional and dependent on complementary operational and marketing decisions. Garg et al. (2026) similarly show that the viability of drone delivery hinges not only on operational efficiency, but also on consumer motivation, perceived value and retailer-consumer engagement. Complementarily, Merkert et al. (2026) explore how drones can enhance warehousing and last-mile delivery from an organizational perspective and highlight barriers as well as opportunities for the implementation of this technology. Park et al. (2026) further extend this ecosystem perspective by illustrating how third-party delivery platforms can complement, rather than cannibalize, retailers’ proprietary channels when channel integration is strategically managed. Oliveira et al. (2026) shift attention toward the information-processing capabilities required to coordinate increasingly decentralized and consumer-centric fulfillment systems, while Bianco et al. (2026) demonstrate that warehouse automation creates value only when developed as a dynamic organizational capability aligned with evolving retail complexity. Collectively, these studies build a broader picture of modern retail transformation in which technology adoption, channel coordination, organizational adaptability and consumer engagement operate as mutually reinforcing components of a highly integrated retail ecosystem. A summary of the selected papers is presented in Table 1.Yuan et al. (2026) examine the role of BORIS as a popular strategy to attract consumers. In this study, the authors analyze data gathered for North America’s Top 1,000 e-retailers (2013–2019). They reveal that BORIS’s operational challenges often outweigh its benefits. Analyzing website sales, conversion rates, order value and traffic, this study shows that BORIS offers negligible direct benefits for pure e-retailers. For omnichannel “bricks-and-clicks” retailers, BORIS only weakly boosts traffic and order value when paired with free return shipping or low sponsored search spend, though it can drive incremental traffic when synchronized with high-spend search campaigns. Ultimately, their findings suggest that while BORIS can offer highly specific, conditional advantages, its overall impact on e-retailer performance is weak, challenging the conventional wisdom of its effectiveness.Garg et al. (2026) shift the conversation on drone-enabled retail operations away from purely technical and operational feasibility toward a deeper understanding of the demand side. The research offers a timely and theoretically rigorous examination of a critical bottleneck in retail innovation: the formation of consumer motivation. Drawing on expectancy theory and integrating partial least squares structural equation modeling (PLS-SEM) with Necessary Condition Analysis (NCA), the research provides a dual perspective on what is “sufficient” to drive motivation and what is “indispensable” for it to exist. The findings show that unless consumers perceive meaningful personal benefit, improvements in technical reliability (expectancy) or outcome utility (instrumentality) are unlikely to generate the necessary motivational force for adoption. The paper further enriches the retail conversation by introducing Consumer Engagement with Retailers (CER) as a critical relational mechanism in technology acceptance.Merkert et al. (2026) adopt a qualitative research approach to shed light on the technological, organizational and environmental factors that impact drone operations for warehousing and last-mile delivery. The authors conduct semi-structured interviews with 38 warehouse and drone delivery managers across the globe to explore the organizational challenges and limitations associated with the implementation of this new technology for fulfillment operations. Analyzing the data through the lens of Technology–Organization–Environment (TOE), the findings not only highlight the benefits and barriers of drone delivery adoption but also the importance of inter-organizational collaboration and different governance mechanisms for successful implementation of the technology.Park et al. (2026) examine the synergy between consumer-facing delivery platforms and omnichannel retail operations. Drawing on channel capabilities theory and leveraging a proprietary dataset, the authors show that platform partnerships can complement rather than cannibalize retailers’ direct channels. Specifically, each platform partnership increases physical store sales by 1.36% and direct online sales by 42.6%, suggesting that third-party platforms function as effective customer acquisition and discovery mechanisms that redirect traffic to higher-margin proprietary channels. The benefits are particularly pronounced for restaurant chains with sparse physical networks and for firms with deeper channel integration, where customers order through the retailer’s own interface while the platform handles fulfillment. Overall, the study demonstrates that strategic collaboration with delivery platforms can expand, rather than substitute for, direct-channel sales.Oliveira et al. (2026) focus on how omnichannel retailers can shift away from centralized fulfillment models toward distribution networks that are both adaptive and consumer-centric. Drawing on Organizational Information Processing Theory (OIPT), the authors argue that coordinating multiple delivery modes (quick commerce, scheduled delivery and in-store pickup) across varied consumer demands generates considerable task uncertainty and information load. This challenge is amplified in emerging markets, where security concerns make attended home deliveries the norm and tight time-window coordination a common operational constraint. Using data from a Brazilian omnichannel retailer and a consumer survey, they conduct simulation analyses to test whether an adaptive network that allocates orders in real time according to inventory availability and consumer preferences can mitigate this task uncertainty. Their results show that no single facility type can effectively serve such diverse demands. A decentralized, hybrid configuration that postpones fulfillment decisions through real-time data instead reduces task uncertainty and lowers failed delivery attempts, while also cutting quick-commerce fulfillment times. Ultimately, the study illustrates how information-processing capabilities help empower omnichannel retailers to manage operational tradeoffs in increasingly consumer-centric environments.Finally, Bianco et al. (2026) examine how grocery retailers implement warehouse automation to transform logistics processes in response to operational complexity. They argue that warehouse automation is a dynamic capability rather than a technical investment. Specifically, the authors analyze core distribution processes by conducting semi-structured interviews with eight automation providers and six grocery retailers, complemented by site visits. Their results unveil five strategic dimensions that guide warehouse automation decisions: selectivity, accessibility, expandability, scalability and resilience. Interpreted through the lens of Dynamic Capabilities theory (Teece et al., 1997), their framework demonstrates that selectivity and accessibility strengthen a firm’s sensing capabilities for effective decision-making, while expandability and scalability facilitate seizing new business opportunities. They conclude that successful automation depends on managerial and organizational logic that aligns technological design with evolving retail demands, bridging the gap between functional intralogistics research and capability-based strategic perspectives.This section develops an integrative research agenda organized around three interrelated dimensions: the antecedents of technology adoption, the implementation and operational integration of these technologies, and their outcomes and systemic implications. Figure 1 summarizes this organizing logic, emerging technologies within a broader retail ecosystem in which these three dimensions a that multiple and can through a of complementary value of emerging technologies can only through successful adoption. Yet new technologies often substantial uncertainty and understanding the drivers of technology adoption has a in the the most technology adoption is in with managers and the most For perceived and perceived of use as key drivers of adoption across a of technologies, including systems, IoT augmented reality technologies, autonomous delivery and service and other technologies (Guida et al., 2023; and and et al., 2023; et al., 2021; et al., this of Garg et al. (2026) in this special issue examine the antecedents of motivation that both and to For managers and additional and shape adoption decisions. research the importance of perceived or confidence in a to its as well as perceived to the of outcome associated with technology use et al., 2021). Similarly, or the that benefits outweigh associated and the between technological and task are critical of successful adoption of technologies such as and IoT et al., and have also as drivers of to work with autonomous delivery technologies, with these by of et al., the organizational a of research has on to adopt emerging technologies, often organizational capabilities and of expected benefits such as enhanced and greater operational and (Modgil et al., 2021; Chou et al., 2023). et al. and and further demonstrate that retailers by greater digital support and are more to in and emerging technologies. Other organizational drivers in the organizational management and governance and et al., 2021). Park et al. in this special issue, channel integration as of retail technology and environmental have also as drivers of technology adoption. The rise of omnichannel retailing and has on retailers to technological (Jin et al., 2023; et al., 2023). the time, retailers to adopt technologies by and to industry and expectations (Hartley et al., 2022). chain and such as the regulatory and technological have also a broader that increases the feasibility and of adoption et al., and relational drivers are also increasingly particularly with the of technologies that Garg et al. (2026) in this special issue identify consumer engagement with retailers as an motivation to adopt drone technologies. to human to shown to to work with autonomous delivery et al., research further explore these relational dimensions of technology adoption. research also from the studies often examine adoption drivers in on or However, technology adoption in retail is with adoption decisions by the or of and across multiple Thus, more research is to examine the and synergy multiple adoption drivers across different and supply chain Second, while studies drivers, research how failed technological or poorly designed may value for both retailers and much of the remains in the and highlighting the need for additional research in emerging and across diverse rather than technologies such as IoT or AI as future studies them into such as or real-time to identify which most adoption outcomes. the retail of emerging and including and the and investigation. research on technology adoption is increasingly antecedents and drivers toward behavior, strategic operational the of technology and the broader systemic impact of emerging technologies on the retail further concerns the rise of and artificial which from the technologies most retail of AI to have automated such as forecasting or systems increasingly the consumer interface through product and, most autonomous that and on a capabilities the relational and consumers and adoption with systems that to and They also antecedents that the has including in the of to autonomous and to of the customer to third-party AI research examine how and AI reshape adoption at the and and whether models extend to in which the technology as an autonomous rather than a emerging technologies offer substantial promise for retail operations and their implementation is often by considerable challenges from multiple and vary according to the technology being which underscores the importance of a context-specific understanding of the implementation and these technologies may substantial and to the physical and human et al., 2021; et al., 2023). and for example, show that in returns the of logistics systems further the implementation of technological of the most issues to the integration of new technologies with legacy systems. retailers operate within that are not with digital solutions, substantial investments in and (Angelopoulos et al., 2023; et al., 2023). Similarly, technologies such as IoT and promise greater traceability and but these benefits depend on participation and sustained investments from supply chain partners (Hartley et al., 2022).The nature and quality of the data to implement these technologies also significant For example, technologies AI and on of data and many retailers struggle with issues related to data accuracy and governance and 2023). The of data-driven is contingent on the availability of data and data management Furthermore, the implementation of technologies, such as IoT and big data and information technology governance and data (Sodero et al., 2019). the supply chain to et al., that implementation is not merely an but a foundational operational Additionally, technologies such as drones and autonomous delivery systems regulatory uncertainty et al., while the use of customer data critical and governance et al., and human factors may also create implementation The of technologies often requires managers to new particularly in contexts in which collaboration et al., et al., to of technical or even human or barriers may technology implementation et al., In the of AI in decision-making, for example, et al. argue that AI from to Other studies, et al. et al. and et al. demonstrate how their when systems in demand and implementation challenges extend to as managers specific capabilities to use new systems, consumers also to For example, while online fulfillment strategies and are implemented with the of consumers with the of fulfillment to align with their preferences et al., the impact of these strategies might not across consumer implementation requires service design that for the the reality that many consumer might not digital or to technologies et al., This and motivation to use a retailer’s online channels and 2022). retailers the implementation challenge of and physical that diverse consumer capabilities rather than for example, by consumer to or IoT and understanding how consumer preferences shape delivery suggest that the adoption of emerging technologies in retail a of strategic and outcomes. of the most benefits is operational and systems enhance the and accuracy of fulfillment and inventory management in cost and service (Merkert et al., Modgil et al., 2021). emerging technologies in retail reshape managerial However, different technologies, such as AI and drone delivery to a characteristics, suggesting that the mechanisms through which they enhanced managerial might research further by how specific technologies shape managerial and to a more understanding of in retail addition to operational efficiency, emerging technologies in retail operations have also significantly customer experience and outcomes. For example, retailers leveraging technologies such as and systems can significantly enhance the experience for their technologies customers with more and seamless across retail channels and can lead to of customer and et al., 2023; et al., 2023). However, these technologies may introduce they can to customer Thus, future research explore the and outcomes of these technologies in retail with to customer of and the implementation of these technologies can lead to enhanced supply chain and For example, digital can lead to and et al., 2019; and Similarly, real-time data and retailers to more effectively to supply chain and demand et al., 2022). However, these benefits are by new particularly which highlight the of digital transformation et al., 2022). that the of data and through these technologies increases retailers’ to data and et al., 2023). research explore these more to better the potential of technology adoption for retail an outcome to the potential impact of retailer technologies. et al. for example, that retailers’ focus on omnichannel and online fulfillment strategies the impacts of digital on consumer and retailer on this future research further to this discussion by and in-depth insights into how technology adoption in retail and Furthermore, explore the implementation and impact of emerging technologies across an approach allow to shed light on the with to the and empirical drivers and outcomes of technology adoption, future research also from The of emerging retail technologies increasingly requires that can not only firms adopt technologies, but also how technologies reshape operational consumer and broader retail Table that may help better examine the operational and consumer-facing dimensions of retail summarizes key future research emerging from the and empirical this the according to the being and it from how that is theoretically the technological, organizational and relational that shape or adoption. issues the processes through which emerging technologies are and within retail and supply chain systems. to the of adoption and use for and broader operational Theory and integration, by seeks to the underlying and conceptual to for these is empirical findings and serve different what within a and research those for and A significant for example, not in a unless it a challenges an a or the of a the in Table are according to their while that research often for example, by an its through its outcomes and those to or innovations continue to redefine and transform the of the retail As retailers increasingly adopt technologies to in a omnichannel while an increasingly customer the need for rigorous research the elements that shape their successful implementation that the presented in this special issue further into the role of technology in the future of retail logistics and supply chain",
+   "lanes": [
+    "Forecasting",
+    "Inventory",
+    "Network design",
+    "Resilience and risk",
+    "AI in planning"
+   ],
+   "score": 5.5,
+   "why": [
+    "established journal",
+    "practice signals: empirical, implementation, retailer",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W4414595207",
+   "doi": "https://doi.org/10.1016/j.tre.2026.105305",
+   "title": "Optimizing freight rail electrification: A framework for charge station selection and battery charge/swap scheduling",
+   "date": "2026-10-01",
+   "type": "article",
+   "venue": "Transportation Research Part E Logistics and Transportation Review",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Jia Long Guo",
+    "Elnaz Irannezhad"
+   ],
+   "institutions": [
+    "UNSW Sydney"
+   ],
+   "countries": [
+    "AU"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1016/j.tre.2026.105305",
+   "pdfs": [
+    "https://arxiv.org/pdf/2509.10157"
+   ],
+   "cited_by": 1,
+   "language": "en",
+   "abstract": "Battery-electric freight trains are promising for decarbonization by providing zero-emission transportation alternatives. Successful adoption of battery-electric freight trains depends on an efficient electrification strategy, involving infrastructure setup and charging scheduling. The study presents a comprehensive model for the optimal design of charging infrastructure and charge scheduling for trains. To provide greater recharging flexibility, we allow a battery to be either charged or swapped at a deployed station, and each train can carry multiple batteries. This problem is formulated as a mixed-integer linear programming model with a Rectangle Piecewise Linear Approximation (PLA) technique. To obtain strategic and tactical solutions, we develop two algorithms to solve the optimization problem: (1) a Fix Algorithm (FA), and (2) Benders Decomposition (BD) algorithm with extra feasibility cuts to speed up the procedure. In computational experiments, we use the original model with the PLA technique, and the two proposed algorithms. Statistical analysis verifies the modified BD algorithm with extra feasibility cuts performs best with respect to the objective function value in larger instances, closely followed by FA, and the PLA technique provides the least optimal solutions. Specifically, compared with the standard BD, the modified BD can reduce the objective function value by 11.73%, 30.92% and 51.58% on large, extra large and high-frequency instances, respectively. Sensitivity analysis is implemented to investigate the impact of delay penalty weight, charge rate, demand pattern and battery inventory. Finally, a case study is conducted to demonstrate the application of the proposed framework in a representative freight rail planning setting.",
+   "lanes": [
+    "Inventory",
+    "Production planning and scheduling"
+   ],
+   "score": 5.3,
+   "why": [
+    "established journal",
+    "practice signals: case study",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W4414595207.txt"
+  },
+  {
+   "openalex": "W7204458324",
+   "doi": "https://doi.org/10.1080/00207543.2026.2723546",
+   "title": "Exact and metaheuristic approaches for a real-world discrete lot-sizing and scheduling problem in the automotive industry",
+   "date": "2026-08-27",
+   "type": "article",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
+   "authors": [
+    "Sergio Cavero",
+    "Isaac Lozano-Osorio",
+    "Manuel Laguna"
+   ],
+   "institutions": [
+    "Universidad Rey Juan Carlos",
+    "University of Colorado Boulder"
+   ],
+   "countries": [
+    "ES",
+    "US"
+   ],
+   "licence": "cc-by-nc-sa",
+   "landing": "https://hdl.handle.net/10115/492637",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "We address a production scheduling problem arising in the seat manufacturing auto industry, characterised by multiple racetracks and a wide variety of car models. The challenge is to determine the optimal sequence of molds to mount on each racetrack to maintain inventory levels within target ranges while minimising changeovers. To tackle this, we formulate a mixed-integer programming model evaluated using Gurobi. Additionally, we develop a Greedy Randomised Adaptive Search Procedure (GRASP) to provide a practical, non-commercial alternative. The GRASP incorporates two specialised local search procedures: the first achieves feasibility by reducing shortages, and the second aims to minimise changeovers. Computational experiments on 133 real-world instances demonstrate the merit of our approaches. The exact MIP solver proves optimality in under 30 seconds on average. Given the same 30-second budget, GRASP achieves a 2.42% average deviation, which is equivalent to fewer than a single additional changeover, finding 77% of global optima. Extending the runtime to the 5-minute company limit reduces deviation to 1.65%. Most importantly, compared to the historical manual baseline, this approach reduces tool changeovers by nearly 50%, resulting in estimated annual savings of $250,000 per plant.",
+   "lanes": [
+    "Inventory",
+    "Production planning and scheduling"
+   ],
+   "score": 5.2,
+   "why": [
+    "established journal",
+    "practice signals: real-world",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7220409911",
+   "doi": "https://doi.org/10.1080/01605682.2026.2740710",
+   "title": "Supply chain risk identification using AI-powered topic modelling: implications for demand forecasting in oil and gas companies",
+   "date": "2026-10-05",
+   "type": "article",
+   "venue": "Journal of the Operational Research Society",
+   "publisher": "Palgrave Macmillan",
+   "authors": [
+    "Arda Gezdur",
+    "Jyotirmoyee Bhattacharjya",
+    "Anastasios Panagiotelis",
+    "Hriddhi Doley"
+   ],
+   "institutions": [
+    "The University of Sydney",
+    "Monash University"
+   ],
+   "countries": [
+    "AU"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1080/01605682.2026.2740710",
+   "pdfs": [
+    "https://www.tandfonline.com/doi/pdf/10.1080/01605682.2026.2740710?needAccess=true"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "The oil and gas industry is highly exposed to political, economic, and supply–demand disruptions, making early risk identification critical for supply chain performance. This study applies AI-enabled topic modelling to extract risk indicators from large unstructured datasets and integrates them into gasoline demand forecasting models, showing how qualitative risk signals can improve uncertainty management in supply chains. Building on these insights, the paper proposes a generalisable three-stage methodological framework that formalises the pipeline from automated text-based risk identification through forecast validation to short-term operational adjustment. In this context, short-term operational adjustments include tactical changes to procurement, inventory levels, production scheduling, logistics routeing, and short-term hedging decisions made in response to risk-aware demand and volatility forecasts. The framework’s principal methodological contribution lies in operationalising AI-enabled text analytics within real-world supply chain planning processes through a formally specified decision-flow model. Results from the empirical validation on a 15-year gasoline demand dataset show that incorporating text-derived risk indicators, selected via rigorous feature selection, improves both point-forecast accuracy and density-forecast calibration relative to naive and seasonal baselines, offering transferable guidance for policymakers and industry stakeholders seeking to strengthen energy system resilience.",
+   "lanes": [
+    "Forecasting",
+    "Inventory",
+    "Production planning and scheduling",
+    "Resilience and risk"
+   ],
+   "score": 4.9,
+   "why": [
+    "established journal",
+    "practice signals: empirical, real-world"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7213974978",
+   "doi": "https://doi.org/10.1080/09537287.2026.2730017",
+   "title": "Navigating the exploitation–exploration paradox: the impact of industry 4.0 technologies on supply chain performance from the Organisational ambidexterity lens",
+   "date": "2026-09-22",
+   "type": "article",
+   "venue": "Production Planning & Control",
+   "publisher": "Taylor & Francis",
+   "authors": [
+    "Nur Ayvaz-Ҫavdaroğlu",
+    "Sercan Demir",
+    "Jiju Antony",
+    "Arshia Kaul",
+    "Michael Sony"
+   ],
+   "institutions": [
+    "Northumbria University",
+    "Central Queensland University",
+    "Oxford Brookes University"
+   ],
+   "countries": [
+    "AU",
+    "GB"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1080/09537287.2026.2730017",
+   "pdfs": [
+    "https://www.tandfonline.com/doi/pdf/10.1080/09537287.2026.2730017?needAccess=true"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Industry 4.0 (I4.0) technologies have significant potential to improve supply chain performance, yet organisations often struggle to realise these benefits in practice. Drawing on Structural Ambidexterity Theory, this study examines how specific I4.0 technologies affect core supply chain functions, identifies the principal barriers to implementation, and explores how organisational and sectoral characteristics influence implementation success. The study conducted 19 semi-structured interviews with supply chain directors, digital transformation leaders, and I4.0 consultants across the automotive, pharmaceutical, food and beverage, construction, and high-technology manufacturing sectors. Data were analysed using a three-stage thematic coding process (open, axial, and selective coding) anchored in Simsek et al. (Citation2009) partitional ambidexterity framework. The findings reveal that different I4.0 technologies generate distinct impacts across supply chain functions. Base technologies, including IoT, sensors, machine learning-driven forecasting, robotics, and big data analytics, deliver measurable improvements in demand planning, inventory management, manufacturing operations, and logistics through enhanced visibility, automation, and operational efficiency. In contrast, advanced technologies such as AI-driven decision intelligence, digital twins, simulation, and augmented reality offer greater transformative potential but require substantially higher levels of organisational learning, experimentation, and integration capability. The study further identifies five interconnected implementation barriers: process immaturity, legacy system integration challenges, human resistance to change, workforce capability gaps, and investment uncertainty. Organisational culture, leadership commitment, firm size, and sector-specific regulatory and competitive conditions are found to shape the success and pace of I4.0 adoption. Building on these findings, the study argues that I4.0 adoption creates a fundamental socio-technical tension between exploitation and exploration. Structural separation of exploitative and explorative technology initiatives, enabled through cloud computing and big data analytics, emerges as a viable mechanism for managing this tension. The study extends the partitional ambidexterity framework through the concept of Connected Partitioning and introduces Virtual Integration as a digital mechanism linking differentiated capability streams. It further proposes Structural Buffering as a mechanism for protecting explorative technology initiatives from the socio-technical resistance concentrated in that domain, and identifies a sequential ambidexterity pathway in which exploitative stabilisation is a precondition for explorative capability. The research provides a theoretically grounded and empirically rich understanding of I4.0-enabled supply chain transformation and offers actionable guidance for managers navigating digital transformation initiatives.",
+   "lanes": [
+    "Forecasting",
+    "Inventory",
+    "AI in planning"
+   ],
+   "score": 4.9,
+   "why": [
+    "established journal",
+    "practice signals: empirical, implementation"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225386966",
+   "doi": "https://doi.org/10.1016/j.sca.2026.100252",
+   "title": "A Robust Fuzzy Optimization Framework for Circular Supply Chain Network Design under Uncertainty",
+   "date": "2026-11-01",
+   "type": "article",
+   "venue": "Supply Chain Analytics",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Doan Hoang Tuan",
+    "Jirachai Buddhakulsomsiri",
+    "Pham Duc Tai",
+    "Linh Thi Truc Doan"
+   ],
+   "institutions": [
+    "Thammasat University",
+    "Adelaide University",
+    "Nam Can Tho University",
+    "The University of Adelaide"
+   ],
+   "countries": [
+    "AU",
+    "TH",
+    "VN"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1016/j.sca.2026.100252",
+   "pdfs": [
+    "https://www.sciencedirect.com/science/article/pii/S2949863526000610/pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Circular supply chain network design requires not only the coordination of forward and reverse networks but also an explicit representation of how products are manufactured, recovered, and reintegrated across multiple life cycles. However, many existing models often treat manufacturing and recycling in an aggregated manner, limiting their ability to capture operational circularity, particularly under uncertainty. This study proposes a multi-period, multi-product network design model for circular supply chains that integrates forward and reverse bill of materials with manufacturing and recycling process networks. The model jointly optimizes facility locations, technology choices, capacity levels, and commodity flows. Uncertainties in product demand, material supply, return rates, returned product quality, and economic parameters are represented using fuzzy numbers to capture epistemic uncertainty when reliable probability distributions are difficult to establish. A modified hybrid robust possibilistic chance-constrained programming approach is developed using possibility and credibility measures, together with a linearization scheme to ensure consistency in feasibility degrees. The applicability of the model is demonstrated through a lead-acid battery supply chain case study, followed by comparative and sensitivity analyses. Under deterministic conditions, the integrated circular network obtains a 7.68% reduction in total cost compared with the linear network. Furthermore, an evaluation across different uncertainty realizations shows that the proposed robust fuzzy approach obtains lower average total cost and standard deviations than its conventional fuzzy and deterministic counterparts. These results demonstrate the potential of the proposed framework in improving cost efficiency and solution stability while supporting strategic circular supply chain decisions under uncertainty.",
+   "lanes": [
+    "Network design"
+   ],
+   "score": 4.7,
+   "why": [
+    "established journal",
+    "practice signals: case study",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7221604450",
+   "doi": "https://doi.org/10.1007/s10696-026-09691-4",
+   "title": "Monte Carlo tree search for the multi-crane scheduling problem with temporal constraints",
+   "date": "2026-10-13",
+   "type": "article",
+   "venue": "Flexible Services and Manufacturing Journal",
+   "publisher": "Springer Science+Business Media",
+   "authors": [
+    "Woo-Jin Shin",
+    "Seungkyu Yoon",
+    "Hyun-Jung Kim"
+   ],
+   "institutions": [
+    "Gyeongsang National University",
+    "Korea Advanced Institute of Science and Technology"
+   ],
+   "countries": [
+    "KR"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1007/s10696-026-09691-4",
+   "pdfs": [
+    "https://link.springer.com/content/pdf/10.1007/s10696-026-09691-4.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Abstract This study addresses the multi-crane scheduling problem with temporal constraints (MCSPTC) arising in steelmaking shops, where multiple rail-guided overhead cranes transport materials on shared tracks and must strictly avoid interference. The problem requires jointly determining task assignment and sequencing decisions while satisfying temporal constraints on task start times, including time windows and precedence relations. In practice, manufacturing execution system data are updated frequently, requiring high quality solutions to be generated repeatedly within short computation times. However, existing heuristics lack quality guarantees, while exact models do not scale to industrial-size instances within practical time limits. To tackle these challenges, we formulate the MCSPTC as a sequential decision process and propose a Monte Carlo tree search (MCTS)–based solution framework. The proposed approach performs look-ahead planning at each decision point using a schedule construction mechanism. To improve search efficiency, we develop a feasibility-based action pruning strategy that eliminates actions inevitably leading to infeasible schedules prior to node expansion. We further tailor the value backup and final action selection rules to account for the tight temporal feasibility and the varying size of the feasible action space induced by temporal constraints. Our numerical results suggest that the proposed MCTS framework yields better solutions than existing heuristics within short computation times. In particular, the proposed method improves upon the heuristic baselines by approximately 5%–7% for both small and medium-scale instances within one minute and large-scale instances within about three minutes.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 4.7,
+   "why": [
+    "established journal",
+    "practice signals: industrial",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W7221604450.txt"
+  },
+  {
+   "openalex": "W7223012601",
+   "doi": "https://doi.org/10.1016/j.tre.2026.105272",
+   "title": "An energy-efficient coordinated procurement, production, and batch delivery scheduling system for sustainable operations with Net-Zero emissions",
+   "date": "2026-10-01",
+   "type": "article",
+   "venue": "Transportation Research Part E Logistics and Transportation Review",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Sayem Ahmed",
+    "Ripon Kumar Chakrabortty",
+    "Alireza Abbasi",
+    "Tsan‐Ming Choi"
+   ],
+   "institutions": [
+    "Ahsanullah University of Science and Technology",
+    "UNSW Canberra",
+    "University of Liverpool"
+   ],
+   "countries": [
+    "AU",
+    "BD",
+    "GB"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1016/j.tre.2026.105272",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Over the last decade, rising energy prices, global warming, the harmful effects of energy use, and carbon emissions have highlighted the importance of energy and carbon efficiency. In response to local energy regulations and carbon-sensitive markets, manufacturers and logistics organizations are actively seeking effective methods to improve energy and carbon efficiency. This research enhances supply chain planning and scheduling by combining procurement, production, and delivery decisions to support sustainable operations through simultaneously optimizing costs, energy consumption, and carbon emissions. An E nergy- E fficient C oordinated P roduction- D istribution S ystem ( EE-CPDS ) is designed, accounting for a flexible job-shop scheduling environment with inter-machine transport times and sequence-dependent setup times to reflect real production configurations. To address the computational challenge, we propose a novel multi-objective adaptive search memetic algorithm (MOASMA) that outperforms state-of-the-art algorithms in terms of solution quality, i.e., generating global solutions closer to true Pareto front with average hypervolume (HV) value of 0.7131 and Inverted Generational Distance Plus (IGD + ) value of 0.0249 across nine test instances, which is further endorsed by nonparametric statistical analysis. Among the instances solved by all competing algorithms, MOASMA provides better solutions for 77% of them. The correctness and effectiveness of the developed algorithm are verified by comparing the results with an exact solver (Gurobi), which is effective for small and medium-sized instances, while MOASMA proves efficient for larger-scale problems. The proposed system and algorithm will assist enterprises in solving practical-sized instances while rationalizing coordinated procurement, production, and distribution decisions that support sustainable operations and drive progress toward net-zero emissions.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 4.7,
+   "why": [
+    "established journal",
+    "practice signals: manufacturer",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7213360476",
+   "doi": "https://doi.org/10.1016/j.sca.2026.100243",
+   "title": "A stochastic decision analytics framework for hydrogen refueling infrastructure planning in sustainable freight supply chains",
+   "date": "2026-09-16",
+   "type": "article",
+   "venue": "Supply Chain Analytics",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Zahra Zare",
+    "Mümtaz Karataş"
+   ],
+   "institutions": [
+    "Wright State University",
+    "Bahçeşehir University"
+   ],
+   "countries": [
+    "TR",
+    "US"
+   ],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1016/j.sca.2026.100243",
+   "pdfs": [
+    "https://www.sciencedirect.com/science/article/pii/S294986352600052X/pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "The transition toward low-carbon freight transportation requires coordinated planning of hydrogen production, refueling infrastructure, and freight-service operations under substantial technological, economic, and policy uncertainty. In this study, we develop a risk-averse, multi-period stochastic mixed-integer linear programming framework for planning hydrogen refueling infrastructure along freight corridors. Our proposed model jointly determines station-opening schedules, capacity investments, hydrogen production and supply by technology, hydrogen freight adoption, diesel fallback, and emission-policy compliance. We utilize the Conditional Value-at-Risk (CVaR) approach to limit exposure to unfavorable high-cost scenarios involving uncertain freight demand, hydrogen availability, operating costs, and carbon-policy conditions. We demonstrate the applicability of the proposed framework on a U.S. Midwest freight-corridor case study. The optimal base-case solution opens 9 of 12 candidate stations and increases hydrogen adoption in the Base scenario from 12.7% in 2026 to 87.3% in 2035. Annual Base-scenario emissions decrease from 90.4 to 37.1 kt CO 2 e, representing a 58.9% reduction. Compared with the risk-neutral solution, the CVaR-based plan increases the number of opened stations from 8 to 9 and reduces the high-cost tail exposure by $19.3 million. Our sensitivity analysis further shows that clean hydrogen availability and early investment flexibility have stronger effects on emission compliance and tail-risk reduction than carbon pricing alone. We believe that our findings provide guidance and decision support for policymakers, infrastructure developers, hydrogen suppliers, and freight carriers seeking to coordinate resilient and lower-carbon freight-corridor investments.",
+   "lanes": [
+    "Resilience and risk"
+   ],
+   "score": 4.7,
+   "why": [
+    "established journal",
+    "practice signals: case study",
+    "reports a quantified result"
    ],
    "text_file": ""
   }

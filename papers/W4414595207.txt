@@ -1,0 +1,1570 @@
+TITLE: Optimizing freight rail electrification: A framework for charge station selection and battery charge/swap scheduling
+AUTHORS: Jia Long Guo, Elnaz Irannezhad
+VENUE: Transportation Research Part E Logistics and Transportation Review (2026-10-01)
+DOI: https://doi.org/10.1016/j.tre.2026.105305
+LICENCE: cc-by
+LINK: https://doi.org/10.1016/j.tre.2026.105305
+
+Optimizing Freight Rail Electrification: A Framework for
+Charge Station Selection and Battery Charge/Swap
+Scheduling
+Jia Guo ∗
+Elnaz Irannezhad †
+Research Centre for Integrated Transport Innovation
+School of Civil and Environmental Engineering
+The University of New South Wales
+Sydney, New South Wales, Australia
+Submitted: June 2025
+∗jia_guo.guo@unsw.edu.au
+†Corresponding author: e.irannezhad@unsw.edu.au
+arXiv:2509.10157v1 [cs.CE] 12 Sep 2025
+Optimizing Freight Rail Electrification: A Framework for Charge Station Selection and
+Battery Charge/Swap Scheduling
+Abstract
+Battery electric freight trains are crucial for decarbonization by providing zero-emission transporta-
+tion alternatives. The proper adoption of battery electric freight trains depends on an efficient battery
+electrification strategy, involving both infrastructure setup and charge scheduling. The study presents
+a comprehensive model for the optimal design of charging infrastructure and charge scheduling for each
+train. To provide more refueling flexibility, we allow batteries to be either charged or swapped in a
+deployed station, and each train can carry multiple batteries. This problem is formulated as a mixed
+integer linear programming model. To obtain real-time solutions for a large scale network, we develop
+three algorithms to solve the optimization problem: (1) a Rectangle Piecewise Linear Approximation
+technique, (2) a Fixed Algorithm heuristic, and (3) Benders Decomposition algorithm. In computa-
+tional experiments, we use the three proposed algorithms to solve instances with up to 25 stations.
+Statistical analysis verifies that Benders Decomposition outperforms the other two algorithms with re-
+spect to the objective function value, closely followed by the Rectangle Piecewise Linear Approximation
+technique, and the Fixed Algorithm provides the least optimal solution.
+1 Introduction
+The global freight rail industry is undergoing a transformative shift as it transitions from traditional
+diesel-powered locomotives to greener, more sustainable alternatives. This electrification process is driven
+by the urgent need to reduce carbon emissions and enhance energy efficiency, aligning with international
+climate goals and the broader decarbonization of transportation systems. Freight rail plays a critical role in
+global supply chains, and its shift toward electrification promises a cleaner, more efficient future for freight
+transportation. Battery electric freight trains, in particular, offer a zero-emission alternative to diesel-
+powered trains, significantly lowering greenhouse gas emissions, improving air quality, and contributing to
+moresustainablelogisticsnetworks. AstudybyAredahetal. (2024)highlightsthesuperiorityofelectricity
+over diesel, biodiesel, diesel-hybrid, biodiesel-hybrid, and hydrogen fuel cell alternatives, revealing that
+electric trains reduce energy consumption by 56% compared to traditional diesel trains, with the potential
+for zero CO2 emissions when powered by renewable energy sources.
+The adoption of battery electric trains is gaining momentum worldwide, particularly in regions such
+as North America and Europe. In the United States, electrified rail lines for freight are present in areas
+like the Northeast Corridor and certain industrial zones, though they constitute only about 1% of total
+railroad mileage due to high costs and infrastructure challenges (Lu and Allen 2024).In the UK, Varamis
+Rail became the first electric-only freight train company in 2022, using converted electric passenger trains
+to transport parcels at speeds over four times faster than traditional diesel-powered trains (Hughes 2023).
+Germany also operates electric freight trains on key routes like the Rhine-Alpine Corridor, which connects
+Rotterdam to Genoa via major German cities (Cech 2024, Mazzone et al. 2018).These global developments
+underscore both the opportunities and challenges of battery electric freight trains, emphasizing the need
+for optimized, long-term implementation strategies.
+However, the path to widespread freight rail electrification is fraught with challenges. Installing and
+maintaining overhead catenary systems for freight is particularly complex due to three major hurdles:
+infrastructure and clearance difficulties, economic and operational constraints, and vulnerability and re-
+silience issues. Freight trains, especially those carrying double-stacked containers or bulk materials, require
+significantly larger vertical clearances than passenger trains. Accommodating these heights often neces-
+sitates costly modifications to tunnels, bridges, and platforms. Additionally, the capital investment for
+1
+comprehensive freight-line electrification is staggering, with the Federal Railroad Administration noting
+that U.S. Class I railroads have historically found it "prohibitively expensive" (FreightWaves, 2025). Op-
+erational challenges further complicate the picture, as the intermittent nature of freight traffic and the
+need for robust train-to-wire connectivity over long distances make electrification less attractive for low-
+density or irregular routes. Moreover, overhead power systems introduce single points of failure, where
+disruptions—such as downed wires or damaged masts—can halt entire corridors, unlike diesel locomotives,
+which operate independently of the grid.
+Battery electric trains, while promising, also face operational limitations, particularly for long-distance
+trips. Their large, heavy batteries provide only about 10% of the travel distance of diesel-electric locomo-
+tives, necessitating frequent recharging (Barbosa, 2024). This underscores the critical need for optimized
+charge infrastructure and scheduling to ensure efficient operations. Without well-designed electrification
+strategies, freight networks risk unnecessary delays, low infrastructure utilization, and high operational
+costs.
+Given these challenges, optimizing charge infrastructure and scheduling is essential for the effective
+deployment of battery electric vehicles. While significant research exists on these optimization prob-
+lems for battery-electric trucks, the literature on freight trains remains sparse. Biedenbach and Strunz
+(2024) optimized charge levels for electric trucks, incorporating bidirectional charging to maximize cash
+flow from arbitrage trading and minimize costs. Their mixed-integer linear programming (MILP) model
+demonstrated annual savings of up to€3,300 per vehicle in 2021 and€10,000 in 2022 with bidirectional
+charging. Wang et al. (2024) addressed charge scheduling for truck battery swap stations, using a two-
+layered optimization model to minimize operational costs and the investment payback period. Their
+hybrid heuristic algorithm reduced the payback period by 10.8% and increased net profits by 4.07%. Ye et
+al. (2024) developed a spatio-temporal optimization model to determine charge station locations, power
+capacities, and battery capacities for electric trucks, achieving full grid capacity allocation to meet decar-
+bonization goals by 2030. Zähringer et al. (2024) focused on dynamic charging strategies, minimizing idle
+time for trucks while adhering to driver Hours of Service constraints, with their dynamic programming
+algorithm reducing time loss by up to 50% compared to diesel trucks.
+Despite these advances, the literature has largely overlooked the electrification of freight trains, par-
+ticularly the joint optimization of charge station selection and charge/swap scheduling for long-distance
+operations. This gap is critical given the unique operational constraints of freight rail—fixed routes,
+higher energy demands, and extensive network coordination—compared to trucks. Existing studies on
+trucks do not fully address the complexities of rail infrastructure, such as integrating charge/swap options
+and managing battery capacities across long-haul freight routes.
+This study seeks to bridge this gap by developing a comprehensive framework for charge station selec-
+tion and charge/swap scheduling tailored to battery electric freight trains. By incorporating factors such
+as station locations, battery capacities, charge/swap options, demand requirements, charging times, and
+setup costs, this research extends the current literature and provides actionable solutions for decarbonizing
+freight rail. Building on the insights from truck electrification studies, we aim to address the specific needs
+of long-distance freight train operations, offering a novel contribution to the field.
+We formulate an MILP model that incorporates a piecewise linear approximation technique to capture
+the nonlinear relationship between the state of charge (SOC) and charging time. To solve the model
+efficiently for practical instances, we develop a Fixed Algorithm and apply the Benders Decomposition
+algorithm to enhance computational efficiency, particularly for large-scale problems. Through extensive
+computational experiments on small, medium, and large instances, we evaluate and compare the perfor-
+mance of these algorithms, demonstrating their practical applicability.
+2
+The primary contributions of this study are as follows: (i) it provides a comprehensive framework
+for the charge station selection and scheduling of battery electric freight trains; (ii) an MILP model is
+formulated, incorporating a Rectangle Piecewise Linear Approximation technique to capture the nonlinear
+relationship between the SOC and charging time; (iii) a Fixed Algorithm is developed to efficiently solve
+the model for practical instances; (iv) Benders Decomposition algorithm is applied to further enhance
+computational efficiency, particularly for large problems; (v) extensive computational experiments on
+small, medium, and large instances are conducted to evaluate and compare the performance of three
+algorithms, demonstrating the practical applicability of the proposed approaches; (vi) sensitivity analysis
+is implemented to investigate the impact of delay penalty weight on the algorithm performance.
+2 Literature Review
+Thetransitiontobattery-electricvehiclesisapivotalstrategyfordecarbonizingtransportation, withsignif-
+icant implications for both road and rail freight systems. Optimizing charge station locations and charge
+scheduling is essential to ensure operational efficiency and cost-effectiveness, particularly for battery-
+electric trucks and, by extension, freight trains. While extensive research has addressed these challenges
+in the context of electric trucks, the literature on freight rail electrification remains unexplored. This
+review synthesizes key studies on charge station location and charge scheduling for battery-electric trucks.
+It highlights their contributions, relevance to freight rail, and identifies a critical gap that this study aims
+to address.
+The literature review is separated into two sections. Section 2.1 reviews the electrification problems for
+battery electric trucks. Section 2.2 clarifies the existing research gap and highlights the novel contributions
+of this study.
+2.1 Review of Charge Station Location and Charge Scheduling Problems for Battery-
+Electric Trucks
+Electrifying heavy-duty trucks poses unique challenges compared to light-duty EVs or passenger rail.
+Truck applications must balance large energy demands, driver rest regulations, and widely varying route
+patterns, all while ensuring grid compatibility and minimizing both capital and operational costs. Over
+the past few years, researchers have proposed a range of analytical and simulation models—from mixed-
+integer programming to agent-based simulation—to tackle facets of this problem: where to site chargers
+or swap stations, how to schedule charging or swapping, and how to exploit bidirectional power flows or
+hybrid powertrains.
+Biedenbach and Strunz (2024) developed an MILP that optimizes each truck’s state-of-charge and
+allows bidirectional charging (vehicle-to-grid) to arbitrage spot-market prices. Their objective blends
+revenue from power sales, grid and levy costs, and battery-degradation opportunity costs, subject to
+energy–power balance, minimum battery SOC, and grid connection limits. Solving for 30 trucks, they
+show that bidirectional operation raises annual per-vehicle savings from about€1,500 (unidirectional) to
+€3,300 in 2021—and up to€10,000 in 2022—highlighting the financial upside of smart charging strategies.
+A few studies focused on battery-swap station and depot scheduling. Wang et al. (2024) applied MILP
+for fleets using battery-swap stations where trucks got out of charge batteries swapped by new batteries,
+and the out of charge batteries would then be charged and used by future trucks. Decision variables
+included two layers: (1) the number of batteries in the swap station, number of chargers and photovoltaic
+capacity installed; (2) the number of chargers activated in each time interval and low-demand periods.
+The objective function was to minimize the operational costs (electricity costs, wait-time penalties and
+3
+equipment maintenance) and the dynamic investment payback period which reflected the time required to
+recover the initial investment. Constraints involved the upper limit on the number of batteries, chargers,
+capacity and truck waiting time. The authors proposed a two-layered MILP optimization model, which
+was solved by a multi-stage hybrid heuristic algorithm based on Particle Swarm Optimization and Genetic
+Algorithm. In computational experiments with instances of 12 candidate batteries, the proposed algorithm
+was able to reduce the dynamic investment payback period by 10.8%, compared to a base configuration.
+Furthermore, net profits were increased by 4.07% and electricity costs were reduced by 5.7%.
+Ye et al. (2024) likewise focused on locational and sizing decisions—but still without swapping—by
+jointly optimizing charger siting, station capacities, per-truck charging power, and truck battery sizes over
+space and time. The objective was to maximize the number of electric trucks, and to minimize the costs
+on infrastructure, power delivery and vehicle operational expenses. Constraints included supply capacity
+and demand requirement. In computational experiments, the spacio-temporal optimization model was
+able to solve problems with 344 potential charging locations and 255 electrical substations. The algorithm
+allocated 100% of the remaining grid capacity to the drayage truck sector which met the 2030 goal, while
+a 50% allocation might reach the goal around 2029.
+Facility location and network-sizing was studied by a few researchers. Whitehead et al. (2022) apply
+a coverage-based, capacity-constrained facility-location framework to Queensland’s short-haul sector. By
+capping service radius and facility count, they show that as few as ten well-placed public chargers can meet
+most regional fleet needs. Speth et al. (2025) extend this with an MILP integrated with queuing model
+to plan a fast-charging network for heavy trucks across Germany, explicitly capturing service delays under
+stochastic truck arrivals. Their results guide how many chargers each site needs to maintain acceptable
+wait times.
+A few studies focused on dynamic charging. For example, Zähringer et al. (2024) shifted focus to
+en-route “dynamic” charging, where trucks receive power at roadside infrastructure rather than battery
+swapping. Through a dynamic-programming algorithm that embeds driver-Hours-of-Service regulations,
+they optimized charging durations, power levels, and rest breaks for a sequence of 100 transport tasks,
+cutting total idle time by up to 50% relative to diesel trucks. The authors did not study the charging
+station location problem, and set the objective to minimize the idle time (waiting time, charging time and
+rest time) the truck spent in all stations. One novel contribution from this study was that it considered
+Hours of Service constraints for drivers. For example, drivers must rest for 45 minutes after every 4.5
+hours of driving. This rest could be split into 15 and 30-minute intervals. Bai et al. (2023) investigated
+truck charging and rest decisions along pre-planned routes under regulatory rest rules. They formulated a
+dual-objective MILP (minimizing the total costs associated with charging and rest decisions) and proposed
+a rollout-based approximate solver that runs in near real-time on Swedish road-network data.
+A few other studies applied simulation approaches to explore charging infrastructure scenarios for elec-
+tric trucks. Karlsson and Grauers (2023) and Adegbohum et al. (2023) developed agent-based simulation
+to model heterogeneous truck flows. Karlsson and Grauers (2023) developed an agent-based simulation
+model to investigate the performance of a charging infrastructure for long-haul trucks between the Swedish
+cities of Helsingborg and Stockholm. The simulation model estimated about 140 stations with 900 kW
+chargers would be required to serve the truck flow in this route. Adegbohum et al. (2023) developed a
+discrete-time agent-based model to simulate charging operations of heavy-duty electric and autonomous
+truck between three major cities in Texas, and quantified cost of charging infrastructure requirements,
+using synthetic data.
+4
+2.2 Research Gap
+While the reviewed studies provide robust frameworks for optimizing charge station location and charge
+scheduling for battery-electric trucks, they do not address the specific challenges of freight rail electrifi-
+cation. Freight trains operate on fixed routes with higher energy demands and require extensive network
+coordination—factors not fully captured in truck-focused research. For instance, battery swapping could
+reduce rail downtime, but their implementation along tracks or at sidings remains unexplored. Similarly,
+facility location models must account for rail infrastructure, such as electrification gaps or the amount of
+energy required to charge multiple battery consists.
+More importantly, freight rail systems can accommodate multiple battery consists and even specialized
+“battery cars”, unlike trucks, which are restricted to a single set of batteries due to spatial and weight
+limitations. This distinction enables rail systems to utilize one or multiple battery swapping and charging
+options at stations, adding complexity that demands sophisticated optimization models. This multi-
+module architecture dramatically increases operational complexity: planners must decide not only where
+and when to charge or swap each individual consist, but also how many battery modules to allocate per
+train, how to sequence simultaneous charging and swapping activities, and how to stage spare battery
+consists at intermediate yards. Current research falls short in providing models that fully capture the
+dynamics and management of these multiple battery and charging/swapping combinations, highlighting a
+significant gap in advancing rail electrification.
+Thisstudyfillsthisgapbydevelopingatailoredframeworkforchargestationselectionandcharge/swap
+scheduling for battery-electric freight trains. Drawing on the methodologies of truck electrification, we
+address rail-specific constraints, including station locations, battery capacities, charging times, and setup
+costs. Specifically, factors such as station locations, number of batteries on each train, capacity of each
+candidate station (the number of fully charged batteries and the number of chargers), charge/swap options,
+demand requirement, charging time and SOC level in each station, waiting time and setup cost are all
+taken into account. As we discussed in Section 2.1, none of the previous work has combined those factors
+in one study. Table 1 displays the differences and similarities between this paper and prior studies in
+Section 2.1
+Table 1: Summary of differences and similarities between this study and prior work on truck electrification
+Components This study Biedenbach
+& Strunz
+(2024)
+Wang
+et al.
+(2024)
+Ye et al.
+(2024)
+Zähringer
+et al.
+(2024)
+Station location ✓ ✓
+No. batteries on the train/truck ✓ ✓
+No. fully-charged batteries in each station ✓ ✓
+No. chargers in each station ✓ ✓ ✓ ✓
+Demand requirement ✓ ✓ ✓ ✓ ✓
+Swap/charge decision ✓ ✓
+Charging time for each battery in each station ✓ ✓ ✓ ✓ ✓
+Charging level for each battery in each station ✓ ✓ ✓ ✓ ✓
+Waiting time of each train/truck ✓ ✓ ✓
+Infrastructure cost ✓ ✓ ✓
+5
+3 Problem Description
+Each battery electric train departs the origin, drives along the route with a number of potential stations,
+and arrives at the destination. When a train leaves the origin, all its batteries are fully charged (SOC =
+100%). The SOC decreases as the train travels forward, and hence charge stations need to be deployed
+along the route for refuel purpose. In a deployed charge station, one or more batteries on the train can
+be either charged or swapped. To swap a battery means to replace a used battery on the train with a
+fully charged one in the station. If we choose to charge a battery, the SOC after charging depends on
+the charging time. The time required to swap a battery is usually much shorter than that to charge a
+battery to 100%. The reason we might choose to charge a battery could be: (1) there are no remaining
+fully charged batteries in the station for swap; and (2) even though it takes much longer for a battery to
+be fully charged, we may just charge the SOC to a certain level (far below 100%) to support the following
+trip, which requires shorter than the swapping time. In conclusion, when a train arrives at a deployed
+station, for each battery on the train, we have three options: swap, charge, and do nothing. Note that for
+each train, we cannot swap a battery and charge a second battery in the same station, but we can always
+neither charge nor swap a battery regardless the operation on others.
+In this study, two sets of decisions are to be made. First, we need to decide whether to deploy a
+charge station in each potential location. Second, for each train and deployed station, we will construct
+a charge/swap schedule for all batteries on the train. The schedule includes the number of batteries on a
+train, whether to charge or swap batteries in a station, the amount of charging time, and the SOC level
+at departure.
+We would like to minimize the total cost including the fixed cost of stations and the sum of delay of
+trains in all stations. Delay refers to the total amount of time trains spend in charging/swapping at all
+stations, minus the planned waiting time. The planned waiting time is common for freight trains. For
+example, in big cities such as Melbourne or Adelaide, tracks could be utilized to their full capacity due to
+a large number of trains, so freight trains would give way to passenger trains and be scheduled to wait for
+a certain amount of time. We can take advantage of the planned waiting time to charge or swap batteries.
+This can significantly reduce delay.
+The difficulty in finding an optimal solution to this problem is twofold. First, there is a tradeoff
+between the two objective terms: station fixed cost and delay. Setting up more stations leads to a higher
+fixed cost, but can reduce the delay time. For instance, if a train is scheduled to wait an hour in station
+i, andiis deployed, then we may have the trains’ batteries swapped or charged in stationiso as to take
+advantage of the planned waiting time and reduce delay. Second, the charge/swap schedule is for each
+battery of the train. Since a train can carry multiple batteries, the problem size grows large, making it
+even harder to find an optimal solution.
+The remainder of this section discusses components of the problem including decision variables, con-
+straints, objective, assumptions and the model formulation.
+3.1 Decision Variables
+1. Decisions on charge stations
+(a) Whether to deploy potential stations along the route
+2. Decisions on battery-consist assignment
+(a) The number of consists carrying batteries.
+6
+3. Decisions on charge/swap scheduling
+(a) Whether to charge a consist with battery in each station
+(b) The charge start time if a consist with battery is to be charged in a certain station
+(c) The state-of-charge (SOC) of a battery when a train leaves a station
+(d) Whether to swap a consist with battery in each station
+(e) The swap start time if a consist with battery is to be charged in a certain station
+3.2 Constraints
+1. Constraints on power support for each train
+(a) Charge stations must provide sufficient power for trains to travel from the origin to the desti-
+nation.
+2. Requirement on minimum carrying capacity for each train
+(a) A lower limit on the capacity of each train should be added to ensure the cargoes can be
+transported. Otherwise, the consists might all be filled with batteries.
+3. Capacity of each charge station
+(a) An upper limit on the number of chargers
+(b) An upper limit on the number of fully-charged batteries
+3.3 Objective
+1. Minimize the total station setup cost
+2. Minimize the total delay due to charging or swapping
+3.4 Assumptions
+1. Charging a battery takes much longer than swapping a battery.
+2. In each charge station, multiple batteries can be charged at the same time. Similarly, multiple
+batteries can be swapped at the same time.
+3. For each train, we cannot both charge and swap batteries in a station. In other words, when a train
+arrives at a station, we must choose from exactly one options from the three: (1) charge some or all
+the batteries; (2) swap some or all the batteries; (3) do nothing.
+4. The charging time varies based on the remaining power in the battery.
+5. In each deployed station, if we choose to charge, we do not necessarily need to make SOC reach
+100%. Instead, battery SOC can be any value between 0% and 100%.
+6. If we choose to swap batteries in a charge station, we assume the new batteries are fully charged
+(SOC =100%).
+7
+7. When a train has batteries charged or swapped in a station, the operations take place in a rest area,
+which will not impact the schedule of succeeding trains if the succeeding ones do not charge or swap
+batteries in that station.
+8. Charging or swapping can be implemented during waiting period of the train. Waiting period refers
+to the time during which a freight train gives way to passenger trains. We may take advantage of
+this period to charge or swap the batteries so that delay could be minimized.
+9. When a train leaves the origin, all its batteries are fully charged (SOC = 100%).
+10. Whenatrainistravelingwithmultiplebatteries, weassumethereisasequentialbatterymanagement
+system, where one battery is used up first, then another takes over.
+3.5 Model
+The following gives notation and formulation of the problem.
+Sets and indices
+iindex for potential charge station
+Iset of potential charge stations
+jindex for train
+Jset of trains
+kindex for consist
+Kj set of consists in trainj
+o, dindices of origin and destination
+Parameters
+αF,α D penalty weight on one unit of fixed cost and delay
+ai1,i2 1 if stationi2 is immediately after stationi1 along the route, 0 otherwise
+btrain j upper bound on the number of batteries that trainjcan carry
+bstation i the number of fully charged batteries that are available in stationi
+ci the number of available chargers in stationi, which is the maximum number of batteries
+that can be charged simultaneously in stationi
+ei1,i2,j amount of power required for trainjto travel from charge stationi1 to charge station
+i2
+ϵa sufficiently small positive constant
+fi fixed cost to establish charge stationi
+lc s1,s2 the amount of time required to charge a battery from SOCs1 tos 2 (0%≤s 1 ≤s 2 ≤
+100%)
+ls the amount of time required to swap a battery
+Ma sufficiently large constant
+rc charge rate for each battery
+ti1,i2,j travel time from stationsi1 toi 2 for trainj
+wij the amount of time trainjhas to wait at stationi(to give way to passenger trains)
+8
+Decision variables
+Dij (nonnegative) amount of delay time for trainjin stationi
+Sarrive ijk (nonnegative) SOC of the battery in consistktrainjwhenjarrives at stationi.
+0≤S arrive ijk ≤1.
+Sdepart ijk (nonnegative) SOC of the battery in consistktrainjwhenjleaves stationi.
+0≤S arrive ijk ≤S depart ijk ≤1.
+T arrive ij (nonnegative) the arrival time of trainjat stationi
+T depart ij (nonnegative) the departure time of trainjfrom stationi
+Xi (binary) 1 if potential charge stationiis established, 0 otherwise.
+Yjk (binary) 1 if consistkin trainjcarries a battery, 0 otherwise.
+Zc ijk (binary) 1 if the battery in consistktrainjis charged in stationi, 0 otherwise.
+Zs ijk (binary) 1 if the battery in consistktrainjis swapped in stationi, 0 otherwise.
+Model
+Minimizeα F X
+i∈I
+fiXi +α D X
+i∈I
+X
+j∈J
+(Dij −w ij)(1a)
+Subject to
+1. Define delay time for trainjin stationi.
+Dij ≥T depart ij −T arrive ij ∀i∈I, j∈J(1b)
+2. If stationiis not deployed, then batteries can be neither swapped nor charged in stationi.
+X
+j∈J
+X
+k∈Kj
+(Z c ijk +Z s ijk )≤2|J||K j| ·Xi ∀i∈I(1c)
+3. If stationiis deployed, then at least one battery must be swapped or charged in stationi.
+X
+j∈J
+X
+k∈Kj
+(Z c ijk +Z s ijk )≥X i ∀i∈I(1d)
+4. Trainjcannot both swap and charge batteries in stationi.
+Zs i,j,k1 +Z c i,j,k2 ≤1∀i∈I, j∈J, k 1, k2 ∈K j (1e)
+5. Trainjcannot depart stationiuntil passenger trains have passed.
+T depart ij −T arrive ij ≥w ij ∀i∈I, j∈J(1f)
+6. Upper bound on the number of batteries that trainjcan carry.
+X
+k∈Kj
+Yjk ≤b train j ∀j∈J(1g)
+9
+7. In trainj, if consistkdoes not carry a battery, then all the consists behindkdo not carry batteries,
+either. In other words, for each train, batteries can only be stored in the first fewconsecutiveconsists.
+Assume the consists closer to the locomotive have smaller indices.
+X
+k′∈{k′|k′≥k+1,k′∈Kj }
+Yjk ′ ≤M·Y jk ∀j∈J, k∈K j (1h)
+8. If trainjchooses to swap batteries in stationi, the number of swapped batteries cannot exceed the
+number of available batteries ini.
+X
+k∈Kj
+Zs ijk ≤b station i ∀i∈I, j∈J(1i)
+9. If trainjchooses to charge batteries in stationi, the number of charged batteries cannot exceed the
+number of available chargers ini.
+X
+k∈Kj
+Zc ijk ≤c i ∀i∈I, j∈J(1j)
+10. If stationi 2 is immediately after stationi1 along the route, then for trainj, the SOC at its arrival
+ati 2 must equal the SOC at its departure fromi1 minus the amount of power required for trainj
+to travel from stationsi1 toi 2.
+X
+k∈Kj
+Sdepart i1,j,k − X
+k∈Kj
+Sarrive i2,j,k =e i1,i2,j ∀(i 1, i2)∈ {(i1, i2)|i1, i2 ∈I, ai1,i2 = 1}, j∈J(1k)
+11. For each trainj, electricity in each battery is consumed sequentially, starting from the battery closest
+to the locomotive. In other words, the battery ink+ 1will not be used before the battery inkis
+run out (assume the smaller the consist index is, the closer the consist is to the locomotive).
+Sarrive ijk ×(S arrive i,j,k+1 −1) = 0∀i∈I, j∈J, k∈K j (1l)
+The purpose of constraints (1l) is to forceSarrive i,j,k+1 to equal 1 whenSarrive ijk >0, andS arrive i,j,k+1 can equal
+any value whenS arrive ijk = 0. To linearize constraints (1l), we introduce new binary variablesBijk,
+and hence constraints (1l) can be replaced by following equations.
+Sarrive ijk −M·B ijk ≤0∀i∈I, j∈J, k∈K j (1m)
+(1−S arrive i,j,k+1) +M·B ijk ≤M∀i∈I, j∈J, k∈K j (1n)
+12. When trainjdeparts stationi, the SOC of battery in consistkof trainjcannot be lower than the
+SOC at its arrival.
+Sdepart ijk −S arrive ijk ≥0∀i∈I, j∈J, k∈K j (1o)
+13. If the battery in consistkof trainjis swapped in stationi, then the SOC is 100% when trainj
+10
+leaves stationi.
+Sdepart ijk ≥Z s ijk ∀i∈I, j∈J, k∈K j (1p)
+14. If stationi 2 is immediately afteri 1, then for each battery in consistkof trainj, the SOC at its
+arrival in stationi2 must be no higher than that at its departure from stationi1.
+Sarrive i2,j,k ≤S depart i1,j,k ∀(i 1, i2)∈ {(i1, i2)|i1, i2 ∈I, ai1,i2 = 1}, j∈J, k∈K j (1q)
+15. If the battery in consistkof trainjis swapped in stationi, then trainjmust stay inifor at least
+ls.
+T depart ij −T arrive ij ≥l sZs ijk ∀i∈I, j∈J, k∈K j (1r)
+16. If the battery in consistkof trainjis charged in stationi, then when trainjleaves stationi, the
+SOC of consistkis a function of the SOC whenjarrives ati, and charging time.
+Sdepart ijk =S arrive ijk +r c ·min{ 1−S arrive ijk rc , Tdepart ij −T arrive ij } ∀i∈I, j∈J, k∈K j (1s)
+To linearize constraints (1s), and to incorporate variablesZc ijk andZ s ijk, we introduce a new variable
+T c ijk = min{ 1−Sarrive ijk rc , Tdepart ij −T arrive ij }. Constraints (1s) can be replaced by the constraints below.
+Sdepart ijk ≤S arrive ijk +r c ·T c ijk +M·Z s ijk ∀i∈I, j∈J, k∈K j (1t)
+Sdepart ijk ≥S arrive ijk +r c ·T c ijk −ϵ·Z c ijk ∀i∈I, j∈J, k∈K j (1u)
+T c ijk ≤ 1−S arrive ijk rc ∀i∈I, j∈J, k∈K j (1v)
+T c ijk ≤T depart ij −T arrive ij ∀i∈I, j∈J, k∈K j (1w)
+0≤T c ijk ≤M·Z c ijk ∀i∈I, j∈J, k∈K j (1x)
+0≤Z c ijk ≤M·T c ijk ∀i∈I, j∈J, k∈K j (1y)
+(a) WhenZ c ijk =Z s ijk = 0, constraints (1t) - (1x), together with constraints (1o), forceSdepart ijk =
+Sarrive ijk .
+(b) WhenZ c ijk = 1, constraints (1e) forceZs ijk = 0, and hence we haveSdepart ijk =S arrive ijk +r c ·T c ijk
+from constraints (1t) and (1u).
+(c) WhenZ s ijk = 1, constraints (1e) forceZ c ijk = 0, so we haveT c ijk = 0from constraints (1x).
+Constraints (1t) become redundant, and constraints (1u) become equivalent to constraints (1o).
+Constraints (1p) makeSdepart ijk = 1.
+17. If the battery in consistkof trainjis neither charged nor swapped in stationi, then the SOC at
+its departure and arrival should be same.
+Sdepart ijk −S arrive ijk ≤Z c ijk +Z s ijk ∀i∈I, j∈J, k∈K j (1z)
+18. If consistkof trainjcarries a battery, then it is assumed to be fully charged when the train departs
+the origin. Also, to save computational time, the SOC of the battery is assumed to be 100% when
+11
+it arrives at the origin.
+Sdepart ojk ≥Y jk ∀j∈J, k∈K j (1aa)
+Sarrive ojk ≥Y jk ∀j∈J, k∈K j (1ab)
+19. If consistkof trainjcarries a battery, then the battery is neither charged nor swapped at the origin.
+Zc ojk +Z s ojk ≤2Y jk ∀j∈J, k∈K j (1ac)
+20. For trainj, the arrival and departure time at the origin equal 0.
+T depart oj +T arrive oj = 0∀j∈J(1ad)
+21. For trainj, if stationi 2 is immediately after stationi 1 on the route, then the arrival time ati2
+should equal the departure time ati1 plus the travel time from stationsi1 toi 2.
+T arrive i2,j =T depart i1,j +t i1,i2,j ∀(i 1, i2)∈ {(i1, i2)|i1, i2 ∈I, a i1,i2 = 1}, j∈J(1ae)
+22. If consistkin trainjdoes not carry a battery, then we can neither charge nor swap the battery of
+consistkin trainjat any stations.
+X
+i∈I
+Zc ijk + X
+i∈I
+Zs ijk ≤2|I| ·Yjk ∀j∈J, k∈K j (1af)
+23. If consistkof trainjdoes not carry a battery, then the SOC of the "dummy" battery in consistk
+of trainjmust equal zero at all stations.
+X
+i∈I
+Sarrive ijk + X
+i∈I
+Sdepart ijk ≤2|I| ·Yjk ∀j∈J, k∈K j (1ag)
+24. Variables definition
+Dij, Tdepart ij , Tarrive ij ≥0∀i∈I, j∈J(1ah)
+0≤S arrive ijk ≤S depart ijk ≤1∀i∈I, j∈J, k∈K j (1ai)
+Xi, Yjk , Zc ijk , Zs ijk ∈ {0,1} ∀i∈I, j∈J, k∈K j (1aj)
+Note that in constraints (1t) and (1u), we assume the charge raterc is a constant. However, in practice,
+the charge rate reduces as SOC grows (Wang et al. 2016). For simplicity, we assume the charge rateris
+linearly correlated to the SOCs. Letr 0 (r0 is a constant) be the charge rate when the battery is empty
+(s= 0). Furthermore, when the battery is fully charge (s= 1), the charge raterbecomes 0. Therefore,
+points(0, r0)and(1,0)are on the curve of linear functionr=f(s). By plugging the two points in the
+linear equation with parameters, we can get functionf(s)and its inverse functionf−1(r):
+r=f(s) =−r 0 ·s+r 0 (1ak)
+s=f −1(r) =− 1 r0 ·r+ 1(1al)
+12
+Lets(t|S A)andh(t|S A)respectively be the SOC and charge rate of a battery when it has been
+chargedtunits of time given an initial SOC ofS A (which is the SOC of a battery when it arrives at a
+station). Actually, the value ofh(t|SA)does not depend ontbuts(t|S A), but sinces(t|S A)depends on
+t, mathematically, we would like to express the charge rateh(t|SA)as a function oft, with a given initial
+SOC ofS A. In other words,h(t|S A)is the charge rate when the SOC equalss(t|S A). For simplicity,
+during each single time unit, let us assume the charge rate remains same from the beginning to the end
+of the unit. We also assume the length of each time unit is 1 and the charge rate is the amount of power
+increase during each time unit.
+To find the expression ofh(t|SA), let us start with the relationship betweenh(t|SA)andh(t+ 1|S A).
+Afterttime units of charging with initial SOC beingSA, the charge rate ish(t|SA)and SOC iss(t|S A).
+With additional one time unit (t+ 1time units since the start of charging), the SOC will increase by
+h(t|SA). From equation (1ak), we can indicate that the charge rate will decrease byr0 ·h(t|S A), based
+onh(t|S A). Consequently, we haveh(t+ 1|S A) =h(t|S A)−r 0 ·h(t|S A) = (1−r 0)·h(t|S A). Therefore,
+h(t|SA)is a geometric sequence with a common ratio of1−r 0. The first term ofh(t|S A)ish(0|S A) =
+f(S A) =−r 0 ·S A +r 0. Hence, the equation ofh(t|SA)is:
+h(t|SA) =r 0 ·(1−S A)·(1−r 0)t t= 0,1,2,3, ...(1am)
+It can be indicated that the SOC by the end ofttime units (s(t|SA)) equals the initial SOC (SA)
+plus the sum of the products of unit time length and the charge rate after each time unit since the start
+of charging. Together with constraints (1t) and (1u) that accommodate the interaction between swap
+decision and SOC, this can be mathematically formulated as the following equation.
+s(t|SA)≤S A +h(0|S A) +h(1|S A) +h(2|S A) +...+h(t−1|S A) +M·Z s
+=S A +
+t−1X
+i=0
+h(i|SA) +M·Z s
+= 1−(1−S A)·(1−r 0)t +M·Z s t= 0,1,2,3, ...(1an)
+s(t|SA)≥S A +h(0|S A) +h(1|S A) +h(2|S A) +...+h(t−1|S A)−ϵ·Z c
+=S A +
+t−1X
+i=0
+h(i|SA)−ϵ·Z c
+= 1−(1−S A)·(1−r 0)t −ϵ·Z c t= 0,1,2,3, ...(1ao)
+LetS arrive,S depart andT c be the SOC at arrival, SOC at departure and charging time of a battery in a
+station, respectively. We may combine equations (1t), (1u), (1an) and (1ao), and convert to the following
+constraints.
+Sdepart ijk ≤1−(1−S arrive ijk )·(1−r 0)T c ijk +M·Z s ijk ∀i∈I, j∈J, k∈K j (1ap)
+Sdepart ijk ≥1−(1−S arrive ijk )·(1−r 0)T c ijk −ϵ·Z c ijk ∀i∈I, j∈J, k∈K j (1aq)
+For computational efficiency, we should keep the value ofMas small as possible. From observation of
+Constraints (1ap), we fix the value ofMat 2.
+The next step is to linearize constraints (1ap) and (1aq). We use Piecewise Linear Approximation
+Rectangle Method (D’Ambrosio et al (2010)). Assumesijku (u= 0,1, ..., n) be the breakpoints over the
+domain of variableS arrive ijk , wheres ijk0 = 0,s ijkn = 1, andnis a constant selected by us (for example,
+13
+n= 10). Similarly, lett ijkv (v= 0,1, ..., m) be the breakpoints over the domain of variableTc ijk, where
+tijk0 = 0,t ijkm is the maximum number of consecutive charging hours of a battery (such as 12 hours),
+andmis a constant selected by us (for example,m= 12). Let functiong(s ijku , tijkv ) = (1−s ijku )·(1−
+r0)tijkv. In addition, we have constantswijkuv = min{g(sijku , tijk,v+1 )−g(s ijku , tijkv ), g(sijk,u+1 , tijk,v+1 )−
+g(sijk,u+1 , tijkv )}.
+To conduct Piecewise Linear Approximation with Rectangle Method, we introduce new continuous
+variablesF ijk = (1−S arrive ijk )·(1−r 0)T c ijk. Then we have binary variablesβijku (u= 0,1, ..., n−1) and
+continuous variablesγ ijku (u= 0,1, ..., n) for variablesSarrive ijk . Similarly, we have binary variablesτijkv
+(v= 0,1, ..., m−1) and continuous variablesηijkv (v= 0,1, ..., m) for variablesTc ijk.
+Therefore, we can replace constraints (1ap) and (1aq) with the following linear constraints.
+Sdepart ijk ≤1−F ijk +M·Z s ijk ∀i∈I, j∈J, k∈K j (1ar)
+Sdepart ijk ≥1−F ijk −ϵ·Z c ijk ∀i∈I, j∈J, k∈K j (1as)
+n−1X
+u=0
+βijku = 1∀i∈I, j∈J, k∈K j (1at)
+nX
+u=0
+γijku = 1∀i∈I, j∈J, k∈K j (1au)
+m−1X
+v=0
+τijkv = 1∀i∈I, j∈J, k∈K j (1av)
+nX
+u=0
+(sijku ·γ ijku ) =S arrive ijk ∀i∈I, j∈J, k∈K j (1aw)
+m−1X
+v=0
+[tijkv ·τ ijkv + (tijk,v+1 −t ijkv )·η ijkv ] =T c ijk ∀i∈I, j∈J, k∈K j (1ax)
+γijku ≤β ijk,u−1 +β ijku ∀i∈I, j∈J, k∈K j, u= 1,2, ..., n−1(1ay)
+ηijkv ≤τ ijk,v−1 +τ ijkv ∀i∈I, j∈J, k∈K j, v= 1,2, ..., m−1(1az)
+ηijkv ≤τ ijkv ∀i∈I, j∈J, k∈K j, v= 1,2, ..., m−1(1ba)
+γijk0 ≤β ijk0 ∀i∈I, j∈J, k∈K j (1bb)
+ηijk0 ≤τ ijk0 ∀i∈I, j∈J, k∈K j (1bc)
+γijkn ≤β ijk,n−1 ∀i∈I, j∈J, k∈K j (1bd)
+ηijkm ≤τ ijk,m−1 ∀i∈I, j∈J, k∈K j (1be)
+14
+Fijk ≤
+nX
+w=0
+(γijkw ·g(s ijkw , tijkv )) +η ijkv wijkuv +M·(2−τ ijkv −β ijku )
+∀i∈I, j∈J, k∈K j, u= 0,1, ..., n−1, v= 0,1, ..., m−1(1bf)
+Fijk ≥
+nX
+w=0
+(γijkw ·g(s ijkw , tijkv )) +η ijkv wijkuv −M·(2−τ ijkv −β ijku )
+∀i∈I, j∈J, k∈K j, u= 0,1, ..., n−1, v= 0,1, ..., m−1(1bg)
+βijku , τijkv ∈ {0,1} ∀i∈I, j∈J, k∈K j, u= 0,1, ..., n−1, v= 0,1, ..., m−1(1bh)
+0≤γ ijku ≤1,0≤η ijkv ≤1∀i∈I, j∈J, k∈K j, u= 0,1, ..., n, v= 0,1, ..., m(1bi)
+Fijk ≥0∀i∈I, j∈J, k∈K j (1bj)
+In summary, the Integrated Model with Rectangle Piecewise Linear Approximation (IMRPLA) is as
+follows.
+Minimize (1a)
+Subject to (1b)−(1k),(1m)−(1r),(1w)−(1aj),(1ar)−(1bj)
+4 Fix Algorithm
+Since we are given the power demand between each potential station and we aim to minimize the number
+of stations, the basic idea of this algorithm is to deploy stations sequentially in the order of the "benefit"
+they provide. Assume we already have some deployed stations. The benefit of a potential but undeployed
+stationiincludes the following aspects.
+1. The maximum amount of power it can provide:¯Ei =b station i +|J| ·ci.
+If stationiis deployed, we assume (1) all batteries available in stationiare swapped with some
+depleted batteries on trains, and (2) all trains are fully charged in stationi.
+2. The total amount of power required from stationito the first downstream deployed station:edown i .
+3. The total amount of power required from the last upstream deployed station to stationi:eup i .
+4. The negative value of the fixed cost of stationi:−fi.
+5. The total amount of planned waiting time in stationifor all trains:P j∈J wij.
+Initialization.LetI deploy andI undeploy represent the set of deployed and undeployed stations, respec-
+tively, withI deploy ∪I undeploy =I. In the entire system, the total power demand isP j∈J P|I|−1 i=o ei,i+1,j,
+and the total initial power supply at the origin isP j∈J btrain j , so the total power provided by the stations
+along the route (∆E) should satisfy the following constraint.
+∆E≥
+X
+j∈J
+|I|−1X
+i=o
+ei,i+1,j −
+X
+j∈J
+btrain j (2)
+Each potential stationican provide maximum amount of power ¯Ei =b station i +|J| ·ci. Let ˜Ebe the
+maximum amount of power from selected stations with initialization˜E= 0. Then we (1) sort all potential
+stations in decreasing order of "benefit" valueBi = ¯Ei +e down i +e up i −α Ffi +α D P j∈J wij, (2) deploy
+the one (stationi ∗) with the maximum "benefit" value:i∗ = argmaxi∈I undeploy{Bi}, (3) fixX i∗ = 1, and
+15
+(4) add ¯Ei to ˜Euntil ˜E≥∆E. If, in step (2), multiple undeployed stations have the same maximum
+"benefit" value, then we randomly select one from those.
+Furthermore, since the objective is to minimize the number of deployed stations and delay hours due
+to charging or swapping, the optimal solution must have each train load the maximum number of batteries
+allowed. Therefore, each time we solve Model 1, the values ofYvariables are also fixed.
+Even initialization fixes the value ofXandYvariables in Model 1 and significantly reduces the
+processing time, the termination condition ˜E≥∆Ecannot guarantee feasibility of Model 1, and hence
+we need to dig into iterations to deploy additional stations.
+Iterations.In each iteration of the Fix Algorithm, for all stationsi∈Iundeploy, we update the "benefit"
+valueB i. Then we select the one (stationi∗) with the maximum "benefit" value, and fixXi∗ = 1. If Model
+1 is infeasible due to an insufficient number of stations, we go to the next iteration and deploy another
+station based on "benefit" values of the remaining undeployed stations. The algorithm stops when Model
+1 becomes feasible. Algorithm 1 illustrates steps of the Fix Algorithm.
+5 Benders Decomposition
+In this section, we use Benders Decomposition to solveIMRPLA. Section 5.1 introduces the application
+of traditional Benders Decomposition. Section 5.2 discusses extra feasibility cuts.
+5.1 Traditional Benders Decomposition
+The motivation behind Benders Decomposition is: we may divide variables into two categories: binary
+variablesv=(X,Y,Z c,Z s,β,τ) and continuous variablesu=(D,S arrive,S depart,T arrive,T depart,γ,
+η,F). For simplicity, we formulateIMRPLAas the model below. Let’s name this modelOP(Original
+Problem).
+OP:Minimizec ⊺u+f v(3a)
+Subject toAu+Dv≥b(3b)
+v∈V(3c)
+u≥0(3d)
+OP(Model (3)) is equivalent toIMRPLA. In the objective function (3a), coefficientscandf
+correspond to those of the continuous and binary variables in (1a), respectively. Constraints (3b) are
+equivalent to theIMRPLAconstraints that involve at least one variable fromuandv, respectively.
+Constraints (3c) represent theIMRPLAconstraints that containvvariables only. Constraints (3d)
+require alluvariables to be nonnegative.
+For fixed value ofvvariables (ˆv),OPis given by Model (4).
+fˆv+Minimizec ⊺u(4a)
+Subject toAu≥b−Dˆv(4b)
+u≥0(4c)
+16
+Algorithm 1Fix Algorithm
+Initialization
+Calculate total power demandEdemand ← P j∈J P|I|−1 i=o ei,i+1,j
+Calculate initial power supply in the originEinitial ← P j∈J btrain j
+Calculate the minimum amount of power required from stations∆E←Edemand −E initial
+fori∈Ido
+Maximum amount of power provided from stationi:¯Ei ←b station i +|J| ·ci.
+Total amount of power required from stationito the first downstream deployed station:edown i .
+Total amount of power required from the last upstream deployed station to stationi:eup i .
+Negative value of the fixed cost of stationi:−fi.
+Total amount of planned waiting time in stationifor all trains:P j∈J wij.
+Bi ← ¯Ei +e down i +e up i −α Ffi +α D P j∈J wij
+Sort stations in decreasing order ofBi
+Initialize the total amount of power from deployed stations˜E←0
+Initialize the set of deployed stationsIdeployed ←ϕ
+Initialize the set of undeployed stationsIundeploy ←I,X i ←0 (∀i∈I)
+while ˜E <∆Edo
+fori∈I undeploy do
+Updatee down i ,e up i &B i
+i∗ ←argmax i∈I undeploy{Bi}
+Deploy stationi ∗ by fixingX i∗ = 1in Model 1
+˜E← ˜E+ ¯Ei∗
+I deploy ←I deploy ∪ {i∗},I undeploy ←I undeploy\{i∗}
+FixY= 1to make each train load the maximum number of batteries allowed
+Iterations
+whileModel 1 is infeasibledo
+fori∈I undeploy do
+Updatee down i ,e up i &B i
+i∗ ←argmax i∈I undeploy{Bi}
+Deploy stationi ∗ by fixingX i∗ = 1in Model 1
+I deploy ←I deploy ∪ {i∗},I undeploy ←I undeploy\{i∗}
+ifModel 1 is feasiblethen
+Solve Model 1 and record the feasible solution
+Break
+}else{
+Go to the next iteration
+17
+Therefore, the resulting model to solve is the following subproblem (SP).
+SP:Minimizec ⊺u(5a)
+Subject toAu≥b−Dˆv(5b)
+u≥0(5c)
+Letπbe the dual variables of constraints (5b). The dual ofSP(DSP) is as follows.
+DSP:Maximize(b−Dˆv) ⊺π(6a)
+Subject toA ⊺π≤c(6b)
+π≥0(6c)
+LetPbe the total number of extreme points inDSP, andπ p be extreme pointp.DSPcan be
+reformulated as follows (Model (7)).
+Minimizew(7a)
+Subject tow≥(b−Dˆv) ⊺πp ∀p= 1, ..., P(7b)
+wfree (7c)
+Consequently,OPcan be reformulated as the followingMP(Master Problem) withvandwvariables.
+MP:Minimizef v+w(8a)
+Subject tow≥(b−Dv) ⊺ˆπp ∀p= 1, ..., P(8b)
+v∈V(8c)
+wfree (8d)
+For large problems where we cannot enumerate all extreme points ofDSP, letQ < P,Rbe the number
+of extreme rays we have found forDSP, andˆρr is extreme rayrofDSP. The RelaxedMP(RMP)
+with fewer constraints is given by Model (9).
+RMP:Minimizef v+w(9a)
+Subject tow≥(b−Dv) ⊺ˆπp ∀p= 1, ..., Q(9b)
+0≥(b−Dv) ⊺ ˆρr ∀r= 1, ..., R(9c)
+v∈V(9d)
+wfree (9e)
+Algorithm 2 illustrates steps of the Benders Decomposition. In initialization, we find an initial feasible
+solution by fixing allXandYvariables at one, then use Gurobi to solve theIMRPLA. We take the
+first feasible solution found by CPLEX and use it as an initial feasible solution. In each iteration, we solve
+RMPto get a lower bound LB, then solveDSPto add cuts. Specifically, there are two cases: (1) IfDSP
+is bounded, i.e.,SPis feasible, then we get an extreme point ofDSPand update the upper bound UB.
+If the UB and LB are close enough, then the current solution is roughly optimal and the algorithm stops.
+Otherwise, we add an optimality cut toRMPand go to the next iteration. (2) IfDSPis unbounded,
+i.e.,SPis infeasible, then we get an extreme ray ofDSP, add a feasibility cut toRMPand go to the
+18
+next iteration. The algorithm stops whenUB−LB UB falls below gapϵ.
+Algorithm 2Benders Decomposition Algorithm
+Initialization
+Find an initial feasible solution(ˆu,ˆv)toOP.
+SolveDSP: Max π{fˆv+ (b−Dˆv)⊺π|A⊺π≤c, π≥0}, get extreme pointˆπ1
+Q←1,R←0
+UB = Upper bound←c ⊺ ˆu+fˆv
+LB = Lower bound← −∞
+Iterations
+while UB−LB UB >gap ϵ do
+Step 1
+SolveRMP: Min v,w{f v+w|w≥(b−Dv) ⊺ˆπp ∀p= 1, ..., Q, v∈V, wfree}
+ifRMPis infeasibethenStop
+}else{
+Let(ˆv,ˆw)be the optimal solution toRMP
+LB←fˆv+ ˆw
+Go to Step 2
+Step 2
+SolveDSP: Max π{fˆv+ (b−Dˆv)⊺π|A⊺π≤c, π≥0}
+ifDSPis boundedthen
+Get and extreme pointˆπofDSP
+UB←fˆv+ (b−Dˆv) ⊺ˆπ
+if UB−LB UB ≤gap ϵ then
+The current solution is optimal, stop
+}else{
+Add optimality cutw≥(b−Dv) ⊺ˆπtoRMP,Q←Q+ 1
+Go the the next iteration
+}else{
+Get an extreme rayˆρofDSP
+Add feasibility cut0≥(b−Dv) ⊺ ˆρtoRMP,R←R+ 1
+Go to the next iteration
+5.2 Extra Feasibility Cuts
+To fasten the Benders Decomposition procedure, we add following extra feasibility cuts toRMP. The
+purpose of adding these feasibility cuts is to preventRMPfrom giving integer solutions that are feasible
+toRMPbut infeasible toSP.
+1. Feasibility cuts forBvariables
+From constraints (1m) and (1n), we can conclude thatBijk = 0indicates the power in the battery of
+consistktrainjis used up (SOC=0) when trainjarrives at stationi. VariableB ijk = 1indicates
+the power in the battery of consistktrainjis not used up (SOC>0) when trainjarrives at station
+i. Therefore, whenB ijk = 0, the power in batteries of consists 1, ...,k−1must have been used up,
+i.e., Pk−1 k′=1 Bijk ′ = 0. Similarly, whenBijk = 1, the SOC in batteries of consistsk+ 1, ...,|Kj|must
+19
+be100%, i.e., P|Kj | k′=k+1 Bijk ′ =|K j| −k. The feasibility cuts are as follows.
+k−1X
+k′=1
+Bijk ′ ≤(k−1)B ijk ∀i∈I, j∈J, k∈K j (10a)
+|Kj |X
+k′=k+1
+Bijk ′ ≥(|K j| −k)Bijk ∀i∈I, j∈J, k∈K j (10b)
+Bi,j,k+1 ≥B ijk ∀i∈I, j∈J, k∈K j (10c)
+2. Feasibility cuts for the connection betweenBandXvariables
+VariableB ijk = 0indicates the SOC of batterykin trainjequals 0 when it arrives at locationi.
+Leti ′ be the location immediately succeeding stationi. When arriving at locationi, if all batteries
+in trainjhave a SOC of zero, and the power required from locationitoi ′ is greater than zero
+(ei,i′,j >0), then a charging/swapping station must be deployed in locationi. In other words, ifP
+k∈Kj Bijk = 0ande i,i′,j >0, thenX i must equal 1. The feasibility constraint can be formulated
+as follows.
+M Xi ≥e i,i′,j −
+X
+k∈Kj
+Bijk ∀i∈I, j∈J(10d)
+Also, when arriving at locationi, if all batteries in trainjhave a SOC of zero, and the power required
+from locationitoi ′ is greater than zero (ei,i′,j >0), then a station must be deployed in locationi.
+In other words, ifP k∈Kj Bijk = 0ande i,i′,j >0, thenX i must equal 1. The feasibility constraint
+can be formulated as follows.
+M Xi ≥e i,i′,j(1−
+X
+k∈Kj
+Bijk )∀i∈I, j∈J(10e)
+3. Feasibility cuts for the connection betweenBandYvariables
+If consistkof trainjcarries a battery (Y jk = 1), then its SOC is assumed to be 100% when the train
+arrives the origin, and henceBo,j,k = 1. Otherwise,B o,j,k = 0. The feasibility cuts are as follows.
+Yjk =B o,j,k ∀j∈J, k∈K j (10f)
+4. Feasibility cuts for the connection amongB,Zc andZ s variables
+VariableB ijk = 0indicates the SOC of batterykin trainjequals 0 when it arrives at locationi. The
+amount of power that trainjcarries when it arrives at locationiranges betweenmin{0,P k∈Kj Bijk −
+1}and P k∈Kj Bijk. Leti ′ be the location immediately succeeding stationi. If the maximum
+potential amount of power in trainj(P k∈Kj Bijk) is smaller than the power required from location
+itoi ′ (ei,i′,j), then at least one battery of trainjmust be charged or swapped in locationi.
+M
+X
+k∈Kj
+(Z c ijk +Z s ijk )≥e i,i′,j − X
+k∈Kj
+Bijk ∀i∈I, j∈J(10g)
+Also, When arriving at locationi, if all batteries in trainjhave a SOC of zero, and the power required
+from locationitoi ′ is greater than zero (ei,i′,j >0), then at least one battery must be charged or
+swapped in locationi. In other words, if P k∈Kj Bijk = 0ande i,i′,j >0, then P k∈Kj (Zc ijk +Z s ijk )
+20
+must be greater than or equal to 1. The feasibility constraint can be formulated as follows.
+M
+X
+k∈Kj
+(Z c ijk +Z s ijk )≥e i,i′,j(1− X
+k∈Kj
+Bijk )∀i∈I, j∈J(10h)
+5. Feasibility cuts for the connection betweenBandβvariables
+We can make two indications from (1m) and (1n): (1) IfBijk = 0, then Pk k′=1 Sarrive ijk ′ = 0, and we
+have Pk k′=1 βijk ′0 =k. (2)IfB ijk = 1, thenP|Kj | k′=k+1 Sarrive ijk ′ =|K j|−k, andwehave P|Kj | k′=k+1 βijk ′n =
+|Kj| −k. The indications can be formulated as the following constraints.
+kX
+k′=1
+βijk ′0 ≥k(1−B ijk )∀i∈I, j∈J, k∈K j (10i)
+|Kj |X
+k′=k+1
+βijk ′n ≥(|K j| −k)Bijk ∀i∈I, j∈J, k∈K j (10j)
+βijk0 ≥1−B ijk ∀i∈I, j∈J, k∈K j (10k)
+βi,j,k+1,n ≥B ijk ∀i∈I, j∈J, k∈K j (10l)
+6 Computational Experiments
+The three algorithms - (1) integrated model with Piecewise Linear Approximation (PLA), (2) Fix Algo-
+rithm (FA), and (3) Benders Decomposition (BD) - have been tested to determine the quality of charge
+location selection and charge schedules provided. Section 6.1 clarifies the data and parameters. Section
+6.2 presents computational results. Section 6.3 conducts the sensitivity analysis on the impact of delay
+penalty weight (αD).
+6.1 Data and Parameters
+In this subsection, we introduce the data sets and parameters used in the computational experiments.
+6.1.1 Data sets
+We generate three groups of random instances: small, medium and large. The difference among the three
+groups lies in the number of stations along the route, including the origin and destination. There are 6,
+15 and 25 stations in small, medium and large instances, respectively.
+In the instances among all groups, the number of trains is 2 and each train can carry at most 3 batteries
+for energy storage. We assume each train drives at 100 km/hr, each fully-charged battery can provide
+7000 kWh energy, and a train consumes 30 kWh per kilometer. The distance between any two neighboring
+nodes follows normal distribution with a mean of 373 km and standard deviation of 146 km. These values
+are obtained from Google Maps, and calculated based on the distances between neighboring large cities
+from Sydney NSW to Perth WA. The fixed cost to deploy a station is assumed to be normally distributed
+and have a mean, standard deviation, lower and upper limit of 22, 3, 15 and 30 million dollars, respectively.
+Each potential station has 5 chargers and 10 fully-charged batteries on average, with standard deviations
+being 1 and 2. The ranges for the number of chargers and fully-charged batteries in each station are [1,
+10] and [5, 15], respectively. We assume a train has 50% of chance to wait in a station, so the average
+waiting time is 0 hour. The standard deviation is 0.3 hour. In addition, we assume the charge rate for
+21
+an empty battery is 40% per hour. The charge rate decreases approximately linearly as SOC grows. The
+swapping time (i.e., time to replace a used battery with a fully-charge battery on a train) is 2 hours.
+6.1.2 Parameters
+In the testing, we make the penalty weight for delay (αD) equal three times of the penalty weight for
+facility setup cost (αF). For PLA, we assume all trips can be completed within 100 hours, and each
+battery can be charged to 100% within 10 hours, and hence we divide the entire planning horizon into 100
+1-hour segments, and divide the charging period of a battery at each station into 10 1-hour segments.
+In PLA and FA tests, the tolerance gap is 1% and time limit is 30 minutes. In BD tests, the tolerance
+gap and time limit forRMPare fixed at 0.5% and 5 minutes, respectively. When the percentage gap
+between the upper and lower bound (gapϵ) falls below 5%, the algorithm stops. Parameterϵis fixed at
+0.000001 andMis fixed at 1000. All algorithms are coded in Python, and Gurobi 12.0.1 is called to solve
+all optimization models.
+6.2 Computational Results
+This subsection discusses experimental results for small, medium and large instances, respectively. To
+evaluate the performance of the proposed algorithms, we record three sets of statistics. The first set is the
+cost measures including the objective function value, the number of deployed stations, infrastructure setup
+cost, the average number of delayed hours for each train (excluding the planned waiting time), and the
+average time in charging and swapping batteries for each train. The second set of statistics describes the
+utilization of deployed stations such as the average number of hours in charging and swapping batteries in
+each deployed station. The last set of statistics is processing times. Table 9 in Appendix B presents the
+experimental results.
+6.2.1 Illustrative example
+For illustrative purpose, we use a small instance (instance 1 in Table 9) to display the optimal schedule
+obtained from PLA. The parameters such as waiting times, power requirement and travel time between
+each potential stations are listed in Appendix A.
+Table 2 presents the optimal schedule of the two trains from PLA. Column 1 displays the train, consist
+and their corresponding output statistics names. Columns 2-7 illustrate the arrival/departure time of
+a train in a potential station, charge/swap decision and arrival/departure SOC of the battery in each
+potential station. Note that in row 1, an asterisk sign indicates the deployment of a potential station.
+Vertically, rows 2-13 are the results for Train 1 and rows 14-25 are results for Train 2. Rows 2-4 are the
+arrival/departure time and delay of Train 1. Rows 5-7, 8-10, 11-13 display the battery status, charge/swap
+decision, and arrival/departure SOC of the battery in Train 1 Consists 1, 2 and 3, respectively. Rows 14-25
+are the schedule for Train 2, and the structure is similar to that of rows 2-13. For simplicity, we only
+discuss the schedule for Train 1 in this subsection.
+From the first row of Table 2, we can observe that Stations 1, 2 and 4 are deployed. Rows 5, 8 and
+11 in column 1 indicate that all three consists contain a battery. Assume the time horizon starts from
+hour 0, and Train 1 leaves the origin at hour 0 with all batteries having SOC=100%. There is no delay in
+origin by default. From Table 3 in Appendix A, we know that the it takes 7 hours and 1.73 fully-charged
+batteries for Train 1 to travel from the origin to Station 1, so the arrival time at Station 1 is hour 7.
+Due to the sequential battery management system, only batteries in Consists 1 and 2 contribute to the
+trip from the origin to Station 1. Specifically, the batteries in Consists 1 and 2 are depleted to 0% and
+22
+27.09% respectively. In Station 1, batteries in Consists 1 and 2 are charged for 0.55 hours to 22.05% and
+44.73%, respectively. Since there is no planned waiting time in Station 1, the delay is 0.55 hour. Train 1
+departs Station 1 at hour 7.55, spends 2.18 hours and 1.67 fully-charged batteries on its way to Station 2.
+It arrives at Station 2 in hour 9.73 with batteries in all three consists totally depleted. The three batteries
+are swapped in Station 2 with departure SOC=100%. Since the swapping takes 2 hours an the planned
+waiting time in Station 2 is 0.2 hour, the delay is 1.8 hours. Train leaves Station 2 in hour 11.73, spends
+3.38 hours and 1-battery power, arrives at Station 3 in hour 15.12. The battery in Consist 1 is almost
+completely depleted and those in Consists 2 and 3 have SOC=100%. Since Station 3 is not deployed, the
+battery can neither be swapped nor charged in Station 3. As planned, Train 1 waits in Station 3 for 0.14
+hour and leaves in hour 15.25 with unchanged SOC of batteries. There is no delay in Station 3. After
+3.60 hours, Train 1 arrives at Station 4 in hour 18.86. The SOCs of batteries in Consists 1, 2 and 3 are
+0%, 0% and 16.94%, respectively, which is a reflection of "1.83 fully-charged batteries" power requirement
+from Stations 3 to 4. All three batteries spend 2 hours getting swapped in Station 4 and Train 1 departs
+in hour 20.86. Since the planned waiting time in Station 4 is 0.24 hour, the delay is 1.76 hours. Then
+Train 1 travels 4.1 hours toward the destination. The SOCs of batteries in three Consists 1, 2 and 3 are
+0%, 0% and 73.47%, respectively, corresponding to the power requirement of 2.27 fully-charged batteries.
+Table 2: Schedule of the illustrative example obtained from PLA
+Trains/Consists Origin Station 1 * Station 2 * Station 3 Station 4 * Destination
+Train 1
+(Arrival time, departure time) (0.00, 0.00) (7.00, 7.55) (9.73, 11.73) (15.12, 15.25) (18.86, 20.86) (24.96, 24.96)
+Delay 0.00 0.55 1.80 0.00 1.76 0.00
+Consist 1 in Train 1 (with battery)
+Charge? swap? charge (0.55 hours) swap swap
+(Arrival SOC, departure SOC) (100.00%, 100.00%) (0.00%, 22.05%) (0.00%, 100.00%) (0.18%, 0.18%) (0.00%, 100.00%) (0.00%, 0.00%)
+Consist 2 in Train 1 (with battery)
+Charge? swap? charge (0.55 hours) swap swap
+(Arrival SOC, departure SOC) (100.00%, 100.00%) (27.09%, 44.73%) (0.00%, 100.00%) (100.00%, 100.00%) (0.00%, 100.00%) (0.00%, 0.00%)
+Consist 3 in Train 1 (with battery)
+Charge? swap? swap swap
+(Arrival SOC, departure SOC) (100.00%, 100.00%) (100.00%, 100.00%) (0.00%, 100.00%) (100.00%, 100.00%) (16.94%, 100.00%) (73.47%, 73.47%)
+Train 2
+(Arrival time, departure time) (0.00, 0.00) (2.10, 2.38) (6.44, 8.44) (11.92, 11.92) (15.42, 16.82) (21.94, 21.94)
+Delay 0.00 -0.00 1.70 0.00 1.39 0.00
+Consist 1 in Train 2 (with battery)
+Charge? swap? charge (0.28 hours) swap charge (1.39 hours)
+(Arrival SOC, departure SOC) (100.00%, 100.00%) (0.00%, 11.36%) (0.00%, 100.00%) (34.91%, 34.91%) (0.00%, 49.46%) (0.00%, 0.00%)
+Consist 2 in Train 2 (with battery)
+Charge? swap? charge (0.20 hours) swap charge (1.39 hours)
+(Arrival SOC, departure SOC) (100.00%, 100.00%) (58.70%, 62.77%) (0.00%, 100.00%) (100.00%, 100.00%) (0.00%, 49.46%) (0.00%, 0.00%)
+Consist 3 in Train 2 (with battery)
+Charge? swap? charge (0.00 hours) swap charge (1.39 hours)
+(Arrival SOC, departure SOC) (100.00%, 100.00%) (100.00%, 100.00%) (10.00%, 100.00%) (100.00%, 100.00%) (11.19%, 55.22%) (0.00%, 0.00%)
+6.2.2 Results analysis
+Table 9 in Appendix B presents the experimental results withαD = 3. After implementing PLA, FA and
+BD algorithms on small, medium and large instances, we have summarized the result measures in eight
+aspects: (1) the objective function value, (2) setup cost of all deployed stations, (3) the number of deployed
+stations, (4) the average delay time for each train, (5) the average time in charging batteries of each train,
+(6) the average time in swapping batteries of each train, (7) the average time in charging batteries at
+each deployed station, and (8) the average time in swapping batteries at each deployed station. For each
+result measure, we conduct paired t-test to verify whether there is significant difference among the three
+algorithms.
+23
+Objective function value.Figure 1 depicts the objective function value of the 30 instances from PLA,
+FA and BD algorithms. One obvious observation is that the curves of PLA (blue) and BD (red) almost
+overlap except for several large instances (instances 21-30), indicating the PLA and BD provide similar
+objective function values in small and medium instances. In large instances, BD offers a slightly lower
+objective function value than PLA. The paired t-test between PLA and BD has a p-value of 0.0346.
+Compared with PLA and BD, FA gives solutions with higher objective function values, and the difference
+becomes even more apparent as the problem size grows. The difference between BD and FA is significant
+with a p-value of9.35×10 −7. Therefore, BD has been verified to provide the lowest objective function
+value among the three algorithms.
+0
+100
+200
+300
+400
+500
+600
+700
+800
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Objective function value
+Instance ID
+Objective function value
+PLA FA BD
+Figure 1: The objective function values from PLA, FA and BD algorithms in each instance withαD = 3.
+Setup cost of deployed stations.Figure 2 illustrates the setup cost of all deployed stations and average
+delay time of each train. One observation which is similar to that from Figure 1 is that BD outperforms
+PLA and FA regarding the setup cost, despite the slight difference between PLA and BD. The p-values
+from the paired t-tests for FA-BD and PLA-BD pairs are4.42×10−7 and 0.5487, respectively, indicating
+the difference between FA and BD is significant, while that between PLA and BD is trivial.
+Average delay time for each train.The bars in Figure 2 illustrate the average delay time for each
+train. Note that in Figure 2, for each algorithm, the colors for the setup cost and average delay time are
+similar with different shades. For example, for FA, the curve for setup cost is dark green, and the bar
+for delay time is light green. From the bars, we may conclude that for small instances, FA gives longer
+delay times than PLA and BD. In large instances, BD tends to provide shorter delay times, compared
+with PLA and FA. The p-values from paired t-tests for PLA-FA, PLA-BD and FA-BD pairs are 0.0456,
+0.0382 and 0.3599, respectively. The test results indicate (i) PLA provides significantly longer delay times
+(15.32 hours) than FA and BD (15.10 and 14.94 hours), and (ii) the average delay times from FA and BD
+are similar.
+24
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0
+100
+200
+300
+400
+500
+600
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Average number pf delayed hours for each train
+Setup cost of deployed stations
+Instance ID
+Setup Cost of Stations and Delay of Each Train
+Delay - PLA Delay - FA Delay - BD Setup cost - PLA Setup cost - FA Setup cost - BD
+Figure 2: Setup cost of all stations and delay for each train from PLA, FA and BD algorithms in each
+instance withα D = 3.
+Average time in battery charging and swapping for each train.Figure 3 depicts the average time
+in battery charging and swapping for each train. Note that in Figure 3, for each algorithm, the markers
+for charging and swapping have the same color (with different shades) and same shape (with and without
+solid fill). For example, the PLA algorithm is denoted by blue rounds/circles. The marker is a dark blue
+round (with solid fill) for battery charging, and a light blue circle (without solid fill) for battery swapping.
+From Figure 3 and paired t-tests, we have following conclusions.
+1. In most instances, the three algorithms tend to refuel trains by battery swapping instead of battery
+charging, i.e., markers with lighter colors are above those with darker colors. This can be explained
+by the fact that battery swapping takes much shorter (2 hours) than charging battery to 100%
+(about 10 hours). Therefore, whenever the deployed station has fully-charged batteries available,
+the algorithms would select the swapping option for trains.
+2. FA provides a longer battery charging time for each train (20.20 hours) than PLA (17.18 hours)
+and BD (14.37 hours), i.e., the dark green diamonds tend to appear above dark blue rounds and
+red triangles. From the paired t-tests, there has been verified significant difference among the three
+algorithms. The p-values for PLA-FA, PLA-BD and FA-BD pairs are 0.0404, 0.0460 and 0.0005,
+respectively.
+3. FA offers schedules with a shorter swapping time for each train (27.77 hours) than PLA (30.80
+hours) and BD (32.83 hours), i.e., the light green diamonds are below light blue circles and pink
+triangles. This complements our second observation of longest charging time from FA. The p-values
+for PLA-FA, PLA-BD and FA-BD pairs are 0.0201, 0.0432 and 0.0003, respectively, indicating the
+three algorithms provide significantly different battery swapping times for each train.
+25
+0
+10
+20
+30
+40
+50
+60
+70
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Average number of hours
+Instance ID
+Average Charging and Swapping Time of Each Train
+Charge - PLA Charge - FA Charge - BD Swap - PLA Swap - FA Swap - BD
+Figure 3: The average time in charging and swapping for each train from PLA, FA and BD algorithms in
+each instance withαD = 3.
+Average time in battery charging and swapping at each deployed station.Figure 4 plots the
+average time in battery charging and swapping at each deployed station from the three algorithms. We
+use the markers in the same manner as that in Figure 3, i.e., for each algorithm, the markers for charging
+and swapping have the same color (with different shades) and same shape (with and without solid fill).
+From Figure 4 and paired t-tests, we can draw following conclusions.
+1. The three algorithms tend to select the battery swapping option instead of charging option in de-
+ployed stations, i.e., markers with lighter colors are mostly above those with darker colors. This
+observation is same as that of refueling times for each train, and it perfectly matches the first con-
+clusion from Figure 3.
+2. BD, PLA and FA algorithms provide battery charging times at each station in increasing order
+(2.33, 2.64 and 2.66 hours, respectively). However, paired t-tests have shown that the difference is
+insignificant with p-values of PLA-FA, PLA-BD and FA-BD pairs being 0.9213, 0.0533 and 0.0546,
+respectively.
+3. FA gives shortest battery swapping times at each station (4.52 hours), followed by PLA (5.42 hours),
+and BD offers longest battery swapping times (5.65 hours). The difference is significant with veri-
+fication from paired t-tests. The p-values of PLA-FA, PLA-BD and FA-BD pairs are8.18×10−5,
+0.0445 and7.45×10 −7, respectively.
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Average number of hours
+Instance ID
+Average Charging and Swapping Time in Each Station
+Charge - PLA Charge - FA Charge - BD Swap - PLA Swap - FA Swap - BD
+Figure 4: The average time in charging and swapping at each station from PLA, FA and BD algorithms
+in each instance withαD = 3.
+26
+6.3 Sensitivity Analysis on the Impact of Delay Penalty Weightα D
+In this subsection, we investigate the impact of the delay penalty weight (αD) on the station deployment
+and schedules produced by the three algorithms. The parameterα D is used to penalize the objective
+function for each hour of extra delay. A smallerα D can lead to lower facility setup cost but a larger
+amount of delay. On the other hand, an unreasonably highαD value would result in minimum delay but
+unnecessarily high facility setup cost. Therefore, it is essential to figure out how each cost measure varies
+as theα D value changes. In Section 6.2, the computational results are obtained withαD = 3. In this
+subsection, we fixαD = 5and compare the results with those fromαD = 3.
+To investigate howα D impacts cost measures under each algorithm, we record the cost measures
+obtained from each algorithm (PLA, FA and BD) with bothαD = 3andα D = 5. Then we compare the
+two costs fromαD = 3andα D = 5, conduct paired t-test, and calculate the difference (∆) by subtracting
+the cost ofαD = 3fromα D = 5. All costs and test statistics are available in Tables 10 and 11 in Appendix
+C.
+Figures 5-9 plot the difference in each of the cost measures from the three algorithms betweenαD = 3
+andα D = 5. The horizontal axis is the instance ID, and the vertical axis is the difference in cost mea-
+sure. Each curve color represents an algorithm. The colors for PLA, FA and BD are blue, green and red,
+respectively, which are similar to figures in Section 6.2.
+Objective function value.Figure 5 plots the difference in the objective function value fromα D = 3
+andα D = 5. All three curves are above the 0-horizontal axis, indicating a largerαD would result in a
+higher objective function value. The difference is significant with p-values of7.95×10−9,9.72×10 −10
+and1.90×10 −8 for PLA, FA and BD algorithms, respectively. The significant difference might be due
+to a higher setup cost, or simply a larger constant (αD) value when we calculate the total cost. Further
+verification on the setup and delay costs is necessary and will be discussed below. The other observation
+from Figure 5 is that in small and medium instances, the three algorithms give similar objective function
+values. In large instances, however, the deviation increases. BD provides solutions with higher objective
+function values than PLA and FA, indicating that BD and large instances are more sensitive toαD.
+0
+30
+60
+90
+120
+150
+180
+123456789 1 0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 2 0 2 1 2 2 2 3 2 4 2 5 2 6 2 7 2 8 2 9 3 0
+Difference in the objective function value
+Instance ID
+Difference in Objective Function Value
+PLA FA BD
+Figure 5: The difference in the objective function value from PLA, FA and BD algorithms in each instance
+betweenα D = 3andα D = 5.
+Setup cost of deployed stations.Figure 6 illustrates the difference in setup cost of deployed stations.
+The first observation is FA gives the same setup cost whenαD = 3andα D = 5in all instances, so FA is not
+sensitive toα D regarding setup cost. For PLA and BD, the difference is almost zero in small and medium
+instances, but in large instances, they provide higher setup costs whenαD = 5. The difference from BD is
+27
+even more tremendous than that from PLA, so BD is the most sensitive algorithm among the three. The
+second observation is the differences in setup costs from the three algorithms are all non-negative. This
+can be explained by the fact that a higherαD value encourages the algorithm to deploy more stations so
+that delay could be further reduced, and hence the setup cost increases. We conduct paired t-tests for
+PLA and BD, and the p-values are 0.0760 and 0.0559, respectively, indicating insignificant difference.
+0
+20
+40
+60
+80
+123456789 1 0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 2 0 2 1 2 2 2 3 2 4 2 5 2 6 2 7 2 8 2 9 3 0
+Difference in the setup cost of stations
+Instance ID
+Difference in Setup Cost of Stations
+PLA FA BD
+Figure 6: The difference in the setup cost of all deployed stations from PLA, FA and BD algorithms in
+each instance betweenαD = 3andα D = 5.
+Average delay time for each train.Figure 7 depicts the difference in average delay time of each train
+from the three algorithms betweenαD = 3andα D = 5. As we can observe, the impact ofαD varies with
+the problem size. In small instances,α D has little impact on the average delay. In medium instances,
+FA fluctuates most severely among the three algorithms. In large instances, the difference values from
+BD are higher than those from PLA and FA. Furthermore, it is apparent that for each algorithm, the
+difference becomes more obvious as the problem size grows. The reason is: in small instances, we have
+fewer potential stations, so each algorithm is more likely to find the same optimal solution forαD = 3and
+αD = 5. When the problem size grows, the number of feasible solutions increases, and hence the possibility
+of having the same optimal solution for differentαD values decreases, making the curve fluctuates more
+sharply.
+It is surprising that not all differences are non-positive. We expected the difference in delay to be
+smaller than or equal to zero because a higherαD value would result in shorter delay. The result, however,
+contradicts our expectation. This is because in medium and large instances with time limit, the three
+algorithmscannotguaranteeoptimalsolutions, sothesolutionsbehindFigure7arenotnecessarilyoptimal,
+and the difference in delay can be positive. To further verify the impact ofαD on delay, we conduct
+paired t-tests for all three algorithms. The p-values are 0.3346, 0.3922 and 0.4566 for PLA, FA and BD,
+respectively, indicating the impact ofαD is trivial on the average delay time of each train.
+28
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+123456789 1 0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 2 0 2 1 2 2 2 3 2 4 2 5 2 6 2 7 2 8 2 9 3 0
+Difference in average delay time of each train 
+(hr)
+Instance ID
+Difference in the Average Delay Time of Each Train
+PLA FA BD
+Figure 7: The difference in the average delay time of each train from PLA, FA and BD algorithms in each
+instance betweenα D = 3andα D = 5.
+Average time in battery charging and swapping for each train.Figure 8 illustrates the difference
+in average time on battery charging and swapping for each train. The curve colors are defined in the same
+manner as that of Figures 3 and 4 in Section 6.2, i.e., for each algorithm, the curves for charging and
+swapping have the same color but different shades. Specifically, the charging curves for PLA, FA and BD
+are dark blue, dark green and red, respectively. Similarly, the swapping curves for PLA, FA and BD are
+light blue, light green and pink, respectively. From Figure 8 and paired t-tests, we can draw the following
+conclusions.
+1. For each algorithm, the impact ofαD on the difference in charging and swapping time for each train
+becomes more obvious as the problem size increases. In small instances, the charging and swapping
+times of each train are hardly impacted byαD. In medium and large instances, however, the charging
+and swapping time of each train fluctuates with theαD value, and the fluctuation becomes sharper
+as the problem size grows. This matches the observation of setup cost and delay in Figures 6 and 7.
+2. For each algorithm, the sum of difference in charging time and swapping time is close to zero, i.e.,
+the curves with the same (but different shades) are roughly symmetric with respect to the horizontal
+axis. Let’s take BD for example: for each instance, if the red marker is above (below) the horizontal
+axis, then the pink marker is below (above) the horizontal axis, and the red and pink markers have
+similar absolute distances to the horizontal axis. This can be explained by the fact that to support
+the train to travel from the origin to destination, the total amount of time in battery refueling should
+not be cut tremendously, and hence the reduction of time in charging (swapping) is compensated by
+the increase of time in swapping (charging).
+3. The paired t-tests have verified the significant impact ofαD on both battery charging and swapping
+times of each train from BD with p-values of 0.0468 and 0.0163, respectively. For PLA and FA,
+the p-values are greater than 0.05 with respect to both charging and swapping times, indicating
+insignificant impact ofαD.
+29
+-25
+-20
+-15
+-10
+-5
+0
+5
+10
+15
+20
+25
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Difference in average battery charging/swapping 
+time of each train (hr)
+Instance ID
+Difference in Average Battery Charging and Swapping Time of Each Train
+Charge - PLA Charge - FA Charge - BD Swap - PLA Swap - FA Swap - BD
+Figure 8: The difference in the average battery charging and swapping time of each train from PLA, FA
+and BD algorithms in each instance betweenαD = 3andα D = 5.
+Average time in battery charging and swapping at each deployed station.Figure 9 plots the
+difference in average battery charging and swapping time at each deployed station from three algorithms.
+The curve colors are used in the same manner as that in Figure 8. Following conclusions can be drawn
+from Figure 9 and paired t-tests.
+1. By comparing Figures 8 and 9, we observe that despite the different values over the vertical axis, the
+curves in the two figures have roughly the same patterns and shapes within each group of instance
+size. This is because the total amount of time in charging/swapping are same from Figures 8 and
+9, and if we divide the total time by the number of deployed stations which is also identical for
+instances in the same group, then the pattern keeps unchanged within that group. Therefore, we
+can draw similar conclusions to those from Figure 8: (i) for each algorithm, the impact ofαD on
+the difference in charging and swapping time at each deployed station becomes more obvious as the
+problem size increases, (ii) for each algorithm, the sum of difference in charging time and swapping
+time at each deployed station is close to zero.
+2. When we solve the problem by BD,αD is proved to have significant impact on the charging and
+swapping time at each deployed station with p-values of 0.0481 and 0.0081, respectively. In PLA
+and FA, the impact ofαD is insignificant with p-values greater than 0.05.
+-3
+-2
+-1
+0
+1
+2
+3
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Difference in average battery charging/swapping 
+time at each station (hr)
+Instance ID
+Difference in Average Battery Charging and Swapping Time at Each Station
+Charge - PLA Charge - FA Charge - BD Swap - PLA Swap - FA Swap - BD
+Figure 9: The difference in the average battery charging and swapping time at each deployed station from
+PLA, FA and BD algorithms in each instance betweenαD = 3andα D = 5.
+30
+7 Conclusions and Discussions
+In this study, we investigated an optimization challenges of electrifying battery electric freight trains. By
+developing a tailored framework for charge station selection and charge/swap scheduling, we tackle the
+unique complexities of rail systems, which, unlike trucks, can accommodate multiple battery consists and
+specialized battery cars. Our model integrates key decisions, including the strategic placement of charge
+stations, the scheduling of charging and swapping activities for each battery consist, and the allocation of
+battery modules across trains. The decision variables include the location selection of charge stations and
+the scheduling of charging/swapping for each train battery in deployed stations. The objective function
+balances government budget constraints and freight train efficiency by minimizing total facility setup costs
+anddelayscausedbychargingorswappingoperations. Constraintssuchasstationcapacity, vehiclebattery
+capacity, charge/swap decisions, energy demand, and sequential battery management are incorporated to
+reflect the operational realities of freight rail.
+To solve this multifaceted facility location and scheduling problem, we proposed three algorithms to
+solve the optimization problem: (i) a MILP model linearized by a Rectangle Piecewise Linear Approx-
+imation method (D’Ambrosio et al. 2010), (ii) a Fixed Algorithm, and (iii) Benders Decomposition.
+Computational experiments across small, medium, and large instances demonstrate that BD consistently
+delivers the lowest objective function values, closely followed by the PLA method, while FA yields the
+highest values. Sensitivity analysis further reveals that the BD algorithm significantly impacts refueling
+times for individual trains and stations, particularly when adjusting delay penalty weights, highlighting
+its robustness for practical applications.
+This research fills a critical gap in the literature, as prior studies on battery-electric vehicle electrifica-
+tion have primarily focused on trucks, neglecting the unique challenges of freight rail, such as managing
+multiple battery consists and coordinating charging/swapping across extensive rail networks. By drawing
+on methodologies from truck electrification and adapting them to rail-specific constraints—such as sta-
+tion locations, battery capacities, and charge/swap options—this study provides a novel framework for
+advancing sustainable freight rail systems.
+However, this study has limitations that warrant further exploration. First, it does not account for
+hours-of-service constraints for train drivers, such as mandatory breaks after extended driving periods,
+which could enhance crew welfare and operational realism. Second, the model assumes that charging
+and swapping cannot occur simultaneously at a station, a simplification that limits flexibility compared to
+real-world practices where such hybrid approaches could improve efficiency. Finally, the current framework
+focuses on single-trip scenarios, whereas freight trains often operate round trips, requiring models that
+account for return journeys with or without cargo.
+Future research should address these limitations by incorporating driver scheduling constraints, en-
+abling simultaneous charging and swapping, and extending the model to round-trip operations. Addition-
+ally, exploring dynamic energy pricing and vehicle-to-grid integration could further optimize costs and
+enhance the resilience of electrified freight rail networks. By addressing these challenges, this study lays
+a foundation for transformative advancements in sustainable freight transportation, paving the way for
+more efficient and environmentally friendly freight rail systems.
+31
+Appendix A Data for the Illustrative Example (Instance 1)
+This appendix presents the data of the illustrative example. Table 3 shows the waiting time of trains at
+each station. Tables 4 and 5 display the number of fully charged batteries and travel time (in hours) of
+train 1 between any two potential stations. Similarly, Tables 6 and 7 introduce the number of fully charged
+batteries and travel time of train 2 between any two potential stations. Table 8 clarifies the maximum
+number of chargers and fully charged batteries at each potential station.
+Table 3: Waiting time (in hours) of trains at each station in the illustrative example
+(Train, Station) Origin Station 1 Station 2 Station 3 Station 4 Destination
+Train 1 0.00 0.00 0.20 0.14 0.24 0.00
+Train 2 0.00 0.28 0.30 0.00 0.00 0.00
+Table 4: Number of fully charged batteries required from Train 1 to travel between any two potential
+stations in the illustrative example
+No. full batteries Origin Station 1 Station 2 Station 3 Station 4 Destination
+Origin 0.00 1.73 3.40 4.40 6.23 8.49
+Station 1 1.73 0.00 1.67 2.67 4.50 6.76
+Station 2 3.40 1.67 0.00 1.00 2.83 5.10
+Station 3 4.40 2.67 1.00 0.00 1.83 4.10
+Station 4 6.23 4.50 2.83 1.83 0.00 2.27
+Destination 8.49 6.76 5.10 4.10 2.27 0.00
+Table 5: Travel time required from Train 1 to travel between any two potential stations in the illustrative
+example
+Travel Time (hr) Origin Station 1 Station 2 Station 3 Station 4 Destination
+Origin 0.00 7.00 9.18 12.57 16.17 20.27
+Station 1 7.00 0.00 2.18 5.57 9.17 13.27
+Station 2 9.18 2.18 0.00 3.38 6.99 11.09
+Station 3 12.57 5.57 3.38 0.00 3.60 7.71
+Station 4 16.17 9.17 6.99 3.60 0.00 4.10
+Destination 20.27 13.27 11.09 7.71 4.10 0.00
+32
+Table 6: Number of fully charged batteries required from Train 2 to travel between any two potential
+stations in the illustrative example
+No. full batteries Origin Station 1 Station 2 Station 3 Station 4 Destination
+Origin 0.00 1.41 3.05 3.71 5.94 7.48
+Station 1 1.41 0.00 1.64 2.29 4.53 6.07
+Station 2 3.05 1.64 0.00 0.65 2.89 4.43
+Station 3 3.71 2.29 0.65 0.00 2.24 3.78
+Station 4 5.94 4.53 2.89 2.24 0.00 1.54
+Destination 7.48 6.07 4.43 3.78 1.54 0.00
+Table 7: Travel time required from Train 2 to travel between any two potential stations in the illustrative
+example
+Travel Time (hr) Origin Station 1 Station 2 Station 3 Station 4 Destination
+Origin 0.00 2.10 6.16 9.64 13.14 18.26
+Station 1 2.10 0.00 4.06 7.54 11.04 16.16
+Station 2 6.16 4.06 0.00 3.48 6.98 12.10
+Station 3 9.64 7.54 3.48 0.00 3.50 8.62
+Station 4 13.14 11.04 6.98 3.50 0.00 5.12
+Destination 18.26 16.16 12.10 8.62 5.12 0.00
+Table 8: The maximum number of chargers and fully charged batteries at each potential station in the
+illustrative example
+Stations Fixed Cost No. chargers No. batteries
+Station 1 21.72 7 8
+Station 2 21.47 5 8
+Station 3 29.02 6 9
+Station 4 30.00 3 13
+33
+Appendix B Output of Computational Experiments forα D = 3
+Table 9 presents the experimental results of small, medium and large instances from PLA, FA and BD algorithms. The first and second columns
+identify the instance group and ID, respectively. Columns 3-26 display 8 result measures from PLA, FA and BD algorithms. Columns 3-5 list
+the objective function value. Columns 6-8, 9-11 and 12-14 discuss the number of deployed stations, total setup cost and the average number
+of delayed hours for each train, respectively. Columns 15-17 and 18-20 present the average time each train spends in charging and swapping
+batteries, respectively. Columns 21-23 and 24-26 show the average time each deployed station spends in charging and swapping batteries,
+respectively.
+Table 9: Results output from PLA, FA and BD algorithms for small, medium and large instances withαD = 3.
+Instance Group Instance ID Objective function value Number of deployed stations Fixed cost of deployed stations Average number of de- layed hours for each train Average number of hours in charging for each train Average number of hours in swapping for each
+train
+Average number of hours in
+charging for each deployed
+station
+Average number of hours
+in swapping for each de-
+ployed station
+PLA FA BD PLA FA BD PLA FA BD PLA FA BD PLA FA BD PLA FA BD PLA FA BD PLA FA BD
+Small
+1 94.81 108.45 94.81 3 3 3 73.19 80.74 73.19 3.60 4.62 3.60 2.89 5.16 2.71 9 9.00 9 1.92 3.44 1.81 6.00 6.00 6.00
+2 87.05 109.24 87.05 3 4 3 64.81 87.77 64.81 3.71 3.58 3.71 5.71 5.62 5.71 6 6.00 6 3.81 2.81 3.81 4.00 3.00 4.00
+3 85.71 101.56 85.71 3 4 3 63.31 82.11 63.31 3.73 3.24 3.73 4.24 6.32 4.24 8 6.00 8 2.83 3.16 2.83 5.33 3.00 5.33
+4 122.59 122.59 122.59 4 4 4 92.47 92.47 92.47 5.02 5.02 5.02 3.80 3.80 3.80 11 11.00 11 1.90 1.90 1.90 5.50 5.50 5.50
+5 92.52 110.55 92.52 3 4 3 70.40 92.37 70.40 3.69 3.03 3.69 6.31 4.31 5.81 6 6.00 6 4.21 2.16 3.87 4.00 3.00 4.00
+6 100.40 100.40 100.40 3 3 3 70.95 70.95 70.95 4.91 4.91 4.91 3.57 0.56 0.57 11 13.00 13 2.38 0.37 0.38 7.33 8.67 8.67
+7 98.98 117.99 98.98 3 4 3 71.43 91.36 71.43 4.59 4.44 4.59 3.13 2.72 3.13 12 12.00 12 2.09 1.36 2.09 8.00 6.00 8.00
+8 72.41 98.11 72.41 3 4 3 54.62 80.76 54.62 2.97 2.89 2.97 3.42 3.26 3.42 6 6.00 6 2.28 1.63 2.28 4.00 3.00 4.00
+9 103.01 103.01 103.01 4 4 4 80.53 80.53 80.53 3.75 3.75 3.75 4.20 4.16 4.16 8 9.00 8 2.10 2.08 2.08 4.00 4.50 4.00
+10 115.76 115.75 115.80 4 4 4 89.83 89.83 89.83 4.32 4.32 4.33 2.39 2.38 2.37 11 11.00 11 1.19 1.19 1.19 5.50 5.50 5.50
+Medium
+11 307.39 329.44 306.94 11 12 11 233.01 255.39 233.01 12.40 12.34 12.32 11.16 13.45 7.40 30 27.00 33 2.03 2.24 1.34 5.45 4.50 6.00
+12 333.34 349.77 333.68 12 13 12 253.54 272.24 253.54 13.30 12.92 13.36 11.85 10.17 15.29 29 30.00 26 1.97 1.56 2.55 4.83 4.62 4.33
+13 317.25 359.38 317.50 11 13 11 234.22 279.69 234.22 13.84 13.28 13.88 8.29 11.97 8.42 35 29.00 36 1.51 1.84 1.53 6.36 4.46 6.55
+14 342.55 374.94 342.14 11 13 11 243.88 285.01 243.88 16.45 14.99 16.38 7.80 12.92 3.82 43 36.00 45 1.42 1.99 0.70 7.82 5.54 8.18
+15 334.01 350.65 338.15 12 13 12 249.85 264.85 249.85 14.03 14.30 14.72 9.08 16.27 13.97 35 29.00 33 1.51 2.50 2.33 5.83 4.46 5.50
+16 356.57 384.44 360.63 12 13 12 264.24 289.87 264.24 15.39 15.76 16.07 12.01 13.70 17.58 36 36.00 32 2.00 2.11 2.93 6.00 5.54 5.33
+17 369.52 369.52 370.29 13 13 13 282.61 282.61 282.61 14.48 14.48 14.61 16.33 17.36 15.01 30 30.00 31 2.51 2.67 2.31 4.62 4.62 4.77
+18 378.25 380.30 381.05 13 13 13 285.46 285.46 285.46 15.46 15.81 15.93 13.34 13.40 15.03 36 36.00 36 2.05 2.06 2.31 5.54 5.54 5.54
+19 316.65 366.24 318.35 11 13 11 225.96 277.47 225.96 15.11 14.79 15.40 9.71 12.25 13.96 38 35.00 36 1.76 1.89 2.54 6.91 5.38 6.55
+20 326.40 350.70 326.40 11 12 11 240.29 263.96 240.29 14.35 14.46 14.35 9.30 16.04 9.30 36 30.00 36 1.69 2.67 1.69 6.55 5.00 6.55
+Large
+21 608.06 645.09 597.69 21 23 21 442.16 484.28 442.16 27.65 26.80 25.92 42.84 42.88 28.56 45 44.00 56 4.08 3.73 2.72 4.29 3.83 5.33
+22 583.34 657.84 585.82 19 23 19 420.99 502.20 420.99 27.06 25.94 27.47 25.48 43.69 21.47 60 41.00 64 2.68 3.80 2.26 6.32 3.57 6.74
+23 552.54 653.48 550.45 19 23 19 397.20 492.89 397.20 25.89 26.77 25.54 18.86 44.08 23.93 61 39.00 55 1.98 3.83 2.52 6.42 3.39 5.79
+24 584.53 630.47 562.13 20 22 19 441.92 487.61 424.95 23.77 23.81 22.86 50.00 53.17 34.91 30 27.00 42 5.00 4.83 3.67 3.00 2.45 4.42
+25 611.34 679.97 596.44 20 23 20 437.69 508.27 436.25 28.94 28.62 26.70 35.36 47.21 27.00 54 42.00 57 3.54 4.11 2.70 5.40 3.65 5.70
+26 644.18 682.38 627.96 21 23 21 469.56 515.46 469.56 29.10 27.82 26.40 45.73 27.84 18.93 44 57.00 63 4.36 2.42 1.80 4.19 4.96 6.00
+27 510.93 578.18 510.80 17 20 17 369.43 436.62 369.73 23.58 23.59 23.51 20.76 37.51 26.19 51 37.00 48 2.44 3.75 3.08 6.00 3.70 5.65
+28 606.32 677.49 597.26 20 23 20 446.02 519.16 452.87 26.72 26.39 24.06 40.03 45.86 26.05 45 40.00 53 4.00 3.99 2.61 4.50 3.48 5.30
+29 643.77 656.81 636.46 22 23 22 476.19 497.27 476.19 27.93 26.59 26.71 49.24 43.33 36.98 41 45.00 50 4.48 3.77 3.36 3.73 3.91 4.55
+30 702.07 727.35 689.73 22 23 22 499.34 525.53 499.34 33.79 33.64 31.73 38.54 44.74 31.33 57 54.00 63 3.50 3.89 2.85 5.18 4.70 5.73
+Average 346.74 376.40 344.11 11.70 13.07 11.67 254.84 285.82 254.46 15.32 15.10 14.94 17.18 20.20 14.37 30.80 27.77 32.83 2.64 2.66 2.33 5.42 4.52 5.65
+Appendix C Output of Results Comparison betweenα D = 3andα D = 5
+Tables 10 and 11 present the sensitivity analysis results on each cost measure from PLA, FA and BD algorithms betweenαD = 3andα D = 5.
+In Table 10, we discuss the impact ofαD on the objective function value, the number of deployed stations, the setup cost, and the average
+delay time of each train. Table 11 displays the sensitivity analysis on the average battery charging/swapping time of each train, and the average
+battery charging/swapping time at each deployed station. Specifically, in both Tables 10 and 11, the first two columns tell the instance group
+and instance ID. Then we divide the remaining columns into four groups, each group representing a cost measure with nine columns. The nine
+columns are further split into three sub-groups, and each sub-group discusses the impact ofαD on the cost measure from a particular algorithm
+(PLA, FA or BD). For example, the first 9-column group is columns 3-11, which discusses the objective function value. Columns 3-5, 6-8 and
+9-11 are for PLA, FA and BD algorithms, respectively. Columns 3, 6 and 9 are the objective function values from the three algorithms when
+αD = 3. Columns 4, 7 and 10 are the objective function values from the three algorithms whenαD = 5. Columns 5, 8 and 11 are the difference
+34
+in the objective function value betweenαD = 3andα D = 5. The∆values in these columns are calculated by subtracting the objective function
+value whenα D = 3from that whenα D = 5.
+Table 10: Output of results comparison on the objective function value, the number of deployed stations, setup cost of deployed stations and
+average delay time for each train from PLA, FA and BD algorithms betweenαD = 3andα D = 5.
+Instance Group Instance ID
+Objective function value Number of deployed stations Fixed cost of deployed stations Average number of delayed hours for each train
+PLA FA BD PLA FA BD PLA FA BD PLA FA BD
+αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆
+Small
+1 94.81 109.23 14.41 108.45 126.92 18.47 94.81 109.23 14.41 3 3 0.00 3 3 0.00 3 3 0.00 73.19 73.19 0.00 80.74 80.74 0.00 73.19 73.19 0.00 3.60 3.60 0.00 4.62 4.62 0.00 3.60 3.60 0.00
+2 87.05 101.88 14.83 109.24 123.55 14.31 87.05 101.88 14.83 3 3 0.00 4 4 0.00 3 3 0.00 64.81 64.81 0.00 87.77 87.77 0.00 64.81 64.81 0.00 3.71 3.71 0.00 3.58 3.58 0.00 3.71 3.71 0.00
+3 85.71 100.65 14.93 101.56 114.53 12.97 85.71 100.65 14.93 3 3 0.00 4 4 0.00 3 3 0.00 63.31 63.31 0.00 82.11 82.11 0.00 63.31 63.31 0.00 3.73 3.73 0.00 3.24 3.24 0.00 3.73 3.73 0.00
+4 122.59 142.67 20.08 122.59 142.67 20.08 122.59 142.67 20.08 4 4 0.00 4 4 0.00 4 4 0.00 92.47 92.47 0.00 92.47 92.47 0.00 92.47 92.47 0.00 5.02 5.02 0.00 5.02 5.02 0.00 5.02 5.02 0.00
+5 92.52 107.27 14.75 110.55 122.67 12.12 92.52 107.27 14.75 3 3 0.00 4 4 0.00 3 3 0.00 70.40 70.40 0.00 92.37 92.37 0.00 70.40 70.40 0.00 3.69 3.69 0.00 3.03 3.03 0.00 3.69 3.69 0.00
+6 100.40 120.03 19.63 100.40 120.03 19.63 100.40 120.03 19.63 3 3 0.00 3 3 0.00 3 3 0.00 70.95 70.95 0.00 70.95 70.95 0.00 70.95 70.95 0.00 4.91 4.91 0.00 4.91 4.91 0.00 4.91 4.91 0.00
+7 98.98 117.35 18.37 117.99 135.74 17.75 98.98 117.35 18.37 3 3 0.00 4 4 0.00 3 3 0.00 71.43 71.43 0.00 91.36 91.36 0.00 71.43 71.43 0.00 4.59 4.59 0.00 4.44 4.44 0.00 4.59 4.59 0.00
+8 72.41 84.28 11.86 98.11 109.68 11.57 72.41 84.28 11.86 3 3 0.00 4 4 0.00 3 3 0.00 54.62 54.62 0.00 80.76 80.76 0.00 54.62 54.62 0.00 2.97 2.97 0.00 2.89 2.89 0.00 2.97 2.97 0.00
+9 103.01 117.99 14.98 103.01 117.99 14.98 103.01 117.99 14.98 4 4 0.00 4 4 0.00 4 4 0.00 80.53 80.53 0.00 80.53 80.53 0.00 80.53 80.53 0.00 3.75 3.75 0.00 3.75 3.75 0.00 3.75 3.75 0.00
+10 115.76 133.04 17.29 115.75 133.04 17.29 115.80 133.04 17.25 4 4 0.00 4 4 0.00 4 4 0.00 89.83 89.83 0.00 89.83 89.83 0.00 89.83 89.83 0.00 4.32 4.32 0.00 4.32 4.32 0.00 4.33 4.32 -0.01
+Medium
+11 307.39 357.13 49.74 329.44 378.81 49.37 306.94 356.97 50.03 11 11 0.00 12 12 0.00 11 11 0.00 233.01 233.01 0.00 255.39 255.39 0.00 233.01 233.01 0.00 12.40 12.41 0.02 12.34 12.34 0.00 12.32 12.40 0.07
+12 333.34 390.79 57.45 349.77 413.59 63.82 333.68 388.57 54.88 12 12 0.00 13 13 0.00 12 12 0.00 253.54 253.54 0.00 272.24 272.24 0.00 253.54 253.54 0.00 13.30 13.72 0.43 12.92 14.13 1.21 13.36 13.50 0.15
+13 317.25 374.72 57.47 359.38 411.62 52.25 317.50 374.72 57.22 11 11 0.00 13 13 0.00 11 11 0.00 234.22 236.52 2.30 279.69 279.69 0.00 234.22 236.52 2.30 13.84 13.82 -0.02 13.28 13.19 -0.09 13.88 13.82 -0.06
+14 342.55 408.33 65.78 374.94 437.59 62.65 342.14 408.33 66.20 11 11 0.00 13 13 0.00 11 11 0.00 243.88 243.88 0.00 285.01 285.01 0.00 243.88 243.88 0.00 16.45 16.45 0.00 14.99 15.26 0.27 16.38 16.45 0.07
+15 334.01 390.79 56.78 350.65 412.82 62.17 338.15 390.12 51.97 12 12 0.00 13 13 0.00 12 12 0.00 249.85 249.85 0.00 264.85 264.85 0.00 249.85 249.85 0.00 14.03 14.09 0.07 14.30 14.80 0.50 14.72 14.03 -0.69
+16 356.57 421.67 65.10 384.44 444.55 60.11 360.63 421.67 61.04 12 12 0.00 13 13 0.00 12 12 0.00 264.24 264.24 0.00 289.87 289.87 0.00 264.24 264.24 0.00 15.39 15.74 0.35 15.76 15.47 -0.29 16.07 15.74 -0.32
+17 369.52 428.90 59.38 369.52 432.89 63.38 370.29 427.45 57.17 13 13 0.00 13 13 0.00 13 13 0.00 282.61 282.61 0.00 282.61 282.61 0.00 282.61 282.61 0.00 14.48 14.63 0.14 14.48 15.03 0.54 14.61 14.48 -0.13
+18 378.25 443.30 65.06 380.30 441.91 61.61 381.05 443.30 62.25 13 13 0.00 13 13 0.00 13 13 0.00 285.46 285.46 0.00 285.46 285.46 0.00 285.46 285.46 0.00 15.46 15.78 0.32 15.81 15.64 -0.16 15.93 15.78 -0.15
+19 316.65 380.53 63.88 366.24 427.97 61.73 318.35 377.12 58.77 11 11 0.00 13 13 0.00 11 11 0.00 225.96 225.96 0.00 277.47 277.47 0.00 225.96 225.96 0.00 15.11 15.46 0.34 14.79 15.05 0.26 15.40 15.12 -0.28
+20 326.40 385.71 59.32 350.70 411.41 60.71 326.40 385.71 59.32 11 11 0.00 12 12 0.00 11 11 0.00 240.29 240.29 0.00 263.96 263.96 0.00 240.29 240.29 0.00 14.35 14.54 0.19 14.46 14.74 0.29 14.35 14.54 0.19
+Large
+21 608.06 694.53 86.47 645.09 739.53 94.43 597.69 694.53 96.83 21 21 0.00 23 23 0.00 21 21 0.00 442.16 442.16 0.00 484.28 484.28 0.00 442.16 442.16 0.00 27.65 25.24 -2.41 26.80 25.52 -1.28 25.92 25.24 -0.69
+22 583.34 698.65 115.30 657.84 777.77 119.92 585.82 698.65 112.83 19 20 1.00 23 23 0.00 19 20 1.00 420.99 438.94 17.94 502.20 502.20 0.00 420.99 438.94 17.94 27.06 25.97 -1.09 25.94 27.56 1.62 27.47 25.97 -1.50
+23 552.54 675.41 122.87 653.48 766.51 113.03 550.45 671.02 120.58 19 19 0.00 23 23 0.00 19 19 0.00 397.20 397.20 0.00 492.89 492.89 0.00 397.20 397.20 0.00 25.89 27.82 1.93 26.77 27.36 0.60 25.54 27.38 1.84
+24 584.53 705.55 121.03 630.47 713.11 82.64 562.13 705.55 143.42 20 20 0.00 22 22 0.00 19 20 1.00 441.92 443.39 1.47 487.61 487.61 0.00 424.95 443.39 18.44 23.77 26.22 2.45 23.81 22.55 -1.26 22.86 26.22 3.35
+25 611.34 747.01 135.67 679.97 783.36 103.38 596.44 744.29 147.85 20 21 1.00 23 23 0.00 20 21 1.00 437.69 461.56 23.87 508.27 508.27 0.00 436.25 461.56 25.31 28.94 28.55 -0.40 28.62 27.51 -1.11 26.70 28.27 1.57
+26 644.18 746.87 102.69 682.38 806.16 123.77 627.96 746.87 118.91 21 21 0.00 23 23 0.00 21 21 0.00 469.56 469.56 0.00 515.46 515.46 0.00 469.56 469.56 0.00 29.10 27.73 -1.37 27.82 29.07 1.25 26.40 27.73 1.33
+27 510.93 679.76 168.84 578.18 664.71 86.54 510.80 679.76 168.96 17 20 3.00 20 20 0.00 17 20 3.00 369.43 444.08 74.65 436.62 436.62 0.00 369.73 444.08 74.35 23.58 23.57 -0.01 23.59 22.81 -0.78 23.51 23.57 0.06
+28 606.32 723.35 117.03 677.49 757.55 80.05 597.26 723.35 126.09 20 21 1.00 23 23 0.00 20 21 1.00 446.02 474.54 28.53 519.16 519.16 0.00 452.87 474.54 21.68 26.72 24.88 -1.84 26.39 23.84 -2.55 24.06 24.88 0.82
+29 643.77 738.83 95.06 656.81 757.30 100.49 636.46 738.83 102.37 22 22 0.00 23 23 0.00 22 22 0.00 476.19 476.19 0.00 497.27 497.27 0.00 476.19 476.19 0.00 27.93 26.26 -1.67 26.59 26.00 -0.59 26.71 26.26 -0.45
+30 702.07 805.40 103.33 727.35 831.55 104.20 689.73 805.40 115.67 22 22 0.00 23 23 0.00 22 22 0.00 499.34 501.80 2.46 525.53 525.53 0.00 499.34 501.80 2.46 33.79 30.36 -3.43 33.64 30.60 -3.03 31.73 30.36 -1.37
+Average 346.74 411.05 64.31 376.40 435.25 58.85 344.11 410.55 66.45 11.70 11.90 0.20 13.07 13.07 0.00 11.67 11.90 0.23 254.84 259.88 5.04 285.82 285.82 0.00 254.46 259.88 5.42 15.32 15.12 -0.20 15.10 14.94 -0.15 14.94 15.07 0.13
+P-value from paired t-
+test
+7.95×10 −9 9.72×10 −10 1.90×10 −8 0.0831 close to 1 0.0504 0.0760 close to 1 0.0559 0.3346 0.3922 0.4566
+Significant difference ✓ ✓ ✓
+Table 11: Output of results comparison on the average battery charging/swapping time for each train, and average battery charging/swapping
+time at each deployed station from PLA, FA and BD algorithms betweenαD = 3andα D = 5.
+Instance Group Instance ID
+Average number of hours in charging for each train Average number of hours in swapping for each train Average number of hours in charging for each deployed station Average number of hours in swapping for each deployed station
+PLA FA BD PLA FA BD PLA FA BD PLA FA BD
+αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆ αD=3α D=5∆
+Small
+1 2.89 2.91 0.02 5.16 5.16 0.00 2.71 2.91 0.20 9 9.00 0.00 9.00 8.00 -1.00 9.00 9.00 0.00 1.92 1.94 0.01 3.44 3.44 0.00 1.81 1.94 0.13 6.00 6.00 0.00 6.00 5.33 -0.67 6.00 6.00 0.00
+2 5.71 5.71 0.00 5.62 5.62 0.00 5.71 5.71 0.00 6 6.00 0.00 6.00 6.00 0.00 6.00 6.00 0.00 3.81 3.81 0.00 2.81 2.81 0.00 3.81 3.81 0.00 4.00 4.00 0.00 3.00 3.00 0.00 4.00 4.00 0.00
+3 4.24 4.24 0.00 6.32 6.32 0.00 4.24 4.24 0.00 8 8.00 0.00 6.00 6.00 0.00 8.00 8.00 0.00 2.83 2.83 0.00 3.16 3.16 0.00 2.83 2.83 0.00 5.33 5.33 0.00 3.00 3.00 0.00 5.33 5.33 0.00
+4 3.80 3.80 0.00 3.80 3.80 0.00 3.80 3.80 0.00 11 11.00 0.00 11.00 11.00 0.00 11.00 11.00 0.00 1.90 1.90 0.00 1.90 1.90 0.00 1.90 1.90 0.00 5.50 5.50 0.00 5.50 5.50 0.00 5.50 5.50 0.00
+5 6.31 5.81 -0.50 4.31 4.31 0.00 5.81 5.81 0.00 6 6.00 0.00 6.00 6.00 0.00 6.00 6.00 0.00 4.21 3.87 -0.33 2.16 2.16 0.00 3.87 3.87 0.00 4.00 4.00 0.00 3.00 3.00 0.00 4.00 4.00 0.00
+6 3.57 3.57 0.00 0.56 0.64 0.08 0.57 3.57 3.00 11 11.00 0.00 13.00 14.00 1.00 13.00 11.00 -2.00 2.38 2.38 0.00 0.37 0.43 0.06 0.38 2.38 2.00 7.33 7.33 0.00 8.67 9.33 0.67 8.67 7.33 -1.33
+7 3.13 3.13 0.00 2.72 2.75 0.04 3.13 3.13 0.00 12 12.00 0.00 12.00 12.00 0.00 12.00 12.00 0.00 2.09 2.09 0.00 1.36 1.38 0.02 2.09 2.09 0.00 8.00 8.00 0.00 6.00 6.00 0.00 8.00 8.00 0.00
+8 3.42 3.42 0.00 3.26 3.26 0.00 3.42 3.42 0.00 6 6.00 0.00 6.00 6.00 0.00 6.00 6.00 0.00 2.28 2.28 0.00 1.63 1.63 0.00 2.28 2.28 0.00 4.00 4.00 0.00 3.00 3.00 0.00 4.00 4.00 0.00
+9 4.20 4.20 0.00 4.16 4.16 0.00 4.16 4.20 0.03 8 8.00 0.00 9.00 8.00 -1.00 8.00 8.00 0.00 2.10 2.10 0.00 2.08 2.08 0.00 2.08 2.10 0.02 4.00 4.00 0.00 4.50 4.00 -0.50 4.00 4.00 0.00
+10 2.39 2.39 0.00 2.38 2.39 0.00 2.37 2.39 0.01 11 11.00 0.00 11.00 11.00 0.00 11.00 11.00 0.00 1.19 1.19 0.00 1.19 1.19 0.00 1.19 1.19 0.01 5.50 5.50 0.00 5.50 5.50 0.00 5.50 5.50 0.00
+Medium
+11 11.16 11.21 0.05 13.45 13.45 0.00 7.40 11.16 3.77 30 29.00 -1.00 27.00 27.00 0.00 33.00 30.00 -3.00 2.03 2.04 0.01 2.24 2.24 0.00 1.34 2.03 0.69 5.45 5.27 -0.18 4.50 4.50 0.00 6.00 5.45 -0.55
+12 11.85 18.31 6.46 10.17 29.64 19.48 15.29 18.13 2.84 29 24.00 -5.00 30.00 15.00 -15.00 26.00 24.00 -2.00 1.97 3.05 1.08 1.56 4.56 3.00 2.55 3.02 0.47 4.83 4.00 -0.83 4.62 2.31 -2.31 4.33 4.00 -0.33
+13 8.29 10.50 2.21 11.97 15.20 3.22 8.42 10.50 2.08 35 31.00 -4.00 29.00 27.00 -2.00 36.00 31.00 -5.00 1.51 1.91 0.40 1.84 2.34 0.50 1.53 1.91 0.38 6.36 5.64 -0.73 4.46 4.15 -0.31 6.55 5.64 -0.91
+14 7.80 7.40 -0.40 12.92 13.36 0.43 3.82 7.40 3.58 43 43.00 0.00 36.00 36.00 0.00 45.00 43.00 -2.00 1.42 1.35 -0.07 1.99 2.05 0.07 0.70 1.35 0.65 7.82 7.82 0.00 5.54 5.54 0.00 8.18 7.82 -0.36
+15 9.08 9.71 0.63 16.27 20.66 4.40 13.97 9.08 -4.89 35 35.00 0.00 29.00 26.00 -3.00 33.00 35.00 2.00 1.51 1.62 0.11 2.50 3.18 0.68 2.33 1.51 -0.81 5.83 5.83 0.00 4.46 4.00 -0.46 5.50 5.83 0.33
+16 12.01 13.15 1.14 13.70 15.13 1.43 17.58 13.15 -4.44 36 36.00 0.00 36.00 33.00 -3.00 32.00 36.00 4.00 2.00 2.19 0.19 2.11 2.33 0.22 2.93 2.19 -0.74 6.00 6.00 0.00 5.54 5.08 -0.46 5.33 6.00 0.67
+17 16.33 16.17 -0.16 17.36 19.37 2.01 15.01 16.36 1.35 30 30.00 0.00 30.00 30.00 0.00 31.00 30.00 -1.00 2.51 2.49 -0.02 2.67 2.98 0.31 2.31 2.52 0.21 4.62 4.62 0.00 4.62 4.62 0.00 4.77 4.62 -0.15
+18 13.34 15.21 1.87 13.40 9.70 -3.70 15.03 15.21 0.18 36 36.00 0.00 36.00 39.00 3.00 36.00 36.00 0.00 2.05 2.34 0.29 2.06 1.49 -0.57 2.31 2.34 0.03 5.54 5.54 0.00 5.54 6.00 0.46 5.54 5.54 0.00
+19 9.71 10.84 1.13 12.25 16.71 4.46 13.96 9.92 -4.04 38 39.00 1.00 35.00 32.00 -3.00 36.00 38.00 2.00 1.76 1.97 0.21 1.89 2.57 0.69 2.54 1.80 -0.73 6.91 7.09 0.18 5.38 4.92 -0.46 6.55 6.91 0.36
+20 9.30 12.80 3.51 16.04 16.56 0.52 9.30 12.80 3.51 36 33.00 -3.00 30.00 30.00 0.00 36.00 33.00 -3.00 1.69 2.33 0.64 2.67 2.76 0.09 1.69 2.33 0.64 6.55 6.00 -0.55 5.00 5.00 0.00 6.55 6.00 -0.55
+Large
+21 42.84 29.79 -13.05 42.88 34.00 -8.89 28.56 29.79 1.23 45 54.00 9.00 44.00 51.00 7.00 56.00 54.00 -2.00 4.08 2.84 -1.24 3.73 2.96 -0.77 2.72 2.84 0.12 4.29 5.14 0.86 3.83 4.43 0.61 5.33 5.14 -0.19
+22 25.48 24.70 -0.78 43.69 53.94 10.25 21.47 24.70 3.23 60 58.00 -2.00 41.00 35.00 -6.00 64.00 58.00 -6.00 2.68 2.47 -0.21 3.80 4.69 0.89 2.26 2.47 0.21 6.32 5.80 -0.52 3.57 3.04 -0.52 6.74 5.80 -0.94
+23 18.86 31.95 13.09 44.08 55.57 11.49 23.93 31.96 8.03 61 49.00 -12.00 39.00 30.00 -9.00 55.00 49.00 -6.00 1.98 3.36 1.38 3.83 4.83 1.00 2.52 3.36 0.84 6.42 5.16 -1.26 3.39 2.61 -0.78 5.79 5.16 -0.63
+24 50.00 50.49 0.49 53.17 44.14 -9.03 34.91 50.49 15.58 30 32.00 2.00 27.00 33.00 6.00 42.00 32.00 -10.00 5.00 5.05 0.05 4.83 4.01 -0.82 3.67 5.05 1.37 3.00 3.20 0.20 2.45 3.00 0.55 4.42 3.20 -1.22
+25 35.36 37.92 2.55 47.21 39.44 -7.77 27.00 33.85 6.84 54 51.00 -3.00 42.00 48.00 6.00 57.00 53.00 -4.00 3.54 3.61 0.07 4.11 3.43 -0.68 2.70 3.22 0.52 5.40 4.86 -0.54 3.65 4.17 0.52 5.70 5.05 -0.65
+26 45.73 26.68 -19.05 27.84 49.21 21.37 18.93 26.68 7.75 44 58.00 14.00 57.00 42.00 -15.00 63.00 58.00 -5.00 4.36 2.54 -1.81 2.42 4.28 1.86 1.80 2.54 0.74 4.19 5.52 1.33 4.96 3.65 -1.30 6.00 5.52 -0.48
+27 20.76 37.69 16.92 37.51 26.03 -11.48 26.19 37.69 11.50 51 38.00 -13.00 37.00 48.00 11.00 48.00 38.00 -10.00 2.44 3.77 1.33 3.75 2.60 -1.15 3.08 3.77 0.69 6.00 3.80 -2.20 3.70 4.80 1.10 5.65 3.80 -1.85
+28 40.03 34.76 -5.27 45.86 32.30 -13.56 26.05 34.76 8.71 45 47.00 2.00 40.00 48.00 8.00 53.00 47.00 -6.00 4.00 3.31 -0.69 3.99 2.81 -1.18 2.61 3.31 0.71 4.50 4.48 -0.02 3.48 4.17 0.70 5.30 4.48 -0.82
+29 49.24 27.91 -21.32 43.33 31.47 -11.87 36.98 27.91 -9.07 41 56.00 15.00 45.00 54.00 9.00 50.00 56.00 6.00 4.48 2.54 -1.94 3.77 2.74 -1.03 3.36 2.54 -0.82 3.73 5.09 1.36 3.91 4.70 0.78 4.55 5.09 0.55
+30 38.54 27.84 -10.70 44.74 31.58 -13.16 31.33 27.84 -3.49 57 65.00 8.00 54.00 62.00 8.00 63.00 65.00 2.00 3.50 2.53 -0.97 3.89 2.75 -1.14 2.85 2.53 -0.32 5.18 5.91 0.73 4.70 5.39 0.70 5.73 5.91 0.18
+Average 17.18 16.47 -0.71 20.20 20.20 -0.01 14.37 16.28 1.92 30.80 31.07 0.27 27.77 27.80 0.03 32.83 31.13 -1.70 2.64 2.59 -0.05 2.66 2.73 0.07 2.33 2.57 0.23 5.42 5.35 -0.07 4.52 4.46 -0.06 5.65 5.35 -0.30
+P-value from
+paired t-test
+0.6122 0.9951 0.0468 0.8004 0.9761 0.0163 0.7034 0.6791 0.0481 0.5640 0.6546 0.0081
+Significant difference ✓ ✓ ✓ ✓
+35
+References
+Adegbohun, F., A. von Jouanne, E. Agamloh and A. Yokochi (2023). Geographical Modeling of Charging
+Infrastructure Requirements for Heavy-Duty Electric Autonomous Truck Operations.Energies (Basel)
+16(10), 4161.
+Aredah, A., J. Du, M. Hegazi, G. List and H.A. Rakha (2024). Comparative Analysis of Alternative Pow-
+ertrain Technologies in Freight Trains: A Numerical Examination Towards Sustainable Rail Transport.
+Applied Energy356, 122411.
+Bai, T., Y. Li, K.H. Johansson and J. Mårtensson (2023). Rollout-Based Charging Strategy for Electric
+Trucks With Hours-of-Service Regulations.IEEE Control Systems Letters7, 2167–2172.
+Barbosa, F.C. (2024). Battery Only Electric Traction for Freight Trains - A Technical and Operational
+Assessment.Proceedings of the Institution of Mechanical Engineers. Part F, Journal of Rail and Rapid
+Transit238(3), 322-337.
+Biedenbach, F. and K. Strunz (2024). Multi-Use Optimization of a Depot for Battery-Electric Heavy-Duty
+Trucks.World Electric Vehicle Journal15, 84.
+Cech, L. (2024). DB Cargo’s Dual-Mode Vectrons Undergo Intensive Trials in Germany.Rail Market
+June 19, 2024.
+D’Ambrosio, C., A. Lodi and S. Martello (2010). Piecewise Linear Approximation of Functions of Two
+Variables in MILP Models.Operations Research Letters28, 29-46.
+FreightWaves (2025). FRA Study Sees New Locomotive Tech as Gateway to Electric Freight Trains.
+https://www.freightwaves.com/news/fra-study-sees-new-locomotive-tech-as-gateway-to-electric-freight-trains?
+[Accessed 22 June 2025].
+Hughes, G.M. (2023). Varamis Rail Links up with Carousel Logistics to Boost Pan-European Operations.
+Rail AdventSeptember 13, 2023.
+Karlsson, J. and A. Grauers (2023). Agent-based Investigation of Charger Queues and Utilization of Pub-
+lic Chargers for Electric Long-haul Trucks.Energies16(12), 4704.
+Lu, A. and J.G. Allen (2024). Intermittent Electrification with Battery Locomotives and the Post-diesel
+Future of North American Freight Railroads.Transportation Research Record2678(11), 1691-1718.
+Mazzone, A., M. Schönbacher and X. Larrea (2018). Future Freight Locomotives in Shift2Rail – Devel-
+opment of Full Electric Last Mile Propulsion System.Proceedings of7th Transport Research Arena TRA,
+April 16-19, 2018, Vienna, Austria.
+Speth, D., P. Plötz and M. Wietschel (2025). An Optimal Capacity-constrained Fast Charging Network
+for Battery Electric Trucks in Germany.Transportation Research Part A: Policy and Practice193, 104383.
+Wang, F. Y., Z. Chen and Z. Hu (2024). Comprehensive Optimization of Electrical Heavy-duty Truck
+Battery Swap Stations with a SOC-dependent Charge Scheduling Method.Energy308, 132773.
+Wang, Q., X. Liu, J. Du and F. Kong (2016). Smart Charging for Electric Vehicles: A Survey From the
+36
+Algorithmic Perspective.arXiv.org. DOI: https://doi.org/10.48550/arxiv.1607.07298.
+Whitehead, J., J. Whitehead, M. Kane and Z. Zheng (2022). Exploring Public Charging Infrastructure
+Requirements for Short-haul Electric Trucks.International Journal of Sustainable Transportation16(9),
+775–791.
+Ye, Z., N. Yu and R. Wei (2024). Joint Planning of Charging Stations and Power Systems for Heavy-duty
+Drayage Trucks.Transportation Research Part D134, 104320.
+Zähringer, O. Teichert, G. Balke, J. Schneider and M. Lienkamp (2024). Optimizing the Journey: Dy-
+namic Charging Strategies for Battery Electric Trucks in Long-Haul Transport.Energies17, 973.
+37
