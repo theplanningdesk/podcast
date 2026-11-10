@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-10T06:56:15.260931+00:00",
+ "fetched_at": "2026-11-10T06:59:55.670208+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -49,7 +49,7 @@
    "url": "https://www.manufacturingdive.com/feeds/news/",
    "ok": true,
    "method": "feed https://www.manufacturingdive.com/feeds/news/",
-   "items": 10,
+   "items": 9,
    "error": null,
    "raw_items": 10,
    "lane": "planning"
@@ -81,7 +81,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 35,
+   "raw_items": 36,
    "lane": "planning"
   },
   {
@@ -251,7 +251,7 @@
    "method": "feed https://idw-online.de/de/pressreleasesrss",
    "items": 2,
    "error": null,
-   "raw_items": 389,
+   "raw_items": 390,
    "lane": "management"
   },
   {
