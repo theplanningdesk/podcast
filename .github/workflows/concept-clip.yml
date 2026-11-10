@@ -12,10 +12,11 @@ on:
     branches: [main]
     paths: ["concepts/*.json"]
   schedule:
-    # Wednesdays, four tries an hour apart from 09:50 UTC, because GitHub can delay or drop scheduled
-    # runs by hours. The job goes on between 10:00 and 14:59 Stockholm, waits for 12:00 if early, and
-    # skips a clip that's already on Instagram, so the extra tries are harmless.
-    - cron: "50 9,10,11,12 * * 3"
+    # Wednesdays, hourly tries from 09:50 UTC, because GitHub can delay or drop scheduled runs by
+    # hours. The job goes on between 10:00 and 20:59 Stockholm, waits for 12:00 if early, and skips a
+    # clip that's already on Instagram, so the extra tries are harmless. The dispatcher also checks at
+    # 12:15 and starts the publish job by hand if the Reel isn't up.
+    - cron: "50 9,10,11,12,13,15,17 * * 3"
   workflow_dispatch:
     inputs:
       stem:
@@ -136,7 +137,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
             H=$(TZ=Europe/Stockholm date +%-H)
-            if [ "$H" -lt 10 ] || [ "$H" -gt 14 ]; then echo "Stockholm hour is $H, outside 10 to 14; nothing to do."; exit 0; fi
+            if [ "$H" -lt 10 ] || [ "$H" -gt 20 ]; then echo "Stockholm hour is $H, outside 10 to 20; nothing to do."; exit 0; fi
             STEMS=$(python concept_post.py due | tr '\n' ' ')
           else
             STEMS="$INPUT_STEM"
