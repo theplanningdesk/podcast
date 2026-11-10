@@ -1,7 +1,7 @@
 name: Concept clip
 
-# "Planning concept" clips: 30 s silent motion graphics, Tuesdays and Thursdays at 12:00 Stockholm.
-# A concept is a file concepts/<YYYY-MM-DD>-<slug>.json, where the date is the publish day.
+# Research clips: 30 s silent motion graphics explaining one open-access paper, Wednesdays at 12:00
+# Stockholm. A clip is a file concepts/<YYYY-MM-DD>-<slug>.json, where the date is the publish day.
 #  - Pushing a concept file renders both cuts (9:16 Shorts/Reels, 4:5 LinkedIn) into the release
 #    concept-<stem>, with the LinkedIn post and first-comment text, and schedules the YouTube Short.
 #  - Just before 12:00 on publish days, the Reel is posted to Instagram at 12:00.
@@ -12,18 +12,19 @@ on:
     branches: [main]
     paths: ["concepts/*.json"]
   schedule:
-    # Tue and Thu at 10:40 and 11:40 Stockholm in winter (09:40 and 10:40 UTC); the job only goes on
-    # when it's the 11 o'clock hour in Stockholm, so one of the two covers summer time as well.
-    - cron: "40 9,10 * * 2,4"
+    # Wednesdays, four tries an hour apart from 09:50 UTC, because GitHub can delay or drop scheduled
+    # runs by hours. The job goes on between 10:00 and 14:59 Stockholm, waits for 12:00 if early, and
+    # skips a clip that's already on Instagram, so the extra tries are harmless.
+    - cron: "50 9,10,11,12 * * 3"
   workflow_dispatch:
     inputs:
       stem:
         description: "Concept file stem(s), space-separated, e.g. 2026-11-10-production-scheduling"
         required: true
       action:
-        description: "render = render, attach to the release and schedule the Short; publish = post the Reel now"
+        description: "render = render, attach to the release and schedule the Short; publish = post the Reel now; withdraw = take the Short back to private"
         type: choice
-        options: [render, publish]
+        options: [render, publish, withdraw]
         default: render
 
 permissions:
@@ -134,8 +135,8 @@ jobs:
         id: due
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            H=$(TZ=Europe/Stockholm date +%H)
-            [ "$H" = "11" ] || { echo "Stockholm hour is $H, not the 11 o'clock run; nothing to do."; exit 0; }
+            H=$(TZ=Europe/Stockholm date +%-H)
+            if [ "$H" -lt 10 ] || [ "$H" -gt 14 ]; then echo "Stockholm hour is $H, outside 10 to 14; nothing to do."; exit 0; fi
             STEMS=$(python concept_post.py due | tr '\n' ' ')
           else
             STEMS="$INPUT_STEM"
@@ -154,4 +155,30 @@ jobs:
             fi
             python concept_post.py instagram "$STEM"
             gh release upload "concept-$STEM" "build/out/planning-desk-concept-$STEM.instagram.txt" --clobber
+          done
+
+  withdraw:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.action == 'withdraw' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+      INPUT_STEM: ${{ inputs.stem }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Python deps
+        timeout-minutes: 5
+        run: pip install -q requests google-api-python-client google-auth
+
+      - name: Take the Shorts back to private
+        run: |
+          for STEM in $INPUT_STEM; do
+            ID=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/concept-$STEM" -q '.assets[] | select(.name | endswith(".youtube.txt")) | .id' 2>/dev/null || true)
+            if [ -z "$ID" ]; then echo "No YouTube link for $STEM"; continue; fi
+            VIDEO_ID=$(gh api -H "Accept: application/octet-stream" "repos/$GITHUB_REPOSITORY/releases/assets/$ID") \
+              python concept_post.py withdraw "$STEM"
           done

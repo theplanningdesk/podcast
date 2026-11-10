@@ -4,6 +4,7 @@
   python concept_post.py text 2026-11-10-production-scheduling       # LinkedIn post + first comment text files
   python concept_post.py youtube 2026-11-10-production-scheduling    # 9:16 Short, scheduled for the publish time
   python concept_post.py instagram 2026-11-10-production-scheduling  # 9:16 Reel, published at the publish time
+  python concept_post.py withdraw 2026-11-12-network-design           # take its scheduled Short back to private (VIDEO_ID env)
   python concept_post.py due [YYYY-MM-DD]                            # print the stems due on that Stockholm date
 
 The publish time is the concept's "date" plus "publish_local" (default 12:00), Stockholm time.
@@ -120,6 +121,24 @@ def cmd_instagram(stem: str) -> None:
     print(f"Published Reel {link or media}")
 
 
+def cmd_withdraw(stem: str) -> None:
+    """Take a scheduled or public Short back to private (kept in YouTube Studio, not deleted)."""
+    from youtube_upload import youtube_client
+    vid = os.environ.get("VIDEO_ID", "").strip().rstrip("/").split("/")[-1]
+    if not vid:
+        raise SystemExit(f"No VIDEO_ID given for {stem}")
+    yt = youtube_client()
+    items = yt.videos().list(part="status", id=vid).execute().get("items", [])
+    if not items:
+        print(f"{stem}: video {vid} not found; nothing to withdraw.")
+        return
+    status = items[0]["status"]
+    status.pop("publishAt", None)
+    status["privacyStatus"] = "private"
+    yt.videos().update(part="status", body={"id": vid, "status": status}).execute()
+    print(f"{stem}: YouTube {vid} set to private, schedule removed.")
+
+
 def cmd_due(day: str | None) -> None:
     day = day or datetime.now(TZ).strftime("%Y-%m-%d")
     for f in sorted((ROOT / "concepts").glob(f"{day}-*.json")):
@@ -127,7 +146,7 @@ def cmd_due(day: str | None) -> None:
 
 
 def main() -> int:
-    if len(sys.argv) < 2 or sys.argv[1] not in ("text", "youtube", "instagram", "due"):
+    if len(sys.argv) < 2 or sys.argv[1] not in ("text", "youtube", "instagram", "withdraw", "due"):
         raise SystemExit(__doc__)
     cmd, arg = sys.argv[1], (sys.argv[2] if len(sys.argv) > 2 else None)
     if cmd == "due":
@@ -135,7 +154,7 @@ def main() -> int:
         return 0
     if not arg:
         raise SystemExit(__doc__)
-    {"text": cmd_text, "youtube": cmd_youtube, "instagram": cmd_instagram}[cmd](arg)
+    {"text": cmd_text, "youtube": cmd_youtube, "instagram": cmd_instagram, "withdraw": cmd_withdraw}[cmd](arg)
     return 0
 
 
