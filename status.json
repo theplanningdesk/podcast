@@ -1,8 +1,8 @@
 {
- "fetched_at": "2026-11-10T06:51:11.695715+00:00",
+ "fetched_at": "2026-11-10T06:53:49.929691+00:00",
  "window_days": 8,
  "sources_ok": 75,
- "sources_total": 77,
+ "sources_total": 75,
  "sources": [
   {
    "source": "SupplyChainBrain",
@@ -165,31 +165,13 @@
    "lane": "planning"
   },
   {
-   "source": "arXiv math.OC (optimisation)",
-   "url": "https://rss.arxiv.org/rss/math.OC",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://rss.arxiv.org/rss/math.OC: empty feed; https://export.arxiv.org/rss/math.OC: empty feed",
-   "lane": "planning"
-  },
-  {
-   "source": "arXiv cs.AI",
-   "url": "https://rss.arxiv.org/rss/cs.AI",
+   "source": "arXiv (planning and OR preprints)",
+   "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement&sortBy=submittedDate&sortOrder=descending&max_results=60",
    "ok": true,
-   "method": "feed https://rss.arxiv.org/rss/cs.AI",
-   "items": 9,
+   "method": "feed https://export.arxiv.org/api/query?search_query=ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement&sortBy=submittedDate&sortOrder=descending&max_results=60",
+   "items": 19,
    "error": null,
-   "raw_items": 397,
-   "lane": "planning"
-  },
-  {
-   "source": "arXiv stat.ML",
-   "url": "https://rss.arxiv.org/rss/stat.ML",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://rss.arxiv.org/rss/stat.ML: empty feed; https://export.arxiv.org/rss/stat.ML: empty feed",
+   "raw_items": 22,
    "lane": "planning"
   },
   {
@@ -377,7 +359,7 @@
    "url": "https://www.informs.org/News-Room/INFORMS-Releases/News-Releases",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 15,
+   "items": 1,
    "error": null,
    "raw_items": 29,
    "lane": "management"
