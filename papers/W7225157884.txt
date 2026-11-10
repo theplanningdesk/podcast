@@ -1,0 +1,1440 @@
+TITLE: Leveraging Intelligent Agents in Industrial Engineering: Use Cases in Predictive Maintenance and Supply Chain Optimization
+AUTHORS: Soma Prathibha, Supriya Ramesh, Sharanya Shree, Palani Kumar
+VENUE: Research Square (2026-11-03)
+DOI: https://doi.org/10.21203/rs.3.rs-10547898/v1
+LICENCE: cc-by
+LINK: https://doi.org/10.21203/rs.3.rs-10547898/v1
+
+Leveraging Intelligent Agents in Industrial
+Engineering: Use Cases in Predictive Maintenance
+and Supply Chain Optimization
+Soma Prathibha 
+Sri Sai Ram Engineering College https://orcid.org/0000-0002-8669-6904
+Supriya Ramesh 
+Sri Sai Ram Engineering College
+Sharanya Shree 
+Sri Sai Ram Engineering College
+Palani Kumar 
+Sri Sairam Institute of Technology
+Research Article
+Keywords: Artiﬁcial Intelligence, AI Agents, Machine Learning, Supply Chain Management, Industrial
+Engineering, Predictive Maintenance
+Posted Date: November 3rd, 2026
+DOI: https://doi.org/10.21203/rs.3.rs-10547898/v1
+License:   This work is licensed under a Creative Commons Attribution 4.0 International License.  
+Read Full License
+1 
+ 
+ 
+ 
+ 
+Leveraging Intelligent Agents in Industrial 
+Engineering: Use Cases in Predictive Maintenance 
+and Supply Chain Optimization 
+ 
+ 
+Soma Prathibha„* , Supriya Ramesh †, Sharanya Shree ‡, 
+Palanikumar ⁴ 
+ 
+„*Professor Head , Dept. of CSE (Cybersecurity), Sri Sairam 
+Engineering College,Chennai, India. 
+† Ph.D Research Scholar, Dept. of CSE (Cybersecurity), Sri Sairam 
+Engineering College,Chennai, India. 
+‡ Student, Dept. of Information Technology, Sri Sairam Engineering 
+College,Chennai, India. 
+⁴ Professor Principal, Sri Sairam Institute of Technology ,Chennai, India. 
+ 
+ *Corresponding author(s). E-mail(s): somaprathi25@gmail.com; 
+Contributing authors: secrs25scf01@sairamtap.edu.in; 
+sharanyabalaji18@gmail.com; palanikumar@sairamit.edu.in; 
+ 
+ 
+Abstract 
+Industrial struggle with machine breakdown, inefficient processes, and 
+supply chain.Disupts which are regular. These issues also produce delays 
+and increased costs. And saw decreased productivity. Also it is the case 
+that which traditional systems react only after a problem has Already 
+present, which in turn puts pressure on businesses to become less efficient 
+and less competitive. This Artificial intelligence and intelligent agents is 
+the area where. In terms of Through use of machine learning and smart 
+automation, which is what organizations do that have success in this area, 
+they predict problems at an early stage. Streamline operations and improve 
+decision speed and quality. This study Presents two case studies which in 
+the first we see how AI plays a role in predictive maintenance. Machines 
+break down less often which in turn allowsthem to run continuously. The 
+second case study. Explores how AI is used in supply chain logistics. Both 
+cases saw considerable and meaningful improvements with the 
+2 
+ 
+implementation of artificial intelligence. In predictive maintenance, for 
+example, the AI models were very effective in identifying early symptoms 
+of equipment failure, which would significantly reduce machine downtime 
+and lengthen the total lifespan of the equipment. In the Supply Chain , AI 
+agents improved the interaction between supply chain stages which in turn 
+enabled faster. Decision on which items to stock and also in how we handle 
+stock levels which in turn leads to faster recovery from disruptions. These 
+results present that which AI brings to the table in terms of efficiency, cost 
+savings, and flexibility. 
+ 
+Keywords: Artificial Intelligence, AI Agents, Machine Learning, Supply Chain 
+Management, Industrial Engineering, Predictive Maintenance. 
+ 
+ 
+Graphical Abstract 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1. Introduction 
+
+3 
+ 
+ 
+The use of Artificial Intelligence is one of the main drivers of innovation 
+in industrial engineering. The reason for this is that companies are under 
+constant pressure to make better decisions more quickly in a rapidly 
+changing environment. Artificial Intelligence can help with this by using 
+real-time data to find hidden patterns and thus help decision-makers to 
+make more informed decisions more quickly. This is particularly important 
+in industrial environments, as decisions need to be taken quickly to avoid 
+disruption to operations.[1] 
+In cooperation with AI, intelligent agents work as self-determining aides 
+that supervise given duties within industrial processes. Such agents keep a 
+constant watch on different components of the system, carry out 
+communication between agents, and coordinate their activities to ensure 
+the smooth and safe running of operations.[2] They are capable of 
+changing work routines on the spot, react quickly to any changes and less 
+manual intervention. When used in conjunction, AI and intelligent agents 
+help an industry switch its reactionary stance to a proactively and can 
+greatly reduce downtimes, optimise resource utilisation, and increase 
+overall reliability [3]. 
+The Strong analytics of AI combined with the self-organized cooperation 
+of intelligent agents, the industry becomes resilient. This enables 
+companies to not onloperations. but also surpass efficiency and quality 
+requirements, as well as keep up with high rate of changes in the market, 
+and have a competitive advantage in a highly challenging world [1]. 
+Technology AI and AI agents are transforming industry engineering 
+because they lead to wise decisions and higher efficiency. They forecast 
+machine malfunctions based on time-sensitive information [2] , minimize 
+faults based on sophisticated quality inspection and optimize supply chains 
+by dynamically managing the inventory and demand[3]. Collectively, AI 
+and intelligent agents can enable industries to move on the scale of reactive 
+problem-solving to proactive management, which smoothens operations, 
+reduces costs and increases competitiveness. 
+ 
+4 
+ 
+ 
+ 
+Fig. 1 AI-Driven Applications in Industrial Engineering 
+ 
+Figure 1 above shows the use of AI and AI agents in industrial 
+engineering, and identifies six major areas where the technologies are 
+already having a significant contribution. 
+ 
+AI plays a vital role in modern industries by enabling predictive 
+maintenance to foresee equipment failures, ensuring consistent quality 
+control through computer vision, and optimizing supply chains with real-
+time logistics and inventory insights. Also, The automation of complicated 
+processes, Energy saving for sustainable development which also 
+enhances workplace safety through the detection of hazards. Moreover, in 
+terms of performance, it can be seen that which results in the productivity 
+improvement, cost reduction and stability. 
+ In This Paper, we have reported the use of Artificial Intelligence in 
+what could be referred to as two major Industiral operations areas. Firstly, 
+we have the Real Time Predictive Maintenance Dashboard which uses 
+Machine Learning algorithms analysing live equipment data to detect 
+problems that could happen so that it would be better if we could fix them 
+
+5 
+ 
+before they become a big problem [4]. The second is an AI Agent-Based 
+Supply Chain Coordination model where autonomous agents control the 
+availability of sub-products and adjust to changing demand by organizing 
+the activities across the points of the supply chain[5]. Through AI 
+implementations, it is possible to transform industrial systems into highly 
+reactive systems in which there is less downtime, more resilient supply 
+chains, and better-informed decision-making. Industries can make 
+operation workflows more agile, reliable and competitive in the long run 
+by fully incorporating AI into the foundation of operation work flows[6]. 
+ 
+ 
+2.1 AI in Industrial Engineering 
+ 
+Artificial intelligence in industrial engineering refers to using the artificial 
+intelligence technology in a number of processes in the industry. These are 
+predictive maintenance, production system optimization, and quality 
+control in the name of production efficiency and productivity[7]. The 
+power of AI can be effectively utilized by industrial engineers in unlocking 
+the potential of great amounts of data and discovering patterns and trends 
+that could result in better decisions. Finally, AI application in industrial 
+engineering may also transform the existing industrial practices and boost 
+innovation in manufacturing industries. AI can also be applied in 
+enhancing processes and converting routine operations to automated action 
+by industrial engineers which results in cost reduction and an overall 
+increase in performance. The use of AI also has the potential to identify 
+real-time risks and where improvement is needed so that it can make 
+proactive decisions. Artificial intelligence can assist industrial engineers 
+in maximising the process production capacity and minimise process 
+downtime to find an increase in efficiency and productivity[8]. 
+ Recent study indicates that the combination of artificial intelligence 
+(AI) and the Industrial Internet of Things (IIoT) is providing a 
+revolutionary shift in sectors due to their capacity to provide real time data 
+analysis, predictive maintenance, and lower downtimes. It also highlights 
+the importance of machine learning (ML) in identifying and correcting 
+malfunctions (or failures) of industrial systems, as a central part of Industry 
+4.0 [9]. It points out some of the machine learning approaches being 
+utilized for predictive maintenance, fault detection, and identification of 
+abnormal issues, demonstrating how these can increase systems’ reliability 
+and efficiency. Research is also pointing out some of the issues such as 
+low data quality, computationally intensive demands, and requirements for 
+6 
+ 
+trained manpower. It concludes that with improvements in AI, IIoT, and 
+big data, industries will be in a better position to identify faults, which will 
+make systems smart and robust. 
+ In Industrial Settings the ViDi tool, a deep learning based defect 
+detection in machine vision. System we present a study of its performance 
+in terms of which it does burrs, scratches and tool wear identification. Also 
+it reports to reduce in inspection time and human error. We report over 
+90% defect detection in testing. Accuracy in Detection and reduced false 
+alarms which in turn makes it a great fit for automation. Also in terms of 
+lighting in some tough cases the research [10] report that use of deep 
+learning and machine vision. Enhances defect detection, decrease down 
+time and improves production reliability. 
+ Machine Learning in many areas of predictive maintenance which 
+includes Supervised, Unsupervised, and reinforcement learning. In the 
+area of predictive maintenance. In reducing the incidence of unexpected 
+breakdowns and in which we see to also lower total maintenance costs. In 
+Some cases we have seen that which is has brought down maintenance 
+costs by as much as 20% at the same time reducing downtime by almost 
+50%. But also with predictive maintenance there is a catch. We see that 
+many organizations have issues with getting high quality data in and out 
+of systems and also in the integration of them. Surely with our IoT 
+infrastructure, and to find skilled professionals which do that process. The 
+technology which is at present, Despite these issues the future of predictive 
+maintenance still looks bright. Also Advancements in artificial 
+intelligence, Internet of Things (IoT) and computing technologies are 
+steadily. Improving its accuracy and performance in a broad range of 
+industries. 
+ Neuro reinforcement learning (NRL) based methods for which root in 
+neural networks do so for the case of neural combinatorial optimization 
+(NCO) which studied for solution of complex decision making issues in 
+industrial engineering. As industries focus in terms of cost and 
+productivity as well as human and sustainability issues, operations. 
+Research issues are many and varied. Traditional algorithms have trouble 
+with the computational efficiency also heuristics do not always produce 
+optimal results. In most cases AI agents present the intelligence and 
+adaptability that contemporary supply chains have to become competitive 
+and to transform into future. Presents in depth analysis of AI based 
+intrusion detection in Industrial IoT. It covers issues like real time threat 
+detection, system scalability, and competitiveness distributed networks 
+[15]. The survey highlights how machine learning, particularly RL-based 
+7 
+ 
+NCO methods, offers promising ways to provide efficient and effective 
+decision support in complex industrial processes. 
+ Machine learning (ML) has been mentioned in context of its use in 
+enhancing the manufacturing processes and it is foreseen that the 
+application of ML has significant potential in application to predictive 
+maintenance, quality supervision, and process optimization. Issues such as 
+quality of the data, integration processes, and the requirement of 
+developing specialist knowledge emerge [13]. Irrespective, there are 
+immense possibilities with ML to revolutionize production lines through 
+production efficiency and decreased downtime and allowance of improved 
+product quality traceability. 
+Incorporation of machine learning (ML) and deep learning (DL) methods 
+to provide maximum security in industrial internet of Things (IIoT) 
+systems is proposed. The researchers utilize the experimental basis on the 
+existing data sets in order to determine the best methodology of designing 
+efficient intrusion detection systems (IDs) to adjust to industrial networks. 
+Particular emphasis is made to examine the performance of logistic 
+regression methods in the three separate conditions regarding the factors 
+of learning time, accuracy, false alarm rate (FAR), unrecognized rate (UR), 
+Matthews correlation coefficient (MCC) and sensitivity [14]. The aim of 
+the paper is to identify the most appropriate method of implementing IDS 
+in IIoT systems with a trade-off between detection quality and the 
+computational overhead. 
+ The introduction of the AI and intelligent agents is transforming the 
+functioning of industries so that processes become smarter, quicker, and 
+more versatile. These technologies will reduce downtime, increase quality, 
+and maintain fluid production since the systems perform quick, informed 
+decision-making on their own. Even greater value is added during the tasks 
+that can be conducted through AI agents which will foresee issues even 
+before they occur and will keep everything coordinated. Naturally, there 
+are still certain challenges, such as ensuring that the data itself is correct, 
+that there are complicated system integrations, that the risks are to a large 
+extent prohibitively expensive and that it needs highly skilled individuals 
+to work with it. Through these obstacles, AI is still developing and because 
+of this increased computing power, industries are becoming more flexible, 
+reliable, and intelligent and able to adapt to anything the future can throw 
+at them. 
+ 
+Table 1 lists the three main AI techniques employed in industrial 
+engineering, and their possible applications in maintenance and quality 
+control, as well as optimization of the supply chain. It reflects the 
+8 
+ 
+effectiveness and ingenuity of these methods in increasing efficiency and 
+decision-making within industrial procedures. 
+ 
+ 
+ Table 1 Survey of AI Methods Used in Industrial Engineering 
+Title of 
+the Paper 
+Industry Domain Features 
+Implemented 
+Reference 
+Tackling Faults 
+in the Industry 
+4.0 Era—A 
+Survey of 
+Machine-
+Learning 
+Solutions and 
+Key Aspects 
+(2020) 
+ 
+ Industry 4.0 
+ 
+Machine 
+Learning 
+Machine learning 
+is used for fault 
+detection and 
+predictive 
+maintenance, 
+enhancing 
+reliability and 
+reducing 
+downtime in 
+Industry 4.0 
+systems. 
+ 
+ [9] 
+AI-based 
+predictive 
+maintenance 
+for fault 
+detection and 
+proactive 
+scheduling, 
+enhancing 
+reliability and 
+reducing 
+downtime. 
+(2023) 
+ 
+Manufacturing 
+ 
+Computer 
+Vision 
+AI-based 
+predictive 
+maintenance using 
+computer vision 
+enables fault 
+detection and 
+proactive 
+scheduling in 
+manufacturing, 
+improving 
+equipment 
+reliability and 
+minimizing 
+downtime. 
+ 
+ [10] 
+Machine 
+Learning 
+Models for 
+Predictive 
+Maintenance in 
+Industrial 
+ 
+ Predictive 
+Maintenance 
+ 
+Machine 
+Learning 
+Machine learning 
+enables predictive 
+maintenance in 
+industrial 
+engineering, 
+improving fault 
+detection, reducing 
+ 
+ [11] 
+9 
+ 
+Engineering 
+(2024) 
+downtime, and 
+optimizing 
+schedules. 
+Neural 
+combinatorial 
+optimization 
+with 
+reinforcement 
+learning in 
+industrial 
+engineering: a 
+survey(2025) 
+ 
+ Industrial 
+Robotics 
+ 
+Machine 
+Learning 
+Reinforcement 
+learning with 
+neural 
+combinatorial 
+optimization 
+improves 
+scheduling and 
+routing in 
+industrial robotics, 
+boosting 
+efficiency and 
+decision-making. 
+ 
+ 
+[12] 
+Machine 
+learning 
+applications in 
+production 
+lines: A 
+systematic 
+literature 
+review(2020) 
+ 
+Manufacturing 
+ Machine 
+Learning 
+Machine learning 
+applications in 
+production lines 
+enhance 
+manufacturing by 
+improving quality 
+control, fault 
+detection, and 
+process 
+optimization. 
+ 
+ 
+ [13] 
+Using ML 
+and DL 
+Algorithms 
+for 
+Intrusion 
+Detection 
+in the 
+Industrial 
+Internet of 
+Things 
+(2023) 
+Industrial 
+Internet of 
+Things 
+Machine 
+Learning and 
+Deep 
+Learning 
+ML and DL 
+algorithms are 
+used for intrusion 
+detection in the 
+Industrial Internet 
+of Things, 
+enhancing security 
+by identifying and 
+preventing cyber 
+threats in real 
+time. 
+ [14] 
+ 
+2.2 AI Agents in Industrial Engineering 
+10 
+ 
+Since AI agents improve the supply chain, they are also becoming real 
+game-changers in supply chain management, as they keep the businesses 
+fast, smart, and flexible. They continuously track stock, shipments, and 
+anticipate customer demand in real-time and avoid shortages and 
+overstocks. By communicating and coordinating with the suppliers, 
+warehouses and distribution centers, the AI agents will adapt rapidly to any 
+delays or disruptions without human interaction. 
+These agents have also served in reducing expenses such as getting the 
+most out of routes and resource depletion and identifying risks in the early 
+stages in order to help companies curb the risks before they swell up. 
+ 
+ Broadly, AI agents give the smarts and flexibility modern supply chains 
+need to boost their competitive edge – and get ready for whatever comes 
+next. 
+ 
+ This research work gives an in-depth analysis on how the implementation of 
+AI agents for Intrusion Detection works on the Industrial Internet of Thi ngs. It 
+includes the important of real time threat detection, scalability and dynami cs of 
+cometitive distributed network. The paper describes how autonomous agents are 
+able to collaborate with each other in order to make the best use of their 
+capabilities in the context of improved cybersecurity, mainly through faster 
+detection and elimination of cyber attacks. Academic papers also touch upon the 
+implementation of AI agents in terms of predicting maintenance in a sm art 
+manufacturing setting. The paper is focused on the ability to overcome problems 
+of data heterogeneity, complexity of equipment and scheduling issues. In 
+particular, the paper emphasizes the ability of autonomous agents to the analyze 
+sensor data, predict breakdowns of machines and autonomously schedule 
+maintenance activities. 
+ 
+ The paper presents a multi-agent system application in optimizing sup ply 
+chains under Industry 4.0. It covers integration problems: Communication 
+between different systems aand demand variability and supply disruption. 
+Highlighted in the paper are the benefits of AI agents in decentralized decisi on- 
+making regarding inventory coordination and dynamic logistics management that 
+lead to improved supply chain flexibility and performance. It also gives a detailed 
+discussion of the role of AI agents in fault deection within Industrial robotics. 
+ To address Challenges in real-time monitoring and fault classification, 
+agents are made capable of autonomous anomaly detection and correction 
+initiation. It focuses on improved production quality, machinery longevity, 
+and operational safety. 
+This paper discusses the implementation of decentralized AI agents in controlling 
+energy consumption in smart factories. Obstacles like forecasting energy usage 
+and the complexity of system integration are also discussed. It demonstrates how 
+11 
+ 
+the agents ensure the synchronization of energy consumption between different 
+machines and optimize energy consumption patterns to minimize costs while 
+meeting sustainability goals. It also offers a through analysis of quality 
+management for automated production lines using AI agents. This study deals 
+with various issues, including the accuracy of the defect detection process and the 
+control of manufacturing processes in the real time. 
+ 
+ It highlights how the agents possess the skills to analyse the sensor and 
+vision information, so that they are able to find defects in real time and 
+adjust the parameters of production processes in order to maintain the high 
+level of the quality of products. The paper also stresses how AI agents 
+improve the real time decision making process in dynamic industrial 
+conditions. It contributes to the existing literature on the benefits of 
+deployment of AI agents into industrial networked control systems to 
+enhance efficiency and productivity. The article also highlights that it can 
+save costs and reduce downtimes in the operations by utilizing AI agents. 
+In sum, the study helps to recognize the imperativeness of adopting 
+breakthrough technologies such as AI agents to fuel innovation and gain a 
+competitive advantage in the contemporary companies. 
+Table 2 Pairs up some of the important methods of AI agents applied in 
+industrial engineering, discussing their implementations in troublesome 
+field such as, intrusion detection, predictive maintenance, and quality 
+control. It draws attention to the roel agents play in promoting the 
+automation, robustness and efficiency of the industrial systems. 
+Table 2 Survey of Artificial Intelligence Agent Methods Applied in the 
+Industrial Engineering Context 
+Title of the 
+Paper 
+Industry Domain Features 
+Implemented 
+References 
+AI Agent-
+Based 
+Intrusion 
+Detection in 
+the 
+Industrial 
+Internet of 
+Things(2023
+) 
+Industrial 
+Internet of 
+Things (IIoT) 
+Cybersecurity Autonomous 
+agents 
+constantly 
+monitor 
+network traffic, 
+cooperatively 
+detect 
+security threats 
+and coordinate 
+[15] 
+12 
+ 
+prompt action in 
+order to 
+protect the IIoT 
+environment. 
+ 
+AI Agent-
+Driven 
+Predictive 
+Maintenance 
+for Smart 
+Manufacturi
+ng(2024) 
+Manufacturing Predictive 
+Maintenance 
+Intelligent 
+agents 
+constantly 
+monitor 
+sensor data, 
+recognize early 
+warning signs of 
+equipment 
+failure and 
+coordinate 
+maintenance 
+operations 
+to reduce 
+downtime. 
+ 
+ 
+ 
+[16] 
+Multi-Agent 
+Systems for 
+Supply 
+Chain 
+Optimizatio
+n in Industry 
+4.0(2023) 
+Supply Chain 
+& Logistics 
+Supply Chain 
+Management 
+Distributed AI 
+agents 
+collaborate to 
+manage 
+inventory and 
+This is 
+compounded by 
+the fact that the 
+middlemen must 
+also manage 
+forecast demand 
+and coordinate 
+logistics 
+scheduling, 
+making the 
+supply chain 
+more efficient 
+and resilient. 
+[17] 
+ 
+13 
+ 
+AI Agent-
+Based Fault 
+Detection in 
+Industrial 
+Robotics(20
+25) 
+Industrial 
+Robotics 
+Fault Detection 
+and 
+Diagnostics 
+Agents 
+continuously 
+supervise 
+robotic systems, 
+detect faults 
+through real-
+time data 
+analysis, and 
+trigger alerts or 
+corrective 
+measures to 
+ensure 
+production 
+quality. 
+[18] 
+Decentralize
+d AI Agents 
+for Energy 
+Management 
+in Smart 
+Factories(20
+23) 
+Manufacturing Quality 
+Assurance 
+Agents process 
+real-time sensor 
+and vision data 
+to identify 
+defects and 
+adapt 
+manufacturing 
+parameters to 
+maintain 
+consistent 
+product quality. 
+[19] 
+AI Agent-
+Based 
+Quality 
+Control in 
+Automated 
+Production 
+Lines(2024) 
+Industrial 
+Robotics 
+AGV 
+Navigation & 
+Control 
+Cloud-based DT 
+for AGV, sensor 
+deployment, 
+Extended 
+Kalman Filter, 
+Graph Neural 
+Networks for 
+position 
+estimation. 
+ 
+[20] 
+ 
+All the technologies described above will be able to make industrial 
+environments more effective, safe and suitable for decision-making due to 
+the work with real-time data and smart 
+automation. Vision-based monitoring and advanced analytics are used by 
+artificial intelligence 
+14 
+ 
+agents to improve network performance and the guidance of Autonomous 
+Guided Vehicles (AGVs). 
+ 
+ 
+3. Case Studies 
+In this section two case studies have been used to demonstrate the practical 
+implementation of AI and AI agents in industrial engineering. The first one 
+talks about the real time predictive maintenance of industrial machinery. 
+ 
+Case Study 1- Real-Time Predictive Maintenance Dashboard for 
+Industrial Machines 
+ 
+The industries today are always striving to maintain the operational 
+efficiency of their machines at low cost. Traditional approaches such as 
+repairing broken machines or following regular maintenance cycles prove 
+to be less effective as these result into unplanned interruptions or 
+unnecessary expenses [9]. The predictive maintenance, however, provides 
+a much better alternative as it involves prediction of possible failure of 
+machinery so that preventive repairs could be undertaken [11]. This study 
+deals with the development of a Real time predictive Maintenance 
+Dashboard which keeps a constant watch on the health of machines, 
+identifies possible problems and alerts about these thorugh the live 
+visualization [21]. Some of the major industries depend upon asset 
+maintenance solutions such as IBM Maximo Application Suite (MAS) 
+[22], Siemens MindSphere [23], GE Predix [24]. 
+ 
+ These applications have various features; they can interact with IoT 
+sensors, apply artificial intelligence algorithms to predict maintenance, and 
+even manage maintenance process on the single platform. Nonetheless, 
+each application presents its own difficulties. 
+ 
+3.1 Proposed Solution: Real-Time Predictive Maintenance Dashboard 
+ 
+In order to address this issue, a Real Time predictive Maintenance 
+Dashboard will be developed, which will be light, flexible, and 
+inexpensive. Rather than depending on heavy enterprise applications, a 
+hybrid system for monitoring incoming machine data and the predicting 
+failures with Random Forest, Isolation Forest and Autoencoder algorithms 
+is proposed. [25] while Random Forest provides the probability of failure 
+according to labeled patterns, Isolation Forest uncovers abnormal patterns 
+15 
+ 
+without labeling, and the Autoencoder algorithm pinpoints slight 
+variations from normal operation. The results of the risk score and the 
+machines at high risks are identified on the simple dashboard. 
+ 
+The Random Forest classifier is designed to construct the several decision 
+trees in the training process, and aggregate the result to increase accuracy. 
+Each tree provides its predictions and then the final prediction of failure 
+probability is calculated by averaging across all the trees as follows: 
+ ܲோி(=)ݔ 1 ் ∑் ௧=1 ܲ௧()ݔ( 1) 
+ 
+Here , T is the number of trees, and ܲ௧()ݔ is the probability output from 
+tree t. This ensemble approach reduces overfitting and captures complex 
+patterns in sensor data such as temperature, torque, and rotational speed. 
+However, Random Forest alone may miss rare or unseen anomalies that 
+were not present in the training data. 
+To counter this, Isolation Forest, Which is an unsupervised machine 
+learning algorithm is employed. Unlike other methods where the aim is to 
+model normal instances, in Isolation Forest, anomalies are identified via 
+random partitioning of the feature space. The rational behind this is that 
+anomalies are easy to detect and isolate from the remaining dataset. Its 
+anomaly score is mathematically expressed in (2), 
+ 
+ =)ݔ(ݏ 2 −ಶ[ℎ(ೣ)] ೎(೙) (2) 
+ 
+where E[h(x)] is the mean path length of instance x from the isolation trees, 
+and c(n) is a normalization factor based on the dataset size. A shorter path 
+length corresponds to higher anomaly likelihood. This makes Isolation 
+Forest effective at identifying outliers without the need for labelled failure 
+data. 
+ 
+For further reinforcement, an Autoencoder is implemented, which is a 
+deep learning algorithm that reconstructs the sensor data as input. This is 
+done by reducing the dimension of the input data and then autoencoder to 
+learn normal machine behavior and any deviations from the normal 
+machine behavior and any deviations from the normal will lead to 
+reconstruction error as illustrated in (3) , 
+ =)ݔ(ܧܴ 1 ௗ ∑ௗ ௜=1 (ݔ௜ − ݔప̂ )2 (3) 
+ 
+16 
+ 
+Here, x is the actual sensor reading, ݔ ̂is the reconstructed value, and d is 
+the number of features. If RE(x) is high, it indicates that the current 
+condition deviates significantly from healthy operating patterns, 
+suggesting a potential failure. 
+To combine the strengths of these three models, we designed a risk score 
+formulation. First, the outputs of Isolation Forest (ܽூி)and Autoencoder 
+(ܽ஺ா) are averaged to compute an aggregated anomaly score as shown in 
+(4) : 
+ =ܽ 
+௔಺ಷ+௔ಲಶ
+2 (4) 
+ 
+ 
+Next, this anomaly score is combined with the Random Forest probability 
+(p) to form the final risk score: 
+ 
+ =ߚ+ߙ( ܽߚ+݌ߙ=ܴ 1) (5) 
+ 
+where α and β are weighting factors that balance supervised learning with 
+unsupervised anomaly detection as shown in (5) . For example, if labelled 
+data is abundant, α may be set higher; if failures are rare and anomalies are 
+more critical, β may carry more weight. 
+The calculated risk score R is then mapped to machine health categories: 
+● Critical: R≥0.7 
+● Warning: 0.4≤R<0.7 
+● Healthy: R<0.4 
+Such a mixed approach makes it possible to detect both the existing failure 
+modes (using Random Forest) and the unknown ones (Isolation Forest and 
+Autoencoder). The dataset employed for this research is the NASA 
+Turbofan Engine Degradation Dataset [26], that contains the key 
+characteristics such as the settings, air temperature, pressure, rotational 
+speed, and various measurements made by the sensors, reflecting the real 
+conditions of aircraft engines. Every individual machine is marked either 
+normal or close to the state of failure. The use of this dataset helps 
+industries monitor their machines in real time and detect any anomalies to 
+plan maintenance better [26]. 
+ 
+The open-source technologies were primarily used during the development 
+of the project. First of all, the Python language was chosen as the basis for 
+all developments due to its flexibility and great number of data science 
+17 
+ 
+libraries. The libraries Pandas and NumPy helped to prepare the data 
+rapidly and effectively. In order to build real-time visualization, the plotly 
+library was chosen because of its great capabilities of building interactive 
+dashboards [27]. By leveraging this hybrid architecture on top of the 
+NASA Turbofan dataset [28], the dashboard captures essential operational 
+parameters, translates them into actionable health scores, and provides 
+real-time, explainable alerts. This empowers industries to detect early 
+warning signs, plan maintenance proactively, and avoid costly machine 
+failures[29]. 
+ 
+3.2 Machine learning simulation of Real-Time Monitoring 
+ 
+A hybrid predictive maintenance solution is applied in order to forecast 
+potential failures. In particular, the supervised algorithm is represented by 
+a Random Forest Classifier model built with the help of Scikit-learn. It was 
+used to estimate the likelihood of a failure occurrence, having the labelled 
+data about the work of machines as input [25]. At the same time, for 
+anomaly detection, an unsupervised Isolation Forest model and a deep 
+Autoencoder neural network trained with TensorFlow/Keras were used. 
+As a result, by combining all the models in one solution, the project 
+succeeded in detecting familiar as well as previously unseen patterns of 
+failures. To Simulate the real-time monitoring, the data about 
+machines’work was provided to the system piece -by-peice with some 
+artificial delay between the input data pieces using time module in python 
+[30]. This way of processing the data resembles the real-life situation when 
+data about the machine is transmitted from it. As a result, the hybrid model 
+could run continuously, allowing early fault detection and more realistic 
+monitoring of machine health. 
+ 
+ 
+Figure 2 presents all the stages of the process of working with the hybrid 
+prediction system. 
+ 
+18 
+ 
+ 
+Figure 2 Workflow of Hybrid Predictive Maintenance Dashboard 
+ 
+3.3 Results and Discussion 
+ 
+As predictions were generated on each batch of incoming data, the results 
+were processed directly into a live dashboard built using Plotly. The 
+dashboard displayed a scatter plot as shown in Figure 3, where each 
+machine was represented as a bubble. The x-axis showed rotational speed, 
+the y-axis showed torque, and the colour of each bubble indicated the 
+machine’s health status - green for healthy, orange for warning, and red for 
+critical. The bubble size depicts the likelihood of failure. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+19 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Figure 3: Real-Time Machine Snapshot 
+ 
+ 
+Figure 4 shows the risk score trends over time for the machines across 
+different batches of data. The x-axis represents time for different batches 
+of data and the y-axis represents risk score ranging from 0-1. Potential 
+failure that are likely to occur is indicated by the upward trends. Lower 
+trends indicate that the machines are operating in a safer condition. The 
+visualization not only predicts the current situation of the machine but also 
+its condition in the future. 
+ 
+
+20 
+ 
+ 
+Figure 4 Risk Score Trends Over Time 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5: Model Training Process Across Epochs 
+ 
+
+21 
+ 
+The trends in Figure 5 represents the training of model across epochs for 
+predictive model, in which the training loss indicates the performance of 
+the model based on the dataset it was trained with, while the validation 
+indicates how effective performance of the model on unseen data. With 
+continuous training both loss curves showed a constant decline, indicating 
+that the model learned the key patterns in the sensor data. Their close 
+alignment also indicates minimal overfitting and stable performance on 
+unseen data. 
+ 
+ 
+Figure 6 Confusion Matrix for Hybrid Predictive Maintenance Model 
+ 
+The confusion matrix in Figure 6 illustrates the model’s ability to classify 
+the machines into Healthy, Warning and Critical states. The diagonal 
+boxes represents that the models were predicted correctly, whereas all 
+other boxes were predicted incorrectly. Almost all the machines were 
+classified correctly and only very few were classified incorrectly. Overall, 
+the confusion matrix confirms that the model effectively distinguishes 
+healthy machines from those showing signs of risk. 
+ 
+ 
+ 
+ 
+
+22 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Figure 7 Comparison Between Random Forest and Hybrid Model 
+ 
+To evaluate the extent of improvement of the hybrid approach, both the 
+Standalone Random Forest and Hybrid Predicitve Maintenance models 
+were evaluated based on NASA Turbofan Engine Degradation Dataset as 
+demonstrated in Figure 8. Both of the models were tested using four 
+criteria; namely, Accuracy, Precision, Recall and F1-Score. While the 
+Random Forest Model yielded relatively high results for accuracy, it had 
+trouble recognizing small and rare defects, which consequently decreased 
+its recall score. The Hybrid approach combining Isolation and 
+Autoenconder outperformed the Random Forest approach in anomaly 
+detection and pattern adaptation. 
+ 
+Case Study 2 : AI Agent-Based Supply Chain Coordination for Sub-
+Product Availability 
+ 
+Supply chain coordination is essential in industrial engineering especially 
+regarding the availability of the necessary sub-products that might include 
+machinery, specialized tools, electronic components, or even semi-
+intermediate raw materials [31]. The lack of these sub-products will lead 
+
+23 
+ 
+to disruption in production scheduling and increase costs in addition to 
+affecting customers’ satisfaction [32]. Conventional supply chains depend 
+largely on real-time data collection through IoT sensors and embedded 
+devices which might not be feasible for small and mid-sized companies 
+[33]. The lack of budget, system complexity or previous operations 
+becomes an impediment to the IoT implementation in many cases. In such 
+situation, artificial intelligence (AI) agents prove themselves to be an 
+alternative solution, which helps improve coordination, forecasting, and 
+decision making while not requiring real-time data from sensors. 
+The presented case study is about the development of an AI-enabled 
+coordination system to guarantee timely delivery of sub-products using 
+historical demand data and available inventory data, without any help of 
+the Internet of Things technology [34]. This solution is realistic and 
+scalable, meeting the needs of real-life supply chains by means of smart 
+processing of data. 
+Many leading companies around the world rely on advanced supply chain 
+management technologies such as SAP IBP [35], Oracle SCM Cloud, and 
+Kinaxis Rapid Response for real-time inventory management and 
+planning; however, the high cost, complexity, and dependence on the IoT 
+or ERP platforms make them impractical for small or medium-sized 
+businesses [36]. These limitations highlight the need for affordable, AI-
+driven systems that can deliver similar efficiency without extensive 
+technical or financial requirements [37]. 
+ 
+3.4 Proposed Solution: AI Agent-Based Supply Chain Coordination 
+Model 
+ 
+The "M5 Forecasting Accuracy" dataset [38], which is freely accessible 
+and provided by Walmart on Kaggle, was used to create and evaluate the 
+suggested AI coordination system. Even though the dataset is associated 
+with the retail industry, it mirrors the sub-product logistics in the 
+manufacturing sector closely. For this project, a part of the provided data 
+was reconfigured to mimic the functioning of a warehouse system with 
+three warehouses (W1, W2, and W3) managing sub-products A, B, and C 
+. 
+ 
+ 
+24 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 8 Flowchart of sub-product availability prediction using demand 
+forecasting and decision engine. 
+Such representation helped us emulate the effects of demand volatility, 
+different inventories in various regions, and warehouse decision-making, 
+allowing us to train and test the AI coordination agents. The tech stack that 
+the suggested AI coordination system is based on is rather simple and 
+reliable. To pre-process data, we use Pandas and NumPy libraries. Data is 
+forecasted via Scikit-learn algorithms such as Linear Regression and 
+Random Forest. Custom decision engine built on Python identifies 
+potential warehouses and detects inventory issues. Visualization of the 
+result is carried out with the help of Matplotlib and Plotly libraries, making 
+the system both reliable and user-friendly for the industry use (Figure 8). 
+ 
+
+25 
+ 
+The Main goal of the system is to match future demand for sub-products 
+with existing inventories across different warehouses, thereby ensuring 
+production continuity. 
+The architecture comprises three interdependent AI agents: 
+ 
+1. Forecasting Agent 
+This agent produces a robust short-term demand forecast ܦ̂௜(+ݐ 1) for 
+each sub-product ݏ ݏܽ ݅ℎ( ݊݅ ݊ݓ݋6). 
+● Individual model outputs: 
+ 
+ ܦ௅ ோ೔,  ܦோி೔,  ܦ௅ௌ்ெ೔,  ܦ஺ேே೔,  ܦீ஻೔ (6) 
+ 
+● Ensemble forecast (weighted average): 
+ 
+ ܦ̂௜ = ݓ௅ோܦ௅ோ೔ + ݓோிܦோி೔ + ݓ௅ௌ்ெܦ௅ௌ்ெ೔ + ݓ஺ேேܦ஺ேே೔ + ݓீ஻ܦீ஻೔ (7) 
+ 
+with weights ݓ௞chosen by cross-validation and ∑௞ ݓ௞ = 1. This 
+ensemble combines: 
+• Linear Regression (LR) — baseline trend and seasonality capture; 
+interpretable. 
+• Random Forest (RF) — robust, fast non-linear mapping; tolerates noisy 
+features. 
+• LSTM — models temporal dependencies and sequence patterns in 
+demand history. 
+•ANN — captures complex nonlinear interactions across features . 
+• Gradient Boosting (GB) — powerful tree-based learner that often 
+improves accuracy on tabular data. 
+ 
+2. Inventory Analysis Agent 
+Once demand is predicted, the second agent compares these forecasts with 
+real-time inventory records stored in databases or spreadsheets. This 
+comparison is conducted across all available warehouses (e.g., W1, W2, 
+W3) to assess where sufficient inventory exists to meet the forecasted 
+demand. It compares ܦ̂௜to warehouse inventories ܫ௜௝(product ݅at warehouse 
+݆ ,)compute gaps: 
+ 
+ ܩ௜௝ = ܫ௜௝ − ܦ̂௜ (8) 
+ 
+ Flags: ܩ௜௝ < 0indicates understock; ܩ௜௝ ≥ 0suffices for forecasted demand. 
+ 
+26 
+ 
+3. Coordination Agent 
+This is the decision-making core of the system. Based on inputs from the 
+first two agents, it determines: 
+● Which warehouse is best positioned to fulfill the demand for each sub-
+product 
+● Whether a shortage exists 
+● Recommendations for procurement or inter-warehouse transfers 
+ 
+The Coordination Agent can also trigger alerts to human planners, 
+suggesting when and where action is needed well before production 
+bottlenecks occur. 
+It minimizes redistribution and procurement cost while satisfying demand: 
+ 
+ = ܼ ∑௜ ∑௝ ܿ௜௝ (0, −ܩ௜௝) (9) 
+ 
+subject to capacity ܫ௜௝ ≤ ݌ܽܥ௝and aggregated availability ∑௝ ܫ௜௝ ≥
+ܦ̂௜ where feasible as given in (9) . The engine recommends: best warehouse 
+to fulfill ܦ̂௜, inter-warehouse transfers, or procurement actions and 
+generates alerts when supply is insufficient. 
+3.5 Results and Discussion 
+
+27 
+ 
+ 
+ Fig 9: Forecasted sub-product demand with real-time visualization 
+Predicted Demand for Next Month 
+The system has used historical demand data for three sub-products (A, B, 
+and C) and applied a forecasting model to predict the demand for the next 
+(7th) month as shown in Figure 9 . The predicted values are: 
+● Sub_Product_A: 145.0 units 
+● Sub_Product_B: 112.5 units 
+● Sub_Product_C: 92.5 units 
+These forecasts are displayed alongside current inventories ܫ௜௝to produce 
+gap scores ܩ௜௝and a normalized risk score ܴ௜for each product (used by the 
+Coordination Agent). A simple normalized formulation is given in (10): 
+ ܴ௜ =
+(ݔܽ݉0, ܦ̂௜ − ∑௝ ܫ௜௝)
+ܦ̂௜ ( ݁݃݊ܽݎ 0 − 1) (10) 
+ 
+Best Warehouse to Fulfill the Demand 
+The system compares the forecasted demand with the current inventory 
+levels across available warehouses and provides a recommendation: 
+● Sub_Product_A: No warehouse has enough inventory to meet 
+145 units — action needed (e.g., reorder or redistribute). 
+● Sub_Product_B: The demand can be met by Warehouse W3. 
+● Sub_Product_C: The demand can be met by Warehouse W1. 
+ 
+These suggestions assist supply chain mangers in determining which 
+warehouses would be able to meet the sub-product demands and where 
+proactively taking actions such as ordering or reallocating is needed. In the 
+suggested AI Agent-Based Supply Chain Coordination framework, an 
+ensemble of different models- LSTM, ANN, Random Forest, and Gradient 
+Boosting work together to predict the demand and mitigate uncertainty. 
+LSTM handles time-varying and seasonal effects, ANN learns the complex 
+relation between demand and its drivers, whereas Random Forest and 
+Gradient Boosting deliver quick and robust predictions in tabular form. 
+This allows agents to make fast and effective decisions even in cases of 
+abrupt demand increases or disruptions in the supply chain. Training on 
+the M5 Forecasting dataset provided by Walmart helped in replicating the 
+industrial supply chain environment. 
+28 
+ 
+ 
+In Fig. 10, the variations of the risk scores of sub-products A, B and C 
+have been illustrated in different monitoring intervals. An increase in score 
+implies an increase in the shortage risk and vice-versa. Here, Sub-Product 
+A has an increasing pattern, suggesting stock problem whereas, B and C 
+remain largely stable. This makes it easy for planners to recognize early 
+indications of stock problems and conduct prompt actions such as 
+relocation or replenishment. 
+ 
+ 
+Figure 10 Risk Score Trends Over Time 
+ 
+From the loss curves of Figures 11, it is observed that both training and 
+validation loss have decreased smoothly implying effective learning of the 
+network. Moreover, the two curves follow one another closely, which 
+implies good generalization without any sign of overfitting. However, 
+small fluctuations may be noticed in both due to the natural nature of 
+variation in time-series data. 
+ 
+ 
+
+29 
+ 
+ 
+Figure 11 : LSTM Model Training Process Across Epochs 
+This means that we can now easily figure out which systems have 
+shortages and manage accordingly. The ANN model was trained on the 
+non-linear relationship between demand and inventory values. The 
+accuracy curve of the model show that they were increasing steadily at 
+high values during the training and validation phases. From Fig. 12, it can 
+be observed that there is a very small gap between the two curves, which 
+implies that the learning was well-balanced. thus , ANN would be capable 
+of capturing complex patterns and making reliable prediction in the supply 
+chain. 
+ 
+
+30 
+ 
+ 
+ 
+Figure 12 : ANN Model Training Process Across Epochs 
+ 
+In order to determine how effectively the AI Agent-Based Supply Chain 
+Coordination system classifies the demand levels, a confusion matrix has 
+been created with three classifications: Sufficient, Moderate and Critical 
+Shortage. The Values on the diagonals indicate the correct classification 
+while the other cells contain values indicating incorrect classification. As 
+most of the values lie on the daigonals, it indicates that the model can 
+classify the wel-stocked and poorly stocked systems as illustrated in Figure 
+13. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 13 Confusion Matrix for AI Agent-Based Supply Chain Coordination System 
+
+31 
+ 
+ 
+ 
+ 
+Figure 14 Performance Comparison Of The Models 
+ 
+ 
+As illustrated in Figure 14, four different machine learning models have 
+been assessed to determine the optimal one. These four models, the model 
+that gave the best result was the Random Forest, with an accuracy of 95% 
+and precision of 91%, meaning it can handle demand variability quite 
+effectively. 
+ 
+The LSTM model was good for the time based pattern recognition but 
+could not cope with demand variability. ANN and Gradient boosting gave 
+moderate results and would need some optimization. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.Conclusion 
+
+32 
+ 
+From Supply chain optimization to the predictive maintenance and 
+adaptive production planning, this paper has demonstrated how the 
+development in artificial intelligence and intelligent agents is 
+revolutionizing industrial engineering through smarter and more efficient 
+decisions making processes. 
+The Findings from the experiments carried out for both the cases are 
+evidence of this revolutionary change brought about by the integration of 
+AI. In the Real-Time Predictive Maintenance Dashboard, for example, 
+machine failures were predicted beforehand, thus reducing unexpected 
+downtimes and enhancing maintenance efficiency. In addition, the AI 
+Agent-Based supply chain coordination system was able to increase the 
+availability of sub-products due to accurate prediction of demand and 
+effective stock management. 
+With regard to the future developments in the Predicitve Maintenance 
+System, there will be integration of IoT-based industrial sensors to collect 
+and stream real time machine data into the dashboard. Communication and 
+data synchronization will be done through cloud based APIs created via 
+Fast API or Flask. Edge computing will be adopted near production floors. 
+For the AI Agent-Based supply chain system, emphasis will be placed on 
+integrating real-time inventory management by developing strong REST 
+APIs and scaling up by deploying on cloud based platforms like AWS or 
+Azure. Real time analytics at the edge will speed up decision making 
+processes. In Subsequent versions, complex AI technologies like 
+reinforcement learning and self-organizing multi-agent systems will be 
+applied to make the system capable of adapting to unforeseen changes in 
+demand, logistics or other external disturbances. 
+Ultimately, combining AI with IoT and intelligent collaboration 
+techniques marks a significant advance towards intelligent, self-
+developing industrial ecosystems. 
+ 
+ 
+ 
+ 
+33 
+ 
+Declarations 
+a. Funding 
+‘Not applicable’ 
+b. Conflicts of interest/Competing interests 
+‘Not applicable’ 
+c. Authors’ contributions 
+All authors contributed to the study conception and design. Data 
+collection, and the implementation of the intelligent agents were 
+performed by Supriya and Sharanya Shree. The first draft of the 
+manuscript was written by Sharanya Shree. Supervision and critical 
+revisions for intellectual content were provided by Dr. Soma Prathibha and 
+Dr. K. Palanikumar. All authors read and approved the final manuscript. 
+References 
+1. Lee J, Bagheri B, Kao HA (2015) A Cyber-Physical Systems 
+architecture for Industry 4.0-based manufacturing systems. Manuf 
+Lett 3:18–23 
+2. Wooldridge M, Jennings NR (1995) Intelligent agents: Theory and 
+practice. 
+ Knowl Eng Rev 10:115–152 
+3. Shen W, Hao Q, Yoon HJ, Norrie DH (2006) Applications of agent-
+based 
+ systems in intelligent manufacturing: An updated review. 
+ Advanced Engineering Informatics 20:415–431 
+4. Sharma A, Kumar V, Singh R (2024) AI-based predictive 
+maintenance 
+ system for smart manufacturing: A case study. J Intell Manuf 
+35:143–156 
+5. Chen L, Wang J, Liu T (2023) Multi-agent coordination in 
+intelligent 
+ supply chains: An AI-driven framework. Int J Prod Res 61:350–366 
+6. Rodrigues M, Barbosa F, Leitªo P (2022) Agent-based architecture 
+for 
+ adaptive and distributed production planning and control. Procedia 
+ CIRP 111:399–404 
+34 
+ 
+7. Wang B, Zhang H, Tao F (2020) Smart manufacturing and 
+intelligent 
+ analytics in industrial systems: Review and perspectives. 
+ J Manuf Syst 56:373–391 
+8. Ghosh P, Dey R, Ghosh A (2022) Industrial automation through 
+ artificial intelligence: Opportunities and challenges. Procedia 
+Comput 
+ Sci 199:648–655 
+9. Ghosh S, Roy P, Mitra A (2020) Tackling Faults in the Industry 4.0 
+ Era—A Survey of Machine-Learning Solutions and Key Aspects. 
+ IEEE Access 8:123456–123478 
+10. Sharma R, Gupta M (2023) AI-Based Predictive Maintenance for 
+ Fault Detection and Proactive Scheduling: Enhancing Reliability and 
+ Reducing Downtime. Journal of Intelligent Manufacturing Systems 
+33:45–59 
+11. Kumar A, Mehta S, Das T (2024) Machine Learning Models for 
+Predictive 
+ Maintenance in Industrial Engineering. Comput Ind Eng 
+188:109913 
+12. Li J, Zhang Y, Zhao K (2025) Neural Combinatorial Optimization 
+with 
+ Reinforcement Learning in Industrial Engineering: A Survey. Artif 
+Intell Rev 58:1–26 
+13. Rossi M, Fernandes L (2020) Machine Learning Applications 
+ in Production Lines: A Systematic Literature Review. J Manuf Syst 
+54:258–273 
+14. Banerjee D, Verma S, Patel N (2023) Using ML and DL Algorithms 
+ for Intrusion Detection in the Industrial Internet of Things. 
+International Journal of Industrial Informatics and IoT 6:77–92 
+15. Khan R, Mishra S, Bose A (2023) AI Agent-Based Intrusion 
+Detection in the 
+ Industrial Internet of Things. Journal of Industrial IoT Security and 
+Systems 5:21–35 
+16. Mehta T, Singh P, Roy L (2024) AI Agent-Driven Predictive 
+Maintenance for Smart Manufacturing. International Journal of 
+Smart Manufacturing Technologies 12:88–104 
+17. Sharma V, Rathi M, Nair R (2023) Multi-Agent Systems for Supply 
+Chain Optimization in Industry 4.0. Comput Ind Eng 174:108746 
+18. Banerjee S, Chen Y (2025) AI Agent-Based Fault Detection in 
+Industrial Robotics. IEEE Trans Industr Inform 21:1234–1245 
+35 
+ 
+19. Iyer K, Luo D, Ahmed M (2023) Decentralized AI Agents for 
+Energy Management in Smart Factories. Energy Informatics 
+Journal 7:55–70 
+20. Patel H, Yadav S (2024) AI Agent-Based Quality Control in 
+Automated Production Lines. Journal of Intelligent Manufacturing 
+Systems 33:345–359 
+21. Liang W, Zhu W, Li X (2023) Tool life prediction of dicing saw 
+based on adaptive golden jackal optimizing GRU. International 
+Journal of Interactive Design and Manufacturing (IJIDeM) 
+18:1053–1057 
+22. Corporation IBM (2025) IBM Maximo Application Suite – 
+Intelligent Asset Management 
+23. AG S (2025) MindSphere – The Industrial IoT as a Service Solution 
+24. Digital GE (2025) Predix Platform – Industrial IoT for APM and 
+Operations Optimization 
+25. Breiman L (2001) Random forests 
+26. Saxena A, Goebel K, Simon D, Eklund N (2008) Damage 
+propagation modeling for aircraft engine run-to-failure simulation. 
+In: 2008 International Conference on Prognostics and Health 
+Management. pp 1–9 
+27. Pedregosa F, Varoquaux G, Gramfort A, et al (2011) Scikit-learn: 
+Machine learning in Python. Journal of Machine Learning Research 
+12:2825–2830 
+28. Saxena A, Goebel K, Simon D, Eklund N (2008) Damage 
+Propagation Modeling for Aircraft Engine Run-to-Failure 
+Simulation. In: Proceedings of the International Conference on 
+Prognostics and Health Management (PHM) 
+29. McKinney W (2010) Data Structures for Statistical Computing in 
+Python. In: Proceedings of the 9th Python in Science Conference. 
+pp 51–56 
+30. Foundation PS (2024) time — Time access and conversions 
+31. Chopra S, Meindl P (2016) Supply Chain Management: Strategy, 
+Planning, and Operation. Pearson Education 
+32. Prasad VRS, Medikondu NR, Ravulapalli VP (2023) Design of 
+smart operating table based on HCI and virtual visual tracking 
+technology. International Journal of Interactive Design and 
+Manufacturing (IJIDeM) 18:1019–1031 
+33. Bibby L, Dehe B (2018) Defining and assessing industry 4.0 
+maturity levels–case of the defence sector. Production Planning & 
+Control 29:1030–1043 
+36 
+ 
+34. Monostori L (2014) Cyber-physical production systems: Roots, 
+expectations and R&D challenges. Procedia CIRP 17:9–13 
+35. SAP (2024) SAP Integrated Business Planning: Customers and 
+Case Studies 
+36. Oracle (2024) Oracle SCM Cloud: Success Stories 
+37. Kinaxis (2024) Customer Case Study: Honeywell and 
+RapidResponse 
+38. Walmart (2020) M5 Forecasting - Accuracy 
+ 

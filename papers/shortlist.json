@@ -50,324 +50,6 @@
    "text_file": ""
   },
   {
-   "openalex": "W7225653349",
-   "doi": "https://doi.org/10.1007/s44163-026-02671-5",
-   "title": "Pyramidal inhibitory lightweight autoassociative reconstruction for cost-constrained visual anomaly detection",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "Discover Artificial Intelligence",
-   "publisher": "Springer Nature",
-   "authors": [
-    "Bruno Fernandes"
-   ],
-   "institutions": [
-    "Leibniz University Hannover",
-    "Universidade de Pernambuco"
-   ],
-   "countries": [
-    "BR",
-    "DE"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1007/s44163-026-02671-5",
-   "pdfs": [
-    "https://link.springer.com/content/pdf/10.1007/s44163-026-02671-5.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract Visual anomaly detection plays an important role in industrial inspection, edge monitoring and visual quality control, particularly where abnormal samples are rare, heterogeneous, and often unavailable during training. Recent deep anomaly detection approaches have achieved high classification performance by leveraging pretrained backbones, memory banks, nearest-neighbor search, synthetic anomaly generation, or auxiliary discriminators. However, these methods often increase parameter count, floating-point operations (FLOPs), memory usage, update size, and energy consumption, which complicates deployment on cost-constrained industrial or edge hardware. This study introduces PILAR (Pyramidal Inhibitory Lightweight Autoassociative Reconstruction), a compact reconstruction-based architecture for anomaly detection. PILAR employs a pyramidal autoassociative encoder-decoder with local receptive fields, a spatial bottleneck, pure-pyramid reconstruction, and lateral inhibition to promote local competition within feature maps. The model is trained only with normal samples, and the anomaly score is obtained from reconstruction residuals. Thus, during inference, PILAR does not require class prototypes, covariance matrices, support vectors, density parameters, nearest-neighbor databases, or discriminator states. PILAR is evaluated on MNIST, Fashion-MNIST, CIFAR-10, MVTec AD, and VisA datasets using direct image reconstruction, whole-image RGB reconstruction, patchwise RGB reconstruction, and Feature-PILAR-FCN, a fully convolutional feature-space variant that uses compact PILAR heads to reconstruct selected frozen feature maps. In the evaluated implementation, these maps are taken from ResNet18 layer 2 and layer 3 prior to residual scoring. The proposed detector reaches $$98.86\\pm 0.04\\%$$ Image-AP and $$92.63\\pm 0.05\\%$$ AUPRO@30 on MVTec AD over five seeds; the unchanged industrial configuration reaches $$92.53\\pm 0.07\\%$$ Image-AUROC on VisA. Compared with the evaluated ResNet18 configurations of SimpleNet and GLASS, Feature-PILAR-FCN retains 35.6% fewer inference parameters and achieves 5.2–5.6 times their throughput at batch size 16 on the same Apple M4 Max GPU in FP32, despite higher single-image latency. These results indicate that PILAR can be used as a low-state anomaly detector when memory footprint and computational cost are relevant constraints. They also show that direct RGB reconstruction is useful mainly in selected low-cost screening cases, while broader industrial detection requires a more informative representation, which in this work is obtained from frozen feature maps.",
-   "lanes": [
-    "Network design"
-   ],
-   "score": 7.0,
-   "why": [
-    "Nordic/DACH authors (DE)",
-    "practice signals: field, implementation, industrial",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7225653349.txt"
-  },
-  {
-   "openalex": "W7225661831",
-   "doi": "https://doi.org/10.3389/fpls.2026.1981795",
-   "title": "Fine-grained sugarcane varietal classification using high-resolution PRSS-1 satellite imagery: a field-validated dataset and a spatial context-aware deep learning framework",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "Frontiers in Plant Science",
-   "publisher": "Frontiers Media",
-   "authors": [
-    "Shehryar Attaullah Khan",
-    "Musharif Ahmed",
-    "Naeem Fiaz",
-    "Maaz Alam",
-    "Atif Naseer",
-    "Sultan Daud Khan",
-    "Hina Afridi",
-    "Mohib Ullah"
-   ],
-   "institutions": [
-    "Riphah International University",
-    "Umm al-Qura University",
-    "Sohar University",
-    "University of Bergen",
-    "Norwegian University of Science and Technology"
-   ],
-   "countries": [
-    "NO",
-    "OM",
-    "PK",
-    "SA"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.3389/fpls.2026.1981795",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Introduction Precise mapping of sugarcane varieties is crucial for precision agriculture, yield evaluation, protection of breeders’ rights, efficient supply chain management and policy formulation. Previous studies highlighted that remote sensing techniques suffered issues such as low spatial resolution and inadequate field-validated ground truth data. Literature review reported usage of statistical analysis methods and machine learning approaches in classification of sugarcane varieties, while constraining the use of deep learning techniques, primarily due to low quality and insufficient dataset size. Furthermore, the literature highlights the scarcity of high spatial resolution datasets that could be attributed to employment of open-source hyper-spectral and low spatial resolution remote sensing data. To the best of our knowledge, neither any industrial solution exists nor any research study is conducted on sugarcane varietal classification in Pakistan. Methods In this study, we made an endeavor to prepare a high-resolution dataset of Pakistani sugarcane varieties (CPF-253 & SL-284) based on field-validated ground truth dataset using Pakistan Remote Sensing Satellite-1 (PRSS-1) single date imagery. We also included non crop classes like urban, water and road as well. Pan-sharpening is employed to enhance the spatial resolution of multispectral bands and retaining the original spectral characteristics, by aligning the 3 m bands to the 1 m panchromatic grid and then injecting the panchromatic residual. The dataset was prepared based on field-validated ground truth collection duly verified by sugarcane scientist, a farmer and research team to make the approach efficient and reliable. The study performed a random pixel split strategy as well as polygon-based experiments; the polygon split is the primary protocol so that a field is not shared across train and test. We proposed a Spatial Context Aware Transformer that includes the spatial context from neighboring pixels, resulting in an enhanced feature space. Specifically, our proposed model is characterized by a unique pixel feature augmentation approach, thus significantly increasing the size of the spectral feature space and making it possible to account for local neighborhood spectral context. We experimented with benchmark machine learning approaches such as support vector machine and random forest on our dataset to evaluate their potential as well. Moreover, we also evaluated deep learning methods suggested by previous studies like CNN and transformer architectures. Results The experimental results demonstrate that our proposed spatial context-aware transformer performed better than other architectures on the polygon-based test set (accuracy 95.2%, macro F1 0.92), compared with SVM 90.5%, Random Forest 92.5%, 1-D CNN 93.0% and the Tabular Transformer 93.4% (gains of 4.7% and 1.8% in accuracy versus SVM and the Tabular-Transformer). On the same 3x3 pixels, a center-only Transformer scored 94.2%; the 3x3 Transformer 95.2%; and 3x3 MLP, CNN and RF scored 93.48%, 93.75% and 92.96%, showing that the neighborhood pixels spectral context along with attention mechanism account for the classification results. We also conducted a binary classification experiment employing CNN, Tabular Transformer, Centre-pixel only Transformer (1x1) and proposed Transformer (3x3). The results demonstrated that Center-pixel only Transformer achieved highest overall accuracy of 88.59%, followed by Tabular Transformer (87.63%), 1D-CNN (87.10%) and proposed Transformer (3x3) (86.99%). Discussion The feature significance analysis identified the Green Normalized Difference Vegetation Index and the red spectral band as the most discriminative features for sugarcane varieties classification. The study recommends that future research should incorporate time-series, multi-seasonal and multi-region imagery analysis including non-image information such as climate and production environment for highly precise sugarcane varieties classification in real-world conditions. precise sugarcane varieties classification in real-world conditions.",
-   "lanes": [
-    "AI in planning"
-   ],
-   "score": 7.0,
-   "why": [
-    "Nordic/DACH authors (NO)",
-    "practice signals: field, industrial, real-world",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W4415981653",
-   "doi": "https://doi.org/10.1016/j.ordal.2026.200516",
-   "title": "Data-driven bed capacity planning using Mt/Gt/∞ queueing models with an application to neonatal intensive care units",
-   "date": "2026-11-04",
-   "type": "article",
-   "venue": "Operations Research Data Analytics and Logistics",
-   "publisher": "Elsevier BV",
-   "authors": [
-    "Maryam Akbari‐Moghaddam",
-    "Douglas G. Down",
-    "Na Li",
-    "Catherine Eastwood",
-    "Ayman Abou Mehrem",
-    "Alexandra A. Howlett"
-   ],
-   "institutions": [
-    "University of Calgary",
-    "McMaster University",
-    "Alberta Children's Hospital"
-   ],
-   "countries": [
-    "CA"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1016/j.ordal.2026.200516",
-   "pdfs": [
-    "https://www.sciencedirect.com/science/article/pii/S3050784726000188/pdf",
-    "https://arxiv.org/pdf/2510.02852"
-   ],
-   "cited_by": 2,
-   "language": "en",
-   "abstract": "Hospitals face challenges in long-term intensive care unit (ICU) capacity planning under uncertain demand. Admission rates fluctuate over time, and LOS distributions vary with patient heterogeneity, hospital location, case mix, and clinical practice. Common approaches rely on steady-state queueing models or heuristic rules with fixed parameters, which often fail to capture real occupancy dynamics. The widely used 85% occupancy rule, for example, recommends keeping average utilization below this level to preserve responsiveness, yet it is grounded in stationary assumptions and may lack resilience in time-varying systems. Our analysis shows that even when long-run utilization targets are satisfied, daily occupancy often exceeds 100% capacity. We propose a data-driven framework to estimate ICU bed occupancy using an M t / G t / ∞ queueing model with time-varying arrival rates and empirically fitted LOS distributions. The approach combines statistical decomposition and parametric fitting to capture temporal patterns in admissions and LOS, and is applied to multi-year data from neonatal ICUs (NICUs) in Calgary. We evaluate capacity scenarios including average-based thresholds and Poisson-based surge estimates. Results show that static heuristics are inadequate under fluctuating demand and underscore the importance of modeling LOS variability when estimating bed needs. Although the case study focuses on NICUs, the framework has potential applicability to other ICU settings and provides data-informed support for systems facing rising demand and constrained capacity.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 5.6,
-   "why": [
-    "established journal",
-    "practice signals: case study, empirical",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W4415981653.txt"
-  },
-  {
-   "openalex": "W7221678246",
-   "doi": "https://doi.org/10.21203/rs.3.rs-11323499/v1",
-   "title": "Enhancing Supply Chain Resilience with SAP Integrated Business Planning",
-   "date": "2026-10-13",
-   "type": "preprint",
-   "venue": "Research Square",
-   "publisher": "",
-   "authors": [
-    "McKenzie Izev"
-   ],
-   "institutions": [
-    "AIT Austrian Institute of Technology GmbH"
-   ],
-   "countries": [
-    "AT"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.21203/rs.3.rs-11323499/v1",
-   "pdfs": [
-    "https://www.researchsquare.com/article/rs-11323499/latest.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract Contemporary supply chains operate in an environment of unprecedented volatility, characterized by geopolitical disruptions, climate-induced uncertainties, shifting customer expectations, and increasingly complex global networks. The ability to anticipate, absorb, adapt to, and recover from disruptions—commonly conceptualized as supply chain resilience—has become a strategic imperative for manufacturing and distribution organizations. This research examines the role of SAP Integrated Business Planning (SAP IBP) in enhancing supply chain resilience through integrated planning capabilities that span demand forecasting, supply planning, inventory optimization, and cross-functional collaboration. Drawing on a combination of platform capability analysis, practitioner-oriented documentation, and reported organizational outcomes, the study develops a framework that maps specific SAP IBP functional modules to the constituent dimensions of supply chain resilience. The analysis identifies four primary resilience-enhancing mechanisms enabled by SAP IBP: anticipatory demand sensing through AI-based forecasting algorithms, adaptive supply planning via constraint-based optimization and response management, buffering capacity through multi-stage inventory optimization, and enhanced visibility and response through the Supply Chain Control Tower with real-time alerting and case management. The research further examines organizational case evidence, including Ericsson’s transformation from siloed manual planning to a unified digital platform, to illustrate the practical pathways through which SAP IBP capabilities translate into resilience outcomes. The findings suggest that SAP IBP contributes to resilience not merely through individual functional enhancements but through the integration of planning processes into a coherent, data-consistent, and simulation-capable planning environment. The study concludes with implications for practitioners and identifies areas for future empirical validation, including the need for longitudinal studies measuring resilience outcomes before and after SAP IBP adoption and comparative analyses across organizational contexts.",
-   "lanes": [
-    "S&OP and IBP"
-   ],
-   "score": 5.4,
-   "why": [
-    "Nordic/DACH authors (AT)",
-    "preprint, not peer-reviewed",
-    "practice signals: empirical, practitioner"
-   ],
-   "text_file": "papers/W7221678246.txt"
-  },
-  {
-   "openalex": "W7160655728",
-   "doi": "https://doi.org/10.1186/s12915-026-02777-3",
-   "title": "Translation uniformity and evolutionary conservation are associated with microprotein mass spectrometry detectability",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "BMC Biology",
-   "publisher": "BioMed Central",
-   "authors": [
-    "Ivo Fierro-Monti"
-   ],
-   "institutions": [
-    "European Bioinformatics Institute",
-    "University of Basel"
-   ],
-   "countries": [
-    "CH",
-    "GB"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1186/s12915-026-02777-3",
-   "pdfs": [
-    "https://www.researchsquare.com/article/rs-9645389/latest.pdf"
-   ],
-   "cited_by": 1,
-   "language": "en",
-   "abstract": "Abstract Background Non-canonical open reading frames (ncORFs) encode a substantial, largely unexplored layer of the human proteome. The short microproteins they produce frequently escape detection by standard mass spectrometry (MS) workflows, creating a “dark proteome” that hampers gene annotation and functional characterisation. To address this, sequence-derived attributes were used to identify factors associated with MS repository detectability and to build an interpretable predictive framework that enables rational prioritisation of ncORFs for proteomic discovery. Results 7,097 ncORF sequences (99% <150 residues) were curated from the TransCODE Consortium, and labelled by PeptideAtlas peptide-level evidence as MS-detected ( n = 1,725) or undetected ( n = 5,372). An ensemble combining ESM-2 protein language model embeddings with logistic regression and nineteen biological features (ESM2-LR) achieved a mean ROC-AUC of 0.721 (SD 0.018, coefficient of variation 2.5% across ten independent runs). Model-agnostic SHAP and permutation importance analyses concordantly ranked cumulative in-frame ribosome footprint uniformity (CIF-HBP) as the strongest associated factor, followed by mammalian ORF-level evolutionary conservation (ORBLv_mammal) and genomic biotype. Predicted HLA class I-binding peptide density, which captures physicochemical properties overlapping with optimal LC-MS/MS analyte characteristics, was also positively associated with detectability. Late-fusion analysis demonstrated that ESM-2 embeddings and biological features contribute complementary predictive signals. Conclusions These findings indicate that sustained translation, purifying selection for ORF structural integrity, and favourable peptide physicochemistry converge to influence ncORF detectability. The ESM2-LR framework provides a reproducible, scalable tool to prioritise candidate microproteins for targeted MS validation, gene annotation, and the interpretation of disease-associated regulatory variants, subject to future external validation on independent datasets.",
-   "lanes": [
-    "Network design"
-   ],
-   "score": 5.1,
-   "why": [
-    "Nordic/DACH authors (CH)",
-    "reports a quantified result"
-   ],
-   "text_file": "papers/W7160655728.txt"
-  },
-  {
-   "openalex": "W7225238284",
-   "doi": "https://doi.org/10.1016/j.ijpe.2026.110276",
-   "title": "The Best Allocation Resource Size (BARS) problem: a bi-objective integer programming model to balance cost and complexity in resource selection",
-   "date": "2026-11-05",
-   "type": "article",
-   "venue": "International Journal of Production Economics",
-   "publisher": "Elsevier BV",
-   "authors": [
-    "Margherita Bernabei",
-    "Silvia Colabianchi",
-    "Francesco Costantino",
-    "Marianna De Santis",
-    "Daniele Patria"
-   ],
-   "institutions": [
-    "Sapienza University of Rome"
-   ],
-   "countries": [
-    "IT"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1016/j.ijpe.2026.110276",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "This paper introduces a variant of the assortment problem, i.e., the Best Allocation Resource Size (BARS) problem, conceived as a multi-objective nonlinear optimization model that jointly minimizes total production-related costs and input complexity by selecting the optimal subset of resource sizes, explicitly balancing cost-efficiency with scrap minimization. Unlike traditional assortment problems, the BARS adopts a manufacturer-led perspective, handling multiple characteristics of the inputs, i.e., it is n-dimensional, and it integrates multiple cost dimensions - including setup, scrap, safety stock, and non-linear purchase costs - under realistic manufacturing constraints, thus offering a flexible, producer-oriented decision-support tool adaptable to diverse industrial contexts. The problem formulation does not incorporate an ex-ante budget constraint, allowing the solution space to be retrospectively filtered by applying cost thresholds - either on aggregate expenditure or individual cost components - thus enabling targeted post-hoc analyses of feasible item sets in line with strategic objectives, including scenarios that allow for controlled increases in spending. The model proposed is solved using an adapted ε-constraint method that, unlike a generic scalarization, is provably exact for bi-objective nonlinear integer programs: a second-order cone reformulation of the safety-stock term allows to determine properly calibrated ε values, ensuring recovery of the complete Pareto front. The efficacy of the proposed model is demonstrated through validation in three real-world case studies spanning different industrial sectors. The developed model serves as a strategic decision tool for management, facilitating an understanding of the costs consequences associated with different sets of selected raw materials.",
-   "lanes": [
-    "Inventory"
-   ],
-   "score": 5.0,
-   "why": [
-    "established journal",
-    "practice signals: industrial, manufacturer, real-world"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225610886",
-   "doi": "https://doi.org/10.1145/3842518",
-   "title": "Flamescapes: Simulating the Wildlandfire Urban Interface",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "ACM Transactions on Graphics",
-   "publisher": "Association for Computing Machinery",
-   "authors": [
-    "Helge Wrede",
-    "A. J. Wagner",
-    "Wojtek Pałubicki",
-    "Dominik Ludewig Michels",
-    "Sören Pirk"
-   ],
-   "institutions": [
-    "Christian-Albrechts-Universität zu Kiel",
-    "Adam Mickiewicz University in Poznań",
-    "King Abdullah University of Science and Technology"
-   ],
-   "countries": [
-    "DE",
-    "PL",
-    "SA"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1145/3842518",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "We present a physically based simulation framework for wildland-urban interface (WUI) fires that couples material-aware urban scenes with interactive combustion simulation. Motivated by the dominant WUI exposure pathways of direct flame contact, thermal radiation, and ember transport, our framework combines heterogeneous solid combustion, radiative heat transfer, ember transport, and explicit flame-front propagation. Urban scenes are generated from OpenStreetMap footprints using a procedural pipeline that represents buildings as combustible 3D structures composed of semantic atomic modules with material and fuel annotations. Building on a chemistry-based hybrid Eulerian-Lagrangian fire solver, we model material-dependent heating, conduction, pyrolysis, oxidation, fuel depletion, and ember generation. A hierarchical fuel graph couples semantic scene structure to the solver's solid fuel grid, enabling subcomponent-level mesh degradation. We demonstrate structure-to-structure ignition, radiative preheating, material-dependent burning, ember-driven spot fires, and validate the method through ablations and comparisons to real-world combustion experiments.",
-   "lanes": [
-    "Network design"
-   ],
-   "score": 4.7,
-   "why": [
-    "Nordic/DACH authors (DE)",
-    "practice signals: real-world"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225658832",
-   "doi": "https://doi.org/10.1145/3842563",
-   "title": "Metalog Materials",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "ACM Transactions on Graphics",
-   "publisher": "Association for Computing Machinery",
-   "authors": [
-    "Hiroaki Sakai",
-    "Saip-Can Hasbay",
-    "Christian Freude",
-    "Michael H. Wimmer",
-    "David Hahn"
-   ],
-   "institutions": [
-    "TU Wien"
-   ],
-   "countries": [
-    "AT"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1145/3842563",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "A central aspect of modern physically based rendering is the practical yet realistic modeling of material appearance, which requires efficient and accurate representations of bidirectional reflectance distribution functions (BRDFs). In this paper, we present a unified material reflectance representation based on metalog distributions. Introducing quantile-based metalog interpolation and metalog mixture models, our representation captures a wide range of complex reflectance behaviors of both analytic models and real-world materials, while remaining interpretable and efficient. Our approach achieves competitive runtime performance and a small memory footprint, while enabling continuous interpolation between fundamentally different reflectance behaviors. Furthermore, our model is fully differentiable with respect to the coefficients defining the distributions, thus easily integrates into existing differentiable rendering pipelines. In summary, metalog materials can effectively represent real-world reflectance data, interpolate between multiple materials within a unified representation, and be acquired from real-world images via differentiable rendering.",
-   "lanes": [
-    "Network design"
-   ],
-   "score": 4.7,
-   "why": [
-    "Nordic/DACH authors (AT)",
-    "practice signals: real-world"
-   ],
-   "text_file": ""
-  },
-  {
    "openalex": "W7225424568",
    "doi": "https://doi.org/10.21203/rs.3.rs-11261258/v1",
    "title": "Dynamic Aggregate Planning of a Make-to-Order Production System",
@@ -404,142 +86,6 @@
     "practice signals: real-world"
    ],
    "text_file": "papers/W7225424568.txt"
-  },
-  {
-   "openalex": "W7214001893",
-   "doi": "https://doi.org/10.1080/10413200.2026.2733248",
-   "title": "Beyond visualization: Elite alpine skiers and coaches’ insights into simulation training",
-   "date": "2026-09-22",
-   "type": "article",
-   "venue": "Journal of Applied Sport Psychology",
-   "publisher": "Taylor & Francis",
-   "authors": [
-    "Simen Leithe Tajet",
-    "Anders Meland",
-    "Christian Magelssen",
-    "Pierre‐Nicolas Lemyre",
-    "Robert Reid",
-    "Anne Marte Pensgaard"
-   ],
-   "institutions": [
-    "Norwegian School of Sport Sciences"
-   ],
-   "countries": [
-    "NO"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1080/10413200.2026.2733248",
-   "pdfs": [
-    "https://www.tandfonline.com/doi/pdf/10.1080/10413200.2026.2733248?needAccess=true"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "In many performance domains, practitioners struggle to accumulate sufficient training under conditions that mimic performance demands. Elite athletes face this challenge while preparing for high-stakes performance. When realistic practice is restricted, performers can turn to simulation training to recreate performance elements without full physical engagement. Action simulation includes the theoretically distinct strategies, imagery and action observation, often applied together in research and practice. In comparison, representative simulation training uses more interactive technologies aiming to provide feedback. Action simulation is extensively used in sport, but the underlying mechanisms remain unclear. Elite alpine skiing provides a compelling case for exploring these mechanisms, combining high physical demands and limited access to competition environments. Using a critical realist thematic analysis of interviews with 16 elite alpine skiers and 8 coaches, we identified patterns in action simulation use and explored plausible causal mechanisms. Three patterns emerged. Action simulations of familiar environments supported embodied recall and tactical planning. Unfamiliar environments prompted more abstract preparation with individual variation. The absence of feedback emerged as a fundamental barrier for motor learning with action simulation in more complex sports. These findings reveal situated contextual familiarity as a critical but underestimated factor that may determine action simulation effectiveness. Drawing on Grounded Cognition and Internal Model theory, we propose three plausible mechanisms shaping these action simulation outcomes. These insights establish design principles emphasizing embodied familiarity and integration into practice for action simulation training. The findings also point toward representative simulation approaches in alpine skiing, for developing course inspection skills.",
-   "lanes": [
-    "S&OP and IBP"
-   ],
-   "score": 4.7,
-   "why": [
-    "Nordic/DACH authors (NO)",
-    "practice signals: practitioner"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225632675",
-   "doi": "https://doi.org/10.3390/batteries12110479",
-   "title": "From Experimental Characterisation to Prediction Models of LIB Anode Drying Processes",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "Batteries",
-   "publisher": "Multidisciplinary Digital Publishing Institute",
-   "authors": [
-    "Ronan N. Dunne",
-    "Birk F. Lillebo",
-    "Tijn Van der Zwan",
-    "Jan Petter Mæhlen",
-    "Jacob Joseph Lamb",
-    "Odne Stokke Burheim",
-    "Ignat Tolstorebrov"
-   ],
-   "institutions": [
-    "Norwegian University of Science and Technology",
-    "Eindhoven University of Technology",
-    "Institute for Energy Technology"
-   ],
-   "countries": [
-    "NL",
-    "NO"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.3390/batteries12110479",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "In commercial lithium ion Battery (LIB) cell manufacturing, understanding and improving the drying process is key to the yield as well as energy-consumption, and thereby the CO2 emission footprint. As such, this study experimentally investigates convection drying kinetics of anodes alongside the use of (informed and non-informed) neural network models, in order to better understand and improve electrode manufacturing. In the experimental campaign we find that air velocity and temperature are the most important parameters in the initial phase (constant-rate period) before we reach the critical moisture content (critical point), whereas the subsequent phase (falling-rate period) is less sensitive to increases in air temperature and velocity. This supports the idea that drying during the constant-rate period is mainly driven by external heat and mass transfer while the drying during the falling-rate period is increasingly limited by internal mass-transport through the wet-coating thickness. In neural network modelling, we found it necessary to apply physics informed models in order to interpolate between the experimental observations. However, at the tested conditions, the non-informed neural network model gave a stronger fit to the data.",
-   "lanes": [
-    "Network design"
-   ],
-   "score": 4.0,
-   "why": [
-    "Nordic/DACH authors (NO)"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225642066",
-   "doi": "https://doi.org/10.5194/essd-2026-831",
-   "title": "High precision atmospheric GHG measurements for the Orinoco region: The Villavicencio Tower (VLO)",
-   "date": "2026-11-09",
-   "type": "preprint",
-   "venue": "Earth System Science Data Discussions",
-   "publisher": "",
-   "authors": [
-    "Stijn Hantson",
-    "Santiago Botía",
-    "Miguel Ángel Navarro-Ramírez",
-    "Diego Pardo-Buitrago",
-    "João Fernandes Amaral",
-    "Shrutika Wagh",
-    "Miguel Ángel Ramírez-Niño",
-    "Anghy Sthephany Gutierrez Rincon",
-    "Mauricio Salamanca",
-    "Armin Jordan",
-    "Steffen Knabe",
-    "Tarek Sebastian El-Madany",
-    "Karl Kübler",
-    "Heiko Moossen",
-    "Michael Rothe",
-    "Christian Rödenbeck",
-    "Sönke Zaehle",
-    "Carlos A. Sierra"
-   ],
-   "institutions": [
-    "Max Planck Institute for Biogeochemistry",
-    "Universidad del Rosario",
-    "Universidad de los Llanos"
-   ],
-   "countries": [
-    "CO",
-    "DE"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.5194/essd-2026-831",
-   "pdfs": [
-    "https://essd.copernicus.org/preprints/essd-2026-831/essd-2026-831.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract. Understanding the dynamics of natural and anthropogenic sources and sinks of greenhouse gases (GHG) is key to projecting anthropogenic climate change and detecting potential climate-carbon feedbacks. While our understanding of the sources and sinks has increased considerably over the past decades, much of the progress has focused on extratropical ecosystems, leaving large parts of the tropics understudied. Tropical ecosystems are assumed to be important carbon sinks and significant sources of methane, but much of the temporal and spatial heterogeneity and trends are still poorly understood. Observational efforts have largely concentrated on key tropical regions such as the Amazon Basin, whereas other tropical areas remain sparsely monitored with in-situ measurements. In particular, northern South America—despite being identified by bottom-up and top-down models as a significant contributor to global GHG budgets—currently lacks atmospheric observations to evaluate these estimates or resolve their spatial and temporal variability. To address this observational gap, here we present the establishment of the Villavicencio Tower (VLO) for atmospheric GHG measurements to provide additional constraints on GHG emission estimates across northern South America. This 26 m tower is located within the Orinoco lowlands, close to the Andean foothills in Colombia. Due to the predominantly easterly winds in the region, the footprint covers the Orinoco basin and the northern Amazon. Weekly duplicated flask measurements are taken, and laboratory analysis of trace gases (CO2, CH4, CO, N2O, SF6, H2) and the stable isotope composition of CO2 (13C and 18O) and CH4 (13C and 2H) are performed, as well as O2/N2 and Ar/N2. The tower started operating on 20 June 2023 and here we present the first 21 months of data. Time series of all measurements are presented as well as a discussion regarding uncertainties. These measurements will allow for improved estimates of GHG emissions across northern South America and to detect long-range transport across the Amazon to the Orinoco river basin.",
-   "lanes": [
-    "Network design"
-   ],
-   "score": 4.0,
-   "why": [
-    "Nordic/DACH authors (DE)",
-    "preprint, not peer-reviewed"
-   ],
-   "text_file": "papers/W7225642066.txt"
   },
   {
    "openalex": "W7225623450",
@@ -593,116 +139,6 @@
    "text_file": ""
   },
   {
-   "openalex": "W7225392980",
-   "doi": "https://doi.org/10.5281/zenodo.24006512",
-   "title": "Evaluating the effectiveness of robustness as a secondary decision criterion for a bi-objective optimization approach for an uncertain and dynamic job shop scheduling problem",
-   "date": "2026-11-06",
-   "type": "preprint",
-   "venue": "Procedia CIRP",
-   "publisher": "Elsevier BV",
-   "authors": [
-    "Ziga Letonja",
-    "Nikolaus Furian",
-    "Siegfried Vössner"
-   ],
-   "institutions": [
-    "Graz University of Technology"
-   ],
-   "countries": [
-    "AT"
-   ],
-   "licence": "cc-by-nc-nd",
-   "landing": "https://doi.org/10.5281/zenodo.24006512",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Production systems often face uncertainties and disruptions arising from both technical and supply-chain causes. To mitigate their impact on realized schedule performance in terms of makespan and tardiness, we evaluate the use of a robustness measure as a secondary decision criterion when multiple objective-equivalent solutions occur within an approximated Pareto front. Its usefulness is assessed by a simulation study of a job shop facing random machine breakdowns and varying repair times on a benchmark dataset. The insights gained are the basis for the development of more robust production scheduling strategies. Preprint. Accepted for presentation and publication at CIRP ICME 2026; to appear in Procedia CIRP (Elsevier, ISSN: 2212-8271). This version has not been copy-edited by the publisher.",
-   "lanes": [
-    "Production planning and scheduling"
-   ],
-   "score": 4.0,
-   "why": [
-    "Nordic/DACH authors (AT)",
-    "preprint, not peer-reviewed"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225227986",
-   "doi": "https://doi.org/10.1007/s10669-026-10161-3",
-   "title": "A semantic framework for resilience analytics and AI-assisted decision support in growing and changing socio-technical systems",
-   "date": "2026-11-04",
-   "type": "article",
-   "venue": "Environment Systems & Decisions",
-   "publisher": "Springer Science+Business Media",
-   "authors": [
-    "Sadeeb Simon Ottenburger",
-    "Stella Möhrle",
-    "Tim Oliver Müller",
-    "Ehmedi Al Omar",
-    "Evgenia Deines",
-    "Antje Müller",
-    "Cameron Rouse",
-    "Murray Heymann"
-   ],
-   "institutions": [
-    "Karlsruhe Institute of Technology",
-    "Systems, Applications & Products in Data Processing (Germany)"
-   ],
-   "countries": [
-    "DE"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1007/s10669-026-10161-3",
-   "pdfs": [
-    "https://link.springer.com/content/pdf/10.1007/s10669-026-10161-3.pdf"
-   ],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Abstract Socio-technical systems are becoming increasingly interconnected, heterogeneous, and dynamic while continuously evolving through new technologies, infrastructures, policies, resources, and operational practices. At the same time, critical infrastructure operators, businesses, and public authorities face growing challenges arising from climate change, cyber threats, geopolitical instability, supply-chain disruptions, and evolving regulatory frameworks. Supporting resilience and sustainability under these conditions requires analytical capabilities that extend beyond static digital twins, application-specific simulation models, and fixed system representations. This paper presents FRAMESS (Framework for Systemic Risk Analysis and Exploring Sustainable Solutions), a semantic and extensible framework for resilience analytics, sustainability assessment, and AI-assisted decision support in growing and changing socio-technical systems. FRAMESS enables the continuous development, integration, simulation, and evaluation of evolving system models despite distributed modelling expertise, changing system architectures, emerging hazards, and large combinatorial design spaces. The framework combines semantic system modelling, flexible system models (FSMs), multi-agent simulation, scenario and disruption management, integrated assessment methods, and AI-assisted exploration within a unified analytical environment. A central contribution is the semantic representation of agents, resources, dependencies, subprocesses, hazards, and adaptation measures, enabling interdisciplinary model integration while preserving extensibility, interoperability, and analytical consistency. The framework further supports resilience quantification and benchmarking by enabling systematic comparison of alternative system configurations under multiple hazard conditions. The capabilities of FRAMESS are demonstrated through a resilience-oriented planning application for allocating strategic reserves in a food supply chain under climate change-induced drought scenarios. The demonstrator illustrates how the framework supports resilience assessment, evaluation of adaptation strategies, and AI-assisted exploration of alternative system configurations. The paper argues that future resilience management requires semantic and extensible analytical environments that integrate evolving digital twins, resilience analytics, and AI-assisted exploration to support resilient and sustainable transformation pathways under uncertainty.",
-   "lanes": [
-    "Resilience and risk"
-   ],
-   "score": 4.0,
-   "why": [
-    "Nordic/DACH authors (DE)"
-   ],
-   "text_file": "papers/W7225227986.txt"
-  },
-  {
-   "openalex": "W7225240631",
-   "doi": "https://doi.org/10.5281/zenodo.23940082",
-   "title": "Conditional Subliminal Learning: Gated, Cross-Domain, and Mechanistically Explained Transfer of a Hidden Encryption-Algorithm Preference",
-   "date": "2026-11-04",
-   "type": "preprint",
-   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-   "publisher": "European Organization for Nuclear Research",
-   "authors": [
-    "Rishabh Kumar"
-   ],
-   "institutions": [
-    "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
-   ],
-   "countries": [
-    "DE"
-   ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.5281/zenodo.23940082",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "This paper extends subliminal learning (Cloud et al., 2026) to the security domain. We demonstrate that a hidden preference for the DES encryption algorithm can be transferred from a biased teacher model to a student model through semantically unrelated fine-tuning data. We introduce three contributions: (1) a gated transfer mechanism activated only by a legal-register stylistic trigger, (2) cross-domain leakage into generated Python code, and (3) a mechanistic explanation via the conditional D_diff diagnostic. The work surfaces a novel supply-chain risk in LLM fine-tuning pipelines.",
-   "lanes": [
-    "Resilience and risk"
-   ],
-   "score": 4.0,
-   "why": [
-    "Nordic/DACH authors (DE)",
-    "preprint, not peer-reviewed"
-   ],
-   "text_file": ""
-  },
-  {
    "openalex": "W7218063460",
    "doi": "",
    "title": "Optimization of Pharmacy Supply Chains Using AI and Machine Learning",
@@ -739,186 +175,58 @@
    "text_file": "papers/W7218063460.txt"
   },
   {
-   "openalex": "W7225174583",
-   "doi": "https://doi.org/10.5281/zenodo.23932337",
-   "title": "Design and Implementation of an Instruction-Driven, Browser-Embedded Business Analysis Agent",
-   "date": "2026-11-03",
-   "type": "preprint",
-   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-   "publisher": "European Organization for Nuclear Research",
+   "openalex": "W7225534048",
+   "doi": "",
+   "title": "Integration of Demand Forecasting, Production Planning and Control, Production Execution, and Quality Assurance through Cross-Functional Coordination for Operational Performance Improvement: A Case Study on Manufacturing Companies",
+   "date": "2026-11-05",
+   "type": "article",
+   "venue": "Jurnal Ilmu Manajemen Terapan",
+   "publisher": "",
    "authors": [
-    "Gabkeun Choi"
+    "Yato Susilo",
+    "Sutoyo Sutoyo"
    ],
    "institutions": [],
    "countries": [],
    "licence": "cc-by",
-   "landing": "https://doi.org/10.5281/zenodo.23932337",
-   "pdfs": [],
+   "landing": "https://dinastirev.org/JIMT/article/view/10053",
+   "pdfs": [
+    "https://dinastirev.org/JIMT/article/download/10053/4935"
+   ],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Analytical work in supply chain and logistics operations repeats the same pattern: judgment criteria that live in the experience of individual staff, manual calculation in Excel, and report writing and email distribution. This paper designs and implements a browser-embedded business analysis agent with which field staff write their judgment criteria as a natural-language instruction file (Markdown), upload an Excel file, and give a one-line request; the agent then performs analysis, forecasting, report writing, and email distribution. The system consists of a single Chrome extension. A large language model (Gemini) uses function calling to decide the order of tool use and to write the report text, while all numbers are produced by a calculation engine based on a safe expression parser and a forecasting engine based on WebAssembly (Pyodide). The forecasting engine validates linear regression, decision tree, random forest, and XGBoost per group on a time-ordered holdout and selects the best model automatically. Tool-result reduction and conversation-history compaction keep the agent within the per-minute token limit of a free-tier API. Three tasks, namely supply chain risk analysis, workload forecasting per supplier, and delivery schedule notification, were performed without any program change by replacing only the instruction file and the Excel file. On 845 rows of inbound history from five suppliers, automatic selection achieved a mean RMSE of 38.26, 9.3% lower than the best single fixed algorithm, with errors of 4.6–7.6% of the mean inbound volume. Forecasting completed in 21.7 s on the first run and 4.4 s thereafter, and input tokens per report decreased by 80.7%. The system presents a practical configuration that lets field staff record their own judgment criteria as documents and apply them to recurring work without servers or paid tools.",
-   "lanes": [
-    "Resilience and risk",
-    "AI in planning"
-   ],
-   "score": 3.9,
-   "why": [
-    "preprint, not peer-reviewed",
-    "practice signals: field, implementation",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7223652799",
-   "doi": "https://doi.org/10.1177/00420980261501380",
-   "title": "Limits on growth: Governing urban futures in Beijing",
-   "date": "2026-11-06",
-   "type": "article",
-   "venue": "Urban Studies",
-   "publisher": "SAGE Publishing",
-   "authors": [
-    "Yiqiu Liu"
-   ],
-   "institutions": [
-    "ETH Zurich"
-   ],
-   "countries": [
-    "CH"
-   ],
-   "licence": "other-oa",
-   "landing": "http://hdl.handle.net/20.500.11850/808389",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "This paper conceptualises limits on growth in Beijing, whose 2016–2035 master plan constructs a highly selective national capital for the central state by removing functions and populations deemed non-essential. Drawing on archival analysis of planning documents since 1949, extensive expert and ethnographic interviews, and multi-sited fieldwork conducted between 2017 and 2023, it develops a Lefebvrian spatio-temporal framework with three relational dimensions for analysing urban future-making. Temporal entanglements show how a historically sedimented anti-metropolis disposition is reactivated amid contemporary state recentralisation. Performative governance examines how the diagnosis of ‘big city disease’ reframes demographic and functional pressures as urban pathology, legitimising relocation and greening as therapeutic intervention. Lived futurity reveals how officials, villagers and migrants negotiate these measures through procrastination, speculation and retreat. The article theorises limits on growth as an emergent mode of Chinese statecraft in which extra-economic priorities selectively guide the production of the urban future. Situating Beijing within a wider, politically heterogeneous turn that increasingly treats demographic and territorial growth as a crisis, it reconceives urban future-making as a politics of foreclosure: not only who profits from growth, but who is permitted to remain when growth is limited by design.",
+   "abstract": "Integration of operational functions is an important issue in manufacturing management because the missynchronization of information on demand, planning, production implementation, and quality can reduce performance. This study aims to analyze the effect of cross-functional coordination on the integration of operational processes and operational performance in one of the manufacturing companies in Surabaya. The study used a mixed-method explanatory sequential based on synthetic data, involving 180 respondents, 12 key informants, 96 interview answers, and 72 operational observations for 24 months on three product families. Quantitative data were analyzed through correlation, operational data through KPI comparison, and thematic qualitative data. The results showed a positive relationship between coordination–integration (r=0.444), integration–performance (r=0.627), and coordination–performance (r=0.396). MAPE decreased from 10.51% to 8.20%, schedule adherence increased from 88.27% to 92.45%, and on-time delivery increased from 89.69% to 93.57%. Interviews emphasized the importance of information synchronization, decision coordination, and quality feedback. Findings show that cross-functional coordination strengthens process integration and supports improved operational performance.",
    "lanes": [
     "Production planning and scheduling"
    ],
-   "score": 3.7,
+   "score": 3.4,
    "why": [
-    "Nordic/DACH authors (CH)",
-    "practice signals: field"
+    "practice signals: case study, implementation",
+    "reports a quantified result"
    ],
-   "text_file": ""
+   "text_file": "papers/W7225534048.txt"
   },
   {
-   "openalex": "W7225327623",
-   "doi": "https://doi.org/10.48565/bonndoc-1018",
-   "title": "Software Composition Analysis for Library Popularity Estimations",
+   "openalex": "W7225307471",
+   "doi": "https://doi.org/10.17605/osf.io/9mha6",
+   "title": "Hospitality Raw Material Distribution Logistics and Supply Contract Certainty Reconstruction in Frontier 3T Regions: Empirical Case of Krui, Pesisir Barat",
    "date": "2026-11-05",
    "type": "article",
-   "venue": "bonndoc (University of Bonn)",
-   "publisher": "University of Bonn",
+   "venue": "Open Science Framework",
+   "publisher": "Center for Open Science",
    "authors": [
-    "Ben Swierzy"
+    "Ilham Pradani"
    ],
-   "institutions": [
-    "University of Bonn"
-   ],
-   "countries": [
-    "DE"
-   ],
-   "licence": "",
-   "landing": "https://doi.org/10.48565/bonndoc-1018",
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.17605/osf.io/9mha6",
    "pdfs": [],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Modern software development heavily relies on third-party components, causing an increasing dependence of applications on complex ecosystems of libraries and frameworks. Each additional dependency introduces software supply chain risks, yet determining the real-world impact of vulnerable libraries remains challenging because deploy-time usage and exposure are often opaque. While library popularity assessment can support impact estimation, this dissertation first demonstrates that commonly used quantitative popularity metrics for this task are unreliable and susceptible to spoofing. Motivated by these limitations, the work investigates remote software composition analysis methods that enable non-invasive privacy-respecting measurements of deployed software components in the wild. Exemplary for the scenario of artifact analysis, techniques for version detection of JavaScript packages embedded in bundles are developed and evaluated. By addressing static code transformations as central challenge, the proposed approach Aletheia substantially improves correct detections compared to the current state of the art. For opaque box analysis, the dissertation then conceptually examines existing automated dynamic testing approaches with respect to their ability to reveal distinct bugs and functional differences in TLS libraries. Crucially, it shows that the metrics used for evaluation diverge from the approaches' capabilities to achieve their desired objective. This presents a central challenge when trying to compare the different methods. Finally, the dissertation investigates how to move beyond TLS application fingerprints toward TLS library fingerprints for popularity assessment. Utilizing the insights from the analysis of dynamic testing approaches, it proposes leveraging the fundamental idea of specification-guided testing due to its explainability and configuration stability. These properties critically combat well-known challenges for automated fingerprint creation. In controlled lab settings, the proposed fingerprint method TLSident exhibits solid performance, significantly improving the recall of the baseline approach. Subsequent Internet measurements demonstrate the general utility of TLS library fingerprinting algorithms, while plausibility checks indicate that further methodological improvements are required for robust deployment. Overall, the dissertation proves that remote software composition analysis techniques can meaningfully support library popularity assessments and, therefore, vulnerability impact estimation. In addition, the proposed measurement-driven methods are unlikely to be as exposed to spoofing as traditional quantitative popularity metrics, rendering them a more robust basis for decision-making in many current scenarios.",
+   "abstract": "Background: Tourism accommodation operators in Krui suffer from fragile overland fresh supply chains, erratic delivery schedules, and verbal agreements lacking enforceability. Objectives: To reconstruct contractual certainty under Articles 1320 and 1338 of the Indonesian Civil Code while optimizing multi-stop fresh produce distribution. Methods: Comprehensive field study across 40 hospitality operators in Tanjung Setia, Mandiri Beach, and Krui City with route optimization modeling. Results: Formalizing Service Level Agreements with stipulated liquidated damages (Article 1243) reduces supply disruption frequency by 54% and cuts aggregate logistical overhead by 22.8%. Conclusion: Demonstrates that legal enforceability is an indispensable prerequisite for supply chain resilience in emerging remote tourism clusters. Published in Journal of Coastal Frontiers and Applied Development (JCFAD). CERN Zenodo Record: https://doi.org/10.5281/zenodo.24028640. Publisher: PT CHAIN ASIA CONECT Research and Development Division.",
    "lanes": [
     "Resilience and risk"
-   ],
-   "score": 3.7,
-   "why": [
-    "Nordic/DACH authors (DE)",
-    "practice signals: real-world"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7223034914",
-   "doi": "https://doi.org/10.5281/zenodo.23510500",
-   "title": "Real-World Impact: Transforming Agriculture with Technology A Multi-Stakeholder Review of Smart Monitoring, Precision Irrigation, and Digital Value-Chain Integration",
-   "date": "2026-11-25",
-   "type": "article",
-   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-   "publisher": "European Organization for Nuclear Research",
-   "authors": [
-    "A. Shaji George",
-    "Dr.T.Baskar",
-    "P. Balaji Srikaanth"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.5281/zenodo.23510500",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "There's a deliberate and significant transition from input to information. This article combines peer-reviewed evidence and public-sector data on six interrelated technology clusters that are fundamentally changing on-farm and off-farm decision making artificial intelligence (AI) based Farm Management Platforms, Internet of Things (IoT) smart irrigation, aerial and satellite crop monitoring, blockchain-enabled supply-chain digitisation, sustainability and carbon-tracking instruments, and farm data analytics dashboards. In the literature examined, precision tools have been correlated with 15% to 30% gains in crop yields, 30% to 55% of water saved during irrigation, and 10% to 20% of operational costs reduced, all with a range of variability based on the crop, the geographical region, and the size of the farm. It examines the mechanisms of these effects on the one hand and the differential rates of benefit, on the other, between large commercial farms and smallholders, and the policy and infrastructural conditions that drive actual adoption. It also highlights areas of current evidence which are lacking, such as limited long horizon field trials, poor interoperability standards, and lack of social outcome data. The article ends with a discussion on how to turn pilots into lasting, system-level change in food production, both from the government and enterprise side, as well as from the perspective of small and medium producers.",
-   "lanes": [
-    "AI in planning"
-   ],
-   "score": 3.4,
-   "why": [
-    "practice signals: field, real-world",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7223094244",
-   "doi": "https://doi.org/10.5281/zenodo.23527988",
-   "title": "Real-World Impact: Transforming Agriculture with Technology A Multi-Stakeholder Review of Smart Monitoring, Precision Irrigation, and Digital Value-Chain Integration",
-   "date": "2026-11-25",
-   "type": "article",
-   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-   "publisher": "European Organization for Nuclear Research",
-   "authors": [
-    "A. Shaji George",
-    "Dr.T.Baskar",
-    "P. Balaji Srikaanth"
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.5281/zenodo.23527988",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "There's a deliberate and significant transition from input to information. This article combines peer-reviewed evidence and public-sector data on six interrelated technology clusters that are fundamentally changing on-farm and off-farm decision making artificial intelligence (AI) based Farm Management Platforms, Internet of Things (IoT) smart irrigation, aerial and satellite crop monitoring, blockchain-enabled supply-chain digitisation, sustainability and carbon-tracking instruments, and farm data analytics dashboards. In the literature examined, precision tools have been correlated with 15% to 30% gains in crop yields, 30% to 55% of water saved during irrigation, and 10% to 20% of operational costs reduced, all with a range of variability based on the crop, the geographical region, and the size of the farm. It examines the mechanisms of these effects on the one hand and the differential rates of benefit, on the other, between large commercial farms and smallholders, and the policy and infrastructural conditions that drive actual adoption. It also highlights areas of current evidence which are lacking, such as limited long horizon field trials, poor interoperability standards, and lack of social outcome data. The article ends with a discussion on how to turn pilots into lasting, system-level change in food production, both from the government and enterprise side, as well as from the perspective of small and medium producers.",
-   "lanes": [
-    "AI in planning"
-   ],
-   "score": 3.4,
-   "why": [
-    "practice signals: field, real-world",
-    "reports a quantified result"
-   ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7225646165",
-   "doi": "https://doi.org/10.5281/zenodo.24092112",
-   "title": "CREDIT RISK MANAGEMENT IN FACTORING AND SUPPLY CHAIN FINANCE: A BIBLIOMETRIC ANALYSIS OF SCIENTIFIC PUBLICATIONS",
-   "date": "2026-11-09",
-   "type": "article",
-   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-   "publisher": "European Organization for Nuclear Research",
-   "authors": [
-    "Lambekova A.",
-    "Nurtugan M."
-   ],
-   "institutions": [],
-   "countries": [],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.5281/zenodo.24092112",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "Factoring and supply chain finance (SCF) allow firms, particularly small and medium-sized enterprises, to obtain liquidity against receivables and other trade assets, but they expose financiers to the credit risk of suppliers, buyers and their relationships. This study maps the scientific literature on credit risk management in factoring and SCF through a bibliometric analysis. A Scopus search conducted on 12 October 2026 and screening following the PRISMA 2020 flow yielded 288 articles and reviews published between 1995 and 2025. Performance analysis was combined with science mapping in VOSviewer, including keyword co-occurrence, country co-authorship and co-citation analyses of references and sources. The results show that the field has grown rapidly since 2019, with 87.2% of the documents published in 2019–2025. China dominates research output, while studies from the United Kingdom, the United States and Italy attain higher normalised impact, and operations management and operational research journals are the main publication venues. Three research streams are identified: analytical operations–finance models of risk allocation in capital-constrained supply chains, conceptual and empirical research on SCF adoption and reverse factoring, and machine learning-based credit risk assessment of SMEs. Research attention has shifted from traditional factoring and receivables financing towards SCF, machine learning, blockchain and, most recently, artificial intelligence and sustainability. The accounting, financial reporting and internal control dimensions of these arrangements, the allocation of risk among multiple financiers, and evidence from under-represented regions emerge as the main gaps.",
-   "lanes": [
-    "AI in planning"
    ],
    "score": 3.4,
    "why": [
@@ -928,32 +236,668 @@
    "text_file": ""
   },
   {
-   "openalex": "W7225460980",
-   "doi": "https://doi.org/10.5281/zenodo.24035317",
-   "title": "Impact Assessment of Land Use Master Plan Implementation on Land Use Land Cover Dynamics, A Case of Muhanga Satellite City (2014-2024)",
-   "date": "2026-11-07",
+   "openalex": "W7225562578",
+   "doi": "https://doi.org/10.17605/osf.io/pxv7e",
+   "title": "An Empirical Juridical-Digital Twin Integrating Blockchain Traceability, Multi-Agent Reinforcement Learning, and Demand-Signal Optimization for Micro-Enterprise Supply Chains in Pesisir Barat",
+   "date": "2026-11-08",
    "type": "article",
-   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-   "publisher": "European Organization for Nuclear Research",
+   "venue": "Open Science Framework",
+   "publisher": "Center for Open Science",
    "authors": [
-    "Mathias MUJYANAMA",
-    "Richard Mind’je"
+    "Ilham Pradani"
    ],
    "institutions": [],
    "countries": [],
    "licence": "cc-by",
-   "landing": "https://www.researchpublish.com/papers/impact-assessment-of-land-use-master-plan-implementation-on-land-use-land-cover-dynamics-a-case-of-muhanga-satellite-city-2014-2024",
+   "landing": "https://doi.org/10.17605/osf.io/pxv7e",
    "pdfs": [],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Abstract: Rapid urbanisation in Rwanda’s satellite cities is increasing pressure on land resources and raising concerns about the effectiveness of land use master plan implementation. This study assessed the impact of Land Use Master Plan implementation on land use and land cover (LULC) dynamics in Muhanga Satellite City between 2014 and 2024. A longitudinal research design was adopted, integrating geographic information systems (GIS), remote sensing and qualitative data. Multi-temporal satellite imagery was classified using the supervised maximum likelihood algorithm to generate LULC maps, while GIS-based spatial overlay analysis assessed conformity with the Detailed Land Use Plan (DLUP), land use encroachment and development patterns in relation to road networks. Key informant interviews with district planners, National Land Authority staff and community leaders provided additional insights into institutional and governance factors affecting implementation. The findings revealed a substantial increase in built-up areas, from 488 ha (6.3%) in 2014 to 3,437.9 ha (44.4%) in 2024, representing an almost sevenfold increase. This expansion occurred mainly at the expense of cropland and forestland, which declined by 47.9% and 50.3%, respectively. NDVI analysis confirmed considerable vegetation loss, particularly around Nyamabuye and Cyeza sectors. Spatial conformity assessment showed variations across land use categories, with commercial zones recording 76.8% conformity, agriculture/forest approximately 80%, wetlands 78%, and industrial zones 24.4%. Overall encroachment reached 36.2% (945 ha), with wetlands experiencing the highest encroachment at 49.4%. Furthermore, 68% of newly developed built-up areas emerged within 500 metres of road corridors. Qualitative findings identified land tenure insecurity, weak enforcement, delayed expropriation and rapid population growth as major constraints to effective plan implementation. The study concludes that Muhanga Satellite City's land use master plan faces a significant implementation gap, contributing to land conversion that does not fully comply with designated zoning provisions. It recommends strengthening geospatial monitoring, improving land tenure security, enhancing institutional coordination and enforcing land use regulations, particularly in ecologically sensitive and rapidly urbanising areas. Keywords: Land Use Master Plan; Land Use and Land Cover (LULC) Dynamics; Urban Planning; Satellite City Development; Muhanga District. Title: Impact Assessment of Land Use Master Plan Implementation on Land Use Land Cover Dynamics, A Case of Muhanga Satellite City (2014-2024) Author: Mathias MUJYANAMA, Dr. Richard MIND’JE International Journal of Life Sciences Research ISSN 2348-313X (Print), ISSN 2348-3148 (online) Vol. 14, Issue 4, October 2026 - December 2026 Page No: 99-111 Research Publish Journals Website: www.researchpublish.com Published Date: 07-November-2026 DOI: https://doi.org/10.5281/zenodo.24035318 Paper Download Link (Source) https://www.researchpublish.com/papers/impact-assessment-of-land-use-master-plan-implementation-on-land-use-land-cover-dynamics-a-case-of-muhanga-satellite-city-2014-2024",
+   "abstract": "Background: Micro-enterprises operating along the Pesisir Barat coastline experience chronic product spoilage and demurrage because logistics are fragmented and contractual enforcement under the Indonesian Civil Code (KUHPerdata) is weak. Objectives: This study aims to construct a juridical-digital twin that (1) optimizes logistical performance through multi-agent reinforcement learning (MARL), (2) guarantees compliance with Articles 1320, 1338, and 1243 of the KUHPerdata, and (3) allocates risk transparently via blockchain-based smart contracts. Methods: A three-layer architecture was implemented. The physical layer collects high-frequency IoT data (GPS, temperature, wave height, fuel flow). The digital-twin layer simulates the supply-chain using a Markov decision process whose state vector S_t^i=[GPS_t,T_t,Hs_t,F_t,D_t] and action set A_t^i={route, temp}. Reward R_t^i= -alpha·Spoilage_t^i -beta·Demurrage_t^i -gamma·P_legal^i + δ·ServiceLevel_t^i incorporates a legally calibrated penalty P_legal derived from smart-contract clauses. Policy-gradient updates Delta θ=alpha∇_θ logπ_θ(A_t|S_t)(G_t-V_θ(S_t)) were trained on 12 months of pilot data. Demand forecasting employed a calibrated LSTM (24-h window, 128-unit hidden layer, MSE loss). Legal constraints were encoded as Solidity smart contracts: Clause 1 triggers liquidated-damage payments for temperature breaches; Clause 2 defines force-majeure based on BMKG wave-height advisories; Clause 3 enforces a good-faith risk-sharing rule limited to 10 % of contract value. Published in Journal of Coastal Frontiers and Applied Development (JCFAD). CERN Zenodo Record: https://doi.org/10.5281/zenodo.24047039. Publisher: PT CHAIN ASIA CONECT Research and Development Division.",
+   "lanes": [
+    "Forecasting",
+    "AI in planning"
+   ],
+   "score": 3.2,
+   "why": [
+    "practice signals: empirical",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225313089",
+   "doi": "https://doi.org/10.64388/ire1724780",
+   "title": "Retail Point of Sale and Inventory Management Systems",
+   "date": "2026-11-05",
+   "type": "article",
+   "venue": "Iconic Research and Engineering Journals",
+   "publisher": "",
+   "authors": [
+    "Jayvardhan Deepak Kamat",
+    "Siddhi Dattatray Joshi",
+    "Sahil Shantinath Magadum",
+    "Shrutika Sagar Chavan",
+    "Aniket Thorat"
+   ],
+   "institutions": [
+    "Sanjay Ghodawat University",
+    "Sanjay Ghodawat Institute",
+    "Swedish Geotechnical Institute"
+   ],
+   "countries": [
+    "IN",
+    "SE"
+   ],
+   "licence": "",
+   "landing": "https://doi.org/10.64388/ire1724780",
+   "pdfs": [
+    "https://www.irejournals.com/formatedpaper/1724780.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "A retail point-of-sale (POS) system connects each sale with stock records, replenishment, tax documents and store reports. This review looks at recent research on inventory accuracy, POS data, replenishment, perishable goods and digital stock visibility. It then considers how those findings apply to DailyMart, a proposed platform for multiple retail outlets in India. We examined 21 research papers published between 2020 and 2025, comparing their methods, contributions and limitations. The studies show that transaction data can help with audits and forecasting, but a digital record cannot reveal every physical loss. Expiry details and differences in the way individual stores work create further challenges. Most of the papers focus on one decision, such as replenishment, shelf allocation, food-waste reduction or sharing stock across channels. Fewer explain how a practical retail application should connect checkout, purchasing, stock reversals, tax invoices and receipt delivery. DailyMart aims to address this gap by linking sales and stock updates with goods receipts, supplier returns, outlet-level access, expiry alerts, traceable cancellations and a separate messaging service. This is a proposed design, not proof of better performance. We suggest tests for transaction accuracy, simultaneous checkout, expiry tracking and usability.",
+   "lanes": [
+    "Inventory"
+   ],
+   "score": 3.0,
+   "why": [
+    "Nordic/DACH authors (SE)"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225301090",
+   "doi": "https://doi.org/10.24867/ijiem-426",
+   "title": "A Scheduling Framework for Green Supplier Selection and Dynamic Order Allocation: A Case Study in the Textile Industry",
+   "date": "2026-11-05",
+   "type": "article",
+   "venue": "International Journal of Industrial Engineering and Management",
+   "publisher": "Faculty of Technical Sciences",
+   "authors": [
+    "Rui G. Silva",
+    "Ana Cristina Ferreira",
+    "Bruna Ramos",
+    "António Araújo"
+   ],
+   "institutions": [
+    "Fundação Minerva - Cultura - Ensino e Investigação Científica",
+    "Universidade Lusíada de Vila Nova de Famalicão",
+    "Centro de Investigação em Organizações Mercados e Gestão Industrial",
+    "University of Minho"
+   ],
+   "countries": [
+    "PT"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.24867/ijiem-426",
+   "pdfs": [
+    "https://doi.org/10.24867/ijiem-426"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "This study introduces an innovative framework for order allocation and scheduling in the textile industry, addressing the complex challenges of multi-objective production planning across diverse processes, multiple outsourcing entities, and interconnected production departments. The proposed approach uses advanced genetic algorithms to deliver efficient and sustainable scheduling solutions, integrating a state-of-the-art production process simulator. A core innovation of this research is a novel chromosome representation, complemented by refined genetic operators and a heuristic pruning and selection mechanism. Green supplier criteria are integrated through a lexicographic scoring mechanism that governs allocation tie-breaking, ensuring that sustainability preferences are structurally embedded in the decision process without displacing primary economic objectives. The production process simulator is designed to replicate real-world industrial dynamics, significantly boosting the model’s accuracy and practical applicability. The study pioneers advanced methodologies, including a gendered genetic algorithm and a hybrid genetic algorithm, specifically developed to optimize scheduling in multi-supply chain and open shop environments. These techniques improve computational efficiency and promote sustainable practices by optimizing resources, reducing waste and minimizing production costs. Validation using real industrial data underscores the model’s capability to outperform conventional practices, demonstrating higher performance relative to the company's prior manual scheduling practice, mostly in terms of operational efficiency, cost-effectiveness and sustainability. The framework offers substantial potential for practical implementation, providing robust tools to enhance market competitiveness and support greener and resilient production strategies within the textile industry and beyond.",
    "lanes": [
     "Production planning and scheduling"
    ],
-   "score": 3.4,
+   "score": 3.0,
    "why": [
-    "practice signals: implementation, industrial",
+    "practice signals: case study, implementation, industrial, real-world"
+   ],
+   "text_file": "papers/W7225301090.txt"
+  },
+  {
+   "openalex": "W7225157884",
+   "doi": "https://doi.org/10.21203/rs.3.rs-10547898/v1",
+   "title": "Leveraging Intelligent Agents in Industrial Engineering: Use Cases in Predictive Maintenance and Supply Chain Optimization",
+   "date": "2026-11-03",
+   "type": "preprint",
+   "venue": "Research Square",
+   "publisher": "",
+   "authors": [
+    "Soma Prathibha",
+    "Supriya Ramesh",
+    "Sharanya Shree",
+    "Palani Kumar"
+   ],
+   "institutions": [
+    "Sri Sairam Engineering College"
+   ],
+   "countries": [
+    "IN"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.21203/rs.3.rs-10547898/v1",
+   "pdfs": [
+    "https://www.researchsquare.com/article/rs-10547898/latest.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Abstract Industrial struggle with machine breakdown, inefficient processes, and supply chain.Disupts which are regular. These issues also produce delays and increased costs. And saw decreased productivity. Also it is the case that which traditional systems react only after a problem has Already present, which in turn puts pressure on businesses to become less efficient and less competitive. This Artificial intelligence and intelligent agents is the area where. In terms of Through use of machine learning and smart automation, which is what organizations do that have success in this area, they predict problems at an early stage. Streamline operations and improve decision speed and quality. This study Presents two case studies which in the first we see how AI plays a role in predictive maintenance. Machines break down less often which in turn allowsthem to run continuously. The second case study. Explores how AI is used in supply chain logistics. Both cases saw considerable and meaningful improvements with the implementation of artificial intelligence. In predictive maintenance, for example, the AI models were very effective in identifying early symptoms of equipment failure, which would significantly reduce machine downtime and lengthen the total lifespan of the equipment. In the Supply Chain , AI agents improved the interaction between supply chain stages which in turn enabled faster. Decision on which items to stock and also in how we handle stock levels which in turn leads to faster recovery from disruptions. These results present that which AI brings to the table in terms of efficiency, cost savings, and flexibility.",
+   "lanes": [
+    "AI in planning"
+   ],
+   "score": 3.0,
+   "why": [
+    "preprint, not peer-reviewed",
+    "practice signals: case study, implementation, industrial"
+   ],
+   "text_file": "papers/W7225157884.txt"
+  },
+  {
+   "openalex": "W7211958492",
+   "doi": "https://doi.org/10.18623/rvd.v23.8098",
+   "title": "STRENGTHENING PHARMACEUTICAL MANUFACTURING LOCALIZATION IN SAUDI ARABIA THROUGH PRODUCTION PLANNING AND CAPACITY OPTIMIZATION",
+   "date": "2026-09-07",
+   "type": "article",
+   "venue": "Veredas do Direito Direito Ambiental e Desenvolvimento Sustentável",
+   "publisher": "Editora Dom Helder",
+   "authors": [
+    "Mohammed Taqiuddin"
+   ],
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.18623/rvd.v23.8098",
+   "pdfs": [
+    "https://revista.domhelder.edu.br/index.php/veredas/article/download/8098/29350"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Saudi Arabia is pursuing pharmaceutical localization as part of a wider transformation of healthcare, industrial capability, supply-chain resilience, and the non-oil economy under Vision 2030. Yet localization is not achieved simply by constructing plants or transferring product licenses. It depends on the ability of domestic manufacturers to translate demand into executable production plans, allocate constrained resources, absorb new products, maintain regulatory compliance, and expand capacity at the right time. This review examines how production planning and capacity optimization can strengthen pharmaceutical manufacturing localization in Saudi Arabia. A structured integrative review was conducted using recent peer-reviewed literature on Saudi pharmaceutical manufacturing, production and capacity planning, pharmaceutical supply-chain resilience, operational excellence, and Pharma 4.0, together with official Saudi, WHO, ICH, and regulatory policy documents. The synthesis identifies five mutually reinforcing localization capabilities: demand-linked master production scheduling, integrated material and capacity planning, bottleneck and asset-performance management, technology-transfer readiness, and digital decision support. The paper proposes a Saudi pharmaceutical localization planning framework that connects national localization priorities with plant-level sales and operations planning, finite capacity decisions, quality systems, workforce development, and investment triggers. The analysis argues that localization performance should be measured not only by local content or the number of domestically produced products, but also by service level, schedule adherence, utilization, changeover performance, right-first-time quality, lead time, and resilience to supply disruptions. A phased implementation roadmap is proposed for 2026-2030. The review concludes that production planning and capacity optimization can function as strategic localization infrastructure, allowing Saudi manufacturers to convert installed assets, technology transfer, and policy incentives into reliable, scalable, and competitive domestic medicine supply.",
+   "lanes": [
+    "S&OP and IBP"
+   ],
+   "score": 3.0,
+   "why": [
+    "practice signals: implementation, industrial, manufacturer"
+   ],
+   "text_file": "papers/W7211958492.txt"
+  },
+  {
+   "openalex": "W7225611039",
+   "doi": "https://doi.org/10.31223/x53v5v",
+   "title": "Calibrated probabilistic ET0 forecasting with lightweight deep learning across northern and southern Xinjiang: seven-station evaluation and irrigation implications",
+   "date": "2026-11-09",
+   "type": "preprint",
+   "venue": "",
+   "publisher": "",
+   "authors": [
+    "Dachun Chen",
+    "Chunfang Yue"
+   ],
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.31223/x53v5v",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Accurate and calibrated reference evapotranspiration (ET0) forecasts are essential for irri-gation scheduling, yet many ET0 studies report deterministic point forecasts and evaluate only a limited number of forecast origins. This study compared deterministic and proba-bilistic ET0 forecasts at seven NCEI stations in northern and southern Xinjiang, including Kashi, Hotan, Korla and Turpan as external stations. Daily records from 1 January 1984 to 16 May 2025 were divided chronologically into 70% training, 10% validation and 20% testing. Four model families were evaluated: DLinear, ENMAMBA, CNNBiLSTM and Crossformer. H7, H30 and H180 forecasts were assessed at all feasible test origins using moving-block bootstrap inference and Holm correction. Rolling conformal calibration generated probabilistic forecasts evaluated by dense-grid CRPS, PICP80, PICP90, MPIW80 and MPIW90. A 2024 drip-irrigated cotton record was used to test how forecast strategies interact with actual irrigation deliveries and generic sandy-loam parameters. DLinear achieved the lowest H30 and H180 RMSE in the northern and external station groups. Overall PICP80/PICP90 was close to nominal, but spring and summer intervals remained under-covered. The irrigation simulation did not reproduce observed root-zone moisture; its decision implications are therefore treated as a bounded sensitivity analysis rather than a field-calibrated recommendation.",
+   "lanes": [
+    "Forecasting"
+   ],
+   "score": 2.7,
+   "why": [
+    "preprint, not peer-reviewed",
+    "practice signals: field",
     "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225624363",
+   "doi": "https://doi.org/10.3390/buildings16214468",
+   "title": "Grouping-Driven Production Scheduling Optimization for Precast Concrete Components",
+   "date": "2026-11-09",
+   "type": "article",
+   "venue": "Buildings",
+   "publisher": "Multidisciplinary Digital Publishing Institute",
+   "authors": [
+    "Junyong Liang",
+    "Shicen LIU",
+    "Yongzhong Zhang",
+    "Yu Fu",
+    "Baigang Du"
+   ],
+   "institutions": [
+    "Sichuan University of Science and Engineering",
+    "Wuhan University of Technology"
+   ],
+   "countries": [
+    "CN"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.3390/buildings16214468",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Precast component production is an important part of industrialization in construction. However, in actual production, it often faces problems such as high resource occupation, long production cycles, and high delivery costs caused by unreasonable scheduling arrangements. This study proposes a hybrid multi-objective optimization framework that combines Q-learning with the non-dominated sorting genetic algorithm, termed QL-NSGA-II, to address the highly coupled problem of component grouping on pallets and production scheduling in precast component manufacturing. The model aims to collaboratively minimize the number of pallets used, the makespan, and the penalty cost. The algorithm constructs a dual Q-table Markov decision architecture, in which the agent adaptively coordinates PC component grouping and scheduling strategies based on reward feedback from the evolutionary state. Through extreme-value tests on multiple benchmark instances from the literature, the results show that the proposed QL-NSGA-II not only achieves the accuracy of the benchmark solutions, but also, in some cases, reduces the makespan and penalty cost by 34.77% and 60.24%, respectively, compared with existing benchmark algorithms. In a real industrial order experiment with 87 components, the algorithm notably outperforms the comparison algorithms across comprehensive convergence metrics such as hypervolume and inverted generational distance, confirming its favorable practical application potential for balancing pallet resource consumption and flow cycle.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 2.7,
+   "why": [
+    "practice signals: industrial",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7163071109",
+   "doi": "https://doi.org/10.1007/s44498-026-00196-9",
+   "title": "Evaluation criteria for AI-assisted product carbon footprinting systems: the cases of mapping and supply chain modeling",
+   "date": "2026-11-05",
+   "type": "article",
+   "venue": "Journal of Industrial Ecology",
+   "publisher": "Wiley",
+   "authors": [
+    "Shaena Ulissi",
+    "Andrew Dumit",
+    "P. James Joyce",
+    "Jacob Feintzeig",
+    "Krishna Rao",
+    "Steven Watson",
+    "Sangwon Suh"
+   ],
+   "institutions": [
+    "Tsinghua University"
+   ],
+   "countries": [
+    "CN"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1007/s44498-026-00196-9",
+   "pdfs": [
+    "https://link.springer.com/content/pdf/10.1007/s44498-026-00196-9.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Abstract Large language models (LLMs) are increasingly used to automate components of product carbon footprinting (PCF). However, the carbon footprinting literature lacks criteria for evaluating the quality, documentation, uncertainty indication, and reviewability of AI-assisted systems for specific PCF use cases. We developed a set of evaluation criteria for AI-assisted carbon footprinting (AI-CF) through standards review, structured stakeholder elicitation with corporate practitioners and verification specialists, and iterative pilot testing. The resulting criteria are organized around transparent logic, benchmarking against expert judgment, and uncertainty characterization. The criteria were then applied to two use cases: automated life-cycle-inventory proxy mapping and cradle-to-gate PCF generation. Applying the criteria to two deployed proprietary AI-CF systems demonstrates that the framework is operational and can identify where human review or better data are most needed. For automated mapping, well-specified (“non-vague”) inputs achieved a 91.2% expert-accepted mapping rate, whereas inputs with ambiguous or incomplete descriptions (“vague”; e.g., internal product codes or generic descriptors) achieved 59.7%; repeat-run entropy increased with input ambiguity. For cradle-to-gate modeling, end-to-end benchmarking against 269 Environmental Product Declarations yielded a 33% median relative error, while component-level benchmark checks, though unvalidated, showed relatively strong pass rates for proxy mappings, hotspots, and direct emissions and weaker performance for key input rates. The framework provides a practical reference for AI-CF developers, users, and reviewers to assess AI-CF system and output quality for these use cases.",
+   "lanes": [
+    "AI in planning"
+   ],
+   "score": 2.7,
+   "why": [
+    "practice signals: practitioner",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W7163071109.txt"
+  },
+  {
+   "openalex": "W7225236001",
+   "doi": "https://doi.org/10.54097/jx9ms738",
+   "title": "Analysis of the Effect of Big Data on Supply Chain Optimization: A Case Study of JD Logistics' Freight and Warehousing Operations",
+   "date": "2026-11-03",
+   "type": "article",
+   "venue": "Journal of innovation and development",
+   "publisher": "",
+   "authors": [
+    "Sihan Yan"
+   ],
+   "institutions": [
+    "Sichuan University"
+   ],
+   "countries": [
+    "CN"
+   ],
+   "licence": "cc-by-nc",
+   "landing": "https://doi.org/10.54097/jx9ms738",
+   "pdfs": [
+    "https://drpress.org/ojs/index.php/jid/article/download/36079/35233"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "In the context of the deep integration of the digital economy, supply chain management is confronted with challenges such as demand fluctuations and information asymmetry. Big data technology is emerging as the core driving force for the precise transformation of supply chains. This paper takes JD Logistics as the research object and systematically analyzes the application paths and optimization effects of big data in the e-commerce supply chain. The research starts from the characteristics of supply chain big data, summarizes the development process and technical architecture of JD Logistics, and focuses on the specific practices of big data in inventory management, intelligent warehousing operations, and delivery optimization. Through a combination of case analysis and literature research, it demonstrates the significant role of big data technology in reducing JD’s warehousing costs and improving delivery efficiency, with a single delivery cost decreasing by 8.5%, unit warehousing cost decreasing by 12%, and order fulfillment rate increasing to 97%. The study shows that the supply chain management driven by big data achieves the unity of cost reduction, efficiency improvement, and service quality enhancement, providing a feasible practical path for the digital transformation of e-commerce logistics enterprises.",
+   "lanes": [
+    "Inventory"
+   ],
+   "score": 2.7,
+   "why": [
+    "practice signals: case study",
+    "reports a quantified result"
+   ],
+   "text_file": "papers/W7225236001.txt"
+  },
+  {
+   "openalex": "W7225177506",
+   "doi": "https://doi.org/10.1038/s41598-026-78286-8",
+   "title": "Reliability improvement in CNC manufacturing through lean six sigma DMAIC: an empirical study on mean time between failures",
+   "date": "2026-11-03",
+   "type": "article",
+   "venue": "Scientific Reports",
+   "publisher": "Nature Portfolio",
+   "authors": [
+    "G. Shashi Kiran",
+    "M.R. Shivakumar",
+    "C. G. Ramachandra",
+    "K. Rameshbabu",
+    "H. K. Sachidananda"
+   ],
+   "institutions": [
+    "Ramaiah Institute of Technology",
+    "Presidency University",
+    "Manipal Academy of Higher Education, Dubai"
+   ],
+   "countries": [
+    "AE",
+    "IN"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1038/s41598-026-78286-8",
+   "pdfs": [
+    "https://www.nature.com/articles/s41598-026-78286-8_reference.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Abstract Unplanned equipment failures at CNC manufacturing facilities create production delays that are difficult to schedule around, and published Lean Six Sigma DMAIC studies of Mean Time Between Failures (MTBF) rarely report variance reduction as an outcome in its own right, despite highly variable failure intervals being at least as disruptive to production planning as low average reliability. This study applies the DMAIC framework to MTBF at a Government Tool Room and Training Centre (GTTC) in Bengaluru, India, a public-sector precision manufacturing facility, using six months of maintenance work-order records (January–June 2025, 502 unplanned breakdown events). Because system-based failure tracking began at the start of this window with no prior failure history available, the first recorded failure for each of 52 machines could not be paired with a genuine previous failure and was excluded as a left-censored observation, yielding a final analysis dataset of 450 events with a median baseline MTBF of 402.34 h (mean 429.92 h; CV, calculated from the mean and standard deviation, = 65.2%, a level of dispersion that limits the practical use of any single figure for production scheduling). Non-parametric Mann-Whitney testing (required by confirmed non-normality, Anderson-Darling A-squared = 3.81, p < 0.005) identified three factors statistically associated with lower MTBF: incomplete daily operator maintenance (median gap 104.5 h, p < 0.001), preventive maintenance not completed on schedule (gap 99.3 h, p < 0.001), and delayed component replacement (gap 113.4 h, p < 0.001; observed in 66.9% of events). Interventions addressing each factor were piloted on CNC milling machines and extended to four further machine families. Median MTBF rose to 558.70 h (+ 38.9%; Mann-Whitney, p < 0.001), with CV falling from 65.2% to 6.3%. The improvement persisted over a subsequent four-month Control-phase observation ( n = 267): every individual month remained significantly better than baseline ( p < 1.3 × 10⁻⁷ in the weakest month), and the statistically appropriate one-sided regression test found no evidence of regression relative to the immediate post-improvement result ( p = 0.985), with the Control-phase median (564.03 h) in fact marginally exceeding it. This study’s principal contribution is methodological as much as empirical: it demonstrates that MTBF variance reduction, not only the mean or median shift, can be treated as a primary DMAIC outcome, and it reports a transparent left-censoring exclusion rule that other facilities beginning failure-tracking from a fixed start date can apply directly. Findings are presented from a single facility and are not claimed to be representative of a broader setting. As a before–after study with no concurrent control group, the results show an association with the interventions, not proof of causation, and four months of Control-phase data do not establish long-term stability.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 2.7,
+   "why": [
+    "practice signals: empirical",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7217681199",
+   "doi": "",
+   "title": "Digital Twin Frameworks for SMB Inventory and Demand Optimization",
+   "date": "2026-11-03",
+   "type": "article",
+   "venue": "E-Journal of Science and Emerging Technologies (EJSET)",
+   "publisher": "",
+   "authors": [
+    "Er. Shubham Jain"
+   ],
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by",
+   "landing": "https://ejset.org/index.php/index/article/view/34",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Small and Medium-sized Businesses (SMBs) face unique challenges in inventory and demand management due to limited resources, volatile markets, and evolving consumer expectations. Digital Twin technology—a virtual representation of physical assets, processes, or systems—has emerged as a transformative tool enabling predictive analytics, real-time monitoring, and optimization. This manuscript explores Digital Twin frameworks tailored for SMBs, focusing on inventory and demand optimization. It delves into the architecture, integration strategies with existing Enterprise Resource Planning (ERP) systems, and artificial intelligence (AI) models facilitating predictive insights. A detailed literature review uncovers significant advancements and gaps in adopting Digital Twins for supply chain efficiency in SMB contexts. Statistical analysis is performed on data collected from 150 SMBs across retail, manufacturing, and e-commerce sectors, revealing improvements in forecast accuracy, stock-out reduction, and working capital utilization upon deploying Digital Twin solutions. The results highlight a mean forecast accuracy improvement of 18.4% and inventory cost savings averaging 12.7%. The paper concludes with a proposed Digital Twin framework customized for SMB operations, discusses practical implementation considerations, and outlines the technology’s scope, limitations, and potential future research directions. This comprehensive study underscores the transformative role of Digital Twins in modernizing SMB inventory and demand management, paving the way for competitive agility and resilience.",
+   "lanes": [
+    "AI in planning"
+   ],
+   "score": 2.7,
+   "why": [
+    "practice signals: implementation",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7224181360",
+   "doi": "https://doi.org/10.4102/jtscm.v20i0.1432",
+   "title": "The role of supply chain planning in enhancing customer satisfaction and loyalty in the South African steel manufacturing industry",
+   "date": "2026-10-29",
+   "type": "article",
+   "venue": "Journal of Transport and Supply Chain Management",
+   "publisher": "AOSIS",
+   "authors": [
+    "Lucky Shashaoka",
+    "Chengedzai Mafini",
+    "Gladys N. Mahache"
+   ],
+   "institutions": [
+    "Vaal University of Technology"
+   ],
+   "countries": [
+    "ZA"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.4102/jtscm.v20i0.1432",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Background: The steel manufacturing industry is widely recognised as a key contributor to both developed and developing economies. In South Africa, it contributes about 1.5% to the gross domestic product and remains important for employment and economic growth. It also supplies essential raw materials to downstream sectors. Despite this contribution, the industry faces ongoing challenges such as cheap imports, high transport costs, skills shortages, and weak economic growth. These pressures affect operational performance and threaten customer satisfaction (CS) and customer loyalty (CL), particularly in business-to-business (B2B) markets in which long-term supplier relationships and reliable service are essential for competitiveness and customer retention. In this context, supply chain planning (SCP) has become important for coordinating strategic, tactical, and operational decisions. Objectives: This study investigated the relationship among SCP, CS, and CL in the South African steel manufacturing industry. Method: A quantitative approach was used. SCP practices, including sales and operations planning, demand and supply planning (SP), production planning (PP), inventory management (IM), capacity planning (CP), and procurement planning (PL), were examined to assess their influence on CS and CL. Data were collected from key industry participants and analysed statistically using partial least squares structural equation modelling. Results: The findings show that SCP does not influence CS in a uniform way. Inventory management and PP had significant positive effects, whereas SP showed a significant inverse relationship with CS. Sales and operations planning, demand planning, CP, and PL were not significant. Customer satisfaction, however, had a strong positive effect on CL. Conclusion: The findings highlight the varying contributions of different SCP practices to CS, which suggests that some practices exert a stronger influence than others. Improving IM and PP remains important for supporting CS and CL within the South African steel manufacturing industry. Contribution: The study offers empirical insights into how different practices of SCP shape customer-related outcomes in a B2B manufacturing environment and informs managerial decision-making within the South African steel industry.",
+   "lanes": [
+    "S&OP and IBP"
+   ],
+   "score": 2.7,
+   "why": [
+    "practice signals: empirical",
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225634454",
+   "doi": "https://doi.org/10.3390/su182111372",
+   "title": "AI-Based Pharmaceutical Demand Forecasting for Sustainable Production: A Hybrid BiLSTM–Transformer Approach to Prevent Overproduction",
+   "date": "2026-11-07",
+   "type": "article",
+   "venue": "Sustainability",
+   "publisher": "Multidisciplinary Digital Publishing Institute",
+   "authors": [
+    "Jesús Mares-Carreño",
+    "Arce-Gil Diego-Iván",
+    "Yunuén López-Grijalba",
+    "Juan Cruz-Castro",
+    "Abarca-Jiménez Griselda Stephany",
+    "Vega-Blanco Manuel Vladimir",
+    "Francisco Gutiérrez-Galicia"
+   ],
+   "institutions": [
+    "Instituto Politécnico Nacional"
+   ],
+   "countries": [
+    "MX"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.3390/su182111372",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Accurate pharmaceutical demand forecasting is essential to align production with actual market needs, reduce overproduction, prevent stockouts, and improve resource efficiency. This study develops a hybrid bidirectional long short-term memory (BiLSTM)–Transformer model to support sustainable pharmaceutical production through data-driven demand forecasting. We trained the model on real monthly sales and inventory data from a nationwide pharmaceutical company in Mexico, along with epidemiological, climatic, demographic, and economic variables. The study analyzed thirteen sodium naproxen and oseltamivir phosphate pharmaceutical products over forecasting horizons of 3, 6, and 12 months. We evaluated robust scaling and logarithmic transformation during preprocessing and compared the Adam, RMSprop, Nadam, and SGD optimizers. Nadam generally produced the lowest forecasting errors, especially at short- and medium-term horizons. Six of the thirteen evaluated pharmaceutical products achieved cumulative percentage errors below 10% at the three-month forecasting horizon. Compared with the Seasonal Naïve baseline, the proposed model achieved lower cumulative forecasting errors for 11 of 13 products at the 3-month horizon and 9 of 13 products at both the 6- and 12-month horizons, although the baseline performed better for certain products. Performance became more heterogeneous over longer horizons and for products with irregular or highly volatile demand, revealing important limitations for operational use. The findings suggest that hybrid AI-based forecasting may support production planning and inventory management decisions, provided that model selection accounts for product-specific characteristics and forecasting horizons. However, potential benefits related to reduced overproduction, excess inventory, product expiration, and environmental impacts remain prospective applications rather than outcomes directly demonstrated in this study.",
+   "lanes": [
+    "Forecasting",
+    "Inventory",
+    "Production planning and scheduling"
+   ],
+   "score": 2.5,
+   "why": [
+    "reports a quantified result"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225268651",
+   "doi": "https://doi.org/10.20965/ijat.2026.p0595",
+   "title": "Gated Hybrid Network Using CRNN and RNN Models for Time-Series Forecasting and Case Studies",
+   "date": "2026-11-04",
+   "type": "article",
+   "venue": "International Journal of Automation Technology",
+   "publisher": "Fuji Technology Press Ltd.",
+   "authors": [
+    "Takayuki Kataoka",
+    "Tomonari Yomono",
+    "翔 山元",
+    "Takashi Nishi"
+   ],
+   "institutions": [
+    "Kindai University",
+    "Dai Nippon Printing (Japan)",
+    "Mazda Motor Corporation (Japan)"
+   ],
+   "countries": [
+    "JP"
+   ],
+   "licence": "cc-by-nd",
+   "landing": "https://doi.org/10.20965/ijat.2026.p0595",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Time-series forecasting is a critical challenge in industrial applications such as inventory management and energy planning. This paper proposes a gated hybrid network for time-series forecasting that combines feature vectors obtained from convolutional recurrent neural network (CRNN) and recurrent neural network (RNN) branches. Unlike conventional CRNN models, the proposed model feeds the original time-series sequence in parallel to both CRNN and independent RNN branches, enabling each branch to extract complementary temporal features. A squeeze-and-excitation-inspired gating mechanism then adaptively weights and integrates the two feature vectors. Experiments were conducted using six real-world datasets, including automotive sales, electricity consumption, and solar energy data. The proposed model achieved lower mean relative squared error and relative absolute error values averaged across four forecasting periods than autoregressive (AR), autoregressive integrated moving average (ARIMA), Holt–Winters, gated recurrent unit (GRU), and long short-term memory (LSTM) baseline models on most of the datasets, while also demonstrating superior prediction stability. These results suggest that the proposed architecture is suitable for practical industrial forecasting tasks.",
+   "lanes": [
+    "Inventory"
+   ],
+   "score": 2.4,
+   "why": [
+    "practice signals: industrial, real-world"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225131692",
+   "doi": "https://doi.org/10.14456/irr.2026.21",
+   "title": "Optimizing Production Planning in the Banbury Mixing Process via Modified FCMRP: A Tire Manufacturing Case Study",
+   "date": "2026-11-03",
+   "type": "article",
+   "venue": "Interdisciplinary Research Review",
+   "publisher": "",
+   "authors": [
+    "Anan Butrat"
+   ],
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://ph02.tci-thaijo.org/index.php/jtir/article/view/267168",
+   "pdfs": [
+    "https://ph02.tci-thaijo.org/index.php/jtir/article/download/267168/174675"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Production planning in the Banbury mixing process presents unique scheduling challenges, primarily due to complex alternative Bill of Materials (BOM) routing and mandatory natural aging constraints. This study addresses the severe operational inefficiencies—specifically, excessive lead times and high machine idle time ratios—currently faced by a real-world tire manufacturing company. To resolve these issues, we propose a modified Finite Capacity Material Requirements Planning (FCMRP) framework. This approach dynamically calculates job release times based on predecessor due times and previous order finish times to effectively accommodate mandatory resting periods. To determine the most effective scheduling strategy, we systematically evaluate the company's baseline Highest Order Quantity (HOQ) rule against standard Earliest Release Time (ERT) and Shortest Processing Time (SPT) heuristics. Furthermore, we introduce a novel Non-Alternative Machine (NAM) sub-rule designed to intelligently isolate and reallocate movable excess jobs to alleviate machine bottlenecks. The experimental results demonstrate that combining the ERT rule with the NAM sub-rule successfully reduces bottleneck workloads and yields the optimal overall lead time. Conversely, applying ERT without the NAM logic provides the best machine idle time ratio. Ultimately, this research delivers a practical, data-driven framework for selecting priority rules to optimize complex mixing processes in the manufacturing industry.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 2.4,
+   "why": [
+    "practice signals: case study, real-world"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225202708",
+   "doi": "https://doi.org/10.62051/ijgem.v10n10.06",
+   "title": "Discussion on Paths to Enhance Supply Chain Resilience Based on ESG Concepts in Light of Global Value Chain Restructuring",
+   "date": "2026-11-03",
+   "type": "article",
+   "venue": "International Journal of Global Economics and Management",
+   "publisher": "",
+   "authors": [
+    "Yuanyuan Yang"
+   ],
+   "institutions": [
+    "Shanghai University of International Business and Economics"
+   ],
+   "countries": [
+    "CN"
+   ],
+   "licence": "cc-by-nc",
+   "landing": "https://doi.org/10.62051/ijgem.v10n10.06",
+   "pdfs": [
+    "https://ijgem.org/pdf/2026/10.62051-ijgem.v10n10.06.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "In recent years, the world's value chain has moved away from the pursuit of efficiency and is now paying more attention to security and resilience due to geopolitical risks, unstable trade policies, and extreme weather events. ESG has gone from being voluntary to required in the supply chain for governance. The European Union's Corporate Sustainability Due Diligence Directive is an example. According to the trend of value chain restructuring, this paper studies the inherent relationship between ESG and supply chain resilience, and proposes three paths for improvement in the dimensions of collaborative governance, digital empowerment and institutional transmission. Based on empirical evidence, ESG performance strengthens the resilience of the industrial chain and supply chain by improving information transparency and reducing financing constraints; the extraterritorial effects of regulations such as CSDDD are transmitted to Chinese export enterprises through procurement contracts and supplier guidelines. In order to continue to operate in the European market, Chinese enterprises have been required to integrate ESG standards into their supply chain management, and the capacity for ESG compliance is gradually becoming a condition for supplying major enterprises abroad. The company needs to integrate ESG into its daily operations of the supply chain, not just issue an annual report.",
+   "lanes": [
+    "Resilience and risk"
+   ],
+   "score": 2.4,
+   "why": [
+    "practice signals: empirical, industrial"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7225097442",
+   "doi": "https://doi.org/10.3389/fsufs.2026.1989263",
+   "title": "Digital transformation, traceability, and supply chain resilience in food manufacturing SMEs: a review of AI, blockchain-IoT, and institutional mechanisms",
+   "date": "2026-11-02",
+   "type": "article",
+   "venue": "Frontiers in Sustainable Food Systems",
+   "publisher": "Frontiers Media",
+   "authors": [
+    "Guang-Wen Zheng",
+    "Ayesha Mukhtar"
+   ],
+   "institutions": [
+    "Shaanxi University of Science and Technology"
+   ],
+   "countries": [
+    "CN"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.3389/fsufs.2026.1989263",
+   "pdfs": [
+    "https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2026.1989263/pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Food supply chains in China face persistent challenges of food safety risks, inadequate transparency, and supply disruptions, with food manufacturing small and medium-sized enterprises (SMEs) disproportionately vulnerable due to limited resources and non-standardized internal processes. Digital transformation encompassing artificial intelligence (AI), blockchain, Internet of Things (IoT), and digital twin technologies is increasingly regarded as a strategic solution to strengthen supply chain resilience, yet the organizational and institutional conditions under which these digital investments translate into tangible resilience improvements for food manufacturing SMEs remain poorly understood. This review conducts a PRISMA 2020-compliant systematic review and thematic synthesis of 40 multidisciplinary sources spanning the food safety, supply chain management, and information systems literatures. Drawing on Dynamic Capabilities Theory and Institutional Theory, we propose an integrative conceptual framework comprising six research propositions, in which traceability capability acts as a food-safety-specific mediating mechanism linking digital transformation to supply chain resilience, while regulatory stringency moderates the strength of this indirect pathway. A central argument of this framework is that deploying blockchain, IoT, or AI hardware does not itself constitute traceability capability the institutional and organisational conditions under which digital tools are adopted determine whether firms build substantive traceability capability or engage in symbolic compliance without genuine food safety governance improvement. Three key contributions distinguish this framework: conceptualizing traceability capability as a distinct dynamic capability rather than a generic digitalization mechanism; directing analytical focus explicitly toward food manufacturing SMEs, a population largely overlooked in existing large-firm panel studies; and introducing regulatory stringency as a first-stage moderator within a moderated mediation structure. Critical research gaps are identified, including the absence of SME-calibrated digital transformation measurement instruments, the lack of a validated multi-item traceability capability scale, and a complete empirical vacuum for testing the proposed moderated mediation model in food manufacturing SME contexts. This review provides a structured future research agenda for scholars and delivers actionable insights for practitioners and policymakers seeking to direct digital technology investments toward improved food safety governance in China’s food manufacturing sector.",
+   "lanes": [
+    "AI in planning"
+   ],
+   "score": 2.4,
+   "why": [
+    "practice signals: empirical, practitioner"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7223143508",
+   "doi": "https://doi.org/10.1016/j.htct.2026.108185",
+   "title": "NEW SUPPLY CHAIN PARADIGM TO STRENGTHEN THE BIOTECHNOLOGY-BASED PHARMACEUTICAL INDUSTRY",
+   "date": "2026-10-01",
+   "type": "article",
+   "venue": "Hematology Transfusion and Cell Therapy",
+   "publisher": "Elsevier BV",
+   "authors": [
+    "Amanda Damasceno Leão",
+    "Laianne Carla Batista Alencar",
+    "Raquel Gois Bastos"
+   ],
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by-nc-nd",
+   "landing": "https://doi.org/10.1016/j.htct.2026.108185",
+   "pdfs": [],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Introduction The pharmaceutical supply chain (SC) is extremely complex and highly regulated. It comprises an integrated network of stages, resources, and processes responsible for planning, manufacturing, and transporting medicines and inputs, extending from suppliers to the patient. The production of biotechnological medicines (BMs) involves the procurement of pharmaceutical inputs, Sales and Operations Planning (S&OP), quality control, and the biotechnological processing required for drug manufacturing. Objective To analyze the structure of the pharmaceutical SC in Brazil and evaluate the factors influencing BM production. Materials and Methods An integrative review was conducted using PubMed, ScienceDirect, and the AnvisaLegis, covering articles and regulatory standards published between 2020 and 2026.Results and Discussion An evolution from traditional logistics to a pharmaceutical SC model was observed in industries producing BMs. This shift was driven by the convergence of four major factors. The first relates to the increasing complexity of BMs, advancements in biotechnology have consolidated the transition from simple synthetic drugs to complex biological products, such as monoclonal antibodies, blood-derived products, and recombinant proteins. Due to the high thermosensitivity of these BMs, rigorous temperature control became necessary to prevent protein denaturation and the inactivation of the active pharmaceutical ingredient (API), necessitating a complete restructuring of the cold chain. The second factor was the evolution of sanitary responsibility, making manufacturers and distributors jointly accountable for product integrity up to the point of final delivery. The third factor concerns ANVISA’s integration into the Pharmaceutical Inspection Co-operation Scheme (PIC/S), which drove the alignment of Brazilian regulations with stricter global standards. The fourth factor lies in supply chain vulnerability, the concentration of API production in a few countries, such as India and China, combined with the potential for conflicts or health crises, creates instability and risks halting healthcare systems. In this context, these elements catalyzed the updating of regulations and the establishment of state policies, such as the Health Economic-Industrial Complex (CEIS). While RDC 430/2020 established Good Distribution, Storage, and Transport Practices for medicines, fostering the use of technologies such as telemetry, qualification, and risk management, the CEIS solidified its role as a public policy aimed at reducing external dependency and stimulating the domestic production of APIs, pharmaceutical inputs and medicines strategic to the Unified Health System (SUS). Conclusion Thus, it can be concluded that advances in the production of biological medicines, regulatory changes, and the risk of API supply shortages constitute a set of factors that drove the transition from a traditional logistics model toward the development of a robust pharmaceutical supply chain focused on medicine quality and industrial sovereignty.",
+   "lanes": [
+    "S&OP and IBP"
+   ],
+   "score": 2.4,
+   "why": [
+    "practice signals: industrial, manufacturer"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7214468780",
+   "doi": "https://doi.org/10.21474/ijar01/24148",
+   "title": "STRENGTHENING PHARMACEUTICAL MANUFACTURING LOCALIZATION IN SAUDI ARABIA THROUGH PRODUCTION PLANNING AND CAPACITY OPTIMIZATION",
+   "date": "2026-09-26",
+   "type": "article",
+   "venue": "International Journal of Advanced Research",
+   "publisher": "",
+   "authors": [
+    "Mohammed Taqiuddin"
+   ],
+   "institutions": [],
+   "countries": [],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.21474/ijar01/24148",
+   "pdfs": [
+    "https://www.journalijar.com/uploads/2026/09/6ab39b83775e4_IJAR-59185.pdf"
+   ],
+   "cited_by": 0,
+   "language": "en",
+   "abstract": "Saudi Arabia is pursuing pharmaceutical localization as part of a wider transformation of healthcare, industrial capability, supply-chain resilience, and the non - oil economy under Vision 2030. Yet localization is not achieved simply by constructing plants or transferring product licenses. It depends on the ability of domestic manufacturers to translate demand into executable production plans, allocate constrained resources, absorb new products, maintain regulatory compliance, and expand capacity at the right time. This review examines how production planning and capacity optimization can strengthen pharmaceutical manufacturing localization in Saudi Arabia. A structured integrative review was conducted using recent peer-reviewed literature on Saudi pharmaceutical manufacturing, production and capacity planning, pharmaceutical supply-chain resilience, operational excellence, and Pharma 4.0, together with official Saudi, WHO, ICH, and regulatory policy documents. The synthesis identifies five mutually reinforcing localization capabilities: demand-linked master production scheduling, integrated material and capacity planning, bottleneck and asset-performance management, technology-transfer readiness, and digital decision support. The paper proposes a Saudi pharmaceutical localization planning framework that connects national localization priorities with plant-level sales and operations planning, finite capacity decisions, quality systems, workforce development, and investment triggers.",
+   "lanes": [
+    "S&OP and IBP"
+   ],
+   "score": 2.4,
+   "why": [
+    "practice signals: industrial, manufacturer"
    ],
    "text_file": ""
   }
