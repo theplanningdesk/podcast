@@ -1,0 +1,47 @@
+name: Paper scout
+
+# Weekly shortlist of open-access research for the Wednesday research clip. Searches OpenAlex,
+# ranks for planners, and saves papers/shortlist.md, shortlist.json and licensed full texts on the
+# "sources" branch, where the research writer reads them. Never touches main.
+on:
+  schedule:
+    - cron: "20 5 * * 0"   # Sunday 06:20 Stockholm winter time, ahead of the Monday research writer
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-sources   # shares the sources branch with "Fetch sources"
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools
+            concepts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pypdf
+      - name: Scout
+        run: python tools/paper_scout.py "$RUNNER_TEMP/out"
+      - name: Publish to the sources branch
+        run: |
+          cd "$RUNNER_TEMP"
+          git init -q pub && cd pub
+          git config user.name planning-desk-bot
+          git config user.email planning-desk-bot@users.noreply.github.com
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 origin sources; then git checkout -q -b sources FETCH_HEAD; else git checkout -q --orphan sources; fi
+          rm -rf papers && cp -r "$RUNNER_TEMP/out/papers" papers
+          git add -A papers
+          git commit -q -m "Paper shortlist $(date -u +%F) [skip ci]" || { echo "No change"; exit 0; }
+          git push -q origin sources
