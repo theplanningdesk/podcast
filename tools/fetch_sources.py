@@ -256,6 +256,8 @@ LINK_RULES = {
     "Osto&Logistiikka": {"exclude": ["/mainos/"]},
     "KLU newsroom": {"include": ["/article/"]},
     "INFORMS newsroom": {"include": ["/News-Releases/"]},
+    "Manufacturing Dive": {"exclude": ["/spons/"]},
+    "Supply Chain Dive": {"exclude": ["/spons/"]},
 }
 
 # Company releases: skip routine notices; pull these words' sentences out as highlights.
@@ -291,6 +293,7 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/130.0 Safari/537.36 ThePlanningDeskBot/1.0")
 MAX_AGE_DAYS = 8
 MAX_PER_SOURCE = 40          # per source, after keyword filtering
+SUMMARY_LIMIT = {"arXiv (planning and OR preprints)": 1500}   # keep abstracts long enough for results
 MAX_RAW_PER_FEED = 600       # read this many feed entries before filtering (arXiv is large)
 PLANNING_LANE_CAP = 20       # per source in the planning lane, planning-first
 FREIGHT_CAP = 5              # freight desk: non-planning items per source
@@ -357,7 +360,7 @@ def parse_feed(source, feed_url, content, cutoff):
             "title": clean(e.get("title"), 300),
             "link": e.get("link", ""),
             "published": published.isoformat() if published else None,
-            "summary": clean(e.get("summary") or e.get("description")),
+            "summary": clean(e.get("summary") or e.get("description"), SUMMARY_LIMIT.get(source, 400)),
             "_text": clean(entry_text(e), 60000),
             "via": "feed",
         })
