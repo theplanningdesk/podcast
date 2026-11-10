@@ -56,7 +56,7 @@ jobs:
           if [ -n "$INPUT_STEM" ]; then
             STEMS="$INPUT_STEM"
           elif [ -n "$BEFORE_SHA" ] && ! echo "$BEFORE_SHA" | grep -qE '^0+$'; then
-            STEMS=$(git diff --name-only --diff-filter=AM "$BEFORE_SHA" HEAD -- 'concepts/*.json' | xargs -r -n1 basename | sed 's/\.json$//' | sort | tr '\n' ' ')
+            STEMS=$(git diff --name-only --diff-filter=AMR "$BEFORE_SHA" HEAD -- 'concepts/*.json' | xargs -r -n1 basename | sed 's/\.json$//' | sort | tr '\n' ' ')
           else
             STEMS=$(ls concepts/*.json | xargs -n1 basename | sed 's/\.json$//' | sort | tr '\n' ' ')
           fi
