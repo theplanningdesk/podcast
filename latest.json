@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-10T06:53:49.929691+00:00",
+ "fetched_at": "2026-11-10T06:56:15.260931+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -1316,40 +1316,10 @@
   },
   {
    "source": "arXiv (planning and OR preprints)",
-   "title": "Expanding the Volatile Abundance Inventory for High-Priority K-Dwarf JWST Exoplanet Systems",
-   "link": "https://arxiv.org/abs/2611.08676v1",
-   "published": "2026-11-05T20:34:01+00:00",
-   "summary": "There are exceedingly few chemical abundance measurements available in the literature for K dwarf stars, especially for those with T$_{eff} <$ 4700 K due to an incompatibility of traditional analyses with their molecular-line-ridden optical spectra. To address the need for K dwarf abundance constraints, we present an elemental ([C/H], [O/H]) and isotopic ($^{12}$C/$^{13}$C, $^{16}$O/$^{18}$O)…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
    "title": "LLM-Based Feature Extraction for Multi-Criteria Inventory Classification",
    "link": "https://arxiv.org/abs/2611.08626v1",
    "published": "2026-11-05T19:17:41+00:00",
    "summary": "E-commerce supply chains generate large volumes of customer feedback and operational data that remain underutilized in inventory management. Traditional inventory classification techniques such as ABC analysis rely primarily on annual dollar usage, while multi-criteria inventory classification (MCIC) methods extend this but still depend on structured quantitative data and do not utilize…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "A Sequential Framework for Urban Drone Delivery: Network Design, Vehicle Sizing, and Energy and Cost Assessment",
-   "link": "https://arxiv.org/abs/2611.07808v1",
-   "published": "2026-11-05T10:49:37+00:00",
-   "summary": "A sequential engineering framework is presented for urban drone delivery, linking hub location, route planning, mission-specific vehicle sizing, and energy and operating cost assessment. Aggregate origin-destination demand is assumed known a priori. For each hub configuration, the maximum required link distance is minimized, and feasible routes that return to their departure hubs are generated.…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "Nonuniform Buy-at-Bulk Network Design: Improved Approximation and LP Integrality Gap",
-   "link": "https://arxiv.org/abs/2611.06894v1",
-   "published": "2026-11-04T18:46:32+00:00",
-   "summary": "In nonuniform buy-at-bulk network design, we are given an undirected graph and $h$ terminal pairs with positive demands, and we must route every demand at minimum total cost when each network resource has two independent parameters: a fixed buying price paid once if the resource is used, and a per-unit rental cost (or physical length) paid proportionally to the traffic it carries. Unlike the…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
@@ -1376,40 +1346,10 @@
   },
   {
    "source": "arXiv (planning and OR preprints)",
-   "title": "Does Topology-Dependent Chemistry Influence the Interstellar PAH Inventory? Insights from the Absence of Cyanotriphenylenes",
-   "link": "https://arxiv.org/abs/2611.05070v1",
-   "published": "2026-11-03T15:33:50+00:00",
-   "summary": "Although a set of polycyclic aromatic hydrocarbons (PAHs) has recently been identified in the cold dark cloud TMC-1, several common PAH motifs remain absent, leaving the origin of this apparent structural selectivity unresolved. Triphenylene (\\ce{C18H12}) provides a stringent test of whether relative thermodynamic stability alone can account for the emerging PAH inventory because it is the…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
    "title": "Distributionally Robust Dynamic Inventory Control: Automatic Recovery under Martingale Demand",
    "link": "https://arxiv.org/abs/2611.04961v1",
    "published": "2026-11-03T14:19:55+00:00",
    "summary": "Problem definition: We study dynamic inventory control for battery-swapping stations that combine central replenishment with automatic local recovery. Central replenishment improves immediate battery availability but reduces the depleted-battery pool available for subsequent recovery, creating an intertemporal trade-off. Managing this trade-off is particularly challenging when historical demand…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "Approximation Algorithms for Multi-Criteria Network Design Problems",
-   "link": "https://arxiv.org/abs/2611.04742v1",
-   "published": "2026-11-03T11:58:46+00:00",
-   "summary": "Min-max multi-criteria optimization asks for a single feasible solution minimizing the maximum of its costs under $\\ell$ nonnegative cost functions, a formulation that captures both fairness across groups and robustness across scenarios. It has proved hard to approximate even for basic problems: for robust shortest paths, polylogarithmic approximations are known only in quasi-polynomial time.…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "At What Cost? (In)efficiency in First-Price Procurement Auctions",
-   "link": "https://arxiv.org/abs/2611.03386v1",
-   "published": "2026-11-02T16:25:46+00:00",
-   "summary": "We study the efficiency of Bayes-Nash equilibria in first-price procurement auctions. We measure efficiency by the Price of Anarchy (PoA): the ratio between the expected social cost in equilibrium and the minimum expected social cost resulting from a socially optimal allocation. We first show that the standard first-price procurement auction has no bounded PoA guarantee. We construct equilibria…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
@@ -1436,40 +1376,10 @@
   },
   {
    "source": "arXiv (planning and OR preprints)",
-   "title": "Search and Verification for Strategyproof Facility Location on Metric Graphs",
-   "link": "https://arxiv.org/abs/2611.05092v1",
-   "published": "2026-11-03T15:48:39+00:00",
-   "summary": "We study automated design of strategyproof (SP) mechanisms for randomized facility location on continuous metric graphs, with the objective of minimizing total distance. We develop methods for computing upper and lower bounds on the optimal approximation ratio achievable by SP mechanisms for a given graph and number of agents. For the lower bound, we propose a cost-preserving reduction to a…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "Metric Facility Location under Batched Random Order",
-   "link": "https://arxiv.org/abs/2611.04920v1",
-   "published": "2026-11-03T13:58:30+00:00",
-   "summary": "We study online metric facility location in the batched random-order model. An adversary partitions $n$ clients into $B$ nonempty batches, which arrive in uniformly random order. Each batch is revealed in full, and its clients must be connected to open facilities before the next batch arrives. Openings and assignments are irrevocable, and the objective is to minimize the total opening and…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
    "title": "Beyond Expected Profit: How Risk Aversion Alters Learning in the Data-Driven Newsvendor",
    "link": "https://arxiv.org/abs/2611.04310v1",
    "published": "2026-11-03T04:39:15+00:00",
    "summary": "We study how risk aversion changes learning and the value of data in the classical newsvendor problem. We evaluate data-driven policies through the Conditional Value-at-Risk (CVaR) of realized loss on the combined draw of an i.i.d.\\ historical sample and an independent future demand from the same distribution. We measure worst-case regret over demand distributions on a bounded interval relative…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "A Constant-Factor Approximation for Capacitated Facility Location with Outliers",
-   "link": "https://arxiv.org/abs/2611.04094v1",
-   "published": "2026-11-03T00:08:21+00:00",
-   "summary": "We give a deterministic polynomial-time $(60/11+\\eps)$-approximation for metric capacitated facility location with outliers, with arbitrary opening costs and nonuniform hard capacities. The algorithm respects both capacities and the outlier budget. Its guarantee, approximately $5.455$, is close to the best known factor $5+\\eps$ for capacitated facility location without outliers. The main…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
