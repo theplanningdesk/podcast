@@ -1,0 +1,338 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Cold Chain Cyberattacks: Danfoss Names Its Own",
+  "week": "2026-W46",
+  "run_date": "2026-11-11",
+  "brief_file": "news-brief-daily-2026-11-11.md",
+  "target_runtime_sec": 281,
+  "word_count": 814,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-11-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Danfoss says three of its own fridge control systems were among those hacked in the attacks on supermarkets across Europe."
+        },
+        {
+          "speaker": "M",
+          "text": "The fix is old-fashioned, update the software and lock the remote door. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-11-01",
+        "2026-11-11-02",
+        "2026-11-11-05",
+        "2026-11-11-07"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Wednesday the eleventh of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Danfoss on the hacked fridges, factories that use A I but can't prove the payback, an agent that picks the forecast, and a China trade truce that now runs into January."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-11-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Danish manufacturer Danfoss says it has been in close contact with customers for three weeks now, following the cyberattacks on refrigeration systems across Europe."
+        },
+        {
+          "speaker": "M",
+          "text": "And it confirms that three of its own control systems are among those affected, all of them running outdated software, S C M dot D K reports."
+        },
+        {
+          "speaker": "F",
+          "text": "Yesterday we had Danish store chains asking suppliers to check their cooling security. Now one of the equipment makers is naming its own share of the problem."
+        },
+        {
+          "speaker": "M",
+          "text": "Its advice to customers is plain, update your installations and secure remote access."
+        },
+        {
+          "speaker": "F",
+          "text": "The weak point is old firmware and open remote access on equipment that's already installed in stores and warehouses."
+        },
+        {
+          "speaker": "M",
+          "text": "That changes what a cold-chain continuity plan has to contain, because a cyber scenario on paper won't stop a freezer from warming up."
+        },
+        {
+          "speaker": "F",
+          "text": "Our view is to run a patch and access audit on every connected cooling asset you depend on, at your own sites and at your logistics partners."
+        },
+        {
+          "speaker": "M",
+          "text": "List each controller, its software version and who can log in remotely, then close the access nobody needs."
+        },
+        {
+          "speaker": "F",
+          "text": "And ask your cold stores and transport providers to show you the same list for their sites."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-11-02",
+        "2026-11-11-05",
+        "2026-11-11-07",
+        "2026-11-11-06",
+        "2026-11-11-F1",
+        "2026-11-11-F2",
+        "2026-11-11-F3"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "To the A I desk, where a study reported by produktion dot de says sixty percent of manufacturers already use A I extensively."
+        },
+        {
+          "speaker": "F",
+          "text": "The study comes from the manufacturing software company Revalize, and it finds serious gaps in proving the economic benefit."
+        },
+        {
+          "speaker": "M",
+          "text": "According to the study, adoption is moving much faster than the organisational groundwork needed to make it pay."
+        },
+        {
+          "speaker": "F",
+          "text": "That's a budget fight waiting for twenty twenty-seven, and when most plants can't show a return, the projects with numbers win."
+        },
+        {
+          "speaker": "M",
+          "text": "For planning A I, measure the baseline before you start, meaning forecast error, schedule changes and inventory days, so the gain is visible later."
+        },
+        {
+          "speaker": "F",
+          "text": "Staying with forecasting, a new preprint on arXiv, not yet peer reviewed, lets an agent choose the best forecast for each period."
+        },
+        {
+          "speaker": "M",
+          "text": "The authors start from a known weakness. Strong machine learning ensembles can still understate peaks, miss moving events or mistake a temporary change for a level shift."
+        },
+        {
+          "speaker": "F",
+          "text": "For each period, the agent picks among values the ensemble already produced, like the base forecast, quantiles, distribution-free bounds or a bias-corrected estimate."
+        },
+        {
+          "speaker": "M",
+          "text": "It scores those options against past periods with a matching context. The abstract gives no measured result yet, so treat it as an idea for now."
+        },
+        {
+          "speaker": "F",
+          "text": "It's a formal version of what good demand planners already do by hand, deciding when to override the base forecast."
+        },
+        {
+          "speaker": "M",
+          "text": "And if a model can score that choice, forecast value add becomes something you measure instead of a monthly argument."
+        },
+        {
+          "speaker": "F",
+          "text": "On trade, China has extended its truce with the U S by two months. It was due to expire on the tenth of November, ahead of a meeting between the two leaders at the A P E C summit."
+        },
+        {
+          "speaker": "M",
+          "text": "China has also suspended port fees on ships linked to the U S until the tenth of January, after Washington paused its fees on Chinese ships until the ninth of January."
+        },
+        {
+          "speaker": "F",
+          "text": "That gives U S and China flows one more quarter of the status quo, but keep a tariff snapback case in your first-quarter order plans."
+        },
+        {
+          "speaker": "M",
+          "text": "In e-commerce, almost every operator in Europe reports rising delivery costs, with the price per delivery typically up nine percent in a year, S C M dot D K reports."
+        },
+        {
+          "speaker": "F",
+          "text": "Three in four say costs are growing at least as fast as revenue, which makes free-delivery thresholds and fulfilment-node choices margin decisions for next year's network plan."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, the Rhine at Kaub read fourteen centimetres on Tuesday, far below the seventy-seven or so needed for a full channel."
+        },
+        {
+          "speaker": "F",
+          "text": "At Yantian, the Maersk Cincinnati knocked down a ship-to-shore crane while berthing on Monday, and Posten Bring's parcel lockers beat last December's record already in October."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-11-04",
+        "2026-11-11-03"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "In Germany, A B B's plant in Ratingen won Factory of the Year, cited for growth, automation and digital shop-floor management."
+        },
+        {
+          "speaker": "F",
+          "text": "Drone delivery company Zipline has raised one point five billion dollars to expand U S drone manufacturing, after recent deals with Walmart and Uber for more sites."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-11-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Wednesday, and check who can log in to your freezers."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with the next desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Danfoss Confirms 3 Hacked Fridge Control Systems",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Three Danfoss fridge control systems were among those hacked across Europe."
+      },
+      {
+        "speaker": "M",
+        "text": "The Danish manufacturer says it has been in close contact with customers for three weeks, following cyberattacks on supermarket refrigeration across Europe."
+      },
+      {
+        "speaker": "F",
+        "text": "All three of its affected control systems were running outdated software, S C M dot D K reports."
+      },
+      {
+        "speaker": "M",
+        "text": "Danfoss is urging customers to update their installations and secure remote access."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, the weak point is old firmware and open remote access on cooling equipment that's already installed."
+      },
+      {
+        "speaker": "M",
+        "text": "Audit every connected cooling asset you rely on, list who can log in remotely, and include your logistics partners' sites."
+      },
+      {
+        "speaker": "F",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Cold chain cyberattacks: Danfoss confirms 3 of its refrigeration control systems running outdated software were among those hit in attacks on supermarket fridges across Europe, and urges customers to update software and secure remote access. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "coldchain",
+      "cybersecurity",
+      "danfoss"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Three hacked fridge controllers at Danfoss show where cold-chain risk sits: old firmware and open remote access.\n\nDanfoss confirms three of its control systems running outdated software were hit in the cyberattacks on supermarket refrigeration across Europe, SCM.dk reports. It urges customers to update and secure remote access.\n\nFor planners, a cyber scenario on paper isn't enough. Audit every connected cooling asset you depend on, partners included: each controller, its software version and who can log in remotely.\n\nAlso on today's desk:\nA study reported by produktion.de finds 60% of manufacturers use AI extensively, but most can't prove the payback.\nA new arXiv preprint lets an agent choose, period by period, whether to trust the base forecast or override it.\n\nWho in your team knows which cooling controllers in your network can be reached remotely?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #coldchain #cybersecurity",
+    "tags": [
+      "Danfoss",
+      "SCM.dk"
+    ]
+  },
+  "show_notes": {
+    "summary": "Cold chain cyberattacks: Danfoss confirms three of its outdated control systems were among the supermarket fridges hacked across Europe. Also: DACH manufacturers using AI widely without proving payback, an arXiv preprint on agents that choose the forecast, China extending its US trade truce into January, rising European last-mile costs, and quick hits on ABB's Factory of the Year and Zipline's $1.5bn raise.",
+    "sources": [
+      {
+        "title": "SCM.dk: Efter hackerangreb, Danfoss opfordrer til bedre sikkerhed",
+        "url": "https://www.scm.dk/efter-hackerangreb-danfoss-opfordrer-til-bedre-sikkerhed"
+      },
+      {
+        "title": "produktion.de: KI in der Fertigungsindustrie, ROI bleibt unklar",
+        "url": "https://www.produktion.de/technik/ki-in-der-fertigungsindustrie-roi-bleibt-unklar/2764550"
+      },
+      {
+        "title": "arXiv: Agent-based forecast refinement preprint",
+        "url": "https://arxiv.org/abs/2611.12116v1"
+      },
+      {
+        "title": "SupplyChainBrain: China extends US trade truce by two months",
+        "url": "https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16424927/china-extends-us-trade-truce-by-two-months"
+      },
+      {
+        "title": "SCM.dk: Kina udsætter havneafgift for amerikanske skibe",
+        "url": "https://www.scm.dk/kina-udsaetter-havneafgift-for-amerikanske-skibe"
+      },
+      {
+        "title": "SCM.dk: Last mile-omkostningerne løber hurtigere end omsætningen",
+        "url": "https://www.scm.dk/last-mile-omkostningerne-lober-hurtigere-end-omsaetningen"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "Splash247: Maersk boxship knocks down crane at Yantian",
+        "url": "https://splash247.com/maersk-boxship-knocks-down-crane-at-yantian/"
+      },
+      {
+        "title": "MT Logistikk: Slo julerekorden allerede i oktober",
+        "url": "https://www.mtlogistikk.no/elektrisk-varetransport-pakkebokser-pakketerminalen-i-moss/slo-julerekorden-allerede-i-oktober/1358456"
+      },
+      {
+        "title": "produktion.de: Fabrik des Jahres 2026, ABB holt den Gesamtsieg",
+        "url": "https://www.produktion.de/events-fabrik-des-jahres/fabrik-des-jahres-2026-abb-holt-den-gesamtsieg/2764041"
+      },
+      {
+        "title": "Supply Chain Dive: Zipline raises $1.5B, plans US drone manufacturing expansion",
+        "url": "https://www.supplychaindive.com/news/zipline-raises-15b-plans-us-drone-manufacturing-expansion/874009/"
+      }
+    ]
+  }
+}

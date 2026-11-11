@@ -1,0 +1,119 @@
+{
+  "stem": "2026-11-11",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Cold chain cyberattacks",
+        "title": "3 Danfoss fridge controllers among those hacked",
+        "detail": "Attacks on supermarket refrigeration across Europe",
+        "source": "SCM.dk"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Danfoss, Denmark",
+        "value": 3,
+        "label": "weeks in close contact with customers",
+        "source": "SCM.dk"
+      }
+    },
+    {
+      "line": 1,
+      "at": "cyberattacks",
+      "template": "headline",
+      "props": {
+        "kicker": "Across Europe",
+        "title": "Attacks on supermarket refrigeration",
+        "source": "SCM.dk"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Confirmed by Danfoss",
+        "value": 3,
+        "label": "of its control systems affected",
+        "source": "SCM.dk"
+      }
+    },
+    {
+      "line": 2,
+      "at": "outdated software",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Common factor",
+        "text": "All three ran outdated software"
+      }
+    },
+    {
+      "line": 3,
+      "template": "list",
+      "props": {
+        "kicker": "Danfoss advice",
+        "items": [
+          {
+            "label": "Update software",
+            "say": "update their installations"
+          },
+          {
+            "label": "Lock remote access",
+            "say": "secure remote access"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "kicker": "The weak point",
+        "title": "Old firmware, open remote access",
+        "detail": "On cooling equipment already installed"
+      }
+    },
+    {
+      "line": 5,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Audit every connected cooling asset you rely on"
+      }
+    },
+    {
+      "line": 5,
+      "at": "who can log in remotely",
+      "template": "list",
+      "props": {
+        "kicker": "The audit",
+        "items": [
+          {
+            "label": "Each controller",
+            "say": "connected cooling asset"
+          },
+          {
+            "label": "Remote logins",
+            "say": "who can log in remotely"
+          },
+          {
+            "label": "Partner sites",
+            "say": "logistics partners' sites"
+          }
+        ]
+      }
+    },
+    {
+      "line": 6,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
