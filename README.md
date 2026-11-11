@@ -1,6 +1,6 @@
 # The Planning Desk: engagement scorecard
 
-Updated 2026-11-10. Numbers refresh every morning; the full data is in the CSV files on this branch.
+Updated 2026-11-11. Numbers refresh every morning; the full data is in the CSV files on this branch.
 
 OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
@@ -9,7 +9,7 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | Channel | Metric | Now |
 |---|---|---|
 | instagram | followers | 3 |
-| instagram | posts | 14 |
+| instagram | posts | 15 |
 | newsletter | last email | AI Agents in Planning, Suez Rates and the Rhine: Week 44 |
 | newsletter | last email clicks | 1 |
 | newsletter | last email deliveries | 2 |
@@ -18,10 +18,10 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 340 |
-| podcast | op3 downloads all episodes | 114 |
+| podcast | github mp3 fetches all episodes | 393 |
+| podcast | op3 downloads all episodes | 108 |
 | youtube | subscribers | 3 |
-| youtube | total views | 320 |
+| youtube | total views | 343 |
 | youtube | videos | 20 |
 | spotify (typed in 2026-10-30) | followers | 1 |
 | spotify (typed in 2026-10-30) | plays | 8 |
@@ -37,34 +37,35 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-10 | daily | Container Freight Rates: Fleet Heads for 50m TEU |  | 10 |  | 3 | 3 |
-| 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 30 |  | 34 | 50 |
-| 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 27 | 16 |  |  |
-| 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 23 | 2 | 27 | 25 |
-| 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 18 |  | 14 | 127 |
-| 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 28 |  | 10 | 23 |
-| 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 23 |  | 28 | 8 |
-| 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 17 |  | 17 | 108 |
-| 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 24 |  | 41 | 18 |
-| 2026-11-01 | weekly | Supply Chain News, Week 44: AI Agents, Suez Freight Rates, Rhine Low Water |  | 22 | 14 |  |  |
-| 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 16 | 5 | 19 | 15 |
-| 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 31 |  | 31 | 24 |
-| 2026-10-29 | daily | Thu 29 Oct: Lunar New Year Comes Early |  | 20 |  | 4 | 10 |
-| 2026-10-28 | daily | Wed 28 Oct: Audi Builds Past the Tariff |  | 15 |  | 8 | 24 |
-| 2026-10-27 | daily | Tue 27 Oct: Who Signs Off on AI |  | 15 |  | 8 | 128 |
-| 2026-10-26 | daily | Mon 26 Oct: Bring's New Border Hub |  | 20 |  | 14 | 90 |
+| 2026-11-11 | daily | Cold Chain Cyberattacks: Danfoss Names Its Own |  | 10 |  | 15 | 109 |
+| 2026-11-10 | daily | Container Freight Rates: Fleet Heads for 50m TEU |  | 21 |  | 3 | 9 |
+| 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 34 |  | 36 | 51 |
+| 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 29 | 18 |  |  |
+| 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 25 | 2 | 29 | 25 |
+| 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 20 |  | 14 | 127 |
+| 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 30 |  | 10 | 23 |
+| 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 25 |  | 29 | 8 |
+| 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 19 |  | 18 | 108 |
+| 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 26 |  | 41 | 18 |
+| 2026-11-01 | weekly | Supply Chain News, Week 44: AI Agents, Suez Freight Rates, Rhine Low Water |  | 24 | 14 |  |  |
+| 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 18 | 5 | 19 | 15 |
+| 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 33 |  | 31 | 24 |
+| 2026-10-29 | daily | Thu 29 Oct: Lunar New Year Comes Early |  | 22 |  | 4 | 10 |
+| 2026-10-28 | daily | Wed 28 Oct: Audi Builds Past the Tariff |  | 17 |  | 8 | 24 |
+| 2026-10-27 | daily | Tue 27 Oct: Who Signs Off on AI |  | 17 |  | 8 | 128 |
+| 2026-10-26 | daily | Mon 26 Oct: Bring's New Border Hub |  | 22 |  | 14 | 90 |
 | 2026-10-25 | weekly | Week 43: Low Water, Hot Chips, Working Agents |  | 1 | 30 |  |  |
 
 ## Top podcast episodes so far
 
-1. Rhine Low Water: Kaub Falls to 13 cm (daily, Mon): 30
-2. BMW Q3 Results: China Deliveries Drop a Quarter (daily, Thu): 23
+1. BMW Q3 Results: China Deliveries Drop a Quarter (daily, Thu): 24
+2. Container Freight Rates: Fleet Heads for 50m TEU (daily, Tue): 21
 3. Warehouse Network Design: Hitachi Energy Goes Big (daily, Wed): 19
 
 ## Source status
 
 - buttondown: ok
-- carried: ok: 8 numbers kept from the previous run where today's lookup came back empty
+- carried: ok: 10 numbers kept from the previous run where today's lookup came back empty
 - github: ok
 - instagram: ok
 - op3: ok
