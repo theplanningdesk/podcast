@@ -118,6 +118,7 @@ def cmd_instagram(stem: str) -> None:
         print(f"Processed; publishing in {int(wait // 60)} min at {publish_at(c):%H:%M} Stockholm.")
         time.sleep(min(wait, 3 * 3600))
     media = call("POST", f"{API}/{user}/media_publish", {"creation_id": container}, token)["id"]
+    OUT.mkdir(parents=True, exist_ok=True)
     link = call("GET", f"{API}/{media}?fields=permalink", token=token).get("permalink", "")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"{base(stem)}.instagram.txt").write_text(f"{link or media}\n", encoding="utf-8")
