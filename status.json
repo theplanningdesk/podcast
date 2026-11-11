@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-10T10:21:28.678383+00:00",
+ "fetched_at": "2026-11-11T09:50:01.990047+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -11,7 +11,7 @@
    "method": "feed https://www.supplychainbrain.com/rss/articles",
    "items": 20,
    "error": null,
-   "raw_items": 38,
+   "raw_items": 33,
    "lane": "planning"
   },
   {
@@ -21,7 +21,7 @@
    "method": "feed https://feeds.feedburner.com/scmr/latest",
    "items": 20,
    "error": null,
-   "raw_items": 29,
+   "raw_items": 22,
    "lane": "planning"
   },
   {
@@ -81,7 +81,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 35,
+   "raw_items": 32,
    "lane": "planning"
   },
   {
@@ -129,7 +129,7 @@
    "url": "https://www.produktion.de/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 4,
+   "items": 2,
    "error": null,
    "raw_items": 31,
    "lane": "planning"
@@ -139,8 +139,8 @@
    "url": "https://www.nyteknik.se/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 40,
    "lane": "planning"
   },
@@ -149,8 +149,8 @@
    "url": "https://www.di.se/rss",
    "ok": true,
    "method": "feed https://www.di.se/rss",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 20,
    "lane": "planning"
   },
@@ -159,9 +159,9 @@
    "url": "https://sloanreview.mit.edu/feed/",
    "ok": true,
    "method": "feed https://sloanreview.mit.edu/feed/",
-   "items": 2,
+   "items": 1,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 2,
    "lane": "planning"
   },
   {
@@ -171,7 +171,7 @@
    "method": "feed https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
    "items": 10,
    "error": null,
-   "raw_items": 11,
+   "raw_items": 10,
    "lane": "planning"
   },
   {
@@ -181,7 +181,7 @@
    "method": "feed https://developer.nvidia.com/blog/feed/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 14,
+   "raw_items": 13,
    "lane": "planning"
   },
   {
@@ -209,9 +209,9 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 16,
+   "items": 15,
    "error": null,
-   "raw_items": 16,
+   "raw_items": 15,
    "lane": "planning"
   },
   {
@@ -221,7 +221,7 @@
    "method": "feed https://techxplore.com/rss-feed/business-tech-news/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 17,
+   "raw_items": 18,
    "lane": "management"
   },
   {
@@ -229,8 +229,8 @@
    "url": "https://techxplore.com/rss-feed/",
    "ok": true,
    "method": "feed https://techxplore.com/rss-feed/",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 30,
    "lane": "management"
   },
@@ -239,7 +239,7 @@
    "url": "https://phys.org/rss-feed/science-news/economics-business/",
    "ok": true,
    "method": "feed https://phys.org/rss-feed/science-news/economics-business/",
-   "items": 3,
+   "items": 2,
    "error": null,
    "raw_items": 30,
    "lane": "management"
@@ -249,9 +249,9 @@
    "url": "https://idw-online.de/de/pressreleasesrss",
    "ok": true,
    "method": "feed https://idw-online.de/de/pressreleasesrss",
-   "items": 3,
+   "items": 4,
    "error": null,
-   "raw_items": 398,
+   "raw_items": 437,
    "lane": "management"
   },
   {
@@ -259,7 +259,7 @@
    "url": "https://www.klu.org/newsroom",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 5,
+   "items": 4,
    "error": null,
    "raw_items": 37,
    "lane": "management"
@@ -269,9 +269,9 @@
    "url": "https://theconversation.com/uk/business/articles.atom",
    "ok": true,
    "method": "feed https://theconversation.com/uk/business/articles.atom",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 5,
+   "items": 1,
+   "error": null,
+   "raw_items": 6,
    "lane": "management"
   },
   {
@@ -281,7 +281,7 @@
    "method": "feed https://www.consultancy.eu/rss/consultancy_rssfeed.xml",
    "items": 3,
    "error": null,
-   "raw_items": 18,
+   "raw_items": 17,
    "lane": "management"
   },
   {
@@ -309,8 +309,8 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 2,
+   "error": null,
    "raw_items": 30,
    "lane": "management"
   },
@@ -319,9 +319,9 @@
    "url": "https://via.tt.se/rss/releases/latest?publisherId=2732851",
    "ok": true,
    "method": "feed https://via.tt.se/rss/releases/latest?publisherId=2732851",
-   "items": 2,
+   "items": 1,
    "error": null,
-   "raw_items": 2,
+   "raw_items": 1,
    "lane": "management"
   },
   {
@@ -339,8 +339,8 @@
    "url": "https://www.sttinfo.fi/rss/releases/latest",
    "ok": true,
    "method": "feed https://www.sttinfo.fi/rss/releases/latest",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "raw_items": 25,
    "lane": "management"
   },
@@ -349,7 +349,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 6,
+   "items": 5,
    "error": null,
    "raw_items": 20,
    "lane": "management"
@@ -369,9 +369,9 @@
    "url": "https://mfn.se/all/a/skf.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/skf.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
-   "raw_items": 0,
+   "items": 1,
+   "error": null,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -379,9 +379,9 @@
    "url": "https://mfn.se/all/a/sandvik.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/sandvik.rss",
-   "items": 1,
+   "items": 2,
    "error": null,
-   "raw_items": 2,
+   "raw_items": 4,
    "lane": "companies"
   },
   {
@@ -389,9 +389,9 @@
    "url": "https://mfn.se/all/a/atlas-copco.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/atlas-copco.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 2,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 0,
    "lane": "companies"
   },
   {
@@ -431,7 +431,7 @@
    "method": "feed https://mfn.se/all/a/alfa-laval.rss",
    "items": 1,
    "error": null,
-   "raw_items": 4,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -439,9 +439,9 @@
    "url": "https://mfn.se/all/a/husqvarna.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/husqvarna.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 2,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 0,
    "lane": "companies"
   },
   {
@@ -501,7 +501,7 @@
    "method": "feed https://mfn.se/all/a/trelleborg.rss",
    "items": 0,
    "error": "no releases in the window (normal off-season)",
-   "raw_items": 4,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -559,9 +559,9 @@
    "url": "https://mfn.se/all/a/ica-gruppen.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/ica-gruppen.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 1,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 0,
    "lane": "companies"
   },
   {
@@ -609,9 +609,9 @@
    "url": "https://mfn.se/all/a/stora-enso.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/stora-enso.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
-   "raw_items": 0,
+   "items": 1,
+   "error": null,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -621,7 +621,7 @@
    "method": "feed https://mfn.se/all/a/orkla.rss",
    "items": 1,
    "error": null,
-   "raw_items": 5,
+   "raw_items": 6,
    "lane": "companies"
   },
   {
@@ -659,7 +659,7 @@
    "url": "https://www.freightwaves.com/news",
    "ok": true,
    "method": "feed https://www.freightwaves.com/news/feed/",
-   "items": 5,
+   "items": 8,
    "error": null,
    "raw_items": 50,
    "lane": "freight"
@@ -679,9 +679,9 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 8,
+   "items": 6,
    "error": null,
-   "raw_items": 24,
+   "raw_items": 18,
    "lane": "freight"
   },
   {
@@ -709,7 +709,7 @@
    "url": "https://www.verkehrsrundschau.de/nachrichten",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 6,
+   "items": 5,
    "error": null,
    "raw_items": 40,
    "lane": "freight"
@@ -719,9 +719,9 @@
    "url": "https://www.logistik-journal.de/",
    "ok": true,
    "method": "feed https://www.logistik-journal.de/feed/",
-   "items": 3,
+   "items": 4,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 4,
    "lane": "freight"
   },
   {
@@ -729,7 +729,7 @@
    "url": "https://dagenslogistik.se/nyheter/",
    "ok": true,
    "method": "feed https://dagenslogistik.se/feed/",
-   "items": 6,
+   "items": 5,
    "error": null,
    "raw_items": 10,
    "lane": "freight"
@@ -739,7 +739,7 @@
    "url": "https://www.mtlogistikk.no/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 6,
+   "items": 5,
    "error": null,
    "raw_items": 40,
    "lane": "freight"
