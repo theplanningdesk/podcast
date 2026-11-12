@@ -1,0 +1,339 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Manufacturing Footprint: Deere Closes Two Iowa Plants",
+  "week": "2026-W46",
+  "run_date": "2026-11-12",
+  "brief_file": "news-brief-daily-2026-11-12.md",
+  "target_runtime_sec": 288,
+  "word_count": 834,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-12-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Deere is ending production at two Iowa plants and moving work out of Illinois and Louisiana, all to match a slump in farm machinery demand."
+        },
+        {
+          "speaker": "M",
+          "text": "If you supply Deere, some of your parts may be changing address. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-12-01",
+        "2026-11-12-02",
+        "2026-11-12-03",
+        "2026-11-12-07"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Thursday the twelfth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Deere shrinks its plant footprint, Power bets the Nordics on one warehouse, Honda builds a hybrid plant in Ohio, and a cyberattack stops three Swedish furniture factories."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-12-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Deere will end production at two plants in Iowa to bring capacity in line with demand, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "M",
+          "text": "It also plans to shift some production from its factories in Illinois and Louisiana, so this is a footprint redesign rather than one closure."
+        },
+        {
+          "speaker": "F",
+          "text": "The plan was first announced on the fourth of November, during a slump in demand for agricultural machinery."
+        },
+        {
+          "speaker": "M",
+          "text": "Trade press describes it as an effort to optimise Deere's manufacturing footprint, with fewer sites carrying more of the work."
+        },
+        {
+          "speaker": "F",
+          "text": "The choice says something. A company that idles lines can restart them when orders come back, while closing sites is a bet that the lower volume lasts."
+        },
+        {
+          "speaker": "M",
+          "text": "For suppliers and dealers, the hard part is the move itself. Parts made for one plant get transferred to another, with new delivery points, new lead times and maybe new quality approvals."
+        },
+        {
+          "speaker": "F",
+          "text": "Our view, if you supply Deere, ask now which components move where and when, and don't wait for the purchase orders to tell you."
+        },
+        {
+          "speaker": "M",
+          "text": "And plan a stock bridge for the transfer months, because the receiving plant's ramp-up and the sending plant's last shift rarely line up neatly."
+        },
+        {
+          "speaker": "F",
+          "text": "Dealers should run the same check on service parts, since the machines already in the field still need them wherever production ends up."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-12-02",
+        "2026-11-12-03",
+        "2026-11-12-06",
+        "2026-11-12-07",
+        "2026-11-12-F1",
+        "2026-11-12-F2",
+        "2026-11-12-F3"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to the Nordics, where almost all the electronics Power sells in its stores across the region pass through one central warehouse in Skillingaryd, south of Jönköping."
+        },
+        {
+          "speaker": "F",
+          "text": "Power is now growing it for the third time, by about fifty-five thousand square metres, MT Logistikk reports."
+        },
+        {
+          "speaker": "M",
+          "text": "Prologis is buying the plot next door and will build the new warehouse, with construction from early twenty twenty-seven and move-in expected early in twenty twenty-eight."
+        },
+        {
+          "speaker": "F",
+          "text": "Power's group chief executive promises better product flow to Norwegian customers."
+        },
+        {
+          "speaker": "M",
+          "text": "So Power is doubling down on one node for the whole region instead of splitting into country warehouses."
+        },
+        {
+          "speaker": "F",
+          "text": "That buys scale and pooled inventory, but every Nordic store's availability now sits behind a single site, so the continuity plan for that building is the regional plan."
+        },
+        {
+          "speaker": "M",
+          "text": "In the U S, Honda will invest three billion dollars in a new hybrid vehicle plant in Ohio, creating two thousand jobs, Manufacturing Dive reports."
+        },
+        {
+          "speaker": "F",
+          "text": "It's keeping the factory close to its existing U S footprint, as part of its focus on hybrids and faster development."
+        },
+        {
+          "speaker": "M",
+          "text": "Building next to your own plants lets you share suppliers, logistics and staff across sites, the low-risk way to add capacity while the powertrain mix is still open."
+        },
+        {
+          "speaker": "F",
+          "text": "In Germany, spare-parts software company Sparetech has raised twenty million dollars in a series B round led by Blume Equity and Insight Partners, produktion dot de reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The company says it aims to use A I to cut manufacturers' spare-parts stock by sixty percent within three years, and that's its own target, not a measured result."
+        },
+        {
+          "speaker": "F",
+          "text": "Maintenance parts are often the least planned stock in a plant, and money flowing here says they're turning into a planning problem in their own right."
+        },
+        {
+          "speaker": "M",
+          "text": "In Sweden, office furniture maker Kinnarps has stopped production at three locations after an I T attack, SVT Nyheter Väst reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The intrusion was found on Saturday evening, and the company shut its systems down straight away to limit the damage."
+        },
+        {
+          "speaker": "M",
+          "text": "Shutting down to contain an attack stops a factory as surely as a fire, so continuity plans need a mode with no E R P and no M E S, with manual order and shipping routines for the first days."
+        },
+        {
+          "speaker": "F",
+          "text": "On the freight desk, Xeneta expects container spot rates to fall about thirty percent on average in twenty twenty-seven, and nearly all major carriers are back on Asia to Europe routes through the Red Sea."
+        },
+        {
+          "speaker": "M",
+          "text": "The Rhine at Kaub crept up to sixteen centimetres, still far too low for fully loaded barges."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-12-04",
+        "2026-11-12-05"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Stora Enso has ended its review of its Central European sawmills and will keep them, with plans to streamline, so timber buyers in Germany, Austria and Switzerland should watch which mills change output."
+        },
+        {
+          "speaker": "F",
+          "text": "And Swedish industry is leaving the downturn unevenly, say Teknikföretagen and Industriarbetsgivarna, with defence, electrification and infrastructure growing while other sectors are squeezed."
+        },
+        {
+          "speaker": "M",
+          "text": "That split makes one national growth number useless for a twenty twenty-seven demand plan, so build it segment by segment."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-12-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Thursday, and if you supply Deere, ask where your parts are going."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with the next desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Nordic Warehouse: Power Adds 55,000 Square Metres",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Nearly all electronics Power sells in the Nordics run through one warehouse."
+      },
+      {
+        "speaker": "M",
+        "text": "It sits in Skillingaryd, south of Jönköping, and serves the retailer's stores across the Nordic countries."
+      },
+      {
+        "speaker": "F",
+        "text": "Now it's growing for the third time, by about fifty-five thousand square metres."
+      },
+      {
+        "speaker": "M",
+        "text": "A new building goes up on the plot next door, with construction from early in twenty twenty-seven and move-in early in twenty twenty-eight."
+      },
+      {
+        "speaker": "F",
+        "text": "One central node buys scale and pools inventory for the whole region, but every store's availability sits behind a single site."
+      },
+      {
+        "speaker": "M",
+        "text": "For planners, that makes the continuity plan for one building the plan for a whole region."
+      },
+      {
+        "speaker": "F",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Nordic warehousing: almost all the electronics Power sells in the Nordics pass through one central warehouse in Skillingaryd, Sweden, and it's growing by about 55,000 square metres, with move-in expected early in 2028. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "warehousing",
+      "inventory",
+      "nordics"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Deere is closing production at two Iowa plants to match a farm-machinery slump. Its suppliers' parts are about to move.\n\nDeere will end production at two Iowa plants and shift some work from its Illinois and Louisiana factories to align capacity with demand, Supply Chain Dive reports. It was first announced on 4 November.\n\nClosing sites rather than idling lines is a bet that lower volume lasts. Suppliers and dealers should ask now which components move to which plant and when, and plan a stock bridge for the transfer months.\n\nAlso on today's desk:\nPower is growing its Skillingaryd central warehouse, which handles almost all its Nordic electronics, by about 55,000 square metres.\nHonda is investing $3bn in a new hybrid plant in Ohio, near its existing US plants.\n\nIf a key customer moved your parts to another plant next quarter, how long a stock bridge would you need?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #manufacturing #networkdesign",
+    "tags": [
+      "Deere",
+      "Supply Chain Dive",
+      "Honda"
+    ]
+  },
+  "show_notes": {
+    "summary": "Manufacturing footprint: Deere ends production at two Iowa plants and shifts work from Illinois and Louisiana to match a farm machinery slump. Also: Power grows its Nordic central warehouse in Skillingaryd by about 55,000 square metres, Honda's $3bn hybrid plant in Ohio, Sparetech's $20m round for spare-parts planning, a cyberattack that stopped three Kinnarps plants, and quick hits on Stora Enso's sawmills and Sweden's uneven industrial recovery.",
+    "sources": [
+      {
+        "title": "Supply Chain Dive: Deere to end production at 2 Iowa plants to align with demand",
+        "url": "https://www.supplychaindive.com/news/deere-to-end-production-at-2-iowa-plants-to-align-with-demand/874059/"
+      },
+      {
+        "title": "DTN: John Deere announces Iowa plant changes",
+        "url": "https://www.dtnpf.com/agriculture/web/AG/equipment/article/2026/11/04/john-deere-announces-iowa-plant-2029"
+      },
+      {
+        "title": "MT Logistikk: Bygger ut sentrallageret for tredje gang",
+        "url": "https://www.mtlogistikk.no/logistikkeiendom-power-international/bygger-ut-sentrallageret-for-tredje-gang/1359319"
+      },
+      {
+        "title": "Manufacturing Dive: Honda plans $3B Ohio hybrid vehicle plant",
+        "url": "https://www.manufacturingdive.com/news/honda-3b-ohio-hybrid-vehicle-plant/874210/"
+      },
+      {
+        "title": "produktion.de: Sparetech sichert sich 20 Mio. USD Series-B-Investment",
+        "url": "https://www.produktion.de/wirtschaft/sparetech-sichert-sich-20-mio-usd-series-b-investment/2764830"
+      },
+      {
+        "title": "Ny Teknik: Tre möbelfabriker stoppade, svenska tillverkaren hackad",
+        "url": "https://www.nyteknik.se/it-saekerhet/tre-moebelfabriker-stoppade-svenska-tillverkaren-hackad/4512364"
+      },
+      {
+        "title": "Dagens Logistik: Containerpriserna kan falla 30 procent 2027",
+        "url": "https://dagenslogistik.se/containerpriserna-kan-falla-30-procent-2027/"
+      },
+      {
+        "title": "SupplyChainBrain: Ocean traffic returns to near-normal through Red Sea",
+        "url": "https://www.supplychainbrain.com/logistics/ocean-transportation/article/16425057/ocean-traffic-returns-to-nearnormal-through-red-sea"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "Stora Enso via MFN: Stora Enso concludes strategic review for Central European sawmills",
+        "url": "https://mfn.se/cis/a/stora-enso/stora-enso-oyj-stora-enso-concludes-strategic-review-for-central-european-sawmills-and-building-solutions-operations-cfa9162b"
+      },
+      {
+        "title": "TT: Industrin återhämtar sig men spretigt mellan branscherna",
+        "url": "https://via.tt.se/pressmeddelande/4635239/industrin-aterhamtar-sig-men-spretigt-mellan-branscherna?lang=sv"
+      }
+    ]
+  }
+}

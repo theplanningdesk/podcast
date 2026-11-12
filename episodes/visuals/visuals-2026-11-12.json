@@ -1,0 +1,109 @@
+{
+  "stem": "2026-11-12",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Power, Nordics",
+        "title": "Nearly all Nordic electronics, one warehouse",
+        "detail": "Power's central warehouse in Skillingaryd, Sweden",
+        "source": "MT Logistikk"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Skillingaryd, Sweden",
+        "title": "South of Jönköping",
+        "points": [
+          {
+            "name": "Skillingaryd",
+            "lat": 57.43,
+            "lon": 14.09,
+            "alert": true
+          },
+          {
+            "name": "Jönköping",
+            "lat": 57.78,
+            "lon": 14.16,
+            "muted": true
+          }
+        ],
+        "pad": 4
+      }
+    },
+    {
+      "line": 1,
+      "at": "stores across the Nordic countries",
+      "template": "headline",
+      "props": {
+        "kicker": "One site",
+        "title": "Serves stores across the Nordics",
+        "source": "MT Logistikk"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Third expansion",
+        "value": 55000,
+        "label": "square metres added",
+        "source": "MT Logistikk"
+      }
+    },
+    {
+      "line": 3,
+      "template": "list",
+      "props": {
+        "kicker": "Next door",
+        "items": [
+          {
+            "label": "Build starts 2027",
+            "say": "early in twenty twenty-seven"
+          },
+          {
+            "label": "Move-in 2028",
+            "say": "early in twenty twenty-eight"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "The trade-off",
+        "text": "Scale and pooled inventory for the whole region"
+      }
+    },
+    {
+      "line": 4,
+      "at": "single site",
+      "template": "headline",
+      "props": {
+        "kicker": "The risk",
+        "title": "Every store's availability behind one site"
+      }
+    },
+    {
+      "line": 5,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "One building's continuity plan is the regional plan"
+      }
+    },
+    {
+      "line": 6,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
