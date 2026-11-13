@@ -1,0 +1,164 @@
+{
+  "stem": "2026-11-13",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "BMW, battery cells",
+        "title": "BMW wants battery cells made next to its plants",
+        "detail": "Gen6 Neue Klasse cells, sourced local for local",
+        "source": "electrive"
+      }
+    },
+    {
+      "line": 1,
+      "template": "list",
+      "props": {
+        "kicker": "Cell suppliers",
+        "items": [
+          {
+            "label": "Samsung SDI",
+            "detail": "Europe, new",
+            "say": "Samsung SDI"
+          },
+          {
+            "label": "LG Energy Solution",
+            "detail": "US, new",
+            "say": "LG Energy Solution"
+          },
+          {
+            "label": "CATL",
+            "detail": "Europe",
+            "say": "CATL"
+          },
+          {
+            "label": "EVE Energy",
+            "detail": "Europe",
+            "say": "EVE Energy"
+          }
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Large cylindrical cells",
+        "value": 46,
+        "label": "millimetres across",
+        "source": "electrive"
+      }
+    },
+    {
+      "line": 2,
+      "at": "five battery assembly sites",
+      "template": "stat",
+      "props": {
+        "kicker": "Made close to",
+        "value": 5,
+        "label": "battery assembly sites",
+        "source": "electrive"
+      }
+    },
+    {
+      "line": 3,
+      "template": "route",
+      "props": {
+        "kicker": "Five assembly sites",
+        "title": "Cells made near each one",
+        "points": [
+          {
+            "name": "Irlbach-Straßkirchen",
+            "lat": 48.83,
+            "lon": 12.67,
+            "alert": true
+          },
+          {
+            "name": "Debrecen",
+            "lat": 47.53,
+            "lon": 21.63,
+            "alert": true
+          },
+          {
+            "name": "Shenyang",
+            "lat": 41.8,
+            "lon": 123.43,
+            "alert": true
+          },
+          {
+            "name": "Woodruff",
+            "lat": 34.74,
+            "lon": -82.04,
+            "alert": true
+          },
+          {
+            "name": "San Luis Potosí",
+            "lat": 22.15,
+            "lon": -100.98,
+            "alert": true
+          }
+        ],
+        "pad": 8
+      }
+    },
+    {
+      "line": 3,
+      "at": "deliveries from the end of the decade",
+      "template": "headline",
+      "props": {
+        "kicker": "Timing",
+        "title": "Deliveries from the end of the decade",
+        "source": "electrive"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "BMW's reasons",
+        "items": [
+          {
+            "label": "Shorter routes",
+            "say": "shorter transport routes"
+          },
+          {
+            "label": "Regional value",
+            "say": "regional value creation"
+          },
+          {
+            "label": "Supply security",
+            "say": "supply security"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "The supply map is drawn years ahead"
+      }
+    },
+    {
+      "line": 5,
+      "at": "tier two suppliers",
+      "template": "headline",
+      "props": {
+        "kicker": "Tier-2 suppliers",
+        "title": "Plan capacity around the cell plants",
+        "detail": "Not around imports from Asia"
+      }
+    },
+    {
+      "line": 6,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

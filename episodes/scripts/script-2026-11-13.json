@@ -1,0 +1,331 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "EV Battery Sourcing: BMW Goes Local for Local",
+  "week": "2026-W46",
+  "run_date": "2026-11-13",
+  "brief_file": "news-brief-daily-2026-11-13.md",
+  "target_runtime_sec": 280,
+  "word_count": 811,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-13-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "BMW will buy the battery cells for its next electric cars from plants as close as possible to its own battery assembly sites."
+        },
+        {
+          "speaker": "M",
+          "text": "That's a supply map drawn years before the first delivery, and a network design call. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-13-01",
+        "2026-11-13-02",
+        "2026-11-13-06",
+        "2026-11-13-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Friday the thirteenth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, BMW sources battery cells local for local, Ericsson moves radio production to Estonia, Google finds A I agents chasing stale information, and Mercedes rebuilds its plants."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-13-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "BMW has signed Samsung SDI for Europe and LG Energy Solution for the U S to supply cells for its Gen six Neue Klasse batteries, electrive reports."
+        },
+        {
+          "speaker": "M",
+          "text": "They join CATL and EVE Energy, which already supply Europe, so the European plants now have three named cell makers."
+        },
+        {
+          "speaker": "F",
+          "text": "The cells are large cylindrical ones, forty-six millimetres across, and BMW wants them made as close as possible to its five Gen six battery assembly sites."
+        },
+        {
+          "speaker": "M",
+          "text": "Those are Irlbach-Straßkirchen in Germany, Debrecen in Hungary, Shenyang in China, Woodruff in the U S and San Luis Potosí in Mexico."
+        },
+        {
+          "speaker": "F",
+          "text": "Deliveries start from the end of the decade, and BMW names shorter transport routes, regional value creation and supply security as its reasons."
+        },
+        {
+          "speaker": "M",
+          "text": "So the battery network is designed around the assembly plants first, and the cell plants follow them."
+        },
+        {
+          "speaker": "F",
+          "text": "Our view, this is local for local written into contracts years before the first cell ships, and it settles where the volume will sit."
+        },
+        {
+          "speaker": "M",
+          "text": "If you're a tier two supplier in Hungary or Bavaria, plan your capacity around these cell plants, not around shipments from Asia."
+        },
+        {
+          "speaker": "F",
+          "text": "And in Europe, with three cell makers in the mix, ask early which plant your parts will feed, because the split between them decides your volume."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-13-02",
+        "2026-11-13-04",
+        "2026-11-13-06",
+        "2026-11-13-F1",
+        "2026-11-13-F2",
+        "2026-11-13-F3"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to the Nordics, where Ericsson has stopped making millimetre wave radios at its five G smart factory in Lewisville, Texas, Light Reading reports."
+        },
+        {
+          "speaker": "F",
+          "text": "That production now sits at Ericsson's site in Estonia, and the company calls it a footprint decision based on customer requirements, demand and operational efficiency."
+        },
+        {
+          "speaker": "M",
+          "text": "Ericsson says the product line isn't discontinued, and the Texas plant employs about five hundred people after about a hundred and fifty million dollars of investment."
+        },
+        {
+          "speaker": "F",
+          "text": "Light Reading points to weak U S demand for millimetre wave, and notes the radios now ship into the U S from Europe under tariffs."
+        },
+        {
+          "speaker": "M",
+          "text": "So Ericsson picked volume in one plant over making it where it sells, and for a low volume line, a second site can cost more than the tariff it avoids."
+        },
+        {
+          "speaker": "F",
+          "text": "In Germany, Mercedes can barely build its new electric cars fast enough for Europe, yet its profits are falling and its China sales are down thirty-one percent, Industriemagazin reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The carmaker is answering with a deep overhaul of its plants and supply chains, with a lot at stake for Germany and Austria, though the report doesn't spell out the measures or sites."
+        },
+        {
+          "speaker": "F",
+          "text": "For suppliers, one customer now has two demand curves, sold out in Europe and shrinking in China, so plan the two regions separately for twenty twenty-seven."
+        },
+        {
+          "speaker": "M",
+          "text": "On the A I desk, research Google published on the sixth of November found that more capable A I agents can be distracted by outdated information, Logistics Viewpoints reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The agents also pursued work nobody asked for and used far more resources without getting any closer to their assigned goals."
+        },
+        {
+          "speaker": "M",
+          "text": "Other coverage describes coding agents sidetracked by old to-do comments left in the code, and Logistics Viewpoints argues the finding carries over to supply chain operations."
+        },
+        {
+          "speaker": "F",
+          "text": "Picture a planning agent fed old exceptions or last month's assumptions, chasing the wrong problem, so data hygiene becomes an agent governance job before anyone automates a step in sales and operations planning."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, bunker prices fell as much as twenty percent in under two weeks on hopes the Iran conflict eases, and transpacific ocean rates slipped as U S port demand slows."
+        },
+        {
+          "speaker": "F",
+          "text": "The Rhine at Kaub has more than doubled to thirty-seven centimetres, still well short of what fully loaded barges need."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-13-03",
+        "2026-11-13-05",
+        "2026-11-13-07"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Swedish spring maker Lesjöfors is building a new logistics and distribution site in Germany to grow its car aftermarket business in Central and Eastern Europe, Dagens Logistik reports."
+        },
+        {
+          "speaker": "F",
+          "text": "Machine tool maker Hermle has raised its twenty twenty-six outlook, partly because supply chain risks cost less than expected, a reminder that the risk reserve in a plan is a real number."
+        },
+        {
+          "speaker": "M",
+          "text": "And Deere, yesterday's top story, will also consolidate sugar cane harvester production in Catalão, Brazil, moving it closer to that market, SupplyChainBrain reports."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-13-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Friday. Tomorrow it's the book of the week, and the full week in review is out on Sunday."
+        },
+        {
+          "speaker": "M",
+          "text": "Have a good weekend, and the daily desk is back on Monday morning."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "BMW Battery Cells: Made Next to Its Five Assembly Plants",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "BMW wants its next battery cells made right next to its plants."
+      },
+      {
+        "speaker": "M",
+        "text": "Samsung SDI joins for Europe and LG Energy Solution for the U S, alongside CATL and EVE Energy, which already supply Europe."
+      },
+      {
+        "speaker": "F",
+        "text": "The large cylindrical cells, forty-six millimetres across, are to be made as close as possible to BMW's five battery assembly sites."
+      },
+      {
+        "speaker": "M",
+        "text": "Those sit in Germany, Hungary, China, the U S and Mexico, with deliveries from the end of the decade."
+      },
+      {
+        "speaker": "F",
+        "text": "BMW names shorter transport routes, regional value creation and supply security as its reasons."
+      },
+      {
+        "speaker": "M",
+        "text": "For planners, the supply map is drawn years ahead, so tier two suppliers should plan capacity around these cell plants, not around imports from Asia."
+      },
+      {
+        "speaker": "F",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "EV battery sourcing: BMW has added Samsung SDI for Europe and LG Energy Solution for the US, and wants its 46 mm cylindrical cells made as close as possible to its five battery assembly sites, with deliveries from the end of the decade. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "sourcing",
+      "evbattery",
+      "networkdesign"
+    ]
+  },
+  "linkedin": {
+    "page_post": "BMW wants its next EV cells made next to its five battery assembly sites. Supplier capacity plans should follow.\n\nBMW has added Samsung SDI for Europe and LG Energy Solution for the US as cell suppliers, alongside CATL and EVE Energy, electrive reports. The cells are to be made as close as possible to its five assembly sites, with deliveries from the end of the decade.\n\nThis is local for local written in years ahead. Tier-2 suppliers in Hungary and Bavaria should plan capacity around these cell plants, not imports from Asia.\n\nAlso on today's desk:\nEricsson has moved mmWave radio production from Texas to Estonia, despite US tariffs.\nGoogle research finds AI agents get sidetracked by outdated information.\n\nWhich of your customers is redrawing its supply map around its own plants, and are you on it?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #networkdesign #batteries",
+    "tags": [
+      "BMW",
+      "Ericsson",
+      "electrive"
+    ]
+  },
+  "show_notes": {
+    "summary": "EV battery sourcing: BMW adds Samsung SDI and LG Energy Solution and will buy cells from plants near its five assembly sites. Also: Ericsson moves mmWave radio production from Texas to Estonia, Google research on AI agents distracted by stale information, Mercedes overhauls plants and supply chains as China sales fall 31%, a freight check, and quick hits on Lesjöfors, Hermle and Deere.",
+    "sources": [
+      {
+        "title": "electrive: BMW to source battery cells from LGES and Samsung SDI",
+        "url": "https://www.electrive.com/2026/11/09/bmw-to-source-battery-cells-from-lges-and-samsung-sdi/"
+      },
+      {
+        "title": "Supply Chain Dive: BMW announces new battery supply deals for the US, Europe",
+        "url": "https://www.supplychaindive.com/news/bmw-announces-new-battery-supply-deals-for-the-us-europe/874409/"
+      },
+      {
+        "title": "Light Reading: Ericsson moves mmWave radio production from US to Estonia",
+        "url": "https://www.lightreading.com/5g/ericsson-moves-mmwave-radio-production-from-us-to-estonia"
+      },
+      {
+        "title": "Evertiq: Ericsson moves mmWave radio production from Texas to Estonia",
+        "url": "https://evertiq.com/news/2026-11-09-ericsson-moves-mmwave-radio-production-from-texas-to-estonia"
+      },
+      {
+        "title": "Industriemagazin: Mercedes, Elektroautos, Gewinne, China, Werke",
+        "url": "https://industriemagazin.at/automobil/mercedes-elektroautos-gewinne-china-werke-2026/"
+      },
+      {
+        "title": "Logistics Viewpoints: When AI agents lose focus, what Google's research means for supply chain operations",
+        "url": "https://logisticsviewpoints.com/2026/11/11/when-ai-agents-lose-focus-what-googles-research-means-for-supply-chain-operations/"
+      },
+      {
+        "title": "Splash247: Bunker prices plunge 20%",
+        "url": "https://splash247.com/bunker-prices-plunge-20/"
+      },
+      {
+        "title": "Supply Chain Dive: Transpacific ocean rates ease slightly as peak winds down",
+        "url": "https://www.supplychaindive.com/news/transpacific-ocean-rates-ease-slightly-as-peak-winds-down/874262/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "Dagens Logistik: Lesjöfors logistiksatsar i Tyskland",
+        "url": "https://dagenslogistik.se/lesjofors-logistiksatsar-i-tyskland/"
+      },
+      {
+        "title": "Hermle ad hoc release via finanznachrichten: Hermle hebt Ergebnisprognose für 2026 an",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70098160-eqs-adhoc-maschinenfabrik-berthold-hermle-aktiengesellschaft-hermle-hebt-ergebnisprognose-fuer-2026-an-022.htm"
+      },
+      {
+        "title": "SupplyChainBrain: John Deere to close pair of Iowa factories",
+        "url": "https://www.supplychainbrain.com/general-scm/business-strategy-alignment/article/16425103/john-deere-to-close-pair-of-iowa-factories"
+      }
+    ]
+  }
+}
