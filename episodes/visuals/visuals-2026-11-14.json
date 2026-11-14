@@ -1,0 +1,922 @@
+{
+  "stem": "2026-11-14",
+  "cues": [
+    {
+      "line": 0,
+      "kicker": "Book of the week",
+      "headline": "The Box, by Marc Levinson",
+      "sub": "A 2006 business history of the shipping container",
+      "kpis": [
+        {
+          "value": 2006,
+          "label": "first published"
+        }
+      ]
+    },
+    {
+      "line": 1,
+      "kicker": "AI disclosure",
+      "headline": "Researched by AI agents, read by synthetic voices"
+    },
+    {
+      "line": 2,
+      "kicker": "Book of the week",
+      "headline": "The Box, by Marc Levinson",
+      "sub": "Princeton University Press, 2006"
+    },
+    {
+      "line": 3,
+      "kicker": "The big idea",
+      "headline": "The container cut costs at the dock, not at sea"
+    },
+    {
+      "line": 4,
+      "kicker": "The big idea",
+      "headline": "A simple box, a hard system"
+    },
+    {
+      "line": 5,
+      "kicker": "What kind of book",
+      "headline": "A business history of the shipping container",
+      "visual": {
+        "template": "timeline",
+        "props": {
+          "kicker": "The book",
+          "title": "From idea to sequel",
+          "items": [
+            {
+              "label": "1956",
+              "detail": "Ideal X sails, Newark to Houston",
+              "say": "nineteen fifties"
+            },
+            {
+              "label": "2006",
+              "detail": "The Box is published",
+              "say": "two thousand six"
+            },
+            {
+              "label": "2016",
+              "detail": "Second edition, extra chapter",
+              "say": "twenty sixteen"
+            },
+            {
+              "label": "2020",
+              "detail": "Outside the Box",
+              "say": "twenty twenty"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 6,
+      "keep": true,
+      "kicker": "The author",
+      "headline": "Marc Levinson, economist and former journalist",
+      "sub": "Ex finance and economics editor, The Economist",
+      "source": "Wikipedia"
+    },
+    {
+      "line": 7,
+      "keep": true,
+      "kicker": "The approach",
+      "headline": "An economic story, not an engineering one",
+      "sub": "Money, unions, ports and the fights over standards"
+    },
+    {
+      "line": 8,
+      "keep": true,
+      "kicker": "Reception",
+      "headline": "Shortlisted, FT and Goldman Sachs Business Book of the Year",
+      "source": "Wikipedia"
+    },
+    {
+      "line": 9,
+      "keep": true,
+      "kicker": "Editions",
+      "headline": "Second edition in 2016, sequel in 2020",
+      "sub": "Outside the Box asks where globalisation goes next"
+    },
+    {
+      "line": 10,
+      "kicker": "How demanding",
+      "headline": "About 400 pages, no maths, lots of detail"
+    },
+    {
+      "line": 11,
+      "kicker": "Idea 1",
+      "headline": "The cost of shipping sat on the dock",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Four big ideas",
+          "items": [
+            {
+              "label": "Cost sits in handling",
+              "say": "sat on the dock"
+            },
+            {
+              "label": "Someone pays for productivity"
+            },
+            {
+              "label": "Standards beat design"
+            },
+            {
+              "label": "Freight picks the winners"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 12,
+      "keep": true,
+      "kicker": "Breakbulk",
+      "headline": "Loose cargo, lifted piece by piece",
+      "sub": "Sacks, crates and drums handled by gangs of dock workers"
+    },
+    {
+      "line": 13,
+      "kicker": "26 April 1956",
+      "headline": "The Ideal X sails from Newark to Houston",
+      "kpis": [
+        {
+          "value": 58,
+          "label": "containers on board",
+          "accent": true
+        },
+        {
+          "value": 5,
+          "label": "days to Houston"
+        }
+      ],
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 3,
+          "points": [
+            {
+              "name": "Port Newark",
+              "lat": 40.69,
+              "lon": -74.15
+            },
+            {
+              "name": "Houston",
+              "lat": 29.73,
+              "lon": -95.27,
+              "alert": true
+            }
+          ],
+          "routes": [
+            {
+              "style": "primary",
+              "label": "Ideal X, April 1956",
+              "points": [
+                [
+                  -74.15,
+                  40.69
+                ],
+                [
+                  -73.9,
+                  40.4
+                ],
+                [
+                  -74.0,
+                  39.5
+                ],
+                [
+                  -74.8,
+                  38.6
+                ],
+                [
+                  -75.2,
+                  37.5
+                ],
+                [
+                  -75.2,
+                  35.1
+                ],
+                [
+                  -76.5,
+                  34.3
+                ],
+                [
+                  -79.0,
+                  32.5
+                ],
+                [
+                  -80.3,
+                  30.5
+                ],
+                [
+                  -79.7,
+                  27.0
+                ],
+                [
+                  -79.9,
+                  25.5
+                ],
+                [
+                  -81.0,
+                  24.4
+                ],
+                [
+                  -83.0,
+                  24.3
+                ],
+                [
+                  -84.5,
+                  25.5
+                ],
+                [
+                  -87.0,
+                  28.0
+                ],
+                [
+                  -91.0,
+                  28.8
+                ],
+                [
+                  -94.7,
+                  29.3
+                ],
+                [
+                  -95.27,
+                  29.73
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "source": "Port Houston"
+    },
+    {
+      "line": 14,
+      "kicker": "McLean's numbers, 1956",
+      "headline": "From $5.83 a ton to under 16 cents",
+      "kpis": [
+        {
+          "value": 5.83,
+          "prefix": "$",
+          "decimals": 2,
+          "label": "per ton, loose cargo",
+          "accent": true
+        },
+        {
+          "value": 0.16,
+          "prefix": "under $",
+          "decimals": 2,
+          "label": "per ton, containers"
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Loading cost per ton, 1956, US dollars",
+          "decimals": 2,
+          "items": [
+            {
+              "label": "Loose cargo",
+              "value": 5.83,
+              "highlight": true
+            },
+            {
+              "label": "Containers",
+              "value": 0.16
+            }
+          ]
+        }
+      },
+      "source": "The Geography of Transport Systems"
+    },
+    {
+      "line": 16,
+      "kicker": "A system",
+      "headline": "The box was the easy part",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "The system",
+          "title": "Redesigned around the box",
+          "steps": [
+            {
+              "label": "Ships",
+              "say": "Ships"
+            },
+            {
+              "label": "Cranes",
+              "say": "cranes"
+            },
+            {
+              "label": "Terminals",
+              "say": "terminals"
+            },
+            {
+              "label": "Pricing and paperwork",
+              "say": "paperwork"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 17,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Map touches and dwell before arguing over rates"
+    },
+    {
+      "line": 18,
+      "kicker": "Idea 2",
+      "headline": "Someone pays for a jump in productivity",
+      "sub": "Here it was the dock workers"
+    },
+    {
+      "line": 19,
+      "kicker": "The docks",
+      "headline": "A crane needed a fraction of the gang"
+    },
+    {
+      "line": 20,
+      "kicker": "West Coast, 1960",
+      "headline": "The Mechanization and Modernization Agreement",
+      "sub": "ILWU and the Pacific Maritime Association",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "The 1960 bargain",
+          "items": [
+            {
+              "label": "Employers",
+              "detail": "free to mechanise and shrink the workforce",
+              "say": "new machines"
+            },
+            {
+              "label": "Registered members",
+              "detail": "job security",
+              "say": "job security"
+            }
+          ]
+        }
+      },
+      "source": "Wikipedia"
+    },
+    {
+      "line": 21,
+      "keep": true,
+      "kicker": "The result",
+      "headline": "Dock labour need fell by up to 90%",
+      "kpis": [
+        {
+          "value": 90,
+          "prefix": "up to ",
+          "suffix": "%",
+          "label": "less dock labour needed",
+          "accent": true
+        }
+      ],
+      "source": "Wikipedia"
+    },
+    {
+      "line": 22,
+      "keep": true,
+      "kicker": "East Coast",
+      "headline": "A longer fight, the same kind of bargain",
+      "sub": "Freedom to automate for wage guarantees and retirement terms"
+    },
+    {
+      "line": 23,
+      "kicker": "For planners",
+      "headline": "The deal with people sets the speed of automation"
+    },
+    {
+      "line": 24,
+      "kicker": "Idea 3",
+      "headline": "A shared standard beats a better design",
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Container lengths, early 1960s, feet",
+          "items": [
+            {
+              "label": "Sea-Land",
+              "value": 35,
+              "highlight": true
+            },
+            {
+              "label": "Matson",
+              "value": 24
+            },
+            {
+              "label": "Latin America lines",
+              "value": 17
+            }
+          ]
+        }
+      },
+      "source": "ISO"
+    },
+    {
+      "line": 25,
+      "keep": true,
+      "kicker": "Sea-Land",
+      "headline": "Every line had its own box",
+      "kpis": [
+        {
+          "value": 35,
+          "suffix": " ft",
+          "label": "Sea-Land container"
+        }
+      ]
+    },
+    {
+      "line": 26,
+      "keep": true,
+      "kicker": "Matson and Latin America",
+      "headline": "Box sizes built for one trade",
+      "kpis": [
+        {
+          "value": 24,
+          "suffix": " ft",
+          "label": "Matson, for heavy canned pineapple"
+        },
+        {
+          "value": 17,
+          "suffix": " ft",
+          "label": "Latin America lines"
+        }
+      ],
+      "source": "ISO"
+    },
+    {
+      "line": 28,
+      "kicker": "ISO, 1961",
+      "headline": "A committee for containers, patents free",
+      "sub": "McLean made his patents available to ISO free of charge",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Toward one standard",
+          "items": [
+            {
+              "label": "ISO committee, 1961",
+              "say": "nineteen sixty-one"
+            },
+            {
+              "label": "Standard sizes agreed",
+              "say": "standard sizes"
+            },
+            {
+              "label": "Patents free to ISO",
+              "say": "free of charge"
+            }
+          ]
+        }
+      },
+      "source": "ISO"
+    },
+    {
+      "line": 29,
+      "kicker": "The unit of trade",
+      "headline": "Twenty-foot equivalent units, TEU",
+      "kpis": [
+        {
+          "value": 20,
+          "suffix": " ft",
+          "label": "one TEU"
+        },
+        {
+          "value": 40,
+          "suffix": " ft",
+          "label": "today's common box"
+        }
+      ]
+    },
+    {
+      "line": 30,
+      "kicker": "The pioneer gives ground",
+      "headline": "Sea-Land's 35 ft size didn't make the standard"
+    },
+    {
+      "line": 31,
+      "kicker": "For planners",
+      "headline": "Every private format is a tax on your partners",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Today's box sizes",
+          "items": [
+            {
+              "label": "Pallets",
+              "say": "pallets"
+            },
+            {
+              "label": "Labels",
+              "say": "labels"
+            },
+            {
+              "label": "Item codes",
+              "say": "item codes"
+            },
+            {
+              "label": "Data formats",
+              "say": "data formats"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 32,
+      "kicker": "Idea 4",
+      "headline": "Cheap, reliable freight picks the winning places",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "What a terminal needs",
+          "items": [
+            {
+              "label": "Flat land",
+              "say": "flat land"
+            },
+            {
+              "label": "Deep water",
+              "say": "deep water"
+            },
+            {
+              "label": "Big cranes",
+              "say": "big cranes"
+            },
+            {
+              "label": "Road and rail links",
+              "say": "rail links"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 33,
+      "keep": true,
+      "kicker": "Terminals",
+      "headline": "The old city piers had none of that"
+    },
+    {
+      "line": 34,
+      "kicker": "New York harbour",
+      "headline": "Newark and Elizabeth overtook the city's docks",
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 1.2,
+          "points": [
+            {
+              "name": "Manhattan piers",
+              "lat": 40.71,
+              "lon": -74.01,
+              "muted": true
+            },
+            {
+              "name": "Port Newark",
+              "lat": 40.69,
+              "lon": -74.15,
+              "alert": true
+            },
+            {
+              "name": "Elizabeth",
+              "lat": 40.67,
+              "lon": -74.16,
+              "alert": true
+            }
+          ],
+          "routes": []
+        }
+      },
+      "source": "Tao Yue, Danny Yee"
+    },
+    {
+      "line": 35,
+      "kicker": "Felixstowe, UK",
+      "headline": "Britain's first container terminal, 1967",
+      "kpis": [
+        {
+          "value": 1967,
+          "label": "first UK container terminal"
+        },
+        {
+          "value": 1980,
+          "label": "Britain's largest container port",
+          "accent": true
+        }
+      ],
+      "source": "Port of Felixstowe"
+    },
+    {
+      "line": 36,
+      "kicker": "Vietnam and Japan",
+      "headline": "Military contracts, then a stop in Japan",
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 6,
+          "points": [
+            {
+              "name": "Japan",
+              "lat": 35.4,
+              "lon": 139.7,
+              "alert": true
+            },
+            {
+              "name": "South Vietnam",
+              "lat": 11.9,
+              "lon": 109.2
+            }
+          ],
+          "routes": [
+            {
+              "style": "primary",
+              "label": "Vietnam to Japan, filling boxes for the trip home",
+              "points": [
+                [
+                  109.2,
+                  11.9
+                ],
+                [
+                  114.0,
+                  16.0
+                ],
+                [
+                  121.0,
+                  21.5
+                ],
+                [
+                  125.0,
+                  26.0
+                ],
+                [
+                  132.0,
+                  31.0
+                ],
+                [
+                  139.7,
+                  35.4
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "source": "Forbes, Wikipedia"
+    },
+    {
+      "line": 38,
+      "kicker": "For network designers",
+      "headline": "When freight cost shifts, the best footprint shifts"
+    },
+    {
+      "line": 39,
+      "kicker": "Why it matters now",
+      "headline": "The questions network designers still face"
+    },
+    {
+      "line": 40,
+      "kicker": "Still holds",
+      "headline": "Handling, waiting and shared standards",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Still holds",
+          "items": [
+            {
+              "label": "Handling and waiting cost",
+              "say": "Handling and waiting"
+            },
+            {
+              "label": "Shared standards",
+              "say": "shared standards"
+            },
+            {
+              "label": "Long chains, long risks",
+              "say": "long chains"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 42,
+      "keep": true,
+      "kicker": "The flip side",
+      "headline": "Long chains break far from home"
+    },
+    {
+      "line": 43,
+      "kicker": "Where it has dated",
+      "headline": "Light on everything after the 1970s",
+      "source": "Tao Yue"
+    },
+    {
+      "line": 44,
+      "kicker": "The author moved on",
+      "headline": "Outside the Box, 2020",
+      "sub": "Globalisation built on shipping goods was waning by the early 2010s",
+      "source": "Princeton University Press"
+    },
+    {
+      "line": 45,
+      "kicker": "Critics",
+      "headline": "Deep threads, not tied together",
+      "sub": "And a heavy lean on the Port of New York",
+      "source": "Tao Yue"
+    },
+    {
+      "line": 46,
+      "kicker": "Critics",
+      "headline": "Skip the labour or standards parts if you must",
+      "sub": "Felixstowe and Oakland grew huge partly by luck",
+      "source": "Danny Yee"
+    },
+    {
+      "line": 47,
+      "kicker": "Who should read it",
+      "headline": "Network designers and transport planners"
+    },
+    {
+      "line": 49,
+      "kicker": "Time",
+      "headline": "A week or two of evenings, read in order"
+    },
+    {
+      "line": 50,
+      "kicker": "Read first",
+      "headline": "McLean, standards, then Just in Time",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Reading order",
+          "items": [
+            {
+              "label": "McLean and the first voyages",
+              "say": "first voyages"
+            },
+            {
+              "label": "Standards",
+              "say": "chapters on standards"
+            },
+            {
+              "label": "Just in Time",
+              "say": "Just in Time"
+            },
+            {
+              "label": "Skim New York's port",
+              "say": "skim"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 51,
+      "kicker": "Edition",
+      "headline": "The 2016 second edition, with a new chapter"
+    },
+    {
+      "line": 52,
+      "kicker": "Also on the shelf",
+      "headline": "Three books that pair well",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Also on the shelf",
+          "items": [
+            {
+              "label": "The Great Convergence",
+              "detail": "Richard Baldwin, 2016",
+              "say": "Great Convergence"
+            },
+            {
+              "label": "The Travels of a T-Shirt in the Global Economy",
+              "detail": "Pietra Rivoli, 2005",
+              "say": "Travels of a T-Shirt"
+            },
+            {
+              "label": "Homecoming",
+              "detail": "Rana Foroohar, 2022",
+              "say": "Homecoming"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 55,
+      "keep": true,
+      "kicker": "Also on the shelf",
+      "headline": "Production moving closer to home"
+    },
+    {
+      "line": 56,
+      "kicker": "Next Saturday",
+      "headline": "Financial Intelligence, by Karen Berman and Joe Knight"
+    }
+  ],
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Book of the week",
+        "title": "A steel box cut loading costs by over 90%",
+        "detail": "The Box, Marc Levinson"
+      }
+    },
+    {
+      "line": 1,
+      "template": "headline",
+      "props": {
+        "kicker": "Book of the week",
+        "title": "The Box",
+        "detail": "Marc Levinson, 2006"
+      }
+    },
+    {
+      "line": 1,
+      "at": "history of the shipping container",
+      "template": "takeaway",
+      "props": {
+        "kicker": "The story",
+        "text": "How the shipping container rebuilt world trade"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Loose cargo, 1956",
+        "value": "$5.83",
+        "label": "per ton to load",
+        "source": "The Geography of Transport Systems"
+      }
+    },
+    {
+      "line": 2,
+      "at": "under sixteen cents",
+      "template": "stat",
+      "props": {
+        "kicker": "First container ship",
+        "value": "under 16¢",
+        "label": "per ton to load",
+        "source": "The Geography of Transport Systems"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "The real story",
+        "title": "The box was simple",
+        "detail": "The system around it was the hard part"
+      }
+    },
+    {
+      "line": 3,
+      "at": "shared sizes",
+      "template": "list",
+      "props": {
+        "title": "The system",
+        "items": [
+          "Shared sizes",
+          "New ports",
+          "Dock worker deals"
+        ]
+      }
+    },
+    {
+      "line": 3,
+      "at": "decided which ports",
+      "template": "takeaway",
+      "props": {
+        "kicker": "The result",
+        "text": "The system decided which ports and countries won"
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "Who should read it",
+        "text": "Network designers and transport planners"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "A book every Saturday",
+        "detail": "Apple Podcasts and Spotify"
+      }
+    }
+  ]
+}

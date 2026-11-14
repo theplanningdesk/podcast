@@ -1,0 +1,430 @@
+{
+  "show": "The Planning Desk",
+  "format": "saturday",
+  "episode_title": "The Box by Levinson",
+  "week": "2026-W46",
+  "run_date": "2026-11-14",
+  "target_runtime_sec": 517,
+  "word_count": 1521,
+  "book": {
+    "key": "box",
+    "title": "The Box",
+    "author": "Marc Levinson",
+    "year": 2006,
+    "edition": "Second edition with a new chapter, Princeton University Press, 2016"
+  },
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "N": {
+      "name": "Narrator"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "book_intro",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "It's Saturday, the fourteenth of November. I'm Anna, and this is the book of the week on The Planning Desk."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents research the book, and the voices are synthetic."
+        },
+        {
+          "speaker": "F",
+          "text": "Today it's The Box, by Marc Levinson, a business history of the shipping container first published in two thousand six. Here's our narrator."
+        }
+      ]
+    },
+    {
+      "id": "book_open",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "The shipping container cut the cost of trade at the dock, not at sea, and that one change redrew the map of where things get made."
+        },
+        {
+          "speaker": "N",
+          "text": "The steel box itself was simple. The system built around it was the hard part."
+        }
+      ]
+    },
+    {
+      "id": "book_context",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "The Box is a business history. It tells how the shipping container went from a trucker's idea in the nineteen fifties to the base of world trade."
+        },
+        {
+          "speaker": "N",
+          "text": "Marc Levinson is an economist and a former journalist. He was finance and economics editor at The Economist, wrote about business for Newsweek, and later analysed transport and industry for the United States Congress."
+        },
+        {
+          "speaker": "N",
+          "text": "He treats the box as an economic story rather than a piece of engineering. The book follows the money, the unions, the ports and the long fights over standards."
+        },
+        {
+          "speaker": "N",
+          "text": "Princeton University Press published it in two thousand six, and that year it was shortlisted for the Financial Times and Goldman Sachs Business Book of the Year award."
+        },
+        {
+          "speaker": "N",
+          "text": "A second edition with an extra chapter followed in twenty sixteen. Levinson has since gone further with the theme in Outside the Box, from twenty twenty, about where globalisation goes next."
+        },
+        {
+          "speaker": "N",
+          "text": "It runs to about four hundred pages of narrative. There's no maths, but there's a lot of detail, so some chapters read much faster than others."
+        }
+      ]
+    },
+    {
+      "id": "big_ideas",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "The first big idea is that the cost of shipping sat on the dock, not on the ocean."
+        },
+        {
+          "speaker": "N",
+          "text": "Before containers, general cargo moved as loose pieces. Sacks, crates and drums were lifted one by one by gangs of dock workers, and a ship could sit in port for days while it was loaded."
+        },
+        {
+          "speaker": "N",
+          "text": "On the twenty-sixth of April nineteen fifty-six, a converted oil tanker called the Ideal X left Port Newark in New Jersey with fifty-eight containers on board. Five days later it reached Houston."
+        },
+        {
+          "speaker": "N",
+          "text": "Malcom McLean, the trucking boss behind it, worked out the numbers. Loading loose cargo cost about five dollars and eighty-three cents a ton, and loading containers cost under sixteen cents."
+        },
+        {
+          "speaker": "N",
+          "text": "Most of that cost was gone on the first voyage, before anyone had built a purpose-made container ship."
+        },
+        {
+          "speaker": "N",
+          "text": "Levinson's point is that the box was the easy part. Ships, cranes, trucks, terminals, pricing and paperwork all had to be redesigned around it, and that took years."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners the lesson is where to look for cost. In many chains the money sits in handling, waiting and touches, so map how often goods are moved and how long they sit before you argue about the freight rate."
+        },
+        {
+          "speaker": "N",
+          "text": "The second idea is that someone always pays for a jump in productivity, and here it was the dock workers."
+        },
+        {
+          "speaker": "N",
+          "text": "A crane lifting boxes needed a fraction of the people a loose cargo gang did, and the unions saw clearly what that meant for their jobs."
+        },
+        {
+          "speaker": "N",
+          "text": "On the American West Coast, the union leader Harry Bridges negotiated the Mechanization and Modernization Agreement, signed in nineteen sixty."
+        },
+        {
+          "speaker": "N",
+          "text": "Employers got the right to bring in new machines and shrink the workforce. Registered union members got job security in return, and over time the need for dock labour fell by as much as ninety percent."
+        },
+        {
+          "speaker": "N",
+          "text": "On the East Coast the fight dragged on for longer. The book shows it ending in the same kind of bargain, freedom to automate in exchange for wage guarantees and retirement terms."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners this is about automation projects today. A warehouse robot or a planning agent changes who does the work, and the deal you make with the people affected sets how fast the change really lands."
+        },
+        {
+          "speaker": "N",
+          "text": "The third idea is that a shared standard is worth more than a better design."
+        },
+        {
+          "speaker": "N",
+          "text": "By the early nineteen sixties every shipping line had its own box. McLean's company, by then renamed Sea-Land, used thirty-five foot containers."
+        },
+        {
+          "speaker": "N",
+          "text": "Matson, serving Hawaii, chose twenty-four feet, because a longer box full of canned pineapple would have been too heavy to lift. Lines serving Latin America used seventeen foot boxes suited to mountainous country."
+        },
+        {
+          "speaker": "N",
+          "text": "A port serving three lines needed three sets of equipment, so a box only paid off inside one company's own system."
+        },
+        {
+          "speaker": "N",
+          "text": "The International Organization for Standardization set up a committee on containers in nineteen sixty-one. Out of years of argument came the standard sizes, and McLean made his patents available to it free of charge."
+        },
+        {
+          "speaker": "N",
+          "text": "Trade is still counted in twenty-foot equivalent units, or T E U, and today's common box is forty feet long."
+        },
+        {
+          "speaker": "N",
+          "text": "In the book's account, Sea-Land's own thirty-five foot size didn't make the standard. The company that started the change had to give ground for it to spread."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners the same rule applies to pallets, labels, item codes and data formats. Every private format you keep is a small tax on every partner who handles your goods."
+        },
+        {
+          "speaker": "N",
+          "text": "The fourth idea is that cheap and reliable freight decides which places win."
+        },
+        {
+          "speaker": "N",
+          "text": "A container terminal needs flat land, deep water, big cranes and good road and rail links. The old city piers had none of that."
+        },
+        {
+          "speaker": "N",
+          "text": "In New York the trade moved across the harbour to Newark and Elizabeth in New Jersey, which overtook the city's own docks."
+        },
+        {
+          "speaker": "N",
+          "text": "In Britain, the small port of Felixstowe opened the country's first container terminal in nineteen sixty-seven, in a deal with Sea-Land. By nineteen eighty it was Britain's largest container port."
+        },
+        {
+          "speaker": "N",
+          "text": "Even a war changed the map. In nineteen sixty-seven Sea-Land began container service to South Vietnam for the American military, and McLean started calling at Japan to fill the boxes on the way home."
+        },
+        {
+          "speaker": "N",
+          "text": "That return leg helped open the Pacific container trade that later carried Asia's exports to the world."
+        },
+        {
+          "speaker": "N",
+          "text": "For network designers this is the core lesson. Transport cost and reliability decide where you can make and store things, so when they shift, the best footprint shifts with them."
+        }
+      ]
+    },
+    {
+      "id": "for_planners",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Why read a book about nineteen fifties docks now? Because the questions it answers are the ones network designers face every time freight markets move."
+        },
+        {
+          "speaker": "N",
+          "text": "The cost logic still holds. Handling and waiting still cost more than distance in many chains, and shared standards still make whole networks cheaper."
+        },
+        {
+          "speaker": "N",
+          "text": "The book also explains how long chains came about. Once freight was cheap and on schedule, companies could split production across continents and run on lean stock."
+        },
+        {
+          "speaker": "N",
+          "text": "The same chains break far from home when a port or a shipping lane jams, and planners have lived through that more than once this decade."
+        },
+        {
+          "speaker": "N",
+          "text": "Where it has dated is the second half of the story. Most pages go to the early decades, and the reviewer Tao Yue found that events after the nineteen seventies are passed over in compressed form."
+        },
+        {
+          "speaker": "N",
+          "text": "It was also written long before the disruptions of the twenty twenties. Levinson's own view has moved on, and in Outside the Box he argues that the phase of globalisation built on cheap shipping of goods was already waning by the early twenty tens."
+        },
+        {
+          "speaker": "N",
+          "text": "Fair critics have other points. Tao Yue thought the book covers each thread in depth without tying them together clearly, and that it leans heavily on the Port of New York."
+        },
+        {
+          "speaker": "N",
+          "text": "The reviewer Danny Yee noted that readers with no interest in labour history or standards setting can skip parts, and he read ports like Felixstowe and Oakland as growing huge partly by luck."
+        }
+      ]
+    },
+    {
+      "id": "reading_guide",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Read it if you design networks, plan or buy transport, or need to show a finance team why landed cost is more than the freight rate."
+        },
+        {
+          "speaker": "N",
+          "text": "It also suits anyone new to supply chain who wants to know why the global network looks the way it does."
+        },
+        {
+          "speaker": "N",
+          "text": "Plan on a week or two of evenings. It's a story, so it reads best in order."
+        },
+        {
+          "speaker": "N",
+          "text": "If time is short, read the opening chapters on McLean and the first voyages, then the chapters on standards and the one called Just in Time. You can skim the long battle over New York's port."
+        },
+        {
+          "speaker": "N",
+          "text": "Get the second edition from twenty sixteen, which adds a new chapter by Levinson."
+        }
+      ]
+    },
+    {
+      "id": "shelf",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Also on the shelf, three books that pair well with The Box."
+        },
+        {
+          "speaker": "N",
+          "text": "The Great Convergence, by Richard Baldwin, from twenty sixteen. Where Levinson explains how goods got cheap to move, Baldwin explains how cheap communication let companies spread their factories across borders."
+        },
+        {
+          "speaker": "N",
+          "text": "The Travels of a T-Shirt in the Global Economy, by Pietra Rivoli, from two thousand five. It follows one cheap shirt through cotton fields, factories and trade politics, so you see the box's world from the product's side."
+        },
+        {
+          "speaker": "N",
+          "text": "And Homecoming, by Rana Foroohar, from twenty twenty-two. It argues that production is moving closer to home again, a useful counterweight to a book about how far apart it spread."
+        }
+      ]
+    },
+    {
+      "id": "book_sign_off",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Next Saturday, it's Financial Intelligence, by Karen Berman and Joe Knight."
+        },
+        {
+          "speaker": "F",
+          "text": "News is back Monday morning, and the week in review is out tomorrow. I'm Anna, thanks for listening."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "The Box: How Containers Cut Loading Costs by 97%",
+    "lines": [
+      {
+        "speaker": "N",
+        "text": "A steel box cut cargo loading costs by more than ninety percent."
+      },
+      {
+        "speaker": "N",
+        "text": "That's the story in The Box, Marc Levinson's two thousand six history of the shipping container."
+      },
+      {
+        "speaker": "N",
+        "text": "In nineteen fifty-six, loading loose cargo cost about five dollars eighty-three a ton. Malcom McLean's first container ship loaded for under sixteen cents."
+      },
+      {
+        "speaker": "N",
+        "text": "The box was simple. The hard part was the system around it, shared sizes, new ports and tough deals with dock workers, and that system decided which ports and countries won."
+      },
+      {
+        "speaker": "N",
+        "text": "Read it if you design networks or plan transport, and start with the chapters on standards."
+      },
+      {
+        "speaker": "F",
+        "text": "A book every Saturday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Book of the week: The Box by Marc Levinson (2006). In 1956, loading loose cargo cost about $5.83 a ton, and Malcom McLean's first container voyage loaded for under 16 cents. Levinson shows how shared standards, new ports and hard bargains with dock workers turned a steel box into the base of world trade. Full episode: The Planning Desk, every Saturday on Apple Podcasts and Spotify. AI-generated: AI agents research the book and the voices are synthetic.",
+    "hashtags": [
+      "books",
+      "supplychain",
+      "logistics",
+      "containershipping",
+      "networkdesign"
+    ]
+  },
+  "linkedin": {
+    "page_post": "The shipping container cut loading costs by about 97% on its first voyage, and the savings came at the dock, not at sea.\n\nBook of the week: The Box by Marc Levinson, 2006.\n\nIn 1956, loading loose cargo cost about $5.83 a ton. Malcom McLean's first container voyage loaded for under 16 cents. Look for cost in handling, waiting and touches before you argue over freight rates.\n\nEvery shipping line once had its own box size. The gains came only with shared standards. Every private pallet, label or data format you keep is a tax on your partners.\n\nContainer terminals needed land, deep water and rail links, so old city piers lost out to Newark and Felixstowe. When transport cost and reliability shift, the best network footprint shifts too.\n\nRead it if you design networks or plan transport.\n\nWhere in your network do goods sit waiting longer than they spend moving?\n\nListen: The Planning Desk, a book every Saturday on Apple Podcasts and Spotify.\n\n#SupplyChain #NetworkDesign #Logistics",
+    "tags": []
+  },
+  "show_notes": {
+    "summary": "The Box by Marc Levinson (2006) tells how the shipping container cut cargo handling costs and redrew the map of world trade. The episode covers the cost of handling, the deals with dock workers, the fight over standard sizes and the ports that won and lost, and what that means for network design today. For network designers, transport planners and anyone who wants to know why global supply chains look the way they do.",
+    "sources": [
+      {
+        "title": "Wikipedia: The Box (Levinson book)",
+        "url": "https://en.wikipedia.org/wiki/The_Box_(Levinson_book)"
+      },
+      {
+        "title": "Wikipedia: Marc Levinson",
+        "url": "https://en.wikipedia.org/wiki/Marc_Levinson"
+      },
+      {
+        "title": "Princeton University Press: Marc Levinson on Outside the Box",
+        "url": "https://press.princeton.edu/ideas/marc-levinson-on-outside-the-box"
+      },
+      {
+        "title": "Port Houston: Ideal X",
+        "url": "https://porthouston.com/ideal-x/"
+      },
+      {
+        "title": "The Geography of Transport Systems: First containership, Ideal-X, 1956",
+        "url": "https://transportgeography.org/contents/chapter1/the-setting-of-global-transportation-systems/idealx-first-containeriship-1956/"
+      },
+      {
+        "title": "Wikipedia: Malcom McLean",
+        "url": "https://en.wikipedia.org/wiki/Malcom_McLean"
+      },
+      {
+        "title": "Wikipedia: SeaLand",
+        "url": "https://en.wikipedia.org/wiki/SeaLand"
+      },
+      {
+        "title": "Forbes: The Box That Changed Asia and the World, Marc Levinson",
+        "url": "https://www.forbes.com/global/2006/0313/030.html"
+      },
+      {
+        "title": "ISO: Boxing clever, how standardization built a global economy",
+        "url": "https://www.iso.org/news/ref2215.html"
+      },
+      {
+        "title": "Wikipedia: Mechanization and Modernization Agreement 1960",
+        "url": "https://en.wikipedia.org/wiki/Mechanization_and_Modernization_Agreement_1960"
+      },
+      {
+        "title": "Wikipedia: Port of Felixstowe",
+        "url": "https://en.wikipedia.org/wiki/Port_of_Felixstowe"
+      },
+      {
+        "title": "Port of Felixstowe: History",
+        "url": "https://www.portoffelixstowe.co.uk/about/history/"
+      },
+      {
+        "title": "Tao Yue: Book review, The Box",
+        "url": "https://www.taoyue.com/books/box.html"
+      },
+      {
+        "title": "Danny Yee: Review of The Box",
+        "url": "https://dannyreviews.com/h/Box.html"
+      },
+      {
+        "title": "Society for Promoting Economics: Review of The Great Convergence",
+        "url": "https://spe.org.uk/reading-room/book-reviews/the-great-convergence/"
+      },
+      {
+        "title": "Publishers Weekly: The Travels of a T-Shirt in the Global Economy",
+        "url": "https://www.publishersweekly.com/9780471648499"
+      },
+      {
+        "title": "McKinsey Author Talks: Rana Foroohar on Homecoming",
+        "url": "https://www.mckinsey.com/featured-insights/mckinsey-on-books/author-talks-global-business-is-coming-home-says-financial-times-editor-rana-foroohar"
+      }
+    ]
+  }
+}
