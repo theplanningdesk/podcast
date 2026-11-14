@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-13T09:57:02.879197+00:00",
+ "fetched_at": "2026-11-14T09:23:24.476153+00:00",
  "window_days": 8,
- "sources_ok": 73,
+ "sources_ok": 75,
  "sources_total": 75,
  "sources": [
   {
@@ -11,7 +11,7 @@
    "method": "feed https://www.supplychainbrain.com/rss/articles",
    "items": 20,
    "error": null,
-   "raw_items": 31,
+   "raw_items": 29,
    "lane": "planning"
   },
   {
@@ -19,9 +19,9 @@
    "url": "https://www.scmr.com/",
    "ok": true,
    "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 14,
+   "items": 15,
    "error": null,
-   "raw_items": 14,
+   "raw_items": 15,
    "lane": "planning"
   },
   {
@@ -57,10 +57,11 @@
   {
    "source": "demand-planning.com (IBF)",
    "url": "https://demand-planning.com/feed/",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://demand-planning.com/feed/: ConnectTimeout: HTTPSConnectionPool(host='demand-planning.com', port=443): Max retries exceeded with url: /feed/ (Caused by ConnectTimeoutError(<HTTPSConnection(host; https://demand-planning.com/: ConnectTimeout: HTTPSConnectionPool(host='demand-planning.com', port",
+   "ok": true,
+   "method": "feed https://demand-planning.com/feed/",
+   "items": 1,
+   "error": null,
+   "raw_items": 1,
    "lane": "planning"
   },
   {
@@ -80,7 +81,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 36,
+   "raw_items": 31,
    "lane": "planning"
   },
   {
@@ -108,7 +109,7 @@
    "url": "https://www.bme.de/news/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 6,
+   "items": 5,
    "error": null,
    "raw_items": 24,
    "lane": "planning"
@@ -116,10 +117,11 @@
   {
    "source": "BVL",
    "url": "https://www.bvl.de/",
-   "ok": false,
-   "method": null,
+   "ok": true,
+   "method": "feed https://www.bvl.de/presse/rss/bvl-news",
    "items": 0,
-   "error": "https://www.bvl.de/: ConnectTimeout: HTTPSConnectionPool(host='www.bvl.de', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bvl.de', port=443) at ",
+   "error": null,
+   "raw_items": 0,
    "lane": "planning"
   },
   {
@@ -147,8 +149,8 @@
    "url": "https://www.di.se/rss",
    "ok": true,
    "method": "feed https://www.di.se/rss",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 20,
    "lane": "planning"
   },
@@ -167,9 +169,9 @@
    "url": "https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
    "ok": true,
    "method": "feed https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
-   "items": 14,
+   "items": 11,
    "error": null,
-   "raw_items": 14,
+   "raw_items": 11,
    "lane": "planning"
   },
   {
@@ -179,7 +181,7 @@
    "method": "feed https://developer.nvidia.com/blog/feed/",
    "items": 1,
    "error": null,
-   "raw_items": 10,
+   "raw_items": 13,
    "lane": "planning"
   },
   {
@@ -187,9 +189,9 @@
    "url": "https://talkinglogistics.com/",
    "ok": true,
    "method": "feed https://talkinglogistics.com/feed/",
-   "items": 2,
+   "items": 3,
    "error": null,
-   "raw_items": 2,
+   "raw_items": 3,
    "lane": "planning"
   },
   {
@@ -249,7 +251,7 @@
    "method": "feed https://idw-online.de/de/pressreleasesrss",
    "items": 4,
    "error": null,
-   "raw_items": 444,
+   "raw_items": 440,
    "lane": "management"
   },
   {
@@ -257,7 +259,7 @@
    "url": "https://www.klu.org/newsroom",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 4,
+   "items": 5,
    "error": null,
    "raw_items": 37,
    "lane": "management"
@@ -269,7 +271,7 @@
    "method": "feed https://theconversation.com/uk/business/articles.atom",
    "items": 1,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 5,
    "lane": "management"
   },
   {
@@ -279,7 +281,7 @@
    "method": "feed https://www.consultancy.eu/rss/consultancy_rssfeed.xml",
    "items": 1,
    "error": null,
-   "raw_items": 7,
+   "raw_items": 6,
    "lane": "management"
   },
   {
@@ -307,7 +309,7 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 1,
+   "items": 2,
    "error": null,
    "raw_items": 30,
    "lane": "management"
@@ -337,7 +339,7 @@
    "url": "https://www.sttinfo.fi/rss/releases/latest",
    "ok": true,
    "method": "feed https://www.sttinfo.fi/rss/releases/latest",
-   "items": 3,
+   "items": 2,
    "error": null,
    "raw_items": 25,
    "lane": "management"
@@ -397,9 +399,9 @@
    "url": "https://mfn.se/all/a/epiroc.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/epiroc.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 2,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 0,
    "lane": "companies"
   },
   {
@@ -427,9 +429,9 @@
    "url": "https://mfn.se/all/a/alfa-laval.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/alfa-laval.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 2,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 0,
    "lane": "companies"
   },
   {
@@ -617,9 +619,9 @@
    "url": "https://mfn.se/all/a/orkla.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/orkla.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 3,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 1,
    "lane": "companies"
   },
   {
@@ -657,7 +659,7 @@
    "url": "https://www.freightwaves.com/news",
    "ok": true,
    "method": "feed https://www.freightwaves.com/news/feed/",
-   "items": 9,
+   "items": 7,
    "error": null,
    "raw_items": 50,
    "lane": "freight"
@@ -679,7 +681,7 @@
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
    "items": 7,
    "error": null,
-   "raw_items": 22,
+   "raw_items": 21,
    "lane": "freight"
   },
   {
@@ -687,9 +689,9 @@
    "url": "https://www.sea-intelligence.com/press-room",
    "ok": true,
    "method": "feed https://www.sea-intelligence.com/press-room?format=feed&type=rss",
-   "items": 3,
+   "items": 2,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 2,
    "lane": "freight"
   },
   {
@@ -717,9 +719,9 @@
    "url": "https://www.logistik-journal.de/",
    "ok": true,
    "method": "feed https://www.logistik-journal.de/feed/",
-   "items": 3,
+   "items": 2,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 2,
    "lane": "freight"
   },
   {
@@ -727,7 +729,7 @@
    "url": "https://dagenslogistik.se/nyheter/",
    "ok": true,
    "method": "feed https://dagenslogistik.se/feed/",
-   "items": 5,
+   "items": 6,
    "error": null,
    "raw_items": 10,
    "lane": "freight"
