@@ -1,0 +1,1495 @@
+{
+ "stem": "2026-11-15",
+ "cues": [
+  {
+   "line": 0,
+   "kicker": "Mercedes-Benz, Germany",
+   "headline": "Mercedes stops all investment in its German plants",
+   "sub": "Management is examining which German sites may have to close if costs don't come down.",
+   "source": "Ny Teknik (TT)"
+  },
+  {
+   "line": 1,
+   "kicker": "The Planning Desk",
+   "headline": "From cutting costs in place to choosing which plants survive"
+  },
+  {
+   "line": 2,
+   "kicker": "Week 46 in review",
+   "headline": "Three threads from the week",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Footprints redrawn",
+       "detail": "Mercedes, BMW, Škoda, Deere",
+       "say": "redrawing their footprints"
+      },
+      {
+       "label": "Cyberattacks",
+       "detail": "Fridges, furniture plants, a carrier",
+       "say": "cyberattacks"
+      },
+      {
+       "label": "AI and optimisation",
+       "detail": "Big solver claims, stale data",
+       "say": "optimisation problems"
+      },
+      {
+       "label": "Rhine gauges",
+       "detail": "Kaub from 13 cm to 73 cm",
+       "say": "Rhine"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 4,
+   "keep": true,
+   "kicker": "Made with AI",
+   "headline": "AI agents gather the news, the voices are synthetic"
+  },
+  {
+   "line": 5,
+   "keep": true,
+   "kicker": "Week 46 in review",
+   "headline": "Footprints, cyberattacks and AI solvers"
+  },
+  {
+   "line": 7,
+   "kicker": "Thread 1, Mercedes-Benz",
+   "headline": "No further investment in German plants",
+   "sub": "Board member Michael Schiebe, in an interview reported by TT.",
+   "visual": {
+    "template": "timeline",
+    "props": {
+     "items": [
+      {
+       "label": "9 Nov",
+       "detail": "BMW signs battery cell suppliers",
+       "say": "BMW went the other way"
+      },
+      {
+       "label": "12 Nov",
+       "detail": "Harness shortage cuts BMW and Škoda shifts",
+       "say": "wire harnesses were missing"
+      },
+      {
+       "label": "13 Nov",
+       "detail": "Mercedes freezes German investment",
+       "say": "We start with Mercedes"
+      }
+     ]
+    }
+   },
+   "source": "Ny Teknik (TT)"
+  },
+  {
+   "line": 8,
+   "keep": true,
+   "kicker": "Mercedes-Benz",
+   "headline": "Which German sites survive depends on costs",
+   "sub": "Union talks on cost cuts have made no progress. Reasons given: Chinese competition, high costs."
+  },
+  {
+   "line": 9,
+   "kicker": "Mercedes-Benz, China",
+   "headline": "China sales down 31%",
+   "kpis": [
+    {
+     "value": 31,
+     "prefix": "-",
+     "suffix": "%",
+     "decimals": 0,
+     "label": "Mercedes China sales",
+     "accent": true
+    }
+   ],
+   "sub": "A deep overhaul of plants and supply chains is under way. No plants, jobs or figures named.",
+   "source": "Industriemagazin"
+  },
+  {
+   "line": 10,
+   "kicker": "For planners",
+   "headline": "Treat 2027 volumes at each German Mercedes plant as at risk",
+   "sub": "Suppliers in Germany and Austria should ask which programmes could move."
+  },
+  {
+   "line": 11,
+   "kicker": "BMW, battery cells",
+   "headline": "Two cell suppliers per region, next to each site",
+   "sub": "Samsung SDI for Europe, LG Energy Solution for the US, alongside CATL and EVE Energy.",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 10,
+     "points": [
+      {
+       "name": "Irlbach-Straßkirchen",
+       "lat": 48.83,
+       "lon": 12.73
+      },
+      {
+       "name": "Debrecen",
+       "lat": 47.53,
+       "lon": 21.63
+      },
+      {
+       "name": "Shenyang",
+       "lat": 41.8,
+       "lon": 123.43
+      },
+      {
+       "name": "Woodruff",
+       "lat": 34.74,
+       "lon": -82.03
+      },
+      {
+       "name": "San Luis Potosí",
+       "lat": 22.15,
+       "lon": -100.98
+      }
+     ],
+     "routes": []
+    }
+   },
+   "source": "electrive"
+  },
+  {
+   "line": 12,
+   "keep": true,
+   "kicker": "BMW Neue Klasse",
+   "headline": "Cells made as close as possible to five assembly sites",
+   "kpis": [
+    {
+     "value": 5,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "battery assembly sites"
+    }
+   ],
+   "sub": "Deliveries from the end of the decade."
+  },
+  {
+   "line": 13,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Dual sourcing designed into the network years ahead"
+  },
+  {
+   "line": 14,
+   "kicker": "Wire harnesses",
+   "headline": "Missing harnesses cut shifts at BMW and Škoda",
+   "sub": "BMW Regensburg, Leipzig and Oxford. Škoda restricted Enyaq and Elroq output.",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 3,
+     "points": [
+      {
+       "name": "Zhytomyr",
+       "lat": 50.25,
+       "lon": 28.66,
+       "alert": true
+      },
+      {
+       "name": "Lutsk",
+       "lat": 50.75,
+       "lon": 25.33,
+       "alert": true
+      },
+      {
+       "name": "Regensburg",
+       "lat": 49.01,
+       "lon": 12.1
+      },
+      {
+       "name": "Leipzig",
+       "lat": 51.34,
+       "lon": 12.37
+      },
+      {
+       "name": "Oxford",
+       "lat": 51.75,
+       "lon": -1.26
+      },
+      {
+       "name": "Mladá Boleslav",
+       "lat": 50.41,
+       "lon": 14.9
+      }
+     ],
+     "routes": [
+      {
+       "style": "faded",
+       "label": "Harness supply",
+       "points": [
+        [
+         25.33,
+         50.75
+        ],
+        [
+         23.9,
+         51.1
+        ],
+        [
+         21.0,
+         52.2
+        ],
+        [
+         16.9,
+         51.1
+        ],
+        [
+         14.9,
+         50.41
+        ],
+        [
+         12.37,
+         51.34
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "source": "Industriemagazin"
+  },
+  {
+   "line": 15,
+   "keep": true,
+   "kicker": "Kromberg & Schubert, Ukraine",
+   "headline": "Attacks on harness plants in Zhytomyr and Lutsk",
+   "sub": "Plus flooding at a plant in Morocco. Normal shifts are back; the backlog is unknown.",
+   "source": "Handelsblatt via Industriemagazin"
+  },
+  {
+   "line": 16,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "An untooled, unapproved second source isn't a backup"
+  },
+  {
+   "line": 17,
+   "kicker": "Thread 1, takeaway",
+   "headline": "Plan 2027 volumes by plant, not by customer"
+  },
+  {
+   "line": 18,
+   "kicker": "Thread 2, cold chain",
+   "headline": "Hacked fridges warm up in seven European countries",
+   "kpis": [
+    {
+     "value": 7,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "countries with hit stores",
+     "accent": true
+    }
+   ],
+   "sub": "Including ICA and Coop sites in Sweden. Danish chains asked suppliers to review security.",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Supermarket fridges",
+       "detail": "Seven countries, Danfoss controls among those hit",
+       "say": "supermarket freezers"
+      },
+      {
+       "label": "Kinnarps",
+       "detail": "Three furniture plants stopped",
+       "say": "Kinnarps"
+      },
+      {
+       "label": "Maersk",
+       "detail": "Data taken from a local legacy system",
+       "say": "Maersk"
+      }
+     ]
+    }
+   },
+   "source": "SCM.dk"
+  },
+  {
+   "line": 19,
+   "keep": true,
+   "kicker": "Danfoss",
+   "headline": "Three Danfoss control systems with outdated software hit",
+   "kpis": [
+    {
+     "value": 3,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "Danfoss control systems affected",
+     "accent": true
+    }
+   ],
+   "sub": "Danfoss urges customers to update and secure remote access.",
+   "source": "SCM.dk"
+  },
+  {
+   "line": 20,
+   "keep": true,
+   "kicker": "Kinnarps, Sweden",
+   "headline": "An intrusion stops three furniture plants",
+   "kpis": [
+    {
+     "value": 3,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "Kinnarps sites stopped",
+     "accent": true
+    }
+   ],
+   "sub": "Systems shut straight away to limit the damage.",
+   "source": "Ny Teknik"
+  },
+  {
+   "line": 21,
+   "keep": true,
+   "kicker": "A.P. Moller-Maersk",
+   "headline": "Data taken from a local legacy system",
+   "sub": "Maersk says other systems and customer platforms weren't affected.",
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 22,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Patch and access check every connected asset",
+   "sub": "And keep a manual way to take orders and ship for the first days."
+  },
+  {
+   "line": 23,
+   "kicker": "Thread 3, Anthropic and MIPLIB",
+   "headline": "Claude agents on 203 open optimisation problems",
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Open MIPLIB problems, Anthropic's tally",
+     "items": [
+      {
+       "label": "Worked on",
+       "value": 203
+      },
+      {
+       "label": "Beat listed best",
+       "value": 72,
+       "highlight": true
+      },
+      {
+       "label": "Proved optimal",
+       "value": 45
+      }
+     ]
+    }
+   },
+   "sub": "MIPLIB is the standard library of mixed-integer optimisation problems.",
+   "source": "Anthropic (@claudeai)"
+  },
+  {
+   "line": 24,
+   "keep": true,
+   "kicker": "Anthropic's claim",
+   "headline": "72 improved, 45 proved optimal",
+   "kpis": [
+    {
+     "value": 72,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "beat the listed best",
+     "accent": true
+    },
+    {
+     "value": 45,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "proved optimal"
+    }
+   ],
+   "sub": "Disclosure: the AI agents that make The Planning Desk run on Anthropic's Claude."
+  },
+  {
+   "line": 25,
+   "kicker": "42-train timetable",
+   "headline": "A train timetable that cuts peak power use",
+   "kpis": [
+    {
+     "value": 2.6,
+     "prefix": "",
+     "suffix": "%",
+     "decimals": 1,
+     "label": "better than MIPLIB's best",
+     "accent": true
+    },
+    {
+     "value": 2,
+     "prefix": "under ",
+     "suffix": "",
+     "decimals": 0,
+     "label": "hours or less to beat it"
+    }
+   ],
+   "sub": "Later proved that no better timetable exists.",
+   "source": "Anthropic (@claudeai)"
+  },
+  {
+   "line": 26,
+   "kicker": "Not yet confirmed",
+   "headline": "MIPLIB hasn't publicly confirmed the tally",
+   "sub": "Anthropic says it has submitted the solutions for anyone to check.",
+   "source": "The Defiant"
+  },
+  {
+   "line": 27,
+   "kicker": "For planners",
+   "headline": "Faster search on stale parameters solves the wrong problem",
+   "visual": {
+    "template": "flow",
+    "props": {
+     "steps": [
+      {
+       "label": "Lead times",
+       "say": "lead times"
+      },
+      {
+       "label": "Capacities",
+       "say": "capacities"
+      },
+      {
+       "label": "Yields",
+       "say": "yields"
+      },
+      {
+       "label": "Stale model",
+       "say": "stale parameters"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 28,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Keep the model honest against actuals"
+  },
+  {
+   "line": 29,
+   "kicker": "Deere & Company",
+   "headline": "Deere ends production at two Iowa plants",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Two Iowa plants",
+       "detail": "Production ends",
+       "say": "two Iowa plants"
+      },
+      {
+       "label": "Illinois and Louisiana",
+       "detail": "Some work shifted out",
+       "say": "Illinois and Louisiana"
+      },
+      {
+       "label": "Catalão, Brazil",
+       "detail": "Sugar cane harvesters consolidated",
+       "say": "Catalão"
+      }
+     ]
+    }
+   },
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 30,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Ask which parts move to which plant, and when"
+  },
+  {
+   "line": 31,
+   "kicker": "Ericsson",
+   "headline": "mmWave radio production moves from Texas to Estonia",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 8,
+     "points": [
+      {
+       "name": "Lewisville, Texas",
+       "lat": 33.05,
+       "lon": -96.99,
+       "muted": true
+      },
+      {
+       "name": "Estonia",
+       "lat": 59.44,
+       "lon": 24.75,
+       "alert": true
+      }
+     ],
+     "routes": [
+      {
+       "style": "primary",
+       "label": "Radios now shipped into the US",
+       "points": [
+        [
+         24.75,
+         59.44
+        ],
+        [
+         21.0,
+         58.3
+        ],
+        [
+         18.5,
+         56.3
+        ],
+        [
+         14.5,
+         55.2
+        ],
+        [
+         12.7,
+         55.7
+        ],
+        [
+         11.6,
+         57.0
+        ],
+        [
+         9.5,
+         57.9
+        ],
+        [
+         4.0,
+         56.5
+        ],
+        [
+         1.6,
+         51.0
+        ],
+        [
+         -1.5,
+         50.2
+        ],
+        [
+         -6.0,
+         48.8
+        ],
+        [
+         -30.0,
+         40.0
+        ],
+        [
+         -60.0,
+         31.0
+        ],
+        [
+         -79.0,
+         26.5
+        ],
+        [
+         -80.3,
+         24.4
+        ],
+        [
+         -84.0,
+         24.4
+        ],
+        [
+         -90.0,
+         26.5
+        ],
+        [
+         -94.8,
+         29.3
+        ],
+        [
+         -96.99,
+         33.05
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "source": "Light Reading"
+  },
+  {
+   "line": 32,
+   "keep": true,
+   "kicker": "Lewisville smart factory",
+   "headline": "About 500 staff and about $150m invested",
+   "kpis": [
+    {
+     "value": 500,
+     "prefix": "about ",
+     "suffix": "",
+     "decimals": 0,
+     "label": "Texas plant staff"
+    },
+    {
+     "value": 150,
+     "prefix": "$",
+     "suffix": "m",
+     "decimals": 0,
+     "label": "invested in Texas",
+     "accent": true
+    }
+   ],
+   "sub": "Light Reading points to weak US demand. The radios now ship in under tariffs.",
+   "source": "Light Reading"
+  },
+  {
+   "line": 33,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "One well-loaded plant can beat making where you sell"
+  },
+  {
+   "line": 34,
+   "kicker": "Power, Nordics",
+   "headline": "One central warehouse for the whole Nordic region",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 1.5,
+     "points": [
+      {
+       "name": "Skillingaryd",
+       "lat": 57.43,
+       "lon": 14.09,
+       "alert": true
+      },
+      {
+       "name": "Jönköping",
+       "lat": 57.78,
+       "lon": 14.16,
+       "muted": true
+      }
+     ],
+     "routes": []
+    }
+   },
+   "source": "MT Logistikk"
+  },
+  {
+   "line": 35,
+   "keep": true,
+   "kicker": "Skillingaryd expansion",
+   "headline": "Third expansion adds about 55,000 m²",
+   "kpis": [
+    {
+     "value": 55000,
+     "prefix": "",
+     "suffix": " m²",
+     "decimals": 0,
+     "label": "square metres added",
+     "accent": true
+    }
+   ],
+   "sub": "Prologis builds the hall. Work from early 2027, move-in early 2028.",
+   "source": "MT Logistikk"
+  },
+  {
+   "line": 36,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Pooling gains, but every store depends on one site"
+  },
+  {
+   "line": 37,
+   "kicker": "BASF, Louisiana",
+   "headline": "BASF's largest wholly owned US investment",
+   "kpis": [
+    {
+     "value": 1,
+     "prefix": "about $",
+     "suffix": "bn",
+     "decimals": 0,
+     "label": "invested in Geismar",
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 3,
+     "points": [
+      {
+       "name": "Geismar, Louisiana",
+       "lat": 30.22,
+       "lon": -91.0,
+       "alert": true
+      }
+     ],
+     "routes": []
+    }
+   },
+   "source": "BASF"
+  },
+  {
+   "line": 38,
+   "keep": true,
+   "kicker": "MDI capacity",
+   "headline": "Geismar capacity almost doubles",
+   "kpis": [
+    {
+     "value": 600000,
+     "prefix": "about ",
+     "suffix": " t",
+     "decimals": 0,
+     "label": "tonnes of MDI a year",
+     "accent": true
+    }
+   ],
+   "sub": "BASF becomes the largest MDI producer in North America. Aniline capacity raised too.",
+   "source": "BASF"
+  },
+  {
+   "line": 39,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "European polyurethane buyers: check your sourcing split"
+  },
+  {
+   "line": 40,
+   "kicker": "Honda, Ohio",
+   "headline": "A $3bn hybrid plant next to the existing US footprint",
+   "kpis": [
+    {
+     "value": 3,
+     "prefix": "$",
+     "suffix": "bn",
+     "decimals": 0,
+     "label": "hybrid plant investment"
+    },
+    {
+     "value": 2000,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "jobs"
+    }
+   ],
+   "source": "Manufacturing Dive"
+  },
+  {
+   "line": 41,
+   "kicker": "For planners",
+   "headline": "Build next door to share suppliers and staff"
+  },
+  {
+   "line": 42,
+   "kicker": "Zipline and Walmart",
+   "headline": "Zipline raises $1.5bn for US drone manufacturing",
+   "kpis": [
+    {
+     "value": 1.5,
+     "prefix": "$",
+     "suffix": "bn",
+     "decimals": 1,
+     "label": "raised by Zipline"
+    }
+   ],
+   "sub": "Walmart will more than double its planned drone delivery sites with Zipline.",
+   "source": "Supply Chain Dive"
+  },
+  {
+   "line": 43,
+   "kicker": "For planners",
+   "headline": "The factory ramp sets the pace for drone sites"
+  },
+  {
+   "line": 44,
+   "kicker": "Google research",
+   "headline": "Capable AI agents get sidetracked by stale information",
+   "visual": {
+    "template": "flow",
+    "props": {
+     "steps": [
+      {
+       "label": "Outdated information",
+       "say": "outdated information"
+      },
+      {
+       "label": "Work nobody asked for",
+       "say": "work nobody asked for"
+      },
+      {
+       "label": "Far more resources",
+       "say": "far more resources"
+      },
+      {
+       "label": "Goal not advanced",
+       "say": "closer to the goal"
+      }
+     ]
+    }
+   },
+   "source": "Logistics Viewpoints"
+  },
+  {
+   "line": 45,
+   "keep": true,
+   "kicker": "Google research",
+   "headline": "Agents chase unasked work and burn resources",
+   "sub": "Logistics Viewpoints says that matters for agents in supply chain operations.",
+   "source": "Logistics Viewpoints"
+  },
+  {
+   "line": 46,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Data hygiene is an agent governance job",
+   "sub": "Fix it before any S&OP step gets automated."
+  },
+  {
+   "line": 48,
+   "kicker": "Revalize study, DACH",
+   "headline": "60% use AI extensively, few can prove the payback",
+   "kpis": [
+    {
+     "value": 60,
+     "prefix": "",
+     "suffix": "%",
+     "decimals": 0,
+     "label": "of manufacturers use AI extensively",
+     "accent": true
+    }
+   ],
+   "source": "produktion.de"
+  },
+  {
+   "line": 49,
+   "kicker": "For planners",
+   "headline": "Start AI projects from a measured baseline",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Forecast error",
+       "say": "forecast error"
+      },
+      {
+       "label": "Schedule changes",
+       "say": "schedule changes"
+      },
+      {
+       "label": "Inventory days",
+       "say": "inventory days"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 50,
+   "kicker": "Anthropic",
+   "headline": "Claude for Manufacturing launches",
+   "kpis": [
+    {
+     "value": 17,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "skills"
+    },
+    {
+     "value": 4,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "label": "connectors"
+    }
+   ],
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Quotes",
+       "say": "quotes"
+      },
+      {
+       "label": "Quality reports",
+       "say": "quality reports"
+      },
+      {
+       "label": "Supplier requests",
+       "say": "supplier requests"
+      }
+     ]
+    }
+   },
+   "source": "Manufacturing Dive"
+  },
+  {
+   "line": 51,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "AI labs go after the paperwork around planning first",
+   "sub": "Disclosure: The Planning Desk's agents run on Anthropic's Claude."
+  },
+  {
+   "line": 52,
+   "kicker": "arXiv preprint",
+   "headline": "An agent chooses when to override the ensemble forecast",
+   "sub": "Not peer reviewed. It picks among values the ensemble already produced.",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Base forecast"
+      },
+      {
+       "label": "Distribution-free bounds"
+      },
+      {
+       "label": "Quantiles"
+      },
+      {
+       "label": "Bias-corrected estimate"
+      }
+     ]
+    }
+   },
+   "source": "arXiv"
+  },
+  {
+   "line": 53,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Forecast value add, measured rather than argued"
+  },
+  {
+   "line": 54,
+   "kicker": "Nvidia",
+   "headline": "Jensen Huang resigns with immediate effect",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Jensen Huang",
+       "detail": "Resigns as CEO and board member",
+       "say": "Jensen Huang"
+      },
+      {
+       "label": "Colette Kress",
+       "detail": "Interim CEO",
+       "say": "Colette Kress"
+      },
+      {
+       "label": "Harvey Jones",
+       "detail": "First board chair",
+       "say": "Harvey Jones"
+      },
+      {
+       "label": "17 November",
+       "detail": "Quarterly results",
+       "say": "Tuesday"
+      }
+     ]
+    }
+   },
+   "source": "NVIDIA (SEC filing)"
+  },
+  {
+   "line": 56,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Watch chip allocation and roadmap signals"
+  },
+  {
+   "line": 57,
+   "kicker": "Hermle",
+   "headline": "Hermle raises its 2026 outlook",
+   "sub": "Operating profit at least at last year's level, at best up a low double-digit percentage.",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Profitable individual projects",
+       "say": "profitable individual projects"
+      },
+      {
+       "label": "Supply chain risks cost less than expected",
+       "say": "cost less than expected"
+      }
+     ]
+    }
+   },
+   "source": "Hermle ad hoc release"
+  },
+  {
+   "line": 58,
+   "keep": true,
+   "kicker": "Hermle's reasons",
+   "headline": "Disruption money set aside wasn't all needed"
+  },
+  {
+   "line": 59,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Review the risk reserve like the demand line"
+  },
+  {
+   "line": 60,
+   "kicker": "Denmark",
+   "headline": "Trading firms overrepresented among those seeking help",
+   "visual": {
+    "template": "flow",
+    "props": {
+     "steps": [
+      {
+       "label": "Long delivery times",
+       "say": "Long delivery times"
+      },
+      {
+       "label": "Prepayments to suppliers",
+       "say": "prepayments to suppliers"
+      },
+      {
+       "label": "Rising costs",
+       "say": "rising costs"
+      },
+      {
+       "label": "Cash squeezed",
+       "say": "squeezing their cash"
+      }
+     ]
+    }
+   },
+   "source": "SCM.dk"
+  },
+  {
+   "line": 63,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Price lead time and payment terms, not only unit cost"
+  },
+  {
+   "line": 64,
+   "kicker": "arXiv preprint",
+   "headline": "How long can a capacity-limited chain survive a demand shock?",
+   "sub": "Not peer reviewed. Serial chains with delays, demand above maximum capacity.",
+   "source": "arXiv"
+  },
+  {
+   "line": 65,
+   "kicker": "arXiv preprint",
+   "headline": "Aiming for a guarantee on survival time",
+   "sub": "Existing control methods give none. The excerpt gives no numbers yet."
+  },
+  {
+   "line": 66,
+   "kicker": "For planners",
+   "headline": "Buffer reviews should answer in weeks, with a number"
+  },
+  {
+   "line": 67,
+   "kicker": "Sweden",
+   "headline": "Swedish industry leaves the downturn, unevenly",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Defence",
+       "detail": "Growing strongly",
+       "say": "defence"
+      },
+      {
+       "label": "Electrification",
+       "detail": "Growing strongly",
+       "say": "electrification"
+      },
+      {
+       "label": "Infrastructure",
+       "detail": "Growing strongly",
+       "say": "infrastructure"
+      },
+      {
+       "label": "Other sectors",
+       "detail": "Weak demand, high costs",
+       "say": "Other sectors"
+      }
+     ]
+    }
+   },
+   "source": "Teknikföretagen, Industriarbetsgivarna"
+  },
+  {
+   "line": 68,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Build the 2027 demand plan segment by segment"
+  },
+  {
+   "line": 69,
+   "kicker": "Essity, Lilla Edet",
+   "headline": "A new Tork machine with 50% more capacity",
+   "kpis": [
+    {
+     "value": 50,
+     "prefix": "+",
+     "suffix": "%",
+     "decimals": 0,
+     "label": "more capacity than the existing machine",
+     "accent": true
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Machine capacity, existing machine = 100",
+     "items": [
+      {
+       "label": "Existing",
+       "value": 100
+      },
+      {
+       "label": "New machine",
+       "value": 150,
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "sub": "Runs on both virgin and recycled fibre.",
+   "source": "Essity"
+  },
+  {
+   "line": 70,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Raw material choice built into the asset"
+  },
+  {
+   "line": 71,
+   "kicker": "Stora Enso",
+   "headline": "Central European sawmills kept, to be streamlined",
+   "sub": "The strategic review launched in November 2025 is closed. No scope or numbers given.",
+   "source": "Stora Enso"
+  },
+  {
+   "line": 72,
+   "kicker": "For planners",
+   "headline": "DACH timber buyers: watch mill output"
+  },
+  {
+   "line": 73,
+   "kicker": "Lesjöfors",
+   "headline": "A German distribution site for Central and Eastern Europe",
+   "sub": "For its automotive aftermarket business. No size, location or date given.",
+   "source": "Dagens Logistik"
+  },
+  {
+   "line": 74,
+   "kicker": "For planners",
+   "headline": "A node closer to workshops is a service level decision"
+  },
+  {
+   "line": 75,
+   "kicker": "Epiroc",
+   "headline": "Epiroc buys mining spare-parts supplier Aramine",
+   "sub": "French supplier of spare parts and services for underground mining. No price given.",
+   "source": "Epiroc"
+  },
+  {
+   "line": 76,
+   "kicker": "ABB, Ratingen",
+   "headline": "Fabrik des Jahres 2026 goes to ABB Ratingen",
+   "sub": "35th edition. Growth, automation and digital shop floor management.",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 1.5,
+     "points": [
+      {
+       "name": "Ratingen",
+       "lat": 51.3,
+       "lon": 6.85,
+       "alert": true
+      }
+     ],
+     "routes": []
+    }
+   },
+   "source": "produktion.de"
+  },
+  {
+   "line": 77,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Live shop floor data feeds short-cycle scheduling"
+  },
+  {
+   "line": 78,
+   "kicker": "Market moves, Sparetech",
+   "headline": "Sparetech raises a $20m Series B",
+   "kpis": [
+    {
+     "value": 20,
+     "prefix": "$",
+     "suffix": "m",
+     "decimals": 0,
+     "label": "Series B"
+    }
+   ],
+   "sub": "Led by Blume Equity and Insight Partners.",
+   "source": "produktion.de"
+  },
+  {
+   "line": 79,
+   "kicker": "Sparetech's own target",
+   "headline": "Spare parts stock down 60% in three years, it says",
+   "kpis": [
+    {
+     "value": 60,
+     "prefix": "-",
+     "suffix": "%",
+     "decimals": 0,
+     "label": "target cut, not a measured result"
+    }
+   ]
+  },
+  {
+   "line": 80,
+   "kicker": "For buyers",
+   "headline": "Maintenance stock becomes a planning problem of its own"
+  },
+  {
+   "line": 81,
+   "kicker": "Freight desk",
+   "headline": "Spot rates easing as Red Sea routes return",
+   "visual": {
+    "template": "list",
+    "props": {
+     "items": [
+      {
+       "label": "Drewry WCI Shanghai–Rotterdam",
+       "detail": "About $3,500 per 40ft, down 3% on the week",
+       "say": "Drewry"
+      },
+      {
+       "label": "Xeneta 2027 outlook",
+       "detail": "Spot rates about 30% lower on average",
+       "say": "Xeneta"
+      },
+      {
+       "label": "Red Sea",
+       "detail": "Almost all major carriers back on Asia–Europe",
+       "say": "Red Sea routes"
+      }
+     ]
+    }
+   },
+   "source": "The Loadstar, Dagens Logistik, SupplyChainBrain"
+  },
+  {
+   "line": 82,
+   "keep": true,
+   "kicker": "Freight desk",
+   "headline": "Xeneta sees 2027 spot rates about 30% lower",
+   "kpis": [
+    {
+     "value": 30,
+     "prefix": "-",
+     "suffix": "%",
+     "decimals": 0,
+     "label": "2027 spot rates vs Q3 2026",
+     "accent": true
+    }
+   ],
+   "source": "Xeneta via Dagens Logistik"
+  },
+  {
+   "line": 83,
+   "kicker": "US and China",
+   "headline": "Trade truce extended, port fees paused into January",
+   "visual": {
+    "template": "timeline",
+    "props": {
+     "items": [
+      {
+       "label": "10 Nov",
+       "detail": "Truce was due to expire",
+       "say": "two months"
+      },
+      {
+       "label": "9 Jan",
+       "detail": "US fees on Chinese ships paused until",
+       "say": "paused port fees"
+      },
+      {
+       "label": "10 Jan",
+       "detail": "China fees on US-linked ships paused until",
+       "say": "tenth of January"
+      }
+     ]
+    }
+   },
+   "source": "SupplyChainBrain, SCM.dk"
+  },
+  {
+   "line": 84,
+   "kicker": "Strait of Hormuz",
+   "headline": "Burning tankers, a US strike and new mine warnings",
+   "sub": "Gulf-sourced polymers need longer safety lead times and a named alternative supplier.",
+   "visual": {
+    "template": "route",
+    "props": {
+     "pad": 4,
+     "points": [
+      {
+       "name": "Strait of Hormuz",
+       "lat": 26.57,
+       "lon": 56.25,
+       "alert": true
+      }
+     ],
+     "routes": []
+    }
+   },
+   "source": "Splash247"
+  },
+  {
+   "line": 85,
+   "kicker": "Week ahead",
+   "headline": "Nvidia results, then IBF Europe in Amsterdam",
+   "visual": {
+    "template": "timeline",
+    "props": {
+     "items": [
+      {
+       "label": "17 Nov",
+       "detail": "Nvidia quarterly results",
+       "say": "Nvidia reports"
+      },
+      {
+       "label": "18–20 Nov",
+       "detail": "IBF Europe S&OP/IBP conference, Amsterdam",
+       "say": "Wednesday to Friday"
+      },
+      {
+       "label": "15 Dec",
+       "detail": "BME webinar, Sourcing Spotlight India",
+       "say": "fifteenth of December"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "line": 86,
+   "kicker": "Nordic parcel peak",
+   "headline": "Posten Bring e-commerce volumes up 14%",
+   "kpis": [
+    {
+     "value": 14,
+     "prefix": "+",
+     "suffix": "%",
+     "decimals": 0,
+     "label": "e-commerce parcels, Q3",
+     "accent": true
+    }
+   ],
+   "sub": "Bring in Denmark is doubling terminal staff for peak.",
+   "source": "MT Logistikk, SCM.dk"
+  },
+  {
+   "line": 87,
+   "kicker": "HHLA, Hamburg",
+   "headline": "Profit drops on automation start-up and strikes",
+   "sub": "Keep Rotterdam or Bremerhaven routings live in Q1 plans.",
+   "source": "VerkehrsRundschau"
+  },
+  {
+   "line": 87,
+   "at": "On the fifteenth of December",
+   "kicker": "BME, online",
+   "headline": "Sourcing Spotlight India webinar on 15 December",
+   "sub": "For DACH buyers building a second sourcing base outside China.",
+   "source": "BME"
+  },
+  {
+   "line": 88,
+   "kicker": "Rhine at Kaub",
+   "headline": "Kaub climbs back toward a full channel",
+   "kpis": [
+    {
+     "value": 73,
+     "prefix": "",
+     "suffix": " cm",
+     "decimals": 0,
+     "label": "Kaub, Saturday",
+     "accent": true
+    },
+    {
+     "value": 77,
+     "prefix": "",
+     "suffix": " cm",
+     "decimals": 0,
+     "label": "needed for a 1.90 m channel"
+    }
+   ],
+   "visual": {
+    "template": "columns",
+    "props": {
+     "title": "Rhine gauge at Kaub, cm",
+     "target": 77,
+     "items": [
+      {
+       "label": "8 Nov",
+       "value": 13
+      },
+      {
+       "label": "12 Nov",
+       "value": 37
+      },
+      {
+       "label": "14 Nov",
+       "value": 73,
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "source": "Pegelonline"
+  },
+  {
+   "line": 89,
+   "keep": true,
+   "kicker": "For planners",
+   "headline": "Keep rail backup booked for December until gauges hold"
+  },
+  {
+   "line": 90,
+   "kicker": "The Planning Desk",
+   "headline": "The daily briefing is back tomorrow morning"
+  },
+  {
+   "line": 91,
+   "kicker": "This week",
+   "headline": "Plan by plant, patch old systems, check the model"
+  }
+ ]
+}

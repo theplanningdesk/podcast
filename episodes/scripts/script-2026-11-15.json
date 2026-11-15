@@ -1,0 +1,747 @@
+{
+ "show": "The Planning Desk",
+ "episode_title": "Mercedes Plants, Cyberattacks, AI Optimisation",
+ "week": "2026-W46",
+ "run_date": "2026-11-15",
+ "brief_file": "news-brief-2026-11-15.md",
+ "target_runtime_sec": 900,
+ "word_count": 2619,
+ "hosts": {
+  "F": {
+   "name": "Anna",
+   "voice": "female, senior news anchor, calm, quick, warm"
+  },
+  "M": {
+   "name": "Erik",
+   "voice": "male, senior news anchor, calm, quick, dry"
+  }
+ },
+ "segments": [
+  {
+   "id": "intro_music",
+   "type": "music",
+   "duration_sec": 10
+  },
+  {
+   "id": "cold_open",
+   "type": "speech",
+   "items": [
+    "2026-W46-01",
+    "2026-W46-T1"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "Mercedes-Benz has stopped all further investment in its German plants, and management is now examining which of those sites may have to close."
+    },
+    {
+     "speaker": "M",
+     "text": "German industry moved from cutting costs in place to choosing which plants survive. This is The Planning Desk, the week in review."
+    }
+   ]
+  },
+  {
+   "id": "welcome",
+   "type": "speech",
+   "items": [
+    "2026-W46-T1",
+    "2026-W46-T2",
+    "2026-W46-T3",
+    "2026-W46-T4"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "Good morning, this is The Planning Desk and I'm Anna."
+    },
+    {
+     "speaker": "M",
+     "text": "And I'm Erik."
+    },
+    {
+     "speaker": "F",
+     "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic. Three threads ran through the week, and the first is carmakers and machine builders redrawing their footprints."
+    },
+    {
+     "speaker": "M",
+     "text": "The second is cyberattacks reaching factory floors and supermarket fridges, and the third is A I claiming big wins on optimisation problems while the data underneath stays stale."
+    },
+    {
+     "speaker": "F",
+     "text": "The Rhine also climbed back from thirteen centimetres to almost navigable, so we finish on the gauges."
+    }
+   ]
+  },
+  {
+   "id": "week_threads",
+   "type": "speech",
+   "items": [
+    "2026-W46-T1",
+    "2026-W46-01",
+    "2026-W46-03",
+    "2026-W46-08",
+    "2026-W46-T2",
+    "2026-W46-16",
+    "2026-W46-17",
+    "2026-W46-30",
+    "2026-W46-T3",
+    "2026-W46-02"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "We start with Mercedes, where board member Michael Schiebe told T T that all further investment in the German plants has stopped."
+    },
+    {
+     "speaker": "M",
+     "text": "He said management is examining which German sites may have to close if costs don't come down. Talks with unions on cost cuts have made no progress, and he named tough Chinese competition and high costs as the reasons."
+    },
+    {
+     "speaker": "F",
+     "text": "Earlier in the week Industriemagazin reported Mercedes' China sales down thirty-one percent, with a deep overhaul of plants and supply chains under way. No plants, jobs or figures were named."
+    },
+    {
+     "speaker": "M",
+     "text": "An investment freeze is a footprint decision in all but name. Mercedes suppliers in Germany and Austria should treat 2027 volumes at each German plant as at risk, and ask which programmes could move."
+    },
+    {
+     "speaker": "F",
+     "text": "BMW went the other way on batteries. It contracted Samsung S D I for Europe and L G Energy Solution for the US to supply cells for its Neue Klasse batteries, alongside C A T L and EVE Energy."
+    },
+    {
+     "speaker": "M",
+     "text": "The cells are to be made as close as possible to BMW's five battery assembly sites, from Irlbach-Straßkirchen and Debrecen to Shenyang, Woodruff and San Luis Potosí. Deliveries start from the end of the decade."
+    },
+    {
+     "speaker": "F",
+     "text": "That gives two suppliers per region next to each assembly site, dual sourcing designed into the network years ahead."
+    },
+    {
+     "speaker": "M",
+     "text": "The same week showed why it matters. BMW cut shifts at Regensburg, Leipzig and Oxford, and Škoda restricted output of the Enyaq and Elroq, because wire harnesses were missing."
+    },
+    {
+     "speaker": "F",
+     "text": "Handelsblatt research links the shortage to Russian attacks on Kromberg & Schubert plants in Ukraine, plus flooding at a plant in Morocco. Škoda and BMW Regensburg are back on normal shifts, and nobody knows the size of the backlog."
+    },
+    {
+     "speaker": "M",
+     "text": "Carmakers added suppliers for this part after 2022, yet one customised part still stops lines. A second source that isn't tooled and approved for the same variants isn't a real backup."
+    },
+    {
+     "speaker": "F",
+     "text": "Put together, anyone supplying German and Austrian industry should plan 2027 volumes by plant, not by customer. Erik, thread two is security."
+    },
+    {
+     "speaker": "M",
+     "text": "Cyberattacks warmed up supermarket freezers in stores in seven European countries, including ICA and Coop sites in Sweden. Danish chains asked suppliers to review security, and Denmark's Agency for Societal Safety warned the country could be hit."
+    },
+    {
+     "speaker": "F",
+     "text": "Then Danfoss confirmed that three of its own control systems, running outdated software, were among those affected. It urged customers to update and secure remote access."
+    },
+    {
+     "speaker": "M",
+     "text": "In Sweden, office furniture maker Kinnarps stopped production at three sites after an intrusion found on a Saturday evening. It shut its systems straight away to limit the damage."
+    },
+    {
+     "speaker": "F",
+     "text": "And on Friday Maersk reported that unauthorised parties got into one of its local legacy systems and took data. It says other systems and customer platforms weren't affected."
+    },
+    {
+     "speaker": "M",
+     "text": "Each case came through old, connected systems. Continuity plans need a patch and remote access check for every connected asset, plus a manual way to take orders and ship for the first days."
+    },
+    {
+     "speaker": "F",
+     "text": "Thread three is A I and optimisation. Anthropic says Claude agents worked on two hundred and three open problems in MIPLIB, the standard library of mixed-integer optimisation problems."
+    },
+    {
+     "speaker": "M",
+     "text": "It says they beat the listed best solution in seventy-two cases and proved a solution optimal in forty-five. A disclosure here, the A I agents that make this show run on Anthropic's Claude."
+    },
+    {
+     "speaker": "F",
+     "text": "One problem times forty-two trains to cut peak power use. The agents beat MIPLIB's best timetable by two point six percent in under two hours, and later proved no better timetable exists."
+    },
+    {
+     "speaker": "M",
+     "text": "Anthropic says it has submitted the solutions to MIPLIB for anyone to check, and The Defiant reports MIPLIB hasn't yet publicly confirmed the tally."
+    },
+    {
+     "speaker": "F",
+     "text": "In planning the solve is rarely the bottleneck. Plans fail on lead times, capacities and yields that stopped matching reality, so faster search on stale parameters still optimises the wrong problem."
+    },
+    {
+     "speaker": "M",
+     "text": "Agents may matter most for keeping the model honest against actuals, and the rest of the A I week pointed the same way. Anna, over to planning first."
+    }
+   ]
+  },
+  {
+   "id": "planning",
+   "type": "speech",
+   "items": [
+    "2026-W46-06",
+    "2026-W46-04",
+    "2026-W46-05",
+    "2026-W46-07",
+    "2026-W46-10",
+    "2026-W46-12"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "Machine builders are cutting too. Deere will end production at two Iowa plants to align capacity with demand, and shift some work out of its Illinois and Louisiana factories. It will also consolidate sugar cane harvester production in Catalão, Brazil, closer to that market."
+    },
+    {
+     "speaker": "M",
+     "text": "Deere answers a slump by closing sites and putting products next to their markets. Its suppliers should ask now which parts move to which plant, and when."
+    },
+    {
+     "speaker": "F",
+     "text": "Ericsson has stopped making millimetre wave radios at its smart factory in Lewisville, Texas, and consolidated that production in Estonia. It calls this a footprint decision based on customer requirements, demand and efficiency."
+    },
+    {
+     "speaker": "M",
+     "text": "The Texas plant employs about five hundred people and has had about a hundred and fifty million dollars invested. Light Reading points to weak US demand for these radios, which now ship into the US under tariffs."
+    },
+    {
+     "speaker": "F",
+     "text": "For a low-volume line, one well-loaded plant can beat making where you sell, even after paying the tariff."
+    },
+    {
+     "speaker": "M",
+     "text": "Power is betting on one node too. Almost all electronics sold in its Nordic stores pass through its central warehouse in Skillingaryd, south of Jönköping."
+    },
+    {
+     "speaker": "F",
+     "text": "The retailer will expand it by about fifty-five thousand square metres, its third expansion. Prologis is buying the plot next door and building the new hall, with work from early 2027 and move-in early 2028."
+    },
+    {
+     "speaker": "M",
+     "text": "One site for the whole region buys inventory pooling, but it puts every store's availability behind a single building."
+    },
+    {
+     "speaker": "F",
+     "text": "BASF inaugurated a new plant for M D I, a base chemical for polyurethanes, at its Geismar site in Louisiana. The investment is about a billion dollars, which BASF calls its largest wholly owned US investment to date."
+    },
+    {
+     "speaker": "M",
+     "text": "It almost doubles the site's annual capacity to about six hundred thousand tonnes and makes BASF the largest M D I producer in North America, and aniline capacity went up too. The company says the aim is local supply for construction, appliances, cars and furniture."
+    },
+    {
+     "speaker": "F",
+     "text": "A German chemicals major is putting its biggest new capacity in the US while Germany debates energy costs. European polyurethane buyers should note that for their own sourcing split."
+    },
+    {
+     "speaker": "M",
+     "text": "Honda will put three billion dollars into a new hybrid vehicle plant in Ohio, with two thousand jobs, close to its existing US footprint."
+    },
+    {
+     "speaker": "F",
+     "text": "Building next to existing plants shares suppliers and staff, the low-risk way to add capacity while the powertrain mix is uncertain."
+    },
+    {
+     "speaker": "M",
+     "text": "And drone maker Zipline raised one and a half billion dollars to expand US manufacturing. On Friday Walmart said it will more than double its planned drone delivery sites with Zipline."
+    },
+    {
+     "speaker": "F",
+     "text": "For retailers counting on drone sites, the factory ramp sets the pace, not demand. Erik, the A I desk is yours."
+    }
+   ]
+  },
+  {
+   "id": "ai_tech",
+   "type": "speech",
+   "items": [
+    "2026-W46-T3",
+    "2026-W46-13",
+    "2026-W46-14",
+    "2026-W46-15",
+    "2026-W46-25",
+    "2026-W46-18"
+   ],
+   "lines": [
+    {
+     "speaker": "M",
+     "text": "The rest of the A I week backed up that point about stale data. Research Google published on the sixth of November found that more capable A I agents can be distracted by outdated information."
+    },
+    {
+     "speaker": "F",
+     "text": "They also chase work nobody asked for and use far more resources without getting closer to the goal, Logistics Viewpoints reports. The analyst firm says that matters for agents in supply chain operations."
+    },
+    {
+     "speaker": "M",
+     "text": "A planning agent fed old exceptions or last month's assumptions will chase the wrong problem. Data hygiene becomes an agent governance job before any step of sales and operations planning, S and OP, gets automated."
+    },
+    {
+     "speaker": "F",
+     "text": "And can anyone prove the payback?"
+    },
+    {
+     "speaker": "M",
+     "text": "Not yet, according to a study by manufacturing software company Revalize, reported by produktion dot de. It finds sixty percent of manufacturers already use A I extensively, but with serious gaps in proving the economic benefit."
+    },
+    {
+     "speaker": "F",
+     "text": "Adoption is running ahead of the groundwork needed to make it pay. Planning A I projects that start from a measured baseline, like forecast error, schedule changes or inventory days, will win the 2027 budget fight."
+    },
+    {
+     "speaker": "M",
+     "text": "Anthropic also launched Claude for Manufacturing, a plugin with seventeen skills and four connectors. The company says it helps manufacturers draft quotes, quality reports and supplier requests from the systems they already run."
+    },
+    {
+     "speaker": "F",
+     "text": "Same disclosure as before, our agents run on Claude. The big labs are going after the paperwork around planning first, and that paperwork is where most planners' hours actually go."
+    },
+    {
+     "speaker": "M",
+     "text": "On the research side, a new arXiv preprint, not yet peer reviewed, lets an agent choose when to override the ensemble forecast. For each period it picks among values the ensemble already produced, scored against similar past periods."
+    },
+    {
+     "speaker": "F",
+     "text": "The abstract gives no measured result. It formalises what good demand planners do by hand, and could turn forecast value add into something measured rather than argued."
+    },
+    {
+     "speaker": "M",
+     "text": "At the top of the hardware chain, Jensen Huang resigned as Nvidia's president, chief executive and board member with immediate effect. Finance chief Colette Kress is interim chief executive while the board searches."
+    },
+    {
+     "speaker": "F",
+     "text": "Former Synopsys chief Harvey Jones becomes Nvidia's first board chair, and the release gives no reason. Quarterly results follow on Tuesday."
+    },
+    {
+     "speaker": "M",
+     "text": "Planners should watch whether the change shifts chip allocation or roadmap signals, and leave the headlines to the markets desk."
+    }
+   ]
+  },
+  {
+   "id": "management",
+   "type": "speech",
+   "items": [
+    "2026-W46-21",
+    "2026-W46-23",
+    "2026-W46-26"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "In management, machine tool maker Hermle raised its 2026 forecast. It now expects operating profit at least at last year's level, and at best up by a low double-digit percentage."
+    },
+    {
+     "speaker": "M",
+     "text": "It names two reasons, profitable individual projects and supply chain risks that cost less than expected. Put simply, the money it set aside for disruption wasn't all needed."
+    },
+    {
+     "speaker": "F",
+     "text": "The risk reserve in a plan is a real number that can swing the year either way, so it deserves the same review as the demand line."
+    },
+    {
+     "speaker": "M",
+     "text": "In Denmark, trading companies are strongly overrepresented among firms seeking financial help, S C M dot dk reports."
+    },
+    {
+     "speaker": "F",
+     "text": "Why trading firms?"
+    },
+    {
+     "speaker": "M",
+     "text": "Long delivery times, prepayments to suppliers and rising costs are squeezing their cash and earnings. They pay for goods weeks before they can sell them."
+    },
+    {
+     "speaker": "F",
+     "text": "Every extra week of lead time paid up front is working capital. Distributors should price supplier lead times and payment terms into sourcing choices, rather than unit cost alone."
+    },
+    {
+     "speaker": "M",
+     "text": "A second arXiv preprint, also not peer reviewed, asks how long a capacity-limited chain can survive a demand shock. It studies serial chains with delays where demand runs above maximum capacity, so inventory along the chain sets how long you can keep delivering."
+    },
+    {
+     "speaker": "F",
+     "text": "The authors say existing control methods give no guarantee on that survival time, and they set out to provide one. The excerpt gives no numbers yet."
+    },
+    {
+     "speaker": "M",
+     "text": "How many weeks you can hold when demand jumps past capacity is exactly the question a buffer sizing review should answer with a number, not a feeling."
+    }
+   ]
+  },
+  {
+   "id": "nordics_dach",
+   "type": "speech",
+   "items": [
+    "2026-W46-24",
+    "2026-W46-09",
+    "2026-W46-22",
+    "2026-W46-11",
+    "2026-W46-20",
+    "2026-W46-33"
+   ],
+   "lines": [
+    {
+     "speaker": "M",
+     "text": "Over to the Nordics and DACH, where Swedish industry is leaving the downturn, unevenly. Teknikföretagen and Industriarbetsgivarna say parts of engineering grow strongly on defence, electrification and infrastructure investment."
+    },
+    {
+     "speaker": "F",
+     "text": "Other sectors are squeezed by weak demand, high costs and tougher competition. A split recovery makes one national growth number useless for a 2027 demand plan, so build it segment by segment."
+    },
+    {
+     "speaker": "M",
+     "text": "Essity is adding a Tork machine at Lilla Edet in Sweden with fifty percent more capacity than the existing one. It can run on both virgin and recycled fibre, and Essity cites growing demand."
+    },
+    {
+     "speaker": "F",
+     "text": "A fibre-flexible machine gives Essity a raw material choice inside one site, resilience built into the asset rather than the supplier list."
+    },
+    {
+     "speaker": "M",
+     "text": "Stora Enso finished the strategic review of its Central European sawmills and building solutions business, launched a year ago. It keeps the business and plans to streamline it, with no scope or numbers given."
+    },
+    {
+     "speaker": "F",
+     "text": "Keep and streamline after a long sale process usually means site-by-site capacity cuts next, so DACH timber buyers should watch mill output."
+    },
+    {
+     "speaker": "M",
+     "text": "Swedish spring maker Lesjöfors is building a logistics and distribution site in Germany for its car aftermarket business in Central and Eastern Europe, with no size, location or date given."
+    },
+    {
+     "speaker": "F",
+     "text": "Aftermarket parts live on availability, so a node closer to those workshops is a service level decision."
+    },
+    {
+     "speaker": "M",
+     "text": "Epiroc agreed to buy Aramine, a French supplier of spare parts and services for underground mining, with no price given. Pulling aftermarket supply in-house puts service parts planning at the centre of the integration."
+    },
+    {
+     "speaker": "F",
+     "text": "And ABB's site in Ratingen won the thirty-fifth Fabrik des Jahres award, Germany's factory of the year, for growth, automation and digital shop floor management."
+    },
+    {
+     "speaker": "M",
+     "text": "The winners run shop floor decisions on live data, the same discipline a short-cycle scheduling loop needs."
+    }
+   ]
+  },
+  {
+   "id": "market_moves",
+   "type": "speech",
+   "items": [
+    "2026-W46-19"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "In market moves, spare parts software company Sparetech announced a twenty million dollar Series B, led by Blume Equity and Insight Partners."
+    },
+    {
+     "speaker": "M",
+     "text": "It says it aims to use A I to cut manufacturers' spare parts inventories by sixty percent within three years while keeping parts available. That's the company's own target, not a measured result."
+    },
+    {
+     "speaker": "F",
+     "text": "For buyers of planning software, investor money in maintenance stock says spare parts inventory is becoming a planning problem in its own right, separate from production stock."
+    }
+   ]
+  },
+  {
+   "id": "week_ahead",
+   "type": "speech",
+   "items": [
+    "2026-W46-F2",
+    "2026-W46-F3",
+    "2026-W46-F4",
+    "2026-W46-27",
+    "2026-W46-28",
+    "2026-W46-E1",
+    "2026-W46-E2",
+    "2026-W46-29",
+    "2026-W46-31",
+    "2026-W46-E3",
+    "2026-W46-T4",
+    "2026-W46-F1"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "Here's the week ahead, starting with the freight desk. Drewry's Shanghai to Rotterdam rate fell three percent on the week to about three thousand five hundred dollars per forty-foot container, with more blank sailings as contract talks start."
+    },
+    {
+     "speaker": "M",
+     "text": "Xeneta sees spot rates about thirty percent lower on average in 2027, and almost all major carriers are back on Red Sea routes to Europe."
+    },
+    {
+     "speaker": "F",
+     "text": "China extended its trade truce with the US by two months and paused port fees on US-linked ships until the tenth of January. First quarter orders should still keep a tariff snapback case."
+    },
+    {
+     "speaker": "M",
+     "text": "Hormuz had a weekend of burning tankers, a US strike on a bulk carrier and fresh Iranian mine warnings. Gulf-sourced polymers need longer safety lead times and a named alternative supplier."
+    },
+    {
+     "speaker": "F",
+     "text": "On Tuesday Nvidia reports quarterly results, the first under its interim chief executive. From Wednesday to Friday the Institute of Business Forecasting and Planning holds its Europe conference on S and OP and integrated business planning, I B P, in Amsterdam."
+    },
+    {
+     "speaker": "M",
+     "text": "Peak season is close. Posten Bring's e-commerce parcel volumes rose fourteen percent in the third quarter, and Bring in Denmark is doubling terminal staff, so retailers should lock December capacity now."
+    },
+    {
+     "speaker": "F",
+     "text": "Hamburg's H H L A reports a sharp profit drop on automation start-up problems and strikes, so DACH importers should keep Rotterdam or Bremerhaven routings live. On the fifteenth of December, B M E runs a webinar on sourcing from India, for DACH buyers building a second base outside China."
+    },
+    {
+     "speaker": "M",
+     "text": "The one thing to watch is the Kaub gauge on the Rhine. It read thirteen centimetres on the eighth, thirty-seven on Thursday and seventy-three on Saturday, close to the seventy-seven needed for a full channel."
+    },
+    {
+     "speaker": "F",
+     "text": "One wet week isn't a trend, so keep the rail backup booked for December until the gauges hold."
+    }
+   ]
+  },
+  {
+   "id": "sign_off",
+   "type": "speech",
+   "items": [
+    "2026-W46-T1"
+   ],
+   "lines": [
+    {
+     "speaker": "F",
+     "text": "That's the week in review on The Planning Desk. The daily briefing is back tomorrow morning, and the next weekly review comes next Sunday."
+    },
+    {
+     "speaker": "M",
+     "text": "Plan by plant, patch the old systems, and check the model before you trust the solver. We'll see you tomorrow morning."
+    }
+   ]
+  },
+  {
+   "id": "outro_music",
+   "type": "music",
+   "duration_sec": 10
+  }
+ ],
+ "linkedin": {
+  "page_post": "Mercedes-Benz has frozen investment in its German plants and is weighing closures. Suppliers should plan by plant now.\n\nGerman industry moved from cutting costs to choosing which sites survive. Mercedes-Benz stopped investing in its German plants, BMW tied two battery cell suppliers to each region's assembly site, and Deere is closing two Iowa plants. For suppliers, 2027 volumes belong in the plan site by site, not customer by customer.\n\nCyberattacks reached the shop floor. Hacked supermarket fridges in seven countries included three Danfoss control systems on outdated software, and an intrusion stopped three Kinnarps furniture plants. Continuity plans need a patch and remote-access check on every connected asset, and a manual fallback.\n\nAnthropic says Claude agents beat the best listed solution on 72 of 203 open MIPLIB problems, a tally MIPLIB hasn't yet confirmed. (Disclosure: our agents run on Claude.) For planners the bottleneck is stale lead times and capacities, not the solver.\n\nWhich of your 2027 supplier volumes are still planned by customer rather than by plant?\n\nWatch or listen: The Planning Desk, the week in review every Sunday.\n\n#supplychain #networkdesign #automotive",
+  "tags": [
+   "Mercedes-Benz",
+   "BMW",
+   "Danfoss"
+  ]
+ },
+ "newsletter": {
+  "subject": "Mercedes Plant Freeze: German Industry Starts Choosing Sites",
+  "body_md": "German industry spent the week deciding which sites to keep. Around that, cyberattacks stopped plants and fridges, and AI showed what it can do on hard optimisation problems.\n\n**Mercedes freezes German plant investment**\nBoard member Michael Schiebe said Mercedes-Benz has stopped all further investment in its German plants and is examining which sites may have to close if costs don't come down ([Ny Teknik](https://www.nyteknik.se/fordon/mercedes-stoppar-investeringar-i-tyskland-fabriker-kan-staengas/4513128)). Earlier, Industriemagazin reported China sales down 31% ([Industriemagazin](https://industriemagazin.at/automobil/mercedes-elektroautos-gewinne-china-werke-2026/)). Suppliers should treat 2027 volumes at each German plant as at risk.\n\n**BMW designs dual sourcing in, harnesses show why**\nBMW contracted Samsung SDI for Europe and LG Energy Solution for the US, so cells are made close to its five Neue Klasse battery sites ([electrive](https://www.electrive.com/2026/11/09/bmw-to-source-battery-cells-from-lges-and-samsung-sdi/)). The same week, missing wire harnesses from attacked Ukrainian plants cut shifts at BMW and Škoda ([Industriemagazin](https://industriemagazin.at/automobil/bmw-skoda-kabelbaum-krise-produktion-ukraine/)). A second source that isn't tooled and approved isn't a backup. Deere, meanwhile, is closing two Iowa plants ([Supply Chain Dive](https://www.supplychaindive.com/news/deere-to-end-production-at-2-iowa-plants-to-align-with-demand/874059/)).\n\n**Cyberattacks reach fridges and factories**\nDanfoss confirmed three of its control systems on outdated software were among the hacked supermarket fridges ([SCM.dk](https://www.scm.dk/efter-hackerangreb-danfoss-opfordrer-til-bedre-sikkerhed)). Kinnarps stopped three furniture plants after an intrusion ([Ny Teknik](https://www.nyteknik.se/it-saekerhet/tre-moebelfabriker-stoppade-svenska-tillverkaren-hackad/4512364)), and Maersk reported data taken from a legacy system ([VerkehrsRundschau](https://www.verkehrsrundschau.de/nachrichten/transport-logistik/it-sicherheitsvorfall-bei-maersk-3935148)). Audit patches and remote access on every connected asset, and keep a manual order-and-ship routine.\n\n**AI on the solver, stale data underneath**\nAnthropic says Claude agents beat the listed best solution on 72 of 203 open MIPLIB problems and proved 45 optimal; MIPLIB hasn't yet confirmed the tally ([The Defiant](https://thedefiant.io/frontier/ai/anthropic-says-claude-beat-best-listed-solutions-on-72-miplib-problems)). Disclosure: our agents run on Claude. Google research found capable agents get sidetracked by outdated information ([Logistics Viewpoints](https://logisticsviewpoints.com/2026/11/11/when-ai-agents-lose-focus-what-googles-research-means-for-supply-chain-operations/)). Faster search on stale lead times still solves the wrong problem.\n\n**Footprint moves in the Nordics and beyond**\nEricsson moved mmWave radio production from Texas to Estonia ([Light Reading](https://www.lightreading.com/5g/ericsson-moves-mmwave-radio-production-from-us-to-estonia)), Power is expanding its single Nordic warehouse by about 55,000 m² ([MT Logistikk](https://www.mtlogistikk.no/logistikkeiendom-power-international/bygger-ut-sentrallageret-for-tredje-gang/1359319)), and BASF nearly doubled MDI capacity in Louisiana ([BASF](https://www.basf.com/global/en/media/news-releases/2026/11/p-26-194)).\n\n**Next week:** Nvidia results on 17 November, and IBF Europe's S&OP and IBP conference in Amsterdam from 18 to 20 November ([IBF](https://ibf.org/events/amsterdam-sales-operations-planning-conference-2026))."
+ },
+ "show_notes": {
+  "summary": "Mercedes-Benz freezes investment in its German plants and weighs closures, as carmakers and Deere redraw their footprints. Also: cyberattacks on supermarket fridges, Kinnarps and Maersk, Anthropic's MIPLIB optimisation claim, Ericsson's move to Estonia, BASF in Louisiana and the Rhine's recovery at Kaub.",
+  "sources": [
+   {
+    "title": "Ny Teknik: Mercedes stops investment in Germany, plants may close",
+    "url": "https://www.nyteknik.se/fordon/mercedes-stoppar-investeringar-i-tyskland-fabriker-kan-staengas/4513128"
+   },
+   {
+    "title": "Industriemagazin: Mercedes, electric cars, profits and China",
+    "url": "https://industriemagazin.at/automobil/mercedes-elektroautos-gewinne-china-werke-2026/"
+   },
+   {
+    "title": "electrive: BMW to source battery cells from LGES and Samsung SDI",
+    "url": "https://www.electrive.com/2026/11/09/bmw-to-source-battery-cells-from-lges-and-samsung-sdi/"
+   },
+   {
+    "title": "Supply Chain Dive: BMW announces new battery supply deals for the US and Europe",
+    "url": "https://www.supplychaindive.com/news/bmw-announces-new-battery-supply-deals-for-the-us-europe/874409/"
+   },
+   {
+    "title": "Industriemagazin: BMW and Škoda hit by wire harness crisis",
+    "url": "https://industriemagazin.at/automobil/bmw-skoda-kabelbaum-krise-produktion-ukraine/"
+   },
+   {
+    "title": "SCM.dk: After hacker attack, Danfoss calls for better security",
+    "url": "https://www.scm.dk/efter-hackerangreb-danfoss-opfordrer-til-bedre-sikkerhed"
+   },
+   {
+    "title": "SCM.dk: Cyberattacks on cooling systems threaten European supply chains",
+    "url": "https://www.scm.dk/cyberangreb-mod-kolesystemer-truer-forsyningskaeder-i-europa"
+   },
+   {
+    "title": "Ny Teknik: Three furniture plants stopped after Swedish maker hacked",
+    "url": "https://www.nyteknik.se/it-saekerhet/tre-moebelfabriker-stoppade-svenska-tillverkaren-hackad/4512364"
+   },
+   {
+    "title": "VerkehrsRundschau: IT security incident at Maersk",
+    "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/it-sicherheitsvorfall-bei-maersk-3935148"
+   },
+   {
+    "title": "Claude (@claudeai): MIPLIB announcement thread",
+    "url": "https://x.com/claudeai/status/2119899477855379913"
+   },
+   {
+    "title": "Thread Reader: @claudeai MIPLIB thread",
+    "url": "https://threadreaderapp.com/thread/2119899459761131615"
+   },
+   {
+    "title": "The Defiant: Anthropic says Claude beat best listed solutions on 72 MIPLIB problems",
+    "url": "https://thedefiant.io/frontier/ai/anthropic-says-claude-beat-best-listed-solutions-on-72-miplib-problems"
+   },
+   {
+    "title": "Supply Chain Dive: Deere to end production at 2 Iowa plants",
+    "url": "https://www.supplychaindive.com/news/deere-to-end-production-at-2-iowa-plants-to-align-with-demand/874059/"
+   },
+   {
+    "title": "SupplyChainBrain: John Deere to close pair of Iowa factories",
+    "url": "https://www.supplychainbrain.com/general-scm/business-strategy-alignment/article/16425103/john-deere-to-close-pair-of-iowa-factories"
+   },
+   {
+    "title": "Light Reading: Ericsson moves mmWave radio production from US to Estonia",
+    "url": "https://www.lightreading.com/5g/ericsson-moves-mmwave-radio-production-from-us-to-estonia"
+   },
+   {
+    "title": "Evertiq: Ericsson moves mmWave radio production from Texas to Estonia",
+    "url": "https://evertiq.com/news/2026-11-09-ericsson-moves-mmwave-radio-production-from-texas-to-estonia"
+   },
+   {
+    "title": "MT Logistikk: Power expands its central warehouse for the third time",
+    "url": "https://www.mtlogistikk.no/logistikkeiendom-power-international/bygger-ut-sentrallageret-for-tredje-gang/1359319"
+   },
+   {
+    "title": "BASF: New MDI plant at Geismar Verbund site",
+    "url": "https://www.basf.com/global/en/media/news-releases/2026/11/p-26-194"
+   },
+   {
+    "title": "Manufacturing Dive: BASF MDI facility in Geismar, Louisiana",
+    "url": "https://www.manufacturingdive.com/news/basf-verbund-mdi-facility-polyurethanes-geismar-louisiana/874549/"
+   },
+   {
+    "title": "Manufacturing Dive: Honda $3B Ohio hybrid vehicle plant",
+    "url": "https://www.manufacturingdive.com/news/honda-3b-ohio-hybrid-vehicle-plant/874210/"
+   },
+   {
+    "title": "Supply Chain Dive: Zipline raises $1.5B, plans US drone manufacturing expansion",
+    "url": "https://www.supplychaindive.com/news/zipline-raises-15b-plans-us-drone-manufacturing-expansion/874009/"
+   },
+   {
+    "title": "Supply Chain Dive: Walmart more than doubles planned drone delivery sites",
+    "url": "https://www.supplychaindive.com/news/walmart-more-than-doubles-planned-drone-delivery-sites/874580/"
+   },
+   {
+    "title": "Logistics Viewpoints: When AI agents lose focus",
+    "url": "https://logisticsviewpoints.com/2026/11/11/when-ai-agents-lose-focus-what-googles-research-means-for-supply-chain-operations/"
+   },
+   {
+    "title": "produktion.de: AI in manufacturing, ROI remains unclear",
+    "url": "https://www.produktion.de/technik/ki-in-der-fertigungsindustrie-roi-bleibt-unklar/2764550"
+   },
+   {
+    "title": "Manufacturing Dive: Anthropic launches Claude for Manufacturing",
+    "url": "https://www.manufacturingdive.com/news/anthropic-launches-claude-for-manufacturing/874303/"
+   },
+   {
+    "title": "arXiv: Agent-driven forecast refinement over an ensemble",
+    "url": "https://arxiv.org/abs/2611.12116v1"
+   },
+   {
+    "title": "NVIDIA: CEO transition announcement (SEC Form 8-K)",
+    "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm"
+   },
+   {
+    "title": "finanznachrichten: Hermle raises 2026 earnings forecast",
+    "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70098160-eqs-adhoc-maschinenfabrik-berthold-hermle-aktiengesellschaft-hermle-hebt-ergebnisprognose-fuer-2026-an-022.htm"
+   },
+   {
+    "title": "SCM.dk: Long supply chains squeeze trading firms' liquidity",
+    "url": "https://www.scm.dk/lange-forsyningskaeder-presser-handelsvirksomheders-likviditet"
+   },
+   {
+    "title": "arXiv: Survival time of capacity-limited serial supply chains",
+    "url": "https://arxiv.org/abs/2611.16951v1"
+   },
+   {
+    "title": "TT: Industry recovers, but unevenly across sectors",
+    "url": "https://via.tt.se/pressmeddelande/4635239/industrin-aterhamtar-sig-men-spretigt-mellan-branscherna?lang=sv"
+   },
+   {
+    "title": "Essity: Investment in increased Tork capacity in Lilla Edet",
+    "url": "https://mfn.se/cis/a/essity/essity-invests-in-increased-production-capacity-for-tork-in-lilla-edet-013809e7"
+   },
+   {
+    "title": "Stora Enso: Strategic review of Central European sawmills concluded",
+    "url": "https://mfn.se/cis/a/stora-enso/stora-enso-oyj-stora-enso-concludes-strategic-review-for-central-european-sawmills-and-building-solutions-operations-cfa9162b"
+   },
+   {
+    "title": "Dagens Logistik: Lesjöfors invests in logistics in Germany",
+    "url": "https://dagenslogistik.se/lesjofors-logistiksatsar-i-tyskland/"
+   },
+   {
+    "title": "Epiroc: Epiroc to acquire mining spare parts supplier Aramine",
+    "url": "https://mfn.se/cis/a/epiroc/epiroc-to-acquire-mining-spare-parts-supplier-aramine-da421a24"
+   },
+   {
+    "title": "produktion.de: Fabrik des Jahres 2026, ABB takes overall win",
+    "url": "https://www.produktion.de/events-fabrik-des-jahres/fabrik-des-jahres-2026-abb-holt-den-gesamtsieg/2764041"
+   },
+   {
+    "title": "produktion.de: Sparetech secures $20m Series B",
+    "url": "https://www.produktion.de/wirtschaft/sparetech-sichert-sich-20-mio-usd-series-b-investment/2764830"
+   },
+   {
+    "title": "The Loadstar: Blanked sailings on the rise as spot rates decline",
+    "url": "https://theloadstar.com/blanked-sailings-on-the-rise-with-container-spot-rates-on-a-gentle-decline/"
+   },
+   {
+    "title": "Dagens Logistik: Container prices could fall 30% in 2027",
+    "url": "https://dagenslogistik.se/containerpriserna-kan-falla-30-procent-2027/"
+   },
+   {
+    "title": "SupplyChainBrain: Ocean traffic returns to near normal through Red Sea",
+    "url": "https://www.supplychainbrain.com/logistics/ocean-transportation/article/16425057/ocean-traffic-returns-to-nearnormal-through-red-sea"
+   },
+   {
+    "title": "SupplyChainBrain: China extends US trade truce by two months",
+    "url": "https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16424927/china-extends-us-trade-truce-by-two-months"
+   },
+   {
+    "title": "SCM.dk: China postpones port fee for American ships",
+    "url": "https://www.scm.dk/kina-udsaetter-havneafgift-for-amerikanske-skibe"
+   },
+   {
+    "title": "Splash247: Hormuz suffers weekend of fire",
+    "url": "https://splash247.com/hormuz-suffers-weekend-of-fire/"
+   },
+   {
+    "title": "IBF: Amsterdam S&OP conference 2026",
+    "url": "https://ibf.org/events/amsterdam-sales-operations-planning-conference-2026"
+   },
+   {
+    "title": "MT Logistikk: Strong parcel growth meets tough price competition",
+    "url": "https://www.mtlogistikk.no/kvartalsrapport-netthandel-posten-bring/sterk-pakkevekst-moter-toff-priskonkurranse/1361525"
+   },
+   {
+    "title": "MT Logistikk: PostNord expects up to 20% more parcels",
+    "url": "https://www.mtlogistikk.no/hentepunkter-pakkevolumer-postnord/forventer-opptil-20-prosent-flere-pakker/1356395"
+   },
+   {
+    "title": "SCM.dk: Bring doubles terminal staff for Christmas parcel peak",
+    "url": "https://www.scm.dk/bring-fordobler-terminalbemanding-for-julehandlens-pakkepres"
+   },
+   {
+    "title": "VerkehrsRundschau: HHLA reports profit slump",
+    "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/hhla-meldet-gewinneinbruch-3935159"
+   },
+   {
+    "title": "BME: Webinar Sourcing Spotlight India",
+    "url": "https://www.bme.de/news/bme-webinar-sourcing-spotlight-india-zukunftsmarkt-indien-erfolgreich-erschliessen/"
+   },
+   {
+    "title": "Pegelonline: Rhine gauges",
+    "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+   }
+  ]
+ }
+}
