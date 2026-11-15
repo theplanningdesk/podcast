@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-14T09:23:24.476153+00:00",
+ "fetched_at": "2026-11-15T09:52:56.528434+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -43,6 +43,16 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Taiwan's Foxconn Bullish on Outlook But Warns About Supply Chain Tightness",
+   "link": "https://www.supplychainbrain.com/industries/high-tech-electronics/article/16425695/taiwans-foxconn-bullish-on-outlook-but-warns-about-supply-chain-tightness",
+   "published": "2026-11-15T05:00:00+00:00",
+   "summary": "Chips, memory and some key components are currently tight, which is a challenge facing the industry as a whole.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SupplyChainBrain",
@@ -195,16 +205,6 @@
    "planning_terms": false
   },
   {
-   "source": "SupplyChainBrain",
-   "title": "How Supply Chain Leaders Can Turn Fast Decision-Making Into Competitive Advantage",
-   "link": "https://www.supplychainbrain.com/technology/inventory-planning-optimization/blog/15883276/how-supply-chain-leaders-can-turn-fast-decisionmaking-into-competitive-advantage",
-   "published": "2026-11-10T08:00:00+00:00",
-   "summary": "When a supply chain can move quickly, working capital tied up in resilience efforts can be deployed elsewhere. Yet faster decision-making...",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "SCMR",
    "title": "Buffer where it counts: The smartest place to spend a resilience dollar",
    "link": "https://www.scmr.com/article/where-to-invest-supply-chain-resilience",
@@ -330,26 +330,6 @@
    "link": "https://www.scmr.com/article/first-shift-trade-truces-port-labor-and-supply-constraints-shape-the-week-ahead",
    "published": "2026-11-09T13:21:00+00:00",
    "summary": "China’s extended trade truce leads a briefing on West Coast labor, tanker costs, USMCA planning, truck production, cargo theft, drone delivery, container pricing, rail regulation and supplier audits.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCMR",
-   "title": "Can you trust a supply chain audit in the age of AI?",
-   "link": "https://www.scmr.com/article/supply-chain-audits-ai-generated-fraud",
-   "published": "2026-11-06T15:21:00+00:00",
-   "summary": "As generative AI makes fraudulent supplier records, images and testimony easier to produce, supply chain leaders must strengthen how auditors verify evidence and corroborate compliance claims.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCMR",
-   "title": "First Shift: Port labor risk, tariff pressure and energy constraints test supply-chain plans",
-   "link": "https://www.scmr.com/article/first-shift-port-labor-risk-tariff-pressure-and-energy-constraints-test-supply-chain-plans",
-   "published": "2026-11-06T12:49:00+00:00",
-   "summary": "A renewed West Coast strike deadline leads a briefing on Canadian tariffs, energy bottlenecks, packaging scrutiny, freight recovery, cargo theft, ocean earnings, pricing strategy and supplier selection.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1016,9 +996,29 @@
   },
   {
    "source": "SC Effect",
+   "title": "New Study: Autonomous and Manual Truck Transport Are Expected to Reach Cost Parity Soon",
+   "link": "https://sceffect.se/en/ny-studie-autonoma-lastbilstransporter-nar-snart-kostnadsparitet-med-manuella/",
+   "published": null,
+   "summary": "According to a report by the consulting firm Kearney and the MIT Mobility Initiative (MMI), self-driving trucks in the U.S. are predicted to reach the same cost per mile as trucks driven by humans in two years. The same trend is expected in Europe, but not until around 2030...",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SC Effect",
+   "title": "The gap exists, but it won't be closed by adding another system",
+   "link": "https://sceffect.se/en/glappet-finns-men-det-stangs-inte-med-ett-system-till/",
+   "published": null,
+   "summary": "Andreas Stöckl at Exotec describes a problem that all warehouse managers can relate to: this morning’s plan doesn’t hold up until lunchtime. I think the diagnosis is correct, but the solution is wrong. The solution isn’t a third system between the warehouse management system and the machines. The solution is a warehouse management system that can plan, not just keep track of things...",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SC Effect",
    "title": "Voky Chooses a Flexible Automation Model to Support Continued Growth",
    "link": "https://sceffect.se/en/voky-valjer-en-flexibel-automationsmodell-for-fortsatt-tillvaxt/",
-   "published": "2026-11-13T09:59:57+00:00",
+   "published": null,
    "summary": "As Voky builds a new office and warehouse in Linköping, the company is investing in a flexible model for warehouse automation. With Element Logic’s Automation as a Service, Voky gains a scalable, long-term automation solution that includes operation, support, and ongoing optimization at predictable costs ...",
    "via": "feed",
    "lane": "planning",
@@ -1028,8 +1028,8 @@
    "source": "SC Effect",
    "title": "SCE #5 2026",
    "link": "https://sceffect.se/en/sce-5-2026/",
-   "published": "2026-11-12T12:10:12+00:00",
-   "summary": "TEMA: REALTIDSVISIBILITET OCH SPÅRBARHET END-TO-END ...",
+   "published": null,
+   "summary": "TOPIC: REAL-TIME VISIBILITY AND END-TO-END TRACEABILITY ...",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1038,8 +1038,8 @@
    "source": "SC Effect",
    "title": "The Port of Helsingborg Enhances Security for Container Cargo",
    "link": "https://sceffect.se/en/helsingborgs-hamn-hojer-sakerheten-for-containergods/",
-   "published": "2026-11-12T11:35:40+00:00",
-   "summary": "Helsingborgs Hamn stärker säkerheten i sin containerverksamhet genom att införa den spårbara och digitala tjänsten Secure Container Release (SCR). Genom tjänsten kopplas en verifierad föraridentitet till rätten att hämta en specifik container. Det stärker utlämningsprocessen och gör det svårare för obehöriga att få tillgång till containrar. Den nya lösningen tas fullt i bruk den 31 mars nästa…",
+   "published": null,
+   "summary": "The Port of Helsingborg is enhancing security in its container operations by introducing the traceable, digital service Secure Container Release (SCR). The service links a verified driver’s identity to the right to pick up a specific container. This strengthens the release process and makes it more difficult for unauthorized persons to gain access to containers. The new solution will be fully…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1090,26 +1090,6 @@
    "link": "https://sceffect.se/en/audi-testar-humanoida-ai-drivna-robotar/",
    "published": null,
    "summary": "At NVIDIA GTC in Berlin, Audi, Agile Robots, Dassault Systèmes, and NVIDIA presented a joint pilot project to automate parts of the material flow at Audi’s plant in Ingolstadt. By combining artificial intelligence, advanced robotics, and virtual simulations, the companies aim to develop new solutions for the automotive production of the future. Audi’s demand-driven material supply relies on…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SC Effect",
-   "title": "PostNord is developing its package handling system with AI robots",
-   "link": "https://sceffect.se/en/postnord-utvecklar-pakethanteringen-genom-ai-robotar/",
-   "published": null,
-   "summary": "Postnord has signed an agreement with Rebl Industries for the delivery of package robots featuring new AI technology to Postnord’s terminals. Parcel robots thus address one of the industry’s major challenges: combining a better work environment for employees with high efficiency and quality in the workflow ...",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SC Effect",
-   "title": "China's PMI Declines – Decreased Activity in the Manufacturing, Construction, and Service Sectors",
-   "link": "https://sceffect.se/en/kinas-pmi-backar-minskad-aktivitet-i-industrin-bygg-och-tjanstesektorn/",
-   "published": null,
-   "summary": "China's Purchasing Managers' Index (PMI) for the manufacturing sector fell to 49.3 in October 2026, from 50.1 in September. The index fell below the 50-point mark, which separates growth from contraction, according to the National Bureau of Statistics (NBS) ...",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1196,21 +1176,21 @@
   },
   {
    "source": "Ny Teknik",
-   "title": "Tre möbelfabriker stoppade – svenska tillverkaren hackad",
-   "link": "https://www.nyteknik.se/it-saekerhet/tre-moebelfabriker-stoppade-svenska-tillverkaren-hackad/4512364",
-   "published": "2026-11-10T16:30:00+00:00",
-   "summary": "Möbeltillverkaren Kinnarps har utsatts för en it-attack och stoppat produktion på tre orter, rapporterar SVT Nyheter Väst. Intrånget upptäcktes i lördags kväll. Bolaget agerade omedelbart och stängde ned sina system för att minimera skadan. – Vår it-avdelning har jobbat dygnet runt för att minimera skador och säkerställa att det inte spridits vidare, säger Ann Cederwall, marknadsdirektör på Kinnarps.",
+   "title": "KARRIÄR Experten om konkurrensen från Kina: ”Man blir riktigt orolig” Kinesiska ”zombiebolag” hålls vid liv trots förluster – och överproduktionen hotar svenska exportnischer: ”Detta handlar om vad vi ska leva på i framtiden.”",
+   "link": "https://www.nyteknik.se/karriaer/kinas-oeverproduktion-ett-hot-mot-svensk-industri-experten-blir-riktigt-orolig/4513191",
+   "published": "2026-11-15T05:00:00+00:00",
+   "summary": "Kinesiska ”zombiebolag” hålls vid liv trots förluster – och överproduktionen hotar svenska exportnischer: ”Detta handlar om vad vi ska leva på i framtiden.” Facken och arbetsgivarna inom industrin träter om löner och arbetstid. Men när deras gemensamma expertråd analyserade konkurrensen från Kina visade sig problemet vara större än en avtalsrörelse. Professor Ola Bergström ser risk för ”irreversibel” skada på svensk och europeisk industri. ”Man blir riktigt orolig”, säger han. Prova Ny Teknik…",
    "via": "page links, article read",
    "lane": "planning",
    "planning_terms": false
   },
   {
-   "source": "Dagens Industri",
-   "title": "Skattekris hos Stegras entreprenör – ”ska betala”",
-   "link": "https://www.di.se/nyheter/skattekris-hos-stegras-entreprenor-ska-betala/",
-   "published": "2026-11-13T19:36:12+00:00",
-   "summary": "Stegras huvudentreprenör, turkiska Gemkom, har de senaste fem månaderna missat skatteinbetalningar i Sverige på 117 miljoner kronor. Bolaget ligger också efter med betalningarna till en lång rad underleverantörer.",
-   "via": "feed",
+   "source": "Ny Teknik",
+   "title": "Tre möbelfabriker stoppade – svenska tillverkaren hackad",
+   "link": "https://www.nyteknik.se/it-saekerhet/tre-moebelfabriker-stoppade-svenska-tillverkaren-hackad/4512364",
+   "published": "2026-11-10T16:30:00+00:00",
+   "summary": "Möbeltillverkaren Kinnarps har utsatts för en it-attack och stoppat produktion på tre orter, rapporterar SVT Nyheter Väst. Intrånget upptäcktes i lördags kväll. Bolaget agerade omedelbart och stängde ned sina system för att minimera skadan. – Vår it-avdelning har jobbat dygnet runt för att minimera skador och säkerställa att det inte spridits vidare, säger Ann Cederwall, marknadsdirektör på Kinnarps.",
+   "via": "page links, article read",
    "lane": "planning",
    "planning_terms": false
   },
@@ -1306,16 +1286,6 @@
   },
   {
    "source": "arXiv (planning and OR preprints)",
-   "title": "TimeHF 2.0: Multimodal, Multivariate, and Multi-Region Collaborative Forecasting for Large-Scale Retail Supply Chains",
-   "link": "https://arxiv.org/abs/2611.10521v1",
-   "published": "2026-11-07T06:40:04+00:00",
-   "summary": "Large-scale retail supply chains need sales forecasts for specified products, future dates or planning windows, and regions under the conditions available at the forecast origin. Regional sparsity, changing environments, volatile sales, and unfamiliar business situations make these dimensions difficult to model together. We introduce TimeHF 2.0, a multimodal, multivariate, and multi-region collaborative forecasting framework that makes flexibly expressed business knowledge usable in numerical prediction. A coverage-aware directed encoder integrates regional sales and applicable covariates. A semantic alignment module transfers language-model hidden representations of natural-language plans and domain experience into target-specific forecasting context. Learning against sales observations connects these meanings to numerical evidence, allowing business users to supply experience, future plans, and changing circumstances without defining a new numerical feature for each description. Text-conditioned future queries and shared/routed experts adapt prediction to the supplied context. An ordered-distribution head allocates fine resolution to routine fluctuations and coarse resolution to extreme sales movements, while daily/window learning connects forecasts to cumulative planning quantities. Online parallel forecasting at JD yields relative accuracy improvements of 18.25% and 17.94% for national daily and planning-window sales, and 19.44% and 18.99% for DC daily and…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
    "title": "Survivability Guarantees for Delayed Serial Supply Chains under Demand Shocks",
    "link": "https://arxiv.org/abs/2611.16951v1",
    "published": "2026-11-12T15:27:09+00:00",
@@ -1350,16 +1320,6 @@
    "link": "https://talkinglogistics.com/2026/11/10/the-biggest-barrier-to-logistics-ai-adoption-is-rigidity/",
    "published": "2026-11-10T14:18:35+00:00",
    "summary": "Why operational configurability is emerging as a critical factor in moving from AI pilots to real-world outcomes. Logistics providers are being sold an AI project and calling it a strategy. The goal was always to run a better operation. Faster quotes. Faster answers. Better carrier performance. Higher margins. Better customer experiences. I know that goal ... Read more The post The Biggest…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Talking Logistics",
-   "title": "Above the Fold: Supply Chain Logistics News (November 6, 2026)",
-   "link": "https://talkinglogistics.com/2026/11/06/above-the-fold-supply-chain-logistics-news-november-6-2026/",
-   "published": "2026-11-06T15:05:25+00:00",
-   "summary": "8 weeks to go until 2027. Are you ready? Ready for what, Adrian? I don’t know. Ready for anything, I guess. 8 weeks is still a long time. Don’t wish it away. I know, but still, this year is coming to an end. Yeah, I know. But what’s your point? I just don’t feel ready. ... Read more The post Above the Fold: Supply Chain Logistics News (November 6, 2026) appeared first on Talking Logistics with…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1495,26 +1455,6 @@
    "planning_terms": false
   },
   {
-   "source": "SAP News",
-   "title": "New Research Finds AI Is Moving Faster Than Organizations Can Adapt",
-   "link": "https://news.sap.com/2026/11/new-economist-enterprise-research-ai-moving-faster-than-organizations-can-adapt/",
-   "published": "2026-11-06T13:15:00+00:00",
-   "summary": "A new Economist Enterprise global survey of finance, HR, and supply chain leaders reveals a shared reality.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SAP News",
-   "title": "What Manufacturers Can Learn from ifm’s Digital Manufacturing Journey",
-   "link": "https://news.sap.com/2026/11/what-manufacturers-can-learn-from-ifm/",
-   "published": "2026-11-06T12:15:00+00:00",
-   "summary": "For manufacturers evaluating their own transformation journey, standardization is no longer just an IT objective but a business strategy.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "Phys.org (economics and business)",
    "title": "Sell-side analysts fail to adequately adjust stock forecasts after Fed meetings",
    "link": "https://phys.org/news/2026-11-side-analysts-adequately-adjust-stock.html",
@@ -1523,16 +1463,6 @@
    "via": "feed",
    "lane": "management",
    "planning_terms": true
-  },
-  {
-   "source": "Phys.org (economics and business)",
-   "title": "Social media could improve disaster aid coordination, review finds",
-   "link": "https://phys.org/news/2026-11-social-media-disaster-aid.html",
-   "published": "2026-11-06T13:20:01+00:00",
-   "summary": "A literature review in the International Journal of Services and Standards has highlighted the potential of social media to improve humanitarian supply chain management. However, it also identifies a shortage of research into its role in the delivery of aid during emergencies.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
   },
   {
    "source": "idw-online (DACH research)",
@@ -1610,16 +1540,6 @@
    "link": "https://www.klu.org/article/the-airport-of-the-future-automation-sustainability-and-leading-change",
    "published": "2026-11-09T11:15:00+00:00",
    "summary": "What will airports look like in 2040? More automated, more efficient and perhaps considerably simpler than today. At the latest Change Makers Dialogue Joachim von Winning, Head of Cargo Partnerships at Fraport AG, explored how airports and aviation could develop over the coming decades. Held at Kühne Logistics University, four closely connected topics were discussed: the airport of the future, airlines, air cargo and their CO₂ challenge, global perspectives, and the role of leading change and…",
-   "via": "page links, article read",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "KLU newsroom",
-   "title": "From Data to Impact: Welcome Prof. Dr. Austin Saragih",
-   "link": "https://www.klu.org/article/from-data-to-impact-welcome-prof-dr-austin-saragih",
-   "published": "2026-11-06T09:30:00+00:00",
-   "summary": "How can data and analytics help make supply chains more resilient, sustainable, and responsible? This question is at the heart of Prof. Dr. Austin Saragih’s work. Fresh from completing his Ph.D. at MIT, KLU’s new Assistant Professor of Business Analytics and Operations Management combines… We spoke with him about his journey to KLU, his approach to research, his teaching philosophy, and the experiences that have shaped him. KLU is the perfect fit for me because I think with an operations…",
    "via": "page links, article read",
    "lane": "management",
    "planning_terms": false
@@ -1720,16 +1640,6 @@
    "link": "https://www.sttinfo.fi/tiedote/72502955/keski-suomen-pelastuslaitos-onnettomuustiedote?lang=fi",
    "published": "2026-11-14T06:03:22+00:00",
    "summary": "Jyväskylän Säkkitiellä sijaitsevan teollisuushallin roskis syttyi palamaan aamulla kello 7.18, kun vartiointiliike havaitsi liekit valvontakameroista. Pelastuslaitoksen savusukeltajat sammuttivat palon nopeasti. Paikalle hälytettiin yhdeksän yksikköä. Henkilövahingoilta vältyttiin, ja savut tuuletettiin tiloista.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "STT Info (Finnish releases)",
-   "title": "Kokkola Material Week kokosi jälleen teollisuuden, tutkimuksen ja tulevaisuuden tekijät Kokkolaan",
-   "link": "https://www.sttinfo.fi/tiedote/72501478/kokkola-material-week-kokosi-jalleen-teollisuuden-tutkimuksen-ja-tulevaisuuden-tekijat-kokkolaan?lang=fi",
-   "published": "2026-11-13T12:35:50+00:00",
-   "summary": "Kokkola Material Week 2026 järjestettiin 9.-13. marraskuuta Kokkolassa.",
    "via": "feed",
    "lane": "management",
    "planning_terms": false
@@ -1992,6 +1902,16 @@
   },
   {
    "source": "FreightWaves",
+   "title": "Spot rates jump ahead of holidays",
+   "link": "https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays",
+   "published": "2026-11-15T01:30:00+00:00",
+   "summary": "Trucking spot rates are off to the races earlier than usual. Was this part of the shipper playbook? The post Spot rates jump ahead of holidays appeared first on FreightWaves .",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "FreightWaves",
    "title": "Denial of funds to NY over non domiciled CDLs overturned: appellate court",
    "link": "https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court",
    "published": "2026-11-13T22:27:15+00:00",
@@ -2031,11 +1951,11 @@
    "planning_terms": false
   },
   {
-   "source": "FreightWaves",
-   "title": "Trucking Recession Continues: Why Carriers Face Layoffs and Bankruptcies",
-   "link": "https://www.freightwaves.com/news/trucking-recession-continues-why-carriers-face-layoffs-and-bankruptcies",
-   "published": "2026-11-13T19:48:58+00:00",
-   "summary": "The freight market is seeing some interesting trends with mixed volumes and rising rates across modes, but small carriers are under immense pressure. We’re breaking down tender rejections, spot rates, and contract rates, highlighting why some carriers face layoffs and bankruptcies despite a recovering market. Plus, learn about the lowest truck count since early 2022. […] The post Trucking…",
+   "source": "Splash247",
+   "title": "US court orders arrest of tanker after New Orleans cruise ship collision",
+   "link": "https://splash247.com/us-court-orders-arrest-of-tanker-after-new-orleans-cruise-ship-collision/",
+   "published": "2026-11-15T01:06:11+00:00",
+   "summary": "A US federal court has authorised the arrest of the tanker Atlantic Asphalt after the Port of New Orleans launched legal action seeking more than $1m in damages following the collision that sank American Cruise Lines’ American Heritage. The Board of Commissioners of the Port of New Orleans filed the lawsuit in the Eastern District …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2045,7 +1965,7 @@
    "title": "Tanker sinks river cruise ship in New Orleans collision",
    "link": "https://splash247.com/tanker-sinks-river-cruise-ship-in-new-orleans-collision/",
    "published": "2026-11-14T00:58:11+00:00",
-   "summary": "The 17,764 dwt bitumen tanker Atlantic Asphalt has struck and sunk a river cruise ship on the Mississippi River in New Orleans, leaving 32 people hospitalised and prompting a major emergency response. The collision occurred at approximately 12.30 pm local time on November 13, when the 2017-built tanker struck American Cruise Lines’ American Heritage, which …",
+   "summary": "The 17,764 dwt bitumen tanker Atlantic Asphalt has struck and partially sunk a river cruise ship on the Mississippi River in New Orleans, leaving 32 people hospitalised and prompting a major emergency response. The collision occurred at approximately 12.30 pm local time on November 13, when the 2017-built tanker struck American Cruise Lines’ American Heritage, …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2081,31 +2001,11 @@
    "planning_terms": false
   },
   {
-   "source": "Splash247",
-   "title": "UK blacklists 11 ships in fresh Russia sanctions sweep",
-   "link": "https://splash247.com/uk-blacklists-11-ships-in-fresh-russia-sanctions-sweep/",
-   "published": "2026-11-13T09:35:00+00:00",
-   "summary": "Britain has slapped fresh sanctions on 11 ships linked to Russian energy exports, targeting five LNG carriers, five oil tankers and a floating storage unit in its latest effort to disrupt Moscow’s seaborne oil and gas trade. The measures also cover nine companies, including Russian oil producer Slavneft, Rosneft’s Vostok Oil project and several energy …",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
    "source": "DC Velocity",
    "title": "ISG: Manufacturers in North American are strengthening factory resilience",
    "link": "https://www.dcvelocity.com/logistics/manufacturing/isg-manufacturers-in-north-american-are-strengthening-factory-resilience",
    "published": "2026-11-12T17:20:30+00:00",
    "summary": "Manufacturers in North American are strengthening factory resilience by restructuring regional production and supply networks to sustain production amid challenges such as trade-policy shifts, economic uncertainty, and supply disruptions, according to a report from Information Services Group (ISG). In a bid to preserve safety, continuity, and traceability, manufacturers are coordinating product,…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": true
-  },
-  {
-   "source": "DC Velocity",
-   "title": "Case Study: Partnering to Build L&M Fleet Supply's New Distribution Center",
-   "link": "https://www.dcvelocity.com/video/dcv-tv-4-viewer-contributed/case-study-partnering-to-build-lm-fleet-supply-s-new-distribution-center",
-   "published": "2026-11-06T21:27:54+00:00",
-   "summary": "L&M Fleet Supply partnered with Storage Solutions to build a new distribution center designed to support continued growth. Despite a tight timeline and complex facility requirements, the project delivered more than 1,000 bays of pallet racking and 13,000 pallet positions. Watch the video to see how collaboration from planning through installation helped bring the facility to life. Sponsored by",
    "via": "feed",
    "lane": "freight",
    "planning_terms": true
@@ -2166,16 +2066,6 @@
    "link": "https://www.sea-intelligence.com/press-room/420-is-2026-tp-peak-season-driven-by-ai",
    "published": "2026-11-12T14:18:11+00:00",
    "summary": "According to data from the US Census Bureau, the still-ongoing 2026 Transpacific container shipping peak season is not being driven by the boom in investments in artificial intelligence (AI) and is instead being actively fuelled by traditional consumer goods. Figure 1 shows the monthly Asia to US containerized imports in Metric Tons for January 2022 to September 2026, broken down into seven…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Sea-Intelligence",
-   "title": "Correction to October 2026 schedule reliability report",
-   "link": "https://www.sea-intelligence.com/press-room/419-glp-correction",
-   "published": "2026-11-06T19:15:41+00:00",
-   "summary": "Since the release of the latest Global Liner Performance (GLP) report on October 27th, 2026, we have been notified of an error in which a small subset of vessel arrivals had been double counted in the calculation of aggregated alliance schedule reliability figures. This error dates back to the first alliance section in the April 2015 GLP report and went unnoticed for 11 years, both by our team…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2375,41 +2265,41 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 377.0,
+   "level_cm": 340.0,
    "trend": null,
-   "measured_at": "2026-11-14T10:15:00+01:00",
+   "measured_at": "2026-11-15T10:45:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 73.0,
+   "level_cm": 58.0,
    "trend": null,
-   "measured_at": "2026-11-14T10:15:00+01:00",
+   "measured_at": "2026-11-15T10:45:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 112.0,
+   "level_cm": 114.0,
    "trend": null,
-   "measured_at": "2026-11-14T10:15:00+01:00",
+   "measured_at": "2026-11-15T10:45:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 169.0,
+   "level_cm": 193.0,
    "trend": null,
-   "measured_at": "2026-11-14T10:15:00+01:00",
+   "measured_at": "2026-11-15T10:45:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 5.0,
+   "level_cm": 22.0,
    "trend": null,
-   "measured_at": "2026-11-14T10:15:00+01:00",
+   "measured_at": "2026-11-15T10:45:00+01:00",
    "unit": "cm"
   }
  ]

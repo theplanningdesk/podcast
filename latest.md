@@ -1,7 +1,7 @@
-# Source digest, fetched 2026-11-14 09:23 UTC
+# Source digest, fetched 2026-11-15 09:52 UTC
 75 of 75 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
 
-Items per lane: planning 151, freight 45, management 28, companies 11
+Items per lane: planning 145, freight 43, management 25, companies 11
 
 # Planning, network design, AI and tech sources (items matching planning terms first)
 
@@ -14,6 +14,8 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   A product plan can be accurate in aggregate and wrong in the locations where inventory sits.
 - 2026-11-10 08:00 | Wing to Invest $125M in U.S. Manufacturing Footprint | https://www.supplychainbrain.com/technology/robotics/article/16424963/wing-to-invest-125m-in-us-manufacturing-footprint [planning terms]
   Drone company Wing says it's already used a portion of those funds to build a new 15,000 square-foot manufacturing facility in...
+- 2026-11-15 05:00 | Taiwan's Foxconn Bullish on Outlook But Warns About Supply Chain Tightness | https://www.supplychainbrain.com/industries/high-tech-electronics/article/16425695/taiwans-foxconn-bullish-on-outlook-but-warns-about-supply-chain-tightness
+  Chips, memory and some key components are currently tight, which is a challenge facing the industry as a whole.
 - 2026-11-13 19:41 | Microsoft Outage a Reminder of Fragility of Web Technology | https://www.supplychainbrain.com/technology/all-technology/article/16425635/microsoft-outage-a-reminder-of-fragility-of-web-technology
   Microsoft categorically denied the outage was the result of a malicious cyber attack.
 - 2026-11-13 14:37 | FTC Urged to Probe Companies Not Sharing Tariff Refunds With Consumers | https://www.supplychainbrain.com/general-scm/regulation-compliance/article/16425536/ftc-urged-to-probe-companies-not-sharing-tariff-refunds-with-consumers
@@ -44,8 +46,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   Restrictions on moving oversized equipment could delay Germany's wind power expansion even if the roadworks disrupting motorways...
 - 2026-11-10 08:00 | Record Super El Niño Could Cost $4T in Economic Losses | https://www.supplychainbrain.com/general-scm/supply-chains-in-crisis/article/16424978/record-super-el-nio-could-cost-4t-in-economic-losses
   Asia would likely be hit the hardest, the report says, with China, India, Pakistan and Southeast Asia accounting for two-thirds...
-- 2026-11-10 08:00 | How Supply Chain Leaders Can Turn Fast Decision-Making Into Competitive Advantage | https://www.supplychainbrain.com/technology/inventory-planning-optimization/blog/15883276/how-supply-chain-leaders-can-turn-fast-decisionmaking-into-competitive-advantage
-  When a supply chain can move quickly, working capital tied up in resilience efforts can be deployed elsewhere. Yet faster decision-making...
 
 ## SCMR
 - 2026-11-13 14:29 | Buffer where it counts: The smartest place to spend a resilience dollar | https://www.scmr.com/article/where-to-invest-supply-chain-resilience [planning terms]
@@ -74,10 +74,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   The 2026 midterms could affect manufacturing investment, tariff policy, North American trade and transportation costs and more with policy predictability emerging as the key factor for supply chain planning.
 - 2026-11-09 13:21 | First Shift: Trade truces, port labor and supply constraints shape the week ahead | https://www.scmr.com/article/first-shift-trade-truces-port-labor-and-supply-constraints-shape-the-week-ahead
   China’s extended trade truce leads a briefing on West Coast labor, tanker costs, USMCA planning, truck production, cargo theft, drone delivery, container pricing, rail regulation and supplier audits.
-- 2026-11-06 15:21 | Can you trust a supply chain audit in the age of AI? | https://www.scmr.com/article/supply-chain-audits-ai-generated-fraud
-  As generative AI makes fraudulent supplier records, images and testimony easier to produce, supply chain leaders must strengthen how auditors verify evidence and corroborate compliance claims.
-- 2026-11-06 12:49 | First Shift: Port labor risk, tariff pressure and energy constraints test supply-chain plans | https://www.scmr.com/article/first-shift-port-labor-risk-tariff-pressure-and-energy-constraints-test-supply-chain-plans
-  A renewed West Coast strike deadline leads a briefing on Canadian tariffs, energy bottlenecks, packaging scrutiny, freight recovery, cargo theft, ocean earnings, pricing strategy and supplier selection.
 
 ## Supply Chain Dive
 - 2026-11-13 15:55 | JD Sports leverages tech for faster replenishment | https://www.supplychaindive.com/news/jd-sports-leverages-tech-for-faster-replenishment/874427/ [planning terms]
@@ -224,12 +220,16 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   Mere end 90 procent af byggeriets biodiversitetspåvirkning sker i værdikæden. Nyt projekt skal give virksomheder konkrete værktøjer til at inddrage naturhensyn i materialevalg og indkøb.
 
 ## SC Effect
-- 2026-11-13 09:59 | Voky Chooses a Flexible Automation Model to Support Continued Growth | https://sceffect.se/en/voky-valjer-en-flexibel-automationsmodell-for-fortsatt-tillvaxt/
+- no date | New Study: Autonomous and Manual Truck Transport Are Expected to Reach Cost Parity Soon | https://sceffect.se/en/ny-studie-autonoma-lastbilstransporter-nar-snart-kostnadsparitet-med-manuella/
+  According to a report by the consulting firm Kearney and the MIT Mobility Initiative (MMI), self-driving trucks in the U.S. are predicted to reach the same cost per mile as trucks driven by humans in two years. The same trend is expected in Europe, but not until around 2030...
+- no date | The gap exists, but it won't be closed by adding another system | https://sceffect.se/en/glappet-finns-men-det-stangs-inte-med-ett-system-till/
+  Andreas Stöckl at Exotec describes a problem that all warehouse managers can relate to: this morning’s plan doesn’t hold up until lunchtime. I think the diagnosis is correct, but the solution is wrong. The solution isn’t a third system between the warehouse management system and the machines. The solution is a warehouse management system that can plan, not just keep track of things...
+- no date | Voky Chooses a Flexible Automation Model to Support Continued Growth | https://sceffect.se/en/voky-valjer-en-flexibel-automationsmodell-for-fortsatt-tillvaxt/
   As Voky builds a new office and warehouse in Linköping, the company is investing in a flexible model for warehouse automation. With Element Logic’s Automation as a Service, Voky gains a scalable, long-term automation solution that includes operation, support, and ongoing optimization at predictable costs ...
-- 2026-11-12 12:10 | SCE #5 2026 | https://sceffect.se/en/sce-5-2026/
-  TEMA: REALTIDSVISIBILITET OCH SPÅRBARHET END-TO-END ...
-- 2026-11-12 11:35 | The Port of Helsingborg Enhances Security for Container Cargo | https://sceffect.se/en/helsingborgs-hamn-hojer-sakerheten-for-containergods/
-  Helsingborgs Hamn stärker säkerheten i sin containerverksamhet genom att införa den spårbara och digitala tjänsten Secure Container Release (SCR). Genom tjänsten kopplas en verifierad föraridentitet till rätten att hämta en specifik container. Det stärker utlämningsprocessen och gör det svårare för obehöriga att få tillgång till containrar. Den nya lösningen tas fullt i bruk den 31 mars nästa…
+- no date | SCE #5 2026 | https://sceffect.se/en/sce-5-2026/
+  TOPIC: REAL-TIME VISIBILITY AND END-TO-END TRACEABILITY ...
+- no date | The Port of Helsingborg Enhances Security for Container Cargo | https://sceffect.se/en/helsingborgs-hamn-hojer-sakerheten-for-containergods/
+  The Port of Helsingborg is enhancing security in its container operations by introducing the traceable, digital service Secure Container Release (SCR). The service links a verified driver’s identity to the right to pick up a specific container. This strengthens the release process and makes it more difficult for unauthorized persons to gain access to containers. The new solution will be fully…
 - no date | DHL Express Invests 600 Million in Arlanda Stad | https://sceffect.se/en/dhl-express-investerar-600-miljoner-i-arlanda-stad/
   DHL Express has begun construction of a new gateway facility in Arlanda Stad, near Stockholm Arlanda Airport. The facility is being developed in collaboration with Slättö, through the company’s logistics and light industrial platform Evolv, a Nordic developer and owner of logistics and light industrial properties. The facility represents a total investment of over 55 million euros and is…
 - no date | Sustainability and Resilience in the Supply Chain: Risk and Resilience in a New Global Reality | https://sceffect.se/en/hallbarhet-och-motstandskraft-i-supply-chain-risk-och-resiliens-i-en-ny-global-verklighet/
@@ -240,10 +240,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   On Thursday, the Financial Times reported that China’s National Development and Reform Commission (NDRC) has rejected SoftBank’s acquisition of the Swedish-Swiss company ABB Robotics ...
 - no date | Audi is testing humanoid, AI-powered robots | https://sceffect.se/en/audi-testar-humanoida-ai-drivna-robotar/
   At NVIDIA GTC in Berlin, Audi, Agile Robots, Dassault Systèmes, and NVIDIA presented a joint pilot project to automate parts of the material flow at Audi’s plant in Ingolstadt. By combining artificial intelligence, advanced robotics, and virtual simulations, the companies aim to develop new solutions for the automotive production of the future. Audi’s demand-driven material supply relies on…
-- no date | PostNord is developing its package handling system with AI robots | https://sceffect.se/en/postnord-utvecklar-pakethanteringen-genom-ai-robotar/
-  Postnord has signed an agreement with Rebl Industries for the delivery of package robots featuring new AI technology to Postnord’s terminals. Parcel robots thus address one of the industry’s major challenges: combining a better work environment for employees with high efficiency and quality in the workflow ...
-- no date | China's PMI Declines – Decreased Activity in the Manufacturing, Construction, and Service Sectors | https://sceffect.se/en/kinas-pmi-backar-minskad-aktivitet-i-industrin-bygg-och-tjanstesektorn/
-  China's Purchasing Managers' Index (PMI) for the manufacturing sector fell to 49.3 in October 2026, from 50.1 in September. The index fell below the 50-point mark, which separates growth from contraction, according to the National Bureau of Statistics (NBS) ...
 
 ## Osto&Logistiikka
 (nothing in the window)
@@ -272,12 +268,13 @@ Items per lane: planning 151, freight 45, management 28, companies 11
 ## Ny Teknik
 - 2026-11-13 06:05 | Mercedes stoppar investeringar i Tyskland – fabriker kan stängas | https://www.nyteknik.se/fordon/mercedes-stoppar-investeringar-i-tyskland-fabriker-kan-staengas/4513128 [planning terms]
   Den krisande tyska biltillverkaren Mercedes-Benz meddelar att alla investeringar i Tyskland stoppas och att stängningar av fabriker övervägs. Hård konkurrens från Kina och höga kostnader pressar Tysklands bilbransch. I förra veckan blev bolaget den tredje stora tillverkaren, utöver Volkswagen och BMW, att sänka prognoserna för helåret. Förhandlingar pågår med fackliga företrädare för att kunna sänka kostnaderna men utan framsteg, och nu väljer Mercedes en hårdare linje.
+- 2026-11-15 05:00 | KARRIÄR Experten om konkurrensen från Kina: ”Man blir riktigt orolig” Kinesiska ”zombiebolag” hålls vid liv trots förluster – och överproduktionen hotar svenska exportnischer: ”Detta handlar om vad vi ska leva på i framtiden.” | https://www.nyteknik.se/karriaer/kinas-oeverproduktion-ett-hot-mot-svensk-industri-experten-blir-riktigt-orolig/4513191
+  Kinesiska ”zombiebolag” hålls vid liv trots förluster – och överproduktionen hotar svenska exportnischer: ”Detta handlar om vad vi ska leva på i framtiden.” Facken och arbetsgivarna inom industrin träter om löner och arbetstid. Men när deras gemensamma expertråd analyserade konkurrensen från Kina visade sig problemet vara större än en avtalsrörelse. Professor Ola Bergström ser risk för ”irreversibel” skada på svensk och europeisk industri. ”Man blir riktigt orolig”, säger han. Prova Ny Teknik…
 - 2026-11-10 16:30 | Tre möbelfabriker stoppade – svenska tillverkaren hackad | https://www.nyteknik.se/it-saekerhet/tre-moebelfabriker-stoppade-svenska-tillverkaren-hackad/4512364
   Möbeltillverkaren Kinnarps har utsatts för en it-attack och stoppat produktion på tre orter, rapporterar SVT Nyheter Väst. Intrånget upptäcktes i lördags kväll. Bolaget agerade omedelbart och stängde ned sina system för att minimera skadan. – Vår it-avdelning har jobbat dygnet runt för att minimera skador och säkerställa att det inte spridits vidare, säger Ann Cederwall, marknadsdirektör på Kinnarps.
 
 ## Dagens Industri
-- 2026-11-13 19:36 | Skattekris hos Stegras entreprenör – ”ska betala” | https://www.di.se/nyheter/skattekris-hos-stegras-entreprenor-ska-betala/
-  Stegras huvudentreprenör, turkiska Gemkom, har de senaste fem månaderna missat skatteinbetalningar i Sverige på 117 miljoner kronor. Bolaget ligger också efter med betalningarna till en lång rad underleverantörer.
+(nothing in the window)
 
 ## MIT Sloan Management Review
 (nothing in the window)
@@ -301,8 +298,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   Strong machine-learning ensembles capture much of the trend, seasonality, and known events in demand, yet they can still understate peaks, miss moving events, or mistake temporary changes for shifts in demand level. We address this gap by framing forecast refinement as a reward-driven decision problem. For each forecast period, we let an agent choose among values already produced by the ensemble: its base forecast, distribution-free bounds, quantiles, and a bias-corrected estimate. We evaluate these choices against context-matched historical periods, accounting for calendar position, recurring and moving events, trend, price, and promotions. We then apply a structural seasonal guard to constrain adjustments and record the model, agent, and planner contributions to every published value. We evaluate our approach across five retail, consumer-goods, and direct-to-consumer deployments over nine months. Our refined forecasts reduce mean WMAPE by 6.3% compared with the stacked machine-learning forecast for every customer, with gains reaching 16.7%, and achieve the lowest error in 35 of 45 customer-months. Compared with statistical forecasts, our approach reduces mean error by 18.7%. These results demonstrate that context-aware, auditable action selection can add forecast value beyond a strong ensemble.
 - 2026-11-07 22:48 | Differentiable Agent-Based Modeling for Multi-Echelon Supply Chains: Gradient-Based Optimization of Heterogeneous Policies at Scale | https://arxiv.org/abs/2611.10999v1 [planning terms]
   Global supply chains rely on the interactions of thousands of heterogeneous agents, posing significant challenges for optimization. While traditional optimization often assumes homogeneity to ensure tractability, Reinforcement Learning struggles with sample inefficiency when scaling to high-dimensional state spaces. We propose a Differentiable Agent-Based Model for multi-echelon inventory management. By implementing stochastic dynamics via differentiable tensor operations, we enable direct gradient propagation through the simulation. We validate the framework by recovering theoretical Newsvendor optima without supervision. Crucially, we demonstrate ``Mass Personalization'' by optimizing 10,000 distinct agent policies simultaneously in seconds, achieving a 53% cost reduction compared to scalar baselines. Furthermore, we utilize gradient sensitivity analysis to generate causal heatmaps, accurately recovering inherent lead-time delays from the computation graph. This approach bridges the gap between simulation and optimization, enabling the efficient training of self-correcting Digital Twins.
-- 2026-11-07 06:40 | TimeHF 2.0: Multimodal, Multivariate, and Multi-Region Collaborative Forecasting for Large-Scale Retail Supply Chains | https://arxiv.org/abs/2611.10521v1 [planning terms]
-  Large-scale retail supply chains need sales forecasts for specified products, future dates or planning windows, and regions under the conditions available at the forecast origin. Regional sparsity, changing environments, volatile sales, and unfamiliar business situations make these dimensions difficult to model together. We introduce TimeHF 2.0, a multimodal, multivariate, and multi-region collaborative forecasting framework that makes flexibly expressed business knowledge usable in numerical prediction. A coverage-aware directed encoder integrates regional sales and applicable covariates. A semantic alignment module transfers language-model hidden representations of natural-language plans and domain experience into target-specific forecasting context. Learning against sales observations connects these meanings to numerical evidence, allowing business users to supply experience, future plans, and changing circumstances without defining a new numerical feature for each description. Text-conditioned future queries and shared/routed experts adapt prediction to the supplied context. An ordered-distribution head allocates fine resolution to routine fluctuations and coarse resolution to extreme sales movements, while daily/window learning connects forecasts to cumulative planning quantities. Online parallel forecasting at JD yields relative accuracy improvements of 18.25% and 17.94% for national daily and planning-window sales, and 19.44% and 18.99% for DC daily and…
 - 2026-11-12 15:27 | Survivability Guarantees for Delayed Serial Supply Chains under Demand Shocks | https://arxiv.org/abs/2611.16951v1
   When demand exceeds the maximum production capacity of a supply chain, it can be satisfied only for a finite time, determined by the inventory stored along the chain. Existing control methods ensure indefinite constraint satisfaction under bounded demand, but provide no guarantees on how long a supply chain can withstand a shock in which demand goes beyond production capacity. We address this gap for a serial supply chain with transportation delays and flow constraints. Under a specified flow policy, we derive necessary and sufficient conditions on the inventory distribution that guarantee a prescribed lower bound on the exit time from the set where demand is served. We use these conditions to compute inventory targets that minimize holding costs via a quadratic program. Then, we propose a two-mode controller that builds reserves under ordinary demand and depletes them during the shock. Simulations illustrate this approach.
 
@@ -315,8 +310,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   I’ve spent the week talking to people. Ten video interviews in five days with supply chain and logistics professionals. We talked about a wide range of industry topics and trends, including AI (of course) and what to expect in the year ahead in freight transportation, global trade, and logistics services. We also talked about the ... Read more The post Above the Fold: Supply Chain Logistics News…
 - 2026-11-10 14:18 | The Biggest Barrier to Logistics AI Adoption Is Rigidity | https://talkinglogistics.com/2026/11/10/the-biggest-barrier-to-logistics-ai-adoption-is-rigidity/
   Why operational configurability is emerging as a critical factor in moving from AI pilots to real-world outcomes. Logistics providers are being sold an AI project and calling it a strategy. The goal was always to run a better operation. Faster quotes. Faster answers. Better carrier performance. Higher margins. Better customer experiences. I know that goal ... Read more The post The Biggest…
-- 2026-11-06 15:05 | Above the Fold: Supply Chain Logistics News (November 6, 2026) | https://talkinglogistics.com/2026/11/06/above-the-fold-supply-chain-logistics-news-november-6-2026/
-  8 weeks to go until 2027. Are you ready? Ready for what, Adrian? I don’t know. Ready for anything, I guess. 8 weeks is still a long time. Don’t wish it away. I know, but still, this year is coming to an end. Yeah, I know. But what’s your point? I just don’t feel ready. ... Read more The post Above the Fold: Supply Chain Logistics News (November 6, 2026) appeared first on Talking Logistics with…
 
 ## Supply Chain Shaman
 (nothing in the window)
@@ -348,10 +341,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   This is the fifth consecutive year SAP is a Leader.
 - 2026-11-09 05:15 | Interview with Manish Prasad: “Touch Any Growth Lever in India and You’ll Find SAP There” | https://news.sap.com/2026/11/interview-with-manish-prasad-sap-india/
   SAP India President and MD Manish Prasad makes the case for why India is becoming a strategically important market in SAP's global story.
-- 2026-11-06 13:15 | New Research Finds AI Is Moving Faster Than Organizations Can Adapt | https://news.sap.com/2026/11/new-economist-enterprise-research-ai-moving-faster-than-organizations-can-adapt/
-  A new Economist Enterprise global survey of finance, HR, and supply chain leaders reveals a shared reality.
-- 2026-11-06 12:15 | What Manufacturers Can Learn from ifm’s Digital Manufacturing Journey | https://news.sap.com/2026/11/what-manufacturers-can-learn-from-ifm/
-  For manufacturers evaluating their own transformation journey, standardization is no longer just an IT objective but a business strategy.
 
 # Management, operations research and planning research sources
 
@@ -364,8 +353,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
 ## Phys.org (economics and business)
 - 2026-11-09 12:00 | Sell-side analysts fail to adequately adjust stock forecasts after Fed meetings | https://phys.org/news/2026-11-side-analysts-adequately-adjust-stock.html [planning terms]
   When the U.S. Federal Reserve announces a change in its interest rate, consumers expect shifts in borrowing costs elsewhere and potential price adjustments for things like housing and some consumer goods. New research, however, shows that stock market analysts generally give a collective "meh" around the time of Fed meetings when it comes to forecasting how much stocks will trade for in the…
-- 2026-11-06 13:20 | Social media could improve disaster aid coordination, review finds | https://phys.org/news/2026-11-social-media-disaster-aid.html
-  A literature review in the International Journal of Services and Standards has highlighted the potential of social media to improve humanitarian supply chain management. However, it also identifies a shortage of research into its role in the delivery of aid during emergencies.
 
 ## idw-online (DACH research)
 - 2026-11-12 09:52 | NRW wird zum Innovationsmotor für Robotik in der Logistik | http://idw-online.de/de/news880742
@@ -386,8 +373,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   Kühne Logistics University (KLU) continues its international growth and will establish another campus in Colombia. From the capital, Bogotá, the Hamburg-based university, which specializes in logistics, business and management, aims to further develop its activities across Latin America. Colombian… The state-recognised university, which ranks among the top 5% of business schools worldwide, successfully opened its Saigon campus in Ho Chi Minh City, Vietnam, last year. With this expansion, KLU…
 - 2026-11-09 11:15 | The Airport of the Future: Automation, Sustainability and Leading Change | https://www.klu.org/article/the-airport-of-the-future-automation-sustainability-and-leading-change
   What will airports look like in 2040? More automated, more efficient and perhaps considerably simpler than today. At the latest Change Makers Dialogue Joachim von Winning, Head of Cargo Partnerships at Fraport AG, explored how airports and aviation could develop over the coming decades. Held at Kühne Logistics University, four closely connected topics were discussed: the airport of the future, airlines, air cargo and their CO₂ challenge, global perspectives, and the role of leading change and…
-- 2026-11-06 09:30 | From Data to Impact: Welcome Prof. Dr. Austin Saragih | https://www.klu.org/article/from-data-to-impact-welcome-prof-dr-austin-saragih
-  How can data and analytics help make supply chains more resilient, sustainable, and responsible? This question is at the heart of Prof. Dr. Austin Saragih’s work. Fresh from completing his Ph.D. at MIT, KLU’s new Assistant Professor of Business Analytics and Operations Management combines… We spoke with him about his journey to KLU, his approach to research, his teaching philosophy, and the experiences that have shaped him. KLU is the perfect fit for me because I think with an operations…
 
 ## The Conversation (business)
 - 2026-11-10 16:44 | You’ve been told to prep three days of food, but moving past day four will need stronger supply chains | https://theconversation.com/youve-been-told-to-prep-three-days-of-food-but-moving-past-day-four-will-need-stronger-supply-chains-295937
@@ -426,8 +411,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
 ## STT Info (Finnish releases)
 - 2026-11-14 06:03 | Keski-Suomen pelastuslaitos onnettomuustiedote | https://www.sttinfo.fi/tiedote/72502955/keski-suomen-pelastuslaitos-onnettomuustiedote?lang=fi
   Jyväskylän Säkkitiellä sijaitsevan teollisuushallin roskis syttyi palamaan aamulla kello 7.18, kun vartiointiliike havaitsi liekit valvontakameroista. Pelastuslaitoksen savusukeltajat sammuttivat palon nopeasti. Paikalle hälytettiin yhdeksän yksikköä. Henkilövahingoilta vältyttiin, ja savut tuuletettiin tiloista.
-- 2026-11-13 12:35 | Kokkola Material Week kokosi jälleen teollisuuden, tutkimuksen ja tulevaisuuden tekijät Kokkolaan | https://www.sttinfo.fi/tiedote/72501478/kokkola-material-week-kokosi-jalleen-teollisuuden-tutkimuksen-ja-tulevaisuuden-tekijat-kokkolaan?lang=fi
-  Kokkola Material Week 2026 järjestettiin 9.-13. marraskuuta Kokkolassa.
 
 ## DACH ad hoc releases (finanznachrichten)
 - 2026-11-13 13:33 | EQS-Adhoc: tick Trading Software AG erwartet für das Geschäftsjahr 2026/2027 einen rückläufigen Jahresüberschuss von TEUR 600 bis 900 | https://www.finanznachrichten.de/nachrichten-2026-11/70125609-eqs-adhoc-tick-trading-software-ag-erwartet-fuer-das-geschaeftsjahr-2026-2027-einen-ruecklaeufigen-jahresueberschuss-von-teur-600-bis-900-022.htm [planning terms]
@@ -563,6 +546,8 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   Cargojet rode a strong air cargo market and the productivity gains from its fleet consolidation strategy to its highest-ever revenue and operating profit in a third quarter. The post Cargojet fleet optimization boosts productivity, fuels record Q3 revenue appeared first on FreightWaves .
 - 2026-11-11 19:37 | Fura Freight: Next Year, Our AI Agent Will Book 90% of Loads | https://www.freightwaves.com/news/fura-freight-next-year-our-ai-agent-will-book-90-of-loads [planning terms]
   Fura CEO Jeff Dangelo details how their AI agent, Donna, already handles 40% of bookings, with plans to hit 90%. Learn about Fura’s growth strategy, including eight acquisitions (the latest adding $30M in revenue) and their aggressive M&A pipeline. Dangelo also shares insights on navigating tight capacity, rising costs, and margin compression in the current […] The post Fura Freight: Next Year,…
+- 2026-11-15 01:30 | Spot rates jump ahead of holidays | https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays
+  Trucking spot rates are off to the races earlier than usual. Was this part of the shipper playbook? The post Spot rates jump ahead of holidays appeared first on FreightWaves .
 - 2026-11-13 22:27 | Denial of funds to NY over non domiciled CDLs overturned: appellate court | https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court
   New York State has come out on top in a legal battle with the Department of Transportation over how long a non-domiciled CDL can stay in effect. In a unanimous decision issued Friday by the U.S. Court of Appeals for the Second Circuit, a three-judge panel agreed with New York’s argument that denial of a […] The post Denial of funds to NY over non domiciled CDLs overturned: appellate court…
 - 2026-11-13 21:25 | Tanker strikes cruise riverboat in New Orleans | https://www.freightwaves.com/news/tanker-strikes-cruise-riverboat-in-new-orleans
@@ -571,26 +556,22 @@ Items per lane: planning 151, freight 45, management 28, companies 11
   Cargo thieves stole more than $150 million in AI equipment this year, with fraudulent carrier identities and falsified shipping documents involved in 92% of reported incidents, according to Overhaul. The post AI cargo thefts top $150 million from June 2025 to June 2026 appeared first on FreightWaves .
 - 2026-11-13 20:18 | Trailer Flexibility Is Becoming a Growth Strategy for Carriers | https://www.freightwaves.com/news/trailer-flexibility-is-becoming-a-growth-strategy-for-carriers
   Trailer rental for carriers is becoming a growth strategy. REPOWR’s Matt Harb explains how carriers can cut equipment costs and test new lanes without buying a trailer, and how the Trailer Optimization Platform helps fleets turn costly repositioning into revenue. The post Trailer Flexibility Is Becoming a Growth Strategy for Carriers appeared first on FreightWaves .
-- 2026-11-13 19:48 | Trucking Recession Continues: Why Carriers Face Layoffs and Bankruptcies | https://www.freightwaves.com/news/trucking-recession-continues-why-carriers-face-layoffs-and-bankruptcies
-  The freight market is seeing some interesting trends with mixed volumes and rising rates across modes, but small carriers are under immense pressure. We’re breaking down tender rejections, spot rates, and contract rates, highlighting why some carriers face layoffs and bankruptcies despite a recovering market. Plus, learn about the lowest truck count since early 2022. […] The post Trucking…
 
 ## Splash247
+- 2026-11-15 01:06 | US court orders arrest of tanker after New Orleans cruise ship collision | https://splash247.com/us-court-orders-arrest-of-tanker-after-new-orleans-cruise-ship-collision/
+  A US federal court has authorised the arrest of the tanker Atlantic Asphalt after the Port of New Orleans launched legal action seeking more than $1m in damages following the collision that sank American Cruise Lines’ American Heritage. The Board of Commissioners of the Port of New Orleans filed the lawsuit in the Eastern District …
 - 2026-11-14 00:58 | Tanker sinks river cruise ship in New Orleans collision | https://splash247.com/tanker-sinks-river-cruise-ship-in-new-orleans-collision/
-  The 17,764 dwt bitumen tanker Atlantic Asphalt has struck and sunk a river cruise ship on the Mississippi River in New Orleans, leaving 32 people hospitalised and prompting a major emergency response. The collision occurred at approximately 12.30 pm local time on November 13, when the 2017-built tanker struck American Cruise Lines’ American Heritage, which …
+  The 17,764 dwt bitumen tanker Atlantic Asphalt has struck and partially sunk a river cruise ship on the Mississippi River in New Orleans, leaving 32 people hospitalised and prompting a major emergency response. The collision occurred at approximately 12.30 pm local time on November 13, when the 2017-built tanker struck American Cruise Lines’ American Heritage, …
 - 2026-11-13 10:07 | From ocean liner to artificial reef: A warning for container shipping | https://splash247.com/from-ocean-liner-to-artificial-reef-a-warning-for-container-shipping/
   Dr Raymon Krishnan, president of Singapore’s Logistics & Supply Chain Management Society, writes for Splash today, reflecting on one of this week’s most talked about stories in the mainstream press. On Wednesday, the 990-foot ocean liner SS United States was deliberately sunk off Destin, Florida, to become what is expected to be the world’s largest …
 - 2026-11-13 09:50 | BW LPG scores another lucrative Avance VLGC flip | https://splash247.com/bw-lpg-scores-another-lucrative-avance-vlgc-flip/
   BW LPG has struck another lucrative vessel sale, offloading a VLGC acquired in John Fredriksen’s Avance Gas fleet deal less than two years ago for well over $100m. The New York- and Oslo-listed gas carrier giant has agreed to sell the 2015-built, 83,134 cu m BW Mistral, with the transaction expected to generate a net …
 - 2026-11-13 09:42 | Cetus seals $200m share placement ahead of Oslo debut | https://splash247.com/cetus-seals-200m-share-placement-ahead-of-oslo-debut/
   Hong Kong-based dry bulk owner Cetus Maritime has successfully placed a NOK1.89bn ($200m) share offering, including an over-allotment, clearing a major hurdle ahead of its planned Oslo stock market debut next week. The Mark Young-led company said it had conditionally allocated 108.5m shares at NOK17.44 ($1.83) apiece, taking up the full $25m over-allotment on top …
-- 2026-11-13 09:35 | UK blacklists 11 ships in fresh Russia sanctions sweep | https://splash247.com/uk-blacklists-11-ships-in-fresh-russia-sanctions-sweep/
-  Britain has slapped fresh sanctions on 11 ships linked to Russian energy exports, targeting five LNG carriers, five oil tankers and a floating storage unit in its latest effort to disrupt Moscow’s seaborne oil and gas trade. The measures also cover nine companies, including Russian oil producer Slavneft, Rosneft’s Vostok Oil project and several energy …
 
 ## DC Velocity
 - 2026-11-12 17:20 | ISG: Manufacturers in North American are strengthening factory resilience | https://www.dcvelocity.com/logistics/manufacturing/isg-manufacturers-in-north-american-are-strengthening-factory-resilience [planning terms]
   Manufacturers in North American are strengthening factory resilience by restructuring regional production and supply networks to sustain production amid challenges such as trade-policy shifts, economic uncertainty, and supply disruptions, according to a report from Information Services Group (ISG). In a bid to preserve safety, continuity, and traceability, manufacturers are coordinating product,…
-- 2026-11-06 21:27 | Case Study: Partnering to Build L&M Fleet Supply's New Distribution Center | https://www.dcvelocity.com/video/dcv-tv-4-viewer-contributed/case-study-partnering-to-build-lm-fleet-supply-s-new-distribution-center [planning terms]
-  L&M Fleet Supply partnered with Storage Solutions to build a new distribution center designed to support continued growth. Despite a tight timeline and complex facility requirements, the project delivered more than 1,000 bays of pallet racking and 13,000 pallet positions. Watch the video to see how collaboration from planning through installation helped bring the facility to life. Sponsored by
 - 2026-11-13 23:49 | Meta buys zero-emission trucking capacity to offset data center construction | https://www.dcvelocity.com/supply-chain/other-services/green-logistics/meta-buys-zero-emission-trucking-capacity-to-offset-data-center-construction
   Artificial intelligence (AI) and social media giant Meta will purchase zero-emission trucking capacity from Nevoya, an electric truckload carrier, to offset the emissions of its business activities, the firms said Thursday. Nevoya announced the multi-year agreement with Meta that support the deployment of 25 Class 8 battery-electric trucks on the Interstate 10 (I-10) between San Bernardino,…
 - 2026-11-13 23:48 | Manufacturers expect growth—but maybe not profits—in 2027 | https://www.dcvelocity.com/logistics/manufacturing/manufacturers-expect-growth-but-maybe-not-profits-in-2027
@@ -605,8 +586,6 @@ Items per lane: planning 151, freight 45, management 28, companies 11
 ## Sea-Intelligence
 - 2026-11-12 14:18 | Is 2026 TP Peak Season Driven by AI? | https://www.sea-intelligence.com/press-room/420-is-2026-tp-peak-season-driven-by-ai
   According to data from the US Census Bureau, the still-ongoing 2026 Transpacific container shipping peak season is not being driven by the boom in investments in artificial intelligence (AI) and is instead being actively fuelled by traditional consumer goods. Figure 1 shows the monthly Asia to US containerized imports in Metric Tons for January 2022 to September 2026, broken down into seven…
-- 2026-11-06 19:15 | Correction to October 2026 schedule reliability report | https://www.sea-intelligence.com/press-room/419-glp-correction
-  Since the release of the latest Global Liner Performance (GLP) report on October 27th, 2026, we have been notified of an error in which a small subset of vessel arrivals had been double counted in the calculation of aggregated alliance schedule reliability figures. This error dates back to the first alliance section in the April 2015 GLP report and went unnoticed for 11 years, both by our team…
 
 ## Xeneta
 - 2026-11-13 17:06 | XENETA WEEKLY OCEAN CONTAINER SHIPPING MARKET UPDATE - 13.11.26 | https://www.xeneta.com/news/xeneta-weekly-ocean-container-shipping-market-update-13.11.26
@@ -658,8 +637,8 @@ Items per lane: planning 151, freight 45, management 28, companies 11
 
 ## Rhine gauges (Pegelonline, live; freight desk)
 Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.
-- MAXAU (Rhine km 362.327): 377.0 cm, measured 2026-11-14T10:15:00+01:00
-- KAUB (Rhine km 546.23): 73.0 cm, measured 2026-11-14T10:15:00+01:00
-- KÖLN (Rhine km 688.0): 112.0 cm, measured 2026-11-14T10:15:00+01:00
-- DUISBURG-RUHRORT (Rhine km 780.8): 169.0 cm, measured 2026-11-14T10:15:00+01:00
-- EMMERICH (Rhine km 851.9): 5.0 cm, measured 2026-11-14T10:15:00+01:00
+- MAXAU (Rhine km 362.327): 340.0 cm, measured 2026-11-15T10:45:00+01:00
+- KAUB (Rhine km 546.23): 58.0 cm, measured 2026-11-15T10:45:00+01:00
+- KÖLN (Rhine km 688.0): 114.0 cm, measured 2026-11-15T10:45:00+01:00
+- DUISBURG-RUHRORT (Rhine km 780.8): 193.0 cm, measured 2026-11-15T10:45:00+01:00
+- EMMERICH (Rhine km 851.9): 22.0 cm, measured 2026-11-15T10:45:00+01:00
