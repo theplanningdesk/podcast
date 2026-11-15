@@ -29,7 +29,7 @@ the Published Journal Article applies to this version, see: https://www.elsevier
 and-standards/sharing#4-published-journal-article. Please also note that, during the production pro-
 cess, errors may be discovered which could affect the content, and all legal disclaimers that apply to
 the journal pertain.
-© 2026 Published by Elsevier B.V .
+© 2026 Published by Elsevier B.V.
 Journal Pre-proof
 Journal Pre-proof
 Impact of privacy-preserving horizontal retailer information 
@@ -267,21 +267,21 @@ sharing. The necessary adaptions of the model for considering these factors are 
 In general, we consider a 4-echelon SC including one supplier, one manufacturer, one wholesaler and multiple
 retailers, where each retailer is serving a separate customer. As shown in Figure 1, we use four customers and four
 retailers for our analysis, however, the model can be extended to any number of customers and retailers. Each echelon
-is denoted by the superscript𝑖, indicating its position in the SC, where𝑖 = 1 is used for the retailers as the most
-downstreamechelon.Inadditiontothat,weuse 𝑖 = 0 forthecustomers.Thepositionofeachactorinacertainechelon
-𝑖is denoted by the superscript𝑗.
+is denoted by the superscript 𝑖, indicating its position in the SC, where 𝑖 = 1 is used for the retailers as the most
+downstreamechelon.Inadditiontothat,weuse𝑖 = 0 forthecustomers.Thepositionofeachactorinacertainechelon
+𝑖is denoted by the superscript 𝑗.
 We use the following modelling assumptions:
-• Flows of goods/information:Each actor receives an order from its immediate downstream partner at echelon
+• Flows of goods/information: Each actor receives an order from its immediate downstream partner at echelon
 𝑖 − 1 and delivers goods to this echelon. The demand of the customers is only known by the respective retailers
 and is not shared with other upstream echelons.
-• Inventorypolicy: EachSCactorusestheOUTinventorypolicywhereanorderisplacedtobringtheinventory
+• Inventorypolicy:EachSCactorusestheOUTinventorypolicywhereanorderisplacedtobringtheinventory
 position to the OUT point (Cannella and Ciancimino, 2010; Constantino et al., 2014; Dominguez, Cannella,
 PonteandFraminan,2022).TheOUTpointisadjustedeveryperiodasdemandforecastisadjustedandincludes
 thesafetystockwhichistheexpecteddemandforanumberofbufferperiods.Thesequenceofactivitiesineach
 period𝑡startswithissuinganorder,whichisfollowedbydeliveryofgoodsorderedinpreviousperiodsandthen
-the demand of the period𝑡 is observed and inventory is updated.
+the demand of the period 𝑡 is observed and inventory is updated.
 • Forecasting:Replenishmentordersarebasedondemandforecastswhichareupdatedeveryperiodaccordingto
-thesimplemovingaveragesmethod(MA)usingpast 𝑁 demandperiods(see,e.g.Chenetal.(2000a);Chatfield
+thesimplemovingaveragesmethod(MA)usingpast𝑁 demandperiods(see,e.g.Chenetal.(2000a);Chatfield
 : Preprint submitted to Elsevier Page 4 of 25
 Journal Pre-proof
 Journal Pre-proof
@@ -331,7 +331,7 @@ Information flow
 Figure 1: SC structure with four retailers and four customers
 etal.(2004);Constantinoetal.(2014);Dominguezetal.(2018b);Ojha,Sahin,ShockleyandSridharan(2019)).
 Further in the analysis, this method is compared with simple exponential smoothing (see Section 3.4.2).
-• Customer demands:In the initial setting discussed in Section 4.2, demands are stochastic, independent and
+• Customer demands: In the initial setting discussed in Section 4.2, demands are stochastic, independent and
 identically distributed following a Gamma distribution with identical mean and standard deviation for each
 customer. The advantage of Gamma distribution compared to the commonly used Normal distribution is its
 possibility to consider higher demand variabilities that are used in our analysis (Tyworth, Guo and Ganeshan,
@@ -348,15 +348,15 @@ as soon as new goods are delivered. This is also valid for customers’ demands 
 Constantino, Di Gravio, Shaban and Tronci, 2015; Dominguez et al., 2022).
 • Returns:Returns of goods to the upstream echelon due to excess inventory are not allowed (Constantino et al.,
 2014).
-• Safety stock:Safety stock is defined in form of fixed periods of demand forecast that are added to the demand
+• Safety stock: Safety stock is defined in form of fixed periods of demand forecast that are added to the demand
 during lead time (Dejonckheere et al., 2004; Constantino et al., 2014). Since this assumption might influence
 the effect of information sharing, safety stock in form of service levels is also considered as discussed in
 Section 3.4.3.
-• Lead times:Lead time represents the time between the receipt of the order and the delivery of the goods. In
+• Lead times: Lead time represents the time between the receipt of the order and the delivery of the goods. In
 theinitialsetting,leadtimesaredeterministicandequalforeachechelonwithintheSCexceptforthecustomer,
 wherethedemandissatisfiedimmediately(Dejonckheereetal.,2004;Constantinoetal.,2014,2015).Inaddition
 to that, we also consider stochastic lead times as influencing factor, as discussed in Section 3.4.4.
-• Fulfillment of retailers’ orders by the wholesaler:In each period the wholesaler receives orders from all
+• Fulfillment of retailers’ orders by the wholesaler: In each period the wholesaler receives orders from all
 retailers and fulfills them based on the share of the order on the total ordered quantity in that period. If there
 are backlogs from the previous period, first the backlogs are satisfied according to the share of backlogs of each
 individual retailer on the total backlogs and only then new demand is served if there is still inventory left.
@@ -365,30 +365,30 @@ The indices and variables used in the model are summarized in Table 1.
 Journal Pre-proof
 Journal Pre-proof
 𝐼 set of echelons within the SC (excluding customers)
-𝐽𝑖 set of actors on the echelon𝑖
+𝐽𝑖 set of actors on the echelon 𝑖
 𝑇 set of time periods
-𝐷0𝑗 𝑡 Demand of customer𝑗 in period𝑡
+𝐷0𝑗 𝑡 Demand of customer 𝑗 in period 𝑡
 𝐿 Lead time in periods
 𝑁 Number of periods taken for the moving average forecasting model
 𝑅 Number of demand periods used as safety stock
-𝐵𝑖𝑗 𝑡 Backlogs at actor𝑗 on echelon𝑖 in period𝑡 ̂𝐷𝑖𝑗 𝑡 Demand forecast by actor𝑗 on echelon𝑖 in period𝑡
-𝐷𝐿𝑖𝑗 𝑡 Goods outgoing to actor𝑗 on echelon𝑖 by the actor on upstream echelon in period𝑡 to be
-delivered in period𝑡 +𝐿
-𝐺𝑂𝑖𝑗 𝑡 On-order inventory of actor𝑗 on echelon𝑖 in period𝑡
-𝐼𝑖𝑗 𝑡 On-hand inventory of actor𝑗 on echelon𝑖 at the end of period𝑡
-𝐼𝐿𝑖𝑗 𝑡 Inventory level of actor𝑗 on echelon𝑖 at the end of period𝑡
-𝐼𝑃 𝑖𝑗 𝑡 Inventory position of actor𝑗 on echelon𝑖 at the end of period𝑡
-𝑂𝑖𝑗 𝑡 Order of actor𝑗 on echelon𝑖 in period𝑡
-𝑆𝑖𝑗 𝑡 OUT point for actor𝑗 on echelon𝑖 in period𝑡
-𝛼𝑡 fraction of retailer’s backlogs satisfied in period𝑡
-𝛽𝑡 fraction of retailer’s orders satisfied in period𝑡
+𝐵𝑖𝑗 𝑡 Backlogs at actor 𝑗 on echelon 𝑖 in period 𝑡 ̂𝐷𝑖𝑗 𝑡 Demand forecast by actor 𝑗 on echelon 𝑖 in period 𝑡
+𝐷𝐿𝑖𝑗 𝑡 Goods outgoing to actor 𝑗 on echelon 𝑖 by the actor on upstream echelon in period 𝑡 to be
+delivered in period 𝑡 + 𝐿
+𝐺𝑂𝑖𝑗 𝑡 On-order inventory of actor 𝑗 on echelon 𝑖 in period 𝑡
+𝐼𝑖𝑗 𝑡 On-hand inventory of actor 𝑗 on echelon 𝑖 at the end of period 𝑡
+𝐼𝐿𝑖𝑗 𝑡 Inventory level of actor 𝑗 on echelon 𝑖 at the end of period 𝑡
+𝐼𝑃𝑖𝑗 𝑡 Inventory position of actor 𝑗 on echelon 𝑖 at the end of period 𝑡
+𝑂𝑖𝑗 𝑡 Order of actor 𝑗 on echelon 𝑖 in period 𝑡
+𝑆𝑖𝑗 𝑡 OUT point for actor 𝑗 on echelon 𝑖 in period 𝑡
+𝛼𝑡 fraction of retailer’s backlogs satisfied in period 𝑡
+𝛽𝑡 fraction of retailer’s orders satisfied in period 𝑡
 Table 1
 Sets, parameters and variables of the mathematical model
-Themathematicalmodeldescribingchangesofvariablesineachperiod 𝑡issummarizedinthefollowingequations:
+Themathematicalmodeldescribingchangesofvariablesineachperiod𝑡issummarizedinthefollowingequations:
 ̂𝐷1𝑗 𝑡 = 1 𝑁
 𝑁∑
 𝑘=1
-𝐷0𝑗 𝑡−𝑘 ∀𝑗 ∈𝐽1 (1)
+𝐷0𝑗 𝑡−𝑘 ∀𝑗 ∈ 𝐽1 (1)
 ̂𝐷21 𝑡 = 1 𝑁
 𝑁∑
 𝑘=1
@@ -399,14 +399,14 @@ Themathematicalmodeldescribingchangesofvariablesineachperiod 𝑡issummarizedint
 𝑁∑
 𝑘=1
 𝑂𝑖−1,𝑗 𝑡−𝑘 for 𝑖 = 3, 4 (3)
-𝑆𝑖𝑗 𝑡 = (𝐿 + 1 +𝑅) ̂𝐷𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (4)
-𝑂𝑖𝑗 𝑡 =𝑚𝑎𝑥(𝑆𝑖𝑗 𝑡 −𝐼𝑃𝑖𝑗 𝑡−1; 0) ∀ 𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (5)
-𝐷𝐿0𝑗 𝑡 =𝑚𝑖𝑛(𝐵0𝑗 𝑡−1 +𝐷0𝑗 𝑡 ;𝐼 1𝑗 𝑡−1 +𝐷𝐿1𝑗 𝑡−𝐿) ∀ 𝑗 ∈𝐽0 (6)
-𝛼𝑡 =𝑚𝑖𝑛
+𝑆𝑖𝑗 𝑡 = (𝐿 + 1 + 𝑅) ̂𝐷𝑖𝑗 𝑡 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (4)
+𝑂𝑖𝑗 𝑡 = 𝑚𝑎𝑥(𝑆𝑖𝑗 𝑡 − 𝐼𝑃𝑖𝑗 𝑡−1; 0) ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (5)
+𝐷𝐿0𝑗 𝑡 = 𝑚𝑖𝑛(𝐵0𝑗 𝑡−1 + 𝐷0𝑗 𝑡 ; 𝐼 1𝑗 𝑡−1 + 𝐷𝐿1𝑗 𝑡−𝐿) ∀𝑗 ∈ 𝐽0 (6)
+𝛼𝑡 = 𝑚𝑖𝑛
 ⎛
 ⎜
 ⎜⎝
-𝐼 21 𝑡−1 +𝐷𝐿21 𝑡−𝐿
+𝐼 21 𝑡−1 + 𝐷𝐿21 𝑡−𝐿
 ∑
 𝑗∈𝐽1 𝐵1𝑗 𝑡−1 ; 1
 ⎞
@@ -415,54 +415,54 @@ Themathematicalmodeldescribingchangesofvariablesineachperiod 𝑡issummarizedint
 : Preprint submitted to Elsevier Page 6 of 25
 Journal Pre-proof
 Journal Pre-proof
-𝛽𝑡 =𝑚𝑖𝑛
+𝛽𝑡 = 𝑚𝑖𝑛
 ⎛
 ⎜
 ⎜⎝
-𝐼 21 𝑡−1 +𝐷𝐿21 𝑡−𝐿 −𝛼 ∑ 𝑗∈𝐽1 𝐵1𝑗 𝑡−1
+𝐼 21 𝑡−1 + 𝐷𝐿21 𝑡−𝐿 − 𝛼 ∑ 𝑗∈𝐽1 𝐵1𝑗 𝑡−1
 ∑
 𝑗∈𝐽1 𝑂1𝑗 𝑡 ; 1
 ⎞
 ⎟
 ⎟⎠ (8)
-𝐷𝐿1𝑗 𝑡 =𝛼𝑡𝐵1𝑗 𝑡−1 +𝛽𝑡𝑂1𝑗 𝑡 ∀𝑗 ∈𝐽1 (9)
-𝐷𝐿𝑖1 𝑡 =𝑚𝑖𝑛(𝐵𝑖1 𝑡−1 +𝑂𝑖1 𝑡 ;𝐼𝑖+1,1 𝑡−1 +𝐷𝐿𝑖+1,1 𝑡−𝐿 ) 𝑓𝑜𝑟 𝑖 = 2, 3 (10)
-𝐷𝐿41 𝑡 =𝑂41 𝑡 (11)
-𝐵𝑖𝑗 𝑡 =𝑚𝑎𝑥(𝐵𝑖𝑗 𝑡−1 +𝑂𝑖𝑗 𝑡 −𝐷𝐿𝑖𝑗 𝑡 ; 0) ∀ 𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (12)
-𝐵0𝑗 𝑡 =𝑚𝑎𝑥(𝐵0𝑗 𝑡−1 +𝐷0𝑗 𝑡 −𝐷𝐿0𝑗 𝑡 ; 0) ∀ 𝑗 ∈𝐽0 (13)
-𝐺𝑂𝑖𝑗 𝑡 =𝐺𝑂𝑖𝑗 𝑡−1 +𝑂𝑖𝑗 𝑡 −𝐷𝐿𝑖𝑗 𝑡−𝐿 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (14)
-𝐼𝑖𝑗 𝑡 =𝐼𝑖𝑗 𝑡−1 +𝐷𝐿𝑖𝑗 𝑡−𝐿 −𝐷𝐿𝑖−1,𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (15)
-𝐼𝐿𝑖𝑗 𝑡 =𝐼𝑖𝑗 𝑡 −𝐵𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (16)
-𝐼𝑃𝑖𝑗 𝑡 =𝐼𝐿𝑖𝑗 𝑡 +𝐺𝑂𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (17)
-At the beginning of each period, each actor has to prepare a demand forecast̂𝐷𝑖𝑗 𝑡 showing the expected demand
+𝐷𝐿1𝑗 𝑡 = 𝛼𝑡𝐵1𝑗 𝑡−1 + 𝛽𝑡𝑂1𝑗 𝑡 ∀𝑗 ∈ 𝐽1 (9)
+𝐷𝐿𝑖1 𝑡 = 𝑚𝑖𝑛(𝐵𝑖1 𝑡−1 + 𝑂𝑖1 𝑡 ; 𝐼𝑖+1,1 𝑡−1 + 𝐷𝐿𝑖+1,1 𝑡−𝐿 ) 𝑓𝑜𝑟 𝑖 = 2, 3 (10)
+𝐷𝐿41 𝑡 = 𝑂41 𝑡 (11)
+𝐵𝑖𝑗 𝑡 = 𝑚𝑎𝑥(𝐵𝑖𝑗 𝑡−1 + 𝑂𝑖𝑗 𝑡 − 𝐷𝐿𝑖𝑗 𝑡 ; 0) ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (12)
+𝐵0𝑗 𝑡 = 𝑚𝑎𝑥(𝐵0𝑗 𝑡−1 + 𝐷0𝑗 𝑡 − 𝐷𝐿0𝑗 𝑡 ; 0) ∀𝑗 ∈ 𝐽0 (13)
+𝐺𝑂𝑖𝑗 𝑡 = 𝐺𝑂𝑖𝑗 𝑡−1 + 𝑂𝑖𝑗 𝑡 − 𝐷𝐿𝑖𝑗 𝑡−𝐿 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (14)
+𝐼𝑖𝑗 𝑡 = 𝐼𝑖𝑗 𝑡−1 + 𝐷𝐿𝑖𝑗 𝑡−𝐿 − 𝐷𝐿𝑖−1,𝑗 𝑡 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (15)
+𝐼𝐿𝑖𝑗 𝑡 = 𝐼𝑖𝑗 𝑡 − 𝐵𝑖𝑗 𝑡 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (16)
+𝐼𝑃𝑖𝑗 𝑡 = 𝐼𝐿𝑖𝑗 𝑡 + 𝐺𝑂𝑖𝑗 𝑡 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (17)
+At the beginning of each period, each actor has to prepare a demand forecast ̂𝐷𝑖𝑗 𝑡 showing the expected demand
 that this actor will face from the downstream echelon. For the retailers, the expected demand is based on customers’
 demand(seeEq.(1)).Incaseofthewholesaler,theforecastisbasedonthesumofordersreceivedfromallretailersas
 shown in Eq. (2). For all other echelons, received orders are the basis for the demand forecast (Eq. (3)). This forecast
-is used for calculating the OUT point𝑆𝑖𝑗 𝑡 that depends on the expected demand during the lead time including one
-review period(𝐿 + 1) due to the fact that the order is placed at the beginning of the period whereas the demand is
-only satisfied at the end of the period. Moreover, additional safety stock periods𝑅 are included, as shown in Eq. (4).
-Afterwards,theorderquantity 𝑂𝑖𝑗 𝑡 iscalculatedasthedifferencebetweentheOUTpointandinventorypositionofthe
+is used for calculating the OUT point 𝑆𝑖𝑗 𝑡 that depends on the expected demand during the lead time including one
+review period (𝐿 + 1) due to the fact that the order is placed at the beginning of the period whereas the demand is
+only satisfied at the end of the period. Moreover, additional safety stock periods 𝑅 are included, as shown in Eq. (4).
+Afterwards,theorderquantity𝑂𝑖𝑗 𝑡 iscalculatedasthedifferencebetweentheOUTpointandinventorypositionofthe
 previous period, as shown in Eq. (5). Since returns are not allowed, the order quantity cannot be negative.
-Afterplacingtheorder,eachactorreceivestheinformationaboutthequantityofgoods 𝐷𝐿𝑖𝑗 𝑡 whichwereassigned
+Afterplacingtheorder,eachactorreceivestheinformationaboutthequantityofgoods𝐷𝐿𝑖𝑗 𝑡 whichwereassigned
 tohimbytheupstreampartner.Forcustomers,thisquantitydependsononehandonthedemandofthecurrentperiod
 andbacklogsfromthepreviousperiods,ontheotherhanditalsodependsontheavailabilityofthegoodsattheretailer,
 which consists of the inventory left from the last period and the goods delivered by the wholesaler, as it is shown
 in Eq. (6). The process of goods assignment for retailers by the wholesaler is defined by Eq. (7)-(9). The delivered
 quantity depends on the total inventory available at the wholesaler. First, the backlogs of all retailers are summed up
-andcomparedtothetotalavailableinventoryinordertocalculate 𝛼,whichshowstheshareofbacklogsthatissatisfied
+andcomparedtothetotalavailableinventoryinordertocalculate𝛼,whichshowstheshareofbacklogsthatissatisfied
 : Preprint submitted to Elsevier Page 7 of 25
 Journal Pre-proof
 Journal Pre-proof
 (Eq. (7)). Afterwards, if there is still inventory left, this is compared to the sum of new orders of the retailers in order
-to calculate𝛽 that shows the share of the retailer’s order that will be satisfied (Eq. (8)). The total delivered quantity
+to calculate 𝛽 that shows the share of the retailer’s order that will be satisfied (Eq. (8)). The total delivered quantity
 for the retailer consists of the satisfied backlogs and the satisfied order as shown in Eq. (9). The delivery of goods for
 wholesaler and manufacturer is similar to customers, but the demand is replaced by their order quantity as shown in
 Eq. (10). The supplier receives all goods that he orders as his sourcing capacity is unlimited (Eq. (11)). The goods
 which cannot be delivered immediately are recorded as backlogs according to Eq. (12) and Eq. (13).
-Eq. (14)-(17) describe the changes in different inventory levels. Eq. (14) refers to on-order inventory𝐺𝑂𝑖𝑗 𝑡 that
-shows the number of goods which were ordered but not delivered yet. The physically available on-hand inventory𝐼𝑖𝑗 𝑡
-is calculated in Eq. (15). Inventory level𝐼𝐿𝑖𝑗 𝑡 in Eq. (16) represents the on-hand inventory corrected by the backlogs.
-Finally, the inventory position𝐼𝑃𝑖𝑗 𝑡 combining inventory level and on-order inventory is calculated in Eq. (17).
+Eq. (14)-(17) describe the changes in different inventory levels. Eq. (14) refers to on-order inventory 𝐺𝑂𝑖𝑗 𝑡 that
+shows the number of goods which were ordered but not delivered yet. The physically available on-hand inventory 𝐼𝑖𝑗 𝑡
+is calculated in Eq. (15). Inventory level 𝐼𝐿𝑖𝑗 𝑡 in Eq. (16) represents the on-hand inventory corrected by the backlogs.
+Finally, the inventory position 𝐼𝑃𝑖𝑗 𝑡 combining inventory level and on-order inventory is calculated in Eq. (17).
 3.2. Horizontal information sharing
 In the basic model presented in Section 3.1, each retailer can only observe the demand of its own customer, which
 is also the basis for his demand forecast. The wholesaler and other echelons do not have any access to the demand
@@ -479,7 +479,7 @@ concentrateonthehorizontalinformationsharing,wheretheinformationabouttheaveraged
 made available to each retailer. In this way, the retailer can compare the demand of his customer to the overall market
 development and adjust his demand forecast to reduce its variance. This is done by combining the demand of the own
 customer with the average market demand, as shown in Eq. (18), which replaces Eq. (1) in the basic SC model:
-̂𝐷1𝑗 𝑡 =𝛾
+̂𝐷1𝑗 𝑡 = 𝛾
 (
 1
 𝑁
@@ -487,7 +487,7 @@ customer with the average market demand, as shown in Eq. (18), which replaces Eq
 𝑘=1
 𝐷0𝑗 𝑡−𝑘
 )
-+ (1 −𝛾)
++ (1 − 𝛾)
 (
 1
 𝑁
@@ -498,21 +498,21 @@ customer with the average market demand, as shown in Eq. (18), which replaces Eq
 𝐷0𝑗 𝑡−𝑘
 |𝐽0|
 )
-∀𝑗 ∈𝐽1, (18)
-where𝛾 is a smoothing factor between 0 and 1 that can be varied to either put more weight on the demand of the
+∀𝑗 ∈ 𝐽1, (18)
+where 𝛾 is a smoothing factor between 0 and 1 that can be varied to either put more weight on the demand of the
 immediate customer (first part of the equation) or the average demand of all customers (second part of the equation).
 3.3. Performance measures
 The performance of the model and its extensions will be based on three different performance measures that are
 widelyusedintheliteratureandcanbealsofoundinConstantinoetal.(2014),namelyBullwhipEffectRatio(BWE),
 Inventory Variance Ratio (IVR) and Average Fill Rate (AFR). In addition to that, we consider costs as a SC-wide
 performance indicator and we also report the coefficient of variation (CV) for the demand and orders that compares
-the standard deviation𝜎 of demand/order to its mean𝜇:
+the standard deviation 𝜎 of demand/order to its mean𝜇:
 𝐶𝑉 = 𝜎 𝜇 (19)
 BWE describes the amplification of the variance between the different echelons, when it compares the variance of
-orders at each echelon𝑖with the variance of customers’ demand. BWE can be calculated as
-𝐵𝑊𝐸 𝑖𝑗 = 𝜎2 𝑂𝑖𝑗 ∕𝜇𝑂𝑖𝑗
+orders at each echelon 𝑖with the variance of customers’ demand. BWE can be calculated as
+𝐵𝑊𝐸𝑖𝑗 = 𝜎2 𝑂𝑖𝑗 ∕𝜇𝑂𝑖𝑗
 𝜎2 𝐷∕𝜇𝐷 , (20)
-where 𝜎2 represents the variance and𝜇 represents the mean of the order (𝑂𝑖𝑗) and customer demand (𝐷),
+where 𝜎2 represents the variance and 𝜇 represents the mean of the order (𝑂𝑖𝑗) and customer demand (𝐷),
 respectively. For the retailers, we calculate BWE separately for each retailer and we report the average value over
 : Preprint submitted to Elsevier Page 8 of 25
 Journal Pre-proof
@@ -523,7 +523,7 @@ WhereasBWEmeasuresorderamplification,IVRisrelatedtothevariationininventorylevels
 in high inventory or backlog costs if it increases. It compares the variance of the inventory level to the variance of
 demandasshowninEq.(21).Again,wereportaverageIVRvalueoverallretailersandweusetheaggregateddemand
 to calculate IVR for all other echelons.
-𝐼𝑉𝑅 𝑖𝑗 = 𝜎2 𝐼𝐿𝑖𝑗
+𝐼𝑉𝑅𝑖𝑗 = 𝜎2 𝐼𝐿𝑖𝑗
 𝜎2 𝐷 , (21)
 AFR shows the share of the new demand or orders that can be satisfied immediately by a certain actor in each
 period. It is positive when the demand/order is also positive and higher than the backlogs from the previous period,
@@ -531,12 +531,12 @@ otherwise it is assumed to be 0:
 𝐴𝐹𝑅𝑖𝑗 =
 {
 𝐷𝐿𝑖−1,𝑗 −𝐵𝑖−1,𝑗
-𝑂𝑖𝑗 if 𝐷𝐿𝑖−1,𝑗 −𝐵𝑖−1,𝑗 > 0
+𝑂𝑖𝑗 if 𝐷𝐿𝑖−1,𝑗 − 𝐵𝑖−1,𝑗 > 0
 0 otherwise
 (22)
-Theorderofacertainechelon 𝑂𝑖𝑗 iscomparedheretothepromiseddeliveryquantity 𝐷𝐿𝑖−1,𝑗 andbacklogs 𝐵𝑖−1,𝑗
+Theorderofacertainechelon𝑂𝑖𝑗 iscomparedheretothepromiseddeliveryquantity𝐷𝐿𝑖−1,𝑗 andbacklogs𝐵𝑖−1,𝑗
 of the next downstream echelon, as actually these are only recorded on the next echelon based on the logic of the
-model (the deliveries and backlogs for, e.g., the manufacturer to the wholesaler are actually recorded as𝐷𝐿 and𝐵 at
+model (the deliveries and backlogs for, e.g., the manufacturer to the wholesaler are actually recorded as 𝐷𝐿 and 𝐵 at
 the wholesaler, therefore these have to be taken into consideration if we calculate AFR for the manufacturer). Also in
 this case we report the average AFR over all retailers, the other stages have their own fill rate for each actor.
 TheSCcostsconsistofinventorycostsandbacklogcostsandtheyarecalculatedforeachechelonandactorforthe
@@ -571,23 +571,23 @@ Journal Pre-proof
 Journal Pre-proof
 Therefore, next to the already introduced MA method we also consider the influence of SES forecasting methods. For
 the latter, Eq. (1)-(3) are replaced by the following Eq. (23)-(25):
-̂𝐷1𝑗 𝑡 =𝛿𝐷1𝑗 𝑡−1 + (1 −𝛿) ̂𝐷1𝑗 𝑡−1 ∀𝑗 ∈𝐽1 (23)
-̂𝐷21 𝑡 =𝛿 ∑
+̂𝐷1𝑗 𝑡 = 𝛿𝐷1𝑗 𝑡−1 + (1 − 𝛿) ̂𝐷1𝑗 𝑡−1 ∀𝑗 ∈ 𝐽1 (23)
+̂𝐷21 𝑡 = 𝛿 ∑
 𝑗∈𝐽1
-𝑂1𝑗 𝑡−1 + (1 −𝛿) ̂𝐷21 𝑡−1 (24)
-̂𝐷𝑖1 𝑡 =𝛿𝑂𝑖−1,1 𝑡−1 + (1 −𝛿) ̂𝐷𝑖𝑗 𝑡−1 for 𝑖 = 3, 4 (25)
-where𝛿 is a smoothing parameter between 0 and 1 that indicates how much weight is put on the newest demand
-or order observation and(1 −𝛿) is then the weight put on the last forecasted demand or order quantity. Analogously,
+𝑂1𝑗 𝑡−1 + (1 − 𝛿) ̂𝐷21 𝑡−1 (24)
+̂𝐷𝑖1 𝑡 = 𝛿𝑂𝑖−1,1 𝑡−1 + (1 − 𝛿) ̂𝐷𝑖𝑗 𝑡−1 for 𝑖 = 3, 4 (25)
+where 𝛿 is a smoothing parameter between 0 and 1 that indicates how much weight is put on the newest demand
+or order observation and (1 − 𝛿) is then the weight put on the last forecasted demand or order quantity. Analogously,
 Eq. (18) used to forecast demand in the information sharing case is replaced by Eq. (26):
-̂𝐷1𝑗 𝑡 =𝛾(𝛿𝐷1𝑗 𝑡−1 + (1 −𝛿) ̂𝐷1𝑗 𝑡−1) + (1 −𝛾)
+̂𝐷1𝑗 𝑡 = 𝛾(𝛿𝐷1𝑗 𝑡−1 + (1 − 𝛿) ̂𝐷1𝑗 𝑡−1) + (1 − 𝛾)
 (
 𝛿
 ∑
 𝑗∈𝐽0
 𝐷0𝑗 𝑡−1
-|𝐽0| + (1 −𝛿) ̂𝐷𝑎𝑣𝑒 𝑡−1
+|𝐽0| + (1 − 𝛿) ̂𝐷𝑎𝑣𝑒 𝑡−1
 )
-∀𝑗 ∈𝐽1 (26)
+∀𝑗 ∈ 𝐽1 (26)
 where ̂𝐷𝑎𝑣𝑒 𝑡−1 is the last forecasted average market demand based on shared demand information.
 3.4.3. Safety stock approaches
 Although calculating the OUT point using the safety stock defined in terms of fixed periods of demand forecast𝑅
@@ -596,8 +596,8 @@ Constantino et al. (2014)), an alternative is to consider the safety stock based
 deviation during the lead time and review period, in order to achieve a certain service level (SL approach) (see e.g.
 Dejonckheere et al. (2004); Chatfield et al. (2004); Reiner and Fichtinger (2009)). In this case the calculation of the
 OUT point in Eq. (4) has to be replaced by the following Eq. (27):
-𝑆𝑖𝑗 𝑡 = (𝐿 + 1) ̂𝐷𝑖𝑗 𝑡 +𝑘 √ 𝐿 + 1𝜎𝑖𝑗 𝑡𝐷 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (27)
-where𝜎𝑖𝑗 𝑡𝐷 represents the standard deviation of demand and𝑘 is the service level factor. Hence, we analyze the effect of information sharing under both approaches.
+𝑆𝑖𝑗 𝑡 = (𝐿 + 1) ̂𝐷𝑖𝑗 𝑡 + 𝑘 √ 𝐿 + 1𝜎𝑖𝑗 𝑡𝐷 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (27)
+where 𝜎𝑖𝑗 𝑡𝐷 represents the standard deviation of demand and 𝑘 is the service level factor. Hence, we analyze the effect of information sharing under both approaches.
 3.4.4. Lead time
 In case of deterministic lead times regular deliveries of goods after a fixed period are assumed, which might not
 be realistic for all cases. In reality, SC experience multiple disruptions causing capacity restrictions and delays in
@@ -605,15 +605,15 @@ productionandtransportactivities(Wilson,2007).Asaconsequence,theobservedleadtime
 In accordance with the research of Chatfield et al. (2004) and Chatfield, Hayya and Cook (2013), we therefore extend
 our analysis by applying stochastic Gamma-distributed lead times allowing order crossovers, meaning that orders can
 arrive in a different sequence in comparison to the order placement sequence. Besides the influence of this change on
-the real order arrivals, where𝐷𝐿𝑖𝑗 𝑡 has to be adapted based on the calculated lead time for each period, this has also
+the real order arrivals, where 𝐷𝐿𝑖𝑗 𝑡 has to be adapted based on the calculated lead time for each period, this has also
 influence on the calculation of the OUT point. In combination with our safety stock approaches, we use two ways of
 calculating the OUT point under stochastic lead times:
 • In case of fixed demand periods used for safety stock calculations (FP approach), the Eq. (4) is replaced by
-𝑆𝑖𝑗 𝑡 = (̄𝐿 + 1 +𝑅) ̂𝐷𝑖𝑗 𝑡 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (28)
+𝑆𝑖𝑗 𝑡 = ( ̄𝐿 + 1 + 𝑅) ̂𝐷𝑖𝑗 𝑡 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (28)
 where ̄𝐿represents the mean length of the lead time.
 • In case of mean demand and standard deviation definition (SL approach), the Eq. (4) is replaced by
-𝑆𝑖𝑗 𝑡 = (̄𝐿 + 1) ̂𝐷𝑖𝑗 𝑡 +𝑘 √ (̄𝐿 + 1)(𝜎𝑖𝑗 𝑡𝐷)2 + ( ̂𝐷𝑖𝑗 𝑡 )2(𝜎𝑖𝑗 𝑡𝐿)2 ∀𝑖 ∈𝐼; ∀𝑗 ∈𝐽𝑖 (29)
-where (𝜎𝑖𝑗 𝑡𝐷)2 is the variance of demand and(𝜎𝑖𝑗 𝑡𝐿)2 the variance of lead time and𝑘 is the service level factor.
+𝑆𝑖𝑗 𝑡 = ( ̄𝐿 + 1) ̂𝐷𝑖𝑗 𝑡 + 𝑘 √ ( ̄𝐿 + 1)(𝜎𝑖𝑗 𝑡𝐷)2 + ( ̂𝐷𝑖𝑗 𝑡 )2(𝜎𝑖𝑗 𝑡𝐿)2 ∀𝑖 ∈ 𝐼; ∀𝑗 ∈ 𝐽𝑖 (29)
+where (𝜎𝑖𝑗 𝑡𝐷)2 is the variance of demand and (𝜎𝑖𝑗 𝑡𝐿)2 the variance of lead time and 𝑘 is the service level factor.
 : Preprint submitted to Elsevier Page 10 of 25
 Journal Pre-proof
 Journal Pre-proof
@@ -664,7 +664,7 @@ periods used per replication.
 For our following experiments, we used a four-echelon SC with one supplier, one manufacturer, one wholesaler,
 fourretailersandfourcustomers(Figure1).TheinitialsettingusesthebasicSCmodelwithoutinformationsharingand
 its assumptions from Section 3.1 and compares the results with the horizontal sharing of average demand information
-between retailers described in Section 3.2. In case of information sharing, we assume𝛾 = 0.5. Each scenario was
+between retailers described in Section 3.2. In case of information sharing, we assume 𝛾 = 0.5. Each scenario was
 : Preprint submitted to Elsevier Page 11 of 25
 Journal Pre-proof
 Journal Pre-proof
@@ -677,12 +677,12 @@ Comparison of our model to Constantino et al. (2014) without information sharing
 run for 3200 time periods with a warm-up period of 200 periods and 30 replications to receive robust results and the
 reported results are averages of the values obtained by those replications. To assess the impacts, average values of
 BWE, IVR and AFR are presented for retailers whereas in case of costs the total costs for each echelon are shown.
-We assume that each SC actor uses the MA forecasting model with𝑁 = 10 to forecast the demand, the lead time
-is 𝐿 = 2 periods and two additional periods of demand forecast (𝑅 = 2 ) are used as safety stock to calculate the
+We assume that each SC actor uses the MA forecasting model with 𝑁 = 10 to forecast the demand, the lead time
+is 𝐿 = 2 periods and two additional periods of demand forecast (𝑅 = 2) are used as safety stock to calculate the
 OUTpoint(FPapproach).Theinventorycostsare0.50EURperunitandperiodandbacklogcostsare1EURperunit
 and period (Sarkar and Kumar, 2015). For the Gamma-distributed demand we assume that the mean demand of each
-customer𝜇 is 10 units per period. In this initial setting, we also introduce demand variability to show its impacts on
-the results. For this we use five different scenarios with the standard deviations of demand𝜎 ranging between 1 and
+customer 𝜇 is 10 units per period. In this initial setting, we also introduce demand variability to show its impacts on
+the results. For this we use five different scenarios with the standard deviations of demand 𝜎 ranging between 1 and
 20 units as shown in Table 4. These five variability scenarios will be also used in the analysis of influencing factors in
 Sections 4.3-4.7.
 Demand per customer Aggregated demand
@@ -847,8 +847,8 @@ BWEinmostcasesevolvesinthesamedirectionasIVR,weonlypresentIVRgraphsanddescribeBW
 if BWE and IVR show significant differences, both graphs are presented.
 4.3. Influence of demand correlation between retailers
 The influence of demand correlation between retailers on the bullwhip effect is analyzed using positive as well as
-negative correlation coefficients𝜌 in addition to the uncorrelated demand with𝜌 = 0 considered in the initial setting.
-Specifically, the values considered are𝜌 = {−0.3, −0.15, 0, 0.15, 0.3, 0.7} and the influence of correlations can be
+negative correlation coefficients 𝜌 in addition to the uncorrelated demand with 𝜌 = 0 considered in the initial setting.
+Specifically, the values considered are 𝜌 = {−0.3, −0.15, 0, 0.15, 0.3, 0.7} and the influence of correlations can be
 observed in Figure 2 that compares the changes in IVR between no information sharing and information sharing
 strategy for the retailers and the wholesaler. The highest influence can be seen for the negative correlation of -0.3
 wheretheIVRreductionisbetween26-33%fortheretailersand0.3-5%forthewholesaler,dependingonthestandard
@@ -887,16 +887,16 @@ effect of information sharing, retailers can save up to 20% of the inventory cos
 highCV.Thesavingsarediminishingwithincreasingcorrelation.Backlogcostsarealsoreducedforretailerswiththe
 exceptionofScenario5wherethehighdemandCVleadstoincreaseinretailerbacklogcosts.Theotherechelonsshow
 increasesininventorycostsofupto5%inalmostallconsideredcases,butthisdisadvantageispartlycompensatedby
-lowerbacklogcostsfornegativecorrelations,especiallywith 𝜌 = −0.3.Intotal,savingsinSCcostsofaround3%were
-recordedfor 𝜌 = −0.3andupto1%forothercorrelations.However,forthehighdemandvariabilitywithCV=1.5and
+lowerbacklogcostsfornegativecorrelations,especiallywith𝜌 = −0.3.Intotal,savingsinSCcostsofaround3%were
+recordedfor𝜌 = −0.3 andupto1%forothercorrelations.However,forthehighdemandvariabilitywithCV=1.5and
 CV=2 combined with all considered positive correlations the total SC costs are increasing by 0.10%-0.47%.
 4.4. Influence of forecasting methods
 To compare the influence of the MA and SES forecasting methods, on one hand we extend the analysis of the MA
 approachbyaddingmodelswithN=20andN=50totheinitialsettingwithN=10,ontheotherhandwealsoapplythe
-SES model using the values 0.1, 0.2 and 0.3 for the parameter𝛿.
+SES model using the values 0.1, 0.2 and 0.3 for the parameter 𝛿.
 For the retailers, the results show similar directions for both forecasting models. Whereas in case of MA the
-increasing𝑁 increases the smoothing effect and the weight of the newest observed customer demand in the MA_50
-model is very low, a similar effect can be observed with decreasing𝛿 in SES models - lower𝛿 factor means lower
+increasing 𝑁 increases the smoothing effect and the weight of the newest observed customer demand in the MA_50
+model is very low, a similar effect can be observed with decreasing 𝛿 in SES models - lower 𝛿 factor means lower
 weight for the newest observed customer demand. As a consequence, the variability in orders is also lower and thus
 the effect of information sharing is lower for MA_50 or SES_0.1 than for MA_10 or SES_0.3.
 In case of the wholesaler, this is only valid for smaller demand variability up to CV=1 at the retailer level. A high
@@ -939,7 +939,7 @@ Journal Pre-proof
 4.5. Influence of safety stock approaches
 The initial setting assumes that two periods of demand are held as safety stock. Since safety stock partially covers
 the variance coming from demand and orders, in case of safety stock periods (FP approach) we looked at different
-models including𝑅 = 1, 2, 3. For SL approach we consider service levels of 95% (𝑘 = 1.64) and 99% (𝑘 = 2.33).
+models including 𝑅 = 1, 2, 3. For SL approach we consider service levels of 95% (𝑘 = 1.64) and 99% (𝑘 = 2.33).
 (a) Retailer
  (b) Wholesaler
 Figure 6: BWE of retailers and wholesaler for different safety stock approaches without information sharing
@@ -968,7 +968,7 @@ variabilities, the increased inventory variance of the wholesaler leads to decre
 also the improvements in AFR of the retailers.
 The cost figures for the FP approach show that reducing the safety stock to R=1 leads also to inventory cost
 reduction up to 40%, whereas backlogs are increasing by up to 55%. Since inventory costs are the major part of total
-costs, the whole SC can save up to 18% of total costs if𝑅 is reduced to one, with the wholesaler echelon having the
+costs, the whole SC can save up to 18% of total costs if 𝑅 is reduced to one, with the wholesaler echelon having the
 lowest costs for all scenarios. The horizontal information sharing can reduce the inventory costs of the retailer up to
 17.76%, but these costs increase for all other echelons by up to 3.66%. The backlog costs are lower for the retailer in
 : Preprint submitted to Elsevier Page 18 of 25
@@ -1015,8 +1015,8 @@ InthissectionweconsiderstochasticleadtimesbasedonGammadistribution.Inallpresente
 time is 2 periods and we consider CVs of lead time of 0.25, 0.5 and 0.75 that are compared to the deterministic lead
 time from the initial setting (i.e. CV=0.00). The lead time distribution characteristics are the same for each echelon
 (except for the customers, where the goods are delivered immediately), but the individual realised lead times between
-echelons can be different. The average lead timē𝐿 is calculated using the moving average of the last 10 periods and
-thestandarddeviationofleadtime 𝜎𝑖𝑗 𝑡𝐿 iscalculatedbasedonallavailableleadtimedata(Chatfieldetal.,2004,2013). For FP approach, we only consider the case with R=2 periods and for the SL approach we look at the service level of
+echelons can be different. The average lead time ̄𝐿 is calculated using the moving average of the last 10 periods and
+thestandarddeviationofleadtime𝜎𝑖𝑗 𝑡𝐿 iscalculatedbasedonallavailableleadtimedata(Chatfieldetal.,2004,2013). For FP approach, we only consider the case with R=2 periods and for the SL approach we look at the service level of
 95%, meaning k=1.64.
 WhenlookingattheresultsforFPapproach,thepictureinFigure11isverysimilartothedeterministicleadtime,
 since the effect of horizontal information sharing on BWE is very positive for the retailers with reduction of more

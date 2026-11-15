@@ -1,0 +1,1421 @@
+TITLE: Long-lead forecasting of El Niño–Southern Oscillation using score-driven models with many predictors
+AUTHORS: Janneke van Brummelen, Sebastian Jensen, Siem Jan Koopman, Desislava Petrova
+VENUE: International Journal of Forecasting (2026-10-01)
+DOI: https://doi.org/10.1016/j.ijforecast.2026.09.009
+LICENCE: cc-by
+LINK: https://doi.org/10.1016/j.ijforecast.2026.09.009
+
+ARTICLE IN PRESS
+Please cite this article as: J. van Brummelen, S. Jensen, S.J. Koopman et al., Long-lead forecasting of El Niño–Southern Oscillation using score-driven models 
+with many predictors. International Journal of Forecasting (2026), https://doi.org/10.1016/j.ijforecast.2026.09.009.
+International Journal of Forecasting xxx (xxxx) xxx
+ 
+Contents lists available at ScienceDirect
+International Journal of Forecasting
+journal homepage: www.elsevier.com/locate/ijforecast 
+Long-lead forecasting of El Niño–Southern Oscillation using 
+score-driven models with many predictorsI
+Janneke van Brummelen a, Sebastian Jensen b,c, Siem Jan Koopman a,∗, 
+Desislava Petrova d
+a Vrije Universiteit Amsterdam, The Netherlands
+b Aarhus University, Denmark
+c Center for Research in Energy: Economics and Markets (CoRE), Denmark
+d Barcelona Institute for Global Health (ISGlobal), Barcelona, Catalonia, Spain
+a r t i c l e i n f o
+Keywords:
+Niño 3.4 index time series
+ENSO forecasting
+General to specific
+LASSO
+Observation-driven model
+Filtering
+Out-of-sample forecasting
+Maximum likelihood
+ a b s t r a c t
+We consider long-lead forecasting of the El Niño–Southern Oscillation (ENSO) climate 
+phenomenon. This is widely seen as a challenging task from a methodological perspec-
+tive. At the same time, ENSO events are of substantial societal importance. We adopt 
+a class of score-driven models to capture the key dynamic features of the Niño 3.4 
+index and include a large set of previously designed predictors. We provide details of 
+our forecasting methodology and assess the forecast accuracy for a range of different 
+model specifications and estimation strategies. We conclude that a model with a good 
+description of the dynamic features in the data is also able to provide accurate forecasts 
+for almost all lead times, up to 18 months ahead. The large set of predictors is shown 
+to support the provision of accurate long-range forecasts for specific lead times.
+© 2026 The Author(s). Published by Elsevier B.V. on behalf of International Institute of 
+Forecasters.
+This is an open access article under the CC BY license 
+(http://creativecommons.org/licenses/by/4.0/).
+1. Introduction
+The societal relevance of El Niño–Southern Oscillation 
+(ENSO) events has become increasingly apparent as a 
+result of their links to multiple climate- and weather-
+related impacts and disasters worldwide (Sarachik & Cane, 
+2010), some of which are now exacerbated by climate 
+change (Wilcox, Mudelsee, Spötl, & Edwards, 2023). Fur-
+thermore, ENSO is the primary source of seasonal climate 
+I This article is part of a Special issue entitled: ‘Forecasting Envi-
+ronmental and Climate Time Series’ published in International Journal 
+of Forecasting.
+∗ Correspondence to: Department of Econometrics and Data 
+Science, Vrije Universiteit Amsterdam, De Boelelaan 1105, 1081 
+HV Amsterdam, The Netherlands.
+E-mail address: s.j.koopman@vu.nl (S.J. Koopman).
+The numerical results presented in this manuscript were 
+reproduced by the reproducibility team on 18 September 2026.
+forecast skills (L’Heureux et al., 2020; Rodó, Rodriguez-
+Arias, & Ballester, 2006; Ropelewski & Halpert, 1987; 
+Sarachik & Cane, 2010), and its early prediction can help 
+improve outcomes in many sectors of society, such as 
+health, agriculture, and energy production, among others. 
+Hence, the provision of accurate ENSO forecasts for long 
+horizons extending to 9, 12, and up to 18 months ahead 
+is of considerable practical relevance.
+Institutions that officially provide ENSO forecasts are 
+the International Research Institute for Climate and So-
+ciety (IRI) Earth Institute1 and the National Oceanic and 
+Atmospheric Administration with its Climate Prediction 
+Center (NOAA/CPC).2 Their operational forecasts are for 
+1 https://iri.columbia.edu/our-expertise/climate/enso/ (last accessed 
+November 9, 2025).
+2 https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/
+enso_advisory/ (last accessed November 9, 2025).
+https://doi.org/10.1016/j.ijforecast.2026.09.009
+0169-2070/© 2026 The Author(s). Published by Elsevier B.V. on behalf of International Institute of Forecasters. This is an open access article under 
+the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+lead times of up to six to eight months in advance. At 
+the same time, longer horizons for real-time predictions 
+have been shown to become more relevant and should be 
+explored practically (see Petrova, Rodó, Koopman, Tzanov, 
+& Cvijanovic, 2024 and the references therein).
+The complexity of forecasting ENSO arises due to the 
+fact that it is an atmosphere–ocean coupled mode of 
+climate variability (Philander, 1983; Wyrtki, 1975), and 
+many dynamical processes interact on various timescales 
+to produce the year-to-year variation in atmospheric cir-
+culation of the equatorial Pacific and sea surface temper-
+ature (SST; Capotondi et al., 2015). In addition to that, 
+the stochasticity of high-frequency atmospheric winds in 
+the tropical Pacific can limit the accuracy of predictions 
+at long lead times (Fedorov, Hu, Lengaigne, & Guilyardi, 
+2015). There is a wide range of operational ENSO fore-
+casting methods, and many of these rely on complex 
+dynamical models and statistical formulations designed 
+in the 1980s and 1990s (Barnston, Tippett, L’Heureux, Li, 
+& DeWitt, 2012). However, recently developed statistical 
+and data-driven methods have proven to be very suc-
+cessful at overcoming the spring predictability barrier in 
+ENSO forecasting, which is due to the low signal-to-noise 
+ratio during the boreal spring (Sarachik & Cane, 2010), 
+and at extending forecast lead times to more than a year 
+in advance, sometimes up to two years ahead (Clarke & 
+Gorder, 2003; Li, Koopman, Lit, & Petrova, 2020; Lude-
+scher, Gozolchiani, Bogachev, Bunde, Havlin et al., 2013, 
+2014; Petrova, Ballester, Koopman, & Rodó, 2020; Petrova, 
+Koopman, Ballester, & Rodó, 2017; Wang, Hu, & Li, 2023; 
+Zhou & Zhang, 2023). Most of these methods harness 
+the predictive capacity of the equatorial Pacific upper 
+ocean heat content, where the memory of the coupled 
+system resides, in order to successfully forecast ENSO at 
+these longer time horizons. In particular, Petrova et al. 
+(2017) developed a structural time series model based on 
+dynamic components (trend, seasonal, and time-varying 
+cycles) and designed specific predictor variables that cap-
+ture zonal wind anomalies and the subsequent build-up of 
+subsurface ocean heat at different depths in the western 
+and central tropical Pacific, representing early processes 
+that, when combined, may characterize the origin of El 
+Niño events (Ballester, Bordoni, Petrova, & Rodo, 2015; 
+Ramesh & Murtugudde, 2013; Wyrtki, 1985). In contrast, 
+the majority of operational statistical ENSO models do not 
+integrate subsurface information (Barnston, Glantz, & He, 
+1999; Ehsan, L’Heureux, Tippett, Robertson, & Turmelle, 
+2024), which is critical for predictions at longer lead times 
+(Ballester, Petrova, Bordoni, Cash, Garcia-Diez et al., 2016; 
+Cane, Zebiak, & Dolan, 1986; Jin, 1997; McPhaden, 2003; 
+Petrova et al., 2017; Ramesh & Murtugudde, 2013; Wyrtki, 
+1985).
+More recent empirical models that have documented 
+successful forecasts at long lead times have been based on 
+a variety of strategies and techniques: simple regression, 
+including the 20 ◦C isotherm in the equatorial Pacific 
+as a proxy for upper ocean heat content and an Indo-
+Pacific equatorial wind index (Clarke & Gorder, 2003); 
+network methods and emerging teleconnections between 
+different pairs of tropical grid points selected according 
+to the cross-correlations of climate records at these lo-
+cations, which manifest strong relationships at long lead 
+times (Ludescher et al., 2013); dynamic factor simula-
+tions and applying a three-step forecasting procedure 
+along with relevant measurements of combinations of 
+signals from the same explanatory variables designed 
+by Petrova et al. (2017), which capture persistent dy-
+namics that enable medium- and long-range forecasting 
+(Li et al., 2020); data-driven self-attention-based neural 
+networks that rely on a transformer model (3D Geo-
+former) applied to predict temperature departures in the 
+three-dimensional upper ocean along with wind stress 
+anomalies in the equatorial Pacific (Zhou & Zhang, 2023); 
+and a deep learning model that uses artificial intelli-
+gence to define long-lead spatial and temporal dynamical 
+processes related to ENSO-associated heat signals (SST 
+and ocean heat content in the upper 300 m) across the 
+global ocean, highlighting the relevance of inter-basin 
+interactions for predicting ENSO (Wang et al., 2023).
+Motivated by the success of recent advances in the 
+long-range statistical prediction of ENSO, in this study we 
+introduce score-driven dynamics in the modeling frame-
+work of Petrova et al. (2017). The score-driven model 
+allows the location (or mean) to change over time using 
+stochastic dynamic equations that depend directly on ob-
+served variables, leading to straightforward computations 
+(Creal, Koopman, & Lucas, 2013; Harvey, 2013). The loca-
+tion equation can be a composite of the same dynamic 
+components as in the structural time series model, and 
+can be extended by predictor variables. The updating 
+mechanisms of the components remain the same, but 
+they all share the same prediction error as input. The 
+score-driven model belongs to the class of observation-
+driven models (Cox, 1981) for which the likelihood func-
+tion is available in closed form. This key feature implies 
+that parameter estimation and forecasting are straightfor-
+ward. Furthermore, the score-driven location model can 
+be expressed as a standard autoregressive moving average 
+(ARMA) model. A natural benchmark to verify the rela-
+tive precision of the predictions from the different model 
+specifications is the autoregressive (AR) model, as its anal-
+ysis is equally practical. In an extensive empirical study, 
+we first present in-sample estimation results for models 
+with different combinations of components (trend, sea-
+sonal, and time-varying cycles) and different selections 
+or weighted combinations of predictor variables. Then we 
+focus on the out-of-sample performance of our proposed 
+ENSO modeling framework for forecast horizons ranging 
+from one to 18 months. This empirical study confirms that 
+score-driven models based on the meaningful dynamic 
+component structure of Petrova et al. (2017) can produce 
+accurate forecasts at all forecast horizons, but especially 
+at long-range horizons.
+The remainder of the paper is organized as follows. In 
+Section 2, we present the monthly ENSO measurements 
+in terms of the Niño 3.4 index data, monthly predic-
+tor variables time series, and the score-driven modeling 
+framework including model specification, parameter es-
+timation, and forecasting. The different estimation meth-
+ods include maximum likelihood, the general-to-specific 
+approach, the least absolute shrinkage and selection op-
+erator, and principal components. In Section 3, we discuss 
+the main design of our empirical forecasting study, the 
+2
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Fig. 1. Time series plot of the Niño 3.4 index (top) and its smoothed periodogram (bottom).
+details of parameter estimation for models both with 
+and without predictor variables, the forecast strategy, and 
+the forecast accuracy assessment. We also introduce the 
+benchmark models. In Section 4, we present the empiri-
+cal in-sample results, including the estimated parameters 
+and the filtered estimates of the dynamic components. In 
+Section 5, we discuss the out-of-sample forecast results 
+and present the relative accuracies of these forecasts by 
+means of model confidence sets. In Section 6, we discuss 
+the main results and provide some conclusions. The ap-
+pendix provides further results in tables and figures, and 
+additional details of the score-driven model specification.
+2. Data, model, estimation, and forecasting
+2.1. Data description
+ENSO events are represented by monthly measure-
+ments of the Niño 3.4 index (averaged SST in the equa-
+torial Pacific region bounded by the box [170◦W–120◦W] 
+× (5◦S–5◦N]) from 1982 to 2024, both included, de-
+rived from the NOAA OI SST V2 High Resolution Dataset3 
+(Huang et al., 2021), which consists of T = 516 ob-
+servations. Fig. 1 shows a time series plot of the Niño 
+3.4 index together with its smoothed periodogram. To 
+facilitate forecasting, the sample is divided into two sub-
+samples at the beginning of 2005; see Section 3.1. The 
+3 https://www.psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.
+html (last accessed November 9, 2025).
+smoothed periodogram reveals four cycle components: 
+two low-frequency components and two seasonal com-
+ponents corresponding to annual (12-month) and semian-
+nual (six-month) periodicities. The HEGY test (Hylleberg, 
+Engle, Granger, & Yoo, 1990; Table A.1)4 and the Canova–
+Hansen test (Canova & Hansen, 1995; Table A.2, top panel) 
+provide no evidence of unit roots at the annual, semian-
+nual, or zero frequencies. The complementary version of 
+the Canova–Hansen test (Table A.2, bottom panel) further 
+rejects seasonal instability.
+We use the set of predictor covariates for ENSO fore-
+casting first defined by Petrova et al. (2017). See Table 
+A.3 for a full list and description of the regions from 
+which these variables are extracted. The predictors are 
+specifically designed to anticipate El Niño at long lead 
+times of more than one year ahead of its peak. We use 
+the same dataset employed in the construction of the 
+Niño 3.4 index to compute the sea surface temperature 
+(SST) predictor covariates (see Table A.3). We also add a 
+predictor from the extratropical south Pacific Ocean, the 
+RB SST dipole, which leads El Niño events by 9 months 
+on average (Ballester, Rodriguez-Arias, & Rodo, 2011; 
+Petrova et al., 2024). The subsurface temperature pre-
+dictor variables extracted from the western and central 
+tropical Pacific Ocean (Table A.3) are calculated using 
+the Hadley Centre EN4.2.2 analysis data with.g10 bias 
+correction (Good, Martin, & Rayner, 2013; Gouretski & 
+Cheng, 2020; Gouretski & Reseghetti, 2010). Finally, the 
+4 Tables A.1–A.3 are placed in the appendix.
+3
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+zonal wind stress predictors are derived from the NCEP-
+NCAR Reanalysis-1 wind data (Kalnay et al., 1996). For 
+further details regarding the physical basis, interpretation, 
+and lag times at which these predictors are relevant, the 
+reader is referred to Petrova et al. (2017).
+We utilize 24 covariate variables (see Table A.3), which 
+may be relevant with delay, possibly stretching from 1 
+month to 3 years (lags of 1–36 months). We do not 
+consider all variables and their lags as relevant for Niño 
+3.4 prediction. Table A.3 indicates the relevant lags for 
+each variable based on the previous lead–lag analysis 
+and modeling performed by Petrova et al. (2017). In 
+particular, a distinction is made between short-range 
+(1–5 months), medium-range (6–11 months), long-range 
+(12–18 months), and very long-range (19–36 months).
+2.2. Score-driven model formulation
+The univariate time series yt is for the Niño 3.4 index 
+in month t and its model is given by 
+yt = µt + x′ t β + εt , εt ∼ IID(0, σ 2), t = 1, . . . , T , (1)
+where µt is the time-varying signal variable; xt is the k×1
+vector of covariates, fixed and known, in month t; β is the 
+corresponding k×1 vector of fixed regression coefficients; 
+and εt is a noise variable with mean zero and variance 
+σ 2 > 0. In addition, T is the length of the sample, and k
+is the dimension of the vector of covariates xt .
+Motivated by the smoothed periodogram in Fig. 1, the 
+time-varying signal µt in our model specification (1) is 
+decomposed into three dynamic components: we have 
+µt = αt + γt + ψt , where
+(A) location αt is specified as a random walk process 
+αt+1 = αt + θα st with some initial value α1, some 
+scale θα , and zero-mean noise st ; in case θα = 0, αt
+reduces to the constant α = α1;
+(B) seasonal component γt is modeled as a sum of 
+q autoregressive processes of order 2, where the 
+polynomial lag functions have characteristic roots 
+in the complex range with seasonal frequencies; 
+and
+(C) cyclical component ψt is modeled as a sum of r au-
+toregressive processes of order 2, where the charac-
+teristic roots are also in the complex range but with 
+admissible ranges for their frequencies correspond-
+ing to periods longer than those of the seasonal 
+components.
+The motivation for decomposing the signal into trend, 
+seasonal, and cycle components is to enable an accurate 
+description of the dynamic properties of yt . A description 
+of the signal in terms of these dynamic components can 
+also lead to a better understanding of the key dynamic 
+features of the Niño 3.4 index while still providing ac-
+curate forecasts. Selecting high values for q and r will 
+improve the in-sample fit, but there is a risk of over-
+parameterization. In addition, a more extended model 
+may become unstable during the parameter estimation 
+process. We therefore aim for parsimonious formulations 
+with small q and r. After inspecting the smoothed peri-
+odogram of the Niño 3.4 index in Fig. 1, an obvious choice 
+is q = r = 2 with a seasonal periodicity of six and 12 
+months and a cycle periodicity of (approximately) 18 and 
+48 months. We notice that any seasonal or cycle periodic-
+ity can be estimated together with the other parameters 
+of the model.
+All dynamic components are driven by the same zero-
+mean noise sequence st , which defines the model (1) as 
+a score-driven model; see Creal et al. (2013) and Harvey 
+(2013). In particular, we define st as the score function of 
+the predictive density contribution at time t, as denoted 
+by p(yt |y1, . . . , yt−1, x1, . . . , xt ; λ), where λ is the param-
+eter vector containing all unknown fixed coefficients in 
+model (1), including β, with respect to the time-varying 
+signal µt . More specifically, we define st as
+st = St
+∂ log p(yt |y1, . . . , yt−1x1, . . . , xt ; λ)
+∂µt
+,
+where St is a scaling function such as the inverse of the 
+corresponding information or a function thereof. For all 
+practical purposes, one can also set St equal to unity, St =
+1. Using the score for updating the time-varying (sub-) 
+components is intuitive, because the score is the steepest 
+ascent direction to improve the local fit in terms of the 
+log likelihood at time t, given the current position of the 
+time-varying parameter µt . Thus, the score provides a 
+natural direction for updating the (sub-)components. We 
+notice that this holds regardless of whether the model is 
+correctly specified or not. The conditions for optimality of 
+the score-driven filter are documented by Blasques, Koop-
+man, and Lucas (2015). Further details of the score-driven 
+model are discussed in Appendix B.
+The covariate vector xt only includes lagged variables. 
+We assume that at time t, the selected variables observed 
+in multiple lagged time periods can potentially have an 
+impact on ENSO at time t. Given that many of these 
+selected variables can potentially be good predictors of 
+ENSO for different time periods ahead, we typically as-
+sume that, initially, k can be relatively large. However, 
+we always ensure that k < T . We adopt three different 
+strategies to select lagged variables in xt . In the first strat-
+egy, no predictor covariates (hereafter also regressors) 
+are selected and the model is reduced to yt = µt + εt . 
+In the second, selection is based on a general-to-specific 
+(G2S) approach, where regressors with non-significant 
+coefficient estimates are sequentially removed from the 
+model. In the third strategy, a large set of lagged variables 
+is included in xt and the estimation process relies on the 
+least absolute shrinkage and selection operator (LASSO), 
+implying that a smaller set of regressors in xt is implicitly 
+selected during the estimation process. Given that the 
+set of regressors can be high-dimensional, we also con-
+sider dimensionality-reduction methods such as principal 
+component analysis (PCA). Both G2S and LASSO selection 
+methods can operate on the original high-dimensional 
+dataset and on the low-dimensional principal compo-
+nents (PCs) computed from the original dataset; we in-
+dicate the latter option by G2S PCA or LASSO PCA.
+Finally, the model specification in (1) is not complete 
+without an explicit choice for the density function of the 
+disturbance term εt , denoted by pε (·). We consider the 
+normal density, that is εt ∼ NID(0, σ 2), where σ 2 denotes 
+the disturbance variance. This density leads to a score 
+function that is linear in both the observations and the 
+components.
+4
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+2.3. Estimation and forecasting
+An overview of the econometric methodology for
+score-driven models is provided by Artemova, Blasques, 
+van Brummelen, and Koopman (2022). The parameter 
+vector λ is estimated by maximum likelihood. The time-
+varying components αt , γt , and ψt are unobserved, but for 
+given datasets of yt and xt , and for a given value of λ, the 
+filtered values of ˆαt , ˆγt , and ˆψt , and thus of ˆµt , can be 
+computed recursively for t = 1, . . . , T using the score-
+driven updating equations. The resulting filtered values 
+are used to evaluate the log-likelihood function, which 
+can then be optimized numerically with respect to λ. For 
+this purpose, some elements in λ may be subject to fur-
+ther transformations to enforce model restrictions such as 
+stationarity; see Appendix B.2. A more detailed discussion 
+of parameter estimation is presented in Appendix B.4.
+Given that sT and therefore ˆµT +1 are known at time 
+T , one-step-ahead forecasting is trivial. For larger forecast 
+horizons, we use the assumption that ET [sT +k] = 0 for 
+k > 1, where ET [·] denotes the conditional expectation 
+given the information available at time T . Thus, fore-
+casts for more than one step ahead can be obtained by 
+recursively evaluating the filtering equations with sT +k re-
+placed by zero. For regressors, we only consider lag orders 
+that are equal to or greater than the forecast horizon h. 
+The term x′ T +hβ is therefore known at time T and can be 
+used for forecasting.
+3. Design of empirical forecasting study
+3.1. Forecasting design
+The forecasting study is carried out as follows. We split 
+the time series into two periods: 1985–2004 (20 years, 
+first subsample, estimation sample) and 2005–2024 (20 
+years, second subsample, forecast evaluation sample). In 
+our in-sample analyses, we focus on the first subsample 
+and consider the second subsample only for illustrative 
+purposes. For both subsamples, we effectively also use the 
+data of the three prior years because the covariates in our 
+models may be lagged by up to 36 months. Hence, for the 
+first sample, we use the data from 1982–2004.
+We estimate the parameter vectors for various dif-
+ferent model specifications and settings, and consider 
+their in-sample performances only for exploratory pur-
+poses. The main focus is on an extensive out-of-sample 
+forecast study for a large set of forecast horizons h ∈
+{1, 3, 6, 12, 14, 16, 18}. We initiate the rolling forecasting 
+process by taking the first subsample, January 1985 to 
+December 2004, and estimate the parameter vector for a 
+pre-defined model set. For each model, we produce fore-
+casts for January, March, June, and December of 2005 (h =
+1, 3, 6, 12), as well as for February, April, and June of 2006 
+(h = 14, 16, 18). Then, we consider the January 2005 
+Niño 3.4 index variable as a new realization (together 
+with its set of covariates), re-estimate the parameters of 
+the model based on the sample from February 1985 to 
+January 2005, and produce a new set of seven forecasts 
+(for h = 1, 3, 6, 12, 14, 16, 18, that is, for February, April, 
+July 2005, January, March, May, and July of 2006). We 
+repeat this process until we reach the end of the sample 
+(December 2024). In summary, we use a rolling window 
+approach with re-estimation every month. In this way, for 
+each selected model, we generate 20 × 12 − h + 1 = 241 −
+h forecasts, which are compared with the realizations 
+(from the second subsample), yielding 241 − h forecast 
+errors. The rolling window approach is preferred over an 
+expanding window approach, as the former is required 
+for the model confidence set procedure that we discuss 
+below.
+3.2. Practicalities of estimation with regressors
+Here, we discuss how the methods with regressors 
+have been implemented. As mentioned above, the lag 
+orders considered depend on the forecasting horizon h. 
+In particular, we only consider lag orders h and higher, 
+in order to avoid having to forecast the regressors them-
+selves. Thus, for the models with regressors, we have 
+a different model for every horizon. For any variable, 
+we only consider the lags indicated in Table A.3 in the 
+appendix. Furthermore, the regressors are standardized 
+by subtracting their mean and dividing by their standard 
+deviation to enhance numerical stability and to ensure 
+that they are appropriate for LASSO regression. The mean 
+and standard deviation are determined by the data avail-
+able at the time of estimation, such that the out-of-sample 
+forecasts are truly out-of-sample. Finally, covariates are 
+detrended in case a significant linear trend is identified at 
+a 5% significance level. This linear trend is again estimated 
+based on the in-sample data.
+In total, using all the lag orders indicated in Table A.3, 
+we have a potential of k = 558 different covariates, such 
+that k > T . However, the methods of G2S and LASSO will 
+lead to much smaller sets of selected covariates, ensuring 
+that k in practice will be such that k ≪ T .
+Because there are more regressors than observations 
+in our sample, we cannot feasibly apply maximum likeli-
+hood estimation if all regressors are included. Instead, we 
+use a tailored G2S approach. We first apply G2S separately 
+to each individual variable with all its relevant lags. Then, 
+G2S is applied once more to the model that is obtained 
+by including all the lags that remained for each variable in 
+the first step. Using a significance level of 1%, we continue 
+to recursively remove the variable–lag combinations that 
+are not significantly different from zero and correspond 
+to the lowest t-value, until all remaining coefficients are 
+significant. To speed up the G2S process, we sometimes 
+remove more than one variable at once, but never more 
+than a quarter of the remaining variables, and also never 
+more than 10 variables.
+For the LASSO regression, we use standard implemen-
+tations. The LASSO penalty parameter is selected based on 
+the in-sample Bayesian information criterion (BIC). The 
+LASSO approach is only used for models without score-
+driven components (i.e. when θα = 0, q = 0, r = 0), 
+because the non-convexity in the parameters of the log 
+likelihood that occurs when score-driven components are 
+included hinders LASSO optimization.
+Finally, for models that use PCs instead of the original 
+variables, we construct the PCs separately for each lag 
+5
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+between horizon h and 36, by using only the variables 
+relevant to that lag, as indicated in Table A.3. We select 
+the first six PCs for every lag order, which explains about 
+90% of the variation for all of the lags. As for the stan-
+dardization and detrending, the PCs are constructed solely 
+based on the data available at the time of estimation.
+3.3. Forecast precision assessment
+To assess forecasting precision and determine statis-
+tically significant differences across model specifications, 
+we use the squared error loss and model confidence set 
+(MCS) of Hansen, Lunde, and Nason (2011).
+For each forecast horizon h, a MCS is constructed such 
+that it contains the best specification with a given level of 
+confidence, i.e. 90% and 75%. This is done by sequentially 
+eliminating significantly inferior specifications from the 
+initial set based on a sequence of equivalence tests and 
+an elimination rule. The 75% MCS will contain at most as 
+many members as the 90% MCS (and often fewer). We 
+use the bootstrap implementation of the MCS procedure 
+of Hansen et al. (2011), which is simple to use in prac-
+tice and avoids the need to estimate a high-dimensional 
+covariance matrix. The equivalence test is based on mul-
+tiple pairwise t-statistics similar to those of Diebold and 
+Mariano (1995) and West (1996), complemented by the 
+natural elimination rule. Further discussion of the MCS 
+validity and the bootstrap implementation is provided in 
+Section 5.2.
+3.4. Benchmark models
+We compare the forecast accuracy of the score-driven 
+model with that of popular benchmarks: the autoregres-
+sive (AR) model with and without G2S-selected regres-
+sors, both with and without PCA. We consider a simple 
+AR(1) and an AR(3), where lag order 3 has been selected 
+based on the BIC on the first subsample. To mimic the IRI5 
+treatment of statistical ENSO forecasts in their prediction 
+plume (Ehsan et al., 2024), the benchmarks are based on 
+anomalous data obtained by removing the mean annual 
+cycle from the Niño 3.4 index (subtracting the sample 
+mean for each month) before estimation. We compute the 
+mean annual cycle based on the entire sample, i.e. data 
+from 1982 to 2024; see Fig. A.1 in the appendix for a plot 
+of the monthly sample means. We emphasize that when 
+estimating the score-driven model in Section 2, we use 
+raw data rather than anomalous data, as the annual cycle 
+is explicitly modeled by seasonal components. In other 
+words, rather than removing seasonality from the data 
+and the model, the score-driven model treats seasonality 
+as an integral part of the model, which is customar-
+ily done in operational statistical ENSO forecasting; see 
+Petrova et al. (2020). We chose this strategy because the 
+annual cycle has an impact on the correct evolution of 
+the ENSO cycle phases, the so-called phase-locking of 
+ENSO to the annual cycle (Rasmusson & Carpenter, 1982; 
+Stein, Timmermann, & Schneider, 2011). For the bench-
+mark models, we only consider lags of the regressors 
+5 See footnote 1.
+that are between 36 and the forecasting horizon. And for 
+both benchmarks, we use a standard recursive forecasting 
+approach, just as for the score-driven model. When com-
+paring forecasts across models, we add the mean annual 
+cycle back to the benchmark AR forecasts.
+4. In-sample results
+4.1. Model selection
+We consider different configurations of the model de-
+scribed in Section 2 guided by the in-sample fit for the 
+first subsample. Models based on Student’s t-distribution 
+turned out to be unsuitable for the data, as the degrees-
+of-freedom parameter ν was estimated to be very large, 
+implying that the distribution is close to a normal distri-
+bution. We therefore restrict our attention to the normal 
+distribution. It is well known that the fat-tailed nature of 
+the Student’s t-distribution causes the score updates to 
+heavily downweight large prediction errors, see e.g. Har-
+vey and Luati (2014), which can yield robustness to out-
+liers. However, the Niño 3.4 index is relatively smooth 
+without clear outliers or spikes, and the changes in level 
+are rather persistent. The remaining model choices are as 
+follows:
+• whether to include a stochastic trend (θα ̸= 0) or a 
+constant (θα = 0);
+• whether to include seasonal components (q > 0), 
+cyclical components (r > 0), neither (q = 0, r = 0), 
+or both; and
+• whether to include regressors, using either LASSO 
+or G2S, possibly using PCs instead of the original 
+variables.
+We include some simple configurations to serve as bench-
+marks. In particular, we include (i) a model with only a 
+constant and (ii) models with two seasonal cycles (i.e. q =
+2) and either a constant or a trend. For (ii), we fix the cycle 
+periodicities to six and 12 months to ensure that these 
+are truly seasonal cycles. Two seasonal components are 
+selected, as it suffices to adequately capture any seasonal 
+effects. A similar conclusion was reached by Petrova et al. 
+(2020).
+Our most extensive specification for µt includes two 
+seasonals q = 2, two cycles r = 2, and either a constant or 
+a stochastic trend. Here, we do not fix all cycle frequencies 
+of the seasonal components. Instead, we restrict the cycle 
+periodicity of the first cyclical component ψ
+(1)
+t between 
+13 and 21 months, and that of the second cyclical compo-
+nent ψ
+(2)
+t between 23 and 43 months. As discussed above, 
+these restrictions are imposed to enforce identification 
+and stability, but also to help the model uncover cycles 
+that are in line with expected ENSO dynamical features 
+and the smoothed periodogram in Fig. 1. We estimate 
+ψ
+(1)
+t to correspond to a near-annual cycle and ψ
+(2)
+t to 
+correspond to a quasi-biannual/quasi-quadrennial cycle 
+(QB/QQ), similar to Petrova et al. (2017). Such QQ/QB com-
+ponents of ENSO variability have been robustly identified 
+in both surface zonal winds and sea surface temperatures 
+in the equatorial Pacific Ocean by a number of other 
+6
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Table 1
+In-sample parameter estimation results for subsample period 1, 1985.1 to 2004.12, and for score-driven 
+models with seasonal (q = 2) and cycle (r = 2) components, without regressors. Standard errors are 
+reported in italics, LLH is the maximized log-likelihood values, and AIC and BIC are the Akaike and 
+Schwarz Bayesian information criteria, respectively. 
+ Seasonals Seasonals + cycles
+ Constant Constant Trend Constant Trend
+ Constant α 26.941 26.947 26.930 
+ 0.062 0.107 0.187 
+ Trend θα 1.135 0.159 0.066 0.115 
+ Variance σ 2 0.908 0.098 0.079 0.071 0.073 
+ 0.084 0.011 0.007 0.007 0.007 
+ 
+ Seasonal 1 γ
+(1)
+t with a fixed periodicity of six months 
+ AR 1 φ
+(1)
+γ ,1 1.000 0.998 0.993 0.993 n/a n/a n/a n/a 
+ AR 2 φ
+(1)
+γ ,2 −1.000 −0.997 −0.986 −0.986 0.009 0.009 0.016 0.015 
+ MA θ (1) γ 0.029 0.047 0.073 0.076 0.015 0.024 0.044 0.039 
+ Seasonal 2 γ
+(2)
+t with a fixed periodicity of 12 months 
+ AR 1 φ
+(2)
+γ ,1 1.115 1.727 1.728 1.729 n/a n/a n/a n/a 
+ AR 2 φ
+(2)
+γ ,2 −0.414 −0.995 −0.996 −0.997 0.042 0.005 0.004 0.004 
+ MA θ (2) γ 1.261 0.085 0.077 0.073 0.068 0.034 0.028 0.026 
+ 
+ Cycle 1 ψ
+(1)
+t with implied estim. periodicity 17.063 16.989 
+ AR 1 φ
+(1)
+ψ,1 0.363 0.317 0.316 0.285 
+ AR 2 φ
+(1)
+ψ,2 −0.038 −0.029 0.143 0.171 
+ MA θ
+(1)
+ψ 0.494 0.402 0.185 0.142 
+ 
+ Cycle 2 ψ
+(2)
+t with implied estim. periodicity 29.684 32.513 
+ AR 1 φ
+(2)
+ψ,1 1.628 1.645 0.125 0.104 
+ AR 2 φ
+(2)
+ψ,2 −0.693 −0.702 0.120 0.103 
+ MA θ
+(2)
+ψ 0.567 0.514 0.170 0.128 
+ LLH −320.71 −60.72 −34.57 −23.08 −25.08 
+ AIC 645.41 133.43 81.14 70.17 74.16 
+ BIC 652.32 154.16 101.88 111.63 115.62 
+studies as well (Jiang & Ning, 1995; Rasmusson, Wang, 
+& Ropelewski, 1990; Trenberth, 1976). The near-annual 
+mode has also been previously linked with the ENSO 
+dynamical evolution and prediction (Jiang & Ning, 1995; 
+Jin, Kug, An, & Kang, 2003). For a detailed description 
+of the ocean-atmosphere processes that are associated 
+with these oscillatory ENSO dynamics, we refer the reader 
+to the discussion in Petrova et al. (2017). Increasing the 
+number of cycles r does not improve the in-sample fit, 
+and the estimates of the parameters corresponding to 
+such extra cycles are very insignificant.
+We also consider configurations with only regressors 
+and no score-driven components to determine whether 
+important periodic variation can be extracted from the re-
+gressors and accurate forecasts can be made without any 
+autoregressive dynamics in the model. Finally, we con-
+sider combining the elaborate score-driven specification 
+with q = 2 and r = 2 with regressors.
+4.2. In-sample results for models without regressors
+Table 1 shows the estimation results for the first sub-
+sample, i.e. 1985–2004, for the models without regressors. 
+The models without cycle components have a worse fit 
+than those with cycles, based on the log likelihood. For 
+the model with seasonal components and no additional 
+cyclical components, allowing for a stochastic trend leads 
+to a considerably better fit. For the model with seasonal 
+and cycle components, the fit is slightly worse with a 
+trend. This fit can worsen because the model with the 
+trend technically does not nest the model without the 
+trend. For the trend model, the initialization of the filter 
+ˆα1 is based on the average of the first six observations. For 
+the constant model, the initialization α is estimated as a 
+parameter.
+7
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Fig. 2. Data in levels together with filtered components using data of subsample period 1 (left column, 1985.1 to 2004.12) and subsample period 
+2 (right column, 2005.1 to 2024.12), based on fitted models with constant, seasonals (q = 2) and cycles (r = 2) with parameter estimates from
+Table 1 and Table A.4 in the appendix, respectively. The horizontal solid line in the first row corresponds to the estimated constant α.
+The coefficients φ
+(i)
+γ ,2 and φ
+(j)
+ψ,2 determine the persis-
+tence of the AR(2) processes. Their absolute values corre-
+spond to the inverse squared modulus of the roots of the 
+characteristic polynomial of the AR(2) processes, given 
+that we restrict the parameters so that the roots of the 
+AR polynomials are complex. Thus, coefficients close to 
+zero imply less persistence of the corresponding process.
+Table 1 reveals that the seasonal components tend to have 
+high persistence. The second cycle component has a mod-
+erate persistence. The first cycle component has a very 
+low persistence and the AR coefficients are not significant. 
+On the other hand, the coefficients θ
+(j)
+ψ , j = 1, 2, are larger 
+than θ (i) γ , i = 1, 2. Plots of the filtered components for 
+the model with seasonals and cycles without trend are 
+provided in the left column of Fig. 2 for the first sub-
+sample. The seasonal components are relatively smooth, 
+due to estimates implying a small θ coefficient and high 
+persistence, whereas the cycles are more irregular.
+Table A.4 in the appendix shows the estimation results 
+for the second subsample (2005–2024), for the models 
+without regressors. In the right column of Fig. 2, we 
+present the filtered components for the model with con-
+stant, seasonals, and cycles, and hence without a trend, 
+using data from the second sample. The results look very 
+similar to those of the first subsample. One difference 
+is that the AR coefficients of the first cycle component 
+are estimated to be virtually zero, which is why they 
+have been removed from the model. The corresponding 
+8
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Table 2
+In-sample estimation results for subsample period 1, 1985.1 to 2004.12, and for the score-driven models with 
+only constants and with seasonals (q = 2) and cycles (r = 2), and both with regressors. Note that the selection 
+of lagged regressors in the model changes with the forecast horizon.
+ Constant Seasonals + cycles
+ no PCA PCA no PCA PCA
+ G2S LASSO G2S LASSO G2S G2S
+ Horizon 1 
+ LLH 138.18 90.94 −45.36 41.77 7.97 −3.75 
+ AIC −154.37 938.12 136.72 352.45 18.06 41.50 
+ BIC 56.41 2873.10 216.20 1105.71 76.80 100.24 
+ no. selected vars 59 74 21 72 5 5 
+ total vars 558 558 216 216 558 216 
+ 
+ Horizon 6 
+ LLH −43.61 −9.40 −117.45 −70.86 6.91 −3.63 
+ AIC 157.22 948.79 266.90 517.72 20.19 45.26 
+ BIC 278.16 2555.52 322.19 1167.32 78.93 110.92 
+ no. selected vars 33 57 14 51 5 7 
+ total vars 463 463 186 186 463 186 
+ 
+ Horizon 12 
+ LLH −160.03 −4.05 −224.10 −193.93 −4.06 −6.70 
+ AIC 366.05 734.10 470.19 691.85 38.13 43.41 
+ BIC 445.52 1988.38 508.20 1217.06 89.96 95.24 
+ no. selected vars 21 93 9 33 3 3 
+ total vars 361 361 150 150 361 150 
+ 
+ Horizon 18 
+ LLH −207.82 −253.72 −260.31 −267.17 −12.92 −9.67 
+ AIC 449.64 1077.43 536.63 766.35 51.84 55.34 
+ BIC 508.38 2062.20 564.27 1167.16 96.76 117.54 
+ no. selected vars 15 12 6 9 1 6 
+ total vars 283 283 114 114 283 114 
+ 
+term θ
+(1)
+ψ st has not been deleted, as it is estimated to be 
+significantly different from zero.
+4.3. In-sample results for models with regressors
+Table 2 summarizes the estimation results for the 
+models with regressors based on the first subsample 
+and horizons 1, 6, 12, and 18. For horizon one, the log 
+likelihood and sometimes even the AIC or BIC of the 
+models with only regressors is better than that of the 
+models without regressors in Table 1. From Table 2 we 
+learn that log-likelihood values and information criteria 
+worsen as the forecast horizon increases, and the fit of 
+the models with only regressors drops below that of the 
+models without regressors. Across horizons, the AIC and 
+BIC values of the models with both score-driven compo-
+nents and regressors are almost always smaller than their 
+counterparts without regressors in Table 1. These findings 
+are indicative of substantial improvements in the fit when 
+regressors are included.
+Typically, the number of selected regressor variables 
+decreases as the horizon increases. For longer horizons, 
+fewer variables are available, and they are likely less in-
+formative about the variable of interest due to their higher 
+lag orders. For the models with score-driven components, 
+far fewer regressors are selected than for the models with 
+only regressors. The G2S approach tends to select fewer 
+variables than the LASSO approach, and the log likelihood 
+of the latter is typically higher. Despite the LASSO penalty 
+parameter being based on the BIC, the BIC of the model 
+found by the G2S approach is occasionally better. This 
+may occur because the LASSO in contrast to the G2S 
+approach uses a penalized version of the log likelihood. 
+Lastly, the models based on PCs almost always lead to 
+a worse fit and also worse AIC and BIC values than the 
+models that use the original variables.
+Finally, Tables A.5 and A.66 show which lags are se-
+lected for each variable and horizons 1, 6, 12, and 18, 
+respectively. Table A.7 shows the selected PCs for all lags 
+and horizons. The tables show that not only short lag 
+orders are included. Even for short horizons, high lag 
+orders above 24 are often selected. This stands out in 
+particular for subsurface temperatures, implying that in-
+formation that is more than two years old retains valuable 
+information for forecasting future observations. This high-
+lights the intricate dynamic features that are captured 
+by the subsurface predictor covariates. These covariates 
+are selected to represent the building up and subsurface 
+propagation of heat in the equatorial western and cen-
+tral Pacific Ocean that occurs as a slow process over the 
+course of 2–2.5 years ahead of El Niño events. In this way, 
+warm anomalies captured by the subsurface predictors 
+at these long lead times are highly correlated with the 
+warm surface temperature anomalies at the peak of El 
+Niño (Petrova et al., 2017).
+6 Tables A.5–A.7 are placed in the appendix.
+9
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Table 3
+Mean squared forecast errors based on the subsample period 2, 2005.1 to 2024.12. The forecasts in the 90% 
+and 75% model confidence sets are indicated by one and two asterisks, respectively.
+ Forecasting horizon h
+ 1 3 6 12 14 16 18 
+ Constant 0.971 0.997 1.010 1.035 1.035 1.040 1.037 
+ Regressors
+ G2S 0.292 0.778 1.117 1.544 1.520 1.328 1.284 
+ G2S PCA 0.317 0.507 0.748∗∗ 1.051∗ 0.967∗ 0.881∗∗ 0.932∗∗ 
+ LASSO 0.205 0.491 0.708∗∗ 1.029∗ 0.923∗∗ 0.936∗ 0.936∗∗ 
+ LASSO PCA 0.228 0.521 0.760∗∗ 0.946∗ 0.913∗∗ 0.872∗∗ 0.925∗∗ 
+ Seasonals
+ constant 0.112 0.577 0.967 0.983∗ 0.987∗ 1.004 1.010 
+ trend 0.092 0.457 1.177 1.615 1.527 1.563 1.688 
+ Seasonals + cycles
+ constant 0.082 0.324 0.670∗∗ 0.820∗∗ 0.815∗∗ 0.818∗∗ 0.819∗∗ 
+ trend 0.083 0.327 0.680∗∗ 0.928∗ 0.923∗ 0.920∗ 0.910∗∗ 
+ Seasonals + cycles + regressors
+ G2S 0.088 0.347 0.699∗∗ 0.928∗ 0.862∗∗ 0.851∗∗ 0.860∗∗ 
+ G2S PCA 0.087 0.328 0.674∗∗ 0.844∗∗ 0.860∗∗ 0.864∗∗ 0.847∗∗ 
+ Anomalies
+ AR(1) 0.082 0.349 0.797∗∗ 1.080∗ 1.014∗ 0.976 0.974 
+ AR(3) 0.070∗∗ 0.280∗∗ 0.627∗∗ 0.831∗∗ 0.812∗∗ 0.803∗∗ 0.804∗∗ 
+ Anomalies + regressors
+ ARX(1) G2S 0.079∗ 0.365 0.904 1.112∗ 1.046∗ 0.981∗∗ 0.985∗∗ 
+ ARX(1) G2S PCA 0.088 0.397 1.041 1.348 1.246 1.086 1.080 
+ ARX(3) G2S 0.077∗ 0.385 0.809∗ 0.936∗∗ 0.901∗∗ 0.844∗∗ 0.881∗∗ 
+ ARX(3) G2S PCA 0.078 0.309 0.677∗∗ 0.924∗ 0.841∗∗ 0.806∗∗ 0.816∗∗ 
+5. Out-of-sample results
+5.1. Forecasting results
+Mean squared errors (MSEs) for the forecast evalu-
+ation sample from 2005–2024 are reported in Table 3. 
+For each forecast horizon h, forecasts in the 90% and 75% 
+MCSs are indicated by one and two asterisks, respectively. 
+The difficulty of the forecasting task and forecast uncer-
+tainty increases with the horizon, translating into less 
+pronounced differences between models and an increas-
+ing number of models in the MCS at long horizons. The 
+evolution of the MCS inclusions across horizons indicates 
+that the relative performance between models changes 
+with the forecast horizon.
+Across forecast horizons, the specification with sea-
+sonals and cycles dominates the specification with only 
+seasonals. The former is always in the 75% MCS for h ≥ 6
+while the latter is rarely in the 90% MCS. This is the pat-
+tern that we would expect based on the in-sample results 
+reported in Table 1, where models with only seasonal 
+components have a poorer fit than those with additional 
+cyclical components. It is of less consequence whether 
+the trend component is specified as a constant or a ran-
+dom walk process. This is also in line with the in-sample 
+results and the absence of a zero-frequency unit root. 
+Regarding the former, the signal-to-noise coefficient, θα , 
+has an insignificant estimate.
+At short forecast horizons of one and three months 
+ahead, i.e. h ∈ {1, 3}, the specification with seasonals 
+and cycles produces substantially more accurate forecasts 
+than the specification with only regressors. At medium 
+and long forecast horizons at least six months ahead, 
+i.e. h ∈ {6, 12, 14, 16, 18}, the specification with only 
+regressors is competitive and included at least in the 
+90% MCS. This observation is consistent with the fact 
+that the regressors are designed to anticipate El Niño at 
+long lead times; see Section 2.1. Adding regressors to the 
+specification with seasonals and cycles does not lead to 
+a decrease of the mean squared forecast errors, but it 
+does demonstrate comparable results. These findings are 
+not completely in line with the in-sample results, where 
+adding regressors to the models with seasonals and cycles 
+generally led to better information criterion values.
+The AR(1), ARX(1), AR(3) and ARX(3) benchmark mod-
+els are fitted using anomalous data. Their subsequent 
+forecasts are obtained for the data in levels by adding the 
+mean annual cycle as shown in Fig. A.1 of the appendix. 
+At short forecast horizons of one and three months, the 
+AR(1) model is among the most accurate models. At 
+medium and long horizons, most of the score-driven 
+specifications produce more accurate forecasts than the 
+AR(1) model. Across horizons, the AR(3) model is often 
+the most accurate and is always included in the 75% MCS. 
+As for the score-driven specification with seasonals and 
+cycles, adding regressors to the AR(1) and AR(3) models 
+generally reduces average forecasting accuracy. However, 
+when analyzing forecasting accuracy as a function of ini-
+tialization and target month, we note important benefits 
+from adding regressors to the AR(1) and AR(3) models and 
+from the regressors on their own. In the ARX(1) model, 
+PCA has a negative effect on forecasting accuracy. In the 
+ARX(3) model and the score-driven specification with 
+seasonals, cycles, and regressors, PCA has a positive effect 
+on forecasting accuracy. The same is generally true for 
+the specification with only regressors. This contrasts the 
+in-sample results, where PCA generally deteriorated the 
+in-sample fit. In this out-of-sample study, the information 
+10
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Fig. 3. Out-of-sample forecasts (in red) for a selection of models, as indicated on top of each graph, together with the realized Niño 3.4 index time 
+series (in black), with the mean annual cycle subtracted from both, for horizons 6, 12, and 18. Red and blue shadings indicate El Niño and La Niña 
+periods, respectively.
+loss caused by PCA is made up for by the lower estima-
+tion uncertainty caused by having fewer parameters to 
+estimate.
+Fig. 3 displays the out-of-sample forecasts for horizons 
+6, 12, and 18 for four selected models, where the mean 
+annual cycle calculated over the total sample from 1982 
+to 2024 has been removed from the forecasts. For the 
+longest horizons, the forecasts generated by the models 
+with seasonals and cycles mainly reflect the seasonality, 
+since there is little variation left in the forecasts after 
+the subtraction of the annual cycle. We notice that the 
+estimated persistence of the seasonals is much higher 
+than that of the cyclical components. Therefore, when 
+iterating the filtering equations forward h steps, the sea-
+sonals dominate. However, additional cycle components 
+have significant added value, as the models with season-
+als only are rarely in the MCS. Fig. 3 also shows that 
+many models struggle with the identification of particular 
+El Niño events, especially for the longest horizons. In 
+such cases, the regressors are important for forecasting 
+cold and warm ENSO events. This is elaborated in the 
+discussion below.
+5.2. Validity checks
+Table A.8 of the appendix compares the out-of-sample 
+forecasting performance of our score-driven specifications 
+with stochastic seasonality against specifications with de-
+terministic seasonality or both. The results indicate little 
+difference in forecasting performance across specifica-
+tions.
+In the construction of the MCS, we adopt a stationary 
+bootstrap with a block size of nine and 100,000 replica-
+tions. The choice of bootstrap parameters is inspired by 
+the empirical inflation forecasting application in Hansen 
+et al. (2011). The results reported in Table 3 are similar 
+when computed with block sizes of 6 and 12. A key as-
+sumption for the validity of the MCS procedure is that the 
+pairwise forecast loss differentials are stationary across 
+model combinations. The augmented Dickey–Fuller test 
+rejects the unit root null hypothesis for the loss differen-
+tials in the vast majority of cases across all model pairs 
+and forecasting horizons.
+We replicated Table 3 for subsamples that correspond 
+to El Niño (Table A.9) and La Niña (Table A.10) periods, 
+11
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Fig. 4. Heatmaps of mean squared forecast errors as a function of initialization month (first axis) and forecasting horizon (second axis), for eight 
+different model specifications which are indicated on top of each heatmap. The target month is included below the MSE value for reference.
+and they yielded similar results. Most notably, the AR(3) 
+model is removed from the 75% MCS at long horizons (h ∈
+{16, 18}) and even the 90% MCS at the longest horizon 
+(h = 18) during El Niño periods. As expected, regressors 
+are important during El Niño, and ARX(1), ARX(3), and 
+models with only regressors are preferred. We extend this 
+discussion with additional results in Section 5.3. We also 
+replicated Table 3 without the benchmark autoregressive 
+models (Table A.11). In general, from these verifications 
+we may conclude that the MCSs in Table 3 are valid and 
+robust to different model and sample selections.
+5.3. Spring predictability barrier
+Due to the cyclical nature of ENSO and the need for 
+updated monthly forecasts in real time, exemplified by 
+the IRI7 prediction plume, it is important to understand 
+7 See footnote 1.
+12
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Fig. 5. Heatmaps of mean squared forecast errors as a function of target month (first axis) and forecasting horizon (second axis), for eight different 
+model specifications which are indicated on top of each heatmap. The initialization month is included below the MSE value for reference.
+how the accuracy of the forecast varies with the initializa-
+tion and the target month. In Fig. 4, we present heatmaps 
+of the mean squared forecast error (MSE) as a function 
+of the initialization month (first axis) and the forecast 
+horizon (second axis), for the four models in Fig. 3 and 
+for the AR(1), ARX(1), AR(3), and ARX(3) benchmarks. At 
+the six-month horizon, the MSE tends to increase with the 
+onset of boreal spring (March) and does not recover until 
+after spring. This phenomenon is often referred to as the 
+spring predictability barrier and coincides with the usual 
+transition phase of ENSO (Ehsan et al., 2024). The AR(1) 
+and ARX(1) models are particularly vulnerable to this 
+barrier. The MSE for the AR(1) model increases sharply 
+already in January, whereas the ARX(1) model exhibits 
+persistently elevated MSE values through July. In contrast, 
+the spring predictability barrier is less pronounced for the 
+remaining models.
+In Fig. 5, we present heatmaps of the MSE as a function 
+of the target month (first axis) and the forecast horizon 
+(second axis) to supplement the analysis. ENSO typically 
+13
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+reaches peak intensity during the boreal winter months 
+(December–February), making this period particularly rel-
+evant for forecast evaluation. At long horizons, no single 
+model consistently dominates during boreal winter, al-
+though the AR(1) model frequently delivers the weakest 
+performance. The inclusion of regressors tends to improve 
+forecast accuracy at long horizons during boreal winter, 
+especially in the AR(1) and AR(3) models (bottom two 
+rows of Fig. 5). In addition, models relying exclusively 
+on regressors remain highly competitive in this setting, 
+and the model based solely on LASSO-selected regressors 
+is often among the strongest performers. These findings 
+are consistent with the construction of the regressor set, 
+which is specifically designed to anticipate El Niño events 
+at long lead times (see Section 2.1). Finally, this is also 
+consistent with the results presented in Fig. 3, where 
+models with regressors are found to predict strong ENSO 
+events accurately at the 12-month lead time, and even 
+some models predict them at the 18-month lead time.
+5.4. Real-time out-of-sample forecasts
+We constructed real-time out-of-sample forecasts
+from October 2024 onward, which can be evaluated as 
+time progresses. Although December 2024 is the last 
+month for which we have an observation of the Niño 
+3.4 index, we only have observations for all explanatory 
+variables up to and including October 2024. For the pa-
+rameter estimates, we again use an estimation window 
+length of 20 years, i.e. observations from November 2004 
+to October 2024. Fig. 6 presents out-of-sample real-time 
+forecasts for all selected models, for horizons 1, 3, 6, 12, 
+14, 16, and 18 months, with the mean annual cycle sub-
+tracted, such that the resulting values can be evaluated as 
+forecasts of the anomalous series. The numerical values of 
+the forecasts can be found in Table A.12 of the appendix. 
+The models with only regressors show a wider range of 
+forecast values than the models with cycle and seasonal 
+components and regressors. Especially for horizons h =
+14 and h = 16, the G2S, G2S PCA, and LASSO models 
+without components indicate that moderate to strong La 
+Niña could develop in the winter of 2025–2026. The fore-
+casts from the other models rarely come below the last 
+observed value, and instead these models predict more of 
+an upward movement in the index over the coming 18 
+months. This finding points towards a transition to more 
+neutral conditions in the equatorial Pacific. Given that an 
+El Niño event took place in 2023–2024, it is unlikely that 
+there will be another event within the next 18 months 
+from October 2024, which is reflected by these forecasts.
+6. Discussion and conclusion
+We carried out a comprehensive forecast study of the 
+Niño 3.4 index across short-, medium-, and long-lead 
+forecast horizons. The main forecast methodology relied 
+on a statistical dynamic model that was extended with a 
+large set of predictors. The candidate predictors for the 
+model were selected differently for each forecast horizon. 
+The dynamic features of the trend, seasonal, and cyclical 
+effects were modeled within a score-driven framework, 
+which led to basic filtering operations and straightforward 
+log-likelihood evaluations. Parameter estimation was car-
+ried out by the method of classical maximum likelihood. 
+The forecast functions could then be easily obtained. Fore-
+cast precision was compared between different model 
+specifications based on the mean squared forecast error 
+statistic and the model confidence set procedure.
+Among the score-driven models and models with only 
+regressors, the specification with seasonal and cycle com-
+ponents performed best overall when considering the 
+mean squared error statistic, especially at the shorter 
+forecast horizons (Table 3). However, the specification 
+with only regressors delivered statistically indistinguish-
+able performance at long-lead horizons of 14, 16, and 18 
+months. This is in line with the design of the covariates 
+to capture dynamic properties of the ENSO phenomenon 
+at very long lead times. We considered as benchmarks 
+the AR(1) and AR(3) models with and without regressors 
+based on anomalous time series, obtained by removing 
+the mean annual cycle from the Niño 3.4 index before es-
+timation. We found that the AR(1) model was only among 
+the most accurate models at short horizons, while the 
+AR(3) model was often the most accurate model across 
+horizons.
+The forecasts presented in Fig. 3 reveal a more nu-
+anced picture. At the short-lead horizon of six months, 
+the models containing only regressors and the LASSO and 
+G2S PCA configurations accurately predicted the major El 
+Niño and La Niña events. The models with seasonals and 
+cycles or seasonals, cycles, and regressors also predicted 
+the majority of the large ENSO events but somewhat un-
+derestimated their amplitude and sometimes had shifted 
+peaks. It is of concern that the large 2015–2016 El Niño 
+was not predicted by the components models. This was 
+perhaps due to low-frequency ENSO dynamics not rep-
+resented in these schemes, such as five- to seven-year 
+periodicity or decadal variability, which have been shown 
+to be important for predicting particular ENSO events; 
+see the discussion by Petrova et al. (2017), especially 
+regarding the other very strong El Niño of 1997–1998.
+At the medium-range forecast horizon of 12 months 
+(middle column of Fig. 3), the models with only regres-
+sors were again the ones that predicted almost all El 
+Niño events, albeit with shifted peaks (the 2006–2007, 
+2009–2010 and 2023–2024 El Niños), but no model con-
+figuration anticipated the 2015–2016 El Niño. The models 
+with only regressors and LASSO and with G2S PCA config-
+urations also generally predicted La Niña events, although 
+none of the models predicted the triple-dip cold events 
+between 2020 and 2023, and the regressors with the G2S 
+PCA model configuration also missed the 2007–2008 La 
+Niña.
+For the long-lead horizon of 18 months, again the 
+models with only regressors performed well at predict-
+ing some of the major ENSO events (the 2009–2010 and 
+2023–2024 El Niños, and the 2010–2011 and 2017–2018 
+La Niñas), but the amplitudes were clearly underesti-
+mated, in some cases substantially. Accurately predicting 
+the amplitudes of the events at such long lead times, how-
+ever, was a challenge for nearly all models, as previously 
+discussed in the literature (Barnston et al., 2012; Petrova 
+14
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Fig. 6. Real-time out-of-sample forecasts made in October 2024 for horizons h = 1, 3, 6, 12, 14, 16, 18, with per-month sample mean subtracted, 
+leading to forecasted anomalies.
+et al., 2020). For example, both the operational dynamical 
+and statistical models consistently underestimated the 
+peak intensity of the 2015–2016 El Niño, and predicted 
+that the SST anomaly would exceed +2 ◦C only in July and 
+August of 2015, i.e. a lead time of 3–4 months (L’Heureux 
+et al., 2017). The operational statistical models in fact 
+failed to foresee the actual amplitude, which is consistent 
+with previous ENSO forecasts, as the latest observational 
+information was not readily integrated into these schemes 
+(Barnston et al., 2012).
+Finally, the models with only regressors were also the 
+ones that generally predicted more accurately the ongoing 
+La Niña event in the winter of 2024–2025. Most of them 
+also indicated that another La Niña might occur in the 
+winter of 2025–2026 (Fig. 6 and Table A.12). The other 
+models tended to suggest that the conditions would be 
+neutral in the Niño 3.4 region. Interestingly, at the time 
+of writing, the latest official ENSO forecast from the CPC 
+using data up to January 2025 also pointed to almost 
+equal probabilities for neutral or La Niña conditions, with 
+very small chances of an El Niño.8
+Given these empirical findings, we may conclude as 
+follows. The regression variables that are specifically se-
+lected to account for anomalous atmospheric and oceanic 
+subsurface processes in the tropical Pacific, occurring be-
+fore individual El Niño events, are particularly relevant for 
+predicting cold and warm ENSO events. Moreover, models 
+that include regressors alleviate the spring predictability 
+barrier and can provide useful information about ENSO 
+events more than nine months in advance. However, the 
+inability to predict the strong 2015–2016 El Niño im-
+plies that more work should be done in the future to 
+model the potentially nonlinear ENSO dynamics that arise 
+due to the superposition and interaction of low- and 
+high-frequency oscillations involved in the physics of the 
+coupled ocean–atmosphere system.
+CRediT authorship contribution statement
+Janneke van Brummelen: Writing – review & edit-
+ing, Writing – original draft, Software, Methodology, For-
+mal analysis, Data curation, Conceptualization. Sebastian 
+Jensen: Writing – review & editing, Writing – original 
+8 https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/
+enso_advisory/ensodisc.pdf (last accessed November 9, 2025).
+draft, Validation, Methodology, Formal analysis, Concep-
+tualization. Siem Jan Koopman: Writing – review & edit-
+ing, Writing – original draft, Supervision, Methodology, 
+Formal analysis, Conceptualization. Desislava Petrova: 
+Writing – review & editing, Writing – original draft, Su-
+pervision, Methodology, Data curation, Conceptualization.
+Declaration of competing interest
+The authors declare that they have no known com-
+peting financial interests or personal relationships that 
+could have appeared to influence the work reported in 
+this paper.
+Acknowledgments
+We thank the Editor, Associate Editors, and referees 
+for their insightful and supportive comments, which have 
+led to a much improved paper. All remaining errors are 
+ours alone. This work was supported by the Independent 
+Research Fund Denmark (grant 4259-00012B to Sebastian 
+Jensen).
+Data and code availability
+The code required to reproduce the results reported 
+in this paper are available in the reproducibility package 
+at github.com/jnvanbrummelen/Long-Lead-Forecasting-o
+f-ENSO-using-Score-Driven-Models-with-Many-Predictor
+s. The data can be made available as indicated on github.
+Appendix A. Supplementary data
+Supplementary material related to this article can be 
+found online at https://doi.org/10.1016/j.ijforecast.2026.
+09.009.
+References
+Artemova, M., Blasques, F., van Brummelen, J., & Koopman, S. J. (2022). 
+Score-driven models: Methodology and theory. In Oxford research 
+encyclopedia of economics and finance. Oxford University Press.
+Ballester, J., Bordoni, S., Petrova, D., & Rodo, X. (2015). On the dynamical 
+mechanism explaining the western Pacific subsurface temperature 
+buildup leading to ENSO events. Geophysical Research Letter, 42, 
+2961–2967.
+Ballester, J., Petrova, D., Bordoni, S., Cash, B., Garcia-Diez, M., & Rodo, X. 
+(2016). Sensitivity of El Niño intensity and timing to preceding 
+subsurface heat magnitude. Scientific Reports, 6, 36344.
+15
+ARTICLE IN PRESS
+J. van Brummelen, S. Jensen, S.J. Koopman et al. International Journal of Forecasting xxx (xxxx) xxx
+Ballester, J., Rodriguez-Arias, M. A., & Rodo, X. (2011). A new extratrop-
+ical tracer describing the role of the western Pacific in the onset 
+of El Niño: Implications for ENSO understanding and forecasting. 
+Journal of Climate, 24, 1425–1437.
+Barnston, A., Glantz, M. H., & He, Y. (1999). Predictive skill of statistical 
+and dynamical climate models in sst forecasts during the 1997-98 
+El Niño episode and the 1998 La Niña onset. Bulletin of the American 
+Meteorological Society, 80, 217–243.
+Barnston, A., Tippett, M., L’Heureux, M., Li, S., & DeWitt, D. (2012). 
+Skill of real-time seasonal ENSO model predictions during 2002-
+11. Is our capability increasing? American Meteorological Society, 93, 
+631–651.
+Blasques, F., Koopman, S. J., & Lucas, A. (2015). Information-theoretic 
+optimality of observation-driven time series models for continuous 
+responses. Biometrika, 102, 325–343.
+Cane, M., Zebiak, S., & Dolan, S. (1986). Experimental forecasts of El 
+Niño. Nature, 321, 827–832.
+Canova, F., & Hansen, B. E. (1995). Are seasonal patterns constant over 
+time? A test for seasonal stability. Journal of Business & Economic 
+Statistics, 13, 237–252.
+Capotondi, A., Wittenberg, A. T., Newman, M., Di Lorenzo, E., Yu, J. 
+-Y., Braconnot, P., Cole, J., Dewitte, B., Giese, B., Guilyardi, E., et 
+al. (2015). Understanding ENSO diversity. Bulletin of the American 
+Meteorological Society, 96, 921–938.
+Clarke, A. J., & Gorder, S. V. (2003). Improving El Niño prediction using a 
+space–time integration of Indo-Pacific winds and equatorial Pacific 
+upper ocean heat content. Geophysical Research Letters, 30.
+Cox, D. R. (1981). Statistical analysis of time series: Some recent 
+developments. Scandinavian Journal of Statistics, 8, 93–115.
+Creal, D., Koopman, S. J., & Lucas, A. (2013). Generalized autoregressive 
+score models with applications. Journal of Applied Econometrics, 28, 
+777–795.
+Diebold, F. X., & Mariano, R. S. (1995). Comparing predictive accuracy. 
+Journal of Business & Economic Statistics, 13, 253–263.
+Ehsan, M. A., L’Heureux, M. L., Tippett, M. K., Robertson, A. W., & 
+Turmelle, J. (2024). Real-time ENSO forecast skill evaluated over 
+the last two decades, with focus on the onset of ENSO events. npj 
+Climate and Atmospheric Science, 7, 301.
+Fedorov, A. V., Hu, S., Lengaigne, M., & Guilyardi, E. (2015). The impact 
+of westerly wind bursts and ocean initial state on the development 
+and diversity of El Niño events. Climate Dynamics, 44, 1381–1401.
+Good, S. A., Martin, M. J., & Rayner, N. A. (2013). EN4: Quality controlled 
+ocean temperature and salinity profiles and monthly objective 
+analyses with uncertainty estimates. Journal of Geophysical Research: 
+Oceans, 118, 6704–6716.
+Gouretski, V., & Cheng, L. (2020). Correction for systematic errors 
+in the global dataset of temperature profiles from mechanical 
+bathythermographs. Journal of Atmospheric and Oceanic Technology, 
+37, 841–855.
+Gouretski, V., & Reseghetti, F. (2010). On depth and temperature 
+biases in bathythermograph data: Development of a new correction 
+scheme based on analysis of a global ocean database. Deep Sea 
+Research Part I: Oceanographic Research Papers, 57, 812–833.
+Hansen, P. R., Lunde, A., & Nason, J. M. (2011). The model confidence 
+set. Econometrica, 79, 453–497.
+Harvey, A. C. (2013). Dynamic Models for Volatility and Heavy Tails: 
+With Applications to Financial and Economic Time Series, volume 52. 
+Cambridge University Press.
+Harvey, A. C., & Luati, A. (2014). Filtering with heavy tails. Journal of 
+the American Statistical Association, 109(507), 1112–1122.
+Huang, B., Liu, C., Banzon, V., Freeman, E., Graham, G., Hankins, B., 
+Smith, T., & Zhang, H. -M. (2021). Improvements of the daily 
+optimum interpolation sea surface temperature (DOISST) version 
+2.1. Journal of Climate, 34, 2923–2939.
+Hylleberg, S., Engle, R., Granger, C., & Yoo, B. (1990). Seasonal 
+integration and cointegration. Journal of Econometrics, 44, 215–238.
+Jiang, & Ning, J. D. N. M. G. (1995). Quasi-quadrennial and quasi-
+biennial variability in the equatorial Pacific. Climate Dynamics, 12, 
+101–112.
+Jin, F. (1997). An equatorial ocean recharge paradigm for ENSO, Part I : 
+Conceptual model. Journal of the Atmospheric Sciences, 54, 811–829.
+Jin, F., Kug, J., An, S., & Kang, I. (2003). A near-annual coupled 
+ocean-atmosphere mode in the equatorial Pacific ocean. Geophysical 
+Research Letters, 30, 2923–2939.
+Kalnay, E., Kanamitsu, M., Kistler, R., Collins, W., Deaven, D., Gandin, L., 
+Iredell, M., Saha, S., White, G., Woollen, J., Zhu, Y., Leetmaa, A., 
+Reynolds, R., Chelliah, M., Ebisuzaki, W., Higgins, W., Janowiak, J., 
+Mo, K. C., Ropelewski, C., .... Joseph, D. (1996). The NCEP/NCAR 
+40-year reanalysis project. Bulletin of the American Meteorological 
+Society, 77, 437–471.
+L’Heureux, M. L., Levine, A. F., Newman, M., Ganter, C., Luo, J. -J., 
+Tippett, M. K., & Stockdale, T. N. (2020). ENSO prediction. In El 
+Niño Southern oscillation in a changing climate (pp. 227–246).
+L’Heureux, M. L., Takahashi, K., Watkins, A. B., Barnston, A. G., Becker, E. 
+J., Tom, E., & Di Liberto, F. G. e. a. (2017). Observing and predicting 
+the 2015/16 El Niño. Bulletin of the American Meteorological Society, 
+98, 1363–1382.
+Li, M., Koopman, S. J., Lit, R., & Petrova, D. (2020). Long-term fore-
+casting of El Niño events via dynamic factor simulations. Journal of 
+Econometrics, 214, 46–66.
+Ludescher, J., Gozolchiani, A., Bogachev, M. I., Bunde, A., Havlin, S., 
+& Schellnhuber, H. J. (2013). Improved El Niño forecasting by 
+cooperativity detection. Proceedings of the National Academy of 
+Sciences, 110, 11742–11745.
+Ludescher, J., Gozolchiani, A., Bogachev, M. I., Bunde, A., Havlin, S., 
+& Schellnhuber, H. J. (2014). Very early warning of next El Niño. 
+Proceedings of the National Academy of Sciences, 111, 2064–2066.
+McPhaden, M. (2003). Tropical Pacific ocean heat content variations and 
+ENSO persistence barriers. Geophysical Research Letters, 30, 1480.
+Petrova, D., Ballester, J., Koopman, S. J., & Rodó, X. (2020). Multiyear 
+statistical prediction of ENSO enhanced by the tropical Pacific 
+observing system. Journal of Climate, 33, 163–174.
+Petrova, D., Koopman, S. J., Ballester, J., & Rodó, X. (2017). Improving 
+the long-lead predictability of El Niño using a novel forecasting 
+scheme based on a dynamic components model. Climate Dynamics, 
+48, 1249–1276.
+Petrova, D., Rodó, X., Koopman, S. J., Tzanov, V., & Cvijanovic, I. 
+(2024). The 2023/24 El Niño and the feasibility of long-lead ENSO 
+forecasting. Bulletin of the American Meteorological Society, 105, 
+E1915–E1928.
+Philander, S. G. H. (1983). El Niño southern oscillation phenomena. 
+Nature, 302, 295–301.
+Ramesh, N., & Murtugudde, R. (2013). All flavours of El Niño have 
+similar early subsurface origins. Nature Climate Change, 3, 42–46.
+Rasmusson, E., & Carpenter, T. (1982). Variations in tropical sea surface 
+temperature and surface wind fields associated with the southern 
+oscillation/El Niño. Monthly Weather Review, 110, 354–384.
+Rasmusson, E. M., Wang, X., & Ropelewski, C. F. (1990). The biennial 
+component of ENSO variability. Journal of Marine Systems, 1, 71–96.
+Rodó, X., Rodriguez-Arias, M., & Ballester, J. (2006). The role of ENSO 
+in fostering teleconnection patterns between the tropical north 
+atlantic and the western mediterranean basin. CLIVAR Exchanges, 
+11, 26–27.
+Ropelewski, C., & Halpert, M. (1987). Global and regional scale precip-
+itation patterns associated with the El Niño/southern oscillation. 
+Monthly Weather Review, 115, 1606–1626.
+Sarachik, E., & Cane, M. (2010). The el niño southern oscillation 
+phenomenon. Cambridge University Press.
+Stein, K., Timmermann, A., & Schneider, N. (2011). Phase synchroniza-
+tion of El Niño–southern oscillation with the annual cycle. Physical 
+Review Letters, 107, Article 128501.
+Trenberth, K. E. (1976). Spatial and temporal variations of the southern 
+oscillation. Quarterly Journal of the Royal Meteorological Society, 102, 
+639–653.
+Wang, H., Hu, S., & Li, X. (2023). An interpretable deep learning ENSO 
+forecasting model. Ocean-Land-Atmosphere Research, 2, 0012.
+West, K. D. (1996). Asymptotic inference about predictive ability. 
+Econometrica, 64(5), 1067–1084.
+Wilcox, P. S., Mudelsee, M., Spötl, C., & Edwards, R. L. (2023). Solar 
+forcing of ENSO on century timescales. Geophysical Research Letters, 
+50, e2023GL105201.
+Wyrtki, K. (1975). El Niño - the dynamic response of the equatorial Pa-
+cific ocean to atmospheric forcing. Journal of Physical Oceanography, 
+5, 572–584.
+Wyrtki, K. (1985). Water displacements in the Pacific and the genesis 
+of El Niño cycles. Journal of Geophysical Research, 90, 7129–7132.
+Zhou, L., & Zhang, R.-H. (2023). A self-attention–based neural network 
+for three-dimensional multivariate modeling and its skillful ENSO 
+predictions. Science Advances, 9(10), eadf2827.
+16

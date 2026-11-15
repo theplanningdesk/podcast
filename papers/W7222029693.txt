@@ -980,7 +980,7 @@ causal setting.
 3.3.3.1. False Discovery Rate (FDR). FDR measures the proportion of 
 incorrect causal links among all identified interactions [100,101], and 
 is computed as in Eq. (3): 
-𝐹 𝐷𝑅 = (Reverse + 𝐹 𝑃)∕(𝑇 𝑃 + 𝐹 𝑃) (3)
+𝐹 𝐷𝑅 = (Reverse + 𝐹 𝑃 )∕(𝑇 𝑃 + 𝐹 𝑃 ) (3)
 Lower values indicate fewer false positives and fewer directional errors.
 3.3.3.2. Structural Hamming Distance (SHD). SHD calculates the num-
 ber of edge additions, deletions, or reversals needed to align the esti-
@@ -1002,7 +1002,7 @@ better approximates the true causal structure after intervention.
 discovered causal structure, we conducted a subset-based stability anal-
 ysis. Specifically, we randomly sampled 𝐾 subsets from the full dataset 
 , each containing 𝑝% of the original observations (in our case, 𝑝 = 80
-and 𝐾 = 50 ). For each subset 𝑘, where 𝑘 ∈ {1 , 2, … , 𝐾}, we applied 
+and 𝐾 = 50). For each subset 𝑘, where 𝑘 ∈ {1, 2, … , 𝐾}, we applied 
 the selected causal discovery algorithm to generate a graph 𝑘. We then 
 computed each metric discussed above between each 𝑘 and the ground 
 truth causal graph groundtruth.
@@ -1177,7 +1177,7 @@ it can help answer questions like ‘‘What if a supply chain delay had
 not occurred?’’ and estimate the resulting impact on other performance 
 metrics. Mathematically, a counterfactual scenario can be represented 
 in Eq. (13). 
-𝑌𝑋=𝑥 = 𝑓 (𝑋 = 𝑥, 𝑈) (13)
+𝑌𝑋=𝑥 = 𝑓 (𝑋 = 𝑥, 𝑈 ) (13)
 where 𝑌𝑋=𝑥 is the outcome (𝑌 ) that would happen if the intervention 𝑋
 were set to a specific value 𝑥, 𝑓 is the function (causal model or causal 
 graph) that describes how variables interact, and 𝑈 represents the other 
@@ -1214,7 +1214,7 @@ other disruptions. For instance, the prompts explicitly required the LLM
 to process causal links in the format expressed in Eq. (14)
 [𝑉 𝑎𝑟𝑖𝑎𝑏𝑙𝑒𝐴] ⟶ [𝑉 𝑎𝑟𝑖𝑎𝑏𝑙𝑒𝐵] (14)
 while considering external factors like 
-[𝐻𝑜𝑙𝑖𝑑𝑎𝑦𝑆𝑒𝑎𝑠𝑜𝑛 ] ⟶ [𝐻𝑢𝑚𝑎𝑛𝑅𝑒𝑠𝑜𝑢𝑟𝑐𝑒𝑆ℎ𝑜𝑟𝑡𝑎𝑔𝑒 ] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠 ] (15)
+[𝐻𝑜𝑙𝑖𝑑𝑎𝑦𝑆𝑒𝑎𝑠𝑜𝑛] ⟶ [𝐻𝑢𝑚𝑎𝑛𝑅𝑒𝑠𝑜𝑢𝑟𝑐𝑒𝑆ℎ𝑜𝑟𝑡𝑎𝑔𝑒] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠] (15)
 and expanding upon them. Furthermore, the prompts instructed the 
 LLM to generate causal diagrams with at least 25 levels of depth and a 
 minimum of six parent nodes for each variable.
@@ -1405,12 +1405,12 @@ backlog),
 vidual or instance.
 The estimated treatment effect for an individual, called the Individ-
 ual Treatment Effect (ITE), is calculated using Eq. (17). 
-̂ 𝜏(𝑥) = ̂ 𝜇(𝑥, 1) − ̂ 𝜇(𝑥, 0) (17)
+̂𝜏(𝑥) = ̂𝜇(𝑥, 1) − ̂𝜇(𝑥, 0) (17)
 In this equation:
-• ̂ 𝜏(𝑥) is the ITE, which measures the difference in predicted out-
-comes when the treatment is applied (𝑤 = 1 ) versus not applied 
+• ̂𝜏(𝑥) is the ITE, which measures the difference in predicted out-
+comes when the treatment is applied (𝑤 = 1) versus not applied 
 (𝑤 = 0).
-• ̂ 𝜇(𝑥, 𝑤) is the predicted outcome based on the features 𝑥 and the 
+• ̂𝜇(𝑥, 𝑤) is the predicted outcome based on the features 𝑥 and the 
 treatment status 𝑤, derived from the S-learner model trained on 
 the observed data.
 The ATE, which represents the average impact of the treatment 
@@ -1418,10 +1418,10 @@ across all individuals, is calculated by averaging the ITEs (cf. Eq. (18))
 ATE = 1 𝑛
 𝑛∑
 𝑖=1
-̂ 𝜏(𝑥𝑖) (18)
+̂𝜏(𝑥𝑖) (18)
 where:
 • 𝑛 is the total number of individuals (sample size),
-• ̂ 𝜏(𝑥𝑖) is the ITE for the 𝑖th individual.
+• ̂𝜏(𝑥𝑖) is the ITE for the 𝑖th individual.
 In the context of this study, the ATE quantifies the average differ-
 ence in Internal KPI (e.g., backlog) between the treated group (where 
 a disruption occurred) and the untreated group (where no disruption 
@@ -1604,7 +1604,7 @@ ment variable (Backlog) and the outcome variable (Escalation)
 show a marginally positive association on average, with an estimated 
 Average Treatment Effect (ATE) of 9.2 × 10−7. Specifically, an increase 
 of one unit in Backlog is associated with an estimated increase of 
-9.2 × 10 −7 units in Escalation. Conversely, a projected decrease of 
+9.2 × 10−7 units in Escalation. Conversely, a projected decrease of 
 the same magnitude but opposite sign in Escalation is linked to a 
 one-unit decrease in Backlog.
 The causal refutation was performed using three methods explained 
@@ -1740,15 +1740,15 @@ The internal-KPI results above rest on four sensitivity checks, re-
 ported earlier in their respective contexts and consolidated here. (i)
 Effect-estimate stability under added confounding : the random-common-
 cause refuter (Section 3.3.6.1) introduced a synthetic confounder and 
-recomputed the ATE; the estimate moved negligibly (𝑝 = 0 .96), indi-
+recomputed the ATE; the estimate moved negligibly (𝑝 = 0.96), indi-
 cating insensitivity to the kind of unobserved confounder that would 
 most worry a decision-maker. (ii) Effect-estimate stability under data 
 subsampling : the random-subset refuter (Section 3.3.6.2) recomputed 
-the ATE on random subsets of the dataset (𝑝 = 0 .76), confirming that 
+the ATE on random subsets of the dataset (𝑝 = 0.76), confirming that 
 the Backlog → Escalation effect is not driven by a narrow slice of ob-
 servations. (iii) Specificity against spurious signal: the placebo-treatment 
 refuter (Section 3.3.6.3) replaced the treatment with a random variable 
-and verified that no causal effect was detected (𝑝 = 0 .98), ruling out 
+and verified that no causal effect was detected (𝑝 = 0.98), ruling out 
 a model that mistakes noise for causation. (iv) Intervention-magnitude 
 sensitivity: the counterfactual analysis (Section 3.3.7) simulated Backlog 
 reductions at two magnitudes (50% and 70%), demonstrating that 
@@ -1811,8 +1811,8 @@ issues, leading to backlogs. Shortages of staff or strikes may
 further amplify the problem.
 • Question: Will the backlog increase or decrease?
 Based on the model, the following causal chain holds: 
-[𝑃 𝑟𝑜𝑑𝑢𝑐𝑡𝑂𝑏𝑠𝑜𝑙𝑒𝑠𝑐𝑒𝑛𝑐𝑒 ] ⟶ [𝑀𝑎𝑟𝑘𝑒𝑡𝐷𝑒𝑚𝑎𝑛𝑑𝐼𝑛𝑐𝑟𝑒𝑎𝑠𝑒 ] (20)
-[𝑀𝑎𝑟𝑘𝑒𝑡𝐷𝑒𝑚𝑎𝑛𝑑𝐼𝑛𝑐𝑟𝑒𝑎𝑠𝑒 ] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠 ] (21)
+[𝑃 𝑟𝑜𝑑𝑢𝑐𝑡𝑂𝑏𝑠𝑜𝑙𝑒𝑠𝑐𝑒𝑛𝑐𝑒] ⟶ [𝑀𝑎𝑟𝑘𝑒𝑡𝐷𝑒𝑚𝑎𝑛𝑑𝐼𝑛𝑐𝑟𝑒𝑎𝑠𝑒] (20)
+[𝑀𝑎𝑟𝑘𝑒𝑡𝐷𝑒𝑚𝑎𝑛𝑑𝐼𝑛𝑐𝑟𝑒𝑎𝑠𝑒] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠] (21)
 Thus, product obsolescence increases demand, which increases 
 backlogs.
 • Question: Rate the impact of natural disasters on the Borgwarner 
@@ -1823,7 +1823,7 @@ customer orders.
 • Question: Rate the impact of strikes on the Borgwarner backlog. High, 
 moderate, or low?
 Based on the model: 
-[𝑆𝑡𝑟𝑖𝑘𝑒𝑠] ⟶ [𝐶𝑢𝑠𝑡𝑜𝑚𝑒𝑟𝑂𝑝𝑒𝑟𝑎𝑡𝑖𝑜𝑛𝑠𝐷𝑖𝑠𝑟𝑢𝑝𝑡𝑖𝑜𝑛 ] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠 ] (22)
+[𝑆𝑡𝑟𝑖𝑘𝑒𝑠] ⟶ [𝐶𝑢𝑠𝑡𝑜𝑚𝑒𝑟𝑂𝑝𝑒𝑟𝑎𝑡𝑖𝑜𝑛𝑠𝐷𝑖𝑠𝑟𝑢𝑝𝑡𝑖𝑜𝑛] ⟶ [𝐵𝑎𝑐𝑘𝑙𝑜𝑔𝑠] (22)
 Strikes affect operations and contribute to backlogs, but less 
 directly than natural disasters. The impact is moderate.
 GPT-3.5 graph (cf. Fig. 6(b)) showed noticeable alignment with ex-

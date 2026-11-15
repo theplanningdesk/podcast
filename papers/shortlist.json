@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-10",
- "since": "2026-08-27",
+ "generated": "2026-11-15",
+ "since": "2026-09-01",
  "lanes": {
-  "Journals": 253,
+  "Journals": 238,
   "arXiv": 400
  },
  "papers": [
@@ -433,8 +433,8 @@
     "Desislava Petrova"
    ],
    "institutions": [
-    "Aarhus University",
     "Vrije Universiteit Amsterdam",
+    "Aarhus University",
     "Barcelona Institute for Global Health"
    ],
    "countries": [
@@ -444,7 +444,9 @@
    ],
    "licence": "cc-by",
    "landing": "https://doi.org/10.1016/j.ijforecast.2026.09.009",
-   "pdfs": [],
+   "pdfs": [
+    "https://www.sciencedirect.com/science/article/pii/S0169207026001019/pdf"
+   ],
    "cited_by": 0,
    "language": "en",
    "abstract": "We consider long-lead forecasting of the El Niño–Southern Oscillation (ENSO) climate phenomenon. This is widely seen as a challenging task from a methodological perspective. At the same time, ENSO events are of substantial societal importance. We adopt a class of score-driven models to capture the key dynamic features of the Niño 3.4 index and include a large set of previously designed predictors. We provide details of our forecasting methodology and assess the forecast accuracy for a range of different model specifications and estimation strategies. We conclude that a model with a good description of the dynamic features in the data is also able to provide accurate forecasts for almost all lead times, up to 18 months ahead. The large set of predictors is shown to support the provision of accurate long-range forecasts for specific lead times.",
@@ -456,7 +458,7 @@
     "Nordic/DACH authors (DK)",
     "established journal"
    ],
-   "text_file": ""
+   "text_file": "papers/W7221808067.txt"
   },
   {
    "openalex": "W7214129241",
@@ -527,7 +529,7 @@
     "Nordic/DACH authors (SE)",
     "established journal"
    ],
-   "text_file": ""
+   "text_file": "papers/W7207792209.txt"
   },
   {
    "openalex": "W7115599487",
@@ -600,6 +602,7 @@
    "landing": "https://doi.org/10.1029/2026av002524",
    "pdfs": [
     "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2026AV002524",
+    "https://elib.dlr.de/228460/1/Collin_et_al.pdf",
     "https://arxiv.org/pdf/2609.26683",
     "https://gfzpublic.gfz.de/pubman/item/item_5038891_1/component/file_5040444/5038891.pdf"
    ],
@@ -616,7 +619,7 @@
     "preprint, not peer-reviewed",
     "reports a quantified result"
    ],
-   "text_file": ""
+   "text_file": "papers/W7214065991.txt"
   },
   {
    "openalex": "W7207664691",
@@ -702,46 +705,7 @@
     "practice signals: case study",
     "reports a quantified result"
    ],
-   "text_file": ""
-  },
-  {
-   "openalex": "W7204458324",
-   "doi": "https://doi.org/10.1080/00207543.2026.2723546",
-   "title": "Exact and metaheuristic approaches for a real-world discrete lot-sizing and scheduling problem in the automotive industry",
-   "date": "2026-08-27",
-   "type": "article",
-   "venue": "International Journal of Production Research",
-   "publisher": "Taylor & Francis",
-   "authors": [
-    "Sergio Cavero",
-    "Isaac Lozano-Osorio",
-    "Manuel Laguna"
-   ],
-   "institutions": [
-    "Universidad Rey Juan Carlos",
-    "University of Colorado Boulder"
-   ],
-   "countries": [
-    "ES",
-    "US"
-   ],
-   "licence": "cc-by-nc-sa",
-   "landing": "https://hdl.handle.net/10115/492637",
-   "pdfs": [],
-   "cited_by": 0,
-   "language": "en",
-   "abstract": "We address a production scheduling problem arising in the seat manufacturing auto industry, characterised by multiple racetracks and a wide variety of car models. The challenge is to determine the optimal sequence of molds to mount on each racetrack to maintain inventory levels within target ranges while minimising changeovers. To tackle this, we formulate a mixed-integer programming model evaluated using Gurobi. Additionally, we develop a Greedy Randomised Adaptive Search Procedure (GRASP) to provide a practical, non-commercial alternative. The GRASP incorporates two specialised local search procedures: the first achieves feasibility by reducing shortages, and the second aims to minimise changeovers. Computational experiments on 133 real-world instances demonstrate the merit of our approaches. The exact MIP solver proves optimality in under 30 seconds on average. Given the same 30-second budget, GRASP achieves a 2.42% average deviation, which is equivalent to fewer than a single additional changeover, finding 77% of global optima. Extending the runtime to the 5-minute company limit reduces deviation to 1.65%. Most importantly, compared to the historical manual baseline, this approach reduces tool changeovers by nearly 50%, resulting in estimated annual savings of $250,000 per plant.",
-   "lanes": [
-    "Inventory",
-    "Production planning and scheduling"
-   ],
-   "score": 5.2,
-   "why": [
-    "established journal",
-    "practice signals: real-world",
-    "reports a quantified result"
-   ],
-   "text_file": ""
+   "text_file": "papers/W4414595207.txt"
   },
   {
    "openalex": "W7220409911",
@@ -826,6 +790,47 @@
    "why": [
     "established journal",
     "practice signals: empirical, implementation"
+   ],
+   "text_file": ""
+  },
+  {
+   "openalex": "W7212026277",
+   "doi": "https://doi.org/10.1007/s10479-026-07397-2",
+   "title": "A sustainability-aware optimization framework for port-hinterland truck scheduling",
+   "date": "2026-09-09",
+   "type": "article",
+   "venue": "Annals of Operations Research",
+   "publisher": "Springer Science+Business Media",
+   "authors": [
+    "Ali Mokhtari Moghadam",
+    "Trung Thành Nguyễn",
+    "Massoud Mohsendokht",
+    "Jin Wang",
+    "Zaili Yang"
+   ],
+   "institutions": [
+    "Liverpool John Moores University"
+   ],
+   "countries": [
+    "GB"
+   ],
+   "licence": "cc-by",
+   "landing": "https://doi.org/10.1007/s10479-026-07397-2",
+   "pdfs": [
+    "https://link.springer.com/content/pdf/10.1007/s10479-026-07397-2.pdf",
+    "https://researchonline.ljmu.ac.uk/id/eprint/29486/1/A%20sustainability-aware%20optimization%20framework%20for%20port-hinterland%20truck%20scheduling.pdf"
+   ],
+   "cited_by": 1,
+   "language": "en",
+   "abstract": "Abstract Ports are critical gateways for trade and regional growth but also generate substantial externalities such as emissions, congestion, and safety risks. Growing maritime transport and port throughput intensify long-haul diesel truck traffic on hinterland access roads, causing peak-hour bottlenecks, long queues, and higher environmental impacts. Despite many proposed operational strategies, these challenges remain insufficiently addressed. This paper develops a mixed-integer linear programming (MILP) model for sustainable port-hinterland truck scheduling within an integrated chassis-based remote gate (CRG) and battery-electric trucks (BET) framework for short-haul transport. Using a major UK port case study with real traffic data, the model minimizes total logistics costs, including fixed investments, transport, waiting and idling times for short- and long-haul trucks, and $$\\hbox {CO}_2$$ CO 2 emissions. To handle large-scale instances, a two-stage adaptive genetic algorithm (TS-AGA) is proposed and benchmarked against the MILP and a two-stage simulated annealing approach. Collaborative and non-collaborative scheduling strategies are compared to assess the benefits of coordinated decision-making. Results show that collaborative scheduling reduces total system costs by about 13.6% by better synchronizing long-haul diesel truck arrivals with short-haul battery-electric truck operations. Sensitivity analysis further examines how long-haul travel-time uncertainty affects congestion and economic performance. Overall, the proposed MILP model and TS-AGA solution approach demonstrate that coordinated truck scheduling can substantially improve the operational efficiency and sustainability of CRG-BET-based port-hinterland systems. By jointly optimizing long-haul and short-haul operations under collaborative and uncertainty-aware strategies, the study offers a practical and scalable scheduling methodology to reduce logistics costs, congestion, and emissions while supporting sustainable port-city connectivity.",
+   "lanes": [
+    "Production planning and scheduling"
+   ],
+   "score": 4.8,
+   "why": [
+    "established journal",
+    "practice signals: case study",
+    "reports a quantified result"
    ],
    "text_file": ""
   },
@@ -993,43 +998,37 @@
    "text_file": ""
   },
   {
-   "openalex": "W7212026277",
-   "doi": "https://doi.org/10.1007/s10479-026-07397-2",
-   "title": "A sustainability-aware optimization framework for port-hinterland truck scheduling",
-   "date": "2026-09-09",
+   "openalex": "W7214232744",
+   "doi": "https://doi.org/10.1080/00207543.2026.2738209",
+   "title": "Integrated demand forecasting and inventory replenishment in omni-channel retail with deep learning",
+   "date": "2026-09-24",
    "type": "article",
-   "venue": "Annals of Operations Research",
-   "publisher": "Springer Science+Business Media",
+   "venue": "International Journal of Production Research",
+   "publisher": "Taylor & Francis",
    "authors": [
-    "Ali Mokhtari Moghadam",
-    "Trung Thành Nguyễn",
-    "Massoud Mohsendokht",
-    "Jin Wang",
-    "Zaili Yang"
+    "Shaohui Ma"
    ],
    "institutions": [
-    "Liverpool John Moores University"
+    "Nanjing Audit University"
    ],
    "countries": [
-    "GB"
+    "CN"
    ],
-   "licence": "cc-by",
-   "landing": "https://doi.org/10.1007/s10479-026-07397-2",
-   "pdfs": [
-    "https://link.springer.com/content/pdf/10.1007/s10479-026-07397-2.pdf",
-    "https://researchonline.ljmu.ac.uk/id/eprint/29486/1/A%20sustainability-aware%20optimization%20framework%20for%20port-hinterland%20truck%20scheduling.pdf"
-   ],
+   "licence": "",
+   "landing": "https://doi.org/10.2139/ssrn.4773759",
+   "pdfs": [],
    "cited_by": 0,
    "language": "en",
-   "abstract": "Abstract Ports are critical gateways for trade and regional growth but also generate substantial externalities such as emissions, congestion, and safety risks. Growing maritime transport and port throughput intensify long-haul diesel truck traffic on hinterland access roads, causing peak-hour bottlenecks, long queues, and higher environmental impacts. Despite many proposed operational strategies, these challenges remain insufficiently addressed. This paper develops a mixed-integer linear programming (MILP) model for sustainable port-hinterland truck scheduling within an integrated chassis-based remote gate (CRG) and battery-electric trucks (BET) framework for short-haul transport. Using a major UK port case study with real traffic data, the model minimizes total logistics costs, including fixed investments, transport, waiting and idling times for short- and long-haul trucks, and $$\\hbox {CO}_2$$ CO 2 emissions. To handle large-scale instances, a two-stage adaptive genetic algorithm (TS-AGA) is proposed and benchmarked against the MILP and a two-stage simulated annealing approach. Collaborative and non-collaborative scheduling strategies are compared to assess the benefits of coordinated decision-making. Results show that collaborative scheduling reduces total system costs by about 13.6% by better synchronizing long-haul diesel truck arrivals with short-haul battery-electric truck operations. Sensitivity analysis further examines how long-haul travel-time uncertainty affects congestion and economic performance. Overall, the proposed MILP model and TS-AGA solution approach demonstrate that coordinated truck scheduling can substantially improve the operational efficiency and sustainability of CRG-BET-based port-hinterland systems. By jointly optimizing long-haul and short-haul operations under collaborative and uncertainty-aware strategies, the study offers a practical and scalable scheduling methodology to reduce logistics costs, congestion, and emissions while supporting sustainable port-city connectivity.",
+   "abstract": "The rise of omni-channel grocery retail presents new challenges for store-level inventory replenishment because retailers must coordinate online and offline demand within a shared physical store. This study formulates a daily, SKU-level replenishment problem in which the front store serves walk-in customers, the backroom primarily serves online fulfilment, and inventory can be shared between the two pools at asymmetric operational costs. To address this complexity, we develop and compare two decision frameworks: a Separated Forecasting–Optimization (SFO) approach based on a feature-driven bivariate probabilistic demand model and a decision-focused End-to-End Deep Learning (E2E) model that directly learns replenishment decisions by minimising empirical inventory cost. Using large-scale real-world data from five omni-channel grocery stores, our empirical results show that the E2E framework consistently achieves lower total costs and better demand–supply balance than the SFO approach and several simpler benchmarks across cost settings, promotion conditions, demand intermittency, and time periods. The results clarify when integrated learning is operationally valuable, demonstrate the importance of explicitly modelling costly inventory sharing between the front store and backroom.",
    "lanes": [
-    "Production planning and scheduling"
+    "Forecasting",
+    "Inventory",
+    "AI in planning"
    ],
-   "score": 4.7,
+   "score": 4.5,
    "why": [
     "established journal",
-    "practice signals: case study",
-    "reports a quantified result"
+    "practice signals: empirical, real-world, retailer"
    ],
    "text_file": ""
   }
