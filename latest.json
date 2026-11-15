@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-15T09:52:56.528434+00:00",
+ "fetched_at": "2026-11-15T12:19:34.580725+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -599,7 +599,7 @@
    "title": "BASF opens $1B MDI production facility in Louisiana",
    "link": "https://www.manufacturingdive.com/news/basf-verbund-mdi-facility-polyurethanes-geismar-louisiana/874549/",
    "published": "2026-11-13T16:50:00+00:00",
-   "summary": "The Geismar site is the Germany-based entity’s largest single investment to date in the United States and makes it its most significant MDI producer in North America.",
+   "summary": "The Geismar site is the Germany-based entity’s largest single investment to date in the United States and **, making it its most significant** MDI producer in North America.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1902,6 +1902,16 @@
   },
   {
    "source": "FreightWaves",
+   "title": "Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot",
+   "link": "https://www.freightwaves.com/news/borderlands-mexico-texas-cross-border-traffic-rises-by-400-trucks-through-saturday-pilot",
+   "published": "2026-11-15T12:00:00+00:00",
+   "summary": "This week in Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot; Truck freight between US and Mexico reaches $75.4B in September; and Teleflex invests $5M in new medical device manufacturing facility in Mexico. The post Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot appeared first on FreightWaves .",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "FreightWaves",
    "title": "Spot rates jump ahead of holidays",
    "link": "https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays",
    "published": "2026-11-15T01:30:00+00:00",
@@ -1936,16 +1946,6 @@
    "link": "https://www.freightwaves.com/news/ai-cargo-thefts-top-150-million-from-june-2025-to-june-2026",
    "published": "2026-11-13T21:11:42+00:00",
    "summary": "Cargo thieves stole more than $150 million in AI equipment this year, with fraudulent carrier identities and falsified shipping documents involved in 92% of reported incidents, according to Overhaul. The post AI cargo thefts top $150 million from June 2025 to June 2026 appeared first on FreightWaves .",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "FreightWaves",
-   "title": "Trailer Flexibility Is Becoming a Growth Strategy for Carriers",
-   "link": "https://www.freightwaves.com/news/trailer-flexibility-is-becoming-a-growth-strategy-for-carriers",
-   "published": "2026-11-13T20:18:31+00:00",
-   "summary": "Trailer rental for carriers is becoming a growth strategy. REPOWR’s Matt Harb explains how carriers can cut equipment costs and test new lanes without buying a trailer, and how the Trailer Optimization Platform helps fleets turn costly repositioning into revenue. The post Trailer Flexibility Is Becoming a Growth Strategy for Carriers appeared first on FreightWaves .",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2265,17 +2265,17 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 340.0,
+   "level_cm": 339.0,
    "trend": null,
-   "measured_at": "2026-11-15T10:45:00+01:00",
+   "measured_at": "2026-11-15T13:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 58.0,
+   "level_cm": 59.0,
    "trend": null,
-   "measured_at": "2026-11-15T10:45:00+01:00",
+   "measured_at": "2026-11-15T13:15:00+01:00",
    "unit": "cm"
   },
   {
@@ -2283,23 +2283,23 @@
    "km": 688.0,
    "level_cm": 114.0,
    "trend": null,
-   "measured_at": "2026-11-15T10:45:00+01:00",
+   "measured_at": "2026-11-15T13:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 193.0,
+   "level_cm": 194.0,
    "trend": null,
-   "measured_at": "2026-11-15T10:45:00+01:00",
+   "measured_at": "2026-11-15T13:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 22.0,
+   "level_cm": 23.0,
    "trend": null,
-   "measured_at": "2026-11-15T10:45:00+01:00",
+   "measured_at": "2026-11-15T13:15:00+01:00",
    "unit": "cm"
   }
  ]

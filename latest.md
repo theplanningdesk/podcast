@@ -1,4 +1,4 @@
-# Source digest, fetched 2026-11-15 09:52 UTC
+# Source digest, fetched 2026-11-15 12:19 UTC
 75 of 75 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
 
 Items per lane: planning 145, freight 43, management 25, companies 11
@@ -133,7 +133,7 @@ Items per lane: planning 145, freight 43, management 25, companies 11
 - 2026-11-13 17:09 | Monthly manufacturing tech orders reach $1B; GE Vernova expands and more | https://www.manufacturingdive.com/news/manufacturing-technology-orders-reached-1b-september-kopin-ge-vernova/874607/
   Additionally, companies such as Honda, Kopin and ATP Adhesive announced openings or expansion projects this week.
 - 2026-11-13 16:50 | BASF opens $1B MDI production facility in Louisiana | https://www.manufacturingdive.com/news/basf-verbund-mdi-facility-polyurethanes-geismar-louisiana/874549/
-  The Geismar site is the Germany-based entity’s largest single investment to date in the United States and makes it its most significant MDI producer in North America.
+  The Geismar site is the Germany-based entity’s largest single investment to date in the United States and **, making it its most significant** MDI producer in North America.
 - 2026-11-13 16:48 | Automakers using advanced tech to cut waste and costs, boost flexibility | https://www.manufacturingdive.com/news/automakers-ai-reduce-waste-cut-costs-boost-flexibility/874543/
   Artificial intelligence can help companies enhance connectivity on the factory floor and optimize supply chains, experts said at the State of Automotive Manufacturing virtual event.
 - 2026-11-13 14:17 | Nvidia CEO resigns amid scandal; CFO named interim | https://www.manufacturingdive.com/news/nvidia-ceo-resigns-scandal-cfo-named-interim-ceo-ai/874515/
@@ -546,6 +546,8 @@ Items per lane: planning 145, freight 43, management 25, companies 11
   Cargojet rode a strong air cargo market and the productivity gains from its fleet consolidation strategy to its highest-ever revenue and operating profit in a third quarter. The post Cargojet fleet optimization boosts productivity, fuels record Q3 revenue appeared first on FreightWaves .
 - 2026-11-11 19:37 | Fura Freight: Next Year, Our AI Agent Will Book 90% of Loads | https://www.freightwaves.com/news/fura-freight-next-year-our-ai-agent-will-book-90-of-loads [planning terms]
   Fura CEO Jeff Dangelo details how their AI agent, Donna, already handles 40% of bookings, with plans to hit 90%. Learn about Fura’s growth strategy, including eight acquisitions (the latest adding $30M in revenue) and their aggressive M&A pipeline. Dangelo also shares insights on navigating tight capacity, rising costs, and margin compression in the current […] The post Fura Freight: Next Year,…
+- 2026-11-15 12:00 | Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot | https://www.freightwaves.com/news/borderlands-mexico-texas-cross-border-traffic-rises-by-400-trucks-through-saturday-pilot
+  This week in Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot; Truck freight between US and Mexico reaches $75.4B in September; and Teleflex invests $5M in new medical device manufacturing facility in Mexico. The post Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot appeared first on FreightWaves .
 - 2026-11-15 01:30 | Spot rates jump ahead of holidays | https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays
   Trucking spot rates are off to the races earlier than usual. Was this part of the shipper playbook? The post Spot rates jump ahead of holidays appeared first on FreightWaves .
 - 2026-11-13 22:27 | Denial of funds to NY over non domiciled CDLs overturned: appellate court | https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court
@@ -554,8 +556,6 @@ Items per lane: planning 145, freight 43, management 25, companies 11
   Rescuers pulled multiple people to safety after a tanker struck a docked cruise riverboat Friday in New Orleans. The post Tanker strikes cruise riverboat in New Orleans appeared first on FreightWaves .
 - 2026-11-13 21:11 | AI cargo thefts top $150 million from June 2025 to June 2026 | https://www.freightwaves.com/news/ai-cargo-thefts-top-150-million-from-june-2025-to-june-2026
   Cargo thieves stole more than $150 million in AI equipment this year, with fraudulent carrier identities and falsified shipping documents involved in 92% of reported incidents, according to Overhaul. The post AI cargo thefts top $150 million from June 2025 to June 2026 appeared first on FreightWaves .
-- 2026-11-13 20:18 | Trailer Flexibility Is Becoming a Growth Strategy for Carriers | https://www.freightwaves.com/news/trailer-flexibility-is-becoming-a-growth-strategy-for-carriers
-  Trailer rental for carriers is becoming a growth strategy. REPOWR’s Matt Harb explains how carriers can cut equipment costs and test new lanes without buying a trailer, and how the Trailer Optimization Platform helps fleets turn costly repositioning into revenue. The post Trailer Flexibility Is Becoming a Growth Strategy for Carriers appeared first on FreightWaves .
 
 ## Splash247
 - 2026-11-15 01:06 | US court orders arrest of tanker after New Orleans cruise ship collision | https://splash247.com/us-court-orders-arrest-of-tanker-after-new-orleans-cruise-ship-collision/
@@ -637,8 +637,8 @@ Items per lane: planning 145, freight 43, management 25, companies 11
 
 ## Rhine gauges (Pegelonline, live; freight desk)
 Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.
-- MAXAU (Rhine km 362.327): 340.0 cm, measured 2026-11-15T10:45:00+01:00
-- KAUB (Rhine km 546.23): 58.0 cm, measured 2026-11-15T10:45:00+01:00
-- KÖLN (Rhine km 688.0): 114.0 cm, measured 2026-11-15T10:45:00+01:00
-- DUISBURG-RUHRORT (Rhine km 780.8): 193.0 cm, measured 2026-11-15T10:45:00+01:00
-- EMMERICH (Rhine km 851.9): 22.0 cm, measured 2026-11-15T10:45:00+01:00
+- MAXAU (Rhine km 362.327): 339.0 cm, measured 2026-11-15T13:15:00+01:00
+- KAUB (Rhine km 546.23): 59.0 cm, measured 2026-11-15T13:15:00+01:00
+- KÖLN (Rhine km 688.0): 114.0 cm, measured 2026-11-15T13:15:00+01:00
+- DUISBURG-RUHRORT (Rhine km 780.8): 194.0 cm, measured 2026-11-15T13:15:00+01:00
+- EMMERICH (Rhine km 851.9): 23.0 cm, measured 2026-11-15T13:15:00+01:00
