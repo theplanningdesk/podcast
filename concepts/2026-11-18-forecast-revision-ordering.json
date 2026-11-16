@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-18",
+  "publish_local": "12:00",
+  "topic": "Inventory replenishment",
+  "kicker": "Research",
+  "series": "Research",
+  "viz": "paper",
+  "source": {
+    "cite": "Azisbek uulu & Uygun (2026). Learning from forecast revisions for inventory replenishment under non-stationary demand. Operations Research Perspectives. Open access, CC BY.",
+    "card": "Azisbek uulu & Uygun (2026), Operations Research Perspectives. Open access, CC BY.",
+    "title": "Learning from forecast revisions for inventory replenishment under non-stationary demand",
+    "authors": [
+      "Saadinur Azisbek uulu",
+      "Yılmaz Uygun"
+    ],
+    "institutions": [
+      "Constructor University"
+    ],
+    "venue": "Operations Research Perspectives",
+    "year": 2026,
+    "doi": "https://doi.org/10.1016/j.orp.2026.100419",
+    "openalex": "W7216078518",
+    "licence": "cc-by",
+    "fulltext": "Published version, saved full text papers/W7216078518.txt on the sources branch (theplanningdesk/podcast)",
+    "checked": [
+      "Licence: article footer states 'open access article under the CC BY license' (p. 1); shortlist metadata lists cc-by-nc-nd, both Creative Commons",
+      "Single-item, single-echelon, periodic review; lead time 4 periods (weeks), holding cost 1, backorder cost 9: Section 2.1, Section 4.1.1",
+      "Baselines: adaptive base-stock with ETS forecasts, (s,S), six reinforcement-learning policies; RL policies consume the point forecast but discard the revision: Section 1.1, Section 4.1.3",
+      "Policy reads forecast, revision history (GRU encoder), forecast uncertainty and change-point probability, and deviates from a base-stock reference order: Sections 1.3, 2.7, eq. 18",
+      "Seasonal scenario mean cost: base-stock 116.8, (s,S) 124.0, FR-PPO 32.5 (-72.2% vs base-stock): Table 5, Section 4.2 Finding 3",
+      "Seasonal adaptation lag at 15% threshold: base-stock 26.3, FR-PPO 9.8 periods (-63%): Table 6, Section 4.2",
+      "Rounded in text: 72.2% -> 72% (our rounding)",
+      "M5 Walmart validation, seven SKUs: FR-PPO cost below adaptive base-stock on all seven, -4.2% to -23.0%: Table 10, Section 4.5.2",
+      "Seven SKUs deliberately selected for regime activity (66th-87th percentile of regime separation); little advantage expected on stable SKUs: Section 4.5.1, Limitations (External validity)",
+      "Intermittent demand: SAC baselines significantly better than FR-PPO, gap about 3.9%: Table 5, Table 11, Section 4.6",
+      "Lead-time sweep vs CPD-SAC: 0.0% at L=4, -13.8% at L=8: Table 8, Section 4.4",
+      "Revision is a by-product of any re-forecast, no new data collection: Section 4.7.1, Section 5",
+      "Results from simulation and historical M5 data; no company implementation reported: Sections 4-5"
+    ]
+  },
+  "acts": [
+    {
+      "start": 0,
+      "head": "Demand shifts. The order policy lags behind.",
+      "sub": "In a seasonal demand test with a 4-week lead time, a standard base-stock policy took 26.3 weeks to settle after each change in demand."
+    },
+    {
+      "start": 210,
+      "head": "Each re-forecast's change gets thrown away.",
+      "sub": "Planners re-forecast every week, but the order policy reads only the newest number. How far the forecast just moved, an early sign of a shift, goes unused."
+    },
+    {
+      "start": 420,
+      "head": "Read the forecast changes. Seasonal cost falls 72%.",
+      "sub": "An AI ordering policy reads recent forecast changes and a shift alarm, then adjusts a base-stock order. Cost: 116.8 to 32.5. Settling: 9.8 weeks."
+    },
+    {
+      "start": 630,
+      "head": "Best where demand really shifts.",
+      "sub": "On seven real Walmart items picked for shifting demand, cost fell 4.2% to 23.0%. On stable items, expect little gain. On sparse demand, a rival AI method won."
+    }
+  ],
+  "endStart": 810,
+  "total": 900,
+  "endTitle": "Order on how the forecast moves",
+  "endTag": "72% lower cost in a seasonal test, 4.2% to 23.0% on seven real Walmart items with shifting demand.",
+  "footnote": "Source: Azisbek uulu & Uygun (2026), Oper. Res. Perspectives, Tables 5, 6 and 10.",
+  "cta": "New research explainer every Wednesday · Paper link in the post",
+  "goodFrom": 434,
+  "kpis": [
+    {
+      "label": "Cost per week, seasonal test",
+      "decimals": 1,
+      "steps": [
+        [
+          40,
+          116.8
+        ],
+        [
+          434,
+          32.5
+        ]
+      ]
+    },
+    {
+      "label": "Weeks to settle after a shift",
+      "decimals": 1,
+      "steps": [
+        [
+          40,
+          26.3
+        ],
+        [
+          434,
+          9.8
+        ]
+      ]
+    }
+  ],
+  "model": {
+    "flow": {
+      "title": "How the revision-reading policy works",
+      "steps": [
+        "Re-forecast every week",
+        "Track recent forecast changes",
+        "Flag a likely demand shift",
+        "Adjust the base-stock order"
+      ],
+      "reveal": [
+        0,
+        2,
+        2,
+        2
+      ],
+      "lit": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    "compare": {
+      "title": "Mean cost per week, seasonal test",
+      "decimals": 1,
+      "unit": "",
+      "best": 2,
+      "rows": [
+        {
+          "label": "Adaptive base-stock",
+          "value": 116.8,
+          "act": 0
+        },
+        {
+          "label": "Reorder point and order-up-to",
+          "value": 124.0,
+          "act": 1
+        },
+        {
+          "label": "AI policy reading revisions",
+          "value": 32.5,
+          "act": 2
+        }
+      ]
+    }
+  },
+  "post": {
+    "linkedin": "Your forecast already tells you when demand is shifting: in how much it moved since last week. A new study feeds that movement into the ordering decision and cuts cost 4.2% to 23.0% on seven real Walmart items.\n\nNew open-access research in Operations Research Perspectives, from authors at Constructor University in Bremen, tests an AI ordering policy that reads the recent history of forecast revisions plus a shift alarm, and adjusts a standard base-stock order up or down.\n\nIn a simulated seasonal test, cost falls 72% against an adaptive base-stock policy (116.8 to 32.5), and the time to settle after a change drops from 26.3 to 9.8 weeks. The edge grows with lead time: level with a rival AI method at 4 weeks, 13.8% ahead of it at 8.\n\nThe limits: the Walmart items were picked for strongly shifting demand, and on stable items the authors expect little gain. On sparse, lumpy demand a rival AI method did better. No company has run it live.\n\nDoes your replenishment logic ever look at how the forecast changed, or only at the latest number?\n\nPaper link in the first comment. A new research explainer every Wednesday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify.\n\n#inventorymanagement #demandplanning #replenishment #supplychain",
+    "comment_paper": "Paper (open access): Azisbek uulu & Uygun (2026), Learning from forecast revisions for inventory replenishment under non-stationary demand. Operations Research Perspectives. https://doi.org/10.1016/j.orp.2026.100419",
+    "short_title": "72% Lower Cost by Reading Forecast Changes | Research",
+    "short_caption": "An AI ordering policy that reads how the forecast moved cut cost 72% in a seasonal test and 4.2% to 23.0% on seven real Walmart items with shifting demand. Azisbek uulu & Uygun (2026), Operations Research Perspectives, open access. AI-generated explainer.",
+    "hashtags": [
+      "inventorymanagement",
+      "demandplanning",
+      "replenishment",
+      "supplychain"
+    ],
+    "tags": [
+      "Constructor University",
+      "Operations Research Perspectives"
+    ]
+  }
+}
