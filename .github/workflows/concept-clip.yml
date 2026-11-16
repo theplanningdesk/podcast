@@ -94,10 +94,13 @@ jobs:
             echo "::group::$STEM"
             B="build/out/planning-desk-concept-$STEM"
             (cd video && node render-concept.mjs --stem "$STEM" --concurrency 4)
+            # Cover for the Instagram grid; without it the Reel falls back to a frame from the clip.
+            (cd video && node render-cover.mjs --concept "$STEM") || echo "::warning::Cover render failed for $STEM"
             python concept_post.py text "$STEM"
             TAG="concept-$STEM"
             TITLE="Planning concept: $(python -c "import json,sys;print(json.load(open(sys.argv[1]))['topic'])" "concepts/$STEM.json") (${STEM:0:10})"
             FILES="$B-9x16.mp4 $B-4x5.mp4 $B-linkedin.txt $B-linkedin-comment.txt"
+            [ -f "$B-cover.jpg" ] && FILES="$FILES $B-cover.jpg"
             if gh release view "$TAG" >/dev/null 2>&1; then
               gh release upload "$TAG" $FILES --clobber
             else

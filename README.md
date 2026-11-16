@@ -76,6 +76,17 @@ YouTube with chapters, captions, a thumbnail and the synthetic-content flag (`yo
 Preview locally: `cd video && npm ci && node render.mjs --stem 2026-10-23-test --stills 16,70,140`
 (needs the episode MP3 and JSON in build/out). Add `--from 0 --to 60` instead of `--stills` for a clip.
 
+Reel covers: Instagram's profile grid shows each Reel's cover, and a Short's first frame is empty
+paper before the graphics come in. So every Short and research clip also gets a still cover with
+the headline (`video/render-cover.mjs`, `video/src/Cover.jsx`), attached to the release as
+`...-short-cover.jpg` or `planning-desk-concept-<stem>-cover.jpg` and handed to Instagram as
+`cover_url`. Paper for dailies, dark teal for the Saturday book, orange for the research clip.
+Everything readable sits in the centre square, because the grid crops the 9:16 image. If the cover
+is missing or Instagram refuses it, the Reel still posts with a frame two seconds in.
+Preview: `cd video && node render-cover.mjs --stem 2026-11-16` (reads the script, needs no audio).
+Covers of Reels that are already posted can't be changed through the API, only in the app
+(the Reel > ... > Edit > Cover).
+
 YouTube secrets: `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN`.
 Privacy, category and tags live under `youtube` in `config.json`.
 

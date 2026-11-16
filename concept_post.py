@@ -19,7 +19,6 @@ import json
 import os
 import sys
 import time
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -90,29 +89,20 @@ def cmd_youtube(stem: str) -> None:
 
 
 def cmd_instagram(stem: str) -> None:
-    from instagram_upload import API, call, refresh
+    from instagram_upload import API, call, create_reel, refresh, release_url
     c = concept(stem)
     user, token = os.environ["INSTAGRAM_USER_ID"], refresh(os.environ["INSTAGRAM_TOKEN"])
-    url = f"https://github.com/{REPO}/releases/download/concept-{stem}/{base(stem)}-9x16.mp4"
-    try:
-        with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30) as resp:
-            url = resp.geturl()
-    except Exception as err:
-        print(f"Couldn't resolve the release redirect ({err}); using the release link.")
+    tag = f"concept-{stem}"
+    url = release_url(tag, f"{base(stem)}-9x16.mp4")
+    if not url:
+        raise SystemExit(f"The release {tag} has no {base(stem)}-9x16.mp4.")
+    cover = release_url(tag, f"{base(stem)}-cover.jpg")
+    if not cover:
+        print("::warning::No cover image in the release; using a frame from the video.")
     p = c.get("post") or {}
     doi = (c.get("source") or {}).get("doi", "")
     caption = "\n\n".join(x for x in [p.get("short_caption", "").strip(), f"Paper: {doi}" if doi else "", tags_line(c)] if x)[:2100]
-    container = call("POST", f"{API}/{user}/media",
-                     {"media_type": "REELS", "video_url": url, "caption": caption, "share_to_feed": True}, token)["id"]
-    status = ""
-    for _ in range(20):
-        time.sleep(30)
-        status = call("GET", f"{API}/{container}?fields=status_code", token=token).get("status_code", "")
-        print(f"  status {status}")
-        if status in ("FINISHED", "ERROR", "EXPIRED"):
-            break
-    if status != "FINISHED":
-        raise SystemExit(f"Instagram didn't finish processing the Reel (status {status or 'unknown'}).")
+    container = create_reel(user, token, url, caption, cover, thumb_offset_ms=3000)
     wait = (publish_at(c) - datetime.now(timezone.utc)).total_seconds()
     if wait > 0:
         print(f"Processed; publishing in {int(wait // 60)} min at {publish_at(c):%H:%M} Stockholm.")

@@ -211,6 +211,17 @@ jobs:
           gh release upload "episode-$STEM" "build/out/planning-desk-$STEM-short.mp4" "build/out/planning-desk-$STEM-linkedin.txt" "build/out/planning-desk-$STEM-linkedin-comment.txt" --clobber
           echo "done=true" >> "$GITHUB_OUTPUT"
 
+      # The Reel's cover for the Instagram grid: a still with the headline, since the video's first
+      # frame is empty paper. If this fails the Reel still goes out, with a frame from the video.
+      - name: Render the Reel cover
+        if: ${{ steps.short.outputs.done == 'true' }}
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          STEM="${{ steps.pick.outputs.stem }}"
+          (cd video && node render-cover.mjs --stem "$STEM")
+          gh release upload "episode-$STEM" "build/out/planning-desk-$STEM-short-cover.jpg" --clobber
+
       - name: Upload the Short to YouTube
         if: ${{ steps.short.outputs.done == 'true' && env.YOUTUBE_REFRESH_TOKEN != '' && (inputs.youtube_private_test == true || steps.pick.outputs.test != 'true') }}
         continue-on-error: true

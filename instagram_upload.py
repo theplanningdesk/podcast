@@ -60,16 +60,64 @@ def refresh(token: str) -> str:
     return new
 
 
-def public_video_url(stem: str) -> str:
-    """The release download link redirects to a signed file URL; hand Meta the final URL."""
-    url = f"https://github.com/{REPO}/releases/download/episode-{stem}/planning-desk-{stem}-short.mp4"
+def release_url(tag: str, name: str) -> str | None:
+    """Release download links redirect to a signed file URL; hand Meta the final URL.
+
+    Returns None when the release has no such file.
+    """
+    url = f"https://github.com/{REPO}/releases/download/{tag}/{name}"
     try:
         req = urllib.request.Request(url, method="HEAD")
         with urllib.request.urlopen(req, timeout=30) as resp:
             return resp.geturl()
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            return None
+        print(f"Couldn't resolve the release redirect ({err}); using the release link.")
+        return url
     except Exception as err:  # fall back to the redirecting link
         print(f"Couldn't resolve the release redirect ({err}); using the release link.")
         return url
+
+
+def create_reel(user: str, token: str, video_url: str, caption: str,
+                cover_url: str | None = None, thumb_offset_ms: int = 2000) -> str:
+    """Create a Reel container, wait until Instagram has processed it and return its id.
+
+    The profile grid shows the Reel's cover. Without one Instagram takes the video's first frame,
+    which is empty paper before the graphics come in. So: use the rendered cover image when there
+    is one, and if Instagram turns that down (or there's none) fall back to a frame a little way
+    into the video. A cover problem never stops the Reel from going out.
+    """
+    base = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": True}
+    attempts = ([("the cover image", {**base, "cover_url": cover_url})] if cover_url else []) \
+        + [(f"the frame at {thumb_offset_ms / 1000:g} s as cover", {**base, "thumb_offset": thumb_offset_ms})]
+    problem = "no attempt made"
+    for i, (label, payload) in enumerate(attempts):
+        last = i == len(attempts) - 1
+        try:
+            container = call("POST", f"{API}/{user}/media", payload, token)["id"]
+        except SystemExit as err:
+            if last:
+                raise
+            print(f"::warning::Instagram refused the Reel with {label} ({err}); trying without it.")
+            continue
+        print(f"Container {container} created with {label}; waiting for Instagram to process the video.")
+        status = ""
+        for _ in range(20):  # up to 10 minutes
+            time.sleep(30)
+            status = call("GET", f"{API}/{container}?fields=status_code", token=token).get("status_code", "")
+            print(f"  status {status}")
+            if status in ("FINISHED", "ERROR", "EXPIRED"):
+                break
+        if status == "FINISHED":
+            return container
+        problem = f"status {status or 'unknown'}"
+        if not last and status == "ERROR":
+            print(f"::warning::Instagram couldn't process the Reel with {label}; trying without it.")
+            continue
+        break
+    raise SystemExit(f"Instagram didn't finish processing the Reel ({problem}).")
 
 
 def main() -> int:
@@ -85,19 +133,14 @@ def main() -> int:
     tags = " ".join(f"#{h.lstrip('#')}" for h in short.get("hashtags", [])[:5])
     caption = "\n\n".join(x for x in [(short.get("caption") or "").strip(), tags] if x)[:2100]
 
-    container = call("POST", f"{API}/{user}/media", {
-        "media_type": "REELS", "video_url": public_video_url(stem), "caption": caption, "share_to_feed": True,
-    }, token)["id"]
-    print(f"Container {container} created; waiting for Instagram to process the video.")
-    status = ""
-    for _ in range(20):  # up to 10 minutes
-        time.sleep(30)
-        status = call("GET", f"{API}/{container}?fields=status_code", token=token).get("status_code", "")
-        print(f"  status {status}")
-        if status in ("FINISHED", "ERROR", "EXPIRED"):
-            break
-    if status != "FINISHED":
-        raise SystemExit(f"Instagram didn't finish processing the Reel (status {status or 'unknown'}).")
+    tag = f"episode-{stem}"
+    video = release_url(tag, f"planning-desk-{stem}-short.mp4")
+    if not video:
+        raise SystemExit(f"The release {tag} has no planning-desk-{stem}-short.mp4.")
+    cover = release_url(tag, f"planning-desk-{stem}-short-cover.jpg")
+    if not cover:
+        print("::warning::No cover image in the release; using a frame from the video.")
+    container = create_reel(user, token, video, caption, cover)
     media = call("POST", f"{API}/{user}/media_publish", {"creation_id": container}, token)["id"]
     link = call("GET", f"{API}/{media}?fields=permalink", token=token).get("permalink", "")
     print(f"Published Reel {link or media}")
