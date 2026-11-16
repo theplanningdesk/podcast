@@ -1,0 +1,140 @@
+{
+  "stem": "2026-11-16",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Mercedes-Benz",
+        "title": "German labour costs up to 5x Hungary's",
+        "detail": "Two of twelve plants under review",
+        "source": "Mercedes-Fans"
+      }
+    },
+    {
+      "line": 0,
+      "at": "five times",
+      "template": "bars",
+      "props": {
+        "title": "Labour cost, Hungary = 1",
+        "items": [
+          {
+            "label": "Germany",
+            "value": 5,
+            "highlight": true
+          },
+          {
+            "label": "Hungary",
+            "value": 1
+          }
+        ],
+        "source": "Mercedes-Fans"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Savings target",
+        "value": 800,
+        "label": "million euros a year, at most",
+        "source": "Mercedes-Fans"
+      }
+    },
+    {
+      "line": 1,
+      "at": "longer hours",
+      "template": "list",
+      "props": {
+        "kicker": "Management also wants",
+        "items": [
+          {
+            "label": "Longer hours",
+            "detail": "same pay",
+            "say": "longer hours"
+          },
+          {
+            "label": "Fewer extras",
+            "detail": "special payments cut",
+            "say": "cuts to special payments"
+          }
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Under review",
+        "value": 2,
+        "label": "of twelve plants",
+        "source": "SRF"
+      }
+    },
+    {
+      "line": 2,
+      "at": "no board decision",
+      "template": "headline",
+      "props": {
+        "kicker": "Status",
+        "title": "No board decision, no list of sites",
+        "source": "Mercedes-Fans"
+      }
+    },
+    {
+      "line": 3,
+      "template": "route",
+      "props": {
+        "kicker": "Kecskemét, Hungary",
+        "title": "The plant Mercedes compares against",
+        "points": [
+          {
+            "name": "Kecskemét",
+            "lat": 46.91,
+            "lon": 19.69,
+            "alert": true
+          }
+        ],
+        "pad": 4
+      }
+    },
+    {
+      "line": 3,
+      "at": "wage talks with IG Metall",
+      "template": "headline",
+      "props": {
+        "kicker": "IG Metall",
+        "title": "Wage talks have stalled",
+        "detail": "The union asks for 5%",
+        "source": "Mercedes-Fans"
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Model one assembly line's volume moving to Hungary"
+      }
+    },
+    {
+      "line": 4,
+      "at": "price your own capacity",
+      "template": "headline",
+      "props": {
+        "kicker": "Suppliers",
+        "title": "Price your capacity for that scenario",
+        "detail": "Now, not after the decision"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Mercedes Plant Review: The Five-to-One Labour Gap",
+  "week": "2026-W47",
+  "run_date": "2026-11-16",
+  "brief_file": "news-brief-daily-2026-11-16.md",
+  "target_runtime_sec": 253,
+  "word_count": 734,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-16-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Mercedes puts German labour costs at up to five times those in Hungary, and two of its twelve plants are under review."
+        },
+        {
+          "speaker": "M",
+          "text": "If you supply a German Mercedes site, your twenty twenty-seven plan just got a second scenario. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-16-01",
+        "2026-11-16-02",
+        "2026-11-16-05",
+        "2026-11-16-F1"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Monday the sixteenth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Mercedes puts two plants under review, Foxconn says chips stay tight into next year, ams OSRAM feels weak consumer demand, and the Rhine drops again."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-16-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "More detail came out over the weekend on the Mercedes cost drive, after the carmaker stopped all new investment in its German plants."
+        },
+        {
+          "speaker": "M",
+          "text": "Management wants up to eight hundred million euros a year in savings, plus longer hours at the same pay and cuts to special payments."
+        },
+        {
+          "speaker": "F",
+          "text": "One German assembly plant and one powertrain or component plant are under review for possible closure, and Swiss broadcaster S R F reports Mercedes is weighing two of its twelve plants."
+        },
+        {
+          "speaker": "M",
+          "text": "The case rests on cost. Production board member Michael Schiebe says German labour costs run up to five times those in Eastern Europe, and he points to Kecskemét in Hungary."
+        },
+        {
+          "speaker": "F",
+          "text": "There's no board decision and no official list of sites. Talks with the works council and IG Metall have stalled, with the union asking for five percent."
+        },
+        {
+          "speaker": "M",
+          "text": "Management offers a one-off payment and one point three percent a year from July twenty twenty-eight, so the two sides sit far apart."
+        },
+        {
+          "speaker": "F",
+          "text": "S R F also reports that Mercedes sells about two thirds less in China than it did four years ago."
+        },
+        {
+          "speaker": "M",
+          "text": "Our view, with a five to one cost gap and a stalled wage round, suppliers shouldn't wait for a site list."
+        },
+        {
+          "speaker": "F",
+          "text": "Model a scenario where one assembly line's volume moves to Hungary, and put a price on your own capacity for it before the decision reaches your order book."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-16-02",
+        "2026-11-16-05",
+        "2026-11-16-04",
+        "2026-11-16-F1",
+        "2026-11-16-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "On the A I and tech desk, Foxconn's third quarter net profit rose thirty-four percent to about two point four billion dollars, Reuters reports."
+        },
+        {
+          "speaker": "F",
+          "text": "It expects high double digit growth in A I rack shipments next year, and that's where the warning sits."
+        },
+        {
+          "speaker": "M",
+          "text": "Chairman Young Liu says chips, memory and some key components are tight right now. New capacity should ease the bottlenecks gradually, but he says demand will still exceed supply next year, and he gave no date."
+        },
+        {
+          "speaker": "F",
+          "text": "When the world's biggest electronics assembler says A I servers keep soaking up memory and chips through twenty twenty-seven, the binding constraint in your plan is allocation, not demand."
+        },
+        {
+          "speaker": "M",
+          "text": "So if you build industrial or consumer products with chips inside, lock your twenty twenty-seven component volumes early."
+        },
+        {
+          "speaker": "F",
+          "text": "In Austria, sensor and optical chip maker ams OSRAM says its core business kept growing, led by opto semiconductors."
+        },
+        {
+          "speaker": "M",
+          "text": "But portfolio changes and weaker consumer demand offset that growth, and its adjusted figures leave out the cost of reworking its micro L E D strategy and other restructuring."
+        },
+        {
+          "speaker": "F",
+          "text": "Put that next to Foxconn and the message is the same, plan twenty twenty-seven component supply segment by segment, not as one number."
+        },
+        {
+          "speaker": "M",
+          "text": "A new piece in Supply Chain Management Review models a U S manufacturer's supply chain to compare spending on inventory, sourcing and logistics."
+        },
+        {
+          "speaker": "F",
+          "text": "The aim is to steer a limited resilience budget toward the risks with the biggest revenue consequences, and the article's own figures weren't available to us."
+        },
+        {
+          "speaker": "M",
+          "text": "Ranking buffers, second sources and transport options by revenue at risk is how a twenty twenty-seven risk review in sales and operations planning, S and OP, should end."
+        },
+        {
+          "speaker": "F",
+          "text": "On the freight desk, the Rhine at Kaub fell back to fifty-nine centimetres on Sunday, still well short of what fully loaded barges need."
+        },
+        {
+          "speaker": "M",
+          "text": "And CMA CGM grew third quarter container volumes five and a half percent, while Hapag-Lloyd and Maersk slipped slightly."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-16-03",
+        "2026-11-16-E1"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Swedish make-up brand LH Cosmetics has picked Boxflow as its new logistics partner to keep growing abroad, Dagens Logistik reports, which turns warehouse space into a variable cost while foreign demand is still hard to call."
+        },
+        {
+          "speaker": "F",
+          "text": "And today in Salzgitter, Germany's national steel summit brings government, industry and IG Metall together on energy prices, overcapacity and green steel, so steel buyers should watch for energy relief that shifts their twenty twenty-seven sourcing assumptions."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-16-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Monday."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning, have a good week."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Mercedes Plant Review: German Labour Costs Up to 5x Hungary",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Mercedes puts German labour costs at up to five times Hungary's."
+      },
+      {
+        "speaker": "M",
+        "text": "Management wants up to eight hundred million euros a year in savings, plus longer hours at the same pay and cuts to special payments."
+      },
+      {
+        "speaker": "F",
+        "text": "One assembly plant and one powertrain or component plant in Germany are under review, two of its twelve plants, with no board decision and no list of sites yet."
+      },
+      {
+        "speaker": "M",
+        "text": "Production board member Michael Schiebe points to Kecskemét in Hungary, and wage talks with IG Metall have stalled, with the union asking for five percent."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, if you supply a German Mercedes plant, model one assembly line's volume moving to Hungary, and price your own capacity for that scenario now."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Mercedes plant review: German labour costs run up to 5x those in Hungary, and Mercedes wants up to €800m a year in savings, with one German assembly plant and one component plant under review and no decision yet. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "automotive",
+      "networkdesign",
+      "manufacturing"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Mercedes-Benz puts German labour costs at up to five times Hungary's. Its German suppliers need a second scenario.\n\nMercedes-Benz wants up to EUR 800m a year in savings and is reviewing one German assembly plant and one component plant for possible closure, SRF and Mercedes-Fans report. There's no board decision and no site list yet, and wage talks with IG Metall have stalled.\n\nIf you supply a German Mercedes site, model one assembly line's volume moving to Kecskemét and price your own capacity for it now, not after the decision.\n\nAlso on today's desk:\nFoxconn says chips and memory are tight, and demand will outrun supply next year.\nams OSRAM's core business grew, but weaker consumer demand offset it.\n\nWhich of your 2027 plans would change if one customer's assembly line moved to Hungary?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #automotive #networkdesign",
+    "tags": [
+      "Mercedes-Benz",
+      "Foxconn",
+      "IG Metall"
+    ]
+  },
+  "show_notes": {
+    "summary": "Mercedes plant review: the carmaker wants up to €800m a year in savings and is weighing one German assembly and one component plant. Also: Foxconn warns chips and memory stay tight into 2027, ams OSRAM feels weaker consumer demand, an SCMR model for resilience budgets, a freight check, and quick hits on LH Cosmetics and Germany's steel summit.",
+    "sources": [
+      {
+        "title": "Mercedes-Fans: Krise beim Stern, welches Mercedes-Werk steht vor dem Aus?",
+        "url": "https://www.mercedes-fans.de/magazin/news/krise-beim-stern-sindelfingen-rastatt-bremen-welches-mercedes-werk-steht-vor-dem-aus.23592"
+      },
+      {
+        "title": "SRF: Mercedes erwägt Werksschliessungen",
+        "url": "https://srf.ch/news/wirtschaft/krise-in-der-autoindustrie-mercedes-erwaegt-werksschliessungen-das-steckt-dahinter"
+      },
+      {
+        "title": "investieren24: Mercedes-Benz prüft Standortsanierung",
+        "url": "https://investieren24.de/mercedes-benz-pruft-standortsanierung-gefahr-fur-rastatt-und-bremen"
+      },
+      {
+        "title": "SRN News (Reuters): Taiwan's Foxconn reports 34% rise in Q3 profit",
+        "url": "https://srnnews.com/taiwans-foxconn-reports-34-rise-in-q3-profit-beats-forecasts/"
+      },
+      {
+        "title": "SupplyChainBrain: Foxconn bullish on outlook but warns about supply chain tightness",
+        "url": "https://www.supplychainbrain.com/industries/high-tech-electronics/article/16425695/taiwans-foxconn-bullish-on-outlook-but-warns-about-supply-chain-tightness"
+      },
+      {
+        "title": "ams OSRAM ad hoc release via finanznachrichten: Wachstumskurs im Kerngeschäft",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70120256-eqs-adhoc-ams-osram-ag-ams-osram-setzt-wachstumskurs-im-kerngeschaeft-trotz-uneinheitlichem-marktumfeld-fort-starke-entwicklung-bei-opto-semiconduc-022.htm"
+      },
+      {
+        "title": "SCMR: Where to invest in supply chain resilience",
+        "url": "https://www.scmr.com/article/where-to-invest-supply-chain-resilience"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "The Loadstar: CMA CGM Q3 update",
+        "url": "https://theloadstar.com/cma-cgm-q3-26-update-out-ocean-outperforms-ceva-a-mixed-bag/"
+      },
+      {
+        "title": "Dagens Logistik: LH Cosmetics flyttar logistiken till Boxflow",
+        "url": "https://dagenslogistik.se/lh-cosmetics-flyttar-logistiken-till-boxflow/"
+      },
+      {
+        "title": "Produktion: Nationaler Stahlgipfel in Salzgitter",
+        "url": "https://www.produktion.de/wirtschaft/nationaler-stahlgipfel-in-salzgitter-branche-fordert-konkrete-entscheidungen-fuer-gruenen-stahl/2766819"
+      }
+    ]
+  }
+}
