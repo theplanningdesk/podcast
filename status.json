@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-15T12:19:34.580725+00:00",
+ "fetched_at": "2026-11-16T10:08:57.760238+00:00",
  "window_days": 8,
- "sources_ok": 75,
+ "sources_ok": 72,
  "sources_total": 75,
  "sources": [
   {
@@ -11,17 +11,16 @@
    "method": "feed https://www.supplychainbrain.com/rss/articles",
    "items": 20,
    "error": null,
-   "raw_items": 28,
+   "raw_items": 31,
    "lane": "planning"
   },
   {
    "source": "SCMR",
    "url": "https://www.scmr.com/",
-   "ok": true,
-   "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 13,
-   "error": null,
-   "raw_items": 13,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://www.scmr.com/: HTTPError: 403 Client Error: Forbidden for url: https://www.scmr.com/",
    "lane": "planning"
   },
   {
@@ -29,7 +28,7 @@
    "url": "https://www.supplychaindive.com/feeds/news/",
    "ok": true,
    "method": "feed https://www.supplychaindive.com/feeds/news/",
-   "items": 10,
+   "items": 8,
    "error": null,
    "raw_items": 10,
    "lane": "planning"
@@ -37,11 +36,10 @@
   {
    "source": "Supply Chain Digital",
    "url": "https://supplychaindigital.com/news",
-   "ok": true,
-   "method": "page links (articles opened for dates)",
-   "items": 15,
-   "error": null,
-   "raw_items": 23,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://supplychaindigital.com/news: HTTPError: 403 Client Error: Forbidden for url: https://supplychaindigital.com/news",
    "lane": "planning"
   },
   {
@@ -49,7 +47,7 @@
    "url": "https://www.manufacturingdive.com/feeds/news/",
    "ok": true,
    "method": "feed https://www.manufacturingdive.com/feeds/news/",
-   "items": 10,
+   "items": 9,
    "error": null,
    "raw_items": 10,
    "lane": "planning"
@@ -81,7 +79,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 29,
+   "raw_items": 30,
    "lane": "planning"
   },
   {
@@ -109,7 +107,7 @@
    "url": "https://www.bme.de/news/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 5,
+   "items": 6,
    "error": null,
    "raw_items": 24,
    "lane": "planning"
@@ -129,7 +127,7 @@
    "url": "https://www.produktion.de/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 2,
+   "items": 0,
    "error": null,
    "raw_items": 31,
    "lane": "planning"
@@ -149,8 +147,8 @@
    "url": "https://www.di.se/rss",
    "ok": true,
    "method": "feed https://www.di.se/rss",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 20,
    "lane": "planning"
   },
@@ -209,9 +207,9 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 13,
+   "items": 14,
    "error": null,
-   "raw_items": 13,
+   "raw_items": 14,
    "lane": "planning"
   },
   {
@@ -221,7 +219,7 @@
    "method": "feed https://techxplore.com/rss-feed/business-tech-news/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 24,
+   "raw_items": 26,
    "lane": "management"
   },
   {
@@ -251,7 +249,7 @@
    "method": "feed https://idw-online.de/de/pressreleasesrss",
    "items": 4,
    "error": null,
-   "raw_items": 441,
+   "raw_items": 438,
    "lane": "management"
   },
   {
@@ -301,7 +299,7 @@
    "method": "feed https://industriemagazin.at/rss.xml",
    "items": 4,
    "error": null,
-   "raw_items": 24,
+   "raw_items": 25,
    "lane": "management"
   },
   {
@@ -309,7 +307,7 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 2,
+   "items": 3,
    "error": null,
    "raw_items": 30,
    "lane": "management"
@@ -349,7 +347,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 5,
+   "items": 4,
    "error": null,
    "raw_items": 20,
    "lane": "management"
@@ -399,9 +397,9 @@
    "url": "https://mfn.se/all/a/epiroc.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/epiroc.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
-   "raw_items": 0,
+   "items": 1,
+   "error": null,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -451,7 +449,7 @@
    "method": "feed https://mfn.se/all/a/essity.rss",
    "items": 1,
    "error": null,
-   "raw_items": 4,
+   "raw_items": 6,
    "lane": "companies"
   },
   {
@@ -549,9 +547,9 @@
    "url": "https://mfn.se/all/a/axfood.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/axfood.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
-   "raw_items": 0,
+   "items": 1,
+   "error": null,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -611,7 +609,7 @@
    "method": "feed https://mfn.se/all/a/stora-enso.rss",
    "items": 1,
    "error": null,
-   "raw_items": 2,
+   "raw_items": 4,
    "lane": "companies"
   },
   {
@@ -647,11 +645,10 @@
   {
    "source": "The Loadstar",
    "url": "https://theloadstar.com/",
-   "ok": true,
-   "method": "feed https://theloadstar.com/feed/",
-   "items": 5,
-   "error": null,
-   "raw_items": 10,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://theloadstar.com/: HTTPError: 403 Client Error: Forbidden for url: https://theloadstar.com/",
    "lane": "freight"
   },
   {
