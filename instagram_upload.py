@@ -90,7 +90,8 @@ def create_reel(user: str, token: str, video_url: str, caption: str,
     into the video. A cover problem never stops the Reel from going out.
     """
     base = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": True}
-    attempts = ([("the cover image", {**base, "cover_url": cover_url})] if cover_url else []) \
+    # cover_url wins when both are sent; the offset is there in case Instagram can't fetch the image.
+    attempts = ([("the cover image", {**base, "cover_url": cover_url, "thumb_offset": thumb_offset_ms})] if cover_url else []) \
         + [(f"the frame at {thumb_offset_ms / 1000:g} s as cover", {**base, "thumb_offset": thumb_offset_ms})]
     problem = "no attempt made"
     for i, (label, payload) in enumerate(attempts):
