@@ -296,5 +296,18 @@
     "duration_sec": 250,
     "pub_date": "2026-11-16T06:30:00+01:00",
     "transcript_lines": 32
+  },
+  {
+    "guid": "planning-desk-2026-11-17",
+    "stem": "2026-11-17",
+    "number": 24,
+    "format": "daily",
+    "title": "Mars Kellanova: $1.4bn Into US Snack Plants",
+    "summary": "Mars and Kellanova: Mars will invest $1.4bn in US manufacturing in 2027 to grow snacks after its $36bn Kellanova deal. Also: an arXiv preprint where an AI coding agent's schedulers beat commercial solvers, Hemköp's chief moves to ICA Sverige, Ola Bergström on Chinese overproduction, Danish retailers' express freight squeeze, and the Rhine at Kaub.",
+    "notes_html": "<p>Mars and Kellanova: Mars will invest $1.4bn in US manufacturing in 2027 to grow snacks after its $36bn Kellanova deal. Also: an arXiv preprint where an AI coding agent&#x27;s schedulers beat commercial solvers, Hemköp&#x27;s chief moves to ICA Sverige, Ola Bergström on Chinese overproduction, Danish retailers&#x27; express freight squeeze, and the Rhine at Kaub.</p><p>Sources:</p><ul><li><a href=\"https://www.manufacturingdive.com/news/mars-invest-us-manufacturing-operations-snacking-kellanova-acquisition/874403/\">Manufacturing Dive: Mars to invest $1.4B in US manufacturing after Kellanova deal</a></li><li><a href=\"https://arxiv.org/abs/2611.17682v1\">arXiv 2611.17682: Agent-written heuristics versus commercial solvers</a></li><li><a href=\"https://mfn.se/cis/a/axfood/changes-in-axfoods-executive-committee-0726036e\">Axfood via MFN: Changes in Axfood&#x27;s executive committee</a></li><li><a href=\"https://dagenslogistik.se/hemkops-vd-tar-over-ica-sverige/\">Dagens Logistik: Hemköps vd tar över ICA Sverige</a></li><li><a href=\"https://www.nyteknik.se/karriaer/kinas-oeverproduktion-ett-hot-mot-svensk-industri-experten-blir-riktigt-orolig/4513191\">Ny Teknik: Kinas överproduktion ett hot mot svensk industri</a></li><li><a href=\"https://www.scm.dk/dyre-hastefragter-truer-detailhandlens-indtjening-i-julen\">SCM.dk: Dyre hastefragter truer detailhandlens indtjening i julen</a></li><li><a href=\"https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&amp;includeTimeseries=true&amp;includeCurrentMeasurement=true\">Pegelonline: Rhine gauges</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-17.html\">https://theplanningdesk.github.io/podcast/e/2026-11-17.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3998424,
+    "duration_sec": 250,
+    "pub_date": "2026-11-17T06:30:00+01:00",
+    "transcript_lines": 32
   }
 ]
