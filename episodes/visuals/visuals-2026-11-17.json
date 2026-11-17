@@ -1,0 +1,116 @@
+{
+  "stem": "2026-11-17",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Production scheduling",
+        "title": "AI agent's schedulers beat commercial solvers",
+        "detail": "arXiv preprint, not yet peer reviewed",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 1,
+      "template": "headline",
+      "props": {
+        "kicker": "The setup",
+        "title": "A language model writes the solver",
+        "detail": "Open-source tools only",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 1,
+      "at": "one hundred thousand operations",
+      "template": "stat",
+      "props": {
+        "kicker": "Biggest test",
+        "value": 100000,
+        "label": "operations in one job shop",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 2,
+      "template": "headline",
+      "props": {
+        "kicker": "Fair test",
+        "title": "Same workstation, same time budget",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 2,
+      "at": "one point eight percent",
+      "template": "stat",
+      "props": {
+        "kicker": "Agent-written solver",
+        "value": 1.8,
+        "label": "% from the best possible, at most",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 3,
+      "template": "bars",
+      "props": {
+        "title": "Gap to best possible result, %",
+        "items": [
+          {
+            "label": "Agent, worst case",
+            "value": 1.8,
+            "highlight": true
+          },
+          {
+            "label": "Solvers, best case",
+            "value": 2.4
+          },
+          {
+            "label": "Solvers, worst case",
+            "value": 5.8
+          }
+        ],
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 3,
+      "at": "checked independently",
+      "template": "headline",
+      "props": {
+        "kicker": "Method",
+        "title": "Every schedule checked independently",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "kicker": "Caveat",
+        "title": "Not peer reviewed yet",
+        "source": "arXiv"
+      }
+    },
+    {
+      "line": 4,
+      "at": "for planners",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Build or buy shifts: who maintains the generated code?"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Mars Kellanova: $1.4bn Into US Snack Plants",
+  "week": "2026-W47",
+  "run_date": "2026-11-17",
+  "brief_file": "news-brief-daily-2026-11-17.md",
+  "target_runtime_sec": 253,
+  "word_count": 735,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-17-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Mars is putting one point four billion dollars into its U S plants next year, the biggest single-year investment it has ever made."
+        },
+        {
+          "speaker": "M",
+          "text": "After a thirty-six billion dollar takeover, the capacity plan now decides where the savings land. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-17-01",
+        "2026-11-17-02",
+        "2026-11-17-03",
+        "2026-11-17-F1"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Tuesday the seventeenth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Mars builds out its U S snack plants, an A I agent writes schedulers that beat commercial solvers, a top grocery job changes hands in Sweden, and the Rhine edges up."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-17-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Mars will invest one point four billion dollars in U S manufacturing and operations in twenty twenty-seven, Manufacturing Dive reported last week."
+        },
+        {
+          "speaker": "M",
+          "text": "That's the largest single-year investment the M and M's maker has ever made, and the stated goal is to grow its snacking portfolio."
+        },
+        {
+          "speaker": "F",
+          "text": "It follows the thirty-six billion dollar takeover of Kellanova, so this is the integration bill arriving at the plants."
+        },
+        {
+          "speaker": "M",
+          "text": "Brand teams get the headlines after a merger like this, but the capacity plan decides where the savings actually come from."
+        },
+        {
+          "speaker": "F",
+          "text": "Which plants make what, which lines run where, and which suppliers feed them, those choices get made while the money is being spent."
+        },
+        {
+          "speaker": "M",
+          "text": "Our view, if you supply the combined Mars and Kellanova from Europe, expect your sourcing role and your plant role to be reshuffled as U S volume is rebuilt."
+        },
+        {
+          "speaker": "F",
+          "text": "So map which of your volumes hang on which customer sites, and ask for the twenty twenty-seven network plan before the next contract round, not after it."
+        },
+        {
+          "speaker": "M",
+          "text": "A big build in the U S is a European sourcing question too, and it usually shows up first in next year's volume split."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-17-02",
+        "2026-11-17-03",
+        "2026-11-17-V1",
+        "2026-11-17-04",
+        "2026-11-17-F1"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "On the A I desk, a new preprint on arXiv puts an A I coding agent up against commercial scheduling solvers, and the agent's code came out ahead."
+        },
+        {
+          "speaker": "F",
+          "text": "The researchers gave a frontier large language model open-source tools only, and had it write solvers for open job-shop scheduling benchmarks."
+        },
+        {
+          "speaker": "M",
+          "text": "On the biggest test, a job shop with one hundred thousand operations, the agent's solver beat all three commercial solvers."
+        },
+        {
+          "speaker": "F",
+          "text": "With equal time on the same workstation, it finished within one point eight percent of the best possible result, while the commercial tools landed between two point four and five point eight percent away."
+        },
+        {
+          "speaker": "M",
+          "text": "It also improved eleven of thirty-two open flexible job-shop problems, every run was reported, and every schedule was checked independently."
+        },
+        {
+          "speaker": "F",
+          "text": "It's a preprint and hasn't been peer reviewed, so treat it as a strong signal rather than a verdict."
+        },
+        {
+          "speaker": "M",
+          "text": "For production scheduling, the build or buy question moves. If an agent can write a heuristic tuned to your own problem, the question is less which solver and more who maintains the generated code."
+        },
+        {
+          "speaker": "F",
+          "text": "In Sweden, a top grocery job has changed sides. Shoan Etemadi, who runs Axfood's Hemköp chain, is leaving to become chief executive of ICA Sverige, the country's largest grocery retailer."
+        },
+        {
+          "speaker": "M",
+          "text": "Axfood has named Tomas Hedman Strömhielm acting head of Hemköp, and hired Jon Johnsson, finance chief and deputy chief executive of Bonava, as group chief financial officer, replacing Anders Lexmon."
+        },
+        {
+          "speaker": "F",
+          "text": "A leader moving between Sweden's two biggest grocery groups knows a rival's store and supply model, so suppliers to both should watch next year's range and replenishment terms."
+        },
+        {
+          "speaker": "M",
+          "text": "Staying in Sweden, Professor Ola Bergström, a member of the industry parties' joint economic council, told Ny Teknik on Sunday that Chinese overproduction threatens Swedish industry."
+        },
+        {
+          "speaker": "F",
+          "text": "He says Chinese zombie companies, kept alive despite their losses, are driving that overproduction and putting Swedish export niches at risk."
+        },
+        {
+          "speaker": "M",
+          "text": "In his view the problem is bigger than this year's wage round, and he sees a risk of irreversible damage to Swedish and European industry."
+        },
+        {
+          "speaker": "F",
+          "text": "In Denmark, retailers face a Christmas squeeze from express freight, as rising transport costs and uncertain delivery times put earnings at risk, SCM.dk reports."
+        },
+        {
+          "speaker": "M",
+          "text": "Every express shipment is a forecast or replenishment miss paid for in freight, so write the rule on when to expedite into the peak plan now, not in the warehouse on the twentieth of December."
+        },
+        {
+          "speaker": "F",
+          "text": "On the freight desk, the Rhine at Kaub edged up to sixty-two centimetres on Monday, still well under the seventy-seven or so needed for a full channel depth."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-17-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Tuesday."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with more from the desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Production Scheduling: AI Agent Beats Commercial Solvers",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "An A I agent wrote schedulers that beat commercial solvers."
+      },
+      {
+        "speaker": "M",
+        "text": "In a new preprint, researchers had a large language model write job-shop solvers with open-source tools, and the biggest test had one hundred thousand operations."
+      },
+      {
+        "speaker": "F",
+        "text": "On the same workstation and the same time budget, its solver finished within one point eight percent of the best possible result."
+      },
+      {
+        "speaker": "M",
+        "text": "The commercial solvers landed between two point four and five point eight percent away, and every schedule was checked independently."
+      },
+      {
+        "speaker": "F",
+        "text": "It's not peer reviewed yet, but for planners the build or buy question shifts, from which solver to buy to who maintains the generated code."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Production scheduling: in a new arXiv preprint, an AI coding agent wrote job-shop solvers that finished 0.0-1.8% from the lower bound, against 2.4-5.8% for commercial solvers on the same machine and time budget. Not yet peer reviewed. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "productionscheduling",
+      "ai",
+      "operationsresearch"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Mars is putting $1.4bn into US plants in 2027. Suppliers to Mars and Kellanova should expect their roles to shift.\n\nMars will invest $1.4bn in US manufacturing and operations next year, the largest single-year investment it has made, Manufacturing Dive reports. The money is meant to grow its snacking portfolio after the $36bn acquisition of Kellanova.\n\nAfter a merger this size, the capacity plan decides where the savings come from. European suppliers should map which volumes depend on which customer sites and ask for the 2027 network plan before the next contract round.\n\nAlso on today's desk:\nIn a new preprint, an AI coding agent wrote job-shop schedulers that beat commercial solvers on the same machine.\nHemköp's chief Shoan Etemadi leaves Axfood to run ICA Sverige.\n\nIf your biggest customer moved a product line to another plant, how soon would your plan notice?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #networkdesign #manufacturing",
+    "tags": [
+      "Mars",
+      "Kellanova",
+      "Axfood"
+    ]
+  },
+  "show_notes": {
+    "summary": "Mars and Kellanova: Mars will invest $1.4bn in US manufacturing in 2027 to grow snacks after its $36bn Kellanova deal. Also: an arXiv preprint where an AI coding agent's schedulers beat commercial solvers, Hemköp's chief moves to ICA Sverige, Ola Bergström on Chinese overproduction, Danish retailers' express freight squeeze, and the Rhine at Kaub.",
+    "sources": [
+      {
+        "title": "Manufacturing Dive: Mars to invest $1.4B in US manufacturing after Kellanova deal",
+        "url": "https://www.manufacturingdive.com/news/mars-invest-us-manufacturing-operations-snacking-kellanova-acquisition/874403/"
+      },
+      {
+        "title": "arXiv 2611.17682: Agent-written heuristics versus commercial solvers",
+        "url": "https://arxiv.org/abs/2611.17682v1"
+      },
+      {
+        "title": "Axfood via MFN: Changes in Axfood's executive committee",
+        "url": "https://mfn.se/cis/a/axfood/changes-in-axfoods-executive-committee-0726036e"
+      },
+      {
+        "title": "Dagens Logistik: Hemköps vd tar över ICA Sverige",
+        "url": "https://dagenslogistik.se/hemkops-vd-tar-over-ica-sverige/"
+      },
+      {
+        "title": "Ny Teknik: Kinas överproduktion ett hot mot svensk industri",
+        "url": "https://www.nyteknik.se/karriaer/kinas-oeverproduktion-ett-hot-mot-svensk-industri-experten-blir-riktigt-orolig/4513191"
+      },
+      {
+        "title": "SCM.dk: Dyre hastefragter truer detailhandlens indtjening i julen",
+        "url": "https://www.scm.dk/dyre-hastefragter-truer-detailhandlens-indtjening-i-julen"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      }
+    ]
+  }
+}
