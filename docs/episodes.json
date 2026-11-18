@@ -309,5 +309,18 @@
     "duration_sec": 250,
     "pub_date": "2026-11-17T06:30:00+01:00",
     "transcript_lines": 32
+  },
+  {
+    "guid": "planning-desk-2026-11-18",
+    "stem": "2026-11-18",
+    "number": 25,
+    "format": "daily",
+    "title": "Network Design: Conagra Shuts a Missouri Plant",
+    "summary": "Network design: Conagra Brands will close its Macon, Missouri ingredients plant in January, cutting 442 jobs, and move the work to Arkansas. Also: Flügger adds 60% warehouse capacity in Kolding, Constructor University proposes an LLM supplier-selection framework with human oversight, SKF Vertevo sets out procurement and footprint plans before its spin-off, Reformation uses AI to steer production, three more Gemini services return to Suez, and the Rhine at Kaub.",
+    "notes_html": "<p>Network design: Conagra Brands will close its Macon, Missouri ingredients plant in January, cutting 442 jobs, and move the work to Arkansas. Also: Flügger adds 60% warehouse capacity in Kolding, Constructor University proposes an LLM supplier-selection framework with human oversight, SKF Vertevo sets out procurement and footprint plans before its spin-off, Reformation uses AI to steer production, three more Gemini services return to Suez, and the Rhine at Kaub.</p><p>Sources:</p><ul><li><a href=\"https://www.fooddive.com/news/conagra-brands-closing-missouri-plant-jobs-losses/874504/\">Food Dive: Conagra Brands closing Missouri plant</a></li><li><a href=\"https://www.supplychaindive.com/news/conagra-brands-to-close-missouri-ingredients-plant/874617/\">Supply Chain Dive: Conagra Brands to close Missouri ingredients plant</a></li><li><a href=\"https://www.scm.dk/flugger-udvider-lagerkapaciteten-i-kolding-med-60-procent\">SCM.dk: Flügger udvider lagerkapaciteten i Kolding med 60 procent</a></li><li><a href=\"http://idw-online.de/de/news880984\">idw-online: Constructor University supplier-selection framework</a></li><li><a href=\"https://mfn.se/cis/a/skf/skf-vertevo-capital-markets-day-unleashing-growth-efficiency-and-speed-facc9633\">SKF via MFN: SKF Vertevo Capital Markets Day</a></li><li><a href=\"https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&amp;includeTimeseries=true&amp;includeCurrentMeasurement=true\">Pegelonline: Rhine gauges</a></li><li><a href=\"https://dagenslogistik.se/svensk-logistikaktivitet-pa-lagsta-nivan-pa-sju-manader/\">Dagens Logistik: Svensk logistikaktivitet på lägsta nivån på sju månader</a></li><li><a href=\"https://www.supplychaindive.com/news/ai-backed-tools-power-reformations-inventory-management/874645/\">Supply Chain Dive: AI-backed tools power Reformation&#x27;s inventory management</a></li><li><a href=\"https://www.scm.dk/maersk-sender-flere-ruter-gennem-suez-aarhus-er-med\">SCM.dk: Maersk sender flere ruter gennem Suez, Aarhus er med</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-18.html\">https://theplanningdesk.github.io/podcast/e/2026-11-18.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3692481,
+    "duration_sec": 231,
+    "pub_date": "2026-11-18T06:30:00+01:00",
+    "transcript_lines": 29
   }
 ]
