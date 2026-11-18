@@ -1,0 +1,127 @@
+{
+  "stem": "2026-11-18",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Network design",
+        "title": "Conagra closes a plant that feeds its plants",
+        "detail": "Ingredients plant in Macon, Missouri",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Macon, Missouri",
+        "value": 442,
+        "label": "jobs cut, per state WARN notice",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 1,
+      "at": "fifteenth of January",
+      "template": "headline",
+      "props": {
+        "kicker": "Closing date",
+        "title": "Shuts 15 January 2027",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 2,
+      "template": "route",
+      "props": {
+        "kicker": "Work moves south",
+        "title": "Macon to Conagra sites in Arkansas",
+        "points": [
+          {
+            "name": "Macon, Missouri",
+            "lat": 39.74,
+            "lon": -92.47,
+            "alert": true
+          },
+          {
+            "name": "Arkansas",
+            "lat": 34.75,
+            "lon": -92.29
+          }
+        ],
+        "routes": [
+          {
+            "style": "primary",
+            "label": "Production moves",
+            "points": [
+              [
+                -92.47,
+                39.74
+              ],
+              [
+                -92.29,
+                34.75
+              ]
+            ]
+          }
+        ],
+        "pad": 3
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "Conagra says",
+        "title": "After a review of its manufacturing network",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 3,
+      "at": "one and three percent",
+      "template": "headline",
+      "props": {
+        "kicker": "Fiscal 2027 outlook",
+        "title": "Organic net sales seen down 1 to 3%",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Downstream lines now lean on Arkansas capacity and a new inbound lane"
+      }
+    },
+    {
+      "line": 4,
+      "at": "build stock",
+      "template": "list",
+      "props": {
+        "title": "Before the switch",
+        "items": [
+          {
+            "label": "Build stock",
+            "say": "build stock"
+          },
+          {
+            "label": "Test the lane",
+            "say": "test the lane"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

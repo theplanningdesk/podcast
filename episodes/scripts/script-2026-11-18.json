@@ -1,0 +1,293 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Network Design: Conagra Shuts a Missouri Plant",
+  "week": "2026-W47",
+  "run_date": "2026-11-18",
+  "brief_file": "news-brief-daily-2026-11-18.md",
+  "target_runtime_sec": 239,
+  "word_count": 688,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-18-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Conagra is shutting its ingredients plant in Macon, Missouri, and moving the work to Arkansas, with four hundred and forty-two jobs gone by mid-January."
+        },
+        {
+          "speaker": "M",
+          "text": "A plant that feeds other plants is a network decision, and every frozen meal line downstream now hangs on it. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-18-01",
+        "2026-11-18-02",
+        "2026-11-18-05",
+        "2026-11-18-06"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Wednesday the eighteenth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Conagra redraws its plant network, Flügger pulls its warehousing into Kolding, SKF Vertevo plans its life after SKF, and more Gemini ships head back through Suez."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-18-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Conagra Brands will close its ingredients plant in Macon, Missouri on the fifteenth of January, Food Dive reports, and a state layoff notice puts the job cuts at four hundred and forty-two."
+        },
+        {
+          "speaker": "M",
+          "text": "The plant doesn't make finished products. It makes ingredients for frozen meals that other Conagra sites assemble, and that work moves mainly to Conagra locations in Arkansas."
+        },
+        {
+          "speaker": "F",
+          "text": "The company says the move follows a review of its manufacturing network, and it expects organic net sales to fall between one and three percent in fiscal twenty twenty-seven."
+        },
+        {
+          "speaker": "M",
+          "text": "Falling volume and fewer plants usually travel together, so the cost logic is easy to see."
+        },
+        {
+          "speaker": "F",
+          "text": "The planning side is harder. Every frozen meal line that took ingredients from Macon now depends on capacity in Arkansas and on a new inbound lane."
+        },
+        {
+          "speaker": "M",
+          "text": "Our view, the risk sits in the handover, so build ingredient stock ahead of the fifteenth and run the new lane before Macon stops."
+        },
+        {
+          "speaker": "F",
+          "text": "And if you supply Conagra, check which of your inputs went to Macon, because your delivery point and your volumes are about to move with it."
+        },
+        {
+          "speaker": "M",
+          "text": "Closures like this get reported as job news, but for planners it's a map change, and this map changes in eight weeks."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-18-02",
+        "2026-11-18-04",
+        "2026-11-18-05",
+        "2026-11-18-F1",
+        "2026-11-18-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to Denmark, where paint maker Flügger is adding sixty percent more warehouse capacity in Kolding, SCM.dk reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The expansion adds nineteen hundred square metres of storage and four thousand new pallet positions. The aim is to gather logistics in one place and cut the internal moves of goods."
+        },
+        {
+          "speaker": "M",
+          "text": "Shuttling stock between your own sites is pure network cost, so Flügger is redrawing its distribution map, and the shelves are the smaller part."
+        },
+        {
+          "speaker": "F",
+          "text": "On the A I desk, researchers at Constructor University in Bremen have proposed a way to pick suppliers with large language models, with human oversight built in."
+        },
+        {
+          "speaker": "M",
+          "text": "The goal is faster supplier evaluation while economic, environmental and regulatory conditions keep shifting. The press release reports no measured results yet."
+        },
+        {
+          "speaker": "F",
+          "text": "Sourcing is one of the first planning calls where companies will have to show who approved what the model suggested, so building the human check in from the start is the useful part."
+        },
+        {
+          "speaker": "M",
+          "text": "In Sweden, SKF Vertevo, the automotive business about to be spun off from SKF, held its capital markets day ahead of the record date on the twenty-seventh of November."
+        },
+        {
+          "speaker": "F",
+          "text": "It wants to cut costs through procurement, logistics and changes to its manufacturing footprint, and it names less reliance on contract manufacturing with SKF as one of three margin drivers."
+        },
+        {
+          "speaker": "M",
+          "text": "It also flags better working capital, though the highlights we have give no figures."
+        },
+        {
+          "speaker": "F",
+          "text": "A spin-off that plans to buy less production from its former parent has to re-plan where its bearings get made, so suppliers and customers of both companies should expect sourcing changes after the split."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, the Rhine at Kaub rose to sixty-six centimetres on Tuesday, still too low for full barges, and Sweden's logistics growth index fell three points in October to a seven-month low."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-18-03",
+        "2026-11-18-06"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "U S fashion brand Reformation is using A I tools to watch demand and steer production, Supply Chain Dive reports, and in fashion the costly mistake is the production quantity."
+        },
+        {
+          "speaker": "F",
+          "text": "And Maersk and Hapag-Lloyd move three more Gemini services back through Suez, one of them calling at Aarhus, so check your Asia to Europe lead times before you order safety stock sized for the Cape."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-18-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Wednesday."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with more from the desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Conagra Closes Missouri Plant, Moves Work to Arkansas",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Conagra is closing a Missouri plant that feeds its other plants."
+      },
+      {
+        "speaker": "M",
+        "text": "The ingredients plant in Macon shuts on the fifteenth of January, and four hundred and forty-two workers lose their jobs, according to a state notice."
+      },
+      {
+        "speaker": "F",
+        "text": "It makes ingredients for frozen meals assembled at other Conagra sites, and that work moves mainly to Conagra locations in Arkansas."
+      },
+      {
+        "speaker": "M",
+        "text": "The company says it follows a review of its manufacturing network, and it expects organic sales to fall between one and three percent in fiscal twenty twenty-seven."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, every downstream line now leans on Arkansas capacity and a new inbound lane, so build stock and test the lane before the switch."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Network design: Conagra will close its Macon, Missouri ingredients plant on 15 January 2027, cutting 442 jobs, and move the work mainly to its Arkansas sites after a review of its manufacturing network. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "networkdesign",
+      "manufacturing",
+      "foodindustry"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Conagra is closing a plant that feeds its other plants, and its frozen-meal lines now lean on Arkansas.\n\nConagra Brands will close its ingredients plant in Macon, Missouri on 15 January, cutting 442 jobs according to a state WARN notice, Food Dive reports. The work moves mainly to Conagra sites in Arkansas after a review of its manufacturing network, the company says.\n\nFor planners, the risk sits in the handover. Build ingredient stock ahead of the switch, run the new inbound lane before Macon stops, and if you supply Conagra, check which of your inputs were delivered to Macon.\n\nAlso on today's desk:\nFlügger adds 60% warehouse capacity in Kolding to cut internal moves between sites.\nConstructor University proposes an LLM supplier-selection framework with human oversight.\n\nWhen a plant in your network closes, how many weeks before the date is the transfer plan tested?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #networkdesign #manufacturing",
+    "tags": [
+      "Conagra Brands",
+      "Flügger",
+      "Constructor University"
+    ]
+  },
+  "show_notes": {
+    "summary": "Network design: Conagra Brands will close its Macon, Missouri ingredients plant in January, cutting 442 jobs, and move the work to Arkansas. Also: Flügger adds 60% warehouse capacity in Kolding, Constructor University proposes an LLM supplier-selection framework with human oversight, SKF Vertevo sets out procurement and footprint plans before its spin-off, Reformation uses AI to steer production, three more Gemini services return to Suez, and the Rhine at Kaub.",
+    "sources": [
+      {
+        "title": "Food Dive: Conagra Brands closing Missouri plant",
+        "url": "https://www.fooddive.com/news/conagra-brands-closing-missouri-plant-jobs-losses/874504/"
+      },
+      {
+        "title": "Supply Chain Dive: Conagra Brands to close Missouri ingredients plant",
+        "url": "https://www.supplychaindive.com/news/conagra-brands-to-close-missouri-ingredients-plant/874617/"
+      },
+      {
+        "title": "SCM.dk: Flügger udvider lagerkapaciteten i Kolding med 60 procent",
+        "url": "https://www.scm.dk/flugger-udvider-lagerkapaciteten-i-kolding-med-60-procent"
+      },
+      {
+        "title": "idw-online: Constructor University supplier-selection framework",
+        "url": "http://idw-online.de/de/news880984"
+      },
+      {
+        "title": "SKF via MFN: SKF Vertevo Capital Markets Day",
+        "url": "https://mfn.se/cis/a/skf/skf-vertevo-capital-markets-day-unleashing-growth-efficiency-and-speed-facc9633"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "Dagens Logistik: Svensk logistikaktivitet på lägsta nivån på sju månader",
+        "url": "https://dagenslogistik.se/svensk-logistikaktivitet-pa-lagsta-nivan-pa-sju-manader/"
+      },
+      {
+        "title": "Supply Chain Dive: AI-backed tools power Reformation's inventory management",
+        "url": "https://www.supplychaindive.com/news/ai-backed-tools-power-reformations-inventory-management/874645/"
+      },
+      {
+        "title": "SCM.dk: Maersk sender flere ruter gennem Suez, Aarhus er med",
+        "url": "https://www.scm.dk/maersk-sender-flere-ruter-gennem-suez-aarhus-er-med"
+      }
+    ]
+  }
+}
