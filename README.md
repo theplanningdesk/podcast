@@ -1,6 +1,6 @@
 # The Planning Desk: engagement scorecard
 
-Updated 2026-11-17. Numbers refresh every morning; the full data is in the CSV files on this branch.
+Updated 2026-11-18. Numbers refresh every morning; the full data is in the CSV files on this branch.
 
 OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
@@ -9,7 +9,7 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | Channel | Metric | Now |
 |---|---|---|
 | instagram | followers | 4 |
-| instagram | posts | 21 |
+| instagram | posts | 23 |
 | newsletter | last email | Mercedes Plant Freeze: German Industry Starts Choosing Sites |
 | newsletter | last email clicks | 0 |
 | newsletter | last email deliveries | 2 |
@@ -18,11 +18,11 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 560 |
-| podcast | op3 downloads all episodes | 60 |
+| podcast | github mp3 fetches all episodes | 588 |
+| podcast | op3 downloads all episodes | 64 |
 | youtube | subscribers | 5 |
-| youtube | total views | 461 |
-| youtube | videos | 28 |
+| youtube | total views | 488 |
+| youtube | videos | 30 |
 | spotify (typed in 2026-10-30) | followers | 1 |
 | spotify (typed in 2026-10-30) | plays | 8 |
 | linkedin (typed in 2026-10-30) | followers | 3 |
@@ -37,24 +37,25 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 13 |  | 4 | 36 |
-| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 18 |  | 9 | 121 |
-| 2026-11-15 | weekly | Supply Chain News, Week 46: Mercedes Plants, Cyberattacks, AI Optimisation |  | 26 | 14 |  |  |
-| 2026-11-14 | saturday | The Box by Levinson: Book Summary |  | 23 | 2 | 24 | 23 |
-| 2026-11-13 | daily | EV Battery Sourcing: BMW Goes Local for Local |  | 27 |  | 18 | 9 |
-| 2026-11-12 | daily | Manufacturing Footprint: Deere Closes Two Iowa Plants |  | 30 |  | 5 | 5 |
+| 2026-11-18 | daily | Network Design: Conagra Shuts a Missouri Plant |  | 10 |  | 4 | 13 |
+| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 23 |  | 12 | 62 |
+| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 22 |  | 10 | 121 |
+| 2026-11-15 | weekly | Supply Chain News, Week 46: Mercedes Plants, Cyberattacks, AI Optimisation |  | 27 | 16 |  |  |
+| 2026-11-14 | saturday | The Box by Levinson: Book Summary |  | 24 | 3 | 23 | 23 |
+| 2026-11-13 | daily | EV Battery Sourcing: BMW Goes Local for Local |  | 28 |  | 18 | 9 |
+| 2026-11-12 | daily | Manufacturing Footprint: Deere Closes Two Iowa Plants |  | 31 |  | 5 | 5 |
 | 2026-11-11 | daily | Cold Chain Cyberattacks: Danfoss Names Its Own |  | 24 |  | 25 | 110 |
 | 2026-11-10 | daily | Container Freight Rates: Fleet Heads for 50m TEU |  | 26 |  | 5 | 9 |
-| 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 35 |  | 36 | 51 |
+| 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 35 |  | 37 | 51 |
 | 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 29 | 25 |  |  |
 | 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 25 | 3 | 30 | 25 |
 | 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 21 |  | 14 | 127 |
 | 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 36 |  | 10 | 23 |
-| 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 25 |  | 35 | 8 |
+| 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 25 |  | 36 | 8 |
 | 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 19 |  | 18 | 108 |
 | 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 27 |  | 44 | 18 |
 | 2026-11-01 | weekly | Supply Chain News, Week 44: AI Agents, Suez Freight Rates, Rhine Low Water |  | 25 | 16 |  |  |
-| 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 19 | 5 | 21 | 15 |
+| 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 19 | 5 | 22 | 15 |
 | 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 33 |  | 40 | 24 |
 | 2026-10-29 | daily | Thu 29 Oct: Lunar New Year Comes Early |  | 22 |  | 7 | 11 |
 | 2026-10-28 | daily | Wed 28 Oct: Audi Builds Past the Tariff |  | 17 |  | 8 | 24 |
@@ -71,7 +72,7 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 ## Source status
 
 - buttondown: ok
-- carried: ok: 21 numbers kept from the previous run where today's lookup came back empty
+- carried: ok: 24 numbers kept from the previous run where today's lookup came back empty
 - github: ok
 - instagram: ok
 - op3: ok
