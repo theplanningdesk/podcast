@@ -322,5 +322,18 @@
     "duration_sec": 231,
     "pub_date": "2026-11-18T06:30:00+01:00",
     "transcript_lines": 29
+  },
+  {
+    "guid": "planning-desk-2026-11-19",
+    "stem": "2026-11-19",
+    "number": 26,
+    "format": "daily",
+    "title": "Inventory Planning: Wrangler's Owner Restocks",
+    "summary": "Inventory planning: Wrangler owner Kontoor Brands will invest $50 million in inventory after stock fell 6% in a difficult quarter. Also: Novo prepares for scarcer water and glucose, a University of Cambridge report finds up to a third of the AI supply chain outside regulation, Germany agrees a one-year electricity tax cut and a fuel price cap, the Rhine at Kaub recovers, 2027 rail path charges rise about 8%, and a FOM talk on defence supply chains.",
+    "notes_html": "<p>Inventory planning: Wrangler owner Kontoor Brands will invest $50 million in inventory after stock fell 6% in a difficult quarter. Also: Novo prepares for scarcer water and glucose, a University of Cambridge report finds up to a third of the AI supply chain outside regulation, Germany agrees a one-year electricity tax cut and a fuel price cap, the Rhine at Kaub recovers, 2027 rail path charges rise about 8%, and a FOM talk on defence supply chains.</p><p>Sources:</p><ul><li><a href=\"https://www.supplychaindive.com/news/wrangler-parent-company-plans-to-beef-up-inventory-spending/874783/\">Supply Chain Dive: Wrangler parent company plans to beef up inventory spending</a></li><li><a href=\"https://www.scm.dk/novo-forbereder-sig-pa-begraenset-adgang-til-ravarer\">SCM.dk: Novo forbereder sig på begrænset adgang til råvarer</a></li><li><a href=\"https://techxplore.com/news/2026-11-global-ai-chain-invisible.html\">TechXplore: A third of the global AI supply chain is invisible to policy</a></li><li><a href=\"https://www.verkehrsrundschau.de/nachrichten/transport-logistik/stromsteuer-soll-sinken-aber-erst-einmal-nur-fuer-ein-jahr-3937372\">VerkehrsRundschau: Stromsteuer soll sinken, aber erst einmal nur für ein Jahr</a></li><li><a href=\"https://www.verkehrsrundschau.de/nachrichten/transport-logistik/koalition-einigt-sich-auf-einen-spritpreisdeckel-3937350\">VerkehrsRundschau: Koalition einigt sich auf einen Spritpreisdeckel</a></li><li><a href=\"https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&amp;includeTimeseries=true&amp;includeCurrentMeasurement=true\">Pegelonline: Rhine gauges</a></li><li><a href=\"https://www.verkehrsrundschau.de/nachrichten/transport-logistik/hoehere-trassenpreise-genehmigt-3937343\">VerkehrsRundschau: Höhere Trassenpreise genehmigt</a></li><li><a href=\"http://idw-online.de/de/news880908\">idw-online: FOM Live-Talk Sicherheit &amp; Verteidigung im Wandel</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-19.html\">https://theplanningdesk.github.io/podcast/e/2026-11-19.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3859664,
+    "duration_sec": 241,
+    "pub_date": "2026-11-19T06:30:00+01:00",
+    "transcript_lines": 33
   }
 ]
