@@ -1,0 +1,304 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Inventory Planning: Wrangler's Owner Restocks",
+  "week": "2026-W47",
+  "run_date": "2026-11-19",
+  "brief_file": "news-brief-daily-2026-11-19.md",
+  "target_runtime_sec": 260,
+  "word_count": 749,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-19-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Wrangler's owner let its stock slip six percent, and now it plans to put fifty million dollars back on the shelves."
+        },
+        {
+          "speaker": "M",
+          "text": "Lean looks great on the cash line until the shelves run short. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-19-01",
+        "2026-11-19-02",
+        "2026-11-19-03",
+        "2026-11-19-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Thursday the nineteenth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Kontoor Brands restocks after a rough quarter, Novo plans for scarcer water and glucose, Cambridge maps the blind spots in the A I supply chain, and Berlin agrees a power tax cut, for one year only."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-19-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Kontoor Brands, the company behind Wrangler, says it will put fifty million dollars into inventory, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The reason is a difficult third quarter for its supply chain, with inventory down six percent from a year earlier."
+        },
+        {
+          "speaker": "F",
+          "text": "We only have the summary of that report, so there's no detail yet on which products or which markets ran short."
+        },
+        {
+          "speaker": "M",
+          "text": "Six percent less stock can look like a win in the cash flow statement, and that's usually how this kind of story starts."
+        },
+        {
+          "speaker": "F",
+          "text": "Then the shelves run short, sales slip, and the cash you freed up goes straight back in, usually in a hurry."
+        },
+        {
+          "speaker": "M",
+          "text": "Our view, inventory targets should come from service levels, and the working capital line should be the check, not the driver."
+        },
+        {
+          "speaker": "F",
+          "text": "Run that test on your own plan. For each product family, ask what service level the current stock really supports, and whether anyone agreed to that number."
+        },
+        {
+          "speaker": "M",
+          "text": "If nobody signed off on a lower service level, then the lower stock figure is a risk that nobody has priced."
+        },
+        {
+          "speaker": "F",
+          "text": "And watch the rebuild itself. Fifty million dollars of stock arriving in one push still needs space, supplier slots and a forecast it's bought against."
+        },
+        {
+          "speaker": "M",
+          "text": "Restocking on the same forecast that let the shelves empty is how you end up with the wrong fifty million."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-19-02",
+        "2026-11-19-03",
+        "2026-11-19-04",
+        "2026-11-19-F1",
+        "2026-11-19-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to Denmark, where Novo is preparing for limited access to raw materials, SCM.dk reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The driver is the biodiversity crisis, and water and glucose are under particular scrutiny, because both depend directly on healthy ecosystems."
+        },
+        {
+          "speaker": "M",
+          "text": "The report gives no figures and no named measures, so this is a direction of travel more than a plan we can measure."
+        },
+        {
+          "speaker": "F",
+          "text": "Still, when a Danish pharma giant treats glucose and water as inputs at risk, anyone buying fermentation or process materials should pay attention."
+        },
+        {
+          "speaker": "M",
+          "text": "Our take, add ecosystem risk to your dual sourcing reviews, because two suppliers in two countries can still draw on the same stressed water supply."
+        },
+        {
+          "speaker": "F",
+          "text": "On the A I desk, a new report from the University of Cambridge says as much as a third of the A I supply chain gets no attention from national or international policy and regulation."
+        },
+        {
+          "speaker": "M",
+          "text": "The authors call it a zone of invisibility in the middle of global A I production. The summary we have doesn't say which tiers or components fall inside it."
+        },
+        {
+          "speaker": "F",
+          "text": "Planning teams now run on A I compute and models, and that puts them on tiers nobody regulates or maps."
+        },
+        {
+          "speaker": "M",
+          "text": "Give your A I services the same sub tier supplier map you'd build for any critical component, starting with who runs the compute your planning tools depend on."
+        },
+        {
+          "speaker": "F",
+          "text": "In Germany, the coalition has agreed to cut the electricity tax, but the money is secured only for twenty twenty-seven."
+        },
+        {
+          "speaker": "M",
+          "text": "A permanent cut depends on finding offsetting funds in the twenty twenty-eight federal budget. The leaders also agreed a fuel price cap from the first of January, and the cabinet is due to decide on the second of December."
+        },
+        {
+          "speaker": "F",
+          "text": "That helps production costs in German plants next year, but it doesn't settle where to build, so run your footprint models for twenty twenty-eight with the cut and without it."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, the Rhine at Kaub jumped to ninety-seven centimetres on Wednesday, back above the level barges need for a full channel, and German rail path charges for twenty twenty-seven were approved about eight percent higher."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-19-E1"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "One date for the diary, FOM University of Applied Sciences hosts a live talk on the twenty-fifth of November on how Germany's defence industry can expand production, secure supply chains and find skilled staff."
+        },
+        {
+          "speaker": "F",
+          "text": "Speakers come from Rheinmetall and Fraunhofer F K I E, and if defence volumes are heading your way as a supplier, that's the capacity conversation to hear."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-19-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Thursday."
+        },
+        {
+          "speaker": "M",
+          "text": "Back tomorrow morning with more from the desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Kontoor Brands Puts $50M Back Into Inventory",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Wrangler's owner is putting fifty million dollars back into stock."
+      },
+      {
+        "speaker": "M",
+        "text": "Kontoor Brands, the company behind Wrangler, says the money goes into inventory after a difficult third quarter for its supply chain, Supply Chain Dive reports."
+      },
+      {
+        "speaker": "F",
+        "text": "Inventory fell six percent from a year earlier in that quarter."
+      },
+      {
+        "speaker": "M",
+        "text": "Lower stock can look good on the cash line, right up until the shelves run short and the savings go straight back in."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, set inventory targets from the service level you've agreed, use working capital as the check, and ask who signed off on the level your stock really supports."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Inventory planning: Kontoor Brands, the parent of Wrangler, will invest $50 million in inventory after a difficult third quarter for its supply chain, with stock down 6% year over year. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "inventory",
+      "inventoryplanning",
+      "apparel"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Wrangler's owner let inventory fall 6% and is now putting $50 million back in, a bill every lean plan should price.\n\nKontoor Brands, the parent of Wrangler, says it will invest $50 million in inventory to recover from a difficult third quarter for its supply chain, Supply Chain Dive reports. Inventory fell 6% year over year in the quarter.\n\nFor planners, set inventory targets from agreed service levels and treat the working capital line as the check, not the driver. Before a rebuild, fix the forecast that let the shelves run short.\n\nAlso on today's desk:\nNovo prepares its sourcing for scarcer water and glucose as the biodiversity crisis threatens inputs.\nA University of Cambridge report finds up to a third of the AI supply chain sits outside policy and regulation.\n\nWho in your team signs off on the service level your inventory target is built on?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #inventory #demandplanning",
+    "tags": [
+      "Kontoor Brands",
+      "Supply Chain Dive",
+      "University of Cambridge"
+    ]
+  },
+  "show_notes": {
+    "summary": "Inventory planning: Wrangler owner Kontoor Brands will invest $50 million in inventory after stock fell 6% in a difficult quarter. Also: Novo prepares for scarcer water and glucose, a University of Cambridge report finds up to a third of the AI supply chain outside regulation, Germany agrees a one-year electricity tax cut and a fuel price cap, the Rhine at Kaub recovers, 2027 rail path charges rise about 8%, and a FOM talk on defence supply chains.",
+    "sources": [
+      {
+        "title": "Supply Chain Dive: Wrangler parent company plans to beef up inventory spending",
+        "url": "https://www.supplychaindive.com/news/wrangler-parent-company-plans-to-beef-up-inventory-spending/874783/"
+      },
+      {
+        "title": "SCM.dk: Novo forbereder sig på begrænset adgang til råvarer",
+        "url": "https://www.scm.dk/novo-forbereder-sig-pa-begraenset-adgang-til-ravarer"
+      },
+      {
+        "title": "TechXplore: A third of the global AI supply chain is invisible to policy",
+        "url": "https://techxplore.com/news/2026-11-global-ai-chain-invisible.html"
+      },
+      {
+        "title": "VerkehrsRundschau: Stromsteuer soll sinken, aber erst einmal nur für ein Jahr",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/stromsteuer-soll-sinken-aber-erst-einmal-nur-fuer-ein-jahr-3937372"
+      },
+      {
+        "title": "VerkehrsRundschau: Koalition einigt sich auf einen Spritpreisdeckel",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/koalition-einigt-sich-auf-einen-spritpreisdeckel-3937350"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "VerkehrsRundschau: Höhere Trassenpreise genehmigt",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/hoehere-trassenpreise-genehmigt-3937343"
+      },
+      {
+        "title": "idw-online: FOM Live-Talk Sicherheit & Verteidigung im Wandel",
+        "url": "http://idw-online.de/de/news880908"
+      }
+    ]
+  }
+}

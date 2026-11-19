@@ -1,0 +1,100 @@
+{
+  "stem": "2026-11-19",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Inventory planning",
+        "title": "Wrangler's owner puts $50M back into stock",
+        "source": "Supply Chain Dive"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Kontoor Brands",
+        "value": 50,
+        "label": "million dollars into inventory",
+        "source": "Supply Chain Dive"
+      }
+    },
+    {
+      "line": 1,
+      "at": "difficult third quarter",
+      "template": "headline",
+      "props": {
+        "kicker": "Why now",
+        "title": "A difficult Q3 for its supply chain",
+        "source": "Supply Chain Dive"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Q3, year on year",
+        "value": -6,
+        "label": "percent change in inventory",
+        "source": "Supply Chain Dive"
+      }
+    },
+    {
+      "line": 3,
+      "template": "takeaway",
+      "props": {
+        "kicker": "The lean trap",
+        "text": "Lower stock looks good on the cash line"
+      }
+    },
+    {
+      "line": 3,
+      "at": "shelves run short",
+      "template": "headline",
+      "props": {
+        "kicker": "Then",
+        "title": "Shelves run short, savings go back in"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "title": "For planners",
+        "items": [
+          {
+            "label": "Service level first",
+            "say": "service level you've agreed"
+          },
+          {
+            "label": "Cash as the check",
+            "say": "working capital as the check"
+          },
+          {
+            "label": "Who signed off?",
+            "say": "who signed off"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "who signed off",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Ask",
+        "text": "Who signed off on the service level your stock supports?"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
