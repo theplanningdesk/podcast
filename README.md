@@ -1,6 +1,6 @@
 # The Planning Desk: engagement scorecard
 
-Updated 2026-11-18. Numbers refresh every morning; the full data is in the CSV files on this branch.
+Updated 2026-11-19. Numbers refresh every morning; the full data is in the CSV files on this branch.
 
 OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
@@ -9,7 +9,7 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | Channel | Metric | Now |
 |---|---|---|
 | instagram | followers | 4 |
-| instagram | posts | 23 |
+| instagram | posts | 24 |
 | newsletter | last email | Mercedes Plant Freeze: German Industry Starts Choosing Sites |
 | newsletter | last email clicks | 0 |
 | newsletter | last email deliveries | 2 |
@@ -18,11 +18,11 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 588 |
+| podcast | github mp3 fetches all episodes | 617 |
 | podcast | op3 downloads all episodes | 64 |
 | youtube | subscribers | 5 |
-| youtube | total views | 488 |
-| youtube | videos | 30 |
+| youtube | total views | 504 |
+| youtube | videos | 31 |
 | spotify (typed in 2026-10-30) | followers | 1 |
 | spotify (typed in 2026-10-30) | plays | 8 |
 | linkedin (typed in 2026-10-30) | followers | 3 |
@@ -37,20 +37,21 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-18 | daily | Network Design: Conagra Shuts a Missouri Plant |  | 10 |  | 4 | 13 |
-| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 23 |  | 12 | 62 |
-| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 22 |  | 10 | 121 |
-| 2026-11-15 | weekly | Supply Chain News, Week 46: Mercedes Plants, Cyberattacks, AI Optimisation |  | 27 | 16 |  |  |
-| 2026-11-14 | saturday | The Box by Levinson: Book Summary |  | 24 | 3 | 23 | 23 |
-| 2026-11-13 | daily | EV Battery Sourcing: BMW Goes Local for Local |  | 28 |  | 18 | 9 |
-| 2026-11-12 | daily | Manufacturing Footprint: Deere Closes Two Iowa Plants |  | 31 |  | 5 | 5 |
+| 2026-11-19 | daily | Inventory Planning: Wrangler's Owner Restocks |  | 10 |  | 9 | 0 |
+| 2026-11-18 | daily | Network Design: Conagra Shuts a Missouri Plant |  | 19 |  | 5 | 17 |
+| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 26 |  | 15 | 62 |
+| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 23 |  | 12 | 121 |
+| 2026-11-15 | weekly | Supply Chain News, Week 46: Mercedes Plants, Cyberattacks, AI Optimisation |  | 28 | 16 |  |  |
+| 2026-11-14 | saturday | The Box by Levinson: Book Summary |  | 25 | 3 | 23 | 23 |
+| 2026-11-13 | daily | EV Battery Sourcing: BMW Goes Local for Local |  | 29 |  | 18 | 9 |
+| 2026-11-12 | daily | Manufacturing Footprint: Deere Closes Two Iowa Plants |  | 32 |  | 5 | 5 |
 | 2026-11-11 | daily | Cold Chain Cyberattacks: Danfoss Names Its Own |  | 24 |  | 25 | 110 |
 | 2026-11-10 | daily | Container Freight Rates: Fleet Heads for 50m TEU |  | 26 |  | 5 | 9 |
 | 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 35 |  | 37 | 51 |
 | 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 29 | 25 |  |  |
 | 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 25 | 3 | 30 | 25 |
 | 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 21 |  | 14 | 127 |
-| 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 36 |  | 10 | 23 |
+| 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 38 |  | 10 | 23 |
 | 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 25 |  | 36 | 8 |
 | 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 19 |  | 18 | 108 |
 | 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 27 |  | 44 | 18 |
@@ -67,7 +68,7 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 1. BMW Q3 Results: China Deliveries Drop a Quarter (daily, Thu): 24
 2. Warehouse Network Design: Hitachi Energy Goes Big (daily, Wed): 19
-3. Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices (weekly, Sun): 18
+3. Network Design: Conagra Shuts a Missouri Plant (daily, Wed): 19
 
 ## Source status
 
