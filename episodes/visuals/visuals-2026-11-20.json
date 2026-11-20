@@ -1,0 +1,120 @@
+{
+  "stem": "2026-11-20",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Clermont, Kentucky",
+        "title": "Jim Beam idles its flagship distillery",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 0,
+      "at": "no restart date",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Status",
+        "text": "Paused, with no restart date"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Kentucky, USA",
+        "title": "Production moves down the road",
+        "points": [
+          {
+            "name": "Clermont",
+            "lat": 37.93,
+            "lon": -85.65,
+            "alert": true
+          },
+          {
+            "name": "Boston, KY",
+            "lat": 37.78,
+            "lon": -85.68
+          }
+        ],
+        "pad": 1.2
+      }
+    },
+    {
+      "line": 1,
+      "at": "reassess",
+      "template": "headline",
+      "props": {
+        "kicker": "Jim Beam",
+        "title": "Restart depends on the forecast",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Booker Noe distillery",
+        "value": 45,
+        "label": "million proof gallons a year",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 2,
+      "at": "no layoffs",
+      "template": "headline",
+      "props": {
+        "kicker": "Clermont",
+        "title": "No layoffs tied to the pause",
+        "source": "Food Dive"
+      }
+    },
+    {
+      "line": 3,
+      "template": "stat",
+      "props": {
+        "kicker": "US whiskey inventories",
+        "value": 3,
+        "label": "times a year's demand",
+        "source": "IWSR"
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "Long ageing",
+        "text": "An overshoot in the plan becomes stock nobody can sell"
+      }
+    },
+    {
+      "line": 4,
+      "at": "For planners",
+      "template": "list",
+      "props": {
+        "title": "For planners",
+        "items": [
+          {
+            "label": "A stop rule",
+            "say": "when to stop a line"
+          },
+          {
+            "label": "A start rule",
+            "say": "when to start it"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}

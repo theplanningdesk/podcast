@@ -1,0 +1,334 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Production Planning: Jim Beam Idles Clermont",
+  "week": "2026-W47",
+  "run_date": "2026-11-20",
+  "brief_file": "news-brief-daily-2026-11-20.md",
+  "target_runtime_sec": 310,
+  "word_count": 900,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-20-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Jim Beam has switched off its flagship distillery, and nobody can say when it starts up again."
+        },
+        {
+          "speaker": "M",
+          "text": "When the warehouses hold three years of whiskey, another batch is the last thing you need. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-20-01",
+        "2026-11-20-02",
+        "2026-11-20-03",
+        "2026-11-20-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Friday the twentieth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "On the desk, Jim Beam idles its flagship distillery, Z F builds radars for Hensoldt, Starbucks fills its shelves with daily deliveries, and Nvidia books chip packaging capacity into twenty twenty-nine."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-20-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Jim Beam won't restart production at its flagship distillery in Clermont, Kentucky next year, as it first planned, Food Dive reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The pause now has no end date. A spokesperson says the company will reassess production needs as its forecasts evolve."
+        },
+        {
+          "speaker": "F",
+          "text": "Production moves to the Booker Noe distillery in Boston, Kentucky, the brand's largest at forty-five million proof gallons a year."
+        },
+        {
+          "speaker": "M",
+          "text": "Clermont keeps making Knob Creek, Little Book and Booker's, and the company says no layoffs are tied to the pause."
+        },
+        {
+          "speaker": "F",
+          "text": "The reason sits in the warehouses. The research firm I W S R puts American whiskey stocks at about three times a year's estimated demand."
+        },
+        {
+          "speaker": "M",
+          "text": "And the cheap end of the shelf is shrinking, with value whiskey down seven percent in volume last year."
+        },
+        {
+          "speaker": "F",
+          "text": "Whiskey ages for years, so a production plan that overshoots today turns into stock nobody can sell, long after the decision was made."
+        },
+        {
+          "speaker": "M",
+          "text": "Our take, this is the textbook response. Move volume onto the biggest site, keep the premium lines running, and let the forecast set the restart date, not the calendar."
+        },
+        {
+          "speaker": "F",
+          "text": "The lesson travels beyond spirits. Any product with a long build or ageing time needs a written trigger for when to stop making it, not only for when to start."
+        },
+        {
+          "speaker": "M",
+          "text": "And that stop trigger is far easier to agree before the warehouse is full than after."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-20-V1",
+        "2026-11-20-02",
+        "2026-11-20-03",
+        "2026-11-20-04",
+        "2026-11-20-06",
+        "2026-11-20-F1"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Lora Cecere of Supply Chain Insights made a related point on her blog this week. In her words, \"A financial budget is not an operational plan.\""
+        },
+        {
+          "speaker": "M",
+          "text": "She argues the two should be connected without confusing financial compliance with building enterprise value, and that getting there takes leadership, trust and shared incentives. Technology, she says, is the easy part."
+        },
+        {
+          "speaker": "F",
+          "text": "Worth a check in this year's budget round, which volumes come from the operating plan and which were simply carried over from last year."
+        },
+        {
+          "speaker": "M",
+          "text": "In Germany, the defence firm Hensoldt is handing series production of its Spexer drone defence radars to the car parts maker Z F Friedrichshafen, produktion dot d e reports."
+        },
+        {
+          "speaker": "F",
+          "text": "Demand for drone defence is rising sharply. Z F will set up scalable production, build the radars on its own, ship them straight to customers and develop its own test system, while Hensoldt keeps all the intellectual property."
+        },
+        {
+          "speaker": "M",
+          "text": "There are no volumes, sites or start date yet. Still, a defence company buying capacity from an automotive supplier is a classic make or buy call, and it hints at where spare German car plant capacity may go next."
+        },
+        {
+          "speaker": "F",
+          "text": "Starbucks says inventory availability in its stores is at an all-time high, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The chain moved to daily deliveries and tested a twenty-four hour operating model. In August it set the goal of restocking stores within a day, after dropping a computer vision tool for counting stock and cutting its range by thirty percent."
+        },
+        {
+          "speaker": "F",
+          "text": "That's the cheaper fix for most retail networks. Starbucks got its availability from delivery frequency and a smaller range, not from smarter counting."
+        },
+        {
+          "speaker": "M",
+          "text": "On the A I desk, Nvidia has locked in substrate and packaging capacity with six suppliers, some of it running to mid twenty twenty-nine."
+        },
+        {
+          "speaker": "F",
+          "text": "According to Nvidia, Kinsus will expand the substrate capacity it dedicates to Nvidia more than three and a half times, with output from the second half of twenty twenty-seven, and Amkor's deals total nearly three billion dollars including prepayments."
+        },
+        {
+          "speaker": "M",
+          "text": "Nvidia also reported quarterly revenue of about one hundred and sixteen billion dollars, more than double a year earlier."
+        },
+        {
+          "speaker": "F",
+          "text": "When one buyer prepays for capacity years out, the rest of the queue gets what's left. If you buy electronics for industrial or automotive products, plan on allocation and long-term agreements, not spot buys."
+        },
+        {
+          "speaker": "M",
+          "text": "In market moves, planning software vendor Blue Yonder has named its long-time chief technology officer Salil Joshi interim C E O, as Duncan Angove leaves after four years in charge."
+        },
+        {
+          "speaker": "F",
+          "text": "Joshi joined the company in nineteen ninety-seven. If you're in the middle of an implementation, ask whether the roadmap and partner commitments hold while the top job is interim."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, the Rhine at Kaub rose to one hundred and fourteen centimetres on Thursday, up from ninety-seven a day earlier and well clear of the level barges need for a full channel."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-20-05",
+        "2026-11-20-07"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "German buyers are a little more upbeat, as the B M E autumn barometer shows purchasing managers expecting a slightly better business situation in the coming months, though energy and logistics costs still weigh."
+        },
+        {
+          "speaker": "F",
+          "text": "And Sweden's Husqvarna Group has triggered a U K anti-dumping investigation into robotic mowers from China, on top of the E U case opened last November. If you source or sell those machines in both markets, model the duties separately."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-20-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Friday."
+        },
+        {
+          "speaker": "M",
+          "text": "Tomorrow it's the book of the week, and the full week in review is out on Sunday."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Jim Beam Idles Flagship Distillery as Whiskey Stocks Pile Up",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Jim Beam has switched off its flagship distillery with no restart date."
+      },
+      {
+        "speaker": "M",
+        "text": "The Clermont site in Kentucky was due back next year. Now the company says it will reassess as its forecasts evolve, Food Dive reports."
+      },
+      {
+        "speaker": "F",
+        "text": "Production moves to Booker Noe, the brand's largest distillery at forty-five million proof gallons a year, and no layoffs are tied to the pause."
+      },
+      {
+        "speaker": "M",
+        "text": "The reason is stock, as the research firm I W S R puts American whiskey inventories at about three times a year's demand."
+      },
+      {
+        "speaker": "F",
+        "text": "Whiskey ages for years, so an overshoot in the plan turns into stock nobody can sell. For planners, write down when to stop a line, not only when to start it."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Production planning: Jim Beam has paused its flagship Clermont, Kentucky distillery with no restart date, as US whiskey stocks sit at about 3x annual demand, according to IWSR. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "productionplanning",
+      "inventory",
+      "whiskey"
+    ]
+  },
+  "linkedin": {
+    "page_post": "US whiskey stocks sit at 3x a year's demand, so Jim Beam has idled its flagship distillery with no restart date.\n\nJim Beam won't restart its Clermont, Kentucky distillery in 2027 as planned and will reassess as forecasts evolve, Food Dive reports. Production moves to Booker Noe, its largest site. IWSR puts US whiskey inventories at about three times annual demand.\n\nWhen a product takes years to make, an overshoot becomes stock nobody can sell. Write down the trigger to stop a line, and let the forecast set the restart.\n\nAlso on today's desk:\nZF will take over series production of Hensoldt's drone-defence radars as demand rises sharply.\nStarbucks says store availability is at an all-time high after moving to daily deliveries and a smaller range.\n\nWhich of your long lead time products has a written rule for when to stop making it?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #productionplanning #inventory",
+    "tags": [
+      "Jim Beam",
+      "Food Dive",
+      "ZF"
+    ]
+  },
+  "show_notes": {
+    "summary": "Production planning: Jim Beam pauses its flagship Clermont, Kentucky distillery with no restart date as US whiskey stocks reach 3x annual demand. Also: Lora Cecere on why a budget isn't an operational plan, ZF to build Hensoldt's drone-defence radars, Starbucks reports record store availability with daily deliveries, Nvidia locks in packaging capacity to 2029, Blue Yonder names an interim CEO, the BME autumn barometer, a UK anti-dumping probe into Chinese robotic mowers and the Rhine at Kaub.",
+    "sources": [
+      {
+        "title": "Food Dive: Jim Beam pauses production at flagship distillery",
+        "url": "https://www.fooddive.com/news/jim-beam-flagship-distillery-production-pause/874870/"
+      },
+      {
+        "title": "Supply Chain Dive: Jim Beam won't resume production at flagship distillery next year",
+        "url": "https://www.supplychaindive.com/news/jim-beam-wont-resume-production-at-flagship-distillery-next-year/875019/"
+      },
+      {
+        "title": "Supply Chain Shaman: Defining the role of the budget in supply chain planning",
+        "url": "https://www.supplychainshaman.com/defining-the-role-of-the-budget-in-supply-chain-planning/"
+      },
+      {
+        "title": "produktion.de: Hensoldt und ZF kooperieren, Serienfertigung von Spexer-Radaren zur Drohnenabwehr startet",
+        "url": "https://www.produktion.de/ruestung-aerospace/hensoldt-und-zf-kooperieren-serienfertigung-von-spexer-radaren-zur-drohnenabwehr-startet/2771124"
+      },
+      {
+        "title": "Supply Chain Dive: Starbucks inventory availability at all-time high with daily deliveries",
+        "url": "https://www.supplychaindive.com/news/starbucks-inventory-availability-at-all-time-high-with-daily-deliveries/874923/"
+      },
+      {
+        "title": "Supply Chain Dive: Starbucks targets 24-hour inventory replenishment",
+        "url": "https://supplychaindive.com/news/starbucks-targets-24-hour-inventory-replenishment/827030"
+      },
+      {
+        "title": "NVIDIA newsroom: NVIDIA expands commitments with supply chain partners",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout"
+      },
+      {
+        "title": "Supply Chain Digital: Nvidia extends AI supply chain with long-term supply deals",
+        "url": "https://supplychaindigital.com/news/nvidia-extends-ai-supply-chain-with-long-term-supply-deals"
+      },
+      {
+        "title": "Logistics Viewpoints: Blue Yonder names Salil Joshi interim CEO",
+        "url": "https://logisticsviewpoints.com/2026/11/18/blue-yonder-names-salil-joshi-interim-ceo-amid-broader-leadership-changes/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "BME: BME-Herbstbarometer 2026, Einkauf blickt zuversichtlicher auf die kommenden Monate",
+        "url": "https://www.bme.de/news/bme-herbstbarometer-2026-einkauf-blickt-zuversichtlicher-auf-die-kommenden-monate/"
+      },
+      {
+        "title": "Husqvarna Group: Statement on robotic mower anti-dumping investigation in the UK",
+        "url": "https://mfn.se/cis/a/husqvarna/husqvarna-group-statement-on-robotic-mower-anti-dumping-investigation-in-the-uk-ef44bbc4"
+      }
+    ]
+  }
+}
