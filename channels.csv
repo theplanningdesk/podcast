@@ -325,3 +325,18 @@ date,channel,metric,value
 2026-11-20,newsletter,last_email_open_rate_pct,0.0
 2026-11-20,podcast,op3_downloads_all_episodes,63.0
 2026-11-20,podcast,github_mp3_fetches_all_episodes,670.0
+2026-11-21,youtube,subscribers,5
+2026-11-21,youtube,total_views,530
+2026-11-21,youtube,videos,34
+2026-11-21,instagram,followers,4
+2026-11-21,instagram,posts,26
+2026-11-21,newsletter,subscribers,2
+2026-11-21,newsletter,last_email,Mercedes Plant Freeze: German Industry Starts Choosing Sites
+2026-11-21,newsletter,last_email_recipients,2
+2026-11-21,newsletter,last_email_deliveries,2
+2026-11-21,newsletter,last_email_opens,0
+2026-11-21,newsletter,last_email_clicks,0
+2026-11-21,newsletter,last_email_unsubscriptions,0
+2026-11-21,newsletter,last_email_open_rate_pct,0.0
+2026-11-21,podcast,op3_downloads_all_episodes,65.0
+2026-11-21,podcast,github_mp3_fetches_all_episodes,702.0
