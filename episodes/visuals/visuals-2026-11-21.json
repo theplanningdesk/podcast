@@ -1,0 +1,720 @@
+{
+  "stem": "2026-11-21",
+  "cues": [
+    {
+      "line": 0,
+      "kicker": "Book of the week",
+      "headline": "Financial Intelligence, by Karen Berman and Joe Knight",
+      "sub": "A finance guide for managers, first published 2006, revised 2013",
+      "source": "Harvard Business Review Press"
+    },
+    {
+      "line": 1,
+      "kicker": "AI disclosure",
+      "headline": "Researched by AI agents, read by synthetic voices"
+    },
+    {
+      "line": 2,
+      "kicker": "Book of the week",
+      "headline": "Financial Intelligence",
+      "sub": "Karen Berman and Joe Knight, with John Case"
+    },
+    {
+      "line": 3,
+      "kicker": "The big idea",
+      "headline": "Profit is an estimate, cash is the check",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Two kinds of number",
+          "items": [
+            {
+              "label": "Profit",
+              "detail": "built on estimates",
+              "say": "estimate"
+            },
+            {
+              "label": "Cash",
+              "detail": "what came in and went out",
+              "say": "cash"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 4,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Stock, terms and service levels hold the cash"
+    },
+    {
+      "line": 5,
+      "kicker": "What kind of book",
+      "headline": "A field guide to finance for non-finance managers",
+      "sub": "Read the three statements, then question them",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "The three statements",
+          "items": [
+            {
+              "label": "Income statement",
+              "say": "financial statements"
+            },
+            {
+              "label": "Balance sheet",
+              "say": "financial statements"
+            },
+            {
+              "label": "Cash flow statement",
+              "say": "financial statements"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 6,
+      "kicker": "The authors",
+      "headline": "Trainers and a working CFO",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Who wrote it",
+          "items": [
+            {
+              "label": "Karen Berman",
+              "detail": "founded the Business Literacy Institute",
+              "say": "Karen Berman"
+            },
+            {
+              "label": "Joe Knight",
+              "detail": "longtime CFO of Setpoint",
+              "say": "Joe Knight"
+            },
+            {
+              "label": "John Case",
+              "detail": "former senior writer, Inc.",
+              "say": "John Case"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 7,
+      "keep": true,
+      "kicker": "John Case",
+      "headline": "He coined the term open-book management",
+      "sub": "Used it from 1993, in Inc. magazine",
+      "source": "Wikipedia"
+    },
+    {
+      "line": 8,
+      "kicker": "Editions",
+      "headline": "First edition 2006, revised 2013",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Editions",
+          "items": [
+            {
+              "label": "First edition",
+              "detail": "2006, Harvard Business School Press",
+              "say": "first edition"
+            },
+            {
+              "label": "Revised edition",
+              "detail": "2013, Harvard Business Review Press",
+              "say": "revised edition"
+            },
+            {
+              "label": "Spin-offs",
+              "detail": "HR professionals, entrepreneurs",
+              "say": "H R professionals"
+            }
+          ]
+        }
+      },
+      "source": "O'Reilly, Inc."
+    },
+    {
+      "line": 9,
+      "keep": true,
+      "kicker": "The series",
+      "headline": "Spin-offs for HR professionals and entrepreneurs"
+    },
+    {
+      "line": 10,
+      "kicker": "How hard to read",
+      "headline": "Short chapters, simple ratios, sample financials",
+      "kpis": [
+        {
+          "value": 270,
+          "prefix": "~",
+          "label": "pages, revised edition"
+        }
+      ],
+      "source": "O'Reilly"
+    },
+    {
+      "line": 11,
+      "kicker": "Big idea 1",
+      "headline": "Finance is an art as well as a science",
+      "sub": "Part One: The Art of Finance",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Where estimates hide",
+          "items": [
+            {
+              "label": "Revenue",
+              "detail": "when a delivery counts",
+              "say": "Revenue"
+            },
+            {
+              "label": "Costs",
+              "detail": "allocation keys",
+              "say": "Costs"
+            },
+            {
+              "label": "Assets",
+              "detail": "useful lives, values",
+              "say": "Assets"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 12,
+      "keep": true,
+      "kicker": "Big idea 1",
+      "headline": "Not fraud, just judgment calls"
+    },
+    {
+      "line": 13,
+      "keep": true,
+      "kicker": "Big idea 1",
+      "headline": "Revenue timing and cost allocation are decisions"
+    },
+    {
+      "line": 14,
+      "keep": true,
+      "kicker": "Big idea 1",
+      "headline": "Estimates and assumptions, except for cash",
+      "sub": "Chapter 11 of the revised edition"
+    },
+    {
+      "line": 15,
+      "kicker": "Planning example",
+      "headline": "Same warehouse, different yearly cost",
+      "sub": "Illustration, not from the book",
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Write-off period, years",
+          "items": [
+            {
+              "label": "Option A",
+              "value": 10
+            },
+            {
+              "label": "Option B",
+              "value": 20,
+              "highlight": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 16,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Ask which assumptions sit inside the business case"
+    },
+    {
+      "line": 17,
+      "kicker": "Big idea 2",
+      "headline": "Profit and cash differ, and you need both",
+      "sub": "Part Four: Cash Is King",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "Why they drift apart",
+          "title": "Profit up, cash down",
+          "steps": [
+            {
+              "label": "Sale booked",
+              "detail": "revenue now",
+              "say": "sale booked"
+            },
+            {
+              "label": "Customer pays later",
+              "detail": "receivables grow",
+              "say": "paid for"
+            },
+            {
+              "label": "Machine bought",
+              "detail": "expensed over years",
+              "say": "machine bought"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 18,
+      "keep": true,
+      "kicker": "Big idea 2",
+      "headline": "Cash is the reality check"
+    },
+    {
+      "line": 20,
+      "kicker": "Planning example",
+      "headline": "Fast growth can drain the bank account",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Where growth puts cash",
+          "items": [
+            {
+              "label": "Stock ahead of demand",
+              "say": "builds stock"
+            },
+            {
+              "label": "Slower customer payments",
+              "say": "waits longer"
+            },
+            {
+              "label": "Profit rises, cash falls",
+              "say": "bank balance falls"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 21,
+      "keep": true,
+      "kicker": "Big idea 2",
+      "headline": "A record year can still mean a spending freeze"
+    },
+    {
+      "line": 22,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Every pallet for service is cash on hold"
+    },
+    {
+      "line": 23,
+      "kicker": "Big idea 3",
+      "headline": "The balance sheet can be managed",
+      "sub": "Part Three: The Balance Sheet Reveals the Most",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Working capital levers",
+          "items": [
+            {
+              "label": "Receivables"
+            },
+            {
+              "label": "Inventory"
+            },
+            {
+              "label": "Payables"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 25,
+      "keep": true,
+      "kicker": "The authors' view",
+      "headline": "Managing the balance sheet works like financial magic",
+      "source": "Financial Intelligence, ch. 28"
+    },
+    {
+      "line": 26,
+      "keep": true,
+      "kicker": "Big idea 3",
+      "headline": "Better results without more sales or lower costs"
+    },
+    {
+      "line": 27,
+      "kicker": "Cash conversion cycle",
+      "headline": "Days in stock plus days to collect minus days to pay",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "Cash conversion cycle",
+          "title": "Days cash is locked up",
+          "steps": [
+            {
+              "label": "Days in stock",
+              "detail": "before it sells",
+              "say": "days stock sits"
+            },
+            {
+              "label": "Plus days to collect",
+              "detail": "customers pay",
+              "say": "days customers take"
+            },
+            {
+              "label": "Minus days to pay",
+              "detail": "suppliers",
+              "say": "pay suppliers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 28,
+      "keep": true,
+      "kicker": "Cash conversion cycle",
+      "headline": "Shorter cycle, cash released without a sale"
+    },
+    {
+      "line": 29,
+      "kicker": "Planning example",
+      "headline": "Planners set the days in inventory",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Planning choices that move it",
+          "items": [
+            {
+              "label": "Safety stock settings",
+              "say": "Safety stock"
+            },
+            {
+              "label": "Minimum order quantities",
+              "say": "minimum order"
+            },
+            {
+              "label": "Where stock is held",
+              "say": "where to hold stock"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 30,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Speak finance: days and cash released"
+    },
+    {
+      "line": 31,
+      "kicker": "Big idea 4",
+      "headline": "Everyone should read the scoreboard",
+      "sub": "Open-book management"
+    },
+    {
+      "line": 33,
+      "kicker": "Open-book management",
+      "headline": "Jack Stack's principles at SRC",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Three principles",
+          "items": [
+            {
+              "label": "Teach the rules",
+              "say": "teach the rules"
+            },
+            {
+              "label": "Keep score",
+              "say": "keep score"
+            },
+            {
+              "label": "Give a stake",
+              "detail": "in the outcome",
+              "say": "stake in the outcome"
+            }
+          ]
+        }
+      },
+      "source": "Wikipedia"
+    },
+    {
+      "line": 34,
+      "keep": true,
+      "kicker": "Part Eight",
+      "headline": "Financial transparency as the end goal"
+    },
+    {
+      "line": 35,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Share inventory, service and cash numbers"
+    },
+    {
+      "line": 36,
+      "kicker": "Why it matters now",
+      "headline": "Stock is cash, and planners set the stock"
+    },
+    {
+      "line": 37,
+      "kicker": "S&OP",
+      "headline": "The words for the financial half of the plan"
+    },
+    {
+      "line": 38,
+      "kicker": "Network design",
+      "headline": "A new DC touches every statement",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Where a new DC lands",
+          "items": [
+            {
+              "label": "Fixed assets"
+            },
+            {
+              "label": "Depreciation"
+            },
+            {
+              "label": "Transport cost"
+            },
+            {
+              "label": "Stock"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 39,
+      "kicker": "Where it holds",
+      "headline": "Estimates, cash and working capital still apply"
+    },
+    {
+      "line": 40,
+      "kicker": "Where it has dated",
+      "headline": "American examples, US GAAP rules",
+      "sub": "Nordic and German listed groups report under IFRS"
+    },
+    {
+      "line": 42,
+      "kicker": "Fair critics",
+      "headline": "Light on NPV and IRR, little on incentives",
+      "source": "Book Club analysis"
+    },
+    {
+      "line": 43,
+      "kicker": "Verdict",
+      "headline": "For understanding numbers, not valuation models"
+    },
+    {
+      "line": 44,
+      "kicker": "Who should read it",
+      "headline": "Inventory planners, network designers, new budget owners"
+    },
+    {
+      "line": 46,
+      "kicker": "Time needed",
+      "headline": "A few evenings",
+      "kpis": [
+        {
+          "value": 6.5,
+          "decimals": 1,
+          "suffix": " h",
+          "label": "audiobook length"
+        }
+      ],
+      "source": "O'Reilly"
+    },
+    {
+      "line": 47,
+      "kicker": "Where to start",
+      "headline": "Cash and working capital first",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Reading order",
+          "items": [
+            {
+              "label": "Part Four",
+              "detail": "Cash Is King",
+              "say": "part on cash"
+            },
+            {
+              "label": "Part Seven",
+              "detail": "Working capital",
+              "say": "working capital"
+            },
+            {
+              "label": "Part One",
+              "detail": "The Art of Finance",
+              "say": "art of finance"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 48,
+      "kicker": "Which edition",
+      "headline": "Get the revised edition from 2013",
+      "sub": "Free extra: Joe Knight on the FP&A Today podcast, 2024"
+    },
+    {
+      "line": 49,
+      "kicker": "Also on the shelf",
+      "headline": "Two books that take it into supply chain",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Also on the shelf",
+          "items": [
+            {
+              "label": "Supply Chain Metrics That Matter",
+              "detail": "Lora Cecere, 2014",
+              "say": "Supply Chain Metrics That Matter"
+            },
+            {
+              "label": "Supply Chain Strategy and Financial Metrics",
+              "detail": "Bram Desmet, 2018",
+              "say": "Supply Chain Strategy and Financial Metrics"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 50,
+      "keep": true,
+      "kicker": "Lora Cecere, 2014",
+      "headline": "Financial results of 100+ companies, 2006 to 2013",
+      "kpis": [
+        {
+          "value": 100,
+          "prefix": "over ",
+          "label": "companies tracked"
+        }
+      ],
+      "source": "Wiley via O'Reilly"
+    },
+    {
+      "line": 51,
+      "keep": true,
+      "kicker": "Bram Desmet, 2018",
+      "headline": "The triangle of service, cost and cash"
+    },
+    {
+      "line": 52,
+      "kicker": "Next Saturday",
+      "headline": "Sales and Operations Planning: The How-To Handbook",
+      "sub": "Thomas Wallace and Robert Stahl"
+    },
+    {
+      "line": 53,
+      "kicker": "The Planning Desk",
+      "headline": "News Monday, week in review tomorrow"
+    }
+  ],
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Book of the week",
+        "title": "Profit is an estimate, cash checks it",
+        "detail": "Financial Intelligence, Berman and Knight"
+      }
+    },
+    {
+      "line": 1,
+      "template": "headline",
+      "props": {
+        "kicker": "The book",
+        "title": "Financial Intelligence",
+        "detail": "Karen Berman and Joe Knight, 2006, revised 2013"
+      }
+    },
+    {
+      "line": 2,
+      "template": "list",
+      "props": {
+        "title": "Judgment calls",
+        "items": [
+          "Revenue timing",
+          "Cost allocations",
+          "Asset lives"
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "at": "two honest teams",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Same year",
+        "text": "Two honest teams, two different profits"
+      }
+    },
+    {
+      "line": 3,
+      "template": "takeaway",
+      "props": {
+        "kicker": "Cash",
+        "text": "Harder to dress up than profit"
+      }
+    },
+    {
+      "line": 3,
+      "at": "record profit",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Fast growth",
+        "text": "Record profit, draining bank account"
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "title": "Release cash",
+        "items": [
+          "Fewer stock days",
+          "Faster collection",
+          "Supplier terms"
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "without one extra sale",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Cash released without one extra sale"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "Who should read it",
+        "title": "Inventory planners",
+        "detail": "and anyone presenting plans to finance"
+      }
+    },
+    {
+      "line": 6,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "A book every Saturday",
+        "detail": "Apple Podcasts and Spotify"
+      }
+    }
+  ]
+}

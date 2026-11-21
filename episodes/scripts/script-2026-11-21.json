@@ -1,0 +1,400 @@
+{
+  "show": "The Planning Desk",
+  "format": "saturday",
+  "episode_title": "Financial Intelligence by Berman and Knight",
+  "week": "2026-W47",
+  "run_date": "2026-11-21",
+  "target_runtime_sec": 489,
+  "word_count": 1436,
+  "book": {
+    "key": "finint",
+    "title": "Financial Intelligence",
+    "author": "Karen Berman and Joe Knight, with John Case",
+    "year": 2006,
+    "edition": "Revised edition, Harvard Business Review Press, 2013"
+  },
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "N": {
+      "name": "Narrator"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "book_intro",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "It's Saturday, the twenty-first of November. I'm Anna, and this is the book of the week on The Planning Desk."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents research the book, and the voices are synthetic."
+        },
+        {
+          "speaker": "F",
+          "text": "Today it's Financial Intelligence, by Karen Berman and Joe Knight with John Case, a finance guide for managers first published in two thousand six. Here's our narrator."
+        }
+      ]
+    },
+    {
+      "id": "book_open",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Every profit figure you see is an estimate, built on choices someone made, and cash is the number that checks it."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners that matters, because stock, payment terms and service levels are where much of that cash sits."
+        }
+      ]
+    },
+    {
+      "id": "book_context",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Financial Intelligence is a field guide for managers who don't work in finance. It teaches how to read the three financial statements and, more usefully, how to question them."
+        },
+        {
+          "speaker": "N",
+          "text": "Karen Berman founded the Business Literacy Institute, a firm that trains managers in finance. Joe Knight joined her in two thousand four, and for many years he was chief financial officer of a company called Setpoint."
+        },
+        {
+          "speaker": "N",
+          "text": "John Case, the third author, is a former senior writer at Inc. magazine. He coined the term open-book management in the early nineteen nineties, and that idea runs through the book."
+        },
+        {
+          "speaker": "N",
+          "text": "Harvard Business School Press published the first edition in two thousand six. The revised edition from twenty thirteen brings the numbers up to date and adds questions raised by the financial crisis."
+        },
+        {
+          "speaker": "N",
+          "text": "Berman died in the summer of twenty thirteen, the year the revised edition came out. The authors also wrote versions for H R professionals and for entrepreneurs."
+        },
+        {
+          "speaker": "N",
+          "text": "It's an easy read for a finance book, about two hundred and seventy pages in short chapters, with sample financials at the back and no maths beyond simple ratios."
+        }
+      ]
+    },
+    {
+      "id": "big_ideas",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "The first big idea is that finance is an art as well as a science. The book's opening part is called The Art of Finance, and its first chapter warns that you can't always trust the numbers."
+        },
+        {
+          "speaker": "N",
+          "text": "The point isn't fraud. Accounting rules force people to estimate, and every estimate is a judgment call."
+        },
+        {
+          "speaker": "N",
+          "text": "Revenue is booked when it's earned, which is a decision about when a delivery counts. Costs are matched to sales and spread across products by someone's allocation key."
+        },
+        {
+          "speaker": "N",
+          "text": "Assets carry the same kind of guesswork. The chapter on them is titled More Estimates and Assumptions, Except for Cash."
+        },
+        {
+          "speaker": "N",
+          "text": "Here's a planning example, not from the book. A new warehouse written off over twenty years shows a lower yearly cost than the same warehouse written off over ten, and the building and the cash are identical."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners the lesson is simple. Before you trust a cost per unit or a business case, ask which assumptions are inside it and who chose them."
+        },
+        {
+          "speaker": "N",
+          "text": "The second idea is that profit and cash are different things, and a company needs both. One part of the book is called Cash Is King, and its first chapter calls cash a reality check."
+        },
+        {
+          "speaker": "N",
+          "text": "Profit is an estimate of what the period earned. Cash is what actually came in and went out, and it's much harder to dress up."
+        },
+        {
+          "speaker": "N",
+          "text": "The two drift apart all the time. A sale booked today may not be paid for until next quarter, and a machine bought today is expensed bit by bit over years."
+        },
+        {
+          "speaker": "N",
+          "text": "A planning example makes it concrete. A business growing fast builds stock ahead of demand and waits longer for customers to pay, so profit can rise while the bank balance falls."
+        },
+        {
+          "speaker": "N",
+          "text": "That's how a finance team can report a record year and still ask everyone to stop spending. Working capital is usually what ate the cash."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners this means a stock build is never free. Every pallet you add for service is cash the company can't use for anything else until the goods sell."
+        },
+        {
+          "speaker": "N",
+          "text": "The third idea is the one planners should read twice. The balance sheet can be managed, and much of it is set by operating decisions."
+        },
+        {
+          "speaker": "N",
+          "text": "The book's part on the balance sheet is titled The Balance Sheet Reveals the Most. A later part applies that to working capital, the cash tied up in daily operations."
+        },
+        {
+          "speaker": "N",
+          "text": "In the authors' words, astute management of the balance sheet is like financial magic."
+        },
+        {
+          "speaker": "N",
+          "text": "Their reason is that it can improve results without selling more or cutting costs. The levers are receivables, inventory and payables."
+        },
+        {
+          "speaker": "N",
+          "text": "They tie the levers together in the cash conversion cycle. Take the days stock sits before it sells, add the days customers take to pay, and subtract the days you take to pay suppliers."
+        },
+        {
+          "speaker": "N",
+          "text": "The result is how many days each krona or euro stays locked in the business before it comes home. Shorten it and cash is released without one extra sale."
+        },
+        {
+          "speaker": "N",
+          "text": "Here's another planning example. Safety stock settings, minimum order quantities and the choice of where to hold stock all move the days in inventory, and none of those choices are made in finance."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners the lesson is to state a recommendation in the language finance uses. Days of inventory released and the cash it frees will get further than a higher turn rate on a slide."
+        },
+        {
+          "speaker": "N",
+          "text": "The fourth idea is that companies run better when everyone can read the scoreboard."
+        },
+        {
+          "speaker": "N",
+          "text": "It comes from open-book management, the practice Case named, where a company shares its financial numbers with all its staff and teaches them to read them."
+        },
+        {
+          "speaker": "N",
+          "text": "The classic example is Jack Stack's company S R C. His principles were to teach the rules, keep score, and give people a stake in the outcome."
+        },
+        {
+          "speaker": "N",
+          "text": "The book's last part is about building a financially intelligent company, and its final chapter names financial transparency as the authors' ultimate goal."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners this is practical. A planning team that shares inventory, service and cash numbers with sales and finance agrees on a plan faster, because everyone argues from the same facts."
+        }
+      ]
+    },
+    {
+      "id": "for_planners",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Why read a finance guide on a planning show? Because stock is cash, and planners set the stock."
+        },
+        {
+          "speaker": "N",
+          "text": "Sales and operations planning, S and OP, is meant to tie the operating plan to the financial plan. This book gives planners the words for the financial half."
+        },
+        {
+          "speaker": "N",
+          "text": "Network designers get the same benefit. A new distribution centre changes fixed assets, depreciation, transport cost and stock all at once, and the book explains where each one lands."
+        },
+        {
+          "speaker": "N",
+          "text": "Where it holds, it holds well. The logic of estimates, cash and working capital hasn't changed since the first edition."
+        },
+        {
+          "speaker": "N",
+          "text": "Where it has dated, the issue is mostly geography. The examples are American and the rules are American G A A P, while listed groups in the Nordics and Germany report under I F R S."
+        },
+        {
+          "speaker": "N",
+          "text": "The ideas carry over, but some of the accounting details don't, so check local rules before you quote a line item."
+        },
+        {
+          "speaker": "N",
+          "text": "One online review names other limits. It finds the coverage of net present value and internal rate of return brief, and says the book has little on the pay and analyst pressure that tempt people to bend numbers."
+        },
+        {
+          "speaker": "N",
+          "text": "The same review calls those limits narrow, and that's a fair reading. This is a book for understanding the numbers, not for building a valuation model."
+        }
+      ]
+    },
+    {
+      "id": "reading_guide",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Read it if you plan inventory, design networks or present plans to a finance team, or if you've just moved into a role with a budget of your own."
+        },
+        {
+          "speaker": "N",
+          "text": "Finance people will find most of it familiar, since it's written for everyone else."
+        },
+        {
+          "speaker": "N",
+          "text": "Plan on a few evenings. The audiobook runs about six and a half hours."
+        },
+        {
+          "speaker": "N",
+          "text": "If time is short, read the part on cash and the part on working capital first, then go back to the opening part on the art of finance. You can skim the ratio chapters if you already work with them."
+        },
+        {
+          "speaker": "N",
+          "text": "Get the revised edition from twenty thirteen. Joe Knight also explains the core ideas in a free twenty twenty-four interview on the F P and A Today podcast."
+        }
+      ]
+    },
+    {
+      "id": "shelf",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Also on the shelf, two books that take the same ideas deeper into supply chain."
+        },
+        {
+          "speaker": "N",
+          "text": "Supply Chain Metrics That Matter, by Lora Cecere, from twenty fourteen. It tracks more than a hundred companies from two thousand six to twenty thirteen and links their financial results to how mature their supply chains are."
+        },
+        {
+          "speaker": "N",
+          "text": "And Supply Chain Strategy and Financial Metrics, by Bram Desmet, from twenty eighteen. It frames supply chain choices as a triangle of service, cost and cash, which is today's book applied to a planner's daily trade-offs."
+        }
+      ]
+    },
+    {
+      "id": "book_sign_off",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Next Saturday, it's Sales and Operations Planning, The How-To Handbook, by Thomas Wallace and Robert Stahl."
+        },
+        {
+          "speaker": "F",
+          "text": "News is back Monday morning, and the week in review is out tomorrow. I'm Anna, thanks for listening."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Financial Intelligence: Why Profit Is an Estimate",
+    "lines": [
+      {
+        "speaker": "N",
+        "text": "Profit is an estimate. Cash is the number that checks it."
+      },
+      {
+        "speaker": "N",
+        "text": "That's the core of Financial Intelligence, by Karen Berman and Joe Knight, a finance guide for managers who aren't accountants."
+      },
+      {
+        "speaker": "N",
+        "text": "Revenue timing, cost allocations and asset lives are all judgment calls, so two honest teams can report different profits for the same year."
+      },
+      {
+        "speaker": "N",
+        "text": "Cash is harder to dress up. A fast-growing business can show record profit while stock and unpaid invoices drain the bank account."
+      },
+      {
+        "speaker": "N",
+        "text": "The fix sits with operations. Fewer days of stock, faster collection and sensible supplier terms release cash without one extra sale."
+      },
+      {
+        "speaker": "N",
+        "text": "Read it if you plan inventory or present plans to finance, and start with the chapters on cash."
+      },
+      {
+        "speaker": "F",
+        "text": "A book every Saturday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Book of the week: Financial Intelligence by Karen Berman and Joe Knight (2006). It shows why every profit figure rests on estimates and judgment calls, and why cash is the reality check. For planners, the chapters on working capital and the cash conversion cycle show how stock, payment terms and supplier terms turn into cash. Full episode: The Planning Desk, every Saturday on Apple Podcasts and Spotify. AI-generated: AI agents research the book and the voices are synthetic.",
+    "hashtags": [
+      "books",
+      "supplychain",
+      "finance",
+      "workingcapital",
+      "inventory"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Profit is an estimate and cash is the reality check. Planners control more of that cash than most of them think.\n\nBook of the week: Financial Intelligence by Karen Berman and Joe Knight, 2006 (revised edition 2013).\n\nRevenue timing, cost allocations and asset lives are all judgment calls. Before you trust a cost per unit in a business case, ask who chose the assumptions.\n\nProfit and cash drift apart whenever stock and receivables grow. A stock build for service is cash the company can't use until the goods sell.\n\nThe cash conversion cycle is days in stock plus days to get paid minus days to pay suppliers. Safety stock and order quantities move it, so state recommendations as days and cash released.\n\nRead it if you plan inventory or present plans to finance.\n\nHow many days of your cash conversion cycle does your planning team actually own?\n\nListen: The Planning Desk, a book every Saturday on Apple Podcasts and Spotify.\n\n#SupplyChain #WorkingCapital #Inventory",
+    "tags": [
+      "Joe Knight"
+    ]
+  },
+  "show_notes": {
+    "summary": "Financial Intelligence by Karen Berman and Joe Knight explains why profit is an estimate and cash is the reality check. The episode covers the art of finance, profit against cash, working capital and the cash conversion cycle, and open-book management, and what each means for inventory planners and network designers. For planners who present plans to finance or own a budget.",
+    "sources": [
+      {
+        "title": "O'Reilly: Financial Intelligence, Revised Edition (Harvard Business Review Press, 2013), contents and description",
+        "url": "https://www.oreilly.com/library/view/financial-intelligence-revised/9781422144121/"
+      },
+      {
+        "title": "O'Reilly: Financial Intelligence, Revised Edition, chapter 28, The Magic of Managing the Balance Sheet",
+        "url": "https://www.oreilly.com/library/view/financial-intelligence-revised/9781422144121/xhtml/chapter28.xhtml"
+      },
+      {
+        "title": "Wikipedia: Financial intelligence (business)",
+        "url": "https://en.wikipedia.org/wiki/Financial_intelligence_(business)"
+      },
+      {
+        "title": "O'Reilly: Financial Intelligence for HR Professionals, about the authors",
+        "url": "https://www.oreilly.com/library/view/financial-intelligence-for/9781422163306/e9781422163306_ata01.html"
+      },
+      {
+        "title": "Inc.: John Case, Karen Berman, Patron Saint of Financial Intelligence",
+        "url": "https://inc.com/john-case/karen-berman-patron-saint-of-open-book-management.html"
+      },
+      {
+        "title": "Wikipedia: Open-book management",
+        "url": "https://en.wikipedia.org/wiki/Open-book_management"
+      },
+      {
+        "title": "Readingraphics: Book summary, Financial Intelligence",
+        "url": "https://readingraphics.com/book-summary-financial-intelligence/"
+      },
+      {
+        "title": "Book Club: Financial Intelligence, book analysis",
+        "url": "https://josh-mc3.github.io/Book-Club/financial-intelligence.html"
+      },
+      {
+        "title": "Shortform: Financial Intelligence by Karen Berman",
+        "url": "https://www.shortform.com/blog/financial-intelligence-karen-berman/"
+      },
+      {
+        "title": "Datarails, FP&A Today: The Art of Finance, Joe Knight",
+        "url": "https://www.datarails.com/blog/the-art-of-finance-joe-knight-on-demystifying-numbers-to-empower-businesses/"
+      },
+      {
+        "title": "O'Reilly: Supply Chain Metrics That Matter, Lora Cecere (Wiley, 2014)",
+        "url": "https://www.oreilly.com/library/view/supply-chain-metrics/9781118938973/"
+      },
+      {
+        "title": "Supply Chain Movement: Bram Desmet, Supply chain professionals must understand ROCE",
+        "url": "https://www.supplychainmovement.com/?p=17271"
+      }
+    ]
+  }
+}
