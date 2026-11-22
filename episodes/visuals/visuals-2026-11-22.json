@@ -1,0 +1,1555 @@
+{
+  "stem": "2026-11-22",
+  "cues": [
+    {
+      "line": 0,
+      "kicker": "Germany",
+      "headline": "Two German plants on the table, full-day strikes on the line",
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 2,
+          "points": [
+            {
+              "name": "Ingolstadt (Audi)",
+              "lat": 48.77,
+              "lon": 11.42,
+              "alert": true
+            },
+            {
+              "name": "Munich (BMW)",
+              "lat": 48.18,
+              "lon": 11.56,
+              "alert": true
+            },
+            {
+              "name": "Friedrichshafen (ZF)",
+              "lat": 47.65,
+              "lon": 9.48,
+              "alert": true
+            },
+            {
+              "name": "Stuttgart",
+              "lat": 48.78,
+              "lon": 9.18,
+              "muted": true
+            }
+          ],
+          "routes": []
+        }
+      },
+      "source": "AUTOHAUS (dpa)"
+    },
+    {
+      "line": 1,
+      "keep": true,
+      "kicker": "The Planning Desk",
+      "headline": "The week in review, week 47"
+    },
+    {
+      "line": 4,
+      "kicker": "This week",
+      "headline": "Four threads",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "German industry",
+              "detail": "Closures on the table, strikes on the line",
+              "say": "German industry"
+            },
+            {
+              "label": "Make less",
+              "detail": "Output follows the forecast down",
+              "say": "cutting output"
+            },
+            {
+              "label": "AI capital and capacity",
+              "detail": "Money and chips in a few hands",
+              "say": "chip capacity"
+            },
+            {
+              "label": "Suez and Hormuz",
+              "detail": "Lead times split by origin",
+              "say": "Suez is opening"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 4,
+      "at": "our voices are synthetic",
+      "keep": true,
+      "kicker": "About this show",
+      "headline": "Made with AI, synthetic voices",
+      "sub": "AI agents gather the news. Anna and Erik are synthetic voices."
+    },
+    {
+      "line": 5,
+      "keep": true,
+      "kicker": "This week",
+      "headline": "Producers make less, AI money concentrates"
+    },
+    {
+      "line": 6,
+      "keep": true,
+      "kicker": "This week",
+      "headline": "Suez opens, Hormuz stays shut"
+    },
+    {
+      "line": 7,
+      "kicker": "Mercedes-Benz, Germany",
+      "headline": "Two German plants on the table",
+      "sub": "Redundancy programme to restart in early December. No plant named.",
+      "kpis": [
+        {
+          "value": 2,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "German plants on the table",
+          "accent": true
+        },
+        {
+          "value": 108000,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "of 164,000 staff in Germany"
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Mercedes-Benz staff",
+          "items": [
+            {
+              "label": "Germany",
+              "value": 108000,
+              "highlight": true
+            },
+            {
+              "label": "Rest of world",
+              "value": 56000
+            }
+          ]
+        }
+      },
+      "source": "AUTOHAUS (dpa)"
+    },
+    {
+      "line": 8,
+      "kicker": "Mercedes-Benz cost case",
+      "headline": "A German production hour costs up to five times more",
+      "sub": "CEO Ola Källenius: sites abroad also offer longer annual working hours.",
+      "kpis": [
+        {
+          "value": 5,
+          "prefix": "up to ",
+          "suffix": "x",
+          "decimals": 0,
+          "label": "cost of a German hour vs Eastern Europe",
+          "accent": true
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Production labour cost per hour, index",
+          "items": [
+            {
+              "label": "Eastern Europe",
+              "value": 1
+            },
+            {
+              "label": "Germany, up to",
+              "value": 5,
+              "highlight": true
+            }
+          ],
+          "suffix": "x"
+        }
+      },
+      "source": "AUTOHAUS (dpa)"
+    },
+    {
+      "line": 9,
+      "kicker": "IG Metall",
+      "headline": "From short stoppages to full-day strikes",
+      "sub": "Audi Ingolstadt, BMW Munich and several ZF sites on 19 November.",
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 2,
+          "points": [
+            {
+              "name": "Ingolstadt (Audi)",
+              "lat": 48.77,
+              "lon": 11.42,
+              "alert": true
+            },
+            {
+              "name": "Munich (BMW)",
+              "lat": 48.18,
+              "lon": 11.56,
+              "alert": true
+            },
+            {
+              "name": "Friedrichshafen (ZF)",
+              "lat": 47.65,
+              "lon": 9.48,
+              "alert": true
+            },
+            {
+              "name": "Stuttgart",
+              "lat": 48.78,
+              "lon": 9.18,
+              "muted": true
+            }
+          ],
+          "routes": []
+        }
+      },
+      "source": "AUTOHAUS (dpa)"
+    },
+    {
+      "line": 10,
+      "keep": true,
+      "kicker": "Baden-Württemberg",
+      "headline": "About 90 plants due to strike by 24 November",
+      "kpis": [
+        {
+          "value": 5,
+          "prefix": "",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "union demand over 12 months",
+          "accent": true
+        },
+        {
+          "value": 1.3,
+          "prefix": "",
+          "suffix": "%",
+          "decimals": 1,
+          "label": "employer offer for 2028"
+        }
+      ]
+    },
+    {
+      "line": 11,
+      "kicker": "ZF and Hensoldt",
+      "headline": "ZF takes over series production of drone-defence radars",
+      "sub": "Hensoldt keeps all intellectual property.",
+      "source": "produktion.de"
+    },
+    {
+      "line": 11,
+      "at": "Suppliers should plan December",
+      "kicker": "For planners",
+      "headline": "Plan December and Q1 for strike days and a line moving abroad"
+    },
+    {
+      "line": 12,
+      "kicker": "Jim Beam, Kentucky",
+      "headline": "Flagship distillery idle with no restart date",
+      "kpis": [
+        {
+          "value": 3,
+          "prefix": "about ",
+          "suffix": "x",
+          "decimals": 0,
+          "label": "US whiskey stock vs a year's demand",
+          "accent": true
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "US whiskey inventory, years of demand",
+          "items": [
+            {
+              "label": "One year's demand",
+              "value": 1
+            },
+            {
+              "label": "Stock now",
+              "value": 3,
+              "highlight": true
+            }
+          ],
+          "suffix": "x"
+        }
+      },
+      "source": "Food Dive, IWSR"
+    },
+    {
+      "line": 13,
+      "keep": true,
+      "kicker": "Booker Noe, Boston, Kentucky",
+      "headline": "Production consolidates on the biggest site",
+      "kpis": [
+        {
+          "value": 45,
+          "prefix": "",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "proof gallons a year at Booker Noe"
+        }
+      ]
+    },
+    {
+      "line": 14,
+      "kicker": "Make less",
+      "headline": "Conagra closes a plant, Cal-Maine halts one",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "Conagra",
+              "detail": "Macon, Missouri ingredients plant closes",
+              "say": "Conagra"
+            },
+            {
+              "label": "Cal-Maine",
+              "detail": "Florida egg plant halted after bird flu",
+              "say": "Cal-Maine"
+            }
+          ]
+        }
+      },
+      "source": "Food Dive, Supply Chain Dive"
+    },
+    {
+      "line": 15,
+      "kicker": "Kontoor Brands",
+      "headline": "Wrangler owner buys stock back after cutting too deep",
+      "kpis": [
+        {
+          "value": 50,
+          "prefix": "$",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "back into inventory",
+          "accent": true
+        },
+        {
+          "value": -6,
+          "prefix": "",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "inventory, year on year"
+        }
+      ],
+      "source": "Supply Chain Dive"
+    },
+    {
+      "line": 16,
+      "kicker": "Starbucks",
+      "headline": "Daily deliveries, record store availability",
+      "source": "Supply Chain Dive"
+    },
+    {
+      "line": 17,
+      "kicker": "For planners",
+      "headline": "Set stock from service levels and the forecast, not the cash line",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "steps": [
+            {
+              "label": "Overshoot",
+              "detail": "Plants consolidated",
+              "say": "Plants that overshoot"
+            },
+            {
+              "label": "Cut too deep",
+              "detail": "Stock bought back",
+              "say": "cut too deep"
+            },
+            {
+              "label": "Service levels",
+              "detail": "Where the target comes from",
+              "say": "service levels"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 18,
+      "kicker": "Nvidia",
+      "headline": "Six suppliers lock in capacity through mid-2029",
+      "kpis": [
+        {
+          "value": 115.8,
+          "prefix": "$",
+          "suffix": "bn",
+          "decimals": 1,
+          "label": "quarterly revenue",
+          "accent": true
+        }
+      ],
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "TSMC"
+            },
+            {
+              "label": "Amkor"
+            },
+            {
+              "label": "Foxconn"
+            },
+            {
+              "label": "Kinsus"
+            },
+            {
+              "label": "Samsung Electro-Mechanics"
+            },
+            {
+              "label": "SPIL"
+            }
+          ]
+        }
+      },
+      "source": "NVIDIA"
+    },
+    {
+      "line": 19,
+      "kicker": "Anthropic",
+      "headline": "The largest IPO on record",
+      "kpis": [
+        {
+          "value": 81.3,
+          "prefix": "$",
+          "suffix": "bn",
+          "decimals": 1,
+          "label": "raised in the IPO",
+          "accent": true
+        },
+        {
+          "value": 26,
+          "prefix": "$",
+          "suffix": "bn",
+          "decimals": 0,
+          "label": "private placement"
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Capital raised, $bn",
+          "items": [
+            {
+              "label": "IPO",
+              "value": 81.3,
+              "highlight": true
+            },
+            {
+              "label": "Private placement",
+              "value": 26
+            }
+          ],
+          "decimals": 1
+        }
+      },
+      "source": "Al Jazeera"
+    },
+    {
+      "line": 20,
+      "keep": true,
+      "kicker": "Disclosure",
+      "headline": "The AI agents behind this show run on Anthropic's Claude",
+      "kpis": [
+        {
+          "value": 1.5,
+          "prefix": "about $",
+          "suffix": "trn",
+          "decimals": 1,
+          "label": "valuation at the open"
+        }
+      ],
+      "source": "TechRepublic"
+    },
+    {
+      "line": 21,
+      "kicker": "University of Cambridge",
+      "headline": "Up to a third of the AI supply chain sits outside policy",
+      "kpis": [
+        {
+          "value": 33,
+          "prefix": "up to ",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "of the AI supply chain unregulated",
+          "accent": true
+        }
+      ],
+      "source": "TechXplore"
+    },
+    {
+      "line": 21,
+      "at": "Buyers of chips",
+      "kicker": "For planners",
+      "headline": "Plan on allocation and map who sits behind your AI vendors"
+    },
+    {
+      "line": 22,
+      "kicker": "Suez Canal",
+      "headline": "Three more Gemini services return to Suez",
+      "sub": "One of them calls at Aarhus.",
+      "kpis": [
+        {
+          "value": 57,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "Suez transits last week"
+        }
+      ],
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 8,
+          "points": [
+            {
+              "name": "Suez Canal",
+              "lat": 30.6,
+              "lon": 32.33
+            },
+            {
+              "name": "Strait of Hormuz",
+              "lat": 26.57,
+              "lon": 56.25,
+              "alert": true
+            },
+            {
+              "name": "Oman",
+              "lat": 23.6,
+              "lon": 58.4,
+              "muted": true
+            },
+            {
+              "name": "Aarhus",
+              "lat": 56.15,
+              "lon": 10.22
+            }
+          ],
+          "routes": [
+            {
+              "style": "primary",
+              "label": "Asia-Europe via Suez",
+              "points": [
+                [
+                  72.8,
+                  12.0
+                ],
+                [
+                  51.0,
+                  12.5
+                ],
+                [
+                  43.4,
+                  12.6
+                ],
+                [
+                  38.5,
+                  20.0
+                ],
+                [
+                  33.5,
+                  27.5
+                ],
+                [
+                  32.55,
+                  29.9
+                ],
+                [
+                  32.33,
+                  31.3
+                ],
+                [
+                  25.0,
+                  33.5
+                ],
+                [
+                  11.5,
+                  37.5
+                ],
+                [
+                  -5.6,
+                  35.95
+                ],
+                [
+                  -9.5,
+                  39.0
+                ],
+                [
+                  -9.2,
+                  43.5
+                ],
+                [
+                  -4.8,
+                  48.6
+                ],
+                [
+                  1.5,
+                  50.6
+                ],
+                [
+                  4.0,
+                  52.5
+                ],
+                [
+                  7.5,
+                  57.5
+                ],
+                [
+                  10.6,
+                  57.7
+                ],
+                [
+                  10.22,
+                  56.15
+                ]
+              ]
+            },
+            {
+              "style": "faded",
+              "label": "Gulf via Hormuz",
+              "points": [
+                [
+                  58.6,
+                  23.8
+                ],
+                [
+                  56.6,
+                  26.4
+                ],
+                [
+                  54.4,
+                  25.4
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "source": "SCM.dk, Drewry"
+    },
+    {
+      "line": 23,
+      "keep": true,
+      "kicker": "Strait of Hormuz",
+      "headline": "Only four ships crossed Hormuz in a week",
+      "kpis": [
+        {
+          "value": 4,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "Hormuz crossings in a week",
+          "accent": true
+        },
+        {
+          "value": 57,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "Suez transits"
+        }
+      ],
+      "source": "Riviera, Drewry"
+    },
+    {
+      "line": 23,
+      "at": "Asia to Europe lead times",
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Split lead-time buffers by origin"
+    },
+    {
+      "line": 24,
+      "kicker": "Conagra, Macon, Missouri",
+      "headline": "Ingredients plant closes on 15 January",
+      "kpis": [
+        {
+          "value": 442,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "jobs, per state WARN notice",
+          "accent": true
+        }
+      ],
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 3,
+          "points": [
+            {
+              "name": "Macon, Missouri",
+              "lat": 39.74,
+              "lon": -92.47,
+              "alert": true
+            },
+            {
+              "name": "Arkansas",
+              "lat": 34.8,
+              "lon": -92.2
+            }
+          ],
+          "routes": [
+            {
+              "style": "primary",
+              "label": "Work moves to Arkansas",
+              "points": [
+                [
+                  -92.47,
+                  39.74
+                ],
+                [
+                  -92.6,
+                  37.2
+                ],
+                [
+                  -92.2,
+                  34.8
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "source": "Food Dive"
+    },
+    {
+      "line": 25,
+      "keep": true,
+      "kicker": "Network design",
+      "headline": "A plant that feeds other plants"
+    },
+    {
+      "line": 26,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Downstream lines now hang on Arkansas capacity and a new lane",
+      "kpis": [
+        {
+          "value": 3,
+          "prefix": "-1 to -",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "organic net sales, fiscal 2027, low end"
+        }
+      ]
+    },
+    {
+      "line": 27,
+      "kicker": "Honda, Alabama",
+      "headline": "A hybrid V6 line inside an existing plant",
+      "kpis": [
+        {
+          "value": 462,
+          "prefix": "$",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "investment",
+          "accent": true
+        },
+        {
+          "value": 200,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 0,
+          "label": "new jobs"
+        }
+      ],
+      "source": "Supply Chain Dive (WardsAuto)"
+    },
+    {
+      "line": 28,
+      "kicker": "Honda US capacity",
+      "headline": "Mixed-model lines, one plant for four models",
+      "kpis": [
+        {
+          "value": 1.3,
+          "prefix": "about ",
+          "suffix": "m",
+          "decimals": 1,
+          "label": "US vehicles a year"
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Alabama Auto Plant capacity a year",
+          "items": [
+            {
+              "label": "Vehicles",
+              "value": 340000
+            },
+            {
+              "label": "Engines",
+              "value": 340000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 29,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Flexible plants are the cheap hedge on the powertrain mix"
+    },
+    {
+      "line": 30,
+      "kicker": "Hadrian, Pennsylvania",
+      "headline": "Buying the foundry instead of queueing for castings",
+      "kpis": [
+        {
+          "value": 300,
+          "prefix": "$",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "planned upgrade",
+          "accent": true
+        }
+      ],
+      "source": "Manufacturing Dive"
+    },
+    {
+      "line": 31,
+      "kicker": "Make or buy",
+      "headline": "Two ways to secure defence capacity",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "Hadrian",
+              "detail": "Owns the foundry",
+              "say": "owning the foundry"
+            },
+            {
+              "label": "ZF",
+              "detail": "Builds, tests and delivers the radars",
+              "say": "Z F builds"
+            },
+            {
+              "label": "Hensoldt",
+              "detail": "Keeps all the intellectual property",
+              "say": "intellectual property"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 32,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Spare German auto capacity may go to defence"
+    },
+    {
+      "line": 33,
+      "kicker": "Sila and Panasonic Energy",
+      "headline": "A billion-dollar anode supply contract",
+      "kpis": [
+        {
+          "value": 1,
+          "prefix": "$",
+          "suffix": "bn",
+          "decimals": 0,
+          "label": "projected contract value"
+        },
+        {
+          "value": 1.4,
+          "prefix": "$",
+          "suffix": "bn",
+          "decimals": 1,
+          "label": "conditional DoD loan"
+        }
+      ],
+      "source": "Manufacturing Dive"
+    },
+    {
+      "line": 34,
+      "kicker": "Target",
+      "headline": "AI and data science lift on-shelf availability",
+      "source": "Supply Chain Dive"
+    },
+    {
+      "line": 35,
+      "kicker": "Target, May 2026",
+      "headline": "AI for demand forecasting as turns rose",
+      "kpis": [
+        {
+          "value": 10,
+          "prefix": "+",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "inventory turns, year on year"
+        }
+      ],
+      "source": "FreightWaves"
+    },
+    {
+      "line": 36,
+      "kicker": "Two routes to availability",
+      "headline": "Target uses AI, Starbucks uses daily deliveries",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "Target",
+              "detail": "AI driven inventory calls",
+              "say": "Target through"
+            },
+            {
+              "label": "Starbucks",
+              "detail": "Daily deliveries, 30% fewer SKUs",
+              "say": "Starbucks through"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 37,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Replenishment frequency and range are the cheaper lever"
+    },
+    {
+      "line": 38,
+      "kicker": "Reformation",
+      "headline": "AI tools steer the production buy",
+      "source": "Supply Chain Dive"
+    },
+    {
+      "line": 39,
+      "kicker": "For planners",
+      "headline": "The saving sits in the production quantity"
+    },
+    {
+      "line": 40,
+      "kicker": "MANGO Arena, arXiv preprint",
+      "headline": "Four LLM agents run a serial supply chain",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "steps": [
+            {
+              "label": "Bullwhip",
+              "say": "bullwhip effect"
+            },
+            {
+              "label": "Rule-breaking",
+              "say": "break the rules"
+            },
+            {
+              "label": "Collusion",
+              "say": "collude"
+            }
+          ]
+        }
+      },
+      "source": "arXiv"
+    },
+    {
+      "line": 42,
+      "keep": true,
+      "kicker": "Pilot only",
+      "headline": "Three small models so far, not peer reviewed"
+    },
+    {
+      "line": 43,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Test agents for bullwhip and constraint-bending before real orders"
+    },
+    {
+      "line": 44,
+      "kicker": "Kinsus, Taoyuan",
+      "headline": "Dedicated substrate capacity up more than 3.5 times",
+      "kpis": [
+        {
+          "value": 3.5,
+          "prefix": "more than ",
+          "suffix": "x",
+          "decimals": 1,
+          "label": "ABF substrate capacity for Nvidia",
+          "accent": true
+        }
+      ],
+      "source": "NVIDIA"
+    },
+    {
+      "line": 45,
+      "kicker": "Amkor",
+      "headline": "Nearly $3bn in agreements, prepayments included",
+      "kpis": [
+        {
+          "value": 3,
+          "prefix": "nearly $",
+          "suffix": "bn",
+          "decimals": 0,
+          "label": "Amkor agreements"
+        }
+      ],
+      "source": "NVIDIA"
+    },
+    {
+      "line": 45,
+      "at": "Industrial and automotive",
+      "kicker": "For planners",
+      "headline": "Line up long-term agreements, don't count on spot buys"
+    },
+    {
+      "line": 46,
+      "kicker": "Walmart",
+      "headline": "Outlook raised after a strong third quarter",
+      "kpis": [
+        {
+          "value": 188.8,
+          "prefix": "$",
+          "suffix": "bn",
+          "decimals": 1,
+          "label": "Q3 revenue"
+        },
+        {
+          "value": 23,
+          "prefix": "+",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "US e-commerce growth"
+        }
+      ],
+      "source": "ESM Magazine (Reuters)"
+    },
+    {
+      "line": 47,
+      "kicker": "Walmart costs",
+      "headline": "Diesel and freight added about $2bn this year",
+      "kpis": [
+        {
+          "value": 2,
+          "prefix": "about $",
+          "suffix": "bn",
+          "decimals": 0,
+          "label": "extra fuel and transport cost",
+          "accent": true
+        }
+      ],
+      "source": "ESM Magazine (Reuters)"
+    },
+    {
+      "line": 48,
+      "kicker": "For planners",
+      "headline": "Model freight as a variable, not a fixed rate per pallet"
+    },
+    {
+      "line": 49,
+      "kicker": "Kontoor Brands",
+      "headline": "Stock down 6%, then a $50m top-up",
+      "kpis": [
+        {
+          "value": -6,
+          "prefix": "",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "inventory, year on year",
+          "accent": true
+        },
+        {
+          "value": 50,
+          "prefix": "$",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "inventory investment"
+        }
+      ],
+      "source": "Supply Chain Dive"
+    },
+    {
+      "line": 50,
+      "kicker": "Mayr-Melnhof, Austria",
+      "headline": "Energy costs force a write-down on board and paper",
+      "kpis": [
+        {
+          "value": 320,
+          "prefix": "EUR 300-",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "adjusted EBITDA 2026"
+        }
+      ],
+      "source": "Mayr-Melnhof"
+    },
+    {
+      "line": 51,
+      "kicker": "For planners",
+      "headline": "Ask which board machines stay competitive at today's energy prices"
+    },
+    {
+      "line": 52,
+      "kicker": "TAKKT, Germany",
+      "headline": "Cyberattack pushes free cash flow negative",
+      "kpis": [
+        {
+          "value": 30,
+          "prefix": "EUR -10 to -",
+          "suffix": "m",
+          "decimals": 0,
+          "label": "free cash flow 2026",
+          "accent": true
+        }
+      ],
+      "source": "TAKKT"
+    },
+    {
+      "line": 53,
+      "kicker": "For planners",
+      "headline": "Size the cash buffer as well as the manual workaround"
+    },
+    {
+      "line": 54,
+      "kicker": "BME autumn barometer",
+      "headline": "German buyers a little more optimistic",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "Outlook",
+              "detail": "Slightly positive",
+              "say": "optimistic"
+            },
+            {
+              "label": "Main burden",
+              "detail": "Energy and logistics costs",
+              "say": "energy and logistics costs"
+            }
+          ]
+        }
+      },
+      "source": "BME"
+    },
+    {
+      "line": 55,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Agree price and capacity clauses before volumes return"
+    },
+    {
+      "line": 56,
+      "kicker": "SKF Vertevo, Sweden",
+      "headline": "Spin-off targets procurement, logistics and footprint",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "Procurement",
+              "say": "procurement"
+            },
+            {
+              "label": "Logistics",
+              "say": "logistics"
+            },
+            {
+              "label": "Manufacturing footprint",
+              "say": "manufacturing footprint"
+            },
+            {
+              "label": "Less contract manufacturing with SKF",
+              "say": "less contract manufacturing"
+            }
+          ]
+        }
+      },
+      "source": "SKF"
+    },
+    {
+      "line": 57,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Expect sourcing changes after the split"
+    },
+    {
+      "line": 58,
+      "kicker": "Denmark and Sweden",
+      "headline": "Two firms cut hand-offs between sites",
+      "kpis": [
+        {
+          "value": 60,
+          "prefix": "+",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "warehouse capacity in Kolding",
+          "accent": true
+        }
+      ],
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 1.5,
+          "points": [
+            {
+              "name": "Helsingborg",
+              "lat": 56.05,
+              "lon": 12.69,
+              "muted": true
+            },
+            {
+              "name": "Copenhagen",
+              "lat": 55.68,
+              "lon": 12.57,
+              "muted": true
+            },
+            {
+              "name": "Malmö",
+              "lat": 55.6,
+              "lon": 13.0,
+              "alert": true
+            },
+            {
+              "name": "Kolding",
+              "lat": 55.49,
+              "lon": 9.47
+            }
+          ],
+          "routes": []
+        }
+      },
+      "source": "SCM.dk"
+    },
+    {
+      "line": 59,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "One site cuts lead time but adds a single point of failure"
+    },
+    {
+      "line": 60,
+      "kicker": "Novo, Denmark",
+      "headline": "Sourcing for scarcer water and glucose",
+      "source": "SCM.dk"
+    },
+    {
+      "line": 61,
+      "kicker": "For planners",
+      "headline": "Add ecosystem risk to dual-sourcing reviews"
+    },
+    {
+      "line": 62,
+      "kicker": "SMVdanmark",
+      "headline": "Half of Danish SMEs have no supply crisis plan",
+      "kpis": [
+        {
+          "value": 52,
+          "prefix": "",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "of Danish SMEs without preparedness",
+          "accent": true
+        }
+      ],
+      "visual": {
+        "template": "columns",
+        "props": {
+          "title": "Danish SMEs, %",
+          "items": [
+            {
+              "label": "No concrete preparedness",
+              "value": 52,
+              "highlight": true
+            },
+            {
+              "label": "Prepared",
+              "value": 48
+            }
+          ],
+          "suffix": "%"
+        }
+      },
+      "source": "SCM.dk"
+    },
+    {
+      "line": 63,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Ask tier-two suppliers for their continuity plan"
+    },
+    {
+      "line": 64,
+      "kicker": "Constructor University, Bremen",
+      "headline": "LLM supplier selection with a human sign-off",
+      "source": "idw-online"
+    },
+    {
+      "line": 65,
+      "kicker": "For planners",
+      "headline": "Build the human check in from the start"
+    },
+    {
+      "line": 66,
+      "kicker": "Swedish grocery",
+      "headline": "Hemköp's chief moves to run ICA Sverige",
+      "source": "Axfood"
+    },
+    {
+      "line": 67,
+      "visual": {
+        "template": "voice",
+        "props": {
+          "name": "Lora Cecere",
+          "role": "Supply Chain Insights",
+          "where": "Blog, 19 November",
+          "text": "\"A financial budget is not an operational plan\"",
+          "verbatim": true
+        }
+      }
+    },
+    {
+      "line": 68,
+      "kicker": "Lora Cecere",
+      "headline": "Connect budget and plan, without confusing compliance with value",
+      "source": "Supply Chain Shaman"
+    },
+    {
+      "line": 69,
+      "kicker": "Lora Cecere",
+      "headline": "Alignment takes leadership, trust and shared incentives",
+      "sub": "Technology, in her view, is the easy part."
+    },
+    {
+      "line": 70,
+      "visual": {
+        "template": "voice",
+        "props": {
+          "name": "Ola Bergström",
+          "role": "Professor, Industrins ekonomiska råd",
+          "where": "Ny Teknik, 15 November",
+          "text": "Chinese zombie companies drive overproduction that threatens Swedish export niches."
+        }
+      }
+    },
+    {
+      "line": 71,
+      "kicker": "Ola Bergström",
+      "headline": "Risk of irreversible damage to European industry",
+      "source": "Ny Teknik"
+    },
+    {
+      "line": 72,
+      "kicker": "Blue Yonder",
+      "headline": "CTO Salil Joshi named interim CEO",
+      "sub": "Duncan Angove leaves after four years in charge.",
+      "source": "Retail Technology Innovation Hub"
+    },
+    {
+      "line": 73,
+      "kicker": "For software buyers",
+      "headline": "Check roadmap commitments through the interim period"
+    },
+    {
+      "line": 74,
+      "kicker": "Freight desk",
+      "headline": "The week's freight readings",
+      "visual": {
+        "template": "list",
+        "props": {
+          "items": [
+            {
+              "label": "Drewry WCI",
+              "detail": "$4,176 per 40ft, fourth weekly fall",
+              "say": "container index"
+            },
+            {
+              "label": "Peak surcharge",
+              "detail": "Asia-Europe, December",
+              "say": "peak surcharge"
+            },
+            {
+              "label": "Rhine at Kaub",
+              "detail": "179 cm, up from 73 cm",
+              "say": "Kaub gauge"
+            }
+          ]
+        }
+      },
+      "kpis": [
+        {
+          "value": 4176,
+          "prefix": "$",
+          "suffix": "",
+          "decimals": 0,
+          "label": "Drewry WCI per 40ft"
+        }
+      ],
+      "source": "Drewry, Pegelonline"
+    },
+    {
+      "line": 75,
+      "keep": true,
+      "kicker": "Rhine, Kaub",
+      "headline": "The Rhine is back to full loads",
+      "kpis": [
+        {
+          "value": 179,
+          "prefix": "",
+          "suffix": " cm",
+          "decimals": 0,
+          "label": "Kaub gauge, 21 Nov",
+          "accent": true
+        },
+        {
+          "value": 73,
+          "prefix": "",
+          "suffix": " cm",
+          "decimals": 0,
+          "label": "a week earlier"
+        }
+      ]
+    },
+    {
+      "line": 76,
+      "kicker": "Danish retail",
+      "headline": "Express freight threatens Christmas margins",
+      "sub": "Write an expedite rule into the peak plan.",
+      "source": "SCM.dk"
+    },
+    {
+      "line": 77,
+      "kicker": "Week ahead",
+      "headline": "Dates to watch",
+      "visual": {
+        "template": "timeline",
+        "props": {
+          "items": [
+            {
+              "label": "25 Nov",
+              "detail": "FOM live talk on defence production",
+              "say": "Wednesday brings"
+            },
+            {
+              "label": "27 Nov",
+              "detail": "SKF Vertevo record date",
+              "say": "Friday is the record date"
+            },
+            {
+              "label": "1 Dec",
+              "detail": "Swedbank/Silf PMI",
+              "say": "Tuesday the first"
+            },
+            {
+              "label": "2 Dec",
+              "detail": "BME AI agents panel, fuel price cap",
+              "say": "Wednesday the second"
+            },
+            {
+              "label": "4 Dec",
+              "detail": "NY Fed GSCPI",
+              "say": "Friday the fourth",
+              "alert": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 78,
+      "keep": true,
+      "kicker": "27 November",
+      "headline": "SKF Vertevo spin-off record date"
+    },
+    {
+      "line": 79,
+      "keep": true,
+      "kicker": "1 December",
+      "headline": "Sweden's November PMI",
+      "kpis": [
+        {
+          "value": 60.5,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 1,
+          "label": "October PMI, highest since Jan 2022"
+        }
+      ]
+    },
+    {
+      "line": 80,
+      "keep": true,
+      "kicker": "2 December",
+      "headline": "AI agents panel in Frankfurt, fuel cap in Berlin"
+    },
+    {
+      "line": 81,
+      "keep": true,
+      "kicker": "4 December",
+      "headline": "Is Hormuz pushing supply chain pressure back up?",
+      "kpis": [
+        {
+          "value": 1.26,
+          "prefix": "",
+          "suffix": "",
+          "decimals": 2,
+          "label": "GSCPI, October"
+        }
+      ]
+    },
+    {
+      "line": 82,
+      "kicker": "One thing to watch",
+      "headline": "IG Metall strikes: plan for the catch-up spike",
+      "visual": {
+        "template": "route",
+        "props": {
+          "pad": 2,
+          "points": [
+            {
+              "name": "Ingolstadt (Audi)",
+              "lat": 48.77,
+              "lon": 11.42,
+              "alert": true
+            },
+            {
+              "name": "Munich (BMW)",
+              "lat": 48.18,
+              "lon": 11.56,
+              "alert": true
+            },
+            {
+              "name": "Friedrichshafen (ZF)",
+              "lat": 47.65,
+              "lon": 9.48,
+              "alert": true
+            },
+            {
+              "name": "Stuttgart",
+              "lat": 48.78,
+              "lon": 9.18,
+              "muted": true
+            }
+          ],
+          "routes": []
+        }
+      }
+    },
+    {
+      "line": 83,
+      "kicker": "The Planning Desk",
+      "headline": "Daily briefing tomorrow, weekly review next Sunday"
+    }
+  ]
+}

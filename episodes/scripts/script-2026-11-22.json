@@ -1,0 +1,712 @@
+{
+  "show": "The Planning Desk",
+  "episode_title": "Plant Closures, IG Metall Strikes, AI Capacity",
+  "week": "2026-W47",
+  "run_date": "2026-11-22",
+  "brief_file": "news-brief-2026-11-22.md",
+  "target_runtime_sec": 900,
+  "word_count": 2631,
+  "hosts": {
+    "F": {
+      "name": "Anna",
+      "voice": "female, senior news anchor, calm, quick, warm"
+    },
+    "M": {
+      "name": "Erik",
+      "voice": "male, senior news anchor, calm, quick, dry"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 10
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-W47-01",
+        "2026-W47-31",
+        "2026-W47-T1"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Mercedes has put two German plants on the table, and this week IG Metall answered with full-day strikes at Audi, BMW and Z F."
+        },
+        {
+          "speaker": "M",
+          "text": "German sites are now judged plant by plant on cost and flexibility. This is The Planning Desk, the week in review."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-W47-T1",
+        "2026-W47-T2",
+        "2026-W47-T3",
+        "2026-W47-T4"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, this is The Planning Desk and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic. The first thread this week is German industry, with closures on the table and strikes on the line."
+        },
+        {
+          "speaker": "M",
+          "text": "The second is producers cutting output to follow the forecast down, and the third is A I money and chip capacity piling up in a few hands."
+        },
+        {
+          "speaker": "F",
+          "text": "And Suez is opening while Hormuz stays shut, so lead times are splitting by origin."
+        }
+      ]
+    },
+    {
+      "id": "week_threads",
+      "type": "speech",
+      "items": [
+        "2026-W47-T1",
+        "2026-W47-01",
+        "2026-W47-31",
+        "2026-W47-06",
+        "2026-W47-T2",
+        "2026-W47-02",
+        "2026-W47-04",
+        "2026-W47-12",
+        "2026-W47-20",
+        "2026-W47-07",
+        "2026-W47-T3",
+        "2026-W47-03",
+        "2026-W47-14",
+        "2026-W47-18",
+        "2026-W47-T4",
+        "2026-W47-29",
+        "2026-W47-32"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "We start in Germany. Mercedes production chief Michael Schiebe has put the closure of two German plants on the table, dpa reports, and management plans to restart its redundancy programme in early December."
+        },
+        {
+          "speaker": "M",
+          "text": "The cost case is blunt. Management says a production hour in Germany can cost up to five times one in Eastern Europe, and chief executive Ola Källenius says sites abroad also offer longer working hours."
+        },
+        {
+          "speaker": "F",
+          "text": "The works council says the workforce firmly rejects closures, and no plant has been named. Then on Thursday IG Metall moved from short stoppages to full-day warning strikes at Audi Ingolstadt, BMW Munich and several Z F sites."
+        },
+        {
+          "speaker": "M",
+          "text": "About ninety plants in Baden-Württemberg are due to strike by Tuesday. The union wants five percent over twelve months, while employers offer a one-off payment and one point three percent in 2028."
+        },
+        {
+          "speaker": "F",
+          "text": "The same day Z F agreed to take over series production of Hensoldt's drone-defence radars. Suppliers should plan December and the first quarter for strike days, and price the chance that one assembly line's volume leaves the country."
+        },
+        {
+          "speaker": "M",
+          "text": "Second thread, make less. Jim Beam has left its flagship Clermont distillery in Kentucky idle with no restart date, because U S whiskey stocks sit at about three times a year's demand."
+        },
+        {
+          "speaker": "F",
+          "text": "Production moves to Booker Noe, the brand's biggest site, and Jim Beam says it will reassess as forecasts evolve. Whiskey ages for years, so a plan that overshoots turns into stock nobody can sell."
+        },
+        {
+          "speaker": "M",
+          "text": "Conagra made a network call of its own, closing an ingredients plant in Macon, Missouri after a review of its manufacturing network. And Cal-Maine halted a Florida egg plant after bird flu, in a market already oversupplied."
+        },
+        {
+          "speaker": "F",
+          "text": "On the other side of the ledger, Wrangler owner Kontoor Brands is putting fifty million dollars back into inventory after its stock fell six percent and the quarter got bumpy."
+        },
+        {
+          "speaker": "M",
+          "text": "And Starbucks says daily deliveries have pushed store availability to an all-time high, so the week ran in both directions."
+        },
+        {
+          "speaker": "F",
+          "text": "The lesson is symmetry. Plants that overshoot get consolidated and brands that cut too deep buy stock back, so the inventory target has to come from service levels and the forecast, not last quarter's cash line."
+        },
+        {
+          "speaker": "M",
+          "text": "Third thread, A I's capital and capacity week. Nvidia reported quarterly revenue of almost one hundred sixteen billion dollars and locked in substrate and packaging capacity with six suppliers through mid 2029."
+        },
+        {
+          "speaker": "F",
+          "text": "Then Anthropic raised eighty-one point three billion dollars, the largest I P O on record, plus a twenty-six billion dollar private placement with buyers including Google, Nvidia, A M D and Microsoft."
+        },
+        {
+          "speaker": "M",
+          "text": "A disclosure here, the A I agents that make this show run on Anthropic's Claude. Shares opened at one hundred eleven dollars fifty on Nasdaq, valuing the company at roughly one and a half trillion dollars."
+        },
+        {
+          "speaker": "F",
+          "text": "And a Cambridge report says up to a third of the A I supply chain sits outside any policy or regulation. Buyers of chips and A I services should plan on allocation and multi-year agreements, and map who sits behind their A I vendors."
+        },
+        {
+          "speaker": "M",
+          "text": "Last thread, Suez opens while Hormuz stays shut. Maersk and Hapag-Lloyd moved three more Gemini services back through Suez, one of them calling at Aarhus, and Drewry counted fifty-seven Suez transits in a week."
+        },
+        {
+          "speaker": "F",
+          "text": "Meanwhile tankers were hit off Oman on the sixteenth and the eighteenth, and Drewry says only four ships crossed the Strait of Hormuz all week. Asia to Europe lead times are shrinking while Gulf flows stay blocked, so split lead-time buffers by origin, not one Middle East number."
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "type": "speech",
+      "items": [
+        "2026-W47-04",
+        "2026-W47-05",
+        "2026-W47-11",
+        "2026-W47-06",
+        "2026-W47-13"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "On the planning desk, Conagra's closure deserves a closer look. The Macon plant shuts on the fifteenth of January with four hundred forty-two jobs going, according to a state notice."
+        },
+        {
+          "speaker": "M",
+          "text": "It's a plant that feeds other plants. It makes ingredients for frozen meals assembled at other Conagra sites, and that work moves mainly to Arkansas."
+        },
+        {
+          "speaker": "F",
+          "text": "So every downstream frozen-meal line now depends on the Arkansas sites' capacity and on a new inbound lane. Conagra expects organic net sales to fall one to three percent in fiscal 2027."
+        },
+        {
+          "speaker": "M",
+          "text": "Honda went the other way and added flexibility inside a plant it already has. It's putting four hundred sixty-two million dollars into its Alabama plant for a new hybrid V six engine line and two hundred jobs."
+        },
+        {
+          "speaker": "F",
+          "text": "That plant builds several models on one line and is the only one in the world making the Odyssey, Pilot, Passport and Ridgeline. With the Ohio hybrid plant announced on the tenth, Honda's U S capacity heads to about one point three million vehicles a year."
+        },
+        {
+          "speaker": "M",
+          "text": "Mixed-model plants are the cheap hedge while the hybrid and E V mix is still uncertain. The article gives no start date for the new line."
+        },
+        {
+          "speaker": "F",
+          "text": "Defence firms are buying their way to shorter lead times. Start-up Hadrian is acquiring Kutztown Foundry and Machine in Pennsylvania and plans a three hundred million dollar upgrade for the U S Navy's submarine programme."
+        },
+        {
+          "speaker": "M",
+          "text": "Castings are the longest lead time in that bill of materials, so owning the foundry beats queueing for it. Z F and Hensoldt split it differently, Z F builds, tests and delivers the radars while Hensoldt keeps all the intellectual property."
+        },
+        {
+          "speaker": "F",
+          "text": "That deal is a capacity-driven make-or-buy decision, and it shows where spare German auto plant capacity may go next. The digest gives no volumes, sites or start date."
+        },
+        {
+          "speaker": "M",
+          "text": "And in batteries, Sila signed a supply contract with Panasonic Energy for its silicon-carbon anode material, projected at one billion dollars. It follows a one point four billion dollar conditional Defense Department loan to expand its plant in Moses Lake, Washington."
+        }
+      ]
+    },
+    {
+      "id": "ai_tech",
+      "type": "speech",
+      "items": [
+        "2026-W47-15",
+        "2026-W47-07",
+        "2026-W47-17",
+        "2026-W47-16",
+        "2026-W47-03"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "On the A I desk, Target says artificial intelligence and data science are lifting on-shelf availability through faster inventory decisions. Chief operating officer Lisa Roath said so with third-quarter results."
+        },
+        {
+          "speaker": "F",
+          "text": "There's no new availability figure this time. Back in May, Roath said Target was using A I to improve demand forecasting, as inventory turns rose more than ten percent."
+        },
+        {
+          "speaker": "M",
+          "text": "Put that next to Starbucks. Both claim record availability this week, Target through A I driven inventory calls and Starbucks through daily deliveries and a range cut by thirty percent."
+        },
+        {
+          "speaker": "F",
+          "text": "Starbucks also dropped a computer-vision counting tool on the way. For a retailer choosing where to spend first, replenishment frequency and a smaller range are the cheaper lever to try."
+        },
+        {
+          "speaker": "M",
+          "text": "Fashion brand Reformation is using A I tools to watch demand and steer production decisions, though Supply Chain Dive's summary names no tools or results."
+        },
+        {
+          "speaker": "F",
+          "text": "In fashion the expensive mistake is the production quantity, so A I that moves the buy decision closer to live demand is where the saving sits."
+        },
+        {
+          "speaker": "M",
+          "text": "A new preprint called MANGO Arena puts language model agents in charge of a whole chain. Four agents each run one company in a serial supply chain, with hard limits on trucks, cash and production capacity."
+        },
+        {
+          "speaker": "F",
+          "text": "What does it measure?"
+        },
+        {
+          "speaker": "M",
+          "text": "The bullwhip effect, attempts to break the rules under pressure, and proposals to collude on a public message board where side payments are forbidden. So far it's only a pilot with three small models, and it hasn't been peer reviewed."
+        },
+        {
+          "speaker": "F",
+          "text": "Before agents place real orders, planners need to know whether they amplify the bullwhip and bend constraints under pressure. This is the first open sandbox built to measure both."
+        },
+        {
+          "speaker": "M",
+          "text": "Back to Nvidia, where the planning point is timing. Kinsus will expand substrate capacity dedicated to Nvidia more than three and a half times, with output from the second half of 2027."
+        },
+        {
+          "speaker": "F",
+          "text": "Amkor's agreements alone total nearly three billion dollars, prepayments included. Industrial and automotive electronics buyers who need the same inputs should line up long-term agreements now, not count on spot buys."
+        }
+      ]
+    },
+    {
+      "id": "management",
+      "type": "speech",
+      "items": [
+        "2026-W47-21",
+        "2026-W47-20",
+        "2026-W47-23",
+        "2026-W47-24",
+        "2026-W47-25"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "In management and operations, Walmart raised its sales growth outlook after third-quarter revenue rose about five percent to almost one hundred eighty-nine billion dollars, with U S e-commerce up twenty-three percent."
+        },
+        {
+          "speaker": "M",
+          "text": "The planning line is the cost. Walmart's chief executive said surging diesel and transport costs added about two billion dollars in expenses this year, and Reuters says they're starting to work into the cost of goods."
+        },
+        {
+          "speaker": "F",
+          "text": "Two billion dollars of freight at the world's largest retailer says transport cost belongs in the network and sourcing model as a variable, not a fixed rate per pallet."
+        },
+        {
+          "speaker": "M",
+          "text": "Kontoor is the inventory side of the same story. Its stock was down six percent in the quarter, and the fifty million dollar top-up is meant to recover from a difficult quarter for its supply chain, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "F",
+          "text": "In Austria, cartonboard maker Mayr-Melnhof will book an impairment in its board and paper division, mainly because energy costs have surged. It now expects adjusted operating profit before depreciation of three hundred to three hundred twenty million euros."
+        },
+        {
+          "speaker": "M",
+          "text": "An impairment on mills is the accounting step before capacity decisions, so packaging buyers in DACH should ask which board machines stay competitive at today's energy prices."
+        },
+        {
+          "speaker": "F",
+          "text": "German equipment distributor TAKKT now expects negative free cash flow of ten to thirty million euros after a cyberattack. It blames delayed deliveries, postponed customer payments and operational restrictions."
+        },
+        {
+          "speaker": "M",
+          "text": "That's how a cyberattack lands on the balance sheet, stock that can't ship and invoices that can't go out. Continuity plans should size the cash buffer as well as the manual workaround."
+        },
+        {
+          "speaker": "F",
+          "text": "And the B M E autumn barometer shows German purchasing managers a little more optimistic about the coming months, with energy and logistics costs still the main burden."
+        },
+        {
+          "speaker": "M",
+          "text": "A modest upturn with high costs is the setup for tight supplier talks in 2027. Agree price and capacity clauses before the volumes come back."
+        }
+      ]
+    },
+    {
+      "id": "nordics_dach",
+      "type": "speech",
+      "items": [
+        "2026-W47-22",
+        "2026-W47-10",
+        "2026-W47-08",
+        "2026-W47-09",
+        "2026-W47-26",
+        "2026-W47-19",
+        "2026-W47-27"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to the Nordics and DACH. SKF Vertevo, the automotive business about to be spun off from SKF, wants better costs through procurement, logistics and its manufacturing footprint, and less contract manufacturing with SKF."
+        },
+        {
+          "speaker": "F",
+          "text": "A spin-off that buys less production from its former parent has to re-plan where its bearings are made. Customers and suppliers of both should expect sourcing changes after the split."
+        },
+        {
+          "speaker": "M",
+          "text": "Two Danish firms are cutting hand-offs. FOM Technologies is pulling purchasing, production, testing and logistics from Helsingborg and Copenhagen into one site in Malmö, and Flügger is adding sixty percent warehouse capacity in Kolding to stop moving goods between sites."
+        },
+        {
+          "speaker": "F",
+          "text": "Fewer hand-offs mean shorter lead times, but for FOM one building also becomes a single point of failure. For Flügger, internal shuttling is pure network cost."
+        },
+        {
+          "speaker": "M",
+          "text": "Novo is preparing its sourcing for scarcer water and glucose, two inputs that depend directly on healthy ecosystems."
+        },
+        {
+          "speaker": "F",
+          "text": "When a Danish pharma major treats glucose as an at-risk input, buyers of fermentation and process materials should add ecosystem risk to their dual-sourcing reviews."
+        },
+        {
+          "speaker": "M",
+          "text": "SMVdanmark finds fifty-two percent of Danish small and medium-sized companies have no concrete preparedness for cyberattacks, power cuts or supply problems."
+        },
+        {
+          "speaker": "F",
+          "text": "Those firms are often the weak tier in a big company's network, so ask tier-two suppliers for their continuity plan rather than assume one exists."
+        },
+        {
+          "speaker": "M",
+          "text": "In Bremen, researchers at Constructor University propose supplier selection with large language models and a human sign-off built in, though they report no measured results."
+        },
+        {
+          "speaker": "F",
+          "text": "Sourcing is one of the first planning decisions where companies will have to show who approved what the model suggested, so designing that check in early is the useful part."
+        },
+        {
+          "speaker": "M",
+          "text": "And in Swedish grocery, Hemköp chief Shoan Etemadi leaves Axfood to run ICA Sverige. Worth watching for changes in range and replenishment terms at both groups."
+        }
+      ]
+    },
+    {
+      "id": "voices",
+      "type": "speech",
+      "items": [
+        "2026-W47-V1",
+        "2026-W47-V2",
+        "2026-W47-T2",
+        "2026-W47-T1",
+        "2026-W47-20"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Two expert voices on this week's threads. On the make-less thread, Lora Cecere of Supply Chain Insights wrote on her blog on Thursday about the role of the budget in planning. In her words, \"A financial budget is not an operational plan.\""
+        },
+        {
+          "speaker": "M",
+          "text": "She argued the budget and the operational plan should be connected, without confusing financial compliance with optimising enterprise value. Kontoor's cut and refill is that problem in one quarter."
+        },
+        {
+          "speaker": "F",
+          "text": "She said aligning the two takes leadership, trust, shared incentives and a common understanding of how mix, capacity and operational decisions affect results. Technology, in her view, is the easy part."
+        },
+        {
+          "speaker": "M",
+          "text": "On the industry thread, professor Ola Bergström of the Swedish industry parties' economic council told Ny Teknik in an interview last weekend that Chinese zombie companies, kept alive despite losses, are driving overproduction that threatens Swedish export niches."
+        },
+        {
+          "speaker": "F",
+          "text": "He said the problem is bigger than this year's Swedish wage round, and he sees a risk of irreversible damage to Swedish and European industry. It's a warning that sits right next to Mercedes's own cost comparison."
+        }
+      ]
+    },
+    {
+      "id": "market_moves",
+      "type": "speech",
+      "items": [
+        "2026-W47-28"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "In market moves, planning software vendor Blue Yonder has named its chief technology officer Salil Joshi interim chief executive. He succeeds Duncan Angove, who leaves after four years in charge, and no effective date or permanent search was announced."
+        },
+        {
+          "speaker": "M",
+          "text": "Joshi joined the company in 1997 and previously ran customer success, and the board is chaired by Ken Sain, chief executive of owner Panasonic's Connect unit. Customers mid-implementation should ask whether roadmap and partner commitments hold through an interim period at the top."
+        }
+      ]
+    },
+    {
+      "id": "week_ahead",
+      "type": "speech",
+      "items": [
+        "2026-W47-F1",
+        "2026-W47-F2",
+        "2026-W47-30",
+        "2026-W47-E1",
+        "2026-W47-E2",
+        "2026-W47-E3",
+        "2026-W47-E5",
+        "2026-W47-E4",
+        "2026-W47-E7",
+        "2026-W47-31"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Here's the week ahead, starting with the freight desk. Drewry's composite container index fell for a fourth straight week to about four thousand two hundred dollars per forty-foot box, but carriers have announced an Asia to Europe peak surcharge for December."
+        },
+        {
+          "speaker": "M",
+          "text": "On the Rhine, the Kaub gauge is back to one hundred seventy-nine centimetres, up from seventy-three a week earlier and well above what a full channel needs."
+        },
+        {
+          "speaker": "F",
+          "text": "Danish retailers warn that express freight could eat their Christmas margins. Every express shipment is a forecast or replenishment miss paid for in freight, so put a written expedite rule in the peak plan."
+        },
+        {
+          "speaker": "M",
+          "text": "On the calendar, Wednesday brings a FOM Hochschule live talk in Germany, with Rheinmetall and Fraunhofer speakers on expanding defence production and securing supply chains."
+        },
+        {
+          "speaker": "F",
+          "text": "Friday is the record date for the SKF Vertevo spin-off, so check the contracts and sourcing flows that cross the new company line."
+        },
+        {
+          "speaker": "M",
+          "text": "On Tuesday the first of December, Swedbank and Silf publish Sweden's November purchasing managers' index. October hit sixty point five, the highest since January 2022, with input prices at a four-year high."
+        },
+        {
+          "speaker": "F",
+          "text": "Wednesday the second is busy. In Frankfurt the B M E holds a panel on how much autonomy A I agents should get in logistics planning, and in Berlin the cabinet decides the design of Germany's fuel price cap."
+        },
+        {
+          "speaker": "M",
+          "text": "That decision sets 2027 transport and energy cost assumptions for German sites. And on Friday the fourth, the New York Fed's supply chain pressure index shows whether Hormuz is pushing it back up from one point two six."
+        },
+        {
+          "speaker": "F",
+          "text": "The one thing to watch is IG Metall. Baden-Württemberg's strikes run through Tuesday, and every lost shift at a carmaker or tier one has to be made up in December, so plan for the catch-up spike as well as the missed days."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-W47-T1",
+        "2026-W47-T2"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the week in review on The Planning Desk. The daily briefing is back tomorrow morning, and the next weekly review comes next Sunday."
+        },
+        {
+          "speaker": "M",
+          "text": "Plan by plant, size stock from service levels, and read your lead times by origin. We'll see you tomorrow morning."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 10
+    }
+  ],
+  "linkedin": {
+    "page_post": "Mercedes-Benz has put two German plants on the table, and IG Metall answered with full-day strikes at Audi, BMW and ZF.\n\nMercedes says a German production hour can cost up to five times one in Eastern Europe, and no plant is named yet. Suppliers should price a scenario where one line's volume moves east, and plan December for strike days.\n\nJim Beam left its flagship distillery idle as US whiskey stocks hit about three times annual demand, while Kontoor is putting $50m back into inventory after cutting too deep. Inventory targets need to come from service levels and the forecast, not last quarter's cash line.\n\nNvidia locked substrate and packaging capacity with six suppliers through mid-2029, and Anthropic raised $81.3bn in the largest IPO on record. Buyers of chips and AI services should plan on allocation and long-term agreements.\n\nWho in your team owns the scenario where a customer's plant volume moves to another country?\n\nWatch or listen: The Planning Desk, the week in review every Sunday.\n\n#supplychain #networkdesign #igmetall",
+    "tags": [
+      "Mercedes-Benz",
+      "IG Metall",
+      "Nvidia"
+    ]
+  },
+  "newsletter": {
+    "subject": "Plant closures in Germany, strikes, and a week of making less",
+    "body_md": "German industry spent the week deciding where it can still afford to make things, while producers elsewhere cut output to match a weaker forecast. Meanwhile AI money and chip capacity kept piling up in a few hands.\n\n**Mercedes puts two German plants on the table**\nProduction chief Michael Schiebe has put the closure of two German plants on the table and management plans to restart its redundancy programme in early December, [AUTOHAUS reports](https://www.autohaus.de/nachrichten/autohersteller/thema-der-woche-warum-bei-mercedes-benz-werke-auf-dem-spiel-stehen-3935076). Management says a German production hour can cost up to five times one in Eastern Europe. No plant has been named. Suppliers to German plants should price a scenario where one line's volume moves east within the 2027 to 2028 plan.\n\n**IG Metall moves to full-day strikes**\nOn 19 November IG Metall started [full-day warning strikes](https://www.autohaus.de/nachrichten/autohersteller/audi-bmw-und-zf-betroffen-ig-metall-startet-ganztaegige-warnstreiks-3938504) at Audi Ingolstadt, BMW Munich and several ZF sites, with about 90 plants in Baden-Württemberg due by 24 November. The union wants 5% over 12 months; employers offer a one-off payment and 1.3% in 2028. Lost shifts get made up in December, so plan for the catch-up spike, not only the missed days.\n\n**Make less: production follows the forecast down**\nJim Beam has [paused its Clermont distillery](https://www.fooddive.com/news/jim-beam-flagship-distillery-production-pause/874870/) with no restart date, with US whiskey stocks at about three times annual demand. Conagra is [closing its Macon ingredients plant](https://www.fooddive.com/news/conagra-brands-closing-missouri-plant-jobs-losses/874504/) and moving the work to Arkansas. Kontoor, meanwhile, is [putting $50m back into inventory](https://www.supplychaindive.com/news/wrangler-parent-company-plans-to-beef-up-inventory-spending/874783/) after cutting stock 6%. Set inventory targets from service levels and the forecast, not from the cash line alone.\n\n**AI capital and capacity concentrate**\nNvidia [locked substrate and packaging capacity](https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout) with six suppliers through mid-2029, and Anthropic [raised $81.3bn](https://www.aljazeera.com/economy/2026/11/19/anthropic-raises-81-3bn-in-biggest-ipo-of-all-time) in the largest IPO on record (the AI agents behind this newsletter run on Anthropic's Claude). Industrial buyers of chips should plan on allocation and multi-year agreements, and map who sits behind their AI vendors.\n\n**Suez opens, Hormuz stays shut**\nMaersk and Hapag-Lloyd [moved three more Gemini services back through Suez](https://www.scm.dk/maersk-sender-flere-ruter-gennem-suez-aarhus-er-med), while only four vessels crossed the Strait of Hormuz in a week, according to [Drewry](https://www.drewry.co.uk/WCI). Split lead-time buffers by origin rather than using one Middle East number.\n\nNext week: SKF Vertevo's spin-off record date on 27 November, and Germany's cabinet decision on the fuel price cap on 2 December."
+  },
+  "show_notes": {
+    "summary": "Plant closures in German industry: Mercedes puts two German plants on the table as IG Metall starts full-day strikes at Audi, BMW and ZF. Jim Beam and Conagra cut production to match the forecast while Kontoor buys inventory back, and Nvidia and Anthropic show how AI capital and chip capacity are concentrating. Plus Walmart's $2bn freight bill, SKF Vertevo's spin-off plans, Suez reopening while Hormuz stays shut, and the week ahead.",
+    "sources": [
+      {
+        "title": "AUTOHAUS: Thema der Woche, warum bei Mercedes-Benz Werke auf dem Spiel stehen",
+        "url": "https://www.autohaus.de/nachrichten/autohersteller/thema-der-woche-warum-bei-mercedes-benz-werke-auf-dem-spiel-stehen-3935076"
+      },
+      {
+        "title": "ZDFheute: Mercedes stoppt Investitionen in Deutschland",
+        "url": "https://www.zdfheute.de/wirtschaft/unternehmen/investitionen-deutschland-kostensenkungen-werksschliessungen-stopp-100.html"
+      },
+      {
+        "title": "AUTOHAUS: IG Metall startet ganztägige Warnstreiks bei Audi, BMW und ZF",
+        "url": "https://www.autohaus.de/nachrichten/autohersteller/audi-bmw-und-zf-betroffen-ig-metall-startet-ganztaegige-warnstreiks-3938504"
+      },
+      {
+        "title": "produktion.de: Hensoldt und ZF starten Serienfertigung von Spexer-Radaren",
+        "url": "https://www.produktion.de/ruestung-aerospace/hensoldt-und-zf-kooperieren-serienfertigung-von-spexer-radaren-zur-drohnenabwehr-startet/2771124"
+      },
+      {
+        "title": "Food Dive: Jim Beam pauses flagship distillery production",
+        "url": "https://www.fooddive.com/news/jim-beam-flagship-distillery-production-pause/874870/"
+      },
+      {
+        "title": "Food Dive: Conagra Brands closing Missouri plant",
+        "url": "https://www.fooddive.com/news/conagra-brands-closing-missouri-plant-jobs-losses/874504/"
+      },
+      {
+        "title": "Supply Chain Dive: Cal-Maine halts egg production at Florida plant after bird flu outbreak",
+        "url": "https://www.supplychaindive.com/news/cal-maine-halts-egg-production-at-florida-plant-after-bird-flu-outbreak/875316/"
+      },
+      {
+        "title": "Supply Chain Dive: Wrangler parent plans to beef up inventory spending",
+        "url": "https://www.supplychaindive.com/news/wrangler-parent-company-plans-to-beef-up-inventory-spending/874783/"
+      },
+      {
+        "title": "Supply Chain Dive: Starbucks inventory availability at all-time high with daily deliveries",
+        "url": "https://www.supplychaindive.com/news/starbucks-inventory-availability-at-all-time-high-with-daily-deliveries/874923/"
+      },
+      {
+        "title": "NVIDIA: Nvidia expands commitments with supply chain partners",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout"
+      },
+      {
+        "title": "Al Jazeera: Anthropic raises $81.3bn in biggest IPO of all time",
+        "url": "https://www.aljazeera.com/economy/2026/11/19/anthropic-raises-81-3bn-in-biggest-ipo-of-all-time"
+      },
+      {
+        "title": "TechRepublic: Anthropic IPO Nasdaq trading debut",
+        "url": "https://www.techrepublic.com/article/news-anthropic-ipo-nasdaq-trading-debut/"
+      },
+      {
+        "title": "TechXplore: A third of the global AI supply chain is invisible to policy",
+        "url": "https://techxplore.com/news/2026-11-global-ai-chain-invisible.html"
+      },
+      {
+        "title": "SCM.dk: Maersk sender flere ruter gennem Suez, Aarhus er med",
+        "url": "https://www.scm.dk/maersk-sender-flere-ruter-gennem-suez-aarhus-er-med"
+      },
+      {
+        "title": "Riviera: Tanker hit off Oman as attacks around Strait of Hormuz continue",
+        "url": "https://www.rivieramm.com/news-content-hub/tanker-hit-off-oman-as-attacks-and-mine-claims-in-and-around-strait-of-hormuz-continue-90591"
+      },
+      {
+        "title": "Drewry: World Container Index",
+        "url": "https://www.drewry.co.uk/WCI"
+      },
+      {
+        "title": "Supply Chain Dive: Honda invests $462M in Alabama plant",
+        "url": "https://www.supplychaindive.com/news/honda-invests-462m-in-alabama-plant-to-boost-production/875189/"
+      },
+      {
+        "title": "Manufacturing Dive: Hadrian acquiring Kutztown Foundry & Machine",
+        "url": "https://www.manufacturingdive.com/news/hadrian-acquiring-kutztown-foundry-machine-f6-upgrade-expand-pennsylvania/874947/"
+      },
+      {
+        "title": "Manufacturing Dive: Sila and Panasonic Energy sign supply contract",
+        "url": "https://www.manufacturingdive.com/news/sila-panasonic-energy-titan-silicon-si-c-battery-cells-supply-contract/875092/"
+      },
+      {
+        "title": "Supply Chain Dive: Target boosts on-shelf availability aided by stronger tech",
+        "url": "https://www.supplychaindive.com/news/target-boosts-on-shelf-availability-aided-by-stronger-tech/875117/"
+      },
+      {
+        "title": "Supply Chain Dive: AI-backed tools power Reformation's inventory management",
+        "url": "https://www.supplychaindive.com/news/ai-backed-tools-power-reformations-inventory-management/874645/"
+      },
+      {
+        "title": "arXiv: MANGO Arena preprint",
+        "url": "https://arxiv.org/abs/2611.23613v1"
+      },
+      {
+        "title": "ESM Magazine (Reuters): Walmart raises forecasts, warns of rising fuel costs",
+        "url": "https://www.esmmagazine.com/retail/walmart-raises-forecasts-ahead-of-holidays-warns-of-rising-fuel-costs-326520"
+      },
+      {
+        "title": "Mayr-Melnhof Karton: ad hoc release on Board & Paper impairment",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70182168-eqs-adhoc-mayr-melnhof-karton-ag-wertminderungsbedarf-und-stark-gestiegene-energiekosten-bei-board-paper-belasten-jahresergebnis-2026-ausblick-20-022.htm"
+      },
+      {
+        "title": "TAKKT: ad hoc release on 2026 forecast after cyberattack",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70192764-eqs-adhoc-takkt-ag-takkt-passt-jahresprognose-2026-nach-cyberangriff-an-022.htm"
+      },
+      {
+        "title": "BME: Herbstbarometer 2026",
+        "url": "https://www.bme.de/news/bme-herbstbarometer-2026-einkauf-blickt-zuversichtlicher-auf-die-kommenden-monate/"
+      },
+      {
+        "title": "SKF: SKF Vertevo Capital Markets Day",
+        "url": "https://mfn.se/cis/a/skf/skf-vertevo-capital-markets-day-unleashing-growth-efficiency-and-speed-facc9633"
+      },
+      {
+        "title": "SCM.dk: FOM Technologies samler forsyningskæden i Malmö",
+        "url": "https://www.scm.dk/fom-technologies-samler-forsyningskaeden-i-malmo"
+      },
+      {
+        "title": "SCM.dk: Flügger udvider lagerkapaciteten i Kolding med 60 procent",
+        "url": "https://www.scm.dk/flugger-udvider-lagerkapaciteten-i-kolding-med-60-procent"
+      },
+      {
+        "title": "SCM.dk: Novo forbereder sig på begrænset adgang til råvarer",
+        "url": "https://www.scm.dk/novo-forbereder-sig-pa-begraenset-adgang-til-ravarer"
+      },
+      {
+        "title": "SCM.dk: Hver anden SMV mangler beredskab mod forsyningskriser",
+        "url": "https://www.scm.dk/hver-anden-smv-mangler-beredskab-mod-forsyningskriser"
+      },
+      {
+        "title": "idw-online: Constructor University on LLM supplier selection",
+        "url": "http://idw-online.de/de/news880984"
+      },
+      {
+        "title": "Axfood: Changes in Axfood's executive committee",
+        "url": "https://mfn.se/cis/a/axfood/changes-in-axfoods-executive-committee-0726036e"
+      },
+      {
+        "title": "Supply Chain Shaman: Defining the role of the budget in supply chain planning",
+        "url": "https://www.supplychainshaman.com/defining-the-role-of-the-budget-in-supply-chain-planning/"
+      },
+      {
+        "title": "Ny Teknik: Kinas överproduktion ett hot mot svensk industri",
+        "url": "https://www.nyteknik.se/karriaer/kinas-oeverproduktion-ett-hot-mot-svensk-industri-experten-blir-riktigt-orolig/4513191"
+      },
+      {
+        "title": "Retail Technology Innovation Hub: Blue Yonder names CTO Salil Joshi interim CEO",
+        "url": "https://retailtechinnovationhub.com/home/2026/11/19/ai-powered-supply-chain-technology-firm-blue-yonder-names-cto-salil-joshi-as-interim-ceo"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "SCM.dk: Dyre hastefragter truer detailhandlens indtjening i julen",
+        "url": "https://www.scm.dk/dyre-hastefragter-truer-detailhandlens-indtjening-i-julen"
+      },
+      {
+        "title": "idw-online: FOM Live-Talk Sicherheit & Verteidigung im Wandel",
+        "url": "http://idw-online.de/de/news880908"
+      },
+      {
+        "title": "Placera: Swedbank PMI ökade till 60,5 i oktober",
+        "url": "https://www.placera.se/pressmeddelanden/swedbank-pmi-okade-till-60-5-i-oktober-hogtryck-i-industrin-20261102"
+      },
+      {
+        "title": "BME: KI-Agenten in der Logistik, wie viel Autonomie ist sinnvoll?",
+        "url": "https://www.bme.de/news/ki-agenten-in-der-logistik-wie-viel-autonomie-ist-sinnvoll-/"
+      },
+      {
+        "title": "VerkehrsRundschau: Koalition einigt sich auf einen Spritpreisdeckel",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/koalition-einigt-sich-auf-einen-spritpreisdeckel-3937350"
+      },
+      {
+        "title": "Trading Economics: NY Fed Global Supply Chain Pressure Index",
+        "url": "https://tradingeconomics.com/world/supply-chain-pressure-index"
+      }
+    ]
+  }
+}
