@@ -1,7 +1,7 @@
-# Source digest, fetched 2026-11-21 10:10 UTC
-71 of 75 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
+# Source digest, fetched 2026-11-22 10:15 UTC
+72 of 75 sources read. Items from the last 8 days. Items from page links were opened to read their date and opening text; 'no date' means the article page didn't show one.
 
-Items per lane: planning 125, freight 36, management 20, companies 9
+Items per lane: planning 122, freight 40, management 18, companies 9
 
 # Planning, network design, AI and tech sources (items matching planning terms first)
 
@@ -14,8 +14,6 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   The transition relies on giving people ways to check recommendations and gradually expand what agents can do.
 - 2026-11-16 18:21 | Labor Strike Shuts Down Dozens of Bangladesh Garment Factories | https://www.supplychainbrain.com/general-scm/hr-labor-management/article/16541607/labor-strike-shuts-down-dozens-of-bangladesh-garment-factories [planning terms]
   Workers are demanding a monthly minimum wage of 30,000 taka ($241), up from the current monthly wage of 12,500 taka.
-- 2026-11-13 17:00 | Turning Better Forecasts Into Better Supply Chain Decisions | https://www.supplychainbrain.com/blogs/think-tank/blog/15883286/turning-better-forecasts-into-better-supply-chain-decisions [planning terms]
-  Rules-based forecasting has served retailers well for decades. However, as the industry grows, forecasting is becoming more and...
 - 2026-11-21 07:39 | EU's Hansen Says U.S. Trade Uncertainty Is Drawing Mexico, Europe Closer | https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16542364/eus-hansen-says-us-trade-uncertainty-is-drawing-mexico-europe-closer
   On-and-off tariff threats under U.S. President Donald Trump's second term in office have thrown long-established supply chains...
 - 2026-11-20 17:10 | Bristol Community College Grant Removes Costs for Skilled-Trades Students | https://www.supplychainbrain.com/general-scm/education-professional-development/article/16542326/bristol-community-college-grant-removes-costs-for-skilledtrades-students
@@ -46,6 +44,8 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   Duffy said the Federal Aviation Administration has paused installations of Juniper routers as testing continues
 - 2026-11-18 13:57 | Mexico’s Sheinbaum Celebrates Development of Interoceanic Corridor | https://www.supplychainbrain.com/logistics/rail-intermodal/article/16541899/mexicos-sheinbaum-celebrates-development-of-interoceanic-corridor
   At the APEC Summit in China, President Sheinbaum also pointed to what she described as Mexico’s “privileged geographical position...
+- 2026-11-18 08:00 | Malaysia Loosens Rare Earths Curbs for France | https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16541875/malaysia-loosens-rare-earths-curbs-for-france
+  The announcement came following a meeting between French President Emmanuel Macron and Malaysian Prime Minister Anwar Ibrahim...
 
 ## SCMR
 (failed: https://www.scmr.com/: HTTPError: 403 Client Error: Forbidden for url: https://www.scmr.com/)
@@ -99,6 +99,8 @@ Items per lane: planning 125, freight 36, management 20, companies 9
 (nothing in the window)
 
 ## Logistics Viewpoints
+- 2026-11-21 19:39 | Always-On AI Is Coming to Supply Chains. But Who Owns the Exception? | https://logisticsviewpoints.com/2026/11/21/always-on-ai-is-coming-to-supply-chains-but-who-owns-the-exception/ [planning terms]
+  The supply chain industry has invested heavily in detecting problems sooner. Transportation visibility systems identify late shipments, planning applications flag shortages, and control towers consolidate operational alerts. Yet knowing about an exception and resolving it are two different things. The delay may be visible to everyone, while responsibility for the next action remains surprisingly…
 - 2026-11-20 19:24 | Beyond the AMR: Rockwell’s Production Logistics Strategy Connects Material Flow to Plant Autonomy | https://logisticsviewpoints.com/2026/11/20/beyond-the-amr-rockwells-production-logistics-strategy-connects-material-flow-to-plant-autonomy/ [planning terms]
   An analyst perspective on why orchestration, digital twins, and plant-floor integration matter more than the robot alone Production logistics becomes a control problem Rockwell Automation’s press conference presented a clear thesis: the next major productivity opportunity lies in the space between automated processes. Many factories have sophisticated machines and well-instrumented production…
 - 2026-11-20 17:21 | Who Authorizes the AI Agent? A Supply Chain Lesson from OpenAI’s Daybreak Red | https://logisticsviewpoints.com/2026/11/20/who-authorizes-the-ai-agent-a-supply-chain-lesson-from-openais-daybreak-red/ [planning terms]
@@ -117,8 +119,6 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   The record-breaking IPO reveals a growing concentration of capital, infrastructure, and intelligence—and raises important questions for enterprise technology buyers. Anthropic’s extraordinary stock market debut should command the attention of supply chain executives for reasons extending well beyond its $2 trillion valuation. As artificial intelligence becomes embedded in transportation…
 - 2026-11-19 13:27 | Who Will Control the Supply Chain’s AI Decision Layer? | https://logisticsviewpoints.com/2026/11/19/who-will-control-the-supply-chains-ai-decision-layer/
   The contest among foundation-model providers and enterprise software suppliers is shifting from model performance to the authority to coordinate operational decisions. The next consequential decision in supply chain technology may not be which transportation management system, warehouse platform, or planning application an enterprise buys. It may be who controls the intelligence layer that…
-- 2026-11-19 11:49 | Transportation management needs more than visibility. It needs better decisions | https://logisticsviewpoints.com/2026/11/19/transportation-management-needs-more-than-visibility-it-needs-better-decisions/
-  Global transportation is an enormous web of thousands, if not hundreds of thousands, of interdependent shipments, routes, modes, carriers, facilities and trading partners, creating countless risks and opportunities. Each shipment has its own service expectations, costs, capacity requirements and constraints. Across a global operation, transportation management becomes a continuous stream of…
 
 ## SCM.dk
 - 2026-11-20 06:27 | Smarter Warehouse Planning: Improving Capacity, Material Flow and Safety | https://www.scm.dk/smarter-warehouse-planning-improving-capacity-material-flow-and-safety [planning terms]
@@ -207,23 +207,32 @@ Items per lane: planning 125, freight 36, management 20, companies 9
 (nothing in the window)
 
 ## produktion.de
-- no date | Facturee - Smarte Beschaffung von Zeichnungsteilen | https://www.produktion.de/smarte-beschaffung-von-zeichnungsteilen-by-facturee [planning terms]
-- no date | Interview mit Daniel Stengel, Kearney Fabrik des Jahres: Was die Besten anders machen Was macht die Fabrik des Jahres besser als andere Werke? Im Interview erklärt Daniel Stengel von Kearney, wie die Sieger mit KI, Automatisierung und gezielten Investitionen ihre Wettbewerbsfähigkeit stärken. Anja… | https://www.produktion.de/events-fabrik-des-jahres/fabrik-des-jahres-was-die-besten-anders-machen/2771632 [planning terms]
-- no date | Rüstung und Beschaffung Loitering Munition für die Bundeswehr: Systeme von Stark und Helsing bestehen scharfen Schuss Meilenstein bei der Bundeswehr: Die Loitering-Munition-Systeme Virtus von Stark und HX-2 von Helsing haben ihre Hot-Strike-Kampagne im scharfen Schuss bestanden. Damit starten noch… | https://www.produktion.de/ruestung-aerospace/loitering-munition-fuer-die-bundeswehr-systeme-von-stark-und-helsing-bestehen-scharfen-schuss/2771965 [planning terms]
-- no date | Podcast Industry Insights mit Sparetech Ersatzteilmanagement: Wie KI Lagerbestände reduzieren kann Anja Ringel 18. November 2026 | https://www.produktion.de/mediathek/ersatzteilmanagement-wie-ki-lagerbestaende-reduzieren-kann/2769671
-- no date | Tarifstreit in der Metall- und Elektroindustrie Ganztägige Warnstreiks: IG Metall legt Autobauer und Werften lahm Die IG Metall eskaliert im Tarifstreit: Mit ganztägigen Warnstreiks legt die Gewerkschaft weite Teile der Industrie lahm, darunter Autobauer wie BMW und Audi. Arbeitgeber warnen vor… | https://www.produktion.de/wirtschaft/ganztaegige-warnstreiks-ig-metall-legt-autobauer-und-werften-lahm/2771913
-- no date | Sponsored Ergonomie Ergonomische Arbeitsplatzgestaltung in der Produktion Effizienter, gesünder und motivierter arbeiten: Erfahren Sie jetzt, wie Sie mit Ergonomie Ihre manuelle Fertigung optimieren. item Redaktion 20. November 2026 | https://www.produktion.de/technik/ergonomische-arbeitsplatzgestaltung-in-der-produktion/1765976
-- no date | Roboterhände für die industrielle Automatisierung Roboterhände: Schunk-Spin-off wird zu Tactilia Roboterhände sollen künftig mehr Aufgaben in Produktion und Logistik übernehmen. Das Schunk-Spin-off Tactilia Robotics entwickelt dafür eine modulare Plattform, die sich in unterschiedliche… | https://www.produktion.de/technik/roboterhaende-schunk-spin-off-wird-zu-tactilia/2771157
-- no date | Verteidigungsindustrie & Rüstungsbeschaffung FFG erhält Großaufträge aus den Niederlanden für ACSV und Wisent 2 Nach der Übernahme durch Deutz meldet die Flensburger Fahrzeugbau Gesellschaft (FFG) den nächsten Erfolg: Die Niederlande bestellen auf der Messe NEDS weitere ACSV- und… | https://www.produktion.de/ruestung-aerospace/ffg-erhaelt-grossauftraege-aus-den-niederlanden-fuer-acsv-und-wisent-2/2771946
-- no date | Industriepartnerschaft für moderne Luftverteidigung Hensoldt und ZF kooperieren: Serienfertigung von Spexer-Radaren zur Drohnenabwehr startet Wegen stark steigender Nachfrage nach Drohnenabwehr bündeln Hensoldt und ZF ihre Kräfte: ZF übernimmt die skalierbare Serienfertigung der Spexer-Radare und… | https://www.produktion.de/ruestung-aerospace/hensoldt-und-zf-kooperieren-serienfertigung-von-spexer-radaren-zur-drohnenabwehr-startet/2771124
-- no date | Mobile Instandhaltung bei Stadtwerken Flensburg Stadtwerke Flensburg digitalisieren Instandhaltung Die Stadtwerke Flensburg setzen bei der mobilen Instandhaltung auf das argvis; Maintenance Portal. Die Lösung verbindet SAP PM mit GIS-Daten, ersetzt papierbasierte Abläufe und unterstützt rund 250… | https://www.produktion.de/instandhaltung/stadtwerke-flensburg-digitalisieren-instandhaltung/2772497
-- no date | Industry Insights: Podcast mit DMG Mori DMG Mori: Irene Bader über die Zukunft der Industrie Deutschland bleibt für DMG Mori ein wichtiger Produktions- und Entwicklungsstandort. Im Podcast Industry Insights spricht Vorständin Dr. Irene Bader unter anderem über Wettbewerbsfähigkeit, Automatisierung… | https://www.produktion.de/mediathek/dmg-mori-irene-bader-ueber-die-zukunft-der-industrie/2752180
+- 2026-11-20 07:51 | Rüstung und Beschaffung Loitering Munition für die Bundeswehr: Systeme von Stark und Helsing bestehen scharfen Schuss Meilenstein bei der Bundeswehr: Die Loitering-Munition-Systeme Virtus von Stark und HX-2 von Helsing haben ihre Hot-Strike-Kampagne im scharfen Schuss bestanden. Damit starten noch… | https://www.produktion.de/ruestung-aerospace/loitering-munition-fuer-die-bundeswehr-systeme-von-stark-und-helsing-bestehen-scharfen-schuss/2771965 [planning terms]
+  Meilenstein bei der Bundeswehr: Die Loitering-Munition-Systeme Virtus von Stark und HX-2 von Helsing haben ihre Hot-Strike-Kampagne im scharfen Schuss bestanden. Damit starten noch 2026 erste Ausbildungs- und Übungsvorhaben in der Truppe. Erfolgreicher Scharfschuss: In der 46. Kalenderwoche 2026 haben die Loitering-Munition-Systeme OWE-V Virtus (Firma Stark) und HX-2 (Firma Helsing) eine entscheidende Testkampagne mit scharfem Schuss erfolgreich abgeschlossen. Nachweis der Wirkkette: Auf dem…
+- 2026-11-20 06:26 | Interview mit Daniel Stengel, Kearney Fabrik des Jahres: Was die Besten anders machen Was macht die Fabrik des Jahres besser als andere Werke? Im Interview erklärt Daniel Stengel von Kearney, wie die Sieger mit KI, Automatisierung und gezielten Investitionen ihre Wettbewerbsfähigkeit stärken. Anja… | https://www.produktion.de/events-fabrik-des-jahres/fabrik-des-jahres-was-die-besten-anders-machen/2771632 [planning terms]
+  Was macht die Fabrik des Jahres besser als andere Werke? Im Interview erklärt Daniel Stengel von Kearney, wie die Sieger mit KI, Automatisierung und gezielten Investitionen ihre Wettbewerbsfähigkeit stärken. Die Sieger im Wettbewerb Fabrik des Jahres setzen auf konsequente Weiterentwicklung, hohe Flexibilität und gezielte Investitionen. Gesamtsieger ABB in Ratingen überzeugt mit Wachstum, Automatisierung und dem Umbau der Fertigung im laufenden Betrieb.
+- 2026-11-20 14:18 | Mobile Instandhaltung bei Stadtwerken Flensburg Stadtwerke Flensburg digitalisieren Instandhaltung Die Stadtwerke Flensburg setzen bei der mobilen Instandhaltung auf das argvis; Maintenance Portal. Die Lösung verbindet SAP PM mit GIS-Daten, ersetzt papierbasierte Abläufe und unterstützt rund 250… | https://www.produktion.de/instandhaltung/stadtwerke-flensburg-digitalisieren-instandhaltung/2772497
+  Die Stadtwerke Flensburg setzen bei der mobilen Instandhaltung auf das argvis; Maintenance Portal. Die Lösung verbindet SAP PM mit GIS-Daten, ersetzt papierbasierte Abläufe und unterstützt rund 250 Anwender. Digitale Meldungen und Checklisten verbessern die Datenqualität und reduzieren Medienbrüche. Die Stadtwerke Flensburg haben ihre mobile Instandhaltung neu aufgestellt. Hintergrund waren eine veraltete SAP-MAM-Lösung im Netzbereich und papierbasierte Abläufe in der Erzeugung. Meldungen,…
+- 2026-11-20 10:45 | Sponsored Ergonomie Ergonomische Arbeitsplatzgestaltung in der Produktion Effizienter, gesünder und motivierter arbeiten: Erfahren Sie jetzt, wie Sie mit Ergonomie Ihre manuelle Fertigung optimieren. item Redaktion 20. November 2026 | https://www.produktion.de/technik/ergonomische-arbeitsplatzgestaltung-in-der-produktion/1765976
+  Hier erfahren Sie, wie ergonomische Arbeitsplatzgestaltung in der Produktion funktioniert: ✓ Grundlagen ✓ Beispiele ✓ Praxistipps Effizienter, gesünder und motivierter arbeiten: Erfahren Sie jetzt, wie Sie mit Ergonomie Ihre manuelle Fertigung optimieren. Arbeitsplatzgestaltung in der Produktion verbindet Schutz vor Muskel-Skelett-Erkrankungen (MSE), Ergonomie und Effizienz. Höhenverstellbare Tische, dynamisches Sitzen, Bereitstellung im Greifraum und flackerfreie LED-Beleuchtung reduzieren…
+- 2026-11-20 07:30 | Verteidigungsindustrie & Rüstungsbeschaffung FFG erhält Großaufträge aus den Niederlanden für ACSV und Wisent 2 Nach der Übernahme durch Deutz meldet die Flensburger Fahrzeugbau Gesellschaft (FFG) den nächsten Erfolg: Die Niederlande bestellen auf der Messe NEDS weitere ACSV- und… | https://www.produktion.de/ruestung-aerospace/ffg-erhaelt-grossauftraege-aus-den-niederlanden-fuer-acsv-und-wisent-2/2771946
+  Nach der Übernahme durch Deutz meldet die Flensburger Fahrzeugbau Gesellschaft (FFG) den nächsten Erfolg: Die Niederlande bestellen auf der Messe NEDS weitere ACSV- und Wisent-2-Fahrzeuge zum Aufbau ihrer Leopard-2A8-Panzertruppe. Auftragseingang aus den Niederlanden: Das niederländische Beschaffungsamt Commando Materieel en IT (COMMIT) hat bei der Flensburger Fahrzeugbau Gesellschaft mbH (FFG) weitere Fahrzeuge der Plattform ACSV sowie Wisent 2 Bergepanzer bestellt. Vertragsabschluss auf der…
+- 2026-11-20 07:04 | Tarifstreit in der Metall- und Elektroindustrie Ganztägige Warnstreiks: IG Metall legt Autobauer und Werften lahm Die IG Metall eskaliert im Tarifstreit: Mit ganztägigen Warnstreiks legt die Gewerkschaft weite Teile der Industrie lahm, darunter Autobauer wie BMW und Audi. Arbeitgeber warnen vor… | https://www.produktion.de/wirtschaft/ganztaegige-warnstreiks-ig-metall-legt-autobauer-und-werften-lahm/2771913
+  Die IG Metall eskaliert im Tarifstreit: Mit ganztägigen Warnstreiks legt die Gewerkschaft weite Teile der Industrie lahm, darunter Autobauer wie BMW und Audi. Arbeitgeber warnen vor drastischen Schäden. Die Verhandlungen stecken derweil fest. Flächendeckende Warnstreiks: Die IG Metall ruft bundesweit tausende Beschäftigte zu 24-Stunden-Streiks auf, betroffen sind unter anderem BMW , Audi , Zulieferer sowie Werften. Erstmals seit acht Jahren: Die Gewerkschaft nutzt das Instrument der…
+- 2026-11-19 07:53 | Roboterhände für die industrielle Automatisierung Roboterhände: Schunk-Spin-off wird zu Tactilia Roboterhände sollen künftig mehr Aufgaben in Produktion und Logistik übernehmen. Das Schunk-Spin-off Tactilia Robotics entwickelt dafür eine modulare Plattform, die sich in unterschiedliche… | https://www.produktion.de/technik/roboterhaende-schunk-spin-off-wird-zu-tactilia/2771157
+  Roboterhände sollen künftig mehr Aufgaben in Produktion und Logistik übernehmen. Das Schunk-Spin-off Tactilia Robotics entwickelt dafür eine modulare Plattform, die sich in unterschiedliche Robotersysteme integrieren lässt. Das im Januar 2026 gegründete Schunk-Spin-off firmiert seit November unter dem Namen Tactilia Robotics GmbH und hat seinen Sitz in München. Tactilia entwickelt modulare Roboterhände für humanoide Roboter, Cobots und weitere industrielle Robotersysteme.
+- 2026-11-19 07:35 | Industriepartnerschaft für moderne Luftverteidigung Hensoldt und ZF kooperieren: Serienfertigung von Spexer-Radaren zur Drohnenabwehr startet Wegen stark steigender Nachfrage nach Drohnenabwehr bündeln Hensoldt und ZF ihre Kräfte: ZF übernimmt die skalierbare Serienfertigung der Spexer-Radare und… | https://www.produktion.de/ruestung-aerospace/hensoldt-und-zf-kooperieren-serienfertigung-von-spexer-radaren-zur-drohnenabwehr-startet/2771124
+  Wegen stark steigender Nachfrage nach Drohnenabwehr bündeln Hensoldt und ZF ihre Kräfte: ZF übernimmt die skalierbare Serienfertigung der Spexer-Radare und entwickelt ein eigenes Testsystem. Strategische Partnerschaft: Hensoldt und die ZF Friedrichshafen AG haben eine Kooperationsvereinbarung unterzeichnet. Eigenständige Produktion: ZF baut eine skalierbare Serienfertigung für Spexer-Radare auf, fertigt diese eigenständig und liefert sie direkt an die Kunden aus; alle geistigen Eigentumsrechte…
+- 2026-11-18 06:28 | Podcast Industry Insights mit Sparetech Ersatzteilmanagement: Wie KI Lagerbestände reduzieren kann Anja Ringel 18. November 2026 | https://www.produktion.de/mediathek/ersatzteilmanagement-wie-ki-lagerbestaende-reduzieren-kann/2769671
+  Wie lassen sich Ersatzteilbestände reduzieren? Sparetech-Mitgründer Lukas Biedermann spricht im Podcast Industry Inisghts über KI, Kosten und Ersatzteillager. Ersatzteile sind für Industrieunternehmen eine Art Versicherung gegen Produktionsstillstände. Fällt eine Maschine aus, muss die passende Komponente möglichst schnell verfügbar sein. Doch diese Absicherung hat ihren Preis: In den Lagern großer Produktionsunternehmen liegen Ersatzteilbestände im Wert von vielen Millionen Euro. Nicht selten…
 
 ## Ny Teknik
-(nothing in the window)
+- 2026-11-21 10:55 | Världens största fabrik för grönt flygbränsle har börjat byggas – i Kina | https://www.nyteknik.se/energi/vaerldens-stoersta-fabrik-foer-groent-flygbraensle-har-boerjat-byggas-i-kina/4515479 [planning terms]
+  Kina kräver ingen inblandning av grönt flygbränsle. Trots det har en esaf-fabrik mer än dubbelt så stor som den som planeras i Skellefteå nu börjat byggas. I Skellefteå har projektbolaget Skykraft nyligen inlett teknisk projektering av en flygbränslefabrik. Den ska få kapacitet att tillverka 130 000 ton fossilfritt flygbränsle per år , motsvarande behovet för hela Sveriges inrikesflyg. Målsättningen är att fabriken ska vara i gång 2032. I Kina togs nyligen första spadtaget för en mer än…
 
 ## Dagens Industri
-(nothing in the window)
+- 2026-11-21 17:39 | Sågverksdöden sprider sig: ”Fler nedläggningar väntar” | https://www.di.se/nyheter/sagverksdoden-sprider-sig-fler-nedlaggningar-vantar/ [planning terms]
+  Urshult, Årjäng och Skellefteå. Sågverksdöden sprider sig över hela Sverige. ”Det har inte varit så här illa på decennier”, säger Christian Nielsen, marknadsanalytiker på Skogsindustrierna.
 
 ## MIT Sloan Management Review
 (nothing in the window)
@@ -254,8 +263,6 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   Every year, transportation executives spend considerable time and effort preparing for tender season. They collect data, forecast volumes, define requirements, invite carriers to bid, analyze responses, negotiate rates, and award freight. But the ultimate goal isn’t simply to run a tender and negotiate favorable rates. It’s to make sure those rates and awards translate into ... Read more The…
 - 2026-11-20 15:03 | Above the Fold: Supply Chain Logistics News (November 20, 2026) | https://talkinglogistics.com/2026/11/20/above-the-fold-supply-chain-logistics-news-november-20-2026/
   It’s been another busy week in the world of supply chain and logistics. Since I’m short on time this morning, let’s go straight to the news that caught my attention this week: The Most Powerful 250 Workers in the United States? There may or may not be a strike tomorrow (November 21) at the ports ... Read more The post Above the Fold: Supply Chain Logistics News (November 20, 2026) appeared first…
-- 2026-11-13 14:38 | Above the Fold: Supply Chain Logistics News (November 13, 2026) | https://talkinglogistics.com/2026/11/13/above-the-fold-supply-chain-logistics-news-november-13-2026/
-  I’ve spent the week talking to people. Ten video interviews in five days with supply chain and logistics professionals. We talked about a wide range of industry topics and trends, including AI (of course) and what to expect in the year ahead in freight transportation, global trade, and logistics services. We also talked about the ... Read more The post Above the Fold: Supply Chain Logistics News…
 
 ## Supply Chain Shaman
 - 2026-11-19 02:26 | Defining the Role of the Budget in Supply Chain Planning | https://www.supplychainshaman.com/defining-the-role-of-the-budget-in-supply-chain-planning/ [planning terms]
@@ -290,10 +297,6 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   The fewer systems you have to stitch together, the fewer things there are to break.
 - 2026-11-16 05:15 | India’s Rise: From Promise to Platform for Global Growth | https://news.sap.com/2026/11/india-promise-to-platform-global-growth/
   For much of the past three decades, India's global economic story was defined by potential. That narrative has changed dramatically.
-- 2026-11-13 12:15 | SAP Named a Leader in Two 2026 IDC MarketScapes: Worldwide Warehouse Management for Manufacturing and for Retail | https://news.sap.com/2026/11/sap-leader-idc-marketscapes-warehouse-management-manufacturing-retail/
-  We continue to work with our customers to turn innovation into better warehouse operations and business outcomes.
-- 2026-11-13 11:15 | Successful SAP Transformation Starts With Business Processes, Not Tech | https://news.sap.com/2026/11/successful-sap-transformation-business-processes/
-  Connecting business processes, architecture, data, and human decision-making are key to successful transformation.
 
 # Management, operations research and planning research sources
 
@@ -304,8 +307,7 @@ Items per lane: planning 125, freight 36, management 20, companies 9
 (nothing in the window)
 
 ## Phys.org (economics and business)
-- 2026-11-17 12:00 | Companies may not be laser-focused on supply chain risk—but lenders are | https://phys.org/news/2026-11-companies-laser-focused-chain-lenders.html
-  A variety of interconnected risks—rooted in geopolitics, technology and the environment—are rising and converging on global supply chains. Within companies, the immediate result has been a shift in mindset.
+(nothing in the window)
 
 ## idw-online (DACH research)
 - 2026-11-16 12:32 | Von Lieferketten bis zur Krebsforschung: Wie kausale KI an der Constructor University neue Forschungswege eröffnet | http://idw-online.de/de/news880934 [planning terms]
@@ -330,8 +332,6 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   How long do emotions last? How should companies respond when democracy is under threat? And how can we find our personal flow at work? At the third edition of DisruptHR Hamburg at Kühne Logistics University (KLU), around 170 participants explored fresh perspectives on leadership, teamwork, change… Ten speakers from academia and industry had just five minutes and 20 automatically advancing slides each to challenge conventional thinking, reflecting KLU's Operations Mindset of questioning…
 - 2026-11-17 08:01 | KLU Launches Sports Award for High-Performance Student Athletes | https://www.klu.org/article/klu-launches-sports-award-for-high-performance-student-athletes
   Kühne Logistics University (KLU) showed how students can combine high-performance sport with a demanding degree program at the inaugural KLU Sports Award on Friday evening, November 13. Around 90 guests from Hamburg’s sports community gathered at KLU’s HafenCity campus to celebrate the sporting… Five KLU students who compete at the international level were nominated for the award. The nominees were Ferdinand Steinebach, Jonas von Gersum and Johann Wehnert of Germany’s U21 national field hockey…
-- 2026-11-13 11:30 | Beyond Now: Creating the Future Starts Today | https://www.klu.org/article/beyond-now-creating-the-future-starts-today
-  What happens when 284 participants, 36 teams and 29 Copilots come together to tackle 13 real-world challenges from seven industry partners? At KLU's Future Creation Day 2026, Beyond Now, the answer was a day full of fresh perspectives, bold ideas and tangible solutions. Organized by SPARK, KLU's… The future isn't set in stone. We can actively shape it. At Beyond Now, students experienced this first-hand, working alongside experts from CMA CGM, Kuehne+Nagel, HOYER Group, FRoSTA, INVERTO, Sysmex…
 
 ## The Conversation (business)
 (nothing in the window)
@@ -478,16 +478,16 @@ Items per lane: planning 125, freight 36, management 20, companies 9
 (failed: https://theloadstar.com/: HTTPError: 403 Client Error: Forbidden for url: https://theloadstar.com/)
 
 ## FreightWaves
+- 2026-11-22 01:30 | Shippers’ backup plan is getting more expensive | https://www.freightwaves.com/news/shippers-backup-plan-is-getting-more-expensive
+  Contingency carriers are not standing by waiting for shippers to give them business when the market is tight. The post Shippers’ backup plan is getting more expensive appeared first on FreightWaves .
+- 2026-11-21 14:57 | Tentative union deal averts strike at Port of LA-Long Beach | https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach
+  A tentative accord eases the immediate threat of a strike at the nation’s busiest container port complex after more than a year of bargaining and federally mediated negotiations. The post Tentative union deal averts strike at Port of LA-Long Beach appeared first on FreightWaves .
+- 2026-11-21 13:38 | DHL Express makes customs clearance easier for small cross-border shippers | https://www.freightwaves.com/news/dhl-express-makes-customs-clearance-easier-for-small-cross-border-shippers
+  DHL Express has introduced a new AI-generated product identifier for customs clearance that takes the guesswork out of the process. The post DHL Express makes customs clearance easier for small cross-border shippers appeared first on FreightWaves .
 - 2026-11-20 22:09 | J.B. Hunt broker liability case proceeding after split decision | https://www.freightwaves.com/news/j-b-hunt-broker-liability-case-proceeding-after-split-decision
   The brokerage arm of J.B. Hunt won one and lost one in an Arizona federal court Thursday in what now is shaping up to be one of the key cases on broker liability as the industry moves to a new legal landscape following the decision in Montgomery vs. Caribe Transport II. The U.S. District Court […] The post J.B. Hunt broker liability case proceeding after split decision appeared first on…
 - 2026-11-20 17:41 | Groundtruth launches AI platform to automate freight billing with J.B. Hunt partnership | https://www.freightwaves.com/news/groundtruth-launches-ai-platform-to-automate-freight-billing-with-j-b-hunt-partnership
   Groundtruth aims to reduce manual invoice reconciliation by using AI to validate freight charges before bills reach customers. The startup is nearly fully deployed across J.B. Hunt and is now offering its platform to carriers, brokers and freight forwarders. The post Groundtruth launches AI platform to automate freight billing with J.B. Hunt partnership appeared first on FreightWaves .
-- 2026-11-20 17:30 | Trucking Rejection Rates: Why Holiday Shipping Gets SPICY | https://www.freightwaves.com/news/trucking-rejection-rates-why-holiday-shipping-gets-spicy
-  FreightWaves SONAR data reveals early signals of a tightening market ahead of Thanksgiving. Historically, this period sees a slight increase in tender rejection rates. This year, expect a significant jump potentially pushing rates over 14% as low inventory levels drive last-minute shipping demands. Coupled with potential port strikes, capacity could become extremely constrained in certain […]…
-- 2026-11-20 17:29 | Q3 Shipping Costs Down 3.3% – Where Did The Savings Go? | https://www.freightwaves.com/news/q3-shipping-costs-down-3-3-where-did-the-savings-go
-  Carrier rates fell last quarter, but operators barely felt the savings. Eric Lemus from Deposco breaks down the unexpected disconnect in Q3 shipping costs. A shift to heavier packages, faster service, and residential deliveries meant higher per-package costs, offsetting carrier rate reductions. Learn why operators focused on customer satisfaction and how these trends will impact […] The post Q3…
-- 2026-11-20 17:03 | Industrial Demand Is Broadening. So Is Competition for Space | https://www.freightwaves.com/news/industrial-demand-is-broadening-so-is-competition-for-space
-  Industrial real estate is tightening. Link Logistics’ Brandon Page explains how data centers, power access and faster decisions are reshaping leasing. The post Industrial Demand Is Broadening. So Is Competition for Space appeared first on FreightWaves .
 
 ## Splash247
 - 2026-11-20 12:00 | Subsea 7 seeks buyer for pipelay vessel ahead of Saipem merger | https://splash247.com/subsea-7-seeks-buyer-for-pipelay-vessel-ahead-of-saipem-merger/
@@ -549,8 +549,7 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   Winterdienst beauftragt, aber trotzdem in der Pflicht? Der Rechtsblog zeigt anhand von Urteilen, worauf Logistiker bei Schnee und Glätte achten sollten. Auch Logistiker müssen auf ihrem Gelände Räum- und Streupflichten erfüllen – wer einen Winterdienst beauftragt, ist dabei nicht aus dem Schneider, wie Rechtsanwalt Axel Salzmann im Rechtsblog an verschiedenen Urteilen aufzeigt. Wer als Logistikbetrieb seine Räum- und Streupflichten bei Schnee und Glätte an einen Winterdienst abgibt, kann unter…
 
 ## Logistik Journal
-- 2026-11-13 13:08 | Transportschäden vermeiden: Schaumgummi und Polyetherschaum als Verpackungsschutz | https://www.logistik-journal.de/transportschaden-vermeiden-2/
-  Die meisten Transportschäden entstehen nicht durch einen Sturz, sondern durch Vibration und kleine Stöße über viele Stunden, bei denen sich das Produkt im Karton bewegen kann. Schaumstoff verhindert genau das, vorausgesetzt, Material, Dichte und Form passen zum Produkt. Ein Überblick für Verpackungs- und Logistikverantwortliche. Geschlossenzellig oder offenzellig Für den Transportschutz kommen…
+(nothing in the window)
 
 ## Dagens Logistik
 - 2026-11-20 12:32 | Posti rättar till världens största adressfel – Jultomten får dedikerad brevlåda | https://dagenslogistik.se/finska-posti-rattar-till-varldens-storsta-adressfel-jultomten-far-dedikerad-brevlada/
@@ -565,12 +564,21 @@ Items per lane: planning 125, freight 36, management 20, companies 9
   Relevator nosar ännu mer på den internationella marknaden. Företagets fjärde Autostoreuppdrag börjar i Dubai – och kan sluta var som helst. – Vi har byggt upp både erfarenhet och ett internationellt nätverk som gör att vi kan ta oss an den här typen av uppdrag oavsett var systemen finns, kommenterar Niklas Nygren, vd på Relevator.
 
 ## MT Logistikk
-(failed: https://www.mtlogistikk.no/: no feed and no article links)
+- 2026-11-20 13:48 | Helgebrief uke 47: Norsk teknologi vekker internasjonal appetitt | https://www.mtlogistikk.no/helgebrief-kronikk-ukerapport/helgebrief-uke-47-norsk-teknologi-vekker-internasjonal-appetitt/1365039
+  Lagerroboter får nye eiere, lastebillading kan bli billigere og vareflyten testes før Black Week. Her er ukas utvalgte saker – og det vi følger neste uke. Anthropic har stjålet mye av oppmerksomheten i finansnyhetene med tidenes største børsnotering, bare måneder etter at SpaceX satte forrige rekord. Teknologioptimismen lever godt, samtidig som Nvidia skal finne veien videre uten Jensen Huang i førersetet. Men teknologioptimismen har også en fysisk side. Datasentre skal bygges og utstyr…
+- 2026-11-20 13:07 | Sterk vekst i boks allerede før Black Week | https://www.mtlogistikk.no/helthjem-netthandel-pakkeskap/sterk-vekst-i-boks-allerede-for-black-week/1365238
+  Helthjem forventer sterk vekst under årets travleste uker. For å håndtere volumene er over to hundre nye pakkeskap nå utplassert over landet. I oktober registrerte logistikkaktøren en oppgang i pakkemengden på 20 prosent. Utviklingen ser ut til å fortsette inn i årets handleuker i november og desember, og selskapet anslår en tilsvarende vekst sammenlignet med fjoråret, ifølge en pressemelding. Under tilbudsuken i fjor håndterte distributøren rundt én million forsendelser, med døgnnoteringer på…
+- 2026-11-20 12:24 | Velger Narvik for utskiping av kobber | https://www.mtlogistikk.no/velger-narvik-for-utskiping-av-kobber/1365142
+  Gruveselskapet Viscaria skal bygge et nytt terminalanlegg for kobberkonsentrat. Avtalene med Narvik Havn og Narvik Bulkterminal sikrer frakt fra Kiruna til europeiske markeder. Det svenske gruveselskapet planlegger produksjonsstart i 2028. Det nye anlegget får kapasitet til å håndtere opptil 120 000 tonn kobberkonsentrat i året, opplyses det i en pressemelding. Råvarene skal fraktes med tog fra selskapets nye jernbaneanlegg Leväjärvi i Kiruna. Transporten vil gå over Ofotbanen til den norske…
+- 2026-11-20 09:00 | Nattestenger E6-tunnel i to uker | https://www.mtlogistikk.no/e6-statens-vegvesen-tunnelvedlikehold/nattestenger-e6-tunnel-i-to-uker/1364968
+  Transportører på E6 må beregne ti minutter ekstra kjøretid. Det er i uke 48 og 50 at Øyertunnelen nord for Lillehammer blir sperret for trafikk mellom klokken 20.00 og 06.00, ifølge en pressemelding fra Statens vegvesen. Årsaken er utskifting av utdatert utstyr. Omkjøringen går via lokalveien mellom Øyer og Tretten. Oppgraderingen skjer fordi dagens kamerasystem har passert forventet levetid. I første omgang skal det legges nye kabler, mens selve monteringen av kameraene skjer på nyåret. – Vi…
+- 2026-11-20 08:32 | Bytter ut dieselbiler på krevende ruter | https://www.mtlogistikk.no/elektriske-varebiler-firehjulstrekk-ford-e-transit-custom/bytter-ut-dieselbiler-pa-krevende-ruter/1364900
+  Posten Bring setter inn nye elektriske varebiler med firehjulstrekk i Midt- og Nord-Norge. Målet er å gjøre bilparken utslippsfri innen utgangen av 2027. Selskapet har anskaffet modellen Ford E-Transit Custom. Kjøretøyene har en elektrisk motor på hver aksel og er i første omgang utplassert i regioner med store avstander og tøft klima. Tidligere har utfordrende veiforhold og strenge krav til fremkommelighet gjort at distribusjonen på disse strekningene i stor grad har vært løst med…
 
 ## Rhine gauges (Pegelonline, live; freight desk)
 Water level in cm; trend 1 rising, 0 steady, -1 falling. Kaub needs about 77 cm for a 1.90 m channel.
-- MAXAU (Rhine km 362.327): 506.0 cm, measured 2026-11-21T11:00:00+01:00
-- KAUB (Rhine km 546.23): 179.0 cm, measured 2026-11-21T11:00:00+01:00
-- KÖLN (Rhine km 688.0): 312.0 cm, measured 2026-11-21T11:00:00+01:00
-- DUISBURG-RUHRORT (Rhine km 780.8): 412.0 cm, measured 2026-11-21T11:00:00+01:00
-- EMMERICH (Rhine km 851.9): 218.0 cm, measured 2026-11-21T11:00:00+01:00
+- MAXAU (Rhine km 362.327): 518.0 cm, measured 2026-11-22T11:00:00+01:00
+- KAUB (Rhine km 546.23): 214.0 cm, measured 2026-11-22T11:00:00+01:00
+- KÖLN (Rhine km 688.0): 360.0 cm, measured 2026-11-22T11:00:00+01:00
+- DUISBURG-RUHRORT (Rhine km 780.8): 441.0 cm, measured 2026-11-22T11:00:00+01:00
+- EMMERICH (Rhine km 851.9): 255.0 cm, measured 2026-11-22T11:00:00+01:00

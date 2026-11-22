@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-21T10:10:43.049884+00:00",
+ "fetched_at": "2026-11-22T10:15:16.573661+00:00",
  "window_days": 8,
- "sources_ok": 71,
+ "sources_ok": 72,
  "sources_total": 75,
  "sources": [
   {
@@ -11,7 +11,7 @@
    "method": "feed https://www.supplychainbrain.com/rss/articles",
    "items": 20,
    "error": null,
-   "raw_items": 40,
+   "raw_items": 37,
    "lane": "planning"
   },
   {
@@ -79,7 +79,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 29,
+   "raw_items": 25,
    "lane": "planning"
   },
   {
@@ -127,7 +127,7 @@
    "url": "https://www.produktion.de/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 11,
+   "items": 9,
    "error": null,
    "raw_items": 31,
    "lane": "planning"
@@ -137,8 +137,8 @@
    "url": "https://www.nyteknik.se/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 40,
    "lane": "planning"
   },
@@ -147,8 +147,8 @@
    "url": "https://www.di.se/rss",
    "ok": true,
    "method": "feed https://www.di.se/rss",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 20,
    "lane": "planning"
   },
@@ -179,7 +179,7 @@
    "method": "feed https://developer.nvidia.com/blog/feed/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 16,
+   "raw_items": 11,
    "lane": "planning"
   },
   {
@@ -187,9 +187,9 @@
    "url": "https://talkinglogistics.com/",
    "ok": true,
    "method": "feed https://talkinglogistics.com/feed/",
-   "items": 3,
+   "items": 2,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 2,
    "lane": "planning"
   },
   {
@@ -207,9 +207,9 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 15,
+   "items": 13,
    "error": null,
-   "raw_items": 15,
+   "raw_items": 13,
    "lane": "planning"
   },
   {
@@ -237,8 +237,8 @@
    "url": "https://phys.org/rss-feed/science-news/economics-business/",
    "ok": true,
    "method": "feed https://phys.org/rss-feed/science-news/economics-business/",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "raw_items": 30,
    "lane": "management"
   },
@@ -249,7 +249,7 @@
    "method": "feed https://idw-online.de/de/pressreleasesrss",
    "items": 8,
    "error": null,
-   "raw_items": 408,
+   "raw_items": 406,
    "lane": "management"
   },
   {
@@ -257,7 +257,7 @@
    "url": "https://www.klu.org/newsroom",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 3,
+   "items": 2,
    "error": null,
    "raw_items": 37,
    "lane": "management"
@@ -269,7 +269,7 @@
    "method": "feed https://theconversation.com/uk/business/articles.atom",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 10,
+   "raw_items": 7,
    "lane": "management"
   },
   {
@@ -299,7 +299,7 @@
    "method": "feed https://industriemagazin.at/rss.xml",
    "items": 4,
    "error": null,
-   "raw_items": 23,
+   "raw_items": 22,
    "lane": "management"
   },
   {
@@ -678,7 +678,7 @@
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
    "items": 7,
    "error": null,
-   "raw_items": 20,
+   "raw_items": 17,
    "lane": "freight"
   },
   {
@@ -716,9 +716,9 @@
    "url": "https://www.logistik-journal.de/",
    "ok": true,
    "method": "feed https://www.logistik-journal.de/feed/",
-   "items": 1,
+   "items": 0,
    "error": null,
-   "raw_items": 1,
+   "raw_items": 0,
    "lane": "freight"
   },
   {
@@ -734,10 +734,11 @@
   {
    "source": "MT Logistikk",
    "url": "https://www.mtlogistikk.no/",
-   "ok": false,
-   "method": null,
-   "items": 0,
-   "error": "https://www.mtlogistikk.no/: no feed and no article links",
+   "ok": true,
+   "method": "page links (articles opened for dates)",
+   "items": 5,
+   "error": null,
+   "raw_items": 40,
    "lane": "freight"
   },
   {
