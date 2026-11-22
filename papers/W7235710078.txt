@@ -1,0 +1,2756 @@
+TITLE: Quantifying the added value of human forecaster discussions for tropical cyclone intensity prediction
+AUTHORS: Ilia Azizi, Frederick Iat‐Hin Tam, Marc‐Olivier Boldi, Valérie Chavez‐Demoulin, Tom Beucler
+VENUE: arXiv (Cornell University) (2026-11-16)
+DOI: https://doi.org/10.48550/arxiv.2611.21602
+LICENCE: cc-by
+LINK: https://arxiv.org/abs/2611.21602
+
+Quantifying the added value of human forecaster
+discussions for tropical cyclone intensity prediction
+Ilia Azizi1,4* Frederick Iat-Hin Tam2,3,4 Marc-Olivier Boldi1,4 Valérie Chavez-Demoulin1,3,4 Tom Beucler2,3,4
+1 Department of Operations, HEC Lausanne
+2 Faculty of Geosciences and Environment
+3 Expertise Center for Climate Extremes
+4 University of Lausanne, Switzerland
+* Corresponding author, email format: first.last@unil.ch
+Abstract
+The National Hurricane Center routinely releases Tropical Cyclone Discussions that offer insights into
+its tropical cyclone forecasts. This study examines the added value of these discussions for intensity
+forecasting beyond a set of numerical predictors. For 637 Atlantic and eastern North Pacific tropical
+cyclones from the 2002–2023 hurricane seasons, we analyze the discussion text and its combination
+with 13 hurricane environmental predictors from SHIPS and ERA5 10-meter wind fields, for forecasting
+intensity changes at lead times of 24 to 120 hours using three modeling methods. In one of the
+approaches, we employ an end-to-end deep learning framework for modeling the text, which shows
+that the discussions alone offer comparable value for 24-hour intensity forecasts to the SHIPS predictors.
+Adding discussion information to the SHIPS predictors in an ensemble of five such models reduces
+the mean absolute error of 24-hour maximum sustained wind forecasts for 2022–2023 cyclones from
+9.89 to 8.90 kt, with a confidence interval that excludes zero when whole storms are resampled. The
+ERA5 wind fields have a minor effect on mean absolute error in wind predictions, and model rankings
+differ across predicted variables, lead times and model types. We also provide prediction intervals for
+these forecasts, whose coverage falls below the 90% target during rapid intensification. Analysis of
+the text shows that words related to intensity and intensity change (such as intensify, weaken, eyewall
+and category) are important for the model predictions. This retrospective study using reanalysis data
+shows the added value of the forecasters’ discussions and suggests that multi-modal learning can help
+understand the predictive contribution of expert human judgment. The reanalysis data differ from
+real-time analyses, and the discussions are issued at least three hours after the valid time of the other
+inputs, so these results should not be interpreted operationally.
+Keywords Tropical cyclones, Intensity prediction, Forecast discussions, Multi-modal learning
+1 Introduction
+Tropical cyclone (TC) intensity forecasting remains one of the most challenging problems in operational
+meteorology due to the complex processes across many scales that govern intensification and the
+nonlinear interactions between storms and their environment. Traditional approaches have provided
+valuable foundations for intensity prediction. Statistical-dynamical schemes like the Statistical Hurricane
+Intensity Prediction Scheme (SHIPS) use regression on environmental predictors, including sea surface
+temperature and wind shear, to forecast intensity change (DeMaria et al., 2005). The GFDL hurricane
+model has improved track and intensity forecasts through changes to initialization, model physics and
+ocean coupling (Bender et al., 2007; 1993). Discussions written by weather forecasters for individual
+storms provide a complementary source of information, combining observations, model guidance and
+expert interpretation. Such discussions inform critical decisions and assist threat communication for
+key National Weather Service partners (Morss et al., 2022).
+In recent years, machine learning (ML) has offered new ways to extract predictive patterns from
+large climate datasets. Deep learning models trained on satellite imagery can help locate cyclone centers
+and classify current intensity (Do et al., 2025). Advances in large language models (LLMs) also open
+1
+arXiv:2611.21602v1 [cs.LG] 16 Nov 2026
+a Human synthesis in hurricane forecasting
+Observations Model guidance Analysis fields
+Derived
+winds
+Satellite
+imagery
+In-situ
+profiles
+Moisture
+ Flow
+ Vortex
+Human
+forecaster
+Track forecast
+ Intensity forecast
+Lead +24 h
+Wind 𝑉max
+Pressure MSLP
+Storm discussion
+Evidence
+Reasoning
+Uncertainty
+b Information in NHC discussions
+Data synthesis (Ian, Discussion 19, 2022)
+“. . . The initial wind speed is set to 105 kt, matching a blend of
+earlier SFMR and flight-level wind data. . . . ”
+Forecast uncertainty (Ian, Discussion 19, 2022)
+“While the shear should increase up through landfall, it is just
+too close-to-call . . . whether the larger system is able to resist
+the shear.”
+Judgment about guidance (Dorian, Discussion 3, 2013)
+“. . . MY FEELING IS THAT THE CYCLONE WILL NOT
+WEAKEN AS MUCH AS SOME OF THE MODELS ARE
+FORECASTING . . . ”
+c Multi-modal intensity prediction
+ERA5 SHIPS predictors NHC discussions
+⋯
+𝑡0 𝑡0 +𝜏
+VMAX MSLP
+CSST Z850
+D200 SHGC
+TWAC RHMD
+. . . 13 predictors
+“. . . it is just too
+close-to-call . . .
+whether the larger
+system is able to
+resist the shear.”
+CNN MLP Text encoder
+Multi-modal fusion
+Δ𝑉max andΔMSLP from𝑡 to𝑡+ℎ
+ℎ=24,48,…,120 h
+d Testing the added value of discussions
+𝑅2 (schematic)
+Added
+value
+Tabular + text
+Tabular
+24 48 72 96 120
+Forecast lead (h)
+Illustrative hypothesis. Actual gains are evaluated by modality and lead
+time.
+Figure 1. Overview of MultiCyclone. (a) Operational forecasters synthesize observations, analysis
+fields and model guidance. (b) Excerpts from Ian Discussion 19 and Dorian Discussion 3 illustrate data
+synthesis, uncertainty and judgment. A typographical error in the Dorian excerpt has been corrected.
+(c) Two frames of ERA5 wind fields from the input sequence, SHIPS predictors and a shortened NHC
+excerpt feed the modality encoders for intensity-change prediction. The symbol τ denotes the elapsed
+time between the shown frames. (d) The study tests the added value of discussion text. The curves are
+schematic, not measured results.
+the possibility of integrating textual analyses, such as forecast discussions, with numerical data. LLMs
+can even act as regressors from examples supplied in a prompt, without additional training (Vacareanu
+et al., 2024). Integrating heterogeneous forms of information for a shared prediction task, known as
+multi-modal learning (Parcalabescu et al., 2021), has inspired research on TC intensity forecasting
+using ML and data fusion. Recent works demonstrate diverse architectural approaches. For example,
+Boussioux et al. (2022) combine features learned from atmospheric reanalysis maps with environmental
+predictors in gradient-boosted trees, Wang et al. (2025) introduce an attention-based model trained on
+global TC data, S. Zhang et al. (2025) use a diffusion model for multi-modal forecasting, and D. Gupta
+& Arthur (2025) study ensemble learning with heterogeneous inputs. We therefore evaluate whether
+National Hurricane Center (NHC) discussion text provides measurable predictive information when
+combined with selected tabular predictors and ERA5 wind fields, as summarized in Figure 1. We call
+this approach MultiCyclone.
+1.1 Contributions
+MultiCyclone combines tabular meteorological predictors, ERA5 reanalysis winds, and storm-specific
+NHC discussions to predict changes in TC intensity. We consider leads from 24 to 120 h and focus on
+the 24 h lead time, for which the retained data include more storms and cases than at longer leads. The
+2
+Method Tabular Spatial fields Text Multi-modal Interp.
+SHIPS (DeMaria et al., 2005) ✓ ✗ ✗ ✗ (✓)
+GFDL (Bender et al., 2007; 1993) ✓ ✓ ✗ ✗ ✗
+CNN-based (B.-F. Chen et al., 2019; Combinido et al., 2018) ✗ ✓ ✗ ✗ ✗
+HurriCast (Boussioux et al., 2022) ✓ ✓ ✗ ✓ (✓)
+MSCAR (Wang et al., 2025) ✓ ✓ ✗ ✓ ✗
+MTCIE (T. Song et al., 2024) ✗ ✓ ✗ ✗ ✗
+MultiCyclone ✓ ✓ ✓ ✓ ✓
+Table 1. Comparison of tropical cyclone intensity estimation and forecasting methods. Spatial fields
+include satellite imagery, gridded reanalysis or numerical model analyses, depending on the study.
+The input categories summarize different approaches rather than a common architecture. ✓ = fully
+supported, (✓) = partially supported, and ✗ = not supported. MultiCyclone combines all three modalities
+and includes local attribution and analyses of sensitivity to text (Interp.).
+experiments assess the information carried by discussions in this retrospective setting. Our contributions
+are as follows:
+• Forecaster discussion text as a predictive modality. We quantify the contribution of storm-
+specific discussions to retrospective 24 h intensity prediction. The primary neural models using
+tabular inputs and discussions achieve lower 24 h wind MAE and higher wind R2 than the
+corresponding models using tabular inputs alone. The size and uncertainty of the gain depend on
+architecture and evaluation population.
+• Framework for heterogeneous modalities. We develop a modular framework using pretrained
+embeddings and encoders trained for each modality to combine tabular predictors, gridded wind
+fields, and unstructured text, with fixed modality ablations that show when additional sources
+help or fail to help.
+• Comparison across forecast leads. We report fixed modality configurations, reference baselines,
+comparisons across model families, and diagnostics across forecast leads using Atlantic and eastern
+North Pacific storms.
+• Analysis of the text signal. We examine the signal in discussion text through integrated
+gradients attribution, a TF-IDF lexical baseline, and a set of text perturbations. These analyses
+highlight sensitivity to vocabulary describing intensity and its evolution, but do not confirm the
+causal contribution of individual information sources and explicit forecaster judgment.
+• Uncertainty analysis by storm. We evaluate post-hoc interval calibration when forecast errors
+are correlated within storm tracks. We compare a quantile based on pooled cases with bootstrap
+calibration that resamples whole storms, Adaptive Conformal Inference with delayed feedback
+(Gibbs & Candès, 2021), an EnbPI-style proxy (C. Xu & Xie, 2021), and the CLEAR framework
+(Azizi et al., 2026) using the same splits, with whole storms held out for evaluation (subsection 6.3).
+Coverage is assessed empirically, without a finite-sample guarantee under storm dependence.
+2 Related Work
+The work most relevant to this study falls into four areas, covering established intensity forecasting,
+machine learning with numerical and image inputs, meteorological text models, and uncertainty
+quantification. We review these areas to identify what storm-specific forecast discussions may add to
+the numerical inputs used here.
+3
+2.1 Traditional TC Intensity Prediction Models
+Early intensity forecasting relied on statistical and statistical-dynamical approaches. For example,
+SHIPS employs multiple regression with environmental predictors such as sea surface temperature,
+vertical wind shear, and storm structure parameters to forecast intensity changes (DeMaria et al.,
+2005). Successive versions incorporating new predictors and updated datasets showed significant skill
+out to 72 hours in the Atlantic compared to climatology and persistence baselines, while dynamical
+forecast systems based on numerical weather prediction models have evolved substantially over recent
+decades. The GFDL hurricane model lineage, beginning with pure atmospheric dynamical cores and
+progressing through ocean coupling, has demonstrated the value of improved physics parameterizations
+and increased resolution (Bender et al., 2007; 1993). Modern operational systems like HWRF and HAFS
+continue this evolution, incorporating advanced vortex initialization schemes and high-resolution
+nested grids. Together, these traditional methods provide essential baselines and remain operationally
+important, but the substantial cost of running these models motivates exploration of data-driven models
+that can more flexibly incorporate diverse observations, akin to the use of data assimilation in dynamical
+forecast systems.
+2.2 Machine Learning for TC Forecasting
+Machine learning studies differ in whether they use a single data source or combine complementary
+modalities. The distinction matters here because our comparisons isolate the contribution of discussion
+text within a shared evaluation design.
+2.2.1 Uni-modal Approaches
+Machine learning approaches are applied to TC forecasting using tabular or image data. Gradient
+boosting machines (e.g., XGBoost) trained on environmental variables can capture nonlinear relation-
+ships and reduce intensity forecast errors in retrospective tests (Jin et al., 2019). Convolutional neural
+networks (CNNs) trained directly on satellite, infrared or microwave images of cyclones have achieved
+intensity estimates with error comparable to or better than traditional methods (B.-F. Chen et al., 2019;
+Combinido et al., 2018). Do et al. (2025) use geostationary satellite images to jointly locate cyclone
+centers and classify current intensity. Their task concerns storm monitoring. A separate CNN approach
+uses reanalysis fields for intensity forecasting (X.-Y. Xu et al., 2022).
+2.2.2 Multi-modal Approaches
+Recent TC studies combine different numerical or spatial inputs. D. Gupta & Arthur (2025) study
+ensembles with heterogeneous datasets, while S. Zhang et al. (2025) introduce a multi-modal diffusion
+model. HurriCast (Boussioux et al., 2022) encodes atmospheric reanalysis maps and combines the
+learned representation with tabular predictors in a gradient-boosted tree. These studies motivate testing
+whether a separately produced source of information, the NHC discussion, adds value to a numerical
+model.
+Other models combine images and environmental data directly. MSCAR uses causal autoregressive
+attention to forecast intensity from satellite and reanalysis inputs (Wang et al., 2025). TropiCycloneNet
+introduces a multi-modal dataset and a generative forecast model that combines images with environ-
+mental and temporal features (C. Huang et al., 2025b). TCP-Diffusion instead predicts cyclone-associated
+rainfall from past precipitation and environmental fields (C. Huang et al., 2025a). MMSTN jointly fore-
+casts track and intensity (C. Huang et al., 2022), whereas MT-GN estimates current intensity through
+classification and regression from satellite imagery (Zhao et al., 2024). The hybrid model of You et al.
+(2025) combines rainfall images with SHIPS predictors for intensity forecasting.
+4
+2.3 Text Modality
+While most forecasting models focus on numerical or image data, there is increasing exploration of
+textual information in weather prediction. This includes not only numerical weather bulletins and
+structured meteorological text, but also expert discussions, news, and public reports. Text enters weather
+research as a benchmark target, a source of predictive features, or a direct input to a language model.
+Our focus is the information carried by forecasters’ storm-specific prose.
+2.3.1 Weather Language Models and Benchmarks
+Text often enters indirectly, as a benchmark target paired with weather data. Ma et al. (2024) pair plots of
+mesoscale analyses, surface observations and radar reflectivity with Storm Prediction Center discussions,
+and document limitations of the tested vision-language models through benchmark tasks and expert
+review. Shinde et al. (2026) present WxC-Bench, a multi-modal benchmark spanning six downstream
+tasks including both TC monitoring and natural language forecast generation from NOAA Storm
+Prediction Center reports. J. Chen et al. (2025) construct ClimateIQA, a meteorological visual question
+answering dataset comprising 762,120 instruction samples paired with reanalysis-derived heatmaps
+for extreme weather anomaly analysis. Similarly, CLLMate (H. Li et al., 2025) aligns environmental
+news articles with reanalysis data and has been used to evaluate 32 multi-modal LLMs on weather and
+climate event forecasting, revealing both strengths and persistent gaps.
+Text is also used directly in some weather-related research tasks. Aquilon (Varambally et al., 2025)
+combines language queries with encoded weather fields to study multi-modal weather reasoning.
+Knowledge-guided prompt learning has also been studied for TC intensity estimation (W. Li et al.,
+2025). Natural language processing has also been used to extract structured information from weather
+text. For example, Lai et al. (2022) geocode historical storms, floods, and adaptation measures from
+newspaper reports. However, these tasks differ substantially from the focus of this study, which uses
+multi-modal learning to extract potential human insights from NHC forecaster discussions.
+2.3.2 LLMs as Regressors
+Recent studies have demonstrated that LLMs can serve as effective regressors through in-context
+learning, eliminating the need for task-specific fine-tuning. In-context learning for numeric prediction
+is when pretrained LLMs are prompted with examples to regress outputs. These approaches view
+the LLM itself as a text-to-text regression engine (Nafar et al., 2025). Vacareanu et al. (2024) show
+that LLMs can equal or outperform traditional regression models on various prediction tasks when
+provided with appropriate in-context examples. Tang et al. (2025) study LLM embeddings as features
+for regression, finding that larger models are not always better. The OmniPred framework extends
+this concept (X. Song et al., 2024), training language models as universal regressors capable of precise
+numerical prediction across diverse domains using textual representations of mathematical parameters.
+A known limitation of LLM regressors is that discrete number tokenization and cross entropy over
+tokens do not directly encode numerical distance. Continuous numerical representations (Golkar et al.,
+2024) and losses that account for numerical distance (Zausinger et al., 2025) address these limitations,
+and therefore performance depends on the model, representation and task.
+2.3.3 Interpreting LLMs
+We review interpretation methods because a central question here is which parts of a discussion the text
+models respond to. Interpreting which input features drive predictions in transformer-based models
+remains an active research challenge, with methods broadly falling into three categories: attention-based,
+gradient-based, and perturbation-based approaches. Attention weights are often used to inspect which
+tokens a model attends to. Whether they provide a faithful explanation depends on the question being
+asked and on checks that connect the weights to model behavior (Bastings & Filippova, 2020; Serrano
+& Smith, 2019; Wiegreffe & Pinter, 2019). Integrated gradients (Sundararajan et al., 2017) accumulate
+5
+gradients along a path from a baseline to the input. The method was developed to satisfy sensitivity
+and implementation invariance, and its attributions sum to the output change from that baseline.
+Perturbation-based approaches measure how the output changes when parts of the input are masked or
+removed. A complementary line of work, mechanistic interpretability, aims to reverse-engineer the
+internal computations of transformer models by identifying interpretable circuits, features in residual
+streams, and neuron-level roles (Rai et al., 2025). While these techniques offer deeper insight into how
+models process information internally, they remain nascent for domain-specific regression tasks such
+as meteorological prediction.
+2.4 Uncertainty Quantification
+Intensity forecasts also require an account of predictive uncertainty. We distinguish general interval
+methods from approaches evaluated specifically for tropical cyclones.
+2.4.1 General Approaches
+Split conformal prediction provides marginal coverage under exchangeability of calibration and test
+scores (Vovk et al., 2005). For models with several input types, Azizi (2026a) studies calibration based
+on disagreement among modality predictors or on which inputs are available. This is relevant when
+discussions are missing, although its exchangeability assumptions do not directly cover dependent
+cases within storms. Ensemble Batch Prediction Intervals (EnbPI) use bootstrap ensemble residuals to
+form sequential intervals under assumptions on the time series error process (C. Xu & Xie, 2021). Those
+results do not directly apply to our residual proxy based on a fixed ensemble. Functional Generative
+Networks use learned model perturbations to generate joint ensemble weather forecasts while training
+against marginal continuous ranked probability scores (Alet et al., 2025). CLEAR (Azizi et al., 2026)
+calibrates regression intervals that combine aleatoric and epistemic uncertainty, and Azizi (2026b)
+applies a related separation to open-ended answers of language models, with conformal sets calibrated
+for groups of questions identified before generation. These methods address different prediction and
+dependence settings.
+2.4.2 Uncertainty Quantification for TC Forecasting
+For TC uncertainty quantification, researchers have studied dynamical ensembles, neural distribution
+models, and conformal methods. The reliability of dynamical ensemble guidance varies by case and
+verification setting (Bachmann & Torn, 2021). MTCIE predicts both a mean and a standard deviation for
+intensity from satellite imagery (T. Song et al., 2024), while Fernandez et al. (2025) estimate uncertainty
+in track forecasts with a neural network. Conformal methods have been applied to TC track (Meng &
+T. Song, 2024) and intensity (X. Chen et al., 2025). Dependence within storms and shifts between seasons
+make the exchangeability required for split-conformal coverage uncertain here, which motivates the
+empirical storm-level analysis in Section 6.3.
+3 Data
+Our regional dataset uses TCBench storm identifiers and forecast structure (Gomez et al., 2026), with
+the 13 selected predictors and initial intensity read from the SHIPS developmental data at the initial
+time. These data are compiled after each season from the NHC best track and model analyses. We add
+ERA5 reanalysis winds and NHC discussions for this study. The discussions are not part of the cited
+TCBench release. The dataset covers the Atlantic and eastern North Pacific basins from 2002 to 2023.
+It contains 637 storms (282 Atlantic and 355 eastern North Pacific) and 13,885 cases at 6 h intervals,
+one per storm and synoptic time. The selected SHIPS predictors and ERA5 wind frames cover all these
+storms. Section 3.2 describes how discussions are matched to cases and how many cases have a match.
+6
+3.1 Modalities
+Tabular Data (SHIPS) The SHIPS dataset provides 13 meteorological variables derived for each
+case and summarized in Table 2. These predictors are grouped into four categories, comprising storm
+characteristics (e.g., VMAX, MSLP), environmental fields (e.g., CSST, Z850), thermodynamic variables
+(e.g., EPOS, RHMD), and dynamic variables (e.g., D200, SHGC). Together, these 13 predictors capture both
+the internal state of the storm and the environmental conditions influencing its intensity evolution. The
+pairwise Pearson correlations among these variables are shown in subsubsection C.1.1 (Figure 11). As
+expected, Vmax and MSLP are strongly anti-correlated, while most environmental predictors are only
+weakly correlated with one another.
+Table 2. SHIPS predictors. Definitions, averaging radii and stored units follow the NOAA predictor
+specification. Model inputs are standardized using the training split.
+Variable Description
+VMAX Maximum sustained surface wind (kt)
+MSLP Minimum sea-level pressure (hPa)
+lat Latitude (degrees north)
+lon Longitude (degrees east, negative westward)
+CSST Climatological sea-surface temperature (0.1◦C)
+Z850 850 hPa vorticity, 0–1000 km radius (10−7 s−1)
+D200 200 hPa divergence, 0–1000 km radius (10−7 s−1)
+EPOS Mean positive lifted-parcel minus environmentθe, 200–800 km radius (0.1 K)
+RHMD Mean 700–500 hPa relative humidity, 200–800 km radius (%)
+TWAC Mean symmetric 850 hPa tangential wind, 0–600 km radius (0.1 m s−1)
+G200 Symmetric-vortex temperature perturbation at 200 hPa, 200–800 km radius (0.1 K)
+TADV Mean 850–700 hPa temperature advection, 0–500 km radius (10−6 K s−1)
+SHGC Generalized multilevel wind shear, vortex removed, 0–500 km radius (0.1 kt)
+Reanalysis Data (ERA5) We use ERA5 reanalysis data (Hersbach et al., 2020) at 0.25° × 0.25° resolution,
+extracting a 41×41 grid-point box (about 10° × 10°) centered on each storm location. The image input
+contains the u and v components of the 10 m wind (u10, v10). These two fields retain wind direction and
+speed within the chosen spatial crop. subsection C.3 gives the formulas that link these components
+to wind speed and direction. We use only these two 10 m wind components and omit potentially
+useful fields (e.g., humidity, temperature, and upper-level winds) to avoid redundancy with the SHIPS
+predictors. The data pipeline handles the ERA5 variable names used before 2022 (10u, 10v) and from
+2022 onward (u10, v10). Figure 2 summarizes the storm-centered wind magnitude in the training data.
+ERA5 is produced retrospectively through atmospheric modeling and data assimilation, so these fields
+should not be read as real-time analysis inputs.
+Textual Data The NHC publishes routine Tropical Weather Discussions for the Atlantic basin
+(TWDAT, Figure 3) and Tropical Cyclone Discussions for individual storms after they form (Figure 4).
+Early experiments with TWDAT were not promising, so we used the storm-specific discussions instead,
+without developing a systematic TWDAT ablation. Storm-specific discussions contain observations,
+guidance summaries, intensity forecasts, and forecaster interpretations. Figure 4 shows one explicit
+expression of judgment, but our experiments do not isolate the value of such statements. The matching
+rule is described below, and subsection J.2 examines sensitivity to discussion availability.
+7
+(a) Mean
+ (b) Standard deviation
+5
+6
+7
+8
+9
+10
+11
+12
+m/s
+2.5
+3.0
+3.5
+4.0
+4.5
+5.0
+5.5
+6.0
+m/s
+Figure 2. Mean (a) and standard deviation (b) of storm-centered ERA5 10 m wind speed,
+√
+u2 10 +v2 10,
+across 11,021 training cases from 495 storms. Each case has equal weight. The cross marks the center of
+the 41×41 grid. Individual zero-valued grid points are retained. No entirely zero-padded frames occur
+among these cases.
+TROPICAL WEATHER DISCUSSION
+NWS NATIONAL HURRICANE CENTER MIAMI FL
+205 PM EDT WED JUL 24 2013
+...
+GULF OF MEXICO
+SURFACE RIDGING IS OVER THE GULF OF MEXICO...
+...
+CARIBBEAN SEA
+A TROPICAL WAVE IS S OF THE CAYMAN ISLANDS WITH NO SIGNIFICANT...
+...
+ATLANTIC OCEAN
+A 1019 MB HIGH IS OVER THE W ATLANTIC NEAR 28N64W...
+...
+Figure 3. Tropical Weather Discussion, 24 July 2013. For illustration only, excluded from reported
+results. Ellipses mark omissions. Source NHC (2013).
+3.2 Curation
+Temporal Alignment Since different modalities are recorded at different times, we specify their
+timing explicitly. For each case at synoptic time t, the matching pipeline first searches for storm-specific
+discussions whose issue times lie within 1 h of t+6 h. Issue times are read from the header printed in
+each discussion. Routine discussions for synoptic time t are issued near t+3 h, so this window can
+contain only special discussions. The pipeline prefers a discussion later than t+6 h within this window
+and otherwise takes the closest one. If this search has no candidate, it chooses the closest discussion in
+the archive, taking the earlier one when two are equally close. Most matches arise from this step and are
+routine discussions issued near t+3 h. The pipeline then discards selections outside [t,t+7h], without
+trying another candidate. Consequently, a case can remain unmatched even when another discussion
+would satisfy the final time window. This matching is held fixed across the model comparisons. In
+the matched data, 98% of issue times are exactly t+3 h and all offsets lie between t+3 h and t+7 h. The
+matches later than t+3 h are special discussions. The discussion therefore has a later information set
+than the time-t numerical inputs. This is a retrospective comparison, not an operational forecast using
+8
+TROPICAL STORM DORIAN DISCUSSION NUMBER 3
+NWS NATIONAL HURRICANE CENTER MIAMI FL
+500 PM EDT WED JUL 24 2013
+...
+THE INITIAL MOTION ESTIMATE IS 285/17 KT. DORIAN IS EXPECTED TO REMAIN SOUTH OF AND MOVE
+WEST-NORTHWESTWARD TO WESTWARD IN TANDEM WITH A STRONG SUBTROPICAL RIDGE LOCATED
+WELL TO THE NORTH. THE NHC MODEL GUIDANCE CONTINUES TO REMAIN TIGHTLY PACKED AND IN
+EXCELLENT AGREEMENT ON THIS SCENARIO. [...]
+↪
+↪
+↪
+GIVEN THAT DORIAN WILL BE MOVING OVER COOLER WATER AT A BRISK 18 KT FOR THE NEXT 24-36
+HOURS...MY FEELING IS THAT THE CYCLONE WILL NOT WEAKEN AS MUCH AS SOME OF THE MODELS
+ARE FORECASTING...AND AS A RESULT...THE OFFICIAL TRACK FORECAST LEANS TOWARD THE
+SLOWER GFS...UKMET...AND CANADIAN MODEL SOLUTIONS.
+↪
+↪
+↪
+...
+Figure 4. Excerpt from Tropical Storm Dorian Discussion 3 (typographical error corrected). Source
+National Hurricane Center (2013).
+the same information at issue time (subsection 7.5). This matching succeeds for 12,704 cases, or 91.5%
+of the dataset. Each of the 637 storms is matched to at least one discussion, because storms without any
+match were removed when the dataset was built. That step used the earlier file-name times and left
+out 56 Atlantic storms (1,176 training and validation cases, none in the test seasons), most of whose
+cases the printed issue times would match. Coverage is uneven across cases within storms. 308 storms
+have a matched discussion for every one of their 6,303 cases. The remaining 329 storms span 7,582
+cases, of which 6,401 are matched and 1,181 are not. An unmatched case means that no discussion was
+matched in the collected archive under this rule, not necessarily that no discussion was issued. For fused
+models, an unmatched discussion is represented by a zero text embedding during training and inference.
+The neural discussion-only model omits unmatched rows, while the hybrid and temporal text-only
+regressors keep them with a zero vector. We therefore distinguish the full fused-model population
+from the matched-discussion population when comparing models, and assess the missingness channel
+separately.
+Text Processing We remove the terminal FORECAST POSITIONS AND MAX WINDS section from
+storm-specific discussions. This excludes the structured official forecast table, except in two training
+discussions (Appendix A), but the remaining narrative may still contain numerical intensities and
+forecasts. Table removal alone does not establish the absence of information leakage. The end-to-end
+neural model loader trims the bulletin header to the first datetime line, normalizes whitespace, converts
+text to lowercase, and tokenizes it with the RoBERTa tokenizer. We retain up to the first 510 content
+tokens of each cleaned discussion, plus two special tokens. An exploratory inference check using
+length-weighted averaging of embeddings from chunks covering the full discussion showed no clear
+improvement. The hybrid and temporal pipelines use the Qwen3-Embedding-0.6B sentence encoder
+with its own text-cleaning procedure and the same forecast-section cutoff (subsection 4.2, subsection 4.4).
+Both paths use the bounded discussion matching described above.
+Normalization Numerical tabular predictors are standardized using feature statistics from the train-
+ing set, with the family-specific missing-value handling described in Appendix C. ERA5 images are
+normalized independently per channel (u10, v10), using the means and standard deviations of nonzero
+frames from training storms. Frames that are entirely zero remain zero. Validation and test inputs
+reuse these statistics. The neural models standardize each intensity-change target using statistics from
+the training set for the multi-output MSE loss, and predictions are transformed back to knots or hPa
+for evaluation. The hybrid XGBoost and Ridge regressors fit the intensity-change targets directly
+9
+in physical units. For fixed predictions, inversion of a common affine target transformation leaves
+target-specific R2 unchanged. Scaling targets during neural training nevertheless changes the relative
+weighting of the two losses.
+4 Methodology
+This section describes our approach to multi-modal tropical cyclone intensity prediction. We begin
+by formalizing the prediction task, then present three complementary modeling frameworks. These
+comprise a hybrid architecture combining deep learning encoders with gradient boosting, an end-to-end
+neural network with learnable fusion, and a temporal extension that models storm evolution over
+consecutive timesteps. We conclude with training strategies common to all approaches.
+4.1 Problem Formulation
+For each case at synoptic time t, we use the available tabular (T), image (I) and discussion text (D)
+features to predict the change in storm intensity after h hours, where h∈{24,48,72,96,120} and cases
+occur at 6 h intervals. For the full multi-modal ablation we evaluate all uni-modal (T, I, D), bi-modal
+(T+I, T+D, I+D), and tri-modal (T+I+D) combinations. The prediction targets are
+ΔVmax,h(t)=Vmax(t+h)−Vmax(t), ΔMSLPh(t)=MSLP(t+h)−MSLP(t),
+Here Vmax is maximum sustained wind and MSLP is minimum sea-level pressure. Models are trained
+and scored on these changes. Absolute future intensity is reconstructed by adding the predicted change
+to the dataset intensity at time t. Models containing tabular inputs also receive Vmax(t) and MSLP(t)
+among their numerical predictors. We emphasize 24 h results because longer leads have fewer valid
+future intensities. A forecast initialized when the discussion was issued would require a new timing
+and verification protocol.
+4.2 Hybrid Approach
+Discussion text, reanalysis fields, and tabular predictors are not jointly available for every case. The
+hybrid approach in Figure 5 trains or supplies separate encoders, then fits a regressor to their fixed-
+length outputs. Because the encoders are fixed, each combination of inputs only requires refitting the
+regressor. Raw XGBoost feature importance scores over 13 tabular variables and much larger image and
+text embedding blocks are not comparable measures of modality contribution. Correlated predictors
+can also distort feature importance (Nicodemus et al., 2010). We therefore assess added predictive value
+by fitting the model with and without a modality and comparing errors on the test seasons, not by raw
+feature ranks. With correlated modalities this measures the value added beyond the other inputs, not
+the total information in a modality.
+Inspired by Boussioux et al. (2022), we pretrain a CNN encoder on ERA5 wind fields with a self-
+supervised objective combining next-frame embedding prediction and frame reconstruction (subsec-
+tion C.5), and use the trained encoder to produce 128-dimensional image embeddings. We repeat
+the full hybrid training process with five random seeds. In each run, we first train a CNN, then use
+it to extract image features for the regressor without further updating the CNN. We also explored
+DINOv2 (Oquab et al., 2024), pretrained on natural images, but did not retain it for the reported experi-
+ments (subsection C.4). For text encoding we use the pretrained Qwen3-Embedding-0.6B (Y. Zhang
+et al., 2025) sentence encoder without fine-tuning, retaining the first 768 dimensions of its cached
+output. An XGBoost gradient boosting model then fuses the raw 13 tabular SHIPS predictors, the image
+embeddings, and the text embeddings into a single intensity prediction.
+10
+Inputs Feature extraction Features Fusion Prediction
+SHIPS predictors
+VMAX MSLP
+CSST Z850
+D200 SHGC
+. . . 13 variables
+ERA5 wind fields
+41 × 41 × 2
+NHC discussion
+“. . . it is just too close-
+to-call . . . whether the
+larger system is able
+to resist the shear.”
+Pretrained
+image CNN
+fixed encoder
+Qwen3
+text encoder
+13 raw predictors
+128-d image
+embedding
+768-d text
+embedding
+Concatenate
+XGBoost
+Intensity change
+ΔVmax, ΔMSLP
+from t to t +h
+h ∈ {24,48,72}h
+Figure 5. Hybrid architecture. The 13 SHIPS predictors enter XGBoost directly. A CNN pretrained on
+ERA5 frames from the training years alone, using next-frame prediction and reconstruction, supplies
+fixed 128-dimensional image embeddings. The frozen Qwen3 sentence encoder supplies 768 retained
+text dimensions. These features are concatenated for XGBoost prediction. The separate T+I neural
+model uses both a CNN and a tabular MLP (Figure 6). That MLP is not part of this hybrid encoder.
+Outputs give changes in Vmax and MSLP over lead h. The shortened discussion excerpt is from Ian
+Discussion 19.
+Inputs Encoders Embeddings Fusion Prediction
+SHIPS predictors
+VMAX MSLP
+CSST Z850
+D200 SHGC
+. . . 13 variables
+ERA5 wind fields
+41×41×2
+NHC discussion
+“. . . it is just too close-
+to-call . . . whether the
+larger system is able
+to resist the shear.”
+Tabular MLP
+Image CNN
+RoBERTa (frozen)
+[CLS] (768-d)
+Trainable MLP
+768 → 384 → 64
+64-d tabular
+embedding
+64-d image
+embedding
+64-d text
+embedding
+Fusion
+Concatenation
+or attention
+Set per model
+Intensity change
+ΔVmax, ΔMSLP
+from t to t +h
+h ∈ {24,48,…,120}h
+Figure 6. Neural architecture. Separate tabular, image and text branches each produce a 64-dimensional
+embedding before concatenation (Concat) or multi-head attention (MHA). The T+I bi-modal CNN+MLP
+configuration uses the image and tabular branches. The text branch is added for T+I+D. The RoBERTa
+backbone is frozen during fusion training. Its projection is trainable. Outputs give changes in Vmax and
+MSLP over forecast leadh. The shortened discussion excerpt is from Ian Discussion 19.
+11
+4.3 Deep Learning Approach
+We also propose an end-to-end neural network approach in Figure 6, optimizing the trainable modality
+branches and fusion jointly through backpropagation while using an externally supplied, frozen text
+backbone. Each modality is encoded into a shared 64-dimensional embedding space ℝ64 before fusion.
+The tabular encoder processes the 13 SHIPS predictors through a three-layer MLP (13 →128 →64 →
+64) with LeakyReLU activations, layer normalization, and dropout (p=0.3). The image encoder extracts
+spatial features from the ERA5 wind fields (𝐱img ∈ ℝ2×41×41) using a CNN with three convolutional
+blocks (batch normalization, ReLU, max/adaptive-average pooling) of increasing channel depth (32 →
+64 →128), followed by fully connected layers that compress the spatial representation to 64 dimensions.
+The text encoder consumes the embedding of the [CLS] classification token from a RoBERTa-base
+backbone (Liu et al., 2019) (ℝ768), used as a frozen feature extractor, and projects it to ℝ64 through a
+two-layer network with GELU activation. We compare generic pretrained RoBERTa with forecast-tuned
+RoBERTa. The forecast-tuned backbone is first trained in the discussion-only (D) model for the same
+seed and lead time, then frozen during fusion training. Both regimes train the text projection and fusion
+head. The forecast-tuned regime therefore uses a two-stage procedure. Predictions depend on both the
+fusion model and its frozen text backbone. Unless stated otherwise, the neural text-fusion models (T+D,
+I+D and T+I+D) use the forecast-tuned backbone.
+We investigate two fusion strategies. Concatenation fusion stacks the normalized modality embed-
+dings into a vector of dimension 64M, where M is the number of configured modalities. Attention-based
+fusion projects each embedding to 256 dimensions, adds a learnable [FUSION] token and modality-
+position embeddings, and applies a single pre-LN Transformer layer with four attention heads. Layer
+normalization precedes the attention and feed-forward sublayers. The [FUSION] output supplies the
+fused representation. This architecture can learn interactions between modalities, but the fitted com-
+parisons do not identify a specific weighting mechanism. A linear head produces 2H intensity-change
+predictions, whereH is the number of lead times. Full specifications are given in Appendix D.
+4.4 Temporal Approach
+In a standard setting, both the hybrid and end-to-end approaches treat each case independently. To
+capture the temporal evolution of storm intensity, we extend the HurriCast framework (Boussioux et al.,
+2022) with multi-modal inputs (Figure 7). A shared CNN encoder processes ERA5 wind fields at each of 8
+consecutive 6-hourly timesteps (t−42 h to t), producing 128-dimensional image embeddings followed by
+layer normalization. At every timestep, these embeddings are concatenated with the 13 tabular SHIPS
+predictors and, optionally, the 768 retained dimensions of the pretrained Qwen3-Embedding-0.6B (Y.
+Zhang et al., 2025) sentence embedding, projected to 64 dimensions by a trainable linear layer with
+GELU and layer normalization. The full configuration forms a sequence of shape 8×205. At each time
+step, the temporal model uses the discussion matched to the case at the ERA5 frame timestamp. Missing
+discussions receive zero embeddings. The matched discussion can have a later issue time than that
+timestamp, following the rule in Section 3.2.
+A 2-layer GRU decoder models the temporal evolution of this sequence, producing 128-dimensional
+hidden representations that are flattened and projected through fully connected layers. The resulting
+128-d embeddings can either be used directly for prediction via a linear head, or serve as features for an
+XGBoost ensemble, providing a second hybrid pathway complementary to the approach in Section 4.2.
+4.5 Training Strategy
+4.5.1 Loss Function
+We train the end-to-end neural models to minimize the mean squared error (MSE) in predicted wind
+speed and pressure changes. To compare errors in knots and hPa on a common scale, we divide each
+error by the standard deviation of its target in the training set. For a training batch B with at least one
+12
+t−42 h t
+ERA5 wind fields
+41×41×2
+ERA5 wind fields
+41×41×2
+8 timesteps, 6 h apart
+CNN encoder
+128-d image
+features
+CNN encoder
+128-d image
+features
+Shared CNN weights
+⋯
+SHIPS predictors
+VMAX MSLP
+CSST Z850
+D200 SHGC
+. . . 13 variables
+NHC discussion
+Qwen3 embedding
+trainable 768 →
+64 projection
+Concat
+205-d features
+Concat
+205-d features
+Per-timestep fusion
+⋯
+SHIPS and text added at each step
+GRU decoder
+2 layers, hidden size 128
+Temporal sequence: 8 steps, 205 features per step
+FC layers 1024 → 512 → 128
+Intensity change
+ΔVmax, ΔMSLP
+from t to t +24 h
+128-d embedding
+optional XGBoost head
+Figure 7. Temporal architecture extending HurriCast (Boussioux et al., 2022) with discussion text. Eight
+six-hourly ERA5 frames share one CNN, while 13 SHIPS predictors and 64 projected Qwen3 text features
+join the 128 image features at each time step. The resulting 8×205 sequence enters a two-layer GRU
+and fully connected (FC) layers. The final 128-dimensional representation supports direct 24 h changes
+inVmax and MSLP or an optional XGBoost head.
+available target, the loss is
+B = 1 NB ∑ j∈B ( Δ̂yj −Δyj σtrain j )
+2
+, (1)
+where Δyj is an observed wind speed or pressure change and Δ̂yj is its prediction, both in physical
+units. The scale σtrain j is the standard deviation in the training set for the corresponding variable and
+forecast lead. It is computed once on the whole training set, not within the batch, so all values of the
+same variable and lead share one scale. The index j runs over all available target values in the batch,
+collected in B, andNB is their number. This expression is equivalent to MSE on standardized targets
+because subtracting the training mean does not change the prediction error. Missing targets contribute
+neither an error term nor a count in the denominator.
+This treatment is useful when one model predicts several forecast leads. For example, a case with a
+valid 24 h target can still contribute to training when its 120 h target is unavailable. We retain a case
+whenever at least one wind or pressure target is available. The temporal neural models use MSE on
+complete target pairs after sequence filtering, while the hybrid regressors fit each target in physical
+units. Validation averaging and model selection details are given in Appendix E.2.
+13
+4.5.2 Training Details
+We train the neural models with AdamW (Loshchilov & Hutter, 2019), using learning rates specific
+to each modality, batch sizes and early stopping based on validation loss. The primary 24 h runs use
+patience 7 and epoch caps of 200 for T, I and T+I and 500 for D and the models using text fusion. The
+configuration details and their selection limits are given in Appendix E.2. Learning rates decrease on a
+validation plateau (factor 0.5, patience 3), and gradient norms are clipped at 1.0. In the 24 h multi-modal
+ablations that include text, linear weights are reset with Kaiming normal initialization (Appendix E.3).
+Our temporal split uses 2002–2019 for training, 2020–2021 for validation, and 2022–2023 for testing. We
+retain rows with at least one valid 24 h target. The split avoids train–test storm overlap, but it does not
+remove the later discussion timing or the retrospective nature of ERA5. Numerical inputs and targets
+are standardized as described in Section 3.2.
+4.6 Baselines and Evaluation
+Tables of fitted models report means across five training seeds, with sample standard deviations where
+shown, unless stated otherwise. In comparative tables, bold and underlined values indicate the best
+and second-best displayed scores. Paired comparisons use identical cases, whereas Table 7 summarizes
+scores from models evaluated on different sets of cases. Ties at the reported precision share emphasis.
+A higher ranking alone does not establish a statistically significant difference. For paired comparisons
+of forecast errors, we obtain 95% confidence intervals by resampling whole storms (Appendix N.4).
+We compare our multi-modal approaches against baselines of increasing complexity (Table 3).
+We use three simple reference baselines. Persistence predicts zero intensity change. Trend persistence
+extrapolates the observed past change over the same lead time, Δ̂yt,h =yt −yt−h. Climatology predicts
+the mean change in the training set for each target and lead time. The trend baseline requires an exact
+timestamp match within the same storm at t−h, rather than a fixed number of preceding rows, and falls
+back to zero change otherwise. It performs worse than persistence and climatology here (Table 15). This
+result applies to the extrapolation rule and does not show that past intensity changes are uninformative.
+We then add Ridge regression and XGBoost in three modality configurations, comprising tabular only (T,
+the 13 SHIPS predictors), discussion only (D, the 768-d Qwen3-Embedding-0.6B embedding truncated
+from the native 1024-d output), and T+D. A tabular-only neural network additionally provides the neural
+reference. The multi-modal TC studies reviewed above use different datasets, targets and evaluation
+periods, so their reported scores are not direct baselines for our experiment.
+Table 3. Classical ML baselines and reference forecasts for 24 h intensity change. T=Tabular (SHIPS),
+D=Discussion embeddings. Bold = best, underlined = second-best per column. Fitted model scores are
+mean± sample SD across five seeds. Ridge and reference baselines are deterministic.
+Vmax MSLP
+Model R2 RMSE (kt) MAE (kt) R2 RMSE (hPa) MAE (hPa)
+Persistence −0.03 19.33 13.78 −0.04 13.29 8.86
+Trend persistence −0.54 23.63 16.12 −0.60 16.51 10.32
+Climatology −0.01 19.15 13.76 −0.01 13.11 8.73
+Ridge (T) 0.26 16.36 12.14 0.24 11.36 8.12
+Ridge (D) 0.40 14.74 10.93 0.36 10.41 7.47
+Ridge (T+D) 0.45 14.11 10.47 0.41 10.04 7.18
+XGB (T) 0.46±0.00 14.04±0.06 9.88±0.06 0.45±0.00 9.69±0.03 6.55±0.02
+XGB (D) 0.39±0.01 14.92±0.10 10.79±0.07 0.35±0.01 10.50±0.05 7.26±0.05
+XGB (T+D) 𝟎.𝟓𝟏 ± 𝟎.𝟎𝟏 𝟏𝟑.𝟐𝟗 ± 𝟎.𝟏𝟑 𝟗.𝟒𝟗 ± 𝟎.𝟎𝟖 𝟎.𝟓𝟏 ± 𝟎.𝟎𝟏 𝟗.𝟏𝟔 ± 𝟎.𝟎𝟖 𝟔.𝟑𝟔 ± 𝟎.𝟎𝟖
+All models use 1,150 test cases from 66 storms. Reference forecasts are deterministic.
+14
+We report R2, RMSE, and MAE. For the primary 24 h neural ablation, Table 11 gives the mean and
+sample standard deviation of each metric over five networks trained from different seeds. Averaging
+their predictions gives a deep ensemble (Lakshminarayanan et al., 2017), and we call its scores ensemble
+scores (Table 12). This ensemble of five training runs is distinct from the dynamical-model ensembles of
+numerical weather prediction. Models trained separately for each forecast lead and models predicting
+all leads jointly also use five seeds for every modality configuration. Neural D is evaluated only on
+test cases with a matched discussion, while the other neural models use the full test set (Table 10), so
+comparisons with D need a common subset. For 24 h Vmax directional accuracy (DAcc), a forecast is
+correct when sign(Δ ̂Vmax,24)=sign(ΔVmax,24), where sign takes the values −1 (weakening), 0 (steady)
+and +1 (strengthening). We call this rule strict sign agreement because a predicted change counts as
+steady only when it is exactly zero. Observed classes come from the original targets in physical units,
+so that inverting the standardization cannot turn an exact zero change into a small nonzero value.
+subsection J.1 gives the ensemble confusion matrices under this rule and a supplemental convention
+that treats predictions within a fixed±2.5 kt band as steady.
+5 Results
+5.1 Modality Ablation
+At 24, 48 and 72 h, Table 4 reports R2 and Table 5 reports MAE. In the primary 24 h comparison, adding
+forecaster discussions to the tabular neural model gives a clear gain. Average MAE for wind change
+falls from 10.13 to 9.46 kt, a 6.6% reduction on the same 1,150 cases. Wind R2 rises from 0.44 to 0.53.
+These scores are averages over five training runs, and Table 11 gives their variation.
+The wind fields carry predictive information on their own, with mean R2 =0.22, but adding them
+to tabular inputs in the neural model changes the mean score only slightly. Adding wind fields to the
+model using tabular inputs with discussions changes mean wind MAE from 9.46 to 9.45 kt, less than the
+variation across training runs. This limited contribution is in line with the findings of Boussioux et al.
+(2022), whose image-based configurations provided smaller improvements for 24 h intensity forecasts
+than for track forecasts in the same basins. Our result concerns the two near-surface wind fields and
+training configurations used here. Richer images, a different image representation or further tuning on
+the validation set could still help. The ordering also varies across targets and forecast leads, as the full
+tables show.
+5.2 Temporal Model Results
+Table 6 presents temporal configurations on 834 cases from 55 test storms that meet the eight-frame
+sequence requirement. In the modality ablation, XGBoost over T+I+D embeddings has mean wind MAE
+9.71 kt versus 10.56 kt for T+I. The corresponding paired ensemble gain is 0.59 kt, with a whole-storm
+95% interval of [−0.11,1.33] kt that includes zero, as does the pressure interval. These results do not
+establish a clear improvement from adding discussions to the temporal model. The full temporal model
+has two prediction variants, labeled T+I+D (GRU) and T+I+D (GRU+XGB) in the table. The first predicts
+directly from the temporal embedding. The second fits XGBoost to that embedding together with
+tabular and discussion features from the last time step. In contrast, the modality ablation rows use only
+the temporal embeddings as XGBoost inputs. Neither comparison isolates the causal contribution of
+spatial wind structure.
+5.3 Overall Performance
+Table 7 places the fitted approaches side by side. In the primary comparison, the neural networks using
+tabular inputs with discussions have the lowest mean wind and pressure MAE, with or without wind
+fields. These two models differ by less than the variation across training runs, so the scores do not
+separate them.
+15
+Table 4. Modality ablation across lead times (R2). T=Tabular, I=Images, D=Discussions. Bold = best,
+underlined = second-best per column (each approach ranked separately). Both approaches use the same
+temporal train/test split. A dagger (†) marks neural D, which is evaluated on a smaller test population.
+Displayed values are means of scores from five runs.
+Hybrid XGB End-to-end NN
+24 h 48 h 72 h 24 h 48 h 72 h
+Modality Vmax MSLP Vmax MSLP Vmax MSLP Vmax MSLP Vmax MSLP Vmax MSLP
+Single
+T 0.46 0.45 0.49 0.45 0.42 0.36 0.44 0.44 0.47 0.44 0.39 0.33
+I 0.23 0.19 0.26 0.23 0.27 0.22 0.22 0.20 0.16 0.12 0.24 0.15
+D 0.39 0.35 0.37 0.31 0.27 0.20 0.50† 0.46† 0.54† 0.51† 0.42† 0.35†
+Dual
+T+I 0.40 0.40 0.43 0.42 0.42 0.39 0.45 0.45 0.45 0.42 0.41 0.31
+T+D 𝟎.𝟓𝟏 𝟎.𝟓𝟏 𝟎.𝟓𝟏 𝟎.𝟒𝟖 0.42 0.37 𝟎.𝟓𝟑 𝟎.𝟓𝟏 𝟎.𝟓𝟖 𝟎.𝟓𝟓 𝟎.𝟒𝟔 𝟎.𝟑𝟗
+I+D 0.40 0.39 0.42 0.37 0.35 0.28 0.50 0.48 0.52 0.49 0.39 0.36
+Triple
+T+I+D 0.49 0.49 0.49 0.47 𝟎.𝟒𝟒 𝟎.𝟒𝟎 𝟎.𝟓𝟑 𝟎.𝟓𝟏 0.57 0.54 0.45 𝟎.𝟑𝟗
+†Neural D is evaluated only on test cases with a matched discussion (1,105 cases from 64 storms at 24 h, 860 from 53 at 48 h
+and 653 from 47 at 72 h). The other neural models use 1,150 cases from 66 storms, 898 from 53 and 686 from 51 at the same
+leads. Daggered values are excluded from the ranking. Neural results use the primary ablation at 24 h and separate models at
+48 and 72 h. Evaluation counts are in Table 10.
+Table 5. Modality ablation across lead times (MAE). T=Tabular, I=Images, D=Discussions. Bold = best,
+underlined = second-best per column (each approach ranked separately). Both approaches use the same
+temporal train/test split. A dagger (†) marks neural D, which is evaluated on a smaller test population.
+Displayed values are means of scores from five runs.
+Hybrid XGB End-to-end NN
+24 h 48 h 72 h 24 h 48 h 72 h
+Modality Vmax MSLP Vmax MSLP Vmax MSLP Vmax MSLP Vmax MSLP Vmax MSLP
+Single
+T 9.88 6.55 15.29 11.04 18.41 13.57 10.13 6.60 15.32 10.77 18.77 13.82
+I 12.21 8.10 18.35 12.69 20.21 14.53 12.40 8.15 18.97 13.31 20.43 15.13
+D 10.79 7.26 17.04 12.19 19.84 14.37 9.90† 6.56† 14.32† 10.26† 17.63† 12.94†
+Dual
+T+I 10.55 6.90 15.53 10.97 𝟏𝟕.𝟗𝟖 𝟏𝟑.𝟎𝟖 10.27 6.72 15.49 10.80 18.34 13.95
+T+D 𝟗.𝟒𝟗 𝟔.𝟑𝟔 15.41 11.14 18.55 13.90 9.46 𝟔.𝟐𝟑 𝟏𝟑.𝟒𝟒 𝟗.𝟓𝟖 𝟏𝟔.𝟗𝟑 12.50
+I+D 10.72 7.12 16.32 11.70 18.94 13.94 9.74 6.45 14.38 10.11 18.08 12.93
+Triple
+T+I+D 9.78 6.43 𝟏𝟓.𝟐𝟕 𝟏𝟎.𝟖𝟐 17.99 13.31 𝟗.𝟒𝟓 𝟔.𝟐𝟑 13.65 9.67 17.11 𝟏𝟐.𝟒𝟒
+†Neural D is evaluated only on test cases with a matched discussion (1,105 cases from 64 storms at 24 h, 860 from 53 at 48 h
+and 653 from 47 at 72 h). The other neural models use 1,150 cases from 66 storms, 898 from 53 and 686 from 51 at the same
+leads. Daggered values are excluded from the ranking. Neural results use the primary ablation at 24 h and separate models at
+48 and 72 h. Evaluation counts are in Table 10. MAE is in kt forVmax and hPa for MSLP.
+16
+Table 6. Temporal model modality ablation for 24 h intensity change. T=Tabular, I=Images,
+D=Discussions. Bold = best, underlined = second-best per column. Entries are mean ± sample SD
+across five training seeds.
+Vmax MSLP
+Configuration R2 MAE (kt) DAcc R2 MAE (hPa)
+Modality ablation (GRU+XGB)
+I 0.18±0.03 11.91±0.30 0.591±0.013 0.16±0.04 8.21±0.28
+T+I 0.36±0.01 10.56±0.11 0.648±0.004 0.37±0.03 7.05±0.10
+I+D 0.36±0.02 10.42±0.19 0.641±0.021 0.36±0.02 7.00±0.16
+T+I+D 0.45±0.02 9.71±0.27 0.664±0.015 𝟎.𝟒𝟕 ± 𝟎.𝟎𝟐 6.43±0.18
+Full temporal model
+T+I+D (GRU) 0.44±0.02 9.92±0.27 0.656±0.015 0.45±0.01 6.63±0.13
+T+I+D (GRU+XGB) 𝟎.𝟒𝟔 ± 𝟎.𝟎𝟐 𝟗.𝟔𝟖 ± 𝟎.𝟐𝟏 𝟎.𝟔𝟔𝟔 ± 𝟎.𝟎𝟏𝟎 𝟎.𝟒𝟕 ± 𝟎.𝟎𝟐 𝟔.𝟒𝟏 ± 𝟎.𝟏𝟕
+n=834, s =55, where n is the number of test cases and s the number of storms. DAcc denotes strict sign agreement for wind
+change. The upper block trains a temporal encoder for each modality combination. The lower block uses the full encoder,
+directly or with XGBoost and last-step tabular/discussion features.
+Averaging the five predictions gives a separate ensemble forecast (Table 12). Adding discussions to
+the tabular ensemble reduces wind MAE by 10.0%, from 9.89 to 8.90 kt. The paired reduction is 0.99 kt,
+with a 95% storm-bootstrap interval of [0.32,1.70] (Table 25). Pressure MAE also falls, by 0.57 hPa.
+Subsequent paired analyses use these ensembles rather than the averages of scores over training runs.
+Table 7. Comparison of hybrid, neural and temporal models for 24 h intensity change. Entries are mean
+± sample SD across five runs. Bold and underline mark the best and second-best displayed means in
+each metric across the table. Evaluation populations differ, so this emphasis is descriptive. Table 26
+compares identical cases.
+Model R2 MAE (kt/hPa) Vmax DAcc
+Vmax MSLP Vmax MSLP
+Hybrid (n=1,150,s =66)
+T 0.46±0.00 0.45±0.00 9.88±0.06 6.55±0.02 0.700±0.004
+T+D 0.51±0.01 𝟎.𝟓𝟏±0.01 9.49±0.08 6.36±0.08 0.714±0.006
+T+I+D 0.49±0.02 0.49±0.03 9.78±0.16 6.43±0.18 0.708±0.009
+Neural (n=1,150,s =66)
+T 0.44±0.01 0.44±0.01 10.13±0.05 6.60±0.08 0.684±0.006
+T+D 𝟎.𝟓𝟑±0.01 𝟎.𝟓𝟏±0.01 9.46±0.16 𝟔.𝟐𝟑±0.08 0.723±0.009
+T+I+D 𝟎.𝟓𝟑±0.01 𝟎.𝟓𝟏±0.01 𝟗.𝟒𝟓±0.13 𝟔.𝟐𝟑±0.08 𝟎.𝟕𝟐𝟒±0.006
+Temporal (n=834,s =55)
+T+I 0.36±0.01 0.37±0.03 10.56±0.11 7.05±0.10 0.648±0.004
+T+I+D (GRU) 0.44±0.02 0.45±0.01 9.92±0.27 6.63±0.13 0.656±0.015
+T+I+D (GRU+XGB) 0.46±0.02 0.47±0.02 9.68±0.21 6.41±0.17 0.666±0.010
+n denotes test cases ands test storms. MAE is in kt/hPa forVmax/MSLP. DAcc is strict sign agreement for wind change.
+Temporal models use a smaller population. Comparisons on identical cases are in Table 26.
+For operational context, Appendix H benchmarks our 24 h errors against the official forecast (OFCL)
+and archived guidance (HWRF, HAFS, DSHP and LGEM), including preoperational HAFS forecasts in
+the NHC ATCF archives.
+17
+6 Model Analysis
+6.1 Detecting Subjectivity
+To describe explicit markers of personal judgment in the discussions, we classify each NHC discussion
+into three rhetorical categories. An opinionated discussion makes an explicit first-person subjective
+statement (“I think”, “it was hard for me to ignore”). A balanced discussion has no first-person
+language but sustains interpretive reasoning across physical mechanisms or competing numerical
+weather prediction models. A factual discussion has neither. We labeled a stratified benchmark
+with Claude Sonnet 4.6 (Anthropic, 2026b) as LLM-as-a-judge (Zheng et al., 2023). Claude Opus 4.6
+(Anthropic, 2026a) then labeled a subset using the same rubric without seeing the Sonnet labels. On
+the benchmark, a regular expression (regex) that detects first-person language reproduces the judge’s
+opinionated label, so we use it as a proxy for explicit first-person framing in the full corpus. The
+two judges disagree more often on the balanced/factual boundary, where reasoning depth varies
+continuously. An exploratory hybrid classifier combines the regex with a few-shot (Brown et al., 2020)
+gemma-4-E2B-it model (Gemma Team, 2026). Its agreement with one LLM judge is descriptive, not
+independent human validation. Appendix L gives the counts, rubric, regex patterns and audit.
+We use these labels only to compare performance across groups of discussions, as the forecasting
+model takes the cleaned text through its encoder (Section 4.3) rather than the assigned classes. On
+cases with matched discussions, adding text to the tabular ensemble reduces wind MAE by 1.07 kt, with
+an improvement also seen in the larger group without first-person statements detected by the regex.
+The gain is therefore not confined to explicit first-person language, although the small group flagged
+by the regex has negative point gains, with wind and pressure confidence intervals that both include
+zero (subsection N.4). These comparisons describe performance within each group without testing
+differences between groups or isolating the causal contribution of factual content, interpretation, or
+judgment.
+6.2 Interpretability
+To inspect how individual trained models respond to the discussion text, we apply Integrated Gradients
+(IG, Sundararajan et al., 2017) via the Captum library (Kokhlikyan et al., 2020) to the trained T+D and
+discussion-only (D) models. IG attributes the model’s prediction to individual input embeddings by
+integrating the gradient of the output with respect to the embedding along a straight-line path from
+a baseline (here, the pad-token embedding) to the actual token embedding. Token-level attributions
+are summed within tokenizer-defined word spans and sentences so that attributions can be reported
+for words or sentences that have a meteorological interpretation. To measure where text is associated
+with improved predictions, we compare absolute error for each case between the tabular-only and
+T+D ensembles on the test set (Appendix N.4) and use IG only to characterize a fixed set of illustrative
+predictions from individual models. Appendix M details the attribution pipeline, the IG completeness
+check, and worked examples on a discussion-only rapid intensification case (Tropical Storm Ian,
+Discussion 10), a T+D case where discussions improve the prediction and include explicit forecaster
+judgment (Hurricane Agatha, Discussion 9), and a T+D case where discussions worsen the prediction
+despite cautious forecaster wording (Tropical Storm Madeline, Discussion 7).
+6.3 Uncertainty Quantification
+Point forecasts do not convey forecast uncertainty, so we construct 90% prediction intervals without
+retraining the forecasting models. Cases within a track are dependent, so each split holds out whole
+storms. For the primary T+D ensemble, we normalize residuals by the ensemble spread and calibrate the
+intervals by resampling whole storms. Across the paired splits used for comparison with CLEAR (Azizi
+et al., 2026), wind coverage is 0.917 and pressure coverage is 0.916. The median wind width is 39.46 kt.
+The wind interval score is 57.34, versus 62.30 for the tabular model under the same construction, where
+18
+lower is better. These are empirical coverage and score measurements, not guarantees. Appendix I
+reports the online methods, conditional results, and a separate analysis across forecast leads.
+Marginal coverage is not sufficient for every storm or intensity regime. On the observed rapid
+intensification subset, every evaluated interval method falls below the 90% nominal level (Figure 15).
+On Otis, the T+D interval misses the largest changes despite covering most of that storm’s other cases
+(Appendix I). The full method comparison, per-lead results, storm panels and conditional analysis are
+reported in the appendix.
+7 Discussion
+7.1 Comparing Approaches
+The three model families use different encoders and are not always evaluated on the same cases. On all
+1,150 valid 24 h test cases, adding discussions to hybrid XGBoost reduces mean wind MAE from 9.88 to
+9.49 kt, compared with9.46 kt for the neural T+D model.
+The temporal model is evaluated on the 834 cases that meet its sequence requirements, so a fair
+comparison requires evaluating the other models on this same subset. On these cases, neural T+D has
+mean wind MAE 9.47 kt, compared with 9.68 kt for the full temporal model with XGBoost. subsection J.3
+reports the corresponding pressure and matched-discussion scores, distinguishing variation across
+training runs from uncertainty in paired ensemble comparisons. Where a confidence interval for the
+difference includes zero, the comparison remains inconclusive and does not establish that the models
+are equivalent.
+These approaches support different research questions. The hybrid approach permits rapid regressor
+and modality comparisons, neural fusion jointly optimizes its trainable branches, and temporal models
+condition on a sequence of past storm states.
+7.2 Impact of Text Sources
+The text results concern storm-specific discussions, which contain observations, guidance summaries
+and forecaster assessments tailored to a cyclone. On its discussion-matched test population, D reaches
+a mean wind R2 of 0.50 over five training runs (Table 11). A lexical TF-IDF model also predicts intensity
+change, with wind R2 =0.41 (Table 33). Across five trained D models, masking numeric tokens slightly
+lowers mean wind R2 (ΔR2 = −0.014), while removing sentences matched to intensity vocabulary
+produces a much larger decrease (ΔR2 =−0.364) (Table 34). The latter mask overlaps with an outlook-
+sentence mask, changes the text length and can expose later tokens after truncation. These probes
+show sensitivity to the specified wording and quantify variation across five training seeds, but do not
+isolate a semantic mechanism or rule out the later timing of discussions. A separate check on discussion
+availability is reported in subsection J.2.
+7.3 Fusion Strategy
+Prior work motivates studying modality competition and gradient imbalance (Y. Huang et al., 2022;
+Peng et al., 2022; Wu et al., 2022), but these experiments do not isolate the effect of initialization or
+show whether the modalities learn complementary representations during training.
+The primary fusion operator is specified for each modality combination and forecast lead. At 24 h,
+T+I, T+D and T+I+D use concatenation, while I+D uses multi-head attention. At 48–120 h, T+I and I+D
+use attention, while T+D and T+I+D use concatenation. Joint multi-lead models use concatenation.
+These choices are held fixed when comparing generic and forecast-tuned text backbones, and forecast
+tuning does not provide a uniform improvement (Table 27). Additional configurations assess sensitivity
+to the fusion operator (Tables 27–29).
+19
+7.4 Error Analysis
+Rapid intensification remains difficult in the evaluated cases. In the discussion-only Ian example
+(subsection M.4), the attributed checkpoint predicts +26.1 kt against an observed +30 kt change over
+24 h. Other large changes, including the Otis case, remain underpredicted. A successful local example
+therefore cannot establish reliable performance for rapid intensification, as the conditional interval
+results in Appendix I also show.
+7.5 Limitations
+Scope. We study storms in the NHC area of responsibility, the Atlantic and eastern North Pacific
+basins (2002–2023), at 6 h resolution, which may miss short rapid intensification episodes and limits
+generalization to other basins or earlier periods. We address intensity, not track, and do not incorporate
+the Public Advisory or Forecast/Advisory products as additional text sources. Since ERA5 reanalysis
+fields and temporally matched forecaster discussions are used as inputs, the study is best read as a
+retrospective study of predictive information rather than a directly deployable operational system.
+Operational readiness. The forecast errors remain substantial for rapid intensification and landfall
+decisions. The ATCF comparison (Appendix H) includes the official NHC forecast, which remains
+more accurate than T+D on the same forecasts (MAE 7.69 vs. 8.97 kt), and HWRF, HAFS, LGEM and
+decay-SHIPS guidance on each aid’s available rows. It is not a complete verification of the operational
+guidance suite, which also includes consensus aids such as IVCN and HCCA. Our reanalysis inputs, best-
+track-based initial intensity and discussions issued after the synoptic time differ from the information
+available to those systems. The comparison provides retrospective context and does not establish
+operational equivalence.
+Model comparisons. Adding a modality does not uniformly improve prediction under the training
+configurations. The image, tabular and text configurations use different learning rates and batch sizes,
+and the fusion choices inherited from generic text features need not be optimal for the forecast-tuned
+backbone. These comparisons therefore assess specified models, not the maximum information available
+in each modality. Checkpoint and fusion configuration selection used validation results. Additional
+baseline methods were included after the initial test evaluation, so the set of comparisons was not
+fixed in advance. The storm-bootstrap intervals condition on the fitted models and do not include
+uncertainty from tuning or model selection. Evaluation on later seasons with the modeling choices
+fixed beforehand would provide a further test of generalization. The temporal model also requires a
+sequence of valid past ERA5 frames, which changes its evaluation population. Comparisons on identical
+cases (subsection J.3) address that population difference without removing every training difference.
+Robustness of the text signal. Storm-specific discussions align to most but not all cases. A
+missingness-indicator baseline and pre-landfall stratification (subsection J.2) assess sensitivity to discus-
+sion availability without excluding interactions between missingness and other inputs. The post-landfall
+point gain is larger but less precise, and the selected SHIPS predictors include latitude and longitude
+but no explicit variable for distance to land. The newer Qwen3-Embedding-0.6B encoder may have
+encountered hurricane reporting from the test period during pretraining. The original RoBERTa-base
+predates those test seasons. The TF-IDF baseline (subsection N.1) shows that lexical features have
+predictive value without pretraining a language model. The perturbation probes instead measure the
+sensitivity of five pretrained discussion-only checkpoints. Neither analysis quantifies the effect of
+possible Qwen pretraining exposure. The retained narrative can state the official intensity forecast
+and refer to statistical or consensus guidance, so part of the text signal may be the official forecast
+itself. Only a small number of test discussions are flagged opinionated by the first-person regex, so a
+differential effect of explicit forecaster judgment cannot be isolated at the present sample size.
+20
+8 Conclusion
+MultiCyclone evaluates NHC discussions alongside tabular meteorological inputs and ERA5 wind
+fields for retrospective prediction of tropical cyclone intensity. On the 2022–2023 storms held out
+from training, neural networks using tabular inputs with discussions reduce average 24 h wind MAE
+from 10.13 to 9.46 kt across five runs. Averaging the predictions of those runs gives an ensemble MAE
+reduction of 10.0% on identical cases, with a paired whole-storm interval excluding zero. The benefit
+varies with architecture, lead and evaluation population, and adding the available wind fields leaves this
+configuration’s mean wind MAE essentially unchanged. Attribution and perturbation analyses identify
+sensitivity to language about intensity and its evolution without establishing a unique causal explanation.
+These findings support further study of forecaster discussions beyond the selected numerical inputs.
+Reanalysis inputs, discussions issued after the valid time of the tabular and image data and forecast
+statements in their narrative limit operational interpretation. Interval coverage also varies across
+storms and does not establish a general guarantee. An evaluation on a season not used during model
+development should therefore test these models with richer operational inputs and data available at
+forecast issue time, followed by calibration across seasons and evaluation in additional basins.
+Acknowledgments
+We thank the DCSR unit at the University of Lausanne for computational resources, NHC for the
+discussion archives and ECMWF for the ERA5 reanalysis data.
+Data and code availability
+SHIPS, ERA5, TCBench and IBTrACS data are available from their cited sources, and discussions and
+ATCF forecast archives from NHC. Code, saved predictions and instructions for reproducing the results
+will be released with a later version of this preprint. Processed training arrays and available model
+checkpoints can be requested from the corresponding author.
+List of abbreviations
+ACI Adaptive conformal inference
+Aid ATCF technique identifier for a specific fore-
+cast/guidance product (e.g. OFCL, HWRF)
+ASCAT Advanced Scatterometer
+ATCF Automated Tropical Cyclone Forecasting sys-
+tem (source of the NHC guidance and best-track
+files)
+BN Batch normalization
+CI Confidence interval
+CLS Classification token
+CNN Convolutional neural network
+CSST Climatological sea-surface temperature
+D Discussion text (modality and text-only model)
+D200 200 hPa divergence
+DAcc 24 hVmax directional accuracy
+DTOPS Deterministic to Probabilistic Statistical rapid
+intensification model
+DSHP SHIPS variant with decay-after-landfall (NHC
+operational guidance)
+ECMWF European Centre for Medium-Range Weather
+Forecasts
+EnbPI Ensemble batch prediction intervals
+EPOS Mean positive lifted-parcel–environment θe dif-
+ference
+ERA5 ECMWF Reanalysis v5
+FC Fully connected (layer)
+FFN Feed-forward network
+G200 200 hPa temperature perturbation
+GELU Gaussian error linear unit
+GFDL Geophysical Fluid Dynamics Laboratory (hurri-
+cane model)
+GFS Global Forecast System
+GRU Gated recurrent unit
+HAFS Hurricane Analysis and Forecast System
+HCCA HFIP Corrected Consensus Approach
+HWRF Hurricane Weather Research and Forecasting
+model
+I Image (ERA5, modality)
+IBTrACS International Best Track Archive for Climate
+Stewardship
+IG Integrated gradients
+IVCN Intensity Variable Consensus (NHC intensity
+consensus aid)
+LGEM Logistic Growth Equation Model (NHC inten-
+21
+sity guidance)
+LLM Large language model
+LN Layer normalization (“pre-LN” = LN applied be-
+fore the Transformer sub-blocks)
+MAE Mean absolute error
+MHA Multi-head attention
+ML Machine learning
+MLP Multi-layer perceptron
+MSE Mean squared error
+MSLP Minimum sea-level pressure
+NHC National Hurricane Center
+NN Neural network
+NOAA National Oceanic and Atmospheric Administra-
+tion
+NWS National Weather Service
+OFCL NHC official forecast (ATCF aid identifier)
+R2 Coefficient of determination
+ReLU Rectified linear unit
+RHMD 700–500 hPa relative humidity
+RI Rapid intensification
+RMSE Root-mean-square error
+RoBERTa Robustly optimized BERT pretraining approach
+(language model)
+SAB Satellite Analysis Branch (NOAA/NESDIS)
+SD Standard deviation
+SHGC Generalized multilevel wind shear, vortex re-
+moved
+SHIPS Statistical Hurricane Intensity Prediction
+Scheme
+T Tabular (SHIPS, modality)
+TAFB Tropical Analysis and Forecast Branch
+(NOAA/NHC)
+T+D Tabular + discussion
+T+I+D Tabular + image + discussion
+TADV 850–700 hPa temperature advection
+TC Tropical cyclone
+TCBench Tropical-cyclone benchmark dataset (Gomez et
+al., 2026)
+TF-IDF Term frequency-inverse document frequency
+TWAC Average symmetric tangential wind at 850 hPa
+TWDAT Tropical Weather Discussion for the Atlantic
+(NHC product)
+Vmax Maximum sustained 1-minute wind
+WIS Weighted interval score
+XGBoost Extreme Gradient Boosting
+Z850 850 hPa vorticity (10−7 s−1)
+References
+Alet, F., Price, I., El-Kadi, A., Masters, D., Markou, S., Andersson, T. R., Stott, J., Lam, R., Willson,
+M., Sanchez-Gonzalez, A. & Battaglia, P. (2025). Skillful joint probabilistic weather forecasting from
+marginals. arXiv: 2506.10772 [cs.LG].
+Anthropic (2026a). Introducing Claude Opus 4.6. https://www.anthropic.com/news/claude-
+opus-4-6.
+Anthropic (2026b). Introducing Claude Sonnet 4.6. https://www.anthropic.com/news/claude-
+sonnet-4-6.
+Azizi, I. (2026a). “Conformal Calibration for Multi-Modal Regression with Missing Modalities”. In:
+Proceedings of the Fifteenth Symposium on Conformal and Probabilistic Prediction with Applications.
+Vol. 329. Proceedings of Machine Learning Research. PMLR, pp. 343–377.
+Azizi, I. (2026b). Matchability-Aware Conformal Prediction for Open-Ended Language Model Generation.
+arXiv: 2611.10738 [stat.ML].
+Azizi, I., Bodik, J., Heiss, J. & Yu, B. (2026). “CLEAR: Calibrated Learning for Epistemic and Aleatoric
+Risk”. In: The Fourteenth International Conference on Learning Representations.
+Azizi, I., Boldi, M.-O. & Chavez-Demoulin, V. (2025). “SEMF: Supervised Expectation-Maximization
+Framework for Predicting Intervals”. In: Proceedings of the Fourteenth Symposium on Conformal and
+Probabilistic Prediction with Applications. Vol. 266. Proceedings of Machine Learning Research. PMLR,
+pp. 250–281.
+Bachmann, K. & Torn, R. D. (2021). “Validation of HWRF-based probabilistic TC wind and precipitation
+forecasts”. In: Weather and Forecasting 36.6, pp. 2057–2070.
+Bastings, J. & Filippova, K. (2020). “The elephant in the interpretability room: Why use attention as
+explanation when we have saliency methods?” In: Proceedings of the Third BlackboxNLP Workshop
+on Analyzing and Interpreting Neural Networks for NLP. Online: Association for Computational
+Linguistics, pp. 149–155.
+22
+Bender, M. A., Ginis, I., Tuleya, R., Thomas, B. & Marchok, T. (2007). “The Operational GFDL Coupled
+Hurricane–Ocean Prediction System and a Summary of Its Performance”. In: Monthly Weather Review
+135.12, pp. 3965–3989.
+Bender, M. A., Ross, R. J., Tuleya, R. E. & Kurihara, Y. (1993). “Improvements in Tropical Cyclone Track
+and Intensity Forecasts Using the GFDL Initialization System”. In: Monthly Weather Review 121.7,
+pp. 2046–2061.
+Boussioux, L., Zeng, C., Guénais, T. & Bertsimas, D. (2022). “Hurricane Forecasting: A Novel Multimodal
+Machine Learning Framework”. In: Weather and Forecasting 37.6, pp. 817–831.
+Bracher, J., Ray, E. L., Gneiting, T. & Reich, N. G. (2021). “Evaluating epidemic forecasts in an interval
+format”. In: PLOS Computational Biology 17.2, e1008618.
+Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P.,
+Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A.,
+Ziegler, D. M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J.,
+Berner, C., McCandlish, S., Radford, A., Sutskever, I. & Amodei, D. (2020). “Language Models are
+Few-Shot Learners”. In: Advances in Neural Information Processing Systems. Vol. 33, pp. 1877–1901.
+Chen, B.-F., Chen, B., Lin, H.-T. & Elsberry, R. L. (2019). “Estimating Tropical Cyclone Intensity by
+Satellite Imagery Utilizing Convolutional Neural Networks”. In: Weather and Forecasting 34.2, pp. 447–
+465.
+Chen, J., Zhou, P., Hua, Y., Chong, D., Cao, M., Li, Y., Chen, W., Zhu, B., Liang, J. & Yuan, Z. (2025).
+“ClimateIQA: A New Dataset and Benchmark to Advance Vision-Language Models in Meteorology
+Anomalies Analysis”. In: Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and
+Data Mining V.2. KDD ’25. Toronto ON, Canada: Association for Computing Machinery, pp. 5322–
+5333.
+Chen, X., Luo, J.-J., Li, Q. & Meng, F. (2025). “Meteorologically-Informed Adaptive Conformal Prediction
+for Tropical Cyclone Intensity Forecasting”. In: Journal of Geophysical Research: Machine Learning
+and Computation 2.4, e2025JH000830.
+Clark, K., Khandelwal, U., Levy, O. & Manning, C. D. (2019). “What Does BERT Look At? An Analysis of
+BERT’s Attention”. In: Proceedings of the 2019 ACL Workshop BlackboxNLP: Analyzing and Interpreting
+Neural Networks for NLP. Florence, Italy: Association for Computational Linguistics, pp. 276–286.
+Combinido, J. S., Mendoza, J. R. & Aborot, J. (2018). “A Convolutional Neural Network Approach
+for Estimating Tropical Cyclone Intensity Using Satellite-based Infrared Images”. In: 2018 24th
+International Conference on Pattern Recognition (ICPR), pp. 1474–1480.
+DeMaria, M., Mainelli, M., Shay, L. K., Knaff, J. A. & Kaplan, J. (2005). “Further Improvements to the
+Statistical Hurricane Intensity Prediction Scheme (SHIPS)”. In: Weather and Forecasting 20.4, pp. 531–
+543.
+Do, T.-H., Phan, S.-T., Du, D.-T., Dang, D.-Q., Mai, K.-H. & Hole, L. R. (2025). “Multi-heat keypoint
+incorporation in deep learning model to tropical cyclone centering and intensity classifying from
+geostationary satellite images”. In: Scientific Reports 15.1, p. 27949.
+Dulac, W., Cattiaux, J., Chauvin, F., Bourdin, S. & Fromang, S. (2024). “Assessing the representation of
+tropical cyclones in ERA5 with the CNRM tracker”. In: Climate Dynamics 62.1, pp. 223–238.
+Fernandez, M. A., Barnes, E. A., Barnes, R. J., DeMaria, M., McGraw, M., Chirokova, G. & Lu, L. (2025).
+“Predicting Tropical Cyclone Track Forecast Errors Using a Probabilistic Neural Network”. In: Artificial
+Intelligence for the Earth Systems 4.2, e240066.
+Gemma Team (2026). Gemma 4 Technical Report. Model used: https://huggingface.co/google/
+gemma-4-E2B-it. arXiv: 2607.02770 [cs.CL].
+23
+Gibbs, I. & Candès, E. (2021). “Adaptive Conformal Inference Under Distribution Shift”. In: Advances in
+Neural Information Processing Systems. Vol. 34. Curran Associates, Inc., pp. 1660–1672.
+Gneiting, T. & Raftery, A. E. (2007). “Strictly proper scoring rules, prediction, and estimation”. In: Journal
+of the American Statistical Association 102.477, pp. 359–378.
+Golkar, S., Pettee, M., Eickenberg, M., Bietti, A., Cranmer, M., Krawezik, G., Lanusse, F., McCabe, M.,
+Ohana, R., Parker, L., Régaldo-Saint Blancard, B., Tesileanu, T., Cho, K. & Ho, S. (2024). xVal: A
+Continuous Numerical Tokenization for Scientific Language Models. arXiv: 2310.02989 [stat.ML].
+Gomez, M., McGraw, M., Ganesh S., S., Tam, F. I.-H., Azizi, I., Darmon, S., Feldmann, M., Bourdin, S.,
+Poulain–Auzéau, L., Camargo, S. J., Lin, J., Chavas, D., Lee, C.-Y., Gupta, R., Jenney, A. & Beucler, T.
+(2026). TCBench: A Benchmark for Tropical Cyclone Track and Intensity Forecasting at the Global Scale.
+arXiv: 2601.23268 [cs.CE].
+Gupta, D. & Arthur, M. P. (2025). “Ensemble deep learning models for tropical cyclone intensity predic-
+tion using heterogeneous datasets”. In: Tropical Cyclone Research and Review 14.1, pp. 1–12.
+Hersbach, H., Bell, B., Berrisford, P., Hirahara, S., Horányi, A., Muñoz-Sabater, J., Nicolas, J., Peubey, C.,
+Radu, R., Schepers, D., et al. (2020). “The ERA5 global reanalysis”. In: Quarterly Journal of the Royal
+Meteorological Society 146.730, pp. 1999–2049.
+Huang, C., Bai, C., Chan, S. & Zhang, J. (2022). “MMSTN: A Multi-Modal Spatial-Temporal Network for
+Tropical Cyclone Short-Term Prediction”. In: Geophysical Research Letters 49.4, e2021GL096898.
+Huang, C., Mu, P., Bai, C. & Watson, P. A. (2025a). “TCP-Diffusion: A Multi-modal Diffusion Model
+for Global Tropical Cyclone Precipitation Forecasting with Change Awareness”. In: Proceedings of
+the 42nd International Conference on Machine Learning. Vol. 267. Proceedings of Machine Learning
+Research. PMLR, pp. 25634–25653.
+Huang, C., Mu, P., Zhang, J., Chan, S., Zhang, S., Yan, H., Chen, S. & Bai, C. (2025b). “Benchmark dataset
+and deep learning method for global tropical cyclone forecasting”. In: Nature Communications 16.1,
+p. 5923.
+Huang, Y., Lin, J., Zhou, C., Yang, H. & Huang, L. (2022). “Modality Competition: What Makes Joint
+Training of Multi-modal Network Fail in Deep Learning? (Provably)”. In: Proceedings of the 39th
+International Conference on Machine Learning. Vol. 162. Proceedings of Machine Learning Research.
+PMLR, pp. 9226–9259.
+Jin, Q., Fan, X., Liu, J., Xue, Z. & Jian, H. (2019). “Using eXtreme Gradient BOOSTing to Predict Changes
+in Tropical Cyclone Intensity over the Western North Pacific”. In: Atmosphere 10.6, 341.
+Knapp, K. R., Kruk, M. C., Levinson, D. H., Diamond, H. J. & Neumann, C. J. (2010). “The International
+Best Track Archive for Climate Stewardship (IBTrACS): Unifying Tropical Cyclone Data”. In: Bulletin
+of the American Meteorological Society 91.3, pp. 363–376.
+Kokhlikyan, N., Miglani, V., Martin, M., Wang, E., Alsallakh, B., Reynolds, J., Melnikov, A., Kliushkina, N.,
+Araya, C., Yan, S. & Reblitz-Richardson, O. (2020). Captum: A unified and generic model interpretability
+library for PyTorch. arXiv: 2009.07896 [cs.LG].
+Lai, K., Porter, J. R., Amodeo, M., Miller, D., Marston, M. & Armal, S. (2022). “A Natural Language
+Processing Approach to Understanding Context in the Extraction and GeoCoding of Historical Floods,
+Storms, and Adaptation Measures”. In: Information Processing and Management 59.1, p. 102735.
+Lakshminarayanan, B., Pritzel, A. & Blundell, C. (2017). “Simple and Scalable Predictive Uncertainty
+Estimation Using Deep Ensembles”. In: Advances in Neural Information Processing Systems. Vol. 30.
+Curran Associates, Inc.
+Li, H., Wang, Z., Wang, J., Wang, Y., Lau, A. K. H. & Qu, H. (2025). “CLLMate: A Multimodal Benchmark
+for Weather and Climate Events Forecasting”. In: Proceedings of the 2025 Conference on Empirical
+24
+Methods in Natural Language Processing. Suzhou, China: Association for Computational Linguistics,
+pp. 17536–17562.
+Li, W., Li, Y., Zhou, Y., Song, D., Zhang, J., Wei, Z. & Liu, A.-A. (2025). “Knowledge-Guided Prompt
+Learning for Tropical Cyclone Intensity Estimation”. In: IEEE Transactions on Geoscience and Remote
+Sensing 63, pp. 1–13.
+Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., Zettlemoyer, L. & Stoyanov, V.
+(2019). RoBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv: 1907.11692 [cs.CL].
+Loshchilov, I. & Hutter, F. (2019). “Decoupled Weight Decay Regularization”. In: International Conference
+on Learning Representations.
+Ma, C., Hua, Z., Anderson-Frey, A., Iyer, V., Liu, X. & Qin, L. (2024). WeatherQA: Can multimodal language
+models reason about severe weather? arXiv: 2406.11217 [cs.AI].
+Meng, F. & Song, T. (2024). “Uncertainty forecasting system for tropical cyclone tracks based on
+conformal prediction”. In: Expert Systems with Applications 249, p. 123743.
+Morss, R. E., Vickery, J., Lazrus, H., Demuth, J. & Bostrom, A. (2022). “Improving Tropical Cyclone Fore-
+cast Communication by Understanding NWS Partners’ Decision Timelines and Forecast Information
+Needs”. In: Weather, Climate, and Society 14.3, pp. 783–800.
+Nafar, A., Venable, K. B. & Kordjamshidi, P. (2025). “Learning vs Retrieval: The Role of In-Context
+Examples in Regression with Large Language Models”. In: Proceedings of the 2025 Conference of the
+Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language
+Technologies (Volume 1: Long Papers). Albuquerque, New Mexico: Association for Computational
+Linguistics, pp. 8206–8229.
+Nicodemus, K. K., Malley, J. D., Strobl, C. & Ziegler, A. (2010). “The behaviour of random forest
+permutation-based variable importance measures under predictor correlation”. In: BMC Bioinformat-
+ics 11.1, p. 110.
+Oquab, M., Darcet, T., Moutakanni, T., Vo, H. V., Szafraniec, M., Khalidov, V., Fernandez, P., Haziza, D.,
+Massa, F., El-Nouby, A., Assran, M., Ballas, N., Galuba, W., Howes, R., Huang, P.-Y., Li, S.-W., Misra, I.,
+Rabbat, M., Sharma, V., Synnaeve, G., Xu, H., Jegou, H., Mairal, J., Labatut, P., Joulin, A. & Bojanowski,
+P. (2024). “DINOv2: Learning Robust Visual Features without Supervision”. In: Transactions on
+Machine Learning Research.
+Parcalabescu, L., Trost, N. & Frank, A. (2021). “What is Multimodality?” In: Proceedings of the 1st Workshop
+on Multimodal Semantic Representations (MMSR). Groningen, Netherlands (Online): Association for
+Computational Linguistics, pp. 1–10.
+Peng, X., Wei, Y., Deng, A., Wang, D. & Hu, D. (2022). “Balanced Multimodal Learning via On-the-fly
+Gradient Modulation”. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+Recognition. CVPR, pp. 8238–8247.
+Rai, D., Zhou, Y., Feng, S., Saparov, A. & Yao, Z. (2025). A Practical Review of Mechanistic Interpretability
+for Transformer-Based Language Models. arXiv: 2407.02646 [cs.AI].
+Romano, Y., Patterson, E. & Candès, E. (2019). “Conformalized Quantile Regression”. In: Advances in
+Neural Information Processing Systems. Vol. 32. Curran Associates, Inc.
+Serrano, S. & Smith, N. A. (2019). “Is Attention Interpretable?” In: Proceedings of the 57th Annual Meeting
+of the Association for Computational Linguistics. Florence, Italy: Association for Computational
+Linguistics, pp. 2931–2951.
+Shinde, R., Ankur, K., Phillips, C. E., Gupta, A., Pfreundschuh, S., Roy, S., Kirkland, S., Gaur, V., Kolluru,
+V., Lin, A., et al. (2026). “WxC-Bench: A novel dataset for weather and climate downstream tasks”. In:
+Scientific Data 13, p. 596.
+25
+Song, T., Yang, K., Li, X., Peng, S. & Meng, F. (2024). “Probabilistic Estimation of Tropical Cyclone
+Intensity Based on Multi-Source Satellite Remote Sensing Images”. In: Remote Sensing 16.4, 606.
+Song, X., Li, O., Lee, C., Yang, B., Peng, D., Perel, S. & Chen, Y. (2024). “OmniPred: Language Models as
+Universal Regressors”. In: Transactions on Machine Learning Research.
+Sundararajan, M., Taly, A. & Yan, Q. (2017). “Axiomatic attribution for deep networks”. In: Proceedings
+of the 34th International Conference on Machine Learning. Vol. 70. Proceedings of Machine Learning
+Research. Sydney, NSW, Australia: PMLR, pp. 3319–3328.
+Tang, E., Yang, B. & Song, X. (2025). “Understanding LLM Embeddings for Regression”. In: Transactions
+on Machine Learning Research.
+Vacareanu, R., Negru, V. A., Suciu, V. & Surdeanu, M. (2024). “From Words to Numbers: Your Large
+Language Model Is Secretly A Capable Regressor When Given In-Context Examples”. In: First
+Conference on Language Modeling.
+Varambally, S., Manivannan, V. V., Jafari, Y., Han, L., Novack, Z., Xia, Z., Rühling Cachay, S., Eranky, S.,
+Niu, R., Berg-Kirkpatrick, T., Watson-Parris, D., Ma, Y. & Yu, R. (2025). “Aquilon: Towards Building
+Multimodal Weather LLMs”. In: ICML 2025 Workshop on Assessing World Models.
+Vovk, V., Gammerman, A. & Shafer, G. (2005). Algorithmic learning in a random world. Springer.
+Wang, X., Chen, K., Liu, L., Han, T., Li, B. & Bai, L. (2025). “Global Tropical Cyclone Intensity Forecasting
+with Multi-modal Multi-scale Causal Autoregressive Model”. In: ICASSP 2025 - 2025 IEEE International
+Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1–5.
+Wiegreffe, S. & Pinter, Y. (2019). “Attention is not not Explanation”. In: Proceedings of the 2019 Conference
+on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on
+Natural Language Processing (EMNLP-IJCNLP). Hong Kong, China: Association for Computational
+Linguistics, pp. 11–20.
+Wu, N., Jastrzebski, S., Cho, K. & Geras, K. J. (2022). “Characterizing and Overcoming the Greedy Nature
+of Learning in Multi-modal Deep Neural Networks”. In: Proceedings of the 39th International Conference
+on Machine Learning. Vol. 162. Proceedings of Machine Learning Research. PMLR, pp. 24043–24055.
+Xu, C. & Xie, Y. (2021). “Conformal prediction interval for dynamic time-series”. In: Proceedings of
+the 38th International Conference on Machine Learning. Vol. 139. Proceedings of Machine Learning
+Research. PMLR, pp. 11559–11569.
+Xu, X.-Y., Shao, M., Chen, P.-L. & Wang, Q.-G. (2022). “Tropical Cyclone Intensity Prediction Using
+Deep Convolutional Neural Network”. In: Atmosphere 13.5, 783.
+You, S., Zhu, P., Guzman, O. & Jiang, H. (2025). “Predicting Tropical Cyclone Intensity Using a Convolu-
+tional Neural Network and 20 Years of IMERG Satellite Rainfall Data”. In: Weather and Forecasting
+40.11, pp. 2317–2331.
+Zausinger, J., Pennig, L., Kozina, A., Sdahl, S., Sikora, J., Dendorfer, A., Kuznetsov, T., Hagog, M.,
+Wiedemann, N., Chlodny, K., Limbach, V., Ketteler, A., Prein, T., Singh, V. M., Danziger, M. & Born, J.
+(2025). “Regress, Don’t Guess: A Regression-like Loss on Number Tokens for Language Models”. In:
+Forty-second International Conference on Machine Learning.
+Zhang, S., Mu, P., Huang, C., Zhang, J. & Bai, C. (2025). “TC-Diffuser: Bi-Condition Multi-Modal Diffusion
+for Tropical Cyclone Forecasting”. In: Proceedings of the AAAI Conference on Artificial Intelligence
+39.1, pp. 1120–1128.
+Zhang, Y., Li, M., Long, D., Zhang, X., Lin, H., Yang, B., Xie, P., Yang, A., Liu, D., Lin, J., Huang, F. &
+Zhou, J. (2025). Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation
+Models. arXiv: 2506.05176 [cs.CL].
+Zhao, Z., Zhang, Z., Tang, P., Wang, X. & Cui, L. (2024). “MT-GN: Multi-Task-Learning-Based Graph
+Residual Network for Tropical Cyclone Intensity Estimation”. In: Remote Sensing 16.2, 215.
+26
+Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. P., Zhang,
+H., Gonzalez, J. E. & Stoica, I. (2023). “Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena”.
+In: Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks
+Track.
+Appendix A Text preprocessing examples
+The cleaning pipeline described in Section 3.2 removes bulletin metadata and the official NHC table
+of forecast positions before the text is passed to the tokenizer, then lowercases and normalizes the
+remainder. Figures 8 and 9 illustrate the preprocessing of a storm-specific discussion. The first shows the
+raw bulletin with stripped content in red; the second shows the processed string. The header is trimmed
+up to the first datetime line, and everything from FORECAST POSITIONS AND MAX WINDS onward
+is removed. In two training discussions this heading is misspelled or absent, so their table is retained.
+Numerical forecasts may still occur in the retained narrative. The retained text is whitespace-collapsed,
+lowercased, and stripped of non-ASCII and control characters before tokenization.
+ZCZC MIATCDAT4 ALL
+TTAA00 KNHC DDHHMM
+TROPICAL STORM DORIAN DISCUSSION NUMBER 2
+NWS NATIONAL HURRICANE CENTER MIAMI FL AL042013
+1100 AM EDT WED JUL 24 2013
+VISIBLE SATELLITE IMAGERY AND RECENT ASCAT SCATTEROMETER WINDS INDICATE THAT THE TROPICAL
+DEPRESSION HAS BECOME BETTER ORGANIZED AND HAS STRENGTHENED INTO TROPICAL STORM DORIAN.
+THE INITIAL INTENSITY OF 45 KT IS BASED ON A 38-KT ASCAT SURFACE WIND AT 1111Z... AND
+VARIOUS OBJECTIVE SATELLITE INTENSITY ESTIMATES OF ABOUT 45 KT.
+THE INITIAL MOTION ESTIMATE IS 285/18 KT. DORIAN IS EXPECTED TO BE STEERED
+WEST-NORTHWESTWARD TO WESTWARD BY A STRONG DEEP-LAYER SUBTROPICAL RIDGE OVER THE CENTRAL
+AND EASTERN ATLANTIC. THE NHC MODEL GUIDANCE REMAINS TIGHTLY PACKED IN EXCELLENT
+AGREEMENT ON THIS TRACK SCENARIO...WITH THE ONLY DIFFERENCES BEING SLIGHT VARIATIONS IN
+THE FORWARD SPEED. THE NHC OFFICIAL FORECAST TRACK IS SIMILAR TO THE PREVIOUS ADVISORY
+AND IS CLOSE TO THE MULTI-MODEL CONSENSUS TVCN.
+FOR THE NEXT 24 HOURS OR SO...THE VERTICAL SHEAR IS FORECAST TO BE VERY LOW WHILE DORIAN
+REMAINS OVER MARGINALLY WARM SSTS. HOWEVER... DURING THE 24-48 HOUR TIME PERIOD...DORIAN
+WILL BE MOVING OVER 25C SSTS...WHICH COULD INDUCE SOME SLIGHT WEAKENING. THE CYCLONE IS
+EXPECTED TO MAINTAIN THE CURRENT FAVORABLE EQUATORIAL INFLOW OF WARM UNSTABLE AIR THAT IS
+OFFSETTING THE COOLER MORE STABLE AIR BEING INGESTED FROM THE NORTH...AND THAT COULD
+OFFSET THE EFFECTS OF DORIAN PASSING OVER COOLER WATERS. FOR THAT REASON...THE INTENSITY
+FORECAST ONLY SHOWS SLIGHT WEAKENING AT 36- AND 48-HOURS. AFTER THAT...THE CYCLONE IS
+LIKELY TO ENCOUNTER BOTH WARMER WATER AND INCREASING WESTERLY SHEAR...SO THE INTENSITY
+FORECAST IS HELD STEADY. THE OFFICIAL INTENSITY FORECAST IS SLIGHTLY HIGHER THAN THE
+PREVIOUS ADVISORY THROUGH THE NEXT 24 HOURS DUE TO THE HIGHER INITIAL INTENSITY...BUT
+THEN FOLLOWS THE TREND OF CONSENSUS MODELS.
+FORECAST POSITIONS AND MAX WINDS
+INIT 24/1500Z 14.3N 29.9W 45 KT 50 MPH
+12H 25/0000Z 15.0N 32.6W 50 KT 60 MPH
+24H 25/1200Z 15.8N 36.1W 50 KT 60 MPH
+36H 26/0000Z 16.4N 39.8W 45 KT 50 MPH
+48H 26/1200Z 17.1N 43.4W 40 KT 45 MPH
+72H 27/1200Z 18.3N 51.2W 40 KT 45 MPH
+96H 28/1200Z 19.3N 58.2W 40 KT 45 MPH
+120H 29/1200Z 20.1N 64.0W 40 KT 45 MPH
+$$
+FORECASTER STEWART
+NNNN
+27
+Figure 8. Raw bulletin for Tropical Storm Dorian, Discussion 2, 24 July 2013 1500 UTC (verbatim
+reproduction of the public NHC archive, NHC AL04 Discussion 2, 2013). Lines in red are stripped by the
+preprocessing pipeline. This includes the bulletin metadata above the first datetime line, and everything
+from FORECAST POSITIONS AND MAX WINDS onward (the table of forecast positions, the WMO
+separator $$, the forecaster attribution, and the end-of-transmission marker NNNN).
+1100 am edt wed jul 24 2013 visible satellite imagery and recent ascat scatterometer winds
+indicate that the tropical depression has become better organized and has strengthened
+into tropical storm dorian. the initial intensity of 45 kt is based on a 38-kt ascat
+surface wind at 1111z... and various objective satellite intensity estimates of about
+45 kt. the initial motion estimate is 285/18 kt. dorian is expected to be steered
+west-northwestward to westward by a strong deep-layer subtropical ridge over the
+central and eastern atlantic. the nhc model guidance remains tightly packed in
+excellent agreement on this track scenario...with the only differences being slight
+variations in the forward speed. the nhc official forecast track is similar to the
+previous advisory and is close to the multi-model consensus tvcn. for the next 24 hours
+or so...the vertical shear is forecast to be very low while dorian remains over
+marginally warm ssts. however... during the 24-48 hour time period...dorian will be
+moving over 25c ssts...which could induce some slight weakening. the cyclone is
+expected to maintain the current favorable equatorial inflow of warm unstable air that
+is offsetting the cooler more stable air being ingested from the north...and that could
+offset the effects of dorian passing over cooler waters. for that reason...the
+intensity forecast only shows slight weakening at 36- and 48-hours. after that...the
+cyclone is likely to encounter both warmer water and increasing westerly shear...so the
+intensity forecast is held steady. the official intensity forecast is slightly higher
+than the previous advisory through the next 24 hours due to the higher initial
+intensity...but then follows the trend of consensus models.
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+↪
+Figure 9. Processed Dorian discussion used as input to the text encoder, retaining the text from
+Figure 8 after header trimming and forecast-section removal, with whitespace collapsed to single spaces,
+lowercased, and non-ASCII characters stripped.
+000
+AXNT20 KNHC 241749
+TWDAT
+TROPICAL WEATHER DISCUSSION
+NWS NATIONAL HURRICANE CENTER MIAMI FL
+205 PM EDT WED JUL 24 2013
+TROPICAL WEATHER DISCUSSION FOR NORTH AMERICA...CENTRAL AMERICA...GULF OF
+MEXICO...CARIBBEAN SEA...NORTHERN SECTIONS OF SOUTH AMERICA...AND ATLANTIC OCEAN TO THE
+AFRICAN COAST FROM THE EQUATOR TO 32N. THE FOLLOWING INFORMATION IS BASED ON SATELLITE
+IMAGERY...WEATHER OBSERVATIONS...RADAR...AND METEOROLOGICAL ANALYSIS.
+BASED ON 1200 UTC SURFACE ANALYSIS AND SATELLITE IMAGERY THROUGH 1715 UTC.
+...SPECIAL FEATURE...
+TROPICAL STORM DORIAN IS LOCATED NEAR 14.3N 29.9W ABOUT 356 NM WSW OF THE CAPE VERDE
+ISLANDS ON 24/1500 UTC. ITS PRESENT MOVEMENT IS WNW AT 18 KT WITH MAXIMUM SUSTAINED WINDS
+OF 45 KT GUSTING TO 55 KT. MINIMUM CENTRAL PRESSURE IS 1002 MB. [...]
+...TROPICAL WAVES...
+A TROPICAL WAVE EXTENDS FROM THE CAYMAN ISLANDS AT 19N80W TO N OF PANAMA AT 11N81W MOVING
+W AT 20 KT. [...]
+...THE ITCZ/THE MONSOON TROUGH...
+THE MONSOON TROUGH AXIS EXTENDS ACROSS AFRICA INTO THE E TROPICAL ATLC NEAR 13N17W AND
+CONTINUES TO 14N23W. [...]
+...DISCUSSION...
+GULF OF MEXICO...
+SURFACE RIDGING IS OVER THE GULF OF MEXICO WITH AXIS FROM MIAMI FLORIDA TO CORPUS
+CHRISTIE TEXAS. 10-15 KT SURFACE WINDS ARE NOTED. [...]
+28
+CARIBBEAN SEA...
+A TROPICAL WAVE IS S OF THE CAYMAN ISLANDS WITH NO SIGNIFICANT PRECIPITATION. A MONSOON
+TROUGH EXENDS OVER PANAMA PRODUCING SCATTERED MODERATE CONVECTION FROM 6N-10N BETWEEN
+77W-83W. [...]
+HISPANIOLA...
+PRESENTLY A VERY SMALL AREA OF SCATTERED SHOWERS ARE OVER THE WESTERN DOMINICAN REPUBLIC
+DUE TO AFTERNOON HEATING. EXPECT MOSTLY FAIR WEATHER OVER THE NEXT 24 HOURS.
+ATLANTIC OCEAN...
+A 1019 MB HIGH IS OVER THE W ATLANTIC NEAR 28N64W. A SURFACE RIDGE AXIS EXTENDS W TO MIAMI
+FLORIDA. ISOLATED MODERATE CONVECTION IS OVER THE NW ATLANTIC W OF 70W. [...]
+FOR ADDITIONAL INFORMATION PLEASE VISIT
+HTTP://WWW.HURRICANES.GOV/MARINE
+$$
+FORMOSA
+Figure 10. Selected text from a Tropical Weather Discussion from the NHC archive, with WMO header time 1749
+UTC on 24 July 2013. The bulletin itself is headed 205 PM EDT (1805 UTC). Bracketed ellipses mark omitted
+passages. This basin-wide discussion is included for comparison with storm-specific discussions and was not
+used in the reported quantitative results.
+For the end-to-end RoBERTa models, the processed storm discussion is tokenized with the pretrained
+tokenizer using a maximum sequence length of 512 tokens. The same storm-discussion routine is applied
+to training, validation, test, and attribution inputs. The TWDAT example in Figure 10 is illustrative.
+Attribution details are given in Appendix M.
+Appendix B Complete Experimental Results
+B.1 Comparison with Traditional ML Methods
+Tables 8 and 9 report the separately trained per-lead neural family, using five seeds for each modality
+and forecast lead. The 24 h runs in this family are distinct from the primary 24 h ablation in Table 11. We
+report these experiment families separately across forecast leads. Table 10 lists case and storm counts
+for all neural families. Table 11 reports the mean and sample SD of scores calculated separately for
+five training runs. Table 12 scores the combined forecast obtained by averaging predictions from those
+same runs. The score of an averaged forecast generally differs from the average score of its individual
+models. Appendix G gives reference baselines and target spread to aid interpretation of changing R2
+across lead times.
+29
+Table 8. Per-lead neural models for VMAX change, including 24 h. Entries are mean ± sample SD
+across five training runs. RMSE is in kt. SS is 1 − RMSE/SD0(y) against the test-mean predictor.
+Population counts appear in Table 10. Bold/underline identify the best/second-best means within each
+lead, excluding D’s different population.
+Lead Modality Predictive performance
+R2 RMSE SS
+24 h
+T 0.44±0.01 14.22±0.12 0.25±0.01
+I 0.21±0.03 16.93±0.29 0.11±0.02
+D 0.53±0.01 13.27±0.17 0.31±0.01
+T+I 0.46±0.02 13.98±0.30 0.27±0.02
+T+D 0.54±0.04 12.92±0.50 0.32±0.03
+I+D 0.47±0.03 13.84±0.36 0.27±0.02
+T+I+D 𝟎.𝟓𝟓±0.02 𝟏𝟐.𝟕𝟕±0.35 𝟎.𝟑𝟑±0.02
+48 h
+T 0.47±0.02 20.78±0.38 0.27±0.01
+I 0.16±0.06 26.03±0.95 0.09±0.03
+D 0.54±0.01 19.23±0.25 0.32±0.01
+T+I 0.45±0.02 21.14±0.34 0.26±0.01
+T+D 𝟎.𝟓𝟖±0.02 𝟏𝟖.𝟒𝟑±0.36 𝟎.𝟑𝟓±0.01
+I+D 0.52±0.03 19.78±0.54 0.31±0.02
+T+I+D 0.57±0.01 18.72±0.26 0.34±0.01
+72 h
+T 0.39±0.02 23.78±0.47 0.22±0.02
+I 0.24±0.06 26.44±1.04 0.13±0.03
+D 0.42±0.06 23.19±1.12 0.24±0.04
+T+I 0.41±0.03 23.37±0.64 0.23±0.02
+T+D 𝟎.𝟒𝟔±0.06 𝟐𝟐.𝟑𝟗±1.22 𝟎.𝟐𝟔±0.04
+I+D 0.39±0.10 23.68±1.86 0.22±0.06
+T+I+D 0.45±0.04 22.51±0.94 𝟎.𝟐𝟔±0.03
+96 h
+T 0.27±0.03 24.97±0.59 𝟎.𝟏𝟓±0.02
+I 0.18±0.07 26.50±1.16 0.10±0.04
+D 0.19±0.11 26.29±1.76 0.10±0.06
+T+I 𝟎.𝟐𝟖±0.08 𝟐𝟒.𝟖𝟏±1.38 𝟎.𝟏𝟓±0.05
+T+D 0.24±0.07 25.56±1.22 0.13±0.04
+I+D 0.08±0.19 27.98±2.93 0.05±0.10
+T+I+D 0.19±0.08 26.27±1.37 0.10±0.05
+120 h
+T 𝟎.𝟐𝟏±0.03 𝟐𝟔.𝟏𝟏±0.43 𝟎.𝟏𝟏±0.01
+I 0.15±0.04 26.95±0.62 0.08±0.02
+D 0.00±0.15 29.33±2.15 0.00±0.07
+T+I 0.08±0.09 28.02±1.40 0.04±0.05
+T+D 0.06±0.07 28.43±1.13 0.03±0.04
+I+D 0.05±0.18 28.40±2.81 0.03±0.10
+T+I+D 0.00±0.13 29.29±1.94 0.00±0.07
+B.2 MSLP Prediction Results
+Table 9 reports the corresponding pressure results for the separately trained per-lead neural models.
+The following tables give the evaluation populations (Table 10) and compare the primary 24 h models
+for both targets, using the mean and sample SD of scores across five runs (Table 11) and the scores of
+their averaged forecast (Table 12).
+30
+Table 9. Per-lead neural models for MSLP change, including 24 h. Entries are mean ± sample SD
+across five training runs. RMSE is in hPa. SS is 1−RMSE/SD0(y) against the test-mean predictor.
+Population counts appear in Table 10. Bold/underline identify the best/second-best means within each
+lead, excluding D’s different population.
+Lead Modality Predictive performance
+R2 RMSE SS
+24 h
+T 0.44±0.01 9.74±0.09 0.25±0.01
+I 0.18±0.03 11.82±0.22 0.09±0.02
+D 0.48±0.02 9.51±0.16 0.28±0.01
+T+I 0.46±0.03 9.58±0.22 0.27±0.02
+T+D 0.50±0.04 9.21±0.36 0.29±0.03
+I+D 0.47±0.03 9.51±0.23 0.27±0.02
+T+I+D 𝟎.𝟓𝟐±0.03 𝟗.𝟎𝟑±0.31 𝟎.𝟑𝟏±0.02
+48 h
+T 0.44±0.02 14.80±0.24 0.25±0.01
+I 0.12±0.06 18.49±0.65 0.06±0.03
+D 0.51±0.01 13.87±0.20 0.30±0.01
+T+I 0.42±0.03 15.01±0.40 0.24±0.02
+T+D 𝟎.𝟓𝟓±0.02 𝟏𝟑.𝟏𝟓±0.32 𝟎.𝟑𝟑±0.02
+I+D 0.49±0.02 14.06±0.31 0.29±0.02
+T+I+D 0.54±0.02 13.34±0.26 0.32±0.01
+72 h
+T 0.33±0.03 17.52±0.39 0.18±0.02
+I 0.15±0.08 19.67±0.89 0.08±0.04
+D 0.35±0.06 17.36±0.80 0.19±0.04
+T+I 0.31±0.10 17.69±1.21 0.17±0.06
+T+D 𝟎.𝟑𝟗±0.06 𝟏𝟔.𝟔𝟔±0.80 𝟎.𝟐𝟐±0.04
+I+D 0.36±0.05 17.09±0.66 0.20±0.03
+T+I+D 𝟎.𝟑𝟗±0.06 𝟏𝟔.𝟔𝟔±0.89 𝟎.𝟐𝟐±0.04
+96 h
+T 0.18±0.05 19.09±0.57 0.10±0.03
+I 0.07±0.09 20.30±0.94 0.04±0.04
+D 0.14±0.14 19.73±1.57 0.07±0.07
+T+I 𝟎.𝟐𝟎±0.06 𝟏𝟖.𝟖𝟑±0.75 𝟎.𝟏𝟏±0.04
+T+D 0.19±0.09 19.02±1.08 0.10±0.05
+I+D 0.03±0.22 20.72±2.34 0.02±0.11
+T+I+D 0.18±0.08 19.12±0.94 0.10±0.04
+120 h
+T 𝟎.𝟏𝟐±0.05 𝟐𝟎.𝟓𝟓±0.59 𝟎.𝟎𝟔±0.03
+I 0.05±0.03 21.33±0.33 0.02±0.01
+D 0.00±0.15 22.00±1.56 0.00±0.07
+T+I 0.05±0.10 21.28±1.08 0.03±0.05
+T+D 0.06±0.07 21.17±0.74 0.03±0.03
+I+D 0.02±0.15 21.61±1.72 0.01±0.08
+T+I+D 0.01±0.10 21.74±1.09 0.01±0.05
+Table 10. Evaluation populations for both targets and all neural families. D requires a matched discussion.
+Other modalities retain cases with missing discussions.
+Lead All modalities except D D only
+Cases Storms Cases Storms
+24 h 1,150 66 1,105 64
+48 h 898 53 860 53
+72 h 686 51 653 47
+96 h 499 38 480 36
+120 h 360 28 348 27
+31
+Table 11. Primary 24 h neural ablation: mean ± sample SD over five runs. Text-fusion models use the
+forecast-tuned discussion encoder. Bold and underline mark the best and second-best means, excluding
+D’s different population (Table 10).
+Modality R2 MAE (kt/hPa)
+Vmax MSLP Vmax MSLP
+Single
+T 0.44±0.01 0.44±0.01 10.13±0.05 6.60±0.08
+I 0.22±0.02 0.20±0.02 12.40±0.16 8.15±0.13
+D 0.50±0.01 0.46±0.03 9.90±0.20 6.56±0.17
+Dual
+T+I 0.45±0.01 0.45±0.01 10.27±0.06 6.72±0.05
+T+D 𝟎.𝟓𝟑±0.01 𝟎.𝟓𝟏±0.01 9.46±0.16 𝟔.𝟐𝟑±0.08
+I+D 0.50±0.01 0.48±0.02 9.74±0.27 6.45±0.18
+Triple
+T+I+D 𝟎.𝟓𝟑±0.01 𝟎.𝟓𝟏±0.01 𝟗.𝟒𝟓±0.13 𝟔.𝟐𝟑±0.08
+Table 12. Primary 24 h neural ablation after averaging predictions from five runs. Models and highlight-
+ing follow Table 11, with populations in Table 10.
+Modality R2 MAE (kt/hPa)
+Vmax MSLP Vmax MSLP
+Single
+T 0.46 0.46 9.89 6.43
+I 0.27 0.25 11.99 7.85
+D 0.55 0.51 9.28 6.16
+Dual
+T+I 0.49 0.49 9.84 6.35
+T+D 𝟎.𝟓𝟕 𝟎.𝟓𝟓 𝟖.𝟗𝟎 𝟓.𝟖𝟕
+I+D 0.55 0.53 9.11 6.01
+Triple
+T+I+D 𝟎.𝟓𝟕 𝟎.𝟓𝟓 8.92 5.88
+Appendix C Data Processing Pipeline
+C.1 Tabular Data Preprocessing
+The tabular input consists of the 13 SHIPS predictors in Table 2. SHIPS values are extracted at the
+initial time. Latitude and longitude are expressed in degrees. For each storm, a target at lead time h is
+formed by subtracting the initial intensity from the intensity at exactly t+h when it is available. Storm
+identifiers, timestamps, discussion filenames, and columns containing future targets are excluded from
+the predictor vector. The models use these 13 predictors without additional cyclical time encodings,
+lagged predictors, interaction terms, or outlier clipping.
+The dataset contains 74 missing TWAC values. The other 12 predictors contain no missing entries.
+In the end-to-end loader, missing numerical inputs are replaced by -999 before transformation by the
+feature scaler. The scaler itself is fitted on available training values before this replacement. In the
+hybrid and temporal loaders, missing inputs are replaced by zero before fitting the scaler. Each fitted
+32
+scaler is then applied unchanged to validation and test inputs. The chronological split uses cases before
+2020 for training, 2020–2021 for validation, and 2022–2023 for testing. Target availability is handled
+separately from input missingness. Absent future intensities are not imputed. Neural losses use target
+masks, and per-lead hybrid and temporal datasets require the targets needed by the fitted model.
+C.1.1 Pairwise correlations among tabular predictors
+Figure 11 reports pairwise Pearson correlations among the SHIPS predictors in Table 2, computed on
+the training split. Current wind and pressure are strongly inversely correlated, and the tangential-wind
+predictor also tracks those current-state variables. Most other environmental predictors have weaker
+pairwise correlations. Correlation alone does not establish that every predictor is necessary, so we
+retain the declared input set for comparability across configurations.
+Figure 11. Pairwise Pearson correlations among all 13 SHIPS tabular predictors, using available pairs of
+training cases.
+C.2 ERA5 Image Processing
+1. Data Extraction.
+• 41×41 grid centered on storm location
+• Resolution is 0.25°× 0.25°
+• Variables areu10,v10 (10m wind components), used as raw two-channel input
+2. Preprocessing.
+33
+• Channel 0 containsu10 (zonal wind component)
+• Channel 1 containsv10 (meridional wind component)
+• Zero-padded frames preserved as zero (representing no data)
+• Channel-wise normalization using training statistics (excluding zero-padded frames)
+C.3 Image Representation Comparison
+The retained ERA5 inputs use the horizontal wind components u and v. They were obtained from
+aligned magnitude/direction fields through u = |V |cosθ and v = |V |sinθ, where |V | =
+√
+u2 +v2
+and θ = arctan2(v,u). The coordinate change does not add meteorological information. Direction is
+undefined at zero wind speed, while both reconstructed components are zero. All reported predictions
+use the fixed u/v representation. A controlled comparison of predictive performance under the two
+representations remains future work.
+Physically, 10 m surface winds are the most natural image representation for Vmax, which is itself a
+maximum sustained surface wind speed. However, ERA5 strongly underestimates the maximum winds
+of intense cyclones (Dulac et al., 2024), so these fields mainly describe the broader circulation. The
+tabular inputs include a generalized wind-shear measure (SHGC) and upper-level divergence (D200).
+Their presence does not establish that these predictors contain all useful information from upper-air
+images. An exploratory comparison with ERA5 850 hPa u/v wind components, with or without 850 hPa
+geopotential height, is left for future work.
+C.4 Image Encoder Choice
+For the hybrid image branch we use a CNN trained on ERA5 wind fields. It produces 128-dimensional
+embeddings using the self-supervised objective described in subsection C.5. We also explored DINOv2-
+ViT-S/14 (Oquab et al., 2024), a vision foundation model pretrained on natural images. These exploratory
+experiments did not provide a useful alternative in our pipeline, so we did not retain DINOv2. All
+reported hybrid results use the CNN trained on ERA5 wind fields.
+C.5 Hybrid CNN pretraining objective
+The hybrid image encoder is trained self-supervised on ERA5 frames alone, without any Vmax or MSLP
+target, so that image embeddings can be produced even for frames that lack matched intensity labels.
+Optimization uses only frames from 2002–2019 storms, with checkpoint selection on 2020–2021 storms.
+Pretraining uses learning rate 5×10−4, batch size 256 and an epoch cap of 50, repeated independently
+with five seeds. In each run, the CNN and hybrid regressors use the same random seed. Frames from
+the 2022–2023 test storms are excluded from pretraining. Two objectives are optimized jointly. (i) A
+next-frame prediction objective uses a small head that reads the encoder’s embedding of frame t and
+predicts the embedding of frame t+1 of the same storm, using one minus cosine similarity to a detached
+next-frame embedding as the loss. (ii) A frame-reconstruction objective uses a lightweight decoder
+that reconstructs the input frame from the encoder embedding under a pixelwise MSE loss. The two
+losses are summed with a weight of 0.5 on the reconstruction term. After pretraining the predictor and
+the decoder are discarded. The 128-dimensional encoder output is passed to the XGBoost fusion head
+together with the 13 raw SHIPS predictors and the text embeddings from the sentence encoder.
+The hybrid and temporal CNNs differ from the end-to-end image encoder. They use three 3×3
+convolutional layers with channel widths 64,64,256, BatchNorm and ReLU, max pooling after the
+second and third layers, and average pooling to 4×4. Their FC path is 4096 →576 →256 →128, with
+Linear–BatchNorm–ReLU in its first two blocks. Each hybrid run uses its own fixed pretrained encoder.
+The temporal models train their own initially random CNN and GRU.
+34
+C.6 Text Data Processing
+Storm-specific discussions are joined to cases using the bounded matching rule in subsection 3.2.
+Matched discussion issue times occur 3–7 hours after the synoptic time in the dataset, usually three
+hours. Discussions for unmatched cases remain missing. Fused models and the hybrid and temporal
+text-only regressors use a zero text vector, and the neural discussion-only model omits those cases.
+The end-to-end RoBERTa path trims the bulletin header to the first datetime line, removes the
+FORECAST POSITIONS AND MAX WINDS section and all following lines, removes null/control and
+non-ASCII characters, collapses whitespace, and lowercases the retained text. Its tokenizer truncates
+and pads to a total sequence length of 512 tokens, including special tokens, and supplies an attention
+mask. Narrative numerical predictions may remain in the retained discussion.
+The frozen Qwen path uses the same forecast-section cutoff but otherwise preserves the discussion’s
+letter case, bulletin header, and line structure before encoding. The cache stores 1,024-dimensional
+normalized embeddings. The hybrid and temporal models use the first 768 coordinates, without
+an additional normalization after this truncation. Missing or empty matched inputs produce zero
+embeddings. These two text preprocessing paths are distinct.
+Appendix D Encoder Architecture Details
+This appendix provides full mathematical specifications for each encoder and the fusion module
+summarized in Section 4.3.
+D.1 Tabular Encoder
+The tabular encoder processes the 13-dimensional SHIPS predictor vector 𝐱tab ∈ ℝ13 through a three-
+layer MLP with progressively decreasing hidden dimensions.
+𝐡(1) = LeakyReLUα(𝐖tab 1 𝐱tab + 𝐛tab 1 ), (2)
+where 𝐖tab 1 ∈ ℝ128×13, 𝐛tab 1 ∈ ℝ128, andα =0.01 (default PyTorch negative slope).
+The second hidden layer incorporates normalization and regularization.
+̃𝐡(2) = LeakyReLUα(𝐖tab 2 𝐡(1) + 𝐛tab 2 ),
+𝐡(2) = Dropoutp(LayerNorm(̃𝐡(2))), (3)
+where 𝐖tab 2 ∈ ℝ64×128 and dropout ratep =0.3.
+A final linear projection produces the 64-dimensional embedding.
+𝐡tab = 𝐖tab 3 𝐡(2) + 𝐛tab 3 ∈ ℝ64, (4)
+where 𝐖tab 3 ∈ ℝ64×64. Standalone T replaces the final 64-dimensional embedding with 2H forecast
+outputs.
+D.2 Image Encoder
+The image encoder extracts spatial features from ERA5 wind fields 𝐱img ∈ ℝ2×41×41, where the two
+channels represent u and v wind components at 10 m height. The CNN consists of three convolutional
+blocks with increasing channel depths. Each block applies convolution, batch normalization, and ReLU
+activation.
+̃𝐟(i) = ReLU(BatchNorm(Conv2di(𝐟(i−1)))), (5)
+where 𝐟(0) = 𝐱img. The first block uses a 5×5 kernel with 32 output channels, followed by 2×2 max
+pooling (41×41 →20×20). The second block uses a 3×3 kernel with 64 channels and another 2×2
+35
+max pooling (20×20 → 10×10). The third block uses a 3×3 kernel with 128 channels, followed by
+adaptive average pooling to a fixed4×4 spatial grid.
+𝐟pool = AdaptiveAvgPool4×4(̃𝐟(3))∈ ℝ128×4×4. (6)
+The pooled features pass through three fully connected layers. Each of the first two is followed by
+ReLU, batch normalization and dropout, in that order. Their dropout probabilities are p and 0.67p, with
+p =0.1 for primary I and T+I and p =0.3 for the other reported image configurations. The final layer is
+linear.
+𝐡img = FC(Flatten(𝐟pool))∈ ℝ64, 2048 →128 →64 →64. (7)
+In standalone I, the final output dimension is2H instead of 64.
+D.3 Text Encoder
+The text encoder uses RoBERTa-base (Liu et al., 2019) as a feature extractor. Discussions are tokenized
+via byte-pair encoding (maximum 512 tokens) and processed through the 12-layer transformer encoder.
+We extract the [CLS] token hidden state.
+𝐞CLS =RoBERTa(Tokenize(𝐱text))[CLS]∈ ℝ768. (8)
+A two-layer projection maps the 768-dimensional representation to the common embedding space.
+𝐡(1) text = GELU(𝐖txt 1 𝐞CLS + 𝐛txt 1 ), (9)
+𝐡text = 𝐖txt 2 Dropout0.1(𝐡(1) text)+ 𝐛txt 2 ∈ ℝ64, (10)
+where 𝐖txt 1 ∈ ℝ384×768, 𝐖txt 2 ∈ ℝ64×384, with GELU activation and dropout (p=0.1). In fused models, the
+backbone is fixed while the projection is trained on precomputed [CLS] features. Generic text uses
+pretrained RoBERTa weights, while forecast-tuned text uses the separately trained D backbone for the
+same seed and lead time. Standalone D trains the full pretrained backbone and a 768 → 384 → 2H
+regression head. Its head uses GELU and dropout with probability 0.1 between the linear layers, with
+another dropout at its output during training.
+D.4 Multi-modal Fusion
+Before fusion, every active branch output receives layer normalization. The image branch additionally
+applies a 64 →64 linear projection, LeakyReLU and another layer normalization. These operations act
+on learned features, not physical intensity values.
+Concatenation Fusion. Modality embeddings are concatenated directly.
+𝐡stack =[̃𝐡tab; ̃𝐡img; ̃𝐡text]∈ ℝ192, (11)
+where tildes denote the branch transformations above. With M active modalities the stacked width
+is 64M. Global layer normalization gives the fused representation, followed by dropout (p=0.1) and a
+linear output layer.
+Attention-Based Fusion. Each transformed modality embedding is projected to dmodel = 256
+dimensions by a linear layer, GELU and dropout with probability 0.1. A learnable [fusion] token is
+prepended and modality-position embeddings are added. For M modalities this gives 𝐇∈ ℝ(M+1)×256. A
+single pre-LN Transformer layer uses four heads of widthdk =64.
+Attention(𝐐, 𝐊, 𝐕)= softmax( 𝐐𝐊T √ dk ) 𝐕, (12)
+where 𝐐 = LN(𝐇)𝐖Q, 𝐊 = LN(𝐇)𝐖K and 𝐕 = LN(𝐇)𝐖V . A residual connection surrounds this
+sublayer. A second pre-LN sublayer applies a 256 →1024 →256 feed-forward network with GELU and
+36
+its own residual connection. Internal and residual dropout probabilities are 0.2. The resulting [fusion]
+token is layer-normalized, then passed through dropout with probability 0.1 and a linear output head.
+The architecture supports omitting modality tokens. In the reported fused experiments, an unavailable
+discussion is represented by a zero input embedding and its token is retained.
+The primary 24 h grid uses concatenation for T+I, T+D and T+I+D, and attention for I+D. Per-lead
+models retain these choices at 24 h. At 48–120 h they use attention for T+I and I+D and concatenation for
+T+D and T+I+D. All joint multi-lead fusion models use concatenation. The attention diagram illustrates
+the module rather than the selected fusion for every configuration.
+D.5 Prediction Head
+The fusion module’s final linear layer maps the fused representation to standardized intensity-change
+predictions for the requested lead times.
+Δ̂𝐲std = 𝐖pred𝐡fused + 𝐛pred ∈ ℝ2H, (13)
+where H is the number of lead times (H=5 for 24–120 h) and the output lists standardized wind changes
+for all requested lead times followed by standardized pressure changes for the same lead times. Physical
+predictionsΔ̂𝐲 are recovered using target means and standard deviations from the training set.
+Appendix E Implementation Details
+E.1 Model Architectures
+Figure 12 provides a detailed view of each encoder and the attention-based fusion module used in
+the end-to-end MultiCyclone architecture. All encoders project their respective inputs to a shared
+64-dimensional embedding space before fusion.
+E.2 Training Configuration
+For end-to-end neural models, validation loss is computed for each batch using Eq. 1. The learning-rate
+scheduler and early stopping use the average weighted by batch size
+val = ∑B |B|B ∑B |B| ,
+where |B| is the number of cases in validation batch B. When the number of available targets per case
+varies, this average can differ from the MSE obtained by pooling all available targets across validation
+batches. A batch with no available targets has loss zero. Reported evaluation metrics are computed
+separately for each target and forecast lead over all available cases.
+The end-to-end models use AdamW with (β1,β2)=(0.9,0.999). In the primary 24 h grid, the base
+learning-rate/batch-size pairs for T, I, D, T+I, T+D, I+D and T+I+D are, respectively, (5×10−4,32),
+(5×10−4,32), (2×10−5,16), (5×10−4,32), (10−3,32), (5×10−4,32) and (5×10−4,16). Weight decay is
+zero for T, I and T+I and 10−2 for D and text fusion. The patience for early stopping is 7. The epoch cap
+is 200 for T, I and T+I and 500 for D and text fusion.
+These are the retained, modality-specific settings. Validation loss chooses a stopping epoch and
+controls the learning-rate scheduler. Generic-text validation comparisons informed some fusion choices,
+but we did not perform an exhaustive search over architecture, fusion operator, learning rate, or batch
+size. These comparisons do not establish the best fusion operator for the forecast-tuned text backbone.
+The independently trained per-lead models use an epoch cap of 500, patience 5 and weight decay
+10−2. Their base learning-rate/batch-size pairs are (5×10−4,32) for T, (10−3,16) for I, (2×10−5,32) for
+D, (10−3,32) for T+D and (5×10−4,16) for T+I+D. T+I and I+D use 5×10−4 with batch size 32 at 24 h
+and 16 at longer leads. Joint models retain the same epoch cap, patience and weight decay. Their T, I
+37
+Tabular Encoder
+Input ℝ13
+FC + LeakyReLU
+13 → 128
+FC + LeakyReLU
+128 → 64
+LayerNorm + Drop(0.3)
+FC 64 → 64
+LayerNorm
+Output ℝ64
+CNN Encoder
+Input 41×41×2
+Flatten + FC blocks
+2048 → 128 → 64 → 64
+LayerNorm
++ projection
+Output ℝ64
+20×20×32Conv1+BN+
+ReLU+Pool
+10×10×64Conv2+BN+
+ReLU+Pool
+10×10×128Conv3+BN+
+ReLU
+4×4×128Adaptive
+AvgPool
+Text Encoder
+RoBERTa [CLS]
+Input ℝ768
+FC + GELU
+768 → 384
+Dropout(0.1)
+FC 384 → 64
+LayerNorm
+Output ℝ64
+Attention Fusion
+Project 64 → 256
+Stack 4×256
+([fusion] + 3)
+LayerNorm
+MHA
+4 heads, dk=64
+Drop(0.2) + Residual
+LayerNorm
+FFN (GELU, dropout)
+256 → 1024 → 256
+Drop(0.2) + Residual
+Transformer output
+4×256
+Prediction Head
+Extract [fusion] + LN
+4×256 → 256
+Dropout(0.1) + FC
+256 → 2H
+Δ̂Vmax(t + h)
+Δ̂MSLP(t + h)
+Figure 12. Encoder branches and the attention fusion module. The frozen RoBERTa backbone supplies
+a 768-dimensional [CLS] vector. A separate trainable MLP projects it to 64 dimensions. The tabular
+MLP and image CNN also produce 64-dimensional embeddings. In the attention variant, a projection
+maps each normalized branch embedding to 256 dimensions. The three tokens are stacked with a
+learnable [fusion] token and modality embeddings. One pre-LN Transformer layer uses four attention
+heads, residual paths, and a 256 →1024 →256 feed-forward network. The normalized [fusion] token
+supplies the256 →2H prediction head. The selected primary full model uses concatenation.
+and D rates and batch sizes match the per-lead models. Joint T+I, T+D, I+D and T+I+D use (10−4,32),
+(10−4,16), (5×10−4,32) and (10−3,16), respectively. In fused models, the image encoder’s learning rate
+is one tenth of the base rate. Standalone I uses the full rate.
+These neural runs reduce the learning rate by a factor of 0.5 on a validation plateau with scheduler
+patience 3 and clip gradient norms at 1.0. Temporal CNN–GRU models use AdamW with learning rate
+5×10−4, batch size 64, weight decay 10−3, an epoch cap of 100 and patience 10 for early stopping, with
+the same plateau factor, scheduler patience and clipping norm. Their selection criterion is MSE over
+complete validation target pairs.
+For hybrid and temporal XGBoost heads we fit one regressor per target, using at most 1,000 trees,
+depth 4, learning rate 0.05, row and column subsampling 0.8, L1/L2 penalties 0.1/1.0, histogram tree
+construction and 50-round validation early stopping. The hybrid Ridge controls use penalty α =1. Ridge
+regression and the reference baselines are deterministic, so repeated runs give identical predictions
+rather than independent fits.
+38
+E.3 Initialization
+For the 24 h multi-modal ablations that include text, linear weights in the constructed model are reset
+with Kaiming normal initialization and their biases to zero. LayerNorm scales and biases are reset
+to one and zero. Other module classes, including convolutional and BatchNorm layers, retain their
+initialization at construction. The external sentence encoder trained in the D model is frozen during
+fusion training and is not reset. Standalone D starts fine-tuning from its pretrained initialization. The
+per-lead and joint configurations retain their separately specified initialization settings.
+E.4 Computational Resources
+The neural experiments were run on the University of Lausanne DCSR Curnagl high-performance
+computing cluster as single-GPU NVIDIA A100 40 GB jobs. Exploratory runs on other GPU architectures
+are separate from the main comparison. Models are implemented in PyTorch 2.x. The end-to-end neural
+protocol uses fp32, disables TF32, and requests deterministic operations, including a deterministic
+replacement for the adaptive-pooling backward pass. Some deterministic checks are configured to warn
+rather than fail, so these settings do not by themselves establish universal bitwise reproducibility. The
+reported temporal models use a controlled runtime with deterministic algorithms enforced, cuDNN
+benchmarking disabled and TF32 disabled. The software settings of the earlier temporal runs were not
+fully recorded, so exact reproduction of those runs is not established. The supplementary material pro-
+vides predictions and reproducibility information. Fused text models require both the fusion checkpoint
+and its external frozen RoBERTa backbone, using generic pretrained weights for generic text, or the
+corresponding trained D backbone for forecast-tuned text. Transformer attributions are computed on
+the GPU.
+A temporal alignment check compared this timestamp-based construction with an earlier imple-
+mentation that used preceding cases and could pair an image with an older discussion when synoptic
+times were missing. Both versions were trained under the same runtime settings, including models
+without text as controls. The reported temporal results use the timestamp-based construction.
+Reproducibility checks distinguish rerunning inference from retraining. Before the discussion issue
+times were corrected, CPU inference was repeated for 246 of 351 neural and fusion-control entries. At a
+maximum prediction difference of 5×10−4 in physical units, 81 passed and 165 failed. For 16 replayed
+runs, at least one metric changed when rounded to two decimals. Comparable averages across complete
+groups of five seeds retained their rounded values. This agreement does not resolve the failed prediction
+checks. The CPU runs used batches of 32, including a run originally exported with batches of 16, so
+this was not solely a hardware comparison. Fresh A100 fits of the primary T, I and T+I models for seed
+1 reproduced the accepted checkpoint bytes. After the correction, every model that uses discussion text
+was refitted with five seeds for each stochastic configuration, including the primary T+D comparison,
+the fusion and backbone controls, the hybrid and temporal regressors, the text probes and the CLEAR
+calibration with five forest seeds. All reported scores were recomputed from the exported predictions
+and the raw targets. Tabular, image and tabular with image models do not use the discussions, so they
+were retained, as were the five pretrained image encoders of the hybrid models. The replay results above
+therefore describe the retained models and the earlier text models. The refitted text models are not an
+exact replay of the earlier fits. For the earlier fusion fits, all eleven seed-1 checkpoints and training
+result files matched their historical bytes, but predictions exported through the training framework
+differed from the earlier predictions by more than the stated tolerance. Selected controls using direct
+export recovered the historical predictions exactly, demonstrating effects of the export policy for those
+checkpoints. These controls do not explain every CPU discrepancy or establish agreement across all
+batch sizes. The export settings are recorded for each configuration, including the failed comparisons
+with earlier predictions. In a later check on the same A100 hardware, the primary 24 h T, D and T+D
+models were refitted for all five seeds from the preserved source files, inputs and runtime environment.
+The T and D checkpoints of this check equal those behind the reported results byte for byte, and its D
+and T+D predictions are identical to those reported. Exporting six retained D and T+D checkpoints
+39
+again also returned identical predictions. This check reused the preserved runtime environment, and
+the executed source files are kept with the code. Some historical checkpoints and software provenance
+remain unavailable, so full reproduction of every model from a fresh installation is not established.
+Appendix F Per-Lead vs. Joint Multi-Lead Prediction
+Table 13. Per-lead versus joint neural forecasts for Vmax change. Both experiment families use five seeds.
+Entries show individual-seed mean ± sample SD. Text-fusion rows use forecast-tuned encoders. This
+descriptive comparison does not isolate training strategy from model configuration. MAE is in kt. D
+uses matched discussions. Counts are in Table 10. Bold and underline mark the best and second-best
+displayed means per metric column within each lead (ties included, with D excluded because its test
+population differs).
+Lead Modality R2 MAE (kt)
+Per-lead Joint Per-lead Joint
+24 h
+T 0.44±0.01 0.41±0.01 10.11±0.06 10.32±0.10
+I 0.21±0.03 0.09±0.23 12.43±0.26 12.60±0.66
+D 0.53±0.01 0.51±0.02 9.49±0.15 9.78±0.25
+T+I 0.46±0.02 0.41±0.01 10.09±0.11 10.44±0.09
+T+D 0.54±0.04 𝟎.𝟓𝟒±0.02 9.26±0.29 9.40±0.30
+I+D 0.47±0.03 0.52±0.01 10.06±0.39 9.66±0.12
+T+I+D 𝟎.𝟓𝟓±0.02 𝟎.𝟓𝟒±0.03 𝟗.𝟏𝟓±0.19 𝟗.𝟐𝟒±0.22
+48 h
+T 0.47±0.02 0.47±0.01 15.32±0.38 15.27±0.30
+I 0.16±0.06 0.12±0.29 18.97±0.37 18.94±1.14
+D 0.54±0.01 0.53±0.02 14.32±0.17 14.35±0.27
+T+I 0.45±0.02 0.46±0.01 15.49±0.54 15.50±0.30
+T+D 𝟎.𝟓𝟖±0.02 0.55±0.02 𝟏𝟑.𝟒𝟒±0.23 13.84±0.28
+I+D 0.52±0.03 0.50±0.02 14.38±0.54 14.81±0.35
+T+I+D 0.57±0.01 𝟎.𝟓𝟔±0.03 13.65±0.22 𝟏𝟑.𝟔𝟔±0.48
+72 h
+T 0.39±0.02 0.42±0.01 18.77±0.58 18.05±0.20
+I 0.24±0.06 0.08±0.38 20.43±0.75 20.91±1.28
+D 0.42±0.06 0.43±0.02 17.63±0.80 17.19±0.13
+T+I 0.41±0.03 0.42±0.02 18.34±0.44 17.99±0.48
+T+D 𝟎.𝟒𝟔±0.06 𝟎.𝟒𝟒±0.03 𝟏𝟔.𝟗𝟑±0.67 𝟏𝟔.𝟕𝟒±0.41
+I+D 0.39±0.10 0.42±0.03 18.08±1.48 17.55±0.18
+T+I+D 0.45±0.04 0.41±0.05 17.11±0.61 16.88±0.76
+96 h
+T 0.27±0.03 𝟎.𝟑𝟎±0.03 19.81±0.42 19.32±0.37
+I 0.18±0.07 −0.06±0.65 21.00±0.94 20.95±1.90
+D 0.19±0.11 0.24±0.03 20.80±1.60 19.39±0.45
+T+I 𝟎.𝟐𝟖±0.08 𝟎.𝟑𝟎±0.04 𝟏𝟗.𝟓𝟓±0.95 𝟏𝟗.𝟏𝟗±0.65
+T+D 0.24±0.07 0.20±0.06 19.76±1.22 19.55±0.47
+I+D 0.08±0.19 0.22±0.06 21.62±2.66 19.62±0.65
+T+I+D 0.19±0.08 0.19±0.10 20.43±0.81 19.58±1.34
+120 h
+T 𝟎.𝟐𝟏±0.03 0.19±0.04 𝟐𝟎.𝟏𝟕±0.09 20.23±0.51
+I 0.15±0.04 −0.46±1.44 20.76±0.62 21.31±2.87
+D 0.00±0.15 0.10±0.05 23.42±2.03 20.67±0.43
+T+I 0.08±0.09 𝟎.𝟐𝟎±0.04 21.28±0.87 𝟐𝟎.𝟐𝟐±0.53
+T+D 0.06±0.07 0.06±0.10 22.51±1.49 21.29±0.66
+I+D 0.05±0.18 0.09±0.11 23.13±2.57 20.84±1.06
+T+I+D 0.00±0.13 0.09±0.13 23.65±2.26 20.61±1.17
+The models in Tables 8–9 are trained separately at each forecast lead, whereas the joint models
+predict all five leads together. Table 13 compares these approaches across five seeds per configuration,
+40
+using forecast-tuned text encoders when discussions are combined with other inputs. Joint training
+with tabular inputs and discussions gives lower mean wind MAE at the three longest leads but not at
+24 and 48 h, with 21.29 versus 22.51 kt at 120 h. This advantage is not consistent across all modality
+combinations. Sharing an encoder may help when fewer training examples are available at longer leads,
+although differences in learning rate and batch size mean that this comparison cannot isolate the effect
+of joint training. Missing targets are masked, allowing a case to contribute at shorter leads even when
+its targets at longer leads are unavailable. For the joint model using wind fields alone, the poor mean
+performance at longer leads is dominated by one unstable fit that produced several extreme predictions
+for a single storm. All five seeds are retained, and this instability cautions against attributing that
+average solely to joint training.
+Appendix G WhyR2 Can Increase at Longer Lead Times
+Comparisons across forecast leads change both the forecast target and the available cases. Table 14
+therefore reports train/test counts, target spread, and the same joint T+D configuration at every lead
+time. Table 15 reports the reference baseline comparison for both targets. The 24 h scores in these tables
+come from the same model family as the longer-lead scores.
+Table 14. Lead-time counts and physical error diagnostics. Test-target population variances are in kt2
+(ΔVmax) and hPa2 (ΔMSLP). The joint T+D entries are individual-seed mean ± sample SD over seeds
+1–5 on identical valid targets. Wind MSE is in kt2 and is averaged across the MSEs from the five seeds.
+All forecast leads use the joint model family. Reference baselines appear separately in Table 15.
+Lead ValidN/S Target varianceVar0 Joint T+D
+Train Test ΔV (kt2) ΔP (hPa2) MSE (kt2) R2
+24 h 8,954/491 1,150/66 362.24 169.93 167.29±8.43 0.54±0.02
+48 h 7,016/431 898/53 811.35 388.25 362.97±12.51 0.55±0.02
+72 h 5,406/365 686/51 925.55 456.85 518.43±25.92 0.44±0.03
+96 h 4,114/299 499/38 859.42 446.34 683.29±53.18 0.20±0.06
+120 h 3,082/230 360/28 859.05 477.61 811.70±83.60 0.06±0.10
+R2 =1−MSE/Var0(y) uses the displayed population variance, with denominatorN . Each target variance uses all valid test
+cases at that lead. Counts shrink with lead time.
+For the joint configuration using tabular inputs and discussions, the wind MSE averaged over seeds
+increases with lead, while the averaged R2 rises slightly between 24 and 48 h. This is possible because
+target variance also increases. The identity R2 =1−MSE/Var0(ΔV) shows why an improving relative
+score can accompany increasing absolute error. At later leads, target spread changes less while error
+continues to grow, and R2 declines. Table 14 gives the values and the shrinking evaluation population.
+These lead-specific populations do not provide a controlled test of a physical predictability limit.
+Training availability also declines with lead. Discussion-only models use a further matched-
+discussion subset. Reduced training data is a plausible contributor to long-lead instability, but these runs
+do not separate that factor from target difficulty, sample composition, architecture or optimization. The
+joint objective shares an encoder across lead times, but replication across five seeds does not remove
+differences in configuration and evaluation population. In both experiment families, adding discussion
+to tabular inputs lowers mean wind MAE at the shorter leads, but this gain does not persist uniformly
+at the longest leads. The full results are in Tables 8–9 and 13.
+41
+Table 15. Reference baselines on all valid test cases. MAE and RMSE units are kt and hPa. Bold and
+underline mark the best and second-best displayed means per metric column within each lead (ties
+included).
+Lead (h) Baseline N/S MAE (kt/hPa) RMSE (kt/hPa) R2
+Vmax MSLP Vmax MSLP Vmax MSLP
+24
+Persistence 1,150/66 13.78 8.86 19.33 13.29 −0.03 −0.04
+Climatology 1,150/66 𝟏𝟑.𝟕𝟔 𝟖.𝟕𝟑 𝟏𝟗.𝟏𝟓 𝟏𝟑.𝟏𝟏 −𝟎.𝟎𝟏 −𝟎.𝟎𝟏
+Trend persistence 1,150/66 16.12 10.32 23.63 16.51 −0.54 −0.60
+48
+Persistence 898/53 21.49 14.46 29.31 20.49 −0.06 −0.08
+Climatology 898/53 𝟐𝟏.𝟏𝟔 𝟏𝟒.𝟎𝟓 𝟐𝟖.𝟕𝟔 𝟏𝟗.𝟖𝟖 −𝟎.𝟎𝟐 −𝟎.𝟎𝟐
+Trend persistence 898/53 28.30 18.80 40.36 28.20 −1.01 −1.05
+72
+Persistence 686/51 23.79 16.62 31.82 22.82 −0.09 −0.14
+Climatology 686/51 𝟐𝟑.𝟏𝟖 𝟏𝟓.𝟖𝟗 𝟑𝟎.𝟗𝟑 𝟐𝟏.𝟕𝟐 −𝟎.𝟎𝟑 −𝟎.𝟎𝟑
+Trend persistence 686/51 29.01 19.86 39.57 27.92 −0.69 −0.71
+96
+Persistence 499/38 24.33 17.43 31.79 23.78 −0.18 −0.27
+Climatology 499/38 𝟐𝟑.𝟒𝟔 𝟏𝟔.𝟏𝟓 𝟑𝟎.𝟔𝟐 𝟐𝟐.𝟎𝟑 −𝟎.𝟎𝟗 −𝟎.𝟎𝟗
+Trend persistence 499/38 27.22 19.41 35.09 26.03 −0.43 −0.52
+120
+Persistence 360/28 25.68 18.94 33.72 26.39 −0.32 −0.46
+Climatology 360/28 𝟐𝟒.𝟑𝟒 𝟏𝟕.𝟏𝟖 𝟑𝟐.𝟎𝟑 𝟐𝟑.𝟕𝟓 −𝟎.𝟏𝟗 −𝟎.𝟏𝟖
+Trend persistence 360/28 27.67 20.38 36.57 28.31 −0.56 −0.68
+Appendix H Comparison with Archived Forecast Guidance
+Table 16 compares 24 h forecasts from the NHC ATCF archive with the same future wind recorded in
+our SHIPS-derived dataset used for our models. Forecasts are matched exactly by cyclone, initialization
+time and lead. Each aid and the neural ensembles are scored on identical rows within that comparison.
+The sample differs between aids, so the table does not rank all aids on one common storm population.
+The gap column uses the T+D ensemble, which has the lowest 24 h wind and pressure MAE among the
+ensembles scored on the full test set (Table 12). On each aid’s matched rows, it also has a lower wind
+MAE than the T ensemble, and its wind MAE is nearly identical to that of the T+I+D ensemble.
+The NHC official forecast (OFCL) has MAE 7.69 kt, compared with 8.97 kt for the ensemble using
+tabular inputs with discussions, on 1,078 cases from 64 storms. The ensemble’s MAE is 1.28 kt higher
+than OFCL's, with a 95% confidence interval from resampling whole storms of [0.71,1.82]. Differences
+against HWRF and early interpolated HWRF (HWFI) remain unresolved. An interval spanning zero
+does not establish forecast equivalence.
+NHC distinguishes early and late guidance by availability during the forecast cycle. Interpolated
+aids such as HWFI, HFAI and HFBI adjust an earlier model run to the current initialization. They are
+separate products from the late HWRF, HFSA and HFSB runs. HF3A is an experimental HAFS parallel
+from 2022. The 2023 HAFS archive also contains forecasts before implementation, so its full-season
+rows must not be described as wholly operational.
+OFCL is indexed by nominal synoptic initialization time, while routine NHC advisories are issued
+three hours later. Its 24 h lead is measured from nominal initialization, following the NHC verification
+convention.
+Sensitivity to the verifying best track and implementation date. The b-deck check in Table 17
+replaces only the future verifying wind. Neural absolute predictions retain the initial intensity of the
+original dataset plus the fitted change. Exact joins recover 1,124 of 1,125 distinct initializations. Future
+42
+Table 16. 24 h Vmax MAE for absolute intensity (kt), with each aid and neural ensemble of five models
+scored on their identical common rows. A positive T+D-minus-aid gap favors the aid. CIs resample
+whole storms (10,000 draws, pointwise percentile 95%).
+Forecast aid N/S Aid MAE T T+D T+I+D T+D minus aid 95% storm CI
+OFCL 1,078/64 7.69 10.07 8.97 8.99 1.28 [0.71,1.82]
+OFCI 1,018/64 8.43 10.16 9.09 9.12 0.66 [0.17,1.11]
+HWFI 1,066/64 8.85 9.98 8.90 8.92 0.06 [−0.63,0.72]
+HWRF 1,104/64 9.67 9.98 8.97 9.00 −0.71 [−1.55,0.20]
+HFAI 641/35 9.59 9.75 9.01 9.00 −0.58 [−1.77,0.58]
+HFSA 646/35 10.69 9.73 9.01 9.00 −1.68 [−2.66,−0.72]
+HFBI 641/35 9.53 9.75 9.01 9.00 −0.52 [−1.40,0.37]
+HFSB 646/35 11.00 9.73 9.01 9.00 −1.99 [−2.69,−1.22]
+HF3A 158/13 8.85 11.77 8.28 8.26 −0.57 [−3.35,2.35]
+DSHP 1,122/66 9.23 9.91 8.90 8.93 −0.33 [−0.86,0.17]
+LGEM 1,122/66 9.24 9.91 8.90 8.93 −0.34 [−0.95,0.22]
+An aid is an archived official forecast or model-guidance product; Aid MAE is its mean absolute wind error.N/S gives
+forecast initializations/storms. Matched by cyclone, initialization, and lead. The verifying value is the dataset future wind at
+the verifying time. I-suffixed aids are early interpolated guidance; HFSA/HFSB and HFAI/HFBI cover 2023, HF3A is the 2022
+experimental parallel. Reanalysis and discussion timing prevent a claim of operational information equivalence. Unresolved
+intervals do not establish equivalence.
+wind differs from the original targets at 41 of them. The Darby initialization without a future b-deck
+wind is excluded. OFCL remains ahead, while the HWRF and HWFI differences remain unresolved. The
+Dora archive has an inconsistent internal cyclone identifier. The filename identity is used only for the
+pinned archive whose67 timestamp/wind pairs match the NHC Tropical Cyclone Report.
+HAFSv1 was scheduled to enter operations at the 27 June 2023 12 UTC cycle, according to NWS
+Service Change Notice 23-60. The archived HFAI comparison includes 34 earlier forecasts from 3 storms.
+Table 18 starts at 28 June 00 UTC to allow for interpolated guidance from a run up to 12 h old. It uses
+b-deck wind and requires tropical or subtropical status at both the initial and verifying times, following
+the NHC verification criterion. On these 600 HFAI rows, its MAE is 10.07 kt versus 9.30 kt for the
+ensemble that includes discussions. The storm interval still includes zero. The ensemble has lower error
+than the late HAFS aids on their corresponding subsets.
+All reported intervals are pointwise percentiles from 10,000 paired whole-storm resamples, without
+adjustment for multiple comparisons. These remain retrospective comparisons. Operational guidance
+had real-time constraints. Our models use the best-track-based initial intensity of the dataset. Discussion
+inputs are typically issued about 3 h after the matched synoptic time, and image inputs use ERA5
+reanalysis. Neither matching rows nor restricting the implementation date establishes equal information
+availability or delivery time.
+43
+Table 17. ATCF b-deck verification sensitivity at 24 h. Each aid and the fixed T+D ensemble of five
+models use identical rows. Upper block retains every primary-comparison row with the exact b-deck
+verifying wind. Lower block additionally requires tropical/subtropical status at both the initial and
+verifying times. Values are absolute wind MAE in kt. Positive gaps favor the aid. N/S gives forecast
+initializations/storms. Neural forecasts add the predicted change to the initial intensity in the original
+dataset.
+Forecast aid N/S Aid MAE T+D MAE T+D minus aid 95% storm CI
+Exact b-deck matches, all statuses
+OFCL 1,077/64 7.68 9.02 1.34 [0.78,1.88]
+OFCI 1,017/64 8.45 9.15 0.70 [0.21,1.16]
+HWFI 1,065/64 8.92 8.97 0.05 [−0.64,0.71]
+HWRF 1,103/64 9.75 9.02 −0.73 [−1.57,0.19]
+HFAI 641/35 9.72 9.10 −0.61 [−1.79,0.53]
+HFSA 646/35 10.83 9.10 −1.73 [−2.68,−0.78]
+HFBI 641/35 9.63 9.10 −0.53 [−1.41,0.36]
+HFSB 646/35 11.06 9.10 −1.96 [−2.65,−1.20]
+HF3A 158/13 8.85 8.28 −0.57 [−3.35,2.35]
+DSHP 1,121/66 9.26 8.95 −0.30 [−0.84,0.19]
+LGEM 1,121/66 9.27 8.95 −0.32 [−0.93,0.24]
+Tropical/subtropical status at initialization and verification
+OFCL 1,072/64 7.71 9.03 1.33 [0.77,1.87]
+OFCI 1,012/64 8.48 9.16 0.68 [0.19,1.14]
+HWFI 1,061/64 8.92 8.97 0.05 [−0.64,0.72]
+HWRF 1,098/64 9.77 9.03 −0.74 [−1.58,0.18]
+HFAI 636/35 9.78 9.12 −0.66 [−1.84,0.49]
+HFSA 641/35 10.86 9.12 −1.74 [−2.70,−0.78]
+HFBI 636/35 9.67 9.12 −0.55 [−1.43,0.34]
+HFSB 641/35 11.10 9.12 −1.98 [−2.68,−1.21]
+HF3A 158/13 8.85 8.28 −0.57 [−3.35,2.35]
+DSHP 1,116/66 9.28 8.96 −0.31 [−0.85,0.18]
+LGEM 1,116/66 9.30 8.96 −0.34 [−0.95,0.22]
+Whole storms are resampled jointly for aid and model (10,000 draws. Pointwise percentile 95% intervals). The lower block
+applies the NHC storm-status criterion but is still restricted to this study's test sample. It is not the NHC annual verification
+population. Reanalysis/discussion timing remains retrospective.
+Table 18. Postimplementation HAFS v1 archived guidance compared with the fixed primary T+D
+ensemble on matched 24 h wind forecasts (kt). Initializations begin at 00 UTC 28 June 2023, twelve
+hours after the scheduled first operational HAFS cycle. The twelve-hour buffer allows for interpolated
+guidance from an earlier run. The storm is tropical or subtropical at both initialization and verification
+in the official b-deck. The model and each aid are scored on identical rows using b-deck future intensity.
+Neural forecasts add the predicted change to the initial intensity in the original dataset. The gap is
+T+D MAE minus aid MAE. Here n/s gives forecast initializations/storms. The 95% percentile intervals
+resample storms 10,000 times. The archive does not establish identical real-time information availability.
+Forecast aid n/s Aid MAE T+D MAE T+D−aid 95% storm CI
+HFAI 600/32 10.07 9.30 −0.76 [−2.02,0.42]
+HFSA 604/32 11.12 9.31 −1.82 [−2.83,−0.82]
+HFBI 600/32 9.89 9.30 −0.59 [−1.51,0.32]
+HFSB 604/32 11.35 9.31 −2.04 [−2.81,−1.22]
+44
+Appendix I Uncertainty Quantification
+The post-hoc calibration analysis in subsection 6.3 is exploratory relative to the main result for the
+text modality. The primary analysis uses the T+D ensemble of five models on the full 24 h test set. A
+separate analysis across forecast leads evaluates T, T+D and T+I+D models trained independently at
+each lead. The CLEAR comparison and its conditional-coverage analysis use paired storm splits shared
+within that comparison but different from the analysis across forecast leads. Neither protocol calibrates
+on earlier seasons and evaluates on a later season.
+I.1 Dependence and empirical coverage on storm tracks
+Split conformal prediction (Vovk et al., 2005) guarantees marginal coverage under exchangeability of
+calibration and test scores. Residuals in these data are dependent within storms, motivating evaluation
+that holds out whole storms. This dependence alone does not determine the coverage of a particular
+calibration method. The uncalibrated spread across five seeds gives substantial undercoverage in the
+analysis across forecast leads. It is distinct from naive i.i.d. conformal calibration, which estimates a
+residual quantile. Table 19 compares calibrated coverage across the separately trained per-lead families.
+Coverage varies more across splits at longer leads, when fewer storms are available.
+I.2 Method
+We use whole storms as resampling blocks, following the storm-block bootstrap used for the MAE-gain
+intervals in subsection N.4. Let i index cases from the calibration storms and j cases from the held-out
+storms. For each case, y is the observed wind or pressure change, ̂y is the mean prediction of the
+five-seed ensemble, and σ is the standard deviation of its five predictions. The score of calibration case i
+is si = |yi− ̂yi|/wi, where the scale w is 1 for unscaled scores and σ+ϵ for ensemble-normalized scores.
+The constantϵ is fixed at2 kt for wind and1.5 hPa for pressure.
+Storm-block bootstrap calibration resamples the calibration storms with replacement B times.
+In resample b =1,…,B, it pools the scores of all cases from the drawn storms and computes ̂q(b), their
+split-conformal quantile at level 1−α. Here α = 0.1 is the target miscoverage of the 90% intervals.
+The threshold ̂q↑ is the 80th percentile of ̂q(1),…, ̂q(B), and the interval for held-out case j is ̂yj ± ̂q↑wj.
+The tables label the unscaled version storm-block bootstrap and the ensemble-normalized version
+ensemble-normalized block. We chose the 80th bootstrap percentile as a moderate upward adjustment for
+uncertainty in the estimated calibration threshold. Using the 90th percentile would be more conservative
+and produce wider intervals. The choice is an empirical heuristic, and we do not claim that 80 is optimal.
+The resulting intervals have no finite-sample coverage guarantee under storm dependence.
+Adaptive Conformal Inference (ACI, Gibbs & Candès, 2021) adjusts the miscoverage level at
+which it issues intervals. Let αk be this level after k updates. When the outcome of an earlier interval
+becomes available, ACI sets αk+1 =αk +γ(α−errk), where errk = 1 if the outcome fell outside that
+interval and 0 otherwise. The step size is fixed at γ = 0.03. We use a bounded ACI variant: when
+the adaptive quantile rank exceeds the calibration sample size, the half-width is capped at the largest
+absolute calibration residual instead of becoming infinite. We evaluate this variant empirically and do
+not invoke the original ACI coverage guarantee.
+We compare these with naive i.i.d. conformal (a case-pooled quantile) and an EnbPI-style proxy
+(C. Xu & Xie, 2021, using a sliding window of available residuals from a frozen ensemble, without
+the leave-one-out bootstrap retraining of the original EnbPI protocol). For a lead time h, an outcome
+for initialization time t enters either online method only at t +h. Before issuing an interval at time
+τ, updates use only outcomes satisfying t +h ≤ τ, and state is reset for each held-out storm. ACI
+updates use the miss indicator of the interval actually issued. Both online methods use unscaled absolute
+residuals. This replay enforces lead-dependent feedback delay, but does not model further operational
+reporting or best-track revision delays. Batch methods remain calibrated once per split, so online
+methods receive a different information stream.
+45
+Table 19. Coverage and interval width of 90% prediction intervals from 24 to 120 h. Results use ensembles
+of five models at each forecast lead (T, forecast-tuned T+D and forecast-tuned T+I+D). Entries equally
+average the three families' mean coverages and median interval widths from 120 splits with whole storms
+held out. Interval width is the median upper-minus-lower span over all held-out interval appearances
+within each family. These independently trained models are separate from the primary 24 h ablation
+family. Storm-block intervals use empirical bootstrap calibration without a finite-sample coverage
+guarantee. Bold and underline mark the best and second-best displayed values within each target and
+lead by lower widths (ties included). Coverage is assessed against the 90% target alongside interval
+width.
+Lead 24 h 48 h 72 h 96 h 120 h
+Available storm pool 66 53 51 38 28
+VMAX (width in kt)
+Naive i.i.d. conformal
+Coverage 0.901 0.895 0.889 0.888 0.895
+Interval width ↓ 41.0 60.5 74.0 87.3 100.3
+Storm-block bootstrap
+Coverage 0.918 0.914 0.912 0.914 0.909
+Interval width ↓ 44.7 66.7 85.5 102.9 109.4
+Ensemble-normalized block
+Coverage 0.914 0.915 0.911 0.915 0.918
+Interval width ↓ 39.6 61.6 81.2 105.2 126.1
+MSLP (width in hPa)
+Naive i.i.d. conformal
+Coverage 0.901 0.899 0.886 0.885 0.883
+Interval width ↓ 28.8 43.6 52.1 64.4 71.9
+Storm-block bootstrap
+Coverage 0.917 0.917 0.908 0.914 0.915
+Interval width ↓ 30.9 48.2 61.0 72.7 78.5
+Ensemble-normalized block
+Coverage 0.915 0.919 0.907 0.915 0.919
+Interval width ↓ 25.4 42.6 56.7 70.5 92.3
+Beyond coverage and width, we report the interval (Winkler) score (Gneiting & Raftery, 2007), a
+proper scoring rule combining calibration and sharpness (lower is better). For an interval [l,u] with
+nominal coverage1−α and observed changey,
+ISα =(u−l)+ 2 α(l−y) 𝟏{y <l}+ 2 α(y−u) 𝟏{y >u}.
+We use B=200 bootstrap resamples per calibration in both the 120-split analysis across forecast
+leads and the 100-split paired CLEAR comparison, and B=400 for the leave-one-storm-out illustrative
+bands. The EnbPI-style proxy retains a sliding window of 200 residual scores.
+We additionally benchmark CLEAR (Azizi et al., 2026) using the spread across five seeds to estimate
+uncertainty across fitted models (epistemic uncertainty), and a random forest quantile regressor on the
+13 SHIPS predictors, fitted to the residuals of the ensemble mean, to estimate variability in outcomes
+given those features (aleatoric uncertainty). The random forest is the fixed choice in this analysis and is
+refitted with five forest seeds, distinct from the five training seeds of the fixed neural ensemble. The
+storm splits and all other random choices are held fixed across forest seeds. Each of 100 repetitions
+partitions the 66 test-period storms into a 60% calibration pool and a 40% held-out pool. CLEAR reserves
+part of the calibration pool for fitting the aleatoric regressor and uses the remainder to calibrate its
+46
+mixing and scaling parameters. We compare naive CLEAR calibration with a storm-block scaling of the
+same uncertainty inputs. The cross-fitted variant in the conditional analysis uses a two-fold storm-level
+swap within the calibration pool. This allocation differs from the conformal baselines' use of the full
+calibration pool, and its effect need not have a fixed direction. All seven main methods share the same
+held-out folds within each repetition.
+Within each forest seed, we average coverage across the held-out splits and pool interval widths
+before calculating their median and mean, then report the mean of these summaries across the five
+forest seeds. The other methods do not depend on the forest seed and are shown once. The separate
+Split SD column averages the SD of coverage across splits within each seed. Because repetitions overlap
+within one storm pool, split dispersion is descriptive rather than a standard error from independent
+samples. Table 20 reports these summaries alongside interval score and a finite-level weighted interval
+score (WIS).
+WIS (Bracher et al., 2021) combines interval scores over eleven central levels (10–98%), weighted
+by α/2, with an absolute error term with weight 0.5 at the common point forecast from the neural
+ensemble, and divides the sum by 11.5. That common point forecast need not be the conditional median
+of each method's potentially asymmetric intervals. We therefore interpret this as a score of the supplied
+intervals and point forecast, without asserting an exact continuous ranked probability score for a
+fully specified predictive distribution. SEMF also evaluates regression intervals using coverage and
+normalized width (Azizi et al., 2025). We retain widths in physical units. Width and score should be
+read alongside coverage. A narrower band alone need not be better.
+Table 20. Comparison of 90% prediction intervals for the primary 24 h T+D ensemble on 100 paired
+splits of 1,150 cases from 66 storms. CLEAR entries are means over five forest seeds. Widths and scores
+use kt for wind and hPa for pressure. Bold and underline mark the best and second-best displayed
+values within each target by lower widths and scores (ties included). Coverage is assessed against the
+90% target alongside interval width.
+Method Coverage Split SD Median width Mean width IS↓ WIS↓
+Wind (Vmax, kt)
+Naive i.i.d. conformal 0.905 0.039 39.1 39.4 57.0 5.87
+EnbPI-style proxy 0.891 0.061 38.5 38.9 58.3 5.89
+Storm-block bootstrap 0.920 0.036 41.8 42.2 57.5 5.88
+Ensemble-normalized block 0.917 0.031 39.5 42.8 57.3 5.87
+ACI (delayed feedback) 0.910 0.027 38.6 43.2 58.6 5.87
+CLEAR, naive calibration 0.895 0.043 𝟑𝟔.𝟑 𝟑𝟖.𝟏 𝟓𝟒.𝟒 𝟓.𝟖𝟎
+CLEAR, storm-block calibration 0.913 0.040 39.1 40.9 54.8 5.82
+Pressure (MSLP, hPa)
+Naive i.i.d. conformal 0.902 0.039 26.7 26.9 42.4 3.98
+EnbPI-style proxy 0.882 0.059 23.5 25.8 43.3 4.00
+Storm-block bootstrap 0.917 0.034 30.0 29.5 42.8 3.99
+Ensemble-normalized block 0.916 0.028 24.4 27.5 40.2 3.91
+ACI (delayed feedback) 0.912 0.023 25.8 29.8 43.8 3.97
+CLEAR, naive calibration 0.897 0.040 𝟐𝟐.𝟗 𝟐𝟒.𝟔 𝟑𝟕.𝟓 𝟑.𝟖𝟔
+CLEAR, storm-block calibration 0.913 0.039 24.6 26.5 37.7 3.87
+I.3 Interval performance on individual storms
+Figure 13 shows 90% ensemble-normalized storm-block bands for six storms, each excluded from its
+own calibration set. Their coverage varies across storms. Otis remains a difficult case, with point MAE
+26.1 kt and coverage 70%. Its largest rapid intensification changes remain outside the band. The panels
+show variation that aggregate coverage does not capture.
+47
+0.0 0.5 1.0 1.5 2.0
+Days since first plotted forecast
+−40
+−20
+0
+20
+40
+ΔVmax, 24 (kt)
+Karl (2022)
+Coverage 100%, MAE 4.0 kt
+0 2 4 6 8
+Days since first plotted forecast
+−50
+0
+50
+ΔVmax, 24 (kt)
+Lee (2023)
+Coverage 82%, MAE 12.0 kt
+0 2 4 6
+Days since first plotted forecast
+−100
+−50
+0
+50
+ΔVmax, 24 (kt)
+Ian (2022)
+Coverage 74%, MAE 15.8 kt
+0 1 2 3
+Days since first plotted forecast
+−50
+0
+50
+ΔVmax, 24 (kt)
+Hilary (2023)
+Coverage 73%, MAE 15.7 kt
+0.0 0.5 1.0 1.5 2.0 2.5
+Days since first plotted forecast
+−50
+0
+50
+ΔVmax, 24 (kt)
+Julia (2022)
+Coverage 100%, MAE 7.3 kt
+0.0 0.5 1.0 1.5 2.0
+Days since first plotted forecast
+−50
+0
+50
+ΔVmax, 24 (kt)
+Otis (2023)
+Coverage 70%, MAE 26.1 kt
+90% interval
+T+D mean forecast
+Observed: covered
+Observed: missed
+Figure 13. Nominal 90% intervals for the primary 24 h T+D ensemble of five models. Residuals are
+normalized by the ensemble spread, and the intervals are calibrated by resampling whole storms. Each
+storm is excluded from its own calibration set. Green and red markers indicate covered and missed
+observed changes. Panel titles report the coverage and point MAE of each storm. The horizontal
+axis uses forecast initialization time, including any gaps. Otis illustrates that near-nominal aggregate
+coverage does not prevent large misses during rapid intensification.
+How discussion text affects the intervals. Table 21 compares ensembles using tabular inputs with
+and without discussions. Both use the same calibration and evaluation storms, with residual scores
+normalized by ensemble spread and calibrated in whole storm blocks. Adding discussion lowers the
+wind interval score from 62.30 to 57.34, with similar marginal coverage (0.917 and 0.917). The pressure
+score also decreases, as shown in the table. These aggregate comparisons do not imply uniformly
+narrower intervals at unchanged coverage for individual storms. On Dora, adding discussions lowers
+the median interval width across the storm and covers more cases. On Agatha, it also lowers the storm's
+median width but covers fewer (Figure 14). Adding the ERA5 wind fields changes both centers and
+widths, with different consequences across storms (Table 22). All three modality configurations still
+miss the largest Otis intensification changes.
+48
+Table 21. Primary T and T+D ensembles of five models at 24 h. The 90% intervals use ensemble
+normalization and whole storm blocks on 100 shared splits. Coverage averages the held-out splits.
+Widths pool all held-out intervals. Widths and interval scores (IS) use kt for wind and hPa for pressure.
+Lower IS is better. Bold marks the lower width or IS of the two ensembles.
+Vmax (kt) MSLP (hPa)
+Ensemble Coverage Median width Mean width IS↓ Coverage Median width Mean width IS↓
+T 0.917 41.9 45.9 62.3 0.918 26.4 29.7 42.9
+T+D 0.917 39.5 42.8 57.3 0.916 24.4 27.5 40.2
+0 2 4 6 8 10
+Days since first plotted forecast
+−50
+0
+50
+ΔVmax, 24 (kt)
+Discussion 7
+Dora (2023)
+Coverage T 80%, T+D 85%
+0.0 0.5 1.0 1.5 2.0 2.5
+Days since first plotted forecast
+−50
+0
+50
+ΔVmax, 24 (kt)
+Discussion 9
+Agatha (2022)
+Coverage T 82%, T+D 73%
+90% interval, T
+T mean forecast
+90% interval, T+D
+T+D mean forecast
+Observed change
+Case study discussion
+Figure 14. Held-out examples for Dora (2023) and Agatha (2022). Dots show observed 24 h wind
+changes. Lines show mean forecasts from five neural networks using tabular inputs, with and without
+discussions. The 90% intervals use ensemble normalization and exclude the illustrated storm from
+calibration. Neither storm was used for training. Vertical lines mark the forecast initializations for
+the fixed interpretability examples associated with Dora Discussion 7 and Agatha Discussion 9. Both
+discussions were issued three hours after their marked initialization.
+Table 22 lists the observed changes, ensemble centers and leave-one-storm-out intervals for eleven
+discussions used as case studies for T, T+D and T+I+D. All three columns use ensembles from the
+primary 24 h family. Each forecast predicts the change from its synoptic time to 24 h later. The named
+discussion is the one matched to the case at that synoptic time, usually issued three hours afterwards.
+Conditional coverage on rapid intensification. Figure 15 evaluates observed wind rises of at least
++30 kt in 24 h. It contains 97 unique test cases appearing 3,651 times in held-out folds across the paired
+splits. These pooled appearances are repeated cases, not independent events. Every evaluated method
+falls below nominal coverage on this subset, even when marginal coverage is near its target. The figure
+49
+Table 22. Primary 24 h predictions from ensembles of five models and 90% ensemble-normalized storm-
+block intervals for eleven discussions used as case studies, in kt. Each illustrated storm is excluded
+from calibration, which uses 400 storm resamples and the 80th bootstrap percentile. ✓ marks a covered
+case and ✗ marks a miss. These ensemble predictions differ from the individual checkpoints used for
+attribution.
+Case Observed change T T+D T+I+D
+Lee disc. 9 +50 +27.7[−20,+76] ✓ +25.3[−2,+53] ✓ +24.2[−10,+58] ✓
+Fiona disc. 24 +20 +2.9[−48,+54] ✓ +4.5[−36,+45] ✓ +2.6[−38,+43] ✓
+Dora disc. 7 +35 −5.0[−41,+31] ✗ +33.2[−12,+78] ✓ +31.6[−12,+75] ✓
+Otis disc. 8 +90 +4.7[−29,+38] ✗ +24.4[+9,+40] ✗ +24.0[+3,+45] ✗
+Ian disc. 10 +30 +14.1[−2,+31] ✓ +31.2[+15,+47] ✓ +30.7[+9,+52] ✓
+Idalia disc. 3 +25 +10.1[−11,+31] ✓ +14.3[+1,+28] ✓ +13.5[+3,+24] ✗
+Agatha disc. 9 −25 +2.5[−31,+36] ✓ −8.4[−37,+20] ✓ −8.7[−41,+23] ✓
+Darby disc. 24 −25 −26.5[−50,−3] ✓ −37.8[−69,−7] ✓ −43.4[−79,−7] ✓
+Madeline disc. 7 −15 −7.8[−23,+8] ✓ −3.4[−26,+19] ✓ −5.4[−31,+20] ✓
+Philippe disc. 35 +0 +0.8[−18,+19] ✓ +3.0[−16,+22] ✓ +1.2[−15,+18] ✓
+Calvin disc. 20 −20 −10.9[−32,+10] ✓ −21.3[−38,−5] ✓ −20.1[−42,+1] ✓
+0.0 0.2 0.4 0.6 0.8 1.0
+Coverage
+Naive i.i.d. conformal
+EnbPI-style proxy
+Storm-block bootstrap
+Normalized block
+ACI (delayed feedback)
+CLEAR, naive calibration
+CLEAR, storm-block calibration
+CLEAR, cross-fitted block
+(a) Coverage
+0 50 100 150 200
+RI interval score (lower is better)
+176.0
+182.3
+166.6
+154.3
+172.3
+152.5
+143.4
+137.8
+(b) Score on observed RI cases
+All cases Observed RI 90% target
+Figure 15. Conditional performance on observed rapid intensification (at least 30 kt in 24 h) for the
+primary T+D ensemble. Open and filled markers show marginal and RI coverage, respectively, with a
+dashed 90% target. Normalized block denotes the ensemble-normalized block. The right panel shows
+the RI interval score (lower is better). CLEAR points average five forest seeds, with error bars of one
+sample SD.
+compares coverage and interval score, which should be read together. This subset diagnostic evaluates
+calibration on realized rapid intensification. It does not identify those events before they occur or
+provide a coverage guarantee for future events.
+I.4 Limitations
+This analysis is exploratory and narrower than the paper's evaluation of point forecasts. First, the
+repeated random storm splits reuse the 2022–2023 storm pool. They do not test calibration on earlier
+50
+seasons followed by deployment on later ones. Seasonal and basin structure can also limit the exchange-
+ability of whole storms. Second, the paired CLEAR comparison is at 24 h. Table 19 covers leads from 24
+to 120 h, but only for three of the seven methods. It uses separately trained five-seed ensembles for
+each lead and its own set of 120 splits. Third, the baseline interval constructions are symmetric around
+their point forecast and cannot represent residual skew in the way a conditional quantile model might
+(Romano et al., 2019). Fourth, online feedback enters only after the lead time has elapsed, but operational
+reporting delays and later best-track revisions are not represented. Finally, we have not reimplemented
+the external literature on uncertainty quantification for TCs (e.g. MTCIE, T. Song et al., 2024, X. Chen
+et al., 2025; Meng & T. Song, 2024) on this dataset. These results are an empirical calibration comparison,
+not a claim of state-of-the-art uncertainty quantification or operational coverage guarantees. Future
+work could test calibration based on input availability and disagreement between modalities (Azizi,
+2026a). Coverage could also be targeted within a group of cases identified before the forecast, such as
+those at risk of rapid intensification, as was done for groups of questions in language model generation
+(Azizi, 2026b). Both would require choices fixed before calibration and an evaluation that respects storm
+dependence.
+Appendix J Evaluation Sanity Checks
+J.1 Directional-accuracy confusion matrices
+Table 23 reports strict-sign confusion matrices for predictions from the tabular ensemble and the
+ensemble that includes discussions on the full test set. The observed classes use the exact physical
+targets. Neither ensemble emits exactly zero, so both have zero recall for steady cases under this strict
+convention. The ensemble that includes discussions has higher overall and balanced accuracy in this
+descriptive comparison. These are ensemble scores, which differ from the averages of scores over seeds
+in the primary comparison.
+As a supplemental check, Table 24 fixes predicted steady to |Δ ̂V | ≤2.5 kt, half the smallest nonzero
+training change. This threshold is not tuned on the test set and does not guarantee calibration of the
+predicted class frequencies. The ensemble that includes discussions has higher overall and balanced
+accuracy under this convention, mainly through improved weakening recall. Steady recall remains low
+for both models. These tolerance scores are kept separate from strict-sign DAcc.
+Table 23. Confusion matrices for 24 h wind change from the T and T+D ensembles, each averaging five
+models on all 1,150 cases (66 storms). Rows are observed classes. Each model’s three count columns are
+predicted strengthening/steady/weakening. Observed labels use the exact signs of the observed changes,
+including exact zeros. Predicted labels use strict sign, with steady only for exactly zero prediction.
+These ensemble accuracies differ from mean accuracies across individual seeds.
+Observed N T predictions T+D predictions Recall Accuracy T T+D+ 0 - + 0 - T T+D
+Strengthening 586 521 0 65 524 0 62 0.889 0.894 Overall 0.690 0.737
+Steady 165 104 0 61 103 0 62 0.000 0.000
+Weakening 399 126 0 273 76 0 323 0.684 0.810 Balanced 0.524 0.568
+51
+Table 24. Confusion matrices for 24 h wind change from the T and T+D ensembles, each averaging five
+models on all 1,150 cases (66 storms). Rows are observed classes. Each model’s three count columns
+are predicted strengthening/steady/weakening. Observed labels use the exact signs of the observed
+changes, including exact zeros. Predictions are steady within ±2.5 kt, half the smallest nonzero training
+change. This supplemental tolerance convention is distinct from strict-sign headline DAcc and was not
+optimized on test labels.
+Observed N T predictions T+D predictions Recall Accuracy T T+D+ 0 - + 0 - T T+D
+Strengthening 586 467 86 33 488 61 37 0.797 0.833 Overall 0.655 0.710
+Steady 165 78 48 39 79 42 44 0.291 0.255
+Weakening 399 91 70 238 53 59 287 0.596 0.719 Balanced 0.561 0.602
+J.2 Discussion availability, storm phase, and missingness
+Discussion availability could encode storm phase because fused models zero-pad the text branch when
+no discussion is matched. Three checks assess this concern. First, a baseline that predicts the average
+change in the training data, separately for cases with and without a matched discussion, performs close
+to climatology, although this does not exclude interactions with other features. Second, the wind gain
+associated with discussions persists when every evaluated row has a matched discussion (Table 25).
+Third, it also persists in the pre-landfall subset, while the smaller post-landfall subset has a larger
+but less precise point estimate. Here landfall is a proxy based on the first zero IBTrACS (Knapp et al.,
+2010) distance-to-land value. Storms with no such record retain all rows in the pre-landfall group.
+The pressure gain before first landfall remains unresolved. These pointwise subset comparisons do
+not establish a between-phase interaction or a mechanism. The selected SHIPS inputs lack an explicit
+distance-to-land predictor, but include latitude and longitude, so geography is not absent from the
+numerical inputs.
+Table 25. Descriptive sensitivity of the 24 h MAE gain from T to T+D using ensembles of five mod-
+els. Positive gain favors T+D. Pre-landfall means strictly before the first IBTrACS track point with
+DIST2LAND=0. Storms without such a track point retain all cases. This is a center-over-land proxy, not
+a causal explanation.
+Stratum N/S Target T MAE T+D MAE Gain [95% CI]
+All rows 1,150/66 Vmax (kt) 9.89 8.90 0.99[0.32,1.70] 1,150/66 MSLP (hPa) 6.43 5.87 0.57[0.07,1.05]
+Discussion present 1,105/64 Vmax (kt) 10.05 8.98 1.07[0.37,1.82] 1,105/64 MSLP (hPa) 6.55 5.94 0.61[0.10,1.12]
+Discussion missing 45/31 Vmax (kt) 5.94 6.90 −0.95[−2.64,0.62] 45/31 MSLP (hPa) 3.43 3.97 −0.54[−1.65,0.40]
+Pre-landfall 1,039/64 Vmax (kt) 9.46 8.74 0.71[0.12,1.34] 1,039/64 MSLP (hPa) 6.13 5.72 0.41[−0.06,0.87]
+At/after first landfall 111/9 Vmax (kt) 13.92 10.33 3.59[−0.02,9.97] 111/9 MSLP (hPa) 9.27 7.22 2.05[−0.22,5.95]
+Pre-landfall, matched 994/62 Vmax (kt) 9.62 8.83 0.79[0.15,1.44] 994/62 MSLP (hPa) 6.25 5.80 0.45[−0.04,0.94]
+Wind/pressure MAE units are kt/hPa. All intervals resample whole storms (10,000 draws, percentile 95%), retain within-storm
+dependence, and are pointwise without multiplicity adjustment. Stratum differences are not formal interaction tests.
+52
+J.3 Comparison on identical cases
+The temporal architecture requires eight consecutive valid, nonzero ERA5 frames ending at the synoptic
+time. Matching storm identifiers and timestamps gives 834 valid test cases from 55 storms. Requiring
+a matched discussion leaves 820 cases. Table 26 recomputes every model on identical row sets and
+reports means and sample SDs over the five seeds. In both row sets, the neural model that includes
+discussions has lower mean wind MAE than the full temporal model with XGBoost. The standard
+deviations describe variation across training runs. They are not confidence intervals for differences
+between models.
+Table 26. Comparisons of 24 h forecasts on identical cases within each block. Entries are mean ± sample
+SD across five seeds. MAE is in kt/hPa. Bold and underline identify the best and second-best means
+within each block. Temporal ablation encoders are trained separately from the main temporal encoder.
+The T+I+D ablation has the main encoder’s configuration and reproduces the predictions of the XGB
+emb row exactly.
+Model R2 MAE (kt/hPa)
+Vmax MSLP Vmax MSLP
+All eligible sequences (834 cases, 55 storms)
+Neural T+D 𝟎.𝟒𝟗±0.02 𝟎.𝟓𝟎±0.02 9.47±0.20 6.33±0.12
+Neural T+I+D 𝟎.𝟒𝟗±0.01 𝟎.𝟓𝟎±0.01 𝟗.𝟒𝟓±0.11 𝟔.𝟑𝟏±0.06
+Neural T 0.41±0.01 0.44±0.02 10.03±0.13 6.70±0.12
+Hybrid T 0.42±0.01 0.43±0.00 9.84±0.07 6.74±0.02
+Hybrid T+I+D 0.46±0.02 0.48±0.03 9.89±0.19 6.63±0.19
+Hybrid T+D 0.47±0.01 0.49±0.01 9.55±0.10 6.56±0.11
+Temporal direct GRU 0.44±0.02 0.45±0.01 9.92±0.27 6.63±0.13
+Temporal T+I+D (GRU+XGB) 0.46±0.02 0.47±0.02 9.68±0.21 6.41±0.17
+Temporal XGB emb 0.45±0.02 0.47±0.02 9.71±0.27 6.43±0.18
+Temporal T+I ablation 0.36±0.01 0.37±0.03 10.56±0.11 7.05±0.10
+Temporal T+I+D ablation 0.45±0.02 0.47±0.02 9.71±0.27 6.43±0.18
+Sequences with matched discussions (820 cases, 55 storms)
+Neural D 0.46±0.02 0.44±0.02 9.82±0.19 6.65±0.15
+Neural T+D 𝟎.𝟓𝟎±0.02 𝟎.𝟓𝟎±0.02 9.52±0.20 6.35±0.12
+Neural T+I+D 0.49±0.01 𝟎.𝟓𝟎±0.01 𝟗.𝟓𝟏±0.11 𝟔.𝟑𝟒±0.06
+Neural T 0.41±0.01 0.44±0.02 10.12±0.13 6.73±0.13
+Hybrid T 0.42±0.01 0.43±0.00 9.95±0.07 6.79±0.02
+Hybrid T+I+D 0.46±0.03 0.48±0.03 9.98±0.20 6.69±0.19
+Hybrid T+D 0.47±0.01 0.49±0.01 9.64±0.10 6.62±0.12
+Temporal direct GRU 0.44±0.02 0.45±0.01 9.98±0.26 6.66±0.12
+Temporal T+I+D (GRU+XGB) 0.46±0.02 0.47±0.02 9.76±0.21 6.45±0.17
+Temporal XGB emb 0.45±0.02 0.47±0.02 9.78±0.26 6.46±0.18
+Temporal T+I ablation 0.36±0.01 0.38±0.03 10.63±0.11 7.07±0.11
+Temporal T+I+D ablation 0.45±0.02 0.47±0.02 9.78±0.26 6.46±0.18
+In paired comparisons of fixed ensembles, adding discussions to tabular inputs lowers the neural
+wind MAE on these cases, but on this smaller population the interval narrowly includes zero. The
+corresponding pressure interval also spans zero. This neural ensemble has lower wind MAE than
+XGBoost using the main temporal encoder’s embedding alone, with an interval that spans zero. Intervals
+for adding discussions to the temporal ablation and hybrid models span zero as well. These pointwise
+intervals use whole storm resampling and pooled MAE, with fitted models held fixed. They are not
+adjusted for multiple comparisons and do not establish a universal architecture ranking.
+53
+Appendix K Text Backbone and Fusion Sensitivity
+Tables 27–29 compare two text backbones and two fusion operators on identical cases within each
+modality and forecast lead. Generic RoBERTa supplies features without cyclone-specific fine-tuning.
+Forecast-tuned RoBERTa is first trained to predict intensity change from discussions alone, matching
+the seed and forecast lead of the fused model. Its backbone is then frozen while the text projection,
+other modality branches and fusion head are trained. The tables name the text backbone and fusion
+operator explicitly. T+I has no text backbone. The primary 24 h models and models trained separately
+at each forecast lead are separate experiment families.
+Table 27. Sensitivity to the text backbone and fusion operator for the primary 24 h models. Entries are
+mean ± sample SD across five seeds. MAE units are kt/hPa. Backbone definitions and training protocols
+are given in the text. Bold and underline indicate the best and second-best means within each lead.
+Lead Modality Text backbone Fusion R2 MAE (kt/hPa)
+Vmax MSLP Vmax MSLP
+24 h
+T+I No text Concat 0.45±0.01 0.45±0.01 10.27±0.06 6.72±0.05
+T+I No text Attention 0.43±0.03 0.41±0.05 10.30±0.19 6.81±0.35
+T+D Generic Concat 𝟎.𝟓𝟒±0.01 𝟎.𝟓𝟑±0.01 𝟗.𝟐𝟔±0.08 𝟔.𝟏𝟐±0.07
+T+D Forecast-tuned Concat 0.53±0.01 0.51±0.01 9.46±0.16 6.23±0.08
+T+D Generic Attention 0.44±0.03 0.43±0.02 10.25±0.46 6.64±0.20
+I+D Generic Attention 0.42±0.02 0.38±0.02 10.87±0.30 7.24±0.17
+I+D Forecast-tuned Attention 0.50±0.01 0.48±0.02 9.74±0.27 6.45±0.18
+I+D Generic Concat 0.39±0.02 0.35±0.01 11.03±0.14 7.42±0.07
+T+I+D Generic Concat 0.53±0.02 𝟎.𝟓𝟑±0.02 9.46±0.31 6.17±0.13
+T+I+D Forecast-tuned Concat 0.53±0.01 0.51±0.01 9.45±0.13 6.23±0.08
+Configurations within a modality and lead use the same valid-target population (Table 10). The primary and per-lead families
+are separate experiments. Configurations can differ in tuned learning rate and training batch size, so these comparisons do
+not isolate the effect of the backbone or fusion operator. These descriptive configuration comparisons do not establish a
+universally optimal backbone or fusion operator.
+The primary 24 h forecast-tuned T+D model with concatenation reaches mean wind MAE 9.46 kt.
+The generic-text concatenation control has lower mean wind MAE, while its attention counterpart
+has higher error (Table 27). The primary configuration was fixed before these comparisons and is
+not reselected from test scores. At 120 h, generic-text concatenation has lower mean wind MAE than
+forecast-tuned concatenation for T+D (Table 28). The I+D controls at that lead also favor generic
+text, but they differ in fusion operator or inference batch size, so they do not isolate the quality of
+the text backbone. Every displayed stochastic configuration uses five seeds. Configurations can still
+differ in learning rate and training batch size, and the recorded inference policies differ between some
+configurations. Forecast tuning and attention do not provide a uniform improvement across the tested
+configurations.
+54
+Table 28. Sensitivity to the text backbone and fusion operator for separately trained lead-time models.
+Entries are mean ± sample SD across five seeds. MAE units are kt/hPa. Backbone definitions and
+training protocols are given in the text. Bold and underline indicate the best and second-best means
+within each lead.
+Lead Modality Text backbone Fusion R2 MAE (kt/hPa)
+Vmax MSLP Vmax MSLP
+24 h
+T+D Generic Concat 0.53±0.01 0.51±0.02 9.30±0.19 6.23±0.13
+T+D Forecast-tuned Concat 0.54±0.04 0.50±0.04 9.26±0.29 6.28±0.27
+T+D Generic Attention 0.43±0.06 0.43±0.05 10.33±0.48 6.74±0.30
+T+I+D Generic Concat 0.52±0.02 0.51±0.01 9.58±0.19 6.25±0.07
+T+I+D Forecast-tuned Concat 𝟎.𝟓𝟓±0.02 𝟎.𝟓𝟐±0.03 𝟗.𝟏𝟓±0.19 𝟔.𝟏𝟐±0.18
+48 h
+T+D Generic Concat 0.52±0.02 0.49±0.02 14.56±0.36 10.32±0.28
+T+D Forecast-tuned Concat 𝟎.𝟓𝟖±0.02 𝟎.𝟓𝟓±0.02 𝟏𝟑.𝟒𝟒±0.23 𝟗.𝟓𝟖±0.30
+T+I+D Generic Concat 0.51±0.01 0.46±0.02 14.79±0.12 10.50±0.33
+T+I+D Forecast-tuned Concat 0.57±0.01 0.54±0.02 13.65±0.22 9.67±0.27
+72 h
+T+D Generic Concat 0.44±0.02 0.36±0.04 17.95±0.52 13.33±0.47
+T+D Forecast-tuned Concat 𝟎.𝟒𝟔±0.06 0.39±0.06 𝟏𝟔.𝟗𝟑±0.67 12.50±0.32
+T+I+D Generic Concat 𝟎.𝟒𝟔±0.03 𝟎.𝟒𝟏±0.03 16.94±0.36 12.88±0.61
+T+I+D Forecast-tuned Concat 0.45±0.04 0.39±0.06 17.11±0.61 𝟏𝟐.𝟒𝟒±0.49
+96 h
+T+D Generic Concat 𝟎.𝟑𝟏±0.04 𝟎.𝟐𝟑±0.02 𝟏𝟗.𝟐𝟓±0.31 14.72±0.40
+T+D Forecast-tuned Concat 0.24±0.07 0.19±0.09 19.76±1.22 14.49±0.80
+T+I+D Generic Concat 0.28±0.12 𝟎.𝟐𝟑±0.11 𝟏𝟗.𝟐𝟓±1.05 𝟏𝟒.𝟑𝟔±0.91
+T+I+D Forecast-tuned Concat 0.19±0.08 0.18±0.08 20.43±0.81 14.49±0.73
+120 h
+T+D Generic Concat 𝟎.𝟐𝟐±0.05 𝟎.𝟏𝟐±0.07 𝟐𝟎.𝟐𝟕±0.85 𝟏𝟓.𝟕𝟏±0.53
+T+D Forecast-tuned Concat 0.06±0.07 0.06±0.07 22.51±1.49 16.72±1.10
+T+I+D Generic Concat 0.17±0.09 0.09±0.10 20.66±0.76 16.32±0.61
+T+I+D Forecast-tuned Concat 0.00±0.13 0.01±0.10 23.65±2.26 17.24±1.03
+Configurations within a modality and lead use the same valid-target population (Table 10). The primary and per-lead families
+are separate experiments. Configurations can differ in tuned learning rate and training batch size, so these comparisons do
+not isolate the effect of the backbone or fusion operator. These descriptive configuration comparisons do not establish a
+universally optimal backbone or fusion operator.
+Fusion type and candidate learning rates and batch sizes were compared using 2020–2021 validation
+loss with generic frozen text features. The 48 h fusion choices were carried to separately trained 72–120 h
+models, which were not independently swept for fusion type. Joint multi-lead models were evaluated
+with concatenation only. The comparison of text backbones keeps the primary fusion choices fixed and
+does not establish their optimality for forecast-tuned text. These experiments assess sensitivity to the
+text backbone and fusion settings rather than selecting replacement configurations from test scores.
+55
+Table 29. Sensitivity to the text backbone and fusion operator (separately trained lead-time models).
+Generic uses pretrained RoBERTa. Forecast-tuned uses RoBERTa trained on discussions for the same
+seed and forecast lead. Both remain frozen during fusion training. T+I has no text backbone. Concat
+denotes concatenation and Attention denotes multi-head attention. Entries are mean ± sample SD
+across five training runs. MAE units are kt/hPa. Bold and underline mark the best and second-best
+displayed means per metric column within each lead (ties included).
+Lead Modality Text backbone Fusion Seeds R2 MAE (kt/hPa)
+Vmax MSLP Vmax MSLP
+24 h
+T+I No text Concat 5 0.46±0.02 0.46±0.03 10.09±0.11 6.57±0.11
+T+I No text Attention 5 0.45±0.01 0.44±0.03 10.14±0.17 6.70±0.08
+I+D Generic Attention 5 0.35±0.03 0.32±0.04 11.38±0.43 7.58±0.30
+I+D Forecast-tuned Attention 5 𝟎.𝟒𝟕±0.03 𝟎.𝟒𝟕±0.03 𝟏𝟎.𝟎𝟔±0.39 𝟔.𝟒𝟗±0.26
+I+D Generic Concat 5 0.36±0.02 0.33±0.02 11.20±0.26 7.44±0.22
+48 h
+T+I No text Attention 5 0.45±0.02 0.42±0.03 15.49±0.54 10.80±0.31
+I+D Generic Attention 5 0.23±0.08 0.23±0.07 18.48±1.02 12.72±0.69
+I+D Forecast-tuned Attention 5 𝟎.𝟓𝟐±0.03 𝟎.𝟒𝟗±0.02 𝟏𝟒.𝟑𝟖±0.54 𝟏𝟎.𝟏𝟏±0.15
+I+D Generic Concat 5 0.35±0.05 0.30±0.06 17.12±0.54 12.17±0.33
+72 h
+T+I No text Attention 5 𝟎.𝟒𝟏±0.03 0.31±0.10 18.34±0.44 13.95±0.42
+I+D Generic Attention 5 0.19±0.03 0.14±0.04 21.30±0.66 15.39±0.25
+I+D Forecast-tuned Attention 5 0.39±0.10 𝟎.𝟑𝟔±0.05 𝟏𝟖.𝟎𝟖±1.48 𝟏𝟐.𝟗𝟑±0.59
+I+D Generic Concat 5 0.32±0.04 0.23±0.08 19.71±0.78 14.62±0.64
+96 h
+T+I No text Attention 5 𝟎.𝟐𝟖±0.08 𝟎.𝟐𝟎±0.06 𝟏𝟗.𝟓𝟓±0.95 𝟏𝟒.𝟖𝟐±0.86
+I+D Generic Attention 5 0.20±0.09 0.08±0.09 20.72±1.37 15.62±0.89
+I+D Forecast-tuned Attention 5 0.08±0.19 0.03±0.22 21.62±2.66 15.61±1.76
+I+D Generic Concat 5 0.11±0.19 0.11±0.05 21.80±2.06 15.47±0.45
+120 h
+T+I No text Attention 5 0.08±0.09 0.05±0.10 21.28±0.87 16.64±0.75
+I+D Generic Attention 5 0.10±0.16 −0.12±0.19 21.55±1.99 17.74±1.34
+I+D Forecast-tuned Attention 5 0.05±0.18 0.02±0.15 23.13±2.57 17.18±1.20
+I+D Generic Concat 5 𝟎.𝟏𝟐±0.20 𝟎.𝟎𝟕±0.13 𝟐𝟏.𝟏𝟐±1.85 𝟏𝟔.𝟏𝟗±0.93
+Configurations within a modality and lead use the same valid-target population (Table 10). The primary and per-lead families
+are separate experiments. Configurations can differ in tuned learning rate and training batch size, so these comparisons do
+not isolate the effect of the backbone or fusion operator. The T+I baselines use inference batch size 16 and their alternative
+attention control uses 32. The fresh generic I+D controls also use 32. Universal prediction parity across these batch sizes has
+not been established. These descriptive configuration comparisons do not establish a universally optimal backbone or fusion
+operator.
+56
+Appendix L Rubric, Pipeline and Validation for Subjectivity Classifi-
+cation
+This appendix documents the three-class rubric, the uncert

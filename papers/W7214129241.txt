@@ -1,0 +1,1529 @@
+TITLE: Managing geopolitical risk in global supply chains: A qualitative study of European multinational enterprises
+AUTHORS: Arnd Huchzermeier, Mark Kuppek
+VENUE: International Journal of Production Economics (2026-09-23)
+DOI: https://doi.org/10.1016/j.ijpe.2026.110226
+LICENCE: cc-by-nc-nd
+LINK: https://doi.org/10.1016/j.ijpe.2026.110226
+
+Journal Pre-proof
+Managing geopolitical risk in global supply chains: A qualitative study of European
+multinational enterprises
+Arnd Huchzermeier, Mark Kuppek
+PII: S0925-5273(26)00317-8
+DOI: https://doi.org/10.1016/j.ijpe.2026.110226
+Reference: PROECO 110226
+To appear in: International Journal of Production Economics
+Received Date: 6 November 2025
+Revised Date: 17 September 2026
+Accepted Date: 21 September 2026
+Please cite this article as: Huchzermeier, A., Kuppek, M., Managing geopolitical risk in global supply
+chains: A qualitative study of European multinational enterprises, International Journal of Production
+Economics, https://doi.org/10.1016/j.ijpe.2026.110226.
+This is a PDF of an article that has undergone enhancements after acceptance, such as the addition
+of a cover page and metadata, and formatting for readability. This version will undergo additional
+copyediting, typesetting and review before it is published in its final form. As such, this version is no
+longer the Accepted Manuscript, but it is not yet the definitive Version of Record; we are providing
+this early version to give early visibility of the article. Please note that Elsevier’s sharing policy for the
+Published Journal Article applies to this version, see: https://www.elsevier.com/about/policies-and-
+standards/sharing#4-published-journal-article. Please also note that, during the production process,
+errors may be discovered which could affect the content, and all legal disclaimers that apply to the
+journal pertain.
+© 2026 Published by Elsevier B.V.
+1 
+ 
+Managing geopolitical risk in global supply chains: 
+A qualitative study of European multinational enterprises 
+ 
+Arnd Huchzermeier*, Mark Kuppek 
+WHU – Otto Beisheim School of Management, Burgplatz 2, 56179 Vallendar, Germany 
+arnd.huchzermeier@whu.edu, mark.kuppek@whu.edu 
+ 
+ 
+Abstract 
+Geopolitical risk has emerged as a major disruptive risk to global supply chains and the operations of 
+multinational enterprises (MNEs) today. Drawing on a qualitative content analysis of the annual reports 
+of 20 European MNEs across five industries, supported by a Retrieval-Augmented Generation (RAG) 
+pipeline, this study examines how companies strategically manage geopolitical risk in their supply 
+chains. We extend an established supply chain risk framework by conceptualizing geopolitical risk 
+management (GRM) as a distinct strategic risk management dimension centered on reducing 
+geopolitical exposure, in contrast to supply chain risk management (SCRM), which enhances 
+operational resilience within existing supply chain structures. Applying this distinction, we identify 
+seven key GRM strategies, including localization, decentralized procurement and R&D, direct sourcing, 
+supplier diversification, geographical production diversification, circular economy initiatives, and 
+political engagement. Furthermore, applying the Triple-P framework in a disclosure-based setting 
+suggests that companies facing different forms of supply chain complexity across the partnership, 
+product, and process dimensions disclose distinct portfolios of GRM strategies. The findings of this 
+study provide cross-industry insights into the strategic orientation of large European MNEs and support 
+managerial decision making to strengthen resilience in the face of supply chain and geopolitical risk. 
+ 
+Keywords: geopolitical risk management; supply chain risk management; supply chain resilience; 
+multinational enterprises; retrieval-augmented generation 
+ 
+*Corresponding author 
+Declaration of interest: we have nothing to declare 
+Journal Pre-proof
+1 
+ 
+Managing geopolitical risk in global supply chains: 
+A qualitative study of European multinational enterprises 
+ 
+Abstract 
+Geopolitical risk has emerged as a major disruptive risk to global supply chains and the operations of 
+multinational enterprises (MNEs) today. Drawing on a qualitative content analysis of the annual reports 
+of 20 European MNEs across five industries, supported by a Retrieval-Augmented Generation (RAG) 
+pipeline, this study examines how companies strategically manage geopolitical risk in their supply 
+chains. We extend an established supply chain risk framework by conceptualizing geopolitical risk 
+management (GRM) as a distinct strategic risk management dimension centered on reducing 
+geopolitical exposure, in contrast to supply chain risk management (SCRM), which enhances 
+operational resilience within existing supply chain structures. Applying this distinction, we identify 
+seven key GRM strategies, including localization, decentralized procurement and R&D, direct sourcing, 
+supplier diversification, geographical production diversification, circular economy initiatives, and 
+political engagement. Furthermore, applying the Triple-P framework in a disclosure-based setting 
+suggests that companies facing different forms of supply chain complexity across the partnership, 
+product, and process dimensions disclose distinct portfolios of GRM strategies. The findings of this 
+study provide cross-industry insights into the strategic orientation of large European MNEs and support 
+managerial decision making to strengthen resilience in the face of supply chain and geopolitical risk. 
+ 
+Keywords: geopolitical risk management; supply chain risk management; supply chain resilience; 
+multinational enterprises; retrieval-augmented generation 
+ 
+Declaration of interest: we have nothing to declare 
+ 
+1. Introduction 
+Geopolitical risk has become a critical challenge for multinational enterprises (MNEs), exposing them 
+to disruptions from conflicts, trade tensions, and regulatory shifts. These developments destabilize 
+supply chains, restrict market access, disrupt the flow of goods and capital, and impact key supplier and 
+customer relationships (S&P Global, 2025; Devesa et al., 2026; World Economic Forum, 2026). Recent 
+geopolitical events illustrate the scale of these disruptions, particularly for European companies. 
+Evolving trade tensions between European countries and their major trading partners, including the 
+United States (U.S.) and China, are influencing global trade. For example, the Trump administration’s 
+“Liberation Day” tariff measures have triggered a series of global tariff disputes aimed at reshaping the 
+global trading order and encouraging domestic manufacturing in the United States, the long-term 
+economic impact of which remains uncertain (Romm & Gamio, 2026). Similarly, the EU has imposed 
+tariffs on electric vehicles imported from China to protect domestic markets (European Commission, 
+2024). McKinsey reports that European companies are increasingly exposed to geopolitical pressures, 
+facing a “double squeeze” of rising imports from China and restricted access to key export markets such 
+Journal Pre-proof
+2 
+ 
+as the U.S., contributing to a $70 billion decline in the EU’s manufacturing trade surplus (Devesa et al., 
+2026). These developments reflect a broader shift toward protectionism and geopolitical fragmentation, 
+posing increasing challenges for globally integrated supply chains (S&P Global, 2024). 
+Thus, the impact of geopolitical disruptions on supply chains is increasingly identified as a new 
+subfield of research (Bednarski et al., 2023). A risk report by Allianz identifies that business interruption 
+(including supply chain) risk is among the top three risks with only 3% of companies in the study rating 
+their supply chains as very resilient, indicating the need for further strategic guidance and research 
+insights (Allianz Commercial, 2026). Although internal operational resilience strategies and 
+organizational enablers are well established in the literature (Sting & Huchzermeier, 2010; Blackhurst 
+et al., 2011; Cohen et al., 2022a, 2022b), empirical evidence on how companies adapt operations and 
+supply chains specifically in response to geopolitical risk remains scarce (Bednarski et al., 2023; Fan 
+& Xiao, 2023; Zhu et al., 2024). Studies that do explicitly address geopolitical or political risk are 
+largely quantitative, thus offer limited insight into company-level strategic decision-making, focus on 
+isolated predefined responses (e.g., inventory buffers, location choices, supply chain concentration, or 
+vertical integration), and largely overlook strategy cross-industry variation (Darby et al., 2020; 
+Moradlou et al., 2021; Fan et al., 2022; Fan & Xiao, 2023; Belhadi et al., 2024; Fan et al., 2024; Tse et 
+al., 2024; Zhu et al., 2024; Niu et al., 2025a). This paper aims to address this gap by answering the 
+following research questions (RQs). 
+RQ1: What supply chain resilience strategies do multinational enterprises disclose in their 
+annual reports to manage supply chain risk? 
+RQ2: To what extent are these strategies associated with managing geopolitical risk exposure? 
+RQ3: How do the disclosed resilience strategies vary across industries? 
+We argue that geopolitical risk management (GRM) constitutes a distinct strategic risk-
+management dimension alongside conventional supply chain risk management (SCRM). Whereas 
+GRM aims to reduce geopolitical risk exposure by addressing a company's dependencies on countries 
+and regions, political and institutional systems, critical suppliers and intermediaries, and concentrated 
+resources and technologies, SCRM focuses on enhancing operational resilience within existing supply 
+chain structures. Accordingly, this study distinguishes resilience strategies according to whether they 
+reduce geopolitical risk exposure or primarily strengthen operational resilience. 
+To answer the research questions, we conduct a qualitative content analysis of the 2024 annual 
+reports of 20 European public MNEs from France, Germany, the Netherlands, and the UK. While related 
+to the work of Theile et al. (2026), who quantify companies’ risk-reduction efforts using public 
+disclosures, our study takes a distinct qualitative perspective. We identify the specific strategic supply 
+chain measures companies disclose to manage supply chain risk in line with country-level legislation 
+mandating disclosure. Schlegel and Trent (2014) outline that around one third of key risks identified in 
+annual reports have a supply chain connection or implication providing an additional foundation for 
+Journal Pre-proof
+3 
+ 
+this analysis. Given that legal requirements for disclosures vary across countries, we focus our analysis 
+on four European countries that require disclosures on how company risk is managed. 
+Our study contributes to the fields of supply chain resilience (SCR) and GRM in five ways. 
+First, the paper contributes to theory by extending Christopher and Peck's (2004) supply chain risk 
+framework with a GRM dimension. In doing so, it conceptualizes GRM as the strategic management 
+of geopolitical exposure and distinguishes it from conventional SCRM, which focuses on enhancing 
+operational resilience within existing supply chain structures. Second, the paper develops a theoretical 
+bridge between the SCR and GRM literatures by integrating established resilience concepts into the 
+analysis of GRM. Third, we introduce a methodological approach that combines Retrieval-Augmented 
+Generation (RAG) with qualitative content analysis to systematically retrieve and analyze company-
+disclosed SCR strategies from annual reports in an exploratory setting (Arslan et al., 2024; Jackson et 
+al., 2026). Fourth, the paper provides a structured overview of the organizational enablers and 
+operational resilience strategies disclosed by European MNEs and applies the adapted risk framework 
+to distinguish strategies that reduce geopolitical exposure from those that primarily enhance internal 
+operational resilience. Lastly, by operationalizing the Triple-P framework of Cohen et al. (2022a) in a 
+disclosure-based setting, the study provides exploratory evidence that companies with different supply 
+chain structures appear to disclose distinct portfolios of SCR and GRM strategies. This suggests that 
+the feasibility of GRM strategies may depend on the structural characteristics of a company’s supply 
+chains rather than following a one-size-fits-all approach. 
+The paper is structured as follows. Section 2 discusses the theoretical background of 
+geopolitical risk and SCR. Section 3 outlines the methodology of our analysis. Section 4 presents the 
+results addressing the first research question, while Section 5 discusses the second and third research 
+question. Finally, Section 6 summarizes our findings, offers managerial insights, outlines the study’s 
+limitations, and suggests areas for further research. 
+2. Theoretical Background 
+2.1 The Role of Geopolitical Risk in Supply Chain Risk Management 
+Prior SCRM frameworks typically incorporate geopolitical risk under environmental or external risk 
+(Christopher & Peck, 2004; Schlegel & Trent, 2014; Ho et al., 2015). For instance, Christopher and 
+Peck’s (2004) risk source framework distinguishes four core internal supply chain risk categories: 
+supply risk (e.g., supplier failures or material shortages), process risk (e.g., production breakdowns or 
+logistics disruptions), demand risk (e.g., sudden demand fluctuations or forecasting errors), and control 
+risk (e.g., inadequate inventory policies or governance failures). These internal risks are impacted by 
+environmental disruption risk, which captures macro-level disruptions such as sanctions, regulatory 
+changes, political instability, and natural disasters (see Figure 1). 
+Figure 1: Framework distinguishing SCRM and GRM in global supply chains 
+Journal Pre-proof
+4 
+ 
+ 
+Note. Adapted from Christopher and Peck (2004) and extended to incorporate geopolitical disruptions and geopolitical 
+exposure risk. 
+However, geopolitical disruptions differ fundamentally from other environmental risks. Unlike 
+stochastic shocks such as natural disasters, pandemics, or climate related events which are non-actor 
+driven, geopolitical disruption results from deliberate political actions, evolve through strategic 
+interactions, and often persist over time while affecting entire regions (see Figure 1) (Schlegel & Trent, 
+2014; Cohen et al., 2026). The European Systemic Risk Board (2026) outlines five dimensions of 
+geopolitical risk including military conflict & war, infrastructure vulnerabilities, trade disruptions, 
+capital and financial risk, and political and social factors. Caldara and Iacoviello (2022) define 
+geopolitical risk as threats arising from conflicts and tensions among political actors, highlighting its 
+systemic and actor-driven nature. As such, geopolitical risk is not fully captured by an event-based 
+environmental risk lens. 
+To address this limitation, we extend the risk-source framework by introducing the concept of 
+geopolitical exposure, which captures the structural dependencies through which geopolitical risks 
+affect companies (see Figure 1). Specifically, we conceptualize geopolitical exposure as a company's 
+dependence on four dimensions of its external environment: (1) where it operates, referring to specific 
+countries and regions in which it produces, sources, or serves markets; (2) whose political and 
+institutional systems it depends on, including sanctions regimes, export controls, tariffs, and industrial 
+Journal Pre-proof
+5 
+ 
+policies; (3) who it relies on within its supply network, namely critical suppliers and intermediaries; and 
+(4) what critical resources and technologies underpin its operations, such as critical raw materials, 
+semiconductors, software, and intellectual property. Such dependencies create vulnerabilities because 
+geopolitical disruptions can impair access to critical inputs, markets, technologies, and capabilities. 
+Building on Rezapour et al.'s (2018) distinction between strategic network design decisions and 
+operational flow planning decisions, we conceptualize GRM as the strategic management of 
+geopolitical exposure. Accordingly, GRM comprises strategic measures that reduce a company’s 
+dependence on sourcing structures, production networks, supplier relationships, resource bases, and 
+geographic footprints (see Figure 1) (Mao & Görg, 2020; Moradlou et al., 2021; Simchi-Levi & Haren, 
+2022; Niu et al., 2025a). 
+In contrast, SCRM focuses on reducing operational vulnerabilities and maintaining continuity 
+within existing supply chain configurations through resilience-enhancing measures such as inventory 
+buffers, demand forecasting, supplier audits, and business continuity routines (Christopher & Peck, 
+2004; Schlegel & Trent, 2014; Rezapour et al., 2018). Accordingly, GRM and SCRM differ both in their 
+object of management and their mechanism of risk reduction: whereas GRM seeks to reduce 
+geopolitical exposure, SCRM seeks to mitigate the impact of disruptions through operational resilience 
+measures. Importantly, while SCRM can reduce the consequences of geopolitical disruptions, it does 
+not fundamentally alter the underlying geopolitical dependencies that give rise to such risks. 
+Conceptualizing GRM as the strategic management of geopolitical exposure, rather than as a 
+subset of environmental risk, extends conventional SCRM by incorporating the political and spatial 
+embeddedness of global supply chains. Section 5.1 applies this perspective to structure the strategic 
+measures in our analysis along the dimensions of SCRM and GRM. 
+2.2 Building Supply Chain Resilience in the Context of Geopolitical Risk 
+Recent research has begun to examine how companies adapt their supply chains in response to 
+geopolitical risk. These studies investigate specific strategic responses to events such as Brexit, the 
+U.S.–China trade war since 2018, the Covid-19 pandemic, and the Russia–Ukraine war (Mao & Görg, 
+2020; Moradlou et al., 2021; Simchi-Levi & Haren, 2022; Niu et al., 2025a). The literature on 
+geopolitical risk remains fragmented, as strategies are often analyzed in isolation without integration 
+into a coherent resilience-based framework. To structure and synthesize this emerging body of research, 
+the following section categorizes geopolitical supply chain adaptation strategies based on concepts 
+associated with managing SCR, such as measures of agility (Wieland & Wallenburg, 2013; Fayezi et 
+al., 2016), flexibility (Pettit et al., 2013; Fayezi et al., 2016), redundancy (Zsidisin & Wagner, 2010; 
+Kamalahmadi et al., 2021), collaboration (Tukamuhabwa et al., 2015; Duong & Chong, 2020), and 
+organizational enabling structures (Fayezi et al., 2016; Cohen et al., 2022b). We first review literature 
+that conceptualizes these strategies in the context of general supply chain disruptions and then connect 
+these insights to studies that explicitly examine company responses to geopolitical risk. Finally, we 
+connect these insights to the identified research gaps that this study seeks to address. 
+Journal Pre-proof
+6 
+ 
+Consistent with prior research, we view agility as an extension of flexibility (Swafford et al., 
+2005; Hohenstein et al., 2015); whereas an agile supply chain necessarily incorporates flexibility, 
+flexible supply chains need not be agile. In this study, however, we combine agility and flexibility into 
+a single coding category, as annual report disclosures do not allow for a consistent empirical distinction 
+between a company’s ability to adapt and the speed or efficiency with which such adaptation occurs. 
+In general, strategies aimed at increasing agility refer to initiatives that accelerate the speed and 
+responsiveness of supply chains in order to minimize the impact of disruptions (Wieland & Wallenburg, 
+2013; Fayezi et al., 2016). These strategies include shorter set-up times for product changeovers, as 
+well as predefined contingency plans enabling faster responses, and fewer errors during disruptions 
+(Blackhurst et al., 2011; Wieland & Wallenburg, 2013; Fayezi et al., 2016). Flexibility is the built-in 
+capacity to adapt to changes and disruptions efficiently, for instance, a manufacturing line that can 
+convert to producing different product types without significant retooling (Ivanov et al., 2013; Fayezi 
+et al., 2016). In the context of agility and flexibility in GRM, companies adapt by localizing production 
+closer to key markets to mitigate tariffs, delays, and regulatory uncertainty, while also diversifying 
+products and sales within existing structures (Moradlou et al., 2021; Fan & Xiao, 2023). Consequently, 
+compared to conventional supply chain disruptions, agility and flexibility in GRM often require 
+structural adaptations, such as localization or regionalization, rather than purely operational responses, 
+such as manufacturing line flexibility. While these measures can reduce geopolitical exposure, they may 
+also increase costs and reduce economies of scale. 
+Strategies that focus on increasing redundancy address a supply chain’s buffers, such as 
+inventory or production capacities, and the availability of backup suppliers (Sting & Huchzermeier, 
+2010; Zsidisin & Wagner, 2010; Zhao & Huchzermeier, 2017; Kamalahmadi et al., 2021). In the context 
+of GRM, Zhu et al. (2024) find that companies respond to higher geopolitical risk by diversifying their 
+supplier and customer base, thereby reducing supply chain concentration. However, consistent with Fan 
+and Xiao (2023), they find no evidence of geographical diversification; instead, companies tend to rely 
+on geographically closer partners, as proximity facilitates coordination while limiting additional risks. 
+While redundancy is effective in buffering temporary operational disruptions, its effectiveness may be 
+more limited in geopolitical contexts, where disruptions can persist over extended periods or affect 
+entire regions. Similarly, although supplier diversification is a viable risk mitigation strategy, 
+maintaining excess inventory, multiple suppliers, or redundant capacity can impose substantial costs, 
+requiring companies to balance resilience with efficiency. 
+Collaboration strategies address whether and how supplier networks share information and 
+how such sharing increases the transparency of supply chains (Pettit et al., 2013; Tukamuhabwa et al., 
+2015; Duong & Chong, 2020). Examples include supplier relationship development, which aims to 
+systematically evaluate, develop, and manage collaborative partnerships to reduce risk, as well as cross-
+functional coordination and collaboration with non-governmental organizations (NGOs) and 
+government agencies (Tang, 2006; Blackhurst et al., 2011; Sudusinghe & Seuring, 2022). In the context 
+Journal Pre-proof
+7 
+ 
+of GRM, the introduction of global tariffs under Donald Trump, highlights how industry interactions 
+with governments can serve as an extremely effective lever for managing geopolitical risk (Foulkes & 
+Kirby, 2025). Recent research also highlights circular supply chains as a collaborative resilience 
+approach, as implementing circular economy initiatives requires close coordination across multiple 
+supply chain actors (Sudusinghe & Seuring, 2022). Together, these developments suggest that, in a 
+geopolitical context, collaboration extends beyond traditional coordination with supply chain partners 
+to include governments, regulators, and industry associations. However, the effectiveness of such efforts 
+depends on the broader institutional and political environment. 
+The term organizational enabler has been adopted by scholars studying the effective 
+implementation of SCR strategies mentioned above (Cohen et al., 2022b). Organizational enablers refer 
+to internal capabilities such as visibility, information systems, managerial readiness, and cross-
+functional integration that allow companies to sense and interpret supply chain risks (Fayezi et al., 2016; 
+Cohen et al., 2022b). They enhance resilience by enabling faster, coordinated responses, for example 
+through supply chain digitization and dedicated SCRM functions (Cohen et al., 2022b). Consistent with 
+Zheng et al. (2025), effectively managing geopolitical uncertainty requires organizational capabilities 
+that enable companies to sense, interpret, and respond to emerging risks. Within this study, 
+organizational enablers are conceptualized as internal capabilities that enable the effective 
+implementation of both GRM and SCRM strategies by strengthening a company’s visibility, 
+coordination, and risk management capabilities. 
+The research introduced above provides important insights into how companies respond to 
+geopolitical risk; however, three limitations remain. First, existing research is predominantly 
+quantitative, limiting company-level insight into the strategic responses of companies (Darby et al., 
+2020; Fan & Xiao, 2023; Fan et al., 2024; Tse et al., 2024; Zhu et al., 2024). Second, most studies focus 
+on individual resilience measures, such as localization (Moradlou et al., 2021), supplier diversification 
+(Zhu et al., 2024), digital capabilities (Belhadi et al., 2024), or vertical integration (Fan & Xiao, 2023), 
+providing only limited understanding of how companies combine multiple strategies into broader 
+resilience portfolios. Third, although the feasibility of resilience strategies appears to depend on supply 
+chain characteristics, existing studies rarely compare strategy portfolios across industries. Yet Cohen et 
+al. (2022a) argue that companies require bespoke resilience strategies because supply chains differ 
+substantially in product portfolio and network complexity. Our study addresses these shortcomings by 
+providing a qualitative, cross-industry analysis of company-disclosed resilience strategies and their role 
+in managing geopolitical exposure. 
+3. Data and Methodology 
+Our study applies a qualitative content analysis, following Mayring (2014), in combination with a RAG 
+pipeline that leverages a Large Language Model (LLM) to examine how companies are addressing risks 
+in their supply chains using data from the 2024 annual reports of selected European MNEs (Jackson et 
+al., 2026; Niu et al., 2025b). All annual reports were published in early 2025, except for Infineon 
+Journal Pre-proof
+8 
+ 
+Technologies and Siemens Energy. Due to their differing reporting cycles, the 2025 annual reports of 
+these companies were already available in the final quarter of 2025 and were therefore included in the 
+analysis. Using either the 2024 or the 2025 reports would have resulted in a temporal deviation of 
+approximately five to eight months compared to the disclosure dates of the other annual reports which 
+this study cannot control for. Consequently, the most recent reports available were selected. That said, 
+the annual reports of Infineon Technologies and Siemens Energy are more recent and therefore reflect 
+more recent risk developments and risk mitigation measures than the other reports included in the 
+sample. Nevertheless, the reporting standards remained unchanged during this period, ensuring 
+consistent data availability across all reports. Given the study’s aim to analyze supply chain strategy 
+portfolios in the context of the most recent geopolitical risk environment, the latest available 
+information was used. Figure 2 illustrates the research steps for this paper. 
+Figure 2: Research design illustrating the nine-step methodology 
+ 
+Step 1: Select European countries 
+The first step was to identify European countries with regulatory requirements, mandating the disclosure 
+of how risk is managed, ensuring comparability and availability of data for this examination. Based on 
+our analysis, we focused on France, Germany, the Netherlands, and the UK, in line with the study’s 
+European focus. The following national regulations govern the mandatory disclosure of how risk is 
+Journal Pre-proof
+9 
+ 
+managed: Article L.232-1 of the Code de commerce [French Commercial Code] (2024), §315 of the 
+Handelsgesetzbuch [German Commercial Code] (2024), Article 2:391(1) of the Burgerlijk Wetboek 
+Boek 2 [Dutch Civil Code Book 2] (2024), and Section 414CB of the UK Companies Act 2006 (2006). 
+These legal requirements are operationalized through the respective national accounting standards. 
+Appendix A in the supplementary material provides an example of such disclosure using Henkel AG & 
+Co. KGaA (2025a). In addition, France, Germany, and the Netherlands are subject to the European 
+Union’s Corporate Sustainability Reporting Directive, which expands risk-related disclosures, 
+particularly with regard to environmental, social, and supply-chain-related risks (European Union, 
+2022). As companies are required to present a current view regarding material risks and corresponding 
+strategic measures, annual reports constitute an adequate source of information for analyzing risk 
+management practices. 
+Step 2: Select companies 
+The second step involved selecting industries and companies for analysis. Company selection was based 
+on three main criteria: company size (large public companies with >€1 billion in revenue), industry 
+sector, and the presence of global production (see Table 1). Focusing on large, listed, and global 
+operating companies to reduce variation arising from company size and operational footprint, while 
+also ensuring a consistent level of disclosure, which is often more limited for small and medium-sized 
+enterprises. In addition, we followed a theoretical sampling approach aimed at maximizing variation 
+across industries and replication logic to enhance analytical generalizability, in line with Eisenhardt 
+(1989). Four companies were selected from each of the following industries: (i) automotive, (ii) 
+chemicals and pharmaceuticals, (iii) consumer goods, (iv) industrial technology and engineering, and 
+(v) semiconductors. These five globally active industries represent a diverse, and strategically important 
+cross-section of the European economy and are exposed to supply chain and geopolitical risks, making 
+them suitable for examining supply chain resilience strategies (Eurostat, 2021; Department for Business 
+and Trade, 2025; Devesa et al., 2026). The 20 MNEs analyzed are listed in Table 1 by industry, along 
+with country of the headquarters, revenue, number of employees, production sites, and countries of 
+operation; the latter two indicators reflect the extent of each company’s international presence. All 
+sampled companies operate global value chains, making them especially appropriate for our analysis of 
+GRM. Eisenhardt (1989) suggests that 6-10 cases are ideal for analysis, however, more importantly, 
+data collection should continue until theoretical saturation is reached, that is, the point at which 
+additional cases yield only marginal insights. In this study, saturation was achieved at 20 cases. 
+Saturation was assessed throughout the coding process. While early cases helped refine the coding 
+framework and added incremental strategic insights, later cases largely confirmed previously identified 
+patterns. As no substantively new strategies or categories emerged, additional reports were considered 
+unlikely to alter the overall findings. Prior research in this area has relied on similar or smaller sample 
+sizes, including Blackhurst et al. (2011) with seven cases, Cohen et al. (2022a) with 16 cases, Cohen et 
+al. (2022b) with 12 cases, Cohen et al. (2026) with 13 cases. 
+Journal Pre-proof
+10 
+ 
+Table 1: Overview of selected European MNEs 
+* Offices and production sites 
+a Siemens Energy (2025) 
+Note. Data collected from the respective companies’ annual and sustainability report (see References for full citations). 
+The reports were obtained from the investor relations sections of the company websites. 
+Infineon Technologies, Henkel, and NXP Semiconductors publish their sustainability reports separately, 
+detailing their environmental, social, and governance performance. The remaining companies treat the 
+sustainability report as a subsection of their annual reports. 
+Step 3 and 4: Review literature and derive initial coding guide 
+To address the research questions, we employed a theory-informed qualitative content analysis with 
+abductive refinement (Mayring, 2014). In Step 3, we conducted a structured review of the SCR and 
+geopolitical risk literature (see Section 2.2) and in Step 4, merged these insights with an initial annual 
+report screening to derive a preliminary coding guide. This process resulted in the identification of four 
+higher-order SCR concepts to guide the analysis: agility and flexibility, redundancy, collaboration, and 
+organizational enablers. These dimensions are well established in prior research and provided the initial 
+analytical structure (see Section 2). 
+Step 5: Retrieve relevant disclosures 
+In Step 5, to ensure the systematic and comprehensive identification of relevant disclosures, we 
+deployed a RAG pipeline implemented in Python to extract text segments related to SCR and GRM 
+No. Company Industry Country Revenue (bn) Employees (k) Production locations worldwide No. of production countries 
+ Automotive 
+1 BMW AG (2025) Automotive Germany €142.4 158.4 33 16 
+2 Mercedes-Benz Group AG (2025) Automotive Germany €145.6 175.3 30 17 
+3 Renault S.A. (2025) Automotive France €56.2 98.6 25 13 
+4 Volkswagen AG (2025) Automotive Germany €324.7 659.5 115 27 
+ Chemicals and Pharmaceuticals 
+5 BASF SE (2025) Chemicals Germany €65.3 111.8 235 92 
+6 Bayer AG (2025) Pharmaceuticals/ Biotechnology Germany €46.6 94.1 485 >80* 
+7 GSK plc (2025) Pharmaceuticals UK £31.4 68.6 37 75* 
+8 Merck KGaA (2025) Chemicals/ Pharmaceuticals Germany €21.2 62.6 108 19 
+ Consumer Goods 
+9 Beiersdorf AG (2025) Consumer Goods Germany €9.9 22.8 14 11 
+10 Henkel AG & Co. KGaA (2025a, 2025b) Consumer Goods/Chemicals Germany €21.6 47.2 161 53 
+11 L’Oréal S.A. (2025) Consumer Goods France €43.5 94.4 36 24 
+12 Unilever PLC (2025) Consumer Goods UK €60.8 120 >250 >100* 
+ Industrial Technology and Engineering 
+13 Rheinmetall AG (2025) Defense Germany €9.8 29.3 171* 30* 
+14 Safran S.A. (2025) Aerospace/ Defense France €27.3 99.4 178 ~30 
+15 Schneider Electric SE (2025) Electrical Equipment France €38.2 159 160 38 
+16 Siemens Energy AG (2025) Energy Technology Germany €34.5 98.8 62a >90* 
+ Semiconductors 
+17 Infineon Technologies AG (2025a, 2025b) Semiconductor Germany €15 58.1 19 11 
+18 NXP Semiconductors N.V. (2025a, 2025b) Semiconductor Netherlands $12.6 32.7 9 7 
+19 Siltronic AG (2025) Semiconductor Germany €1.4 4.4 4 3 
+20 STMicroelectronics N.V. (2025) Semiconductor Netherlands (Legal Seat) $13.3 49.6 14 9 
+Journal Pre-proof
+11 
+ 
+strategies from the annual reports (Arslan et al., 2024; Jackson et al., 2026). RAG architectures, which 
+combine LLMs with retrieval mechanisms, as well as structured LLM-based coding approaches, have 
+demonstrated reliable performance in the qualitative content analysis of annual reports (Niu et al., 
+2025b; Jackson et al., 2026). Compared to keyword-based approaches, the RAG pipeline enables 
+semantically grounded retrieval of relevant disclosures beyond explicit term matches, improving 
+coverage of context-dependent and implicitly formulated strategy descriptions. As illustrated in Figure 
+3, annual reports were converted into cleaned, overlapping text chunks and embedded in a vector space 
+to enable semantic similarity search. A supply chain and GRM specific resilience query was then 
+embedded and used to retrieve the top-k most semantically relevant passages per report based on cosine 
+similarity. These passages were subsequently processed by an LLM (GPT-5.2 via the OpenAI API, 
+accessed 13 February 2026, temperature = 0), under strict grounding constraints, to extract those that 
+mention SCR and GRM strategies. In line with Mayring’s (2014) unit definitions, the pipeline retrieved 
+both the coding unit (i.e., the resilience-related phrase) and the corresponding context unit (i.e., the text 
+chunks), which were stored together as traceable output for subsequent qualitative analysis. Further 
+details on the RAG pipeline are provided in Appendix B of the supplementary material. In total, the 
+pipeline identified 1,958 SCR related phrases across all company reports. 
+Figure 3: Summarized retrieval-augmented generation pipeline 
+ 
+Step 6: Manual coding 
+In Step 6, to address RQ1, the extracted coding units, considered together with their corresponding 
+context units, were manually analyzed using an iterative process of open and axial coding to identify 
+supply chain strategies, with repeated refinement of the coding guide. Of the 1,958 relevant phrases 
+identified through the RAG pipeline, 1,742 were reliably assigned to a strategy, while 216 were 
+excluded because they consisted of vague boilerplate statements or referred to financial rather than 
+operational resilience. This outcome reflects the conservative retrieval approach used in the RAG 
+pipeline, which employed a broad retrieval query and a high top-k threshold to ensure that relevant 
+phrases were captured. The identified strategies were then assigned to one of the four SCR dimensions: 
+organizational enabler, agility and flexibility, redundancy, or collaboration. The attributes of agility and 
+flexibility were consolidated into a single category, as the disclosures did not allow for a consistent 
+empirical separation between the speed and efficiency at which strategic measures are applied (see 
+Section 2.2). The finalized coding guide is presented in Table 2, and the identified strategic measures 
+by coding category are presented in Section 4. The coded strategies were aggregated into analytically 
+distinct categories, such as, end-to-end visibility, end-to-end control, and organizational readiness as 
+shown in Table 3. Company-level patterns in these measures are addressed in Step 9. By separating 
+Journal Pre-proof
+12 
+ 
+systematic retrieval from theory-guided yet empirically refined coding, this approach enhances 
+construct validity, minimizes selection bias, and avoids circularity between extraction and 
+categorization. 
+Table 2: Coding guide for categorizing supply chain strategies and organizational enablers 
+Coding category Definition Example Inclusion criteria Exclusion criteria 
+Organizational 
+enablers 
+Structural, governance, 
+or digital mechanisms 
+that enhance the 
+company’s ability to 
+systematically identify, 
+monitor, and coordinate 
+supply chain risks 
+(Fayezi et al., 2016; 
+Cohen et al., 2022b) 
+Set up a strategic 
+geopolitics team in the 
+Public Affairs 
+department to 
+consolidate activities in 
+this field (Bayer AG, 
+2025, p.86) 
+Code when the measure 
+strengthens 
+organizational control, 
+monitoring, or risk 
+anticipation capabilities 
+Exclude measures that 
+primarily create physical 
+buffers or diversify 
+assets 
+Agility and 
+flexibility 
+Strategic adaptations that 
+increase the 
+responsiveness and 
+configurational 
+flexibility of products, 
+production, or 
+distribution (Pettit et al., 
+2013; Wieland & 
+Wallenburg, 2013; 
+Fayezi et al., 2016) 
+Standardizing production 
+with uniform product 
+concepts, plants, 
+operating equipment and 
+production processes 
+(Volkswagen AG, 2025, 
+p.160) 
+Code when the measure 
+improves adaptability 
+through standardization, 
+simplification, or 
+localization 
+Exclude measures aimed 
+primarily at buffering or 
+contractual stabilization 
+Redundancy 
+Creation of buffers or 
+alternatives to ensure 
+continuity during 
+disruptions (Sting & 
+Huchzermeier, 2010; 
+Zsidisin & Wagner, 
+2010) 
+Direct procurement of 
+raw materials such as 
+lithium and cobalt to 
+increase security of 
+supply and boost 
+resilience in the supply 
+chain (BMW AG, 2025, 
+p.64) 
+Code when the measure 
+increases backup 
+capacity, diversification, 
+or contractual security 
+Exclude governance or 
+coordination 
+mechanisms without 
+buffering intent 
+Collaboration 
+Partnerships or close 
+coordination with 
+external stakeholders 
+(suppliers, governments) 
+to enhance resilience 
+(Pettit et al., 2013; 
+Tukamuhabwa et al., 
+2015; Duong and Chong, 
+2020; Sudusinghe & 
+Seuring, 2022) 
+Partnership between 
+STMicroelectronics and 
+Sanan Optoelectronics 
+creating Sanan ST JV for 
+high-volume 200mm SiC 
+device manufacturing 
+activities in China 
+(STMicroelectronics 
+N.V., 2025, p. 290) 
+Code when the measure 
+involves structured 
+cooperation beyond 
+transactional 
+relationships. 
+Exclude unilateral 
+internal measures 
+without external 
+partnership 
+Step 7: Validate coding 
+In Step 7, following Niu et al.’s (2025b) roadmap for LLM-based measurement construction, we 
+complement manual coding, conducted by one coder, with an automated closed-list classification 
+implemented in Python. Consistent with Mayring’s (2014) inter-coder approach, an LLM (GPT-5.4 via 
+the OpenAI API, accessed 28 March 2026, temperature = 0) serves as a second coder, applying the 
+predefined coding guide, strategic measure definitions, and coding units to assess classification 
+consistency. Coding unit retrieval was conducted using GPT-5.2, while classification employed the 
+more advanced GPT-5.4, reflecting our aim to leverage the most capable reasoning models available. 
+The results show strong agreement (Krippendorff’s α = 0.85), indicating reliable consistency between 
+manual and LLM-based coding (Krippendorff, 2004; Mayring, 2014). Remaining disagreement 
+primarily concerned the assignment of individual coding units to specific resilience dimensions rather 
+than disagreement about the presence of a resilience measure itself. All divergent cases were reviewed 
+against the coding framework and resolved through manual assessment, with the human-coded 
+Journal Pre-proof
+13 
+ 
+classification serving as the final coding decision. The LLM-based inter-coder approach provides 
+transparency and supports reproducibility of the coding process. Further details on this approach are 
+provided in Appendix C of the supplementary material. 
+Step 8: Classify GRM and SCRM strategies 
+In Step 8, to address RQ2, we apply the conceptual distinction developed in Section 2.1 to classify the 
+identified strategic measures as either GRM or SCRM strategies. A strategy was classified as GRM 
+when the disclosed measure addressed one or more dimensions of geopolitical exposure. Defining these 
+dimensions is particularly important because annual report disclosures rarely refer explicitly to 
+“geopolitical risk.” A strategy was coded as GRM if the disclosure indicated that the measure reduced 
+dependencies related to where the company operates (specific countries and regions), whose political 
+and institutional systems it depends on (e.g., sanctions regimes, export controls, tariffs, and industrial 
+policies), who it relies on within its supply network (critical suppliers and intermediaries), or what 
+critical resources and technologies underpin its operations (e.g., critical raw materials, semiconductors, 
+software, and intellectual property). In contrast, strategies were classified as SCRM when the disclosed 
+measure enhanced a company's ability to anticipate, absorb, respond to, or recover from disruptions 
+while leaving these underlying geopolitical dependencies unchanged. Accordingly, the classification 
+reflects whether a disclosed measure reduces geopolitical exposure or strengthens resilience within 
+existing geopolitical dependencies. It does not imply that strategies exclusively serve GRM, nor that 
+they cannot simultaneously contribute to operational resilience, sustainability, or efficiency objectives. 
+Table D.1 in Appendix D of the supplementary material lists the conceptual rationale underlying the 
+classification of all identified resilience strategies into GRM and SCRM. 
+Step 9: Identify strategy archetypes 
+In Step 9, to address RQ3, we perform a cluster analysis based on the "Triple-P" framework proposed 
+by Cohen et al. (2022a). Developed from interview-based research with global supply chain executives, 
+the framework identifies three empirically derived supply chain archetypes, partnership, product, and 
+process complexity, which reflect different dominant sources of supply chain complexity and 
+corresponding resilience strategies. We adopt this framework because it provides an established 
+theoretical basis for interpreting differences in resilience strategy portfolios across companies. While 
+Cohen et al. (2022a) derive the archetypes from interview-based assessments of supply chain 
+complexity and subsequently relate them to resilience strategies, we reverse this perspective by 
+assigning the resilience strategies identified in the previous coding step to the three archetypes 
+according to their primary focus. Partnership strategies address interdependencies with external supply 
+chain actors, product strategies relate to constraints arising from product design, technology, and 
+production setup, and process strategies address complexity arising from product portfolios, 
+organizational structures, and internal processes. Company-level variables are then constructed as the 
+percentage share of strategies per archetype and subsequently standardized. Companies are thus 
+represented by archetype-specific strategy intensities, forming a three-dimensional feature space which 
+Journal Pre-proof
+14 
+ 
+is consistent with feature-based clustering approaches that rely on constructed summary variables 
+(Kaufman & Rousseeuw, 1990; Kreienkamp et al., 2025). Clustering is performed using the k-means 
+algorithm (Hartigan & Wong, 1979). The optimal number of clusters is determined using the elbow and 
+silhouette method (Kaufman & Rousseeuw, 1990), both indicating a three-cluster solution. The clusters 
+comprise 10, 6, and 4 companies. Detailed information on the clustering is reported in Appendix E in 
+the supplementary material. 
+4. Results 
+In this section, we address RQ1 by identifying the organizational enablers and operational resilience 
+strategies companies use to manage supply chain risk. The analysis is based on the coding guide in 
+Table 2, with company-level results reported in Table E.1 in Appendix E in the supplementary material, 
+and is structured across the four categories of organizational enablers, agility and flexibility, 
+redundancy, and collaboration. 
+4.1 Organizational Enablers 
+To manage risk in their supply chains, the set of companies we study disclose up to ten “enabling” 
+strategic measures, which can be grouped into three categories: end-to-end control, organizational 
+readiness, and end-to-end visibility. The companies and their respective strategic measures are 
+summarized in Table 3. 
+Table 3: Overview of organizational enablers 
+Category Strategic measure Definition 
+End-to-end control 
+Upstream integration of 
+critical inputs 
+Internalizing key raw materials and IP-critical components to 
+secure supply and reduce external dependency 
+Vertical integration of the 
+value chain 
+Ownership of multiple production stages within the company to 
+increase control and resilience 
+Business continuity 
+management 
+Structured planning and response processes designed to maintain 
+operations and minimize disruption during adverse events 
+Organizational 
+ readiness 
+Dedicated supply chain risk 
+governance 
+Formal organizational structures, roles, and accountability 
+mechanisms specifically assigned to managing supply chain risks. 
+Predictive risk capability The use of data analytics, forecasting tools, and scenario modeling to anticipate potential disruptions before they materialize 
+Task forces and cross-
+functional teams 
+Temporary or permanent cross-departmental groups established to 
+coordinate rapid decision-making and crisis response 
+End-to-end 
+visibility 
+Upstream digitalization 
+(supply-side) 
+Digital integration of suppliers and production networks to improve 
+visibility and risk detection (e.g., supplier portals, real-time 
+inventory sharing, control towers, AI-based supplier monitoring, 
+logistics tracking systems) 
+Downstream digitalization 
+(customer side) 
+Use of digital tools to enhance demand visibility and 
+responsiveness (e.g., advanced demand forecasting, real-time sales 
+analytics, dynamic inventory management linked to customer data) 
+Network monitoring 
+(audits/mapping/tracing) 
+Systematic tracking and assessment of supplier networks through 
+audits, tracing systems, and risk mapping to identify vulnerabilities 
+Multi-tier mapping Identification and documentation of suppliers beyond Tier-1 to increase transparency across deeper layers of the supply chain 
+Upstream integration of critical inputs: Nine companies stress the importance of having control of 
+strategic raw materials and components with key intellectual property (IP) to enhance resilience. Such 
+control reduces reliance on external suppliers while increasing coordination capabilities. For example, 
+Journal Pre-proof
+15 
+ 
+BMW emphasizes its reliance on in-house expertise in areas such as e-mobility (e.g., battery technology, 
+digitization, and sustainability) which enhances flexibility and supply security (BMW AG, 2025, p. 64). 
+Similarly, Volkswagen highlights the importance of integrating battery cell development and production 
+into its value chain (Volkswagen AG, 2025, p. 281). While upstream integration increases control, it 
+often requires substantial investment and may reduce flexibility by locking companies into specific 
+technologies and production structures. 
+Vertical integration of the value chain: Five companies from the industrial technology and 
+engineering and semiconductor industries highlight their vertical integration, taking control of 
+numerous stages of the value chain to mitigate disruption risk and protect IP. These companies operate 
+in high-tech sectors and manufacture highly specialized products. For example, STMicroelectronics, as 
+an integrated device manufacturer (IDM), outlines its capabilities across the entire semiconductor value 
+chain, from design and manufacturing to testing (STMicroelectronics N.V., 2025, p. 18). Although it 
+reduces reliance on external actors, it increases fixed costs and organizational complexity. 
+Business continuity management: This strategic measure is fundamental to developing the capacity 
+to respond rapidly and effectively to disruptions; accordingly, this strategy is emphasized by most 
+companies. For example, Schneider Electric implements business continuity plans by identifying 
+alternative manufacturing and storage solutions (Schneider Electric SE, 2025, p. 395). 
+Dedicated supply chain risk governance: Such organizational structures are emphasized by most 
+companies and involve the formal allocation of responsibility for identifying, monitoring, and 
+coordinating supply chain risks within dedicated units. This reflects the institutionalization of risk 
+oversight through specialized teams or central coordination bodies. For example, BMW has established 
+a centralized “RiskHub” to strengthen global supply chain resilience (BMW AG, 2025, p. 63), while 
+Bayer has created a global geopolitics team to coordinate activities related to geopolitical developments 
+(Bayer AG, 2025, p. 86). 
+Predictive risk capability: All companies emphasize predictive capabilities, referring to their 
+analytical and technological capacity to anticipate supply chain disruptions before they materialize. This 
+includes the use of early warning systems, artificial intelligence, scenario modelling, and systematic 
+external monitoring to identify emerging risks. For example, BMW leverages artificial intelligence and 
+big data analytics within its RiskHub to analyze publicly available external data and detect disruptions 
+at an early stage (BMW AG, 2025, p. 63). 
+Task forces and cross-functional teams: Sixteen companies report that they leverage task forces or 
+cross-functional teams to respond rapidly to supply chain disruptions. For instance, Henkel and 
+Volkswagen employ interdisciplinary crisis management processes in the event of supply shortages 
+(Henkel AG & Co. KGaA, 2025a, p. 182; Volkswagen AG, 2025, p. 156). 
+Upstream digitalization (supply-side): Eighteen companies emphasize upstream digitalization, 
+defined as the use of advanced digital technologies across procurement, supplier networks, and 
+production to enable real-time visibility, simulation, and integrated control. This includes tools such as 
+Journal Pre-proof
+16 
+ 
+digital twins, smart factories, and control towers for data-driven monitoring and optimization. For 
+example, GSK employs 54 digital twin models to simulate manufacturing processes and anticipate 
+disruptions (GSK plc, 2025, p. 45), while Schneider Electric operates seven regional control towers to 
+monitor logistics in real time and enable proactive adjustments (Schneider Electric SE, 2025, p. 384). 
+The widespread disclosure of upstream digitalization across industries highlights the growing 
+importance of visibility for managing both operational and geopolitical uncertainty. However, these 
+capabilities often require significant investments in data infrastructure and organizational integration. 
+Downstream digitalization (customer side): Six companies report downstream digitalization, defined 
+as the use of digital technologies across distribution, customer interfaces, and fulfilment to enhance 
+transparency, responsiveness, and service quality. This includes data-driven fulfilment centers, AI-
+supported demand planning, automated logistics, and digital customer integration. For example, 
+L’Oréal is transforming its global network into automated fulfilment centers (L’Oréal S.A., 2025, p. 
+36), while Unilever leverages AI and image capture technology to optimize product availability in retail 
+channels (Unilever PLC, 2025, p. 33). 
+Network monitoring (audits/mapping/tracing): All companies develop supply network monitoring 
+capabilities, defined as the systematic assessment and mapping of suppliers to enhance transparency 
+and identify vulnerabilities. This includes financial risk screening, compliance audits, and continuous 
+supplier evaluations, often with a strong ESG focus on material traceability and adherence to 
+sustainability standards. For example, Henkel conducts detailed financial risk assessments and 
+continuously monitors critical suppliers with external support (Henkel AG & Co. KGaA, 2025a, p. 182). 
+Multi-tier mapping: Five companies in the automotive and the industrial technology and engineering 
+industries emphasize multi-tier supply chain mapping, defined as extending visibility beyond Tier-1 
+suppliers to increase transparency across upstream networks. For example, Schneider Electric employs 
+AI-based mapping to enable real-time multi-tier visibility (Schneider Electric SE, 2025, p. 128), and 
+BMW leverages initiatives such as Catena-X to access sub-supplier data (BMW AG, 2025, p. 65). 
+4.2 Agility and Flexibility 
+The coding category agility and flexibility comprises seven strategic measures through which 
+companies seek to enhance SCR (see Table 4). These measures can be grouped into three categories: 
+standardization, operational footprint, and distribution, summarized in Table 4. 
+Table 4: Overview of agility and flexibility strategies 
+Category Strategic measure Definition 
+Standardization 
+Alternative bills of 
+materials 
+Designing products to allow substitution of inputs in case of supply 
+shortages 
+Product standardization and 
+simplification 
+The use of unified platforms, modular designs, and reduced product 
+variety to lower complexity and improve efficiency 
+Production standardization Designing production processes to be uniform across locations or lines to enable flexible load balancing and fast scaling 
+Operational Localization strategy Establishing production or sourcing close to key markets to reduce lead times and geopolitical exposure 
+Journal Pre-proof
+17 
+ 
+ footprint Decentralized procurement 
+and R&D functions 
+Distribution of sourcing or innovation responsibilities across 
+regions or business units to increase responsiveness 
+Distribution 
+Alternative/flexible 
+logistics channels Ability to switch between logistics routes or modes of transport 
+Third-party distribution Relying on external distributors or logistics providers to store, transport, and deliver products 
+Alternative bill of materials: Fifteen companies report developing alternative bills of materials, 
+defined as redesigning products or formulations to enable the substitution of critical inputs and increase 
+flexibility. For example, Renault reduces its reliance on sensitive materials such as rare earths in EV 
+engines (Renault S.A., 2025, p. 163), while Henkel develops alternative formulations and packaging 
+through cross-functional teams (Henkel AG & Co. KGaA, 2025a, p. 182). 
+Product standardization and simplification: Companies pursue product standardization and 
+simplification by using unified platforms, modular architectures, and streamline product portfolios to 
+reduce complexity and improve efficiency. This approach is particularly relevant in industries such as 
+automotive and consumer goods, where companies manage a large number of components or product 
+variants. For example, Volkswagen expands modular toolkits such as the Modular Electric Drive Matrix 
+(MEB) to standardize components across models (Volkswagen AG, 2025, p. 280), while L’Oréal 
+highlights efforts to simplify product portfolios to reduce manufacturing and R&D complexity (L’Oréal 
+S.A., 2025, p. 31). 
+Production standardization: Fifteen companies emphasize production standardization, defined as 
+uniform production processes and shared standards to enable flexible volume shifts across sites and 
+reduce dependency on single facilities. For example, Volkswagen advances its “standard factory” and 
+turntable concepts to flexibly adjust capacity across sites (Volkswagen AG, 2025, p. 200), while 
+Infineon connects manufacturing locations through its “One Virtual Fab” approach, enabling load 
+shifting across harmonized facilities, for example, from Villach in Austria to Kulim in Malaysia 
+(Infineon Technologies AG, 2025a, p. 31). Similarly, Unilever leverages flexible production across 
+manufacturing sites (Unilever PLC, 2025, p. 234). 
+Localization strategy: Fourteen companies highlight localization, which refers to aligning sourcing 
+and manufacturing networks with regional markets to reduce geopolitical exposure, shorten supply 
+chains, and mitigate risks such as tariffs and transport disruptions. While widely disclosed, this strategy 
+is less emphasized by semiconductor companies, reflecting structural constraints such as high capital 
+intensity and the limited availability of specialized labor, consistent with evidence that high capital 
+requirements constrain the relocation of semiconductor supply chains (Niu et al., 2025a), as also 
+indicated by their comparatively smaller number of production sites (see Table 1). For example, Renault 
+highlights the continuous increase in local integration levels to reduce political and foreign exchange 
+risks, with industrial sites located close to core sales markets (Renault S.A., 2025, p. 379). Similarly, 
+Journal Pre-proof
+18 
+ 
+Beiersdorf aligns its mixing, filling, and production activities with the regions in which products are 
+sold (Beiersdorf AG, 2025, p. 50). 
+Decentralized procurement and R&D functions: This measure is reported by six companies from the 
+automotive, the industrial technology and engineering, and the chemicals and pharmaceuticals 
+industries. Rather than centralizing sourcing and innovation decisions at headquarters, companies 
+distribute procurement and R&D responsibilities across regional units to increase responsiveness to 
+local market conditions, supplier networks, and regulatory environments. By shifting decision-making 
+closer to suppliers and customers, companies can react more rapidly to geopolitical disruptions, tariff 
+changes, and regulatory shifts. Examples include BMW's local purchasing units (BMW AG, 2025, p. 
+63), Renault's regional production and innovation entities (Renault S.A., 2025, p. 61), and GSK's site-
+level technology capabilities (GSK plc, 2025, p. 44). Its prevalence among companies with long and 
+complex supply chains suggests that local decision-making capabilities help companies respond more 
+effectively to disruptions across production sites and markets. However, these benefits may come at the 
+cost of increased organizational complexity and reduced coordination efficiencies. 
+Alternative/flexible logistics channels: Eleven companies emphasize this capability, which refers to 
+the strategic adaptation and diversification of logistics routes and transport modes to maintain continuity 
+during disruptions. For example, GSK reports redesigning supply routes to de-risk sourcing decisions 
+and adapting logistics pathways to meet changing regulatory expectations (GSK plc, 2025, p. 318). 
+Similarly, Merck implements a structured “Mode Shift” program that adjusts transport modes to 
+optimize logistics performance (Merck KGaA, 2025, p. 152). 
+Third-party distribution: Five companies, primarily from the consumer goods industry, highlight 
+third-party logistics and distribution as integral to their supply chain operations. For example, L’Oréal 
+relies on independent third-party distributors and external logistics providers for warehousing and order 
+preparation in regions without subsidiaries (L’Oréal S.A., 2025, p. 156). Similarly, Beiersdorf 
+outsources most warehousing and transportation services while maintaining limited in-house capacity 
+(Beiersdorf AG, 2025, p. 50). 
+4.3 Redundancy 
+The coding category redundancy comprises nine strategic measures through which companies enhance 
+SCR (see Table 5). These measures can be grouped into three categories: diversification, operational 
+buffers, and supply/demand assurance. 
+Table 5: Overview of redundancy strategies 
+Category Strategic measure Definition 
+Diversification 
+Supplier diversification Sourcing from multiple suppliers to reduce dependency on single sources 
+Geographical production 
+diversification 
+Operating production facilities in multiple regions to reduce 
+exposure to location-specific risks 
+Supply chain financing Providing financial support mechanisms (e.g., early payments, credit solutions) to stabilize suppliers 
+Operational 
+buffers 
+Capacity and infrastructure 
+expansion and maintenance 
+Investing in additional production capacity or upgrading facilities to 
+strengthen operational resilience and reliability 
+Journal Pre-proof
+19 
+ 
+Inventory buffer Excess stock to cover potential supply shortages or demand spikes 
+External manufacturing 
+capacity Use of third-party manufacturers to produce goods 
+Supply/Demand 
+assurance 
+Direct sourcing Procuring materials directly from upstream suppliers (bypassing intermediaries) to increase control and transparency 
+Long-term supply contracts Establishing multi-year agreements with suppliers to secure capacity, pricing, and material availability 
+Long-term customer 
+contracts 
+Entering into long-term sales agreements to ensure stable demand 
+and predictable production planning 
+Supplier diversification: All companies engage in supplier diversification, defined as the use of dual, 
+multiple, or geographically dispersed sourcing strategies to reduce dependency on individual suppliers 
+and mitigate concentration risks. For example, Henkel highlights supplier diversification as a key 
+element of its risk management approach to avoid dependence on individual suppliers and ensure 
+sourcing continuity (Henkel AG & Co. KGaA, 2025a, p. 182). Similarly, STMicroelectronics adopts a 
+“multiple sourcing strategy” to reduce exposure to material disruptions and price increases 
+(STMicroelectronics N.V., 2025, p. 22). 
+Geographical production diversification: Closely related to localization strategy, fifteen companies 
+emphasize the geographical production diversification of facilities as a redundancy-based resilience 
+strategy aimed at reducing dependency on individual plants and mitigating concentration risks within 
+the production network. Semiconductor companies appear to adopt this approach. Infineon, for 
+example, highlights that its manufacturing footprint is geographically dispersed across all major regions 
+(Infineon Technologies AG, 2025a, p. 32). Schneider Electric, through its “Power of Two in 
+Manufacturing” strategy, aims to ensure that 90% of critical offers are covered by dual manufacturing 
+setups to bolster supply chain resilience (Schneider Electric SE, 2025, p. 143). 
+Supply chain financing: Fifteen companies highlight supply chain financing, defined as financial 
+arrangements designed to strengthen liquidity and stability within the supplier base by facilitating 
+access to funding and improving payment conditions. For example, Bayer offers a supply chain 
+financing program that enables suppliers to receive earlier payments (Bayer AG, 2024, p. 76). 
+Capacity and infrastructure expansion and maintenance: Fourteen companies emphasize capacity 
+and infrastructure expansion and maintenance, defined as strategic investments in production facilities, 
+logistics assets, and technical infrastructure to strengthen supply chain robustness and ensure long-term 
+operational continuity. For example, Infineon reports continued investments in expanding 
+semiconductor manufacturing capacity to meet rising demand and reduce structural supply constraints 
+(Infineon Technologies AG, 2025a, p. 32). 
+Inventory buffers: The companies disclose inventory buffers as a resilience strategy, with three 
+interrelated logics shaping their use. First, supply continuity logic focuses on maintaining safety stocks 
+of critical inputs to protect against upstream disruptions such as supplier failures or geopolitical shocks, 
+particularly in automotive, industrial, and pharmaceutical sectors. For example, GSK maintains safety 
+stocks supported by structured monitoring processes (GSK plc, 2025, p. 318). Second, a production-
+stabilizing logic uses inventory to ensure continuity and smooth internal operations under demand 
+Journal Pre-proof
+20 
+ 
+volatility, especially in the semiconductor industry. Infineon, for instance, links inventory to early 
+warning systems to adjust capacity utilization (Infineon Technologies AG, 2025a, p. 73). Third, a cost-
+efficiency orientation emphasizes lean inventory and working capital efficiency once supply pressures 
+ease, particularly in consumer goods. For example, Beiersdorf carefully manages the scope, timing, and 
+frequency of material call-offs to maintain capital-efficient inventory levels (Beiersdorf AG, 2025, p. 
+201). Together, these logics illustrate how companies balance resilience against external shocks, internal 
+production stability, and financial efficiency. 
+External manufacturing capacity: Eight companies use external manufacturing to extend internal 
+capacity and increase flexibility. This enables companies to adjust volumes, access specialized 
+capabilities, and mitigate capacity and investment risks. For example, STMicroelectronics reports 
+subcontracting a portion of its silicon production to external foundries to support growth and preserve 
+operational flexibility (STMicroelectronics N.V., 2025, p. 22). In the consumer goods sector, L’Oréal 
+refers to collaborating with subcontractors within its production network to manage cyclical peaks in 
+demand (L’Oréal S.A., 2025, p. 35). 
+Direct sourcing: Five companies, primarily in the automotive sector, disclose direct sourcing, defined 
+as procuring raw materials or components directly from primary producers to increase transparency, 
+secure access, and strengthen control over critical inputs. This approach is increasingly reported in 
+response to geopolitical risks and growing supply chain complexity. For example, Volkswagen has 
+expanded into direct sourcing of materials such as steel and aluminum, including upstream activities 
+like raw material extraction (Volkswagen AG, 2025, p. 338), while BMW secures critical inputs through 
+direct contracts with upstream suppliers (BMW AG, 2025, p. 64). 
+Long-term supply contracts: Fifteen companies emphasize long-term supply contracts, defined as 
+upstream agreements with suppliers to secure access to critical materials over extended periods and 
+mitigate supply-side risks. For example, Volkswagen uses long-term contracts for key raw materials to 
+ensure availability amid geopolitical uncertainty and increasing resource competition (Volkswagen AG, 
+2025, p. 199). 
+Long-term customer contracts: Six companies, particularly in the industrial technology and 
+engineering and the semiconductor industries, highlight long-term customer contracts that secure 
+committed demand, support capacity planning, and reduce exposure to market volatility. For example, 
+Infineon refers to long-term supply agreements with customers that include volume commitments, 
+enabling the company to secure predictable demand and support capacity expansion decisions (Infineon 
+Technologies AG, 2025a, p. 73). The primary logic underlying this strategy is downstream-oriented: 
+companies seek to reduce demand uncertainty and protect capacity utilization through binding customer 
+commitments. 
+4.4 Collaboration 
+Journal Pre-proof
+21 
+ 
+Finally, the coding category collaboration comprises six strategic measures through which companies 
+enhance SCR (see Table 6). These measures can be grouped into three categories: supplier engagement 
+and development, external stakeholders, and collective action. 
+Table 6: Overview of collaboration strategies 
+Category Strategic measure Definition 
+Supplier 
+engagement 
+and development 
+Transition to a circular 
+economy 
+Designing supply chains to recycle and regenerate resources, 
+reducing reliance on primary inputs 
+Training and capability 
+building 
+Developing employee and supplier skills to improve risk awareness, 
+operational flexibility, and crisis response capabilities 
+Operational collaboration Coordinating closely with suppliers in day-to-day planning and execution to improve transparency and responsiveness 
+Partnerships on key 
+components/production 
+Long-term collaborative relationships with selected partners for 
+critical technologies or manufacturing stages to secure supply and 
+share risk 
+External 
+stakeholders 
+Political involvement and 
+interaction with NGOs 
+Engaging with governments, regulators, and non-governmental 
+organizations to shape policy environments 
+Collective action Industry initiatives Participating in sector-wide platforms to jointly manage risks, set standards, or strengthen collective resilience 
+Transition to a circular economy: Eleven companies report the transition toward a circular economy, 
+defined as reducing dependence on primary raw materials through recycling and closed-loop supply 
+chains to enhance resilience. Beyond sustainability considerations, this approach also addresses 
+geopolitical and resource concentration risks. For example, BMW develops closed-loop systems and 
+increases secondary material use (BMW AG, 2025, p. 142), Renault advances remanufacturing and 
+material recovery (Renault S.A., 2025, p. 161), and Henkel expands the use of recycled and recyclable 
+packaging to reduce reliance on virgin inputs (Henkel AG & Co. KGaA, 2025b, p. 218). 
+Training and capability building: Thirteen companies highlight supplier training and capability 
+building, defined as structured initiatives aimed at upgrading suppliers’ operational, compliance, and 
+risk management capabilities to strengthen overall supply chain robustness. Mercedes-Benz reports 
+sensitizing and informing its suppliers through targeted training modules (Mercedes-Benz Group AG, 
+2025, p. 2017). 
+Operational collaboration: Seventeen companies emphasize operational collaboration with suppliers, 
+defined as ongoing coordination and joint process optimization to improve supply chain performance, 
+transparency, and efficiency. This includes information sharing, planning alignment, and process 
+integration in day-to-day operations. For example, Unilever collaborates closely with logistics and 
+distribution partners to streamline product flows and improve retail availability (Unilever PLC, 2025, 
+p. 37) 
+Partnerships on key components/production: Fourteen companies disclose strategic partnerships, 
+defined as long-term cooperative arrangements such as joint ventures, equity investments, or co-
+development agreements that integrate companies with key suppliers or technology partners. For 
+example, Infineon has a joint investment with TSMC in the European Semiconductor Manufacturing 
+Company in Germany (Infineon Technologies AG, 2025a, p. 145), BMW holds a stake in Solid Power 
+to secure next-generation battery technology (BMW AG, 2025, p. 301), and Mercedes-Benz 
+Journal Pre-proof
+22 
+ 
+collaborates with Hydro to ensure the supply of low-carbon aluminum (Mercedes-Benz Group AG, 
+2025, p. 140). 
+Political involvement and interaction with NGOs: Six companies emphasize political engagement, 
+defined as actively shaping regulatory and institutional environments affecting supply chains through 
+interaction with governments, industry bodies, and civil society. For example, BMW maintains dialogue 
+with political and societal stakeholders (BMW AG, 2025, p. 180), while Henkel collaborates with cross-
+industry initiatives and NGOs (Henkel AG & Co. KGaA, 2025b, p. 270). 
+Industry initiatives: Fifteen companies report participation in industry initiatives, defined as 
+engagement in sector-wide alliances to address systemic supply chain challenges through collective 
+action. For example, Renault participates in the Responsible Minerals Initiative to strengthen 
+responsible sourcing (Renault S.A., 2025, p. 206), while NXP Semiconductors is part of the Responsible 
+Business Alliance, which provides shared audit and compliance standards (NXP Semiconductors N.V., 
+2025b, p. 91). 
+5. Analytical Insights and Interpretation of Results 
+5.1 Managing Geopolitical Risk 
+In addressing RQ2, we identify a range of resilience strategies through which companies manage 
+geopolitical exposure. Building on the conceptual distinction developed in Section 2.1 and the 
+classification criteria introduced in Step 8, we distinguish between SCRM and GRM. Within the 
+introduced risk framework of this study, strategy categories are classified according to their role in 
+managing geopolitical exposure. Figure 4 illustrates the classification of resilience strategy categories 
+into GRM and SCRM. The following discussion focuses on the identified GRM strategies. Table D.1 
+in Appendix D of the supplementary material summarizes the conceptual rationale for classifying all 
+identified resilience strategies as either GRM or SCRM. This paper conceptualizes organizational 
+enablers as strategic measures that facilitate and support the implementation of both GRM and SCRM. 
+Figure 4: Strategic measures across SCRM and GRM dimensions 
+Journal Pre-proof
+23 
+ 
+ 
+Across the identified categories, GRM strategies reduce geopolitical exposure by addressing 
+different dimensions of a company’s external dependencies. Within agility and flexibility, localization 
+strategies and decentralized procurement and R&D functions primarily reduce dependence on where 
+companies operate by geographically reconfiguring production, sourcing, and innovation activities 
+while increasing responsiveness to regional institutional environments. Within redundancy, supplier 
+diversification and direct sourcing reduce dependence on who companies rely on within their supply 
+networks, whereas geographical production diversification reduces dependence on where production is 
+concentrated. In addition, direct sourcing strengthens access to critical resources and technologies 
+(what) while reducing dependence on critical suppliers and intermediaries (who). Finally, within 
+collaboration, circular economy initiatives reduce dependence on what critical resources and 
+technologies companies require, while political involvement and interaction with NGOs address 
+dependence on whose political and institutional systems shape the business environment. 
+5.2 Archetype-Based Clustering and Strategy Patterns 
+We structure company-disclosed data on organizational enablers and operational resilience strategies 
+and, to address RQ3, cluster these data to identify cross-industry patterns (see Step 9, Section 3). We 
+apply the three-archetype framework of Cohen et al. (2022a) at the company level. Within our sample 
+and our exploratory setup our results are broadly consistent with their framework, which is notable 
+given methodological differences: while Cohen et al. (2022a) rely on interviews, our study draws on 
+Journal Pre-proof
+24 
+ 
+systematically retrieved annual report data. Figure 5 presents a heatmap of strategy intensity across 
+companies, organized according to the three clusters derived in Step 9; the underlying data are reported 
+in Table E.2 in the supplementary material. The detailed company-level strategy disclosure is shown in 
+Table E.1 in the supplementary material. Figure 5 shows that while companies can be broadly assigned 
+to a dominant archetype, many disclose strategies associated with others, resulting in hybrid 
+configurations. This suggests that resilience strategies are shaped by underlying business models and 
+supply chain structures, underscoring the need for bespoke rather than one-size-fits-all approaches. 
+Figure 5: Supply chain archetype intensity by company and clusters 
+ 
+Note. Heatmap intensity represents the standardized disclosure intensity of resilience strategies associated with each archetype. 
+Darker shading indicates higher disclosure intensity, whereas lighter shading indicates lower or no disclosure of the respective 
+strategy category. Clustering methodology is described in Appendix E in the supplementary material. 
+Table 7 presents cluster-wise average strategy disclosure, where values represent the share of 
+companies within each cluster disclosing a strategy (0 = none of the companies; 1 = all companies). It 
+shows that six of the seven GRM strategies identified in Section 5.1 are associated with the partnership 
+archetype, while one aligns with the product archetype. The table also reports inter-cluster differences 
+(deltas), highlighting the key drivers of the clustering results, which are discussed below. 
+Table 7: Cluster-wise averages, variability, and differentiating intensity of resilience strategies 
+Strategic measure 
+Cluster 1 
+(Partnership) 
+Cluster 2 
+(Product) 
+Cluster 3 
+(Process) 
+ 
+Avg. Std. Dev. Avg. Std. Dev. Avg. Std. Dev. Delta Avg. 1 vs. 2 Delta Avg. 1 vs. 3 Sum of deltas 
+Partnership Complexity 
+Upstream integration of critical inputs 0.8 0.4 0.0 0.0 0.3 0.5 0.8 0.6 1.4 
+Decentralized procurement and R&D functions 0.6 0.5 0.0 0.0 0.0 0.0 0.6 0.6 1.2 
+Upstream digitalization (supply-side) 0.9 0.3 0.7 0.5 1.0 0.0 0.2 0.1 0.3 
+Network monitoring 1.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 
+Multi-tier mapping 0.5 0.5 0.0 0.0 0.0 0.0 0.5 0.5 1.0 
+Localization strategy 1.0 0.0 0.2 0.4 0.8 0.5 0.8 0.3 1.1 
+Alternative/flexible logistics channels 0.8 0.4 0.2 0.4 0.5 0.6 0.6 0.3 0.9 
+Supplier diversification 1.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 
+Supply chain financing 0.9 0.3 0.3 0.5 1.0 0.0 0.6 0.1 0.7 
+Supply-continuity buffer inventory 0.8 0.4 0.3 0.5 0.0 0.0 0.5 0.8 1.3 
+Direct sourcing 0.5 0.5 0.0 0.0 0.0 0.0 0.5 0.5 1.0 
+Long-term supply contracts 0.8 0.4 0.8 0.4 0.5 0.6 0.0 0.3 0.3 
+Transition to a circular economy 0.7 0.5 0.5 0.5 0.3 0.5 0.2 0.5 0.7 
+Training and capability building 0.7 0.5 0.5 0.5 0.8 0.5 0.2 0.1 0.3 
+Operational collaboration 1.0 0.0 0.7 0.5 1.0 0.0 0.3 0.0 0.3 
+Political involvement and interaction with NGOs 0.3 0.5 0.3 0.5 0.3 0.5 0.0 0.1 0.1 
+Industry initiatives 0.7 0.5 0.7 0.5 0.8 0.5 0.0 0.1 0.0 
+Product Complexity 
+Journal Pre-proof
+25 
+ 
+Vertical integration of the value chain 0.1 0.3 0.8 0.4 0.0 0.0 0.7 0.1 0.8 
+Production standardization 0.8 0.4 0.8 0.4 0.5 0.6 0.0 0.3 0.3 
+Geographical production diversification 0.9 0.3 0.8 0.4 0.5 0.6 0.1 0.4 0.5 
+Capacity and infrastructure expansion and 
+maintenance 0.6 0.5 0.8 0.4 0.8 0.5 0.2 0.2 0.4 
+Production-stabilizing inventory 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 
+Long-term customer contracts 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 
+Partnerships on key components/products 0.7 0.5 1.0 0.0 0.0 0.0 0.3 0.7 1.0 
+Process Complexity 
+Downstream digitalization (customer side) 0.0 0.0 0.2 0.4 1.0 0.0 0.2 1.0 1.2 
+Product standardization and simplification 0.4 0.5 0.0 0.0 0.8 0.5 0.4 0.4 0.8 
+Alternative bills of materials 0.9 0.3 0.5 0.5 1.0 0.0 0.4 0.1 0.5 
+Third-party distribution 0.1 0.3 0.0 0.0 1.0 0.0 0.1 0.9 1.0 
+Cost-efficient inventory orientation 0.0 0.0 0.0 0.0 0.8 0.5 0.0 0.8 0.8 
+External manufacturing capacity 0.2 0.4 0.5 0.5 0.8 0.5 0.3 0.6 0.9 
+Note. Strategic measures shown in bold correspond to GRM. 
+Cluster 1 in Figure 5 represents the partnership complexity archetype, comprising companies 
+in automotive, industrial technology, and chemicals and pharmaceuticals. These companies operate 
+complex, multi-tier supply chains and rely heavily on strategic partnerships within increasingly 
+regionalized structures. To manage this complexity, they emphasize upstream digitalization and 
+integrated data platforms to enhance multi-tier visibility and coordination. In addition, they seek greater 
+control over critical resources through upstream integration of critical capabilities and resources. 
+Companies combine standardization, decentralized procurement and R&D functions, and localization 
+to enable flexible production across sites while reducing exposure to disruptions. Redundancy is 
+primarily geared toward supply continuity, with inventory buffers, direct sourcing of critical inputs, and 
+supply chain financing. Collaboration plays a central role as strategic partnerships and circular economy 
+initiatives are leveraged to manage technological and capital constraints and secure access to critical 
+materials. Overall, this archetype reflects a model in which resilience is achieved through coordination, 
+control, and deep integration across complex supply networks. 
+The prevalence of localization, decentralized procurement, direct sourcing, supplier 
+diversification, and circular economy initiatives suggests that companies in this archetype manage 
+geopolitical exposure through a broad portfolio of GRM strategies. This likely reflects their dependence 
+on extensive multi-tier supplier networks, globally dispersed production systems, and externally 
+sourced technologies, which expose companies simultaneously across multiple dimensions of 
+geopolitical exposure. Companies combine complementary strategies that address where they operate, 
+who they rely on within their supply networks, and what critical resources and technologies underpin 
+their operations. Compared with the product-complexity archetype, opportunities to strategically 
+reconfigure these dependencies appear less constrained by technological specialization and capital 
+intensity, thereby enabling a broader portfolio of GRM strategies. 
+Cluster 2 represents the product complexity archetype, including companies in semiconductors 
+and industrial technology. These industries are characterized by capital-intensive production and high 
+technological complexity. As a result, resilience is achieved less through structural reconfiguration and 
+more through capacity management, technological control, and long-term supply and demand 
+coordination. Companies emphasize upstream digitalization to manage complex production networks, 
+Journal Pre-proof
+26 
+ 
+while production standardization enables scaling and load shifting across facilities. Localization plays 
+a comparatively limited role, which may reflect high fixed investments, specialized labor requirements, 
+and concentrated production capabilities commonly associated with these industries. Whereas 
+localization emphasizes aligning production with regional markets, companies instead rely more 
+strongly on geographic production diversification by spreading production capabilities across multiple 
+locations, alongside strategic partnerships and long-term contractual arrangements, to secure access to 
+critical technologies and manufacturing capabilities while stabilizing supply and demand. 
+This archetype therefore pursues a more selective approach to GRM than the other clusters. 
+The limited disclosure of localization and decentralized procurement suggests that opportunities to 
+reduce geopolitical exposure by reconfiguring where companies operate are comparatively limited. 
+Consequently, companies rely on a relatively narrow set of GRM strategies, primarily geographic 
+production diversification, while complementing them with SCRM measures such as production 
+standardization, partnerships, and long-term contractual arrangements. Rather than broadly reducing 
+geopolitical exposure, resilience in this archetype appears to focus on maintaining reliable access to 
+critical technologies, capabilities, and production assets within existing supply chain structures. 
+Cluster 3 captures the process complexity archetype, consisting of consumer goods companies 
+with broad product portfolios and strong cost pressures. These companies typically operate less asset-
+intensive and more fragmented supply chains, where resilience is shaped by the need to balance 
+flexibility and efficiency. Accordingly, companies focus on simplification and externalization. Product 
+standardization and alternative bills of materials reduce internal complexity; while outsourcing and 
+external manufacturing capacity provide operational flexibility without requiring significant capital 
+investment. Organizational enablers are oriented toward downstream digitalization, improving demand 
+visibility and enabling rapid replenishment in high-turnover markets. Localization strategies further 
+support responsiveness to regional demand patterns. In contrast to other clusters, redundancy appears 
+to be managed with a strong emphasis on cost efficiency, with companies relying more on external 
+capacity than on extensive inventory buffers. Collaboration is primarily framed through circular 
+economy initiatives and supplier coordination, often with a stronger focus on sustainability and resource 
+efficiency than on securing critical inputs. 
+Accordingly, GRM in this archetype relies less on control-oriented strategies such as vertical 
+integration, direct sourcing, or extensive supplier governance and more on the ability to reconfigure 
+where companies operate and who they rely on within their supply networks. Compared with the other 
+archetypes, companies therefore appear to possess greater flexibility to reduce geopolitical exposure 
+through supply chain reconfiguration rather than by primarily strengthening resilience within existing 
+network structures. 
+6. Conclusion 
+Using data from the annual reports of 20 European MNEs, this study examines how companies can 
+manage geopolitical exposure risk in their global supply chains. Our results identify a range of 
+Journal Pre-proof
+27 
+ 
+organizational enablers and operational resilience strategies disclosed by European MNEs. Applying an 
+adapted supply chain risk framework, which builds on the distinction between strategic and operational 
+risk mitigation (Rezapour et al., 2018), the study differentiates strategic GRM from operational SCRM 
+and identifies seven key strategies for managing geopolitical exposure. These strategies include 
+localization of the value chain, decentralized procurement and R&D functions, direct sourcing, supplier 
+diversification, geographic production diversification, the transition to a circular economy, and political 
+involvement and engagement with NGOs. 
+Clustering the identified strategies into the three supply chain archetypes of partnership, 
+product, and process complexity (Cohen et al., 2022a) suggests that GRM is shaped by the structural 
+characteristics of a company’s supply chain. Partnership-complexity companies appear to disclose the 
+broadest portfolio of GRM strategies, whereas product-complexity companies disclose a more selective 
+portfolio due to structural constraints. Process-complexity companies primarily reduce geopolitical 
+exposure through localization and operational flexibility, which appears consistent with their 
+comparatively lower asset intensity. Overall, the findings suggest that the feasibility of GRM strategies 
+depends on the structural characteristics of the underlying supply chain, highlighting that effective 
+GRM requires supply chain-specific rather than one-size-fits-all resilience strategies. 
+This paper offers several practical implications for managers. First, it provides a structured risk 
+framework that distinguishes between SCRM and GRM, enabling managers to systematically assess 
+whether their current resilience strategies primarily strengthen operational resilience or actively reduce 
+geopolitical exposure. Second, the identified organizational enablers and resilience strategies provide a 
+benchmark of current practices disclosed by leading European MNEs across five industries, supporting 
+managers in evaluating and extending their own resilience portfolios. Third, the proposed risk 
+framework enables managers to operationalize GRM by systematically assessing geopolitical exposure 
+across four dimensions. Based on this assessment, managers can prioritize GRM strategies that target 
+their most significant dimensions of geopolitical exposure while accounting for the structural 
+characteristics and reconfiguration potential of their supply chains (Cohen et al., 2022a). Companies 
+operating complex multi-tier supply networks (partnership complexity) may need to combine multiple 
+exposure-reduction strategies, such as localization, supplier diversification, and direct sourcing, to 
+address dependencies across several exposure dimensions. Companies in capital-intensive industries 
+(product complexity) may face greater constraints on structural reconfiguration, consistent with 
+evidence that industries with high capital requirements exhibit more limited supply chain restructuring 
+(Niu et al., 2025a), and may therefore need to focus on a more selective portfolio of GRM strategies. 
+Conversely, companies with less asset-intensive supply chains (process complexity) may place greater 
+emphasis on localization and operational flexibility to reduce geopolitical exposure through supply 
+chain reconfiguration. These findings provide managers with a practical basis for prioritizing GRM 
+strategies according to their supply chain structure, industry characteristics, and geopolitical exposure 
+profile. 
+Journal Pre-proof
+28 
+ 
+As with any study, these findings are subject to limitations. The analysis is based on disclosures 
+in annual reports of 20 large European MNEs and may not generalize to smaller or less globally active 
+companies. Moreover, the data captures strategic intent rather than actual implementation. In addition, 
+despite mandatory risk management disclosures, companies may withhold strategically sensitive 
+information on geopolitical risk, limiting the completeness of the analysis. The binary coding enables 
+systematic comparison but neglects variation in the potential impact of individual resilience strategies. 
+Furthermore, the classification of strategies into SCRM and GRM is based solely on whether a strategy 
+addresses one or more of the defined dimensions of geopolitical exposure. As many resilience strategies 
+inherently serve multiple organizational objectives, this approach does not account for overlapping 
+contributions to sustainability, efficiency, or broader operational resilience. Finally, the RAG-based 
+extraction depends on the retrieval query and LLM used, potentially underrepresenting implicitly 
+framed disclosures, although this is mitigated through a broad retrieval strategy and manual validation. 
+Future research could extend this analysis by examining a broader set of companies, industries, 
+and institutional contexts beyond Europe. Longitudinal studies could further assess how GRM and 
+SCRM strategy portfolios evolve over time and how companies adapt their approaches in response to 
+changing geopolitical conditions. In addition, future research could investigate how structural 
+characteristics, such as asset intensity, technological specialization, and supply chain complexity, 
+influence a company’s ability to reduce geopolitical exposure and the resulting trade-offs between 
+resilience, efficiency, and supply chain reconfiguration. Furthermore, future research could combine 
+annual report data with interviews, surveys, or internal company data to examine how disclosed GRM 
+practices translate into actual implementation and managerial decision-making (Cohen et al., 2026). 
+More broadly, future work may build on this study by further exploring the use of annual report data 
+and LLM-assisted methods for systematic supply chain analysis (Niu et al., 2025b; Jackson et al., 2026). 
+References 
+Allianz Commercial. (2026, January 14). Allianz risk barometer 2026: Identifying the major business 
+risks for 2026. https://commercial.allianz.com/news-and-insights/reports/allianz-risk-
+barometer.html 
+Arslan, M., Ghanem, H., Munawar, S., & Cruz, C. (2024). A survey on RAG with LLMs. Procedia 
+Computer Science, 246, 3781–3790. https://doi.org/10.1016/j.procs.2024.09.178 
+BASF SE. (2025). BASF report 2024. https://report.basf.com/2024/en/_assets/downloads/entire-full-
+report-basf-ar24.pdf?h=bgn5lq-I 
+Bayer AG. (2025). Annual report 2024. https://www.bayer.com/sites/default/files/2025-03/bayer-
+annual-report-2024.pdf 
+Bednarski, L., Roscoe, S., Blome, C., & Schleper, M. C. (2023). Geopolitical disruptions in global 
+supply chains: a state-of-the-art literature review. Production Planning & Control, 36(4), 536–
+562. https://doi.org/10.1080/09537287.2023.2286283 
+Beiersdorf AG. (2025). Annual report 2024. 
+https://www.beiersdorf.com/~/media/Beiersdorf/investors/financial-publication/2025/annual-
+report/Beiersdorf-Annual-Report-2024.pdf 
+Belhadi, A., Kamble, S., Subramanian, N., Singh, R. K., & Venkatesh, M. (2024). Digital capabilities 
+to manage agri-food supply chain uncertainties and build supply chain resilience during 
+compounding geopolitical disruptions. International Journal of Operations & Production 
+Management, 44(11), 1914–1950. https://doi.org/10.1108/ijopm-11-2022-0737 
+Journal Pre-proof
+29 
+ 
+Blackhurst, J., Dunn, K. S., & Craighead, C. W. (2011). An empirically derived framework of global 
+supply resiliency. Journal of Business Logistics, 32(4), 374–391. 
+https://doi.org/10.1111/j.0000-0000.2011.01032.x 
+BMW AG. (2025). BMW Group Report 2024. 
+https://www.bmwgroup.com/en/report/2024/downloads/BMW-Group-Report-2024-en.pdf 
+Burgerlijk Wetboek Boek 2 [Dutch Civil Code Book 2]. (2024). Article 2:391(1) 
+Directieverslag. https://wetten.overheid.nl/BWBR0003045/2024-01-
+01#Boek2_Titeldeel5_Afdeling3_Paragraaf1_Artikel391 
+Caldara, D., & Iacoviello, M. (2022). Measuring geopolitical risk. American Economic Review, 112(4), 
+1194–1225. https://doi.org/10.1257/aer.20191823 
+Christopher, M., & Peck, H. (2004). Building the resilient supply chain. The International Journal of 
+Logistics Management, 15(2), 1–14. https://doi.org/10.1108/09574090410700275 
+Code de commerce [French Commercial Code]. (2024). Article L.232-1 II Rapport de 
+gestion. https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051559593 
+Cohen, M. A., Cui, S., Deshpande, V., Ernst, R., Huchzermeier, A., Muhaj, D., Pyke, D., & Tsay, A. A. 
+(2026). Stay ahead of geopolitical supply chain risks: A practical framework for mitigating the 
+disruptive effects of international conflicts. MIT Sloan Management Review, Spring. 
+https://doi.org/10.63383/qfLR2142 
+Cohen, M., Cui, S., Doetsch, S., Ernst, R., Huchzermeier, A., Kouvelis, P., Lee, H., Matsuo, H., & Tsay, 
+A. A. (2022a). Bespoke supply‐chain resilience: The gap between theory and practice. Journal 
+of Operations Management, 68(5), 515–531. https://doi.org/10.1002/joom.1184 
+Cohen, M. A., Cui, S., Doetsch, S., Ernst, R., Huchzermeier, A., Kouvelis, P., Lee, H., Matsuo, H., & 
+Tsay, A. A. (2022b). Putting supply chain resilience theory into practice. Management and 
+Business Review, 2(3), 7–17. https://doi.org/10.1177/2694105820220203002 
+Companies Act 2006. (2006). Section 414CB Contents of non-financial information statement. 
+https://www.legislation.gov.uk/ukpga/2006/46/section/414CB 
+Darby, J. L., Ketchen, D. J., Williams, B. D., & Tokar, T. (2020). The implications of firm‐specific 
+policy risk, policy uncertainty, and industry factors for inventory: A resource dependence 
+perspective. Journal of Supply Chain Management, 56(4), 3–24. 
+https://doi.org/10.1111/jscm.12229 
+Department for Business and Trade. (2025, June 23). The UK’s modern industrial strategy. GOV.UK. 
+https://www.gov.uk/government/publications/industrial-strategy 
+Devesa, T., Seong, J., White, O., Leung, N., Lamanna, C., & Rebled, J. (2026, March 19). Geopolitics 
+and the geometry of global trade: 2026 update. McKinsey & Company. 
+https://www.mckinsey.com/mgi/our-research/geopolitics-and-the-geometry-of-global-trade-
+2026-update 
+Duong, L. N. K., & Chong, J. (2020). Supply chain collaboration in the presence of disruptions: a 
+literature review. International Journal of Production Research, 58(11), 3488–3507. 
+https://doi.org/10.1080/00207543.2020.1712491 
+Eisenhardt, K. M. (1989). Building theories from case study research. Academy of Management Review, 
+14(4), 532. https://doi.org/10.2307/258557 
+European Commission. (2024, October 29). EU imposes duties on unfairly subsidised electric vehicles 
+from China while discussions on price undertakings continue. 
+https://ec.europa.eu/commission/presscorner/detail/en/ip_24_5589 
+European Systemic Risk Board. (2026). Financial stability risks from geoeconomic fragmentation. 
+https://www.ecb.europa.eu/pub/pdf/other/ecb.report202601_financialstabilityrisks.en.pdf 
+European Union. (2022, December 16). Directive 2022/2464 – EN – CSRD Directive. https://eur-
+lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464 
+Eurostat. (2021). Industry - Key figures on European business. 
+https://ec.europa.eu/eurostat/cache/htmlpub/key_figures_on_european_business_2021/industr
+y.html 
+Fan, D., & Xiao, C. (2023). Firm-specific political risk: a systematic investigation of its antecedents 
+and implications for vertical integration and diversification strategies. International Journal of 
+Operations & Production Management, 43(6), 984–1007. https://doi.org/10.1108/ijopm-02-
+2022-0094 
+Journal Pre-proof
+30 
+ 
+Fan, D., Ma, P., Cui, L., & Yiu, D. W. (2024). Locking in overseas buyers amid geopolitical conflicts. 
+Journal of Operations Management, 70(5), 756–792. https://doi.org/10.1002/joom.1316 
+Fan, D., Zhou, Y., Yeung, A. C. L., Lo, C. K. Y., & Tang, C. (2022). Impact of the U.S.–China trade war 
+on the operating performance of U.S. firms: The role of outsourcing and supply base 
+complexity. Journal of Operations Management, 68(8), 928–962. 
+https://doi.org/10.1002/joom.1225 
+Fayezi, S., Zutshi, A., & O’Loughlin, A. (2016). Understanding and development of supply chain agility 
+and flexibility: A structured literature review. International Journal of Management Reviews, 
+19(4), 379–407. https://doi.org/10.1111/ijmr.12096 
+Foulkes, I., & Kirby, P. (2025, November 14). US agrees deal to slash Swiss tariffs to 15% after golden 
+charm offensive. BBC. https://www.bbc.com/news/articles/ce8zkrplpdyo 
+GSK plc. (2025). Annual Report 2024. https://www.gsk.com/media/wrvfwob1/annual-report-2024.pdf 
+Handelsgesetzbuch [German Commercial Code]. (2024). § 315 Content of the consolidated 
+management report. https://www.gesetze-im-internet.de/englisch_hgb/englisch_hgb.html 
+Hartigan, J. A., & Wong, M. A. (1979). Algorithm AS 136: A k-means clustering algorithm. Journal of 
+the Royal Statistical Society: Series C (Applied Statistics), 28(1), 100–108. 
+https://doi.org/10.2307/2346830 
+Henkel AG & Co. KGaA. (2025a). Annual report 2024. 
+https://www.henkel.com/resource/blob/2043318/9b8425a944b077ab7165b775398c72a1/data/
+2024-annual-report.pdf 
+Henkel AG & Co. KGaA. (2025b). Sustainability report 2024. 
+https://www.henkel.com/resource/blob/2043310/8e58944556950ebb78141bf6a86b58a9/data/
+2024-sustainability-report.pdf 
+Ho, W., Zheng, T., Yildiz, H., & Talluri, S. (2015). Supply chain risk management: a literature review. 
+International Journal of Production Research, 53(16), 5031–5069. 
+https://doi.org/10.1080/00207543.2015.1030467 
+Hohenstein, N., Feisel, E., Hartmann, E., & Giunipero, L. (2015). Research on the phenomenon of 
+supply chain resilience. International Journal of Physical Distribution & Logistics 
+Management, 45(1/2), 90–117. https://doi.org/10.1108/ijpdlm-05-2013-0128 
+Infineon Technologies AG. (2025a). Annual report 2025. 
+https://www.infineon.com/assets/row/public/documents/corporate/investors/annual-
+reports/2025/2025-annual-report-v01-00-en.pdf 
+Infineon Technologies AG. (2025b). Sustainability at Infineon 2025. 
+https://www.infineon.com/assets/row/public/documents/corporate/company/sustainability/sust
+ainability-at-infineon.pdf 
+Ivanov, D., Sokolov, B., & Dolgui, A. (2013). The ripple effect in supply chains: trade-off ‘efficiency-
+flexibility-resilience’ in disruption management. International Journal of Production Research, 
+52(7), 2154–2172. https://doi.org/10.1080/00207543.2013.858836 
+Jackson, I., Saénz, M. J., Ivanov, D., & Ma, B. J. (2026). Supply chain mapping through retrieval-
+augmented generation: applications to the electronics industry. Journal of the Operational 
+Research Society, 1–21. https://doi.org/10.1080/01605682.2025.2608868 
+Kamalahmadi, M., Shekarian, M., & Parast, M. M. (2021). The impact of flexibility and redundancy on 
+improving supply chain resilience to disruptions. International Journal of Production Research, 
+60(6), 1992–2020. https://doi.org/10.1080/00207543.2021.1883759 
+Kaufman, L., & Rousseeuw, P. J. (1990). Finding groups in data: An Introduction to Cluster Analysis. 
+Wiley. https://doi.org/10.1002/9780470316801 
+Kreienkamp, J., Agostini, M., Monden, R., Epstude, K., De Jonge, P., & Bringmann, L. F. (2025). A 
+gentle introduction and application of feature-based clustering with psychological time series. 
+Multivariate Behavioral Research, 60(2), 362–392. 
+https://doi.org/10.1080/00273171.2024.2432918 
+Krippendorff, K. (2004). Reliability in content analysis. Human Communication Research, 30(3), 411–
+433. https://doi.org/10.1111/j.1468-2958.2004.tb00738.x 
+L’Oréal S.A. (2025). 2024 universal registration document. https://www.loreal-
+finance.com/system/files/2025-03/2024_Universal_Registration_Document_LOREAL.pdf 
+Journal Pre-proof
+31 
+ 
+Mao, H., & Görg, H. (2020). Friends like this: The impact of the US–China trade war on global value 
+chains. World Economy, 43(7), 1776–1791. https://doi.org/10.1111/twec.12967 
+Mayring, P. (2014). Qualitative content analysis: theoretical foundation, basic procedures and software 
+solution. Social Science Open Access Repository. 
+https://www.ssoar.info/ssoar/handle/document/39517 
+Mercedes-Benz Group AG. (2025). Annual report 2024. https://group.mercedes-
+benz.com/documents/investors/reports/annual-report/mercedes-benz/mercedes-benz-annual-
+report-2024-incl-combined-management-report-mbg-ag.pdf 
+Merck KGaA. (2025). Annual report 2024. 
+https://www.reports.merckgroup.com/en/annualreport/2024/_assets/downloads/entire-merck-
+ar24.pdf 
+Moradlou, H., Reefke, H., Skipworth, H., & Roscoe, S. (2021). Geopolitical disruptions and the 
+manufacturing location decision in multinational company supply chains: a Delphi study on 
+Brexit. International Journal of Operations & Production Management, 41(2), 102–130. 
+https://doi.org/10.1108/ijopm-07-2020-0465 
+Niu, Y., Werle, N., Cohen, M., Cui, S., Deshpande, V., Ernst, R., Huchzermeier, A., Tsay, A. A., & Wu, 
+J. (2025a). Restructuring global supply chains: Navigating challenges of the COVID-19 
+pandemic and beyond. Manufacturing & Service Operations Management. 
+https://doi.org/10.1287/msom.2024.0879 
+Niu, Y., Wu, J., Jiang, S., & Jiang, Z. (2025b). The bullwhip effect in servitized manufacturers. 
+Management Science, 71(1), 1-20. https://doi.org/10.1287/mnsc.2023.01026 
+NXP Semiconductors N.V. (2025a). Annual report 2024. https://www.nxp.com/docs/en/supporting-
+information/NXPFRS2024.pdf 
+NXP Semiconductors N.V. (2025b). Corporate sustainability report 2024. 
+https://www.nxp.com.cn/docs/en/supporting-information/Corporate-Sustainability-Report-
+2024.pdf 
+Pettit, T. J., Croxton, K. L., & Fiksel, J. (2013). Ensuring supply chain resilience: Development and 
+implementation of an assessment tool. Journal of Business Logistics, 34(1), 46–76. 
+https://doi.org/10.1111/jbl.12009 
+Renault S.A. (2025). 2024 universal registration document. 
+https://assets.renaultgroup.com/uploads/2025/03/Renault_URD_2024_EN.pdf 
+Rezapour, S., Srinivasan, R., Tew, J., Allen, J. K., & Mistree, F. (2018). Correlation between strategic 
+and operational risk mitigation strategies in supply networks. International Journal of 
+Production Economics, 201, 225–248. https://doi.org/10.1016/j.ijpe.2018.04.014 
+Rheinmetall AG. (2025). Annual report 2024. 
+https://www.rheinmetall.com/Rheinmetall%20Group/Investor%20Relations/Ver%C3%B6ffen
+tlichungen/2025/GB/Rheinmetall-Annual-Report-2024.pdf 
+Romm, T., & Gamio, L. (2026, February 27). Trump tariff tracker: Latest rates on countries and 
+products. The New York Times. 
+https://www.nytimes.com/interactive/2026/business/economy/trump-tariff-tracker.html 
+S&P Global. (2024). The evolution of deglobalization. https://www.spglobal.com/en/research-
+insights/market-insights/geopolitical-risk/evolution-of-deglobalization 
+S&P Global. (2025). Top geopolitical risks of 2025. https://www.spglobal.com/en/research-
+insights/market-insights/geopolitical-risk 
+Safran S.A. (2025). 2024 universal registration document. https://www.safran-
+group.com/download/media/447681 
+Schlegel, G. L., & Trent, R. J. (2014). Supply chain risk management: An emerging discipline. Taylor 
+& Francis. https://doi.org/10.1201/b17531 
+Schneider Electric SE. (2025). 2024 universal registration document. 
+https://www.se.com/ww/en/assets/564/document/510443/2024-universal-registration-
+document.pdf 
+Siemens Energy AG. (2025). Siemens energy annual report 2025. https://assets.siemens-
+energy.com/dam/32b27e9a-af91-4915-8b51-b3af012d0d98/A-
+Siemens_Energy_Annual_Report_2025-pdf_Original%20file.pdf 
+Journal Pre-proof
+32 
+ 
+Siemens Energy. (2025, December). Siemens Energy USA – Company presentation. 
+https://assets.siemens-energy.com/dam/9b59d376-0ccc-489b-87da-b3d800b9946e/Siemens-
+Energy_USA-Company-Presentation-December-2025-Final-pdf_Original%20file.pdf 
+Siltronic AG. (2025). Annual report 2024. 
+https://www.siltronic.com/fileadmin/investorrelations/Archiv/2024/Q4/0306.Siltronic_Annual
+_Report_.2024.pdf 
+Simchi-Levi, D., & Haren, P. (2022, March 17). How the war in Ukraine Is Further Disrupting Global 
+Supply Chains. Harvard Business Review. https://hbr.org/2022/03/how-the-war-in-ukraine-is-
+further-disrupting-global-supply-chains 
+Sting, F. J., & Huchzermeier, A. (2010). Ensuring responsive capacity: How to contract with backup 
+suppliers. European Journal of Operational Research, 207(2), 725–735. 
+https://doi.org/10.1016/j.ejor.2010.05.044 
+STMicroelectronics N.V. (2025). Annual report 2024. https://investors.st.com/static-files/ea3b0c4d-
+88be-404f-ac90-9236fe61d454 
+Sudusinghe, J. I., & Seuring, S. (2022). Supply chain collaboration and sustainability performance in 
+circular economy: A systematic literature review. International Journal of Production 
+Economics, 245, 108402. https://doi.org/10.1016/j.ijpe.2021.108402 
+Swafford, P. M., Ghosh, S., & Murthy, N. (2005). The antecedents of supply chain agility of a firm: 
+Scale development and model testing. Journal of Operations Management, 24(2), 170–188. 
+https://doi.org/10.1016/j.jom.2005.05.002 
+Tang, C. S. (2006). Perspectives in supply chain risk management. International Journal of Production 
+Economics, 103(2), 451–488. https://doi.org/10.1016/j.ijpe.2005.12.006 
+Theile, K., Hofer, C., Singhal, V. R., & Hoberg, K. (2026). Supply chain risk and resolution: An 
+empirical study of stock market reactions. Production and Operations Management. Advance 
+online publication. https://doi.org/10.1177/10591478261420550 
+Tse, Y. K., Dong, K., Sun, R., & Mason, R. (2024). Recovering from geopolitical risk: An event study 
+of Huawei’s semiconductor supply chain. International Journal of Production Economics, 275, 
+109347. https://doi.org/10.1016/j.ijpe.2024.109347 
+Tukamuhabwa, B. R., Stevenson, M., Busby, J., & Zorzini, M. (2015). Supply chain resilience: 
+definition, review and theoretical foundations for further study. International Journal of 
+Production Research, 53(18), 5592–5623. https://doi.org/10.1080/00207543.2015.1037934 
+Unilever PLC. (2025). Unilever annual report and accounts 2024. 
+https://www.unilever.com/files/unilever-annual-report-and-accounts-2024.pdf 
+Volkswagen AG. (2025). Annual report 2024. https://uploads.vw-
+mms.de/system/production/documents/cws/002/931/file_en/953dcbb8e57270df70ca28821809
+2dba4721fd63/2025-03-11-volkswagen-group-annual-report-2024-
+en.pdf?1787732733&disposition=attachment 
+Wieland, A., & Wallenburg, C. M. (2013). The influence of relational competencies on supply chain 
+resilience: a relational view. International Journal of Physical Distribution & Logistics 
+Management, 43(4), 300–320. https://doi.org/10.1108/ijpdlm-08-2012-0243 
+World Economic Forum. (2026, January 14). The global risks report 2026. 
+https://www.weforum.org/publications/global-risks-report-2026/ 
+Zhao, L., & Huchzermeier, A. (2017). Integrated operational and financial hedging with capacity 
+reshoring. European Journal of Operational Research, 260(2), 557–570. 
+https://doi.org/10.1016/j.ejor.2016.12.036 
+Zheng, L. J., Islam, N., Zhang, J. Z., Behl, A., Wang, X., & Papadopoulos, T. (2025). Aligning risk and 
+value creation: a process model of supply chain risk management in geopolitical disruptions. 
+International Journal of Operations & Production Management, 45(5), 1178–1210. 
+https://doi.org/10.1108/ijopm-03-2024-0271 
+Zsidisin, G. A., & Wagner, S. M. (2010). Do perceptions become reality? The moderating role of supply 
+chain resilience on disruption occurrence. Journal of Business Logistics, 31(2), 1–20. 
+https://doi.org/10.1002/j.2158-1592.2010.tb00140.x 
+Zhu, M., Miao, S., Lam, H. K., Liang, C., & Yeung, A. C. (2024). Navigating through geopolitical risk: 
+the role of supply chain concentration. International Journal of Operations & Production 
+Management, 45(5), 1032–1065. https://doi.org/10.1108/ijopm-03-2024-0248 
+Journal Pre-proof
+Highlights: 
+• Proposes a framework distinguishing strategic GRM from operational SCRM. 
+• Identifies seven strategies for reducing geopolitical exposure in supply chains. 
+• Suggests that companies facing different forms of supply chain complexity disclose 
+distinct GRM strategy portfolios. 
+• Analyzes resilience disclosures of 20 European MNEs across five industries. 
+• Applies a RAG pipeline to qualitative analysis of annual report disclosures. 
+Journal Pre-proof
