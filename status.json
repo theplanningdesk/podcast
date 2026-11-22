@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-22T10:15:16.573661+00:00",
+ "fetched_at": "2026-11-22T12:53:54.932165+00:00",
  "window_days": 8,
- "sources_ok": 72,
+ "sources_ok": 70,
  "sources_total": 75,
  "sources": [
   {
@@ -127,19 +127,18 @@
    "url": "https://www.produktion.de/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 9,
+   "items": 11,
    "error": null,
    "raw_items": 31,
    "lane": "planning"
   },
   {
    "source": "Ny Teknik",
-   "url": "https://www.nyteknik.se/",
-   "ok": true,
-   "method": "page links (articles opened for dates)",
-   "items": 1,
-   "error": null,
-   "raw_items": 40,
+   "url": "https://www.nyteknik.se/rss",
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://www.nyteknik.se/feed/: HTTPError; https://www.nyteknik.se/rss: HTTPError; https://www.nyteknik.se/rss: no feed and no article links; https://www.nyteknik.se/feed/: HTTPError; https://www.nyteknik.se/rss: HTTPError; https://www.nyteknik.se/: no feed and no article links",
    "lane": "planning"
   },
   {
@@ -167,9 +166,9 @@
    "url": "https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
    "ok": true,
    "method": "feed https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
-   "items": 8,
+   "items": 7,
    "error": null,
-   "raw_items": 8,
+   "raw_items": 7,
    "lane": "planning"
   },
   {
@@ -219,7 +218,7 @@
    "method": "feed https://techxplore.com/rss-feed/business-tech-news/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 23,
+   "raw_items": 20,
    "lane": "management"
   },
   {
@@ -734,11 +733,10 @@
   {
    "source": "MT Logistikk",
    "url": "https://www.mtlogistikk.no/",
-   "ok": true,
-   "method": "page links (articles opened for dates)",
-   "items": 5,
-   "error": null,
-   "raw_items": 40,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://www.mtlogistikk.no/: no feed and no article links",
    "lane": "freight"
   },
   {
