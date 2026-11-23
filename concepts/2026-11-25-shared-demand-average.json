@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-25",
+  "publish_local": "12:00",
+  "topic": "Bullwhip and forecasting",
+  "kicker": "Research",
+  "series": "Research",
+  "viz": "paper",
+  "source": {
+    "cite": "Hrušovský, Arıkan & Silbermayr (2026). Impact of privacy-preserving horizontal retailer information sharing on the bullwhip effect. International Journal of Production Economics. Open access, CC BY.",
+    "card": "Hrušovský et al. (2026), International Journal of Production Economics. Open access, CC BY.",
+    "title": "Impact of privacy-preserving horizontal retailer information sharing on the bullwhip effect in supply chains with multiple retailers",
+    "authors": ["Martin Hrušovský", "Emel Arıkan", "Lena Silbermayr"],
+    "institutions": ["WU Vienna University of Economics and Business"],
+    "venue": "International Journal of Production Economics",
+    "year": 2026,
+    "doi": "https://doi.org/10.1016/j.ijpe.2026.110258",
+    "openalex": "W7225117494",
+    "licence": "cc-by",
+    "fulltext": "Journal pre-proof, saved full text papers/W7225117494.txt on the sources branch (theplanningdesk/podcast)",
+    "checked": [
+      "Four-echelon chain: one supplier, manufacturer, wholesaler, four retailers each serving one customer: Section 3.1, Figure 1",
+      "Baseline: each retailer forecasts on own customer demand, moving average N=10, lead time 2, safety stock 2 periods; 3,200 periods, 200 warm-up, 30 replications: Section 4.2",
+      "Sharing case blends own forecast and shared average with weight 0.5 (gamma = 0.5): Section 4.2",
+      "Scenario 3: customer demand mean 10, sd 10, CV 1.0: Table 4",
+      "Scenario 3 CV of orders, no sharing: retailer 1.42, supplier 1.94: Table 5",
+      "Scenario 3 retailer bullwhip ratio 2.00, -18.60% with sharing; wholesaler 4.53, +4.33%: Table 7",
+      "Shared values 2.00 x (1 - 0.186) = 1.63 and 4.53 x 1.0433 = 4.73 (our arithmetic from Table 7)",
+      "Scenario 3 total costs, EUR over the simulation run: retailers 173,369, -7.98%; wholesaler 146,753, +1.38%; whole chain -0.43%: Table 12",
+      "Retailer costs with sharing 173.4k x (1 - 0.0798) = 159.5k; wholesaler 146.8k x 1.0138 = 148.8k (our arithmetic from Table 12)",
+      "Rounded in text: 18.6% -> 18.6%, 7.98% -> 8.0% / 8%, 1.38% -> 1.4%, 4.33% -> 4.3%, 0.43% -> 0.4% (our rounding)",
+      "Retailers could compensate upstream echelons and still keep 20%-43% of their savings (initial setting): Section 5, Managerial implications",
+      "Reluctance to share: bargaining power, cost exposure, confidentiality and antitrust rules: Section 1",
+      "Average could be computed with cryptographic methods such as secure multi-party computation or homomorphic encryption; not implemented in the paper: Abstract, Section 1, Section 6",
+      "Limits: unlimited capacities, stylised demand; field tests with real data left for future work: Section 6"
+    ]
+  },
+  "acts": [
+    {"start": 0, "head": "Demand wobbles. Supplier orders wobble harder.", "sub": "In a simulated four-tier chain, each customer's demand has a variation coefficient of 1.0. By the time orders reach the supplier, it's 1.94."},
+    {"start": 210, "head": "Retailers won't hand over their sales data.", "sub": "Bargaining power and competition rules keep it private. So each retailer forecasts on its own sales only, and passes its own noise upstream."},
+    {"start": 420, "head": "Share only the market average.", "sub": "Each retailer blends its own forecast 50/50 with the average demand of all four. Retailer order swings fall 18.6% and retailer costs 8%."},
+    {"start": 630, "head": "The wholesaler pays a little for it.", "sub": "Retailers now order in step, so wholesaler costs rise 1.4%. The chain still saves 0.4%, and retailers could pay upstream back and keep 20-43% of their gain."}
+  ],
+  "endStart": 810,
+  "total": 900,
+  "endTitle": "Share the average, not the data",
+  "endTag": "Retailer costs fall 8% and wholesaler costs rise 1.4%, so the savings need sharing upstream.",
+  "footnote": "Source: Hrušovský et al. (2026), Int. J. Production Economics, Tables 7 and 12, scenario 3 (demand CV 1.0).",
+  "cta": "New research explainer every Wednesday · Paper link in the post",
+  "goodFrom": 434,
+  "kpis": [
+    {"label": "Retailer costs, € thousand", "decimals": 1, "steps": [[40, 173.4], [434, 159.5]]},
+    {"label": "Wholesaler costs, € thousand", "decimals": 1, "steps": [[40, 146.8], [434, 148.8]], "goodFrom": 100000}
+  ],
+  "model": {
+    "flow": {
+      "title": "How the shared average works",
+      "steps": ["Each retailer sees its own sales", "Only the average is shared", "Forecast: half own, half average", "Smoother retailer orders"],
+      "reveal": [0, 2, 2, 2],
+      "lit": [[1, 0], [2, 1], [2, 2], [2, 3], [3, 3]]
+    },
+    "compare": {
+      "title": "Order swings vs demand swings, retailers",
+      "rightTitle": "Same ratio, wholesaler",
+      "decimals": 2, "rightDecimals": 2, "unit": "", "rightUnit": "", "rightWorse": true, "best": 1,
+      "rows": [
+        {"label": "Own sales only", "value": 2.0, "right": 4.53, "act": 0},
+        {"label": "Own sales + shared average", "value": 1.63, "right": 4.73, "act": 2}
+      ]
+    }
+  },
+  "post": {
+    "linkedin": "In a new study, retailers cut costs 8% without showing anyone their own sales, by sharing only the market average. The catch sits one step upstream.\n\nNew open-access research in the International Journal of Production Economics, from authors at WU Vienna University of Economics and Business, simulates four retailers, a wholesaler, a manufacturer and a supplier. Normally each retailer forecasts on its own sales. Here they also get the average demand across all four, which encryption could compute without exposing anyone's numbers, and blend it 50/50 with their own forecast.\n\nIn the mid-variability scenario, retailer order swings fall 18.6% and retailer costs 8.0%. The whole chain saves 0.4%.\n\nThe trade-off: retailers now order in step, so the wholesaler sees bigger swings and pays 1.4% more. The authors suggest retailers pass part of the savings upstream; they would still keep 20-43% of them. It's a simulation with unlimited capacity, not a field test.\n\nWould your retailers or distributors share a pooled demand signal if nobody saw their individual numbers?\n\nPaper link in the first comment. A new research explainer every Wednesday.\n\nFull show: The Planning Desk, supply chain news every weekday on Apple Podcasts and Spotify.\n\n#bullwhip #demandplanning #supplychain #inventory",
+    "comment_paper": "Paper (open access): Hrušovský, Arıkan & Silbermayr (2026), Impact of privacy-preserving horizontal retailer information sharing on the bullwhip effect in supply chains with multiple retailers. International Journal of Production Economics. https://doi.org/10.1016/j.ijpe.2026.110258",
+    "short_title": "8% Lower Retailer Costs by Sharing One Average | Research",
+    "short_caption": "Retailers that share only the average market demand cut order swings 18.6% and costs 8% in a simulated four-tier chain, while the wholesaler pays 1.4% more. Hrušovský, Arıkan & Silbermayr (2026), International Journal of Production Economics, open access. AI-generated explainer.",
+    "hashtags": ["bullwhip", "demandplanning", "supplychain", "inventory"],
+    "tags": ["WU (Vienna University of Economics and Business)", "International Journal of Production Economics"]
+  }
+}
