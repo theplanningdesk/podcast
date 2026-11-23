@@ -374,5 +374,18 @@
     "duration_sec": 891,
     "pub_date": "2026-11-22T07:30:00+01:00",
     "transcript_lines": 85
+  },
+  {
+    "guid": "planning-desk-2026-11-23",
+    "stem": "2026-11-23",
+    "number": 30,
+    "format": "daily",
+    "title": "Swedish Sawmills: Closures Spread, More Expected",
+    "summary": "Swedish sawmill closures spread from Skellefteå to Småland as Holmen, Moelven and Vida cut capacity and the industry's analyst expects more. Also: a tentative union deal eases the strike threat at the Port of Los Angeles and Long Beach, the Rhine at Kaub, Xeneta's 2027 rate outlook and SKF Vertevo's record date.",
+    "notes_html": "<p>Swedish sawmill closures spread from Skellefteå to Småland as Holmen, Moelven and Vida cut capacity and the industry&#x27;s analyst expects more. Also: a tentative union deal eases the strike threat at the Port of Los Angeles and Long Beach, the Rhine at Kaub, Xeneta&#x27;s 2027 rate outlook and SKF Vertevo&#x27;s record date.</p><p>Sources:</p><ul><li><a href=\"https://www.di.se/nyheter/sagverksdoden-sprider-sig-fler-nedlaggningar-vantar/\">Dagens Industri: Sågverksdöden sprider sig, fler nedläggningar väntar</a></li><li><a href=\"https://www.tv4.se/artikel/tt-261103-skogsvarsel1-58bd3e99/holmen-varslar-ett-50-tal-utanfor-skelleftea\">TV4/TT: Holmen varslar ett 50-tal utanför Skellefteå</a></li><li><a href=\"https://efn.se/moelven-lagger-ned-annu-ett-sagverk\">EFN: Moelven lägger ned ännu ett sågverk</a></li><li><a href=\"https://woodcentral.com.au/vida-closes-orrefors-urshult-sweden-fibre-squeeze/\">Wood Central: Vida closes Orrefors and Urshult as Sweden&#x27;s fibre squeeze bites</a></li><li><a href=\"https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach\">FreightWaves: Tentative union deal averts strike at Port of LA-Long Beach</a></li><li><a href=\"https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&amp;includeTimeseries=true&amp;includeCurrentMeasurement=true\">Pegelonline: Rhine gauges</a></li><li><a href=\"https://www.seatrade-maritime.com/containers/container-rates-to-plummet-in-2027\">Seatrade Maritime: Container rates to plummet in 2027</a></li><li><a href=\"https://www.xeneta.com/news/xeneta-summit-analysts-forecast-ocean-freight-spot-rates-to-fall-30-in-2027-as-red-sea-return-sees-capacity-flooding-back\">Xeneta: Summit analysts forecast ocean freight spot rates to fall 30% in 2027</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-23.html\">https://theplanningdesk.github.io/podcast/e/2026-11-23.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3447559,
+    "duration_sec": 215,
+    "pub_date": "2026-11-23T06:30:00+01:00",
+    "transcript_lines": 27
   }
 ]
