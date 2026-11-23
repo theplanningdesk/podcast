@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-22T12:53:54.932165+00:00",
+ "fetched_at": "2026-11-23T11:13:58.202626+00:00",
  "window_days": 8,
- "sources_ok": 70,
+ "sources_ok": 69,
  "sources_total": 75,
  "items": [
   {
@@ -43,6 +43,16 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "How Old Material-Handling Equipment Is Exposing Warehouses to Cyber Risk",
+   "link": "https://www.supplychainbrain.com/scb-feature/article/16542153/how-old-materialhandling-equipment-is-exposing-warehouses-to-cyber-risk",
+   "published": "2026-11-23T07:40:00+00:00",
+   "summary": "Warehouses that insist on sticking with aging equipment are especially vulnerable to the techniques of modern-day cyber attackers...",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SupplyChainBrain",
@@ -195,26 +205,6 @@
    "planning_terms": false
   },
   {
-   "source": "SupplyChainBrain",
-   "title": "Malaysia Loosens Rare Earths Curbs for France",
-   "link": "https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16541875/malaysia-loosens-rare-earths-curbs-for-france",
-   "published": "2026-11-18T08:00:00+00:00",
-   "summary": "The announcement came following a meeting between French President Emmanuel Macron and Malaysian Prime Minister Anwar Ibrahim...",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Supply Chain Dive",
-   "title": "Starbucks inventory availability at ‘all-time high’ with daily deliveries, CEO says",
-   "link": "https://www.supplychaindive.com/news/starbucks-inventory-availability-at-all-time-high-with-daily-deliveries/874923/",
-   "published": "2026-11-18T15:38:15+00:00",
-   "summary": "The coffeehouse chain has been testing a 24-hour operating model to improve inventory availability and build a faster, more reliable supply chain.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
    "source": "Supply Chain Dive",
    "title": "Walmart’s sub-30-minute delivery volume surges in Q3",
    "link": "https://www.supplychaindive.com/news/walmarts-sub-30-minute-delivery-volume-surges-in-q3/875339/",
@@ -295,21 +285,11 @@
    "planning_terms": false
   },
   {
-   "source": "Supply Chain Dive",
-   "title": "Amazon’s first Puerto Rico delivery station speeds up shipping",
-   "link": "https://www.supplychaindive.com/news/amazons-first-puerto-rico-delivery-station-speeds-up-shipping/874996/",
-   "published": "2026-11-18T17:35:00+00:00",
-   "summary": "The 100,000-square-foot site can bring delivery time down to about two days for customers in the San Juan metro area, compared to two weeks.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "Manufacturing Dive",
    "title": "US Steel, United Steelworkers reach 4-year labor deal, up for vote",
    "link": "https://www.manufacturingdive.com/news/us-steel-4-year-labor-deal-usw-vote-cleveland-cliffs/875315/",
    "published": "2026-11-20T16:26:00+00:00",
-   "summary": "The proposal includes annual wage increases and healthcare improvements for 11,200 employees following extended negotiations. It came two weeks after Cleveland-Cliffs reached a deal with the United Steelworkers.",
+   "summary": "The proposal includes annual wage increases and healthcare improvements for 11,200 employees following extended negotiations. It came two weeks after Cleveland-Cliffs reached a deal with the union.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -319,7 +299,7 @@
    "title": "Tesla proposes $3.1 billion Texas polysilicon refinery",
    "link": "https://www.manufacturingdive.com/news/LiMiK-Capital-328-million-manufacturing-plant-south-carolina/875286/",
    "published": "2026-11-20T16:05:18+00:00",
-   "summary": "Also this week, LImik Capital, Silex Microsystems and HDI America made U.S. investment announcements.",
+   "summary": "Also this week, Limik Capital, Silex Microsystems and HDI America made U.S. investment announcements.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -329,7 +309,7 @@
    "title": "Textron finds private equity buyer for industrial business at $1.2B",
    "link": "https://www.manufacturingdive.com/news/textron-selling-specialized-vehicles-kautex-kingswood-capital-management/875269/",
    "published": "2026-11-20T14:14:26+00:00",
-   "summary": "An affiliate of Kingswood Capital Management will oversee the industrial segment, which includes an auto supplier and specialty vehicles. This aligns with the company’s shift to become a pure-play aerospace and defense company.",
+   "summary": "An affiliate of Kingswood Capital Management will oversee the industrial segment, which includes an auto supplier and specialty vehicles. This aligns with Textron’s shift to become a pure-play aerospace and defense company.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -380,16 +360,6 @@
    "link": "https://www.manufacturingdive.com/news/nvidia-revenue-reaches-1158b-q3-more-than-double-year-over-year/874956/",
    "published": "2026-11-18T15:32:02+00:00",
    "summary": "Nvidia announced new supply partnerships on an earnings call Wednesday. Former CEO Jensen Huang will not be reinstated after an affair with an alleged Chinese spy, Board Chairman Harvey Jones said.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Manufacturing Dive",
-   "title": "Hadrian acquires steel caster, plans $300M facility upgrade and expansion",
-   "link": "https://www.manufacturingdive.com/news/hadrian-acquiring-kutztown-foundry-machine-f6-upgrade-expand-pennsylvania/874947/",
-   "published": "2026-11-18T15:10:28+00:00",
-   "summary": "The defense startup aims to update and grow manufacturing capacity at Kutztown Foundry & Machine’s site in Pennsylvania to support the U.S. Navy’s submarine program.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -446,13 +416,13 @@
   },
   {
    "source": "Logistics Viewpoints",
-   "title": "Retail’s Inventory Problem Is Not Too Much Stock. It Is Stock in the Wrong Places.",
-   "link": "https://logisticsviewpoints.com/2026/11/19/retail-s-inventory-problem-is-not-too-much-stock-it-is-stock-in-the-wrong-places/",
-   "published": "2026-11-19T13:00:00+00:00",
-   "summary": "Retail inventory optimization is a network design decision. See why the right stock location, fulfillment economics and order promises matter more than. The post Retail’s Inventory Problem Is Not Too Much Stock. It Is Stock in the Wrong Places. appeared first on Logistics Viewpoints .",
+   "title": "When One Character Stops the Workflow: The Hidden Digital Dependencies of Modern Supply Chains",
+   "link": "https://logisticsviewpoints.com/2026/11/22/when-one-character-stops-the-workflow-the-hidden-digital-dependencies-of-modern-supply-chains/",
+   "published": "2026-11-22T19:40:01+00:00",
+   "summary": "A single misplaced character can stop a business process. I was reminded of that recently when a WordPress workflow supporting Logistics Viewpoints stopped functioning. After working through the failure, I found an unexpected double quotation mark at the end of the first line of a PHP file involved in the process. Removing it restored the […] The post When One Character Stops the Workflow: The…",
    "via": "feed",
    "lane": "planning",
-   "planning_terms": true
+   "planning_terms": false
   },
   {
    "source": "Logistics Viewpoints",
@@ -526,6 +496,56 @@
   },
   {
    "source": "SCM.dk",
+   "title": "Carlsbergs Jacob Aarup-Andersen er kåret som Årets Leder 2026",
+   "link": "https://www.scm.dk/carlsbergs-jacob-aarup-andersen-er-karet-som-arets-leder-2026",
+   "published": "2026-11-23T11:00:00+00:00",
+   "summary": "Carlsbergs topchef får Ledernes pris. Siden 2023 har han ledet koncernens satsning på flere alkoholfrie drikkevarer med et opkøb og en ny fabrik.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Spar 20.000 på PALOMAT® Greenline",
+   "link": "https://www.scm.dk/spar-20000-pa-palomat-greenline",
+   "published": "2026-11-23T09:40:00+00:00",
+   "summary": "Et tilbud der ikke tåler dagens lys.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "FREJA lejer 9.169 kvadratmeter i ny logistikejendom i Horsens",
+   "link": "https://www.scm.dk/freja-lejer-9169-kvadratmeter-i-ny-logistikejendom-i-horsens",
+   "published": "2026-11-23T07:00:00+00:00",
+   "summary": "FREJA Transport & Logistics har indgået en lejeaftale med Verdion om lager- og kontorarealer i Business Park Vega vest for Horsens med adgang til E45.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Industrial megatrends 2040",
+   "link": "https://www.scm.dk/industrial-megatrends-2040",
+   "published": "2026-11-23T07:00:00+00:00",
+   "summary": "Most industrial strategies were build for a world that no longer exists",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "AI har ikke samme viden, som planlæggere har",
+   "link": "https://www.scm.dk/ai-har-ikke-samme-viden-som-planlaeggere-har",
+   "published": "2026-11-23T04:00:00+00:00",
+   "summary": "Spørg en erfaren planlægger, om virksomhedens forsyningskæde fungerer, som procesbeskrivelserne lover. Svaret er næsten altid nej, og gabet er sjældent lille. Det tager den erfarne planlægger højde for, når supply chain planen bliver udformet. Hver dag. Og det er her, kunstig intelligens falder igennem.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
    "title": "Nu tester Kina autonomt og elektrisk containerskib",
    "link": "https://www.scm.dk/nu-tester-kina-autonomt-og-elektrisk-containerskib",
    "published": "2026-11-20T14:24:00+00:00",
@@ -550,6 +570,16 @@
    "link": "https://www.scm.dk/millioninvestering-bringer-avanceret-droneteknologi-til-odense",
    "published": "2026-11-20T07:00:00+00:00",
    "summary": "Europæiske TEKEVER etablerer sig i Odense med autonome dronesystemer og kunstig intelligens. Investeringen åbner for samarbejde med danske teknologi- og industrivirksomheder.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Aalborg Portland udskifter diesel med el i tung cementlogistik",
+   "link": "https://www.scm.dk/aalborg-portland-udskifter-diesel-med-el-i-tung-cementlogistik",
+   "published": "2026-11-20T06:17:00+00:00",
+   "summary": "Tre nye Linde X50 el-truck skal sikre høj oppetid, et bedre arbejdsmiljø og lavere omkostninger, når Aalborg Portland hver dag håndterer hundredvis af tunge paller med cement. N.C. Nielsen har leveret truckene med skræddersyede Lithium-ION batterier, og elektrificeringen er nu integreret i en del af produktionen hos Aalborg Portland, hvor dieseltruck i mange år har været det oplagte valg.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -630,66 +660,6 @@
    "link": "https://www.scm.dk/axacon-udvikler-integration-til-proglove-hardware",
    "published": "2026-11-18T10:10:00+00:00",
    "summary": "Axacons WMS løsning fungerer fint med mange anerkendte hardware brands. Alligevel kan der være optimerende fordele ved en egentlig integration mellem hardware og software, og i den evige jagt på selv små forbedringer har Axacon udviklet en integration til det tyske hardware brand, ProGlove, som er særlig anerkendt og efterspurgte for deres håndleds scannere.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Novo forbereder sig på begrænset adgang til råvarer",
-   "link": "https://www.scm.dk/novo-forbereder-sig-pa-begraenset-adgang-til-ravarer",
-   "published": "2026-11-18T07:51:00+00:00",
-   "summary": "Biodiversitetskrisen er ikke kun et miljøspørgsmål, men også en trussel mod virksomheders adgang til råvarer. Det er budskabet fra Novo, hvor særligt vand og glukose er under lup, fordi begge dele afhænger direkte af sunde økosystemer.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Alvorlig arbejdsrelateret stress når rekordhøjt niveau",
-   "link": "https://www.scm.dk/alvorlig-arbejdsrelateret-stress-nar-rekordhojt-niveau",
-   "published": "2026-11-18T07:00:00+00:00",
-   "summary": "Antallet af anmeldte stressrelaterede erhvervssygdomme er steget med 50 procent siden 2019. Udviklingen understreger behovet for forebyggelse og et styrket psykisk arbejdsmiljø.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Nearly Half of Supply Chain Leaders Rate Technology ​Readiness ​Ahead ​​of ​AI Governance​​, RELEX Finds",
-   "link": "https://www.scm.dk/nearly-half-of-supply-chain-leaders-rate-technology-readiness-ahead-of-ai-governance-relex-finds",
-   "published": "2026-11-17T15:00:00+00:00",
-   "summary": "Governance ranks lowest across retail and manufacturing as practitioners seek ​help applying​​ AI and proving its value",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Dataparathed til ERP er nøglen til automatisering",
-   "link": "https://www.scm.dk/dataparathed-til-erp-er-noglen-til-automatisering",
-   "published": "2026-11-17T12:56:00+00:00",
-   "summary": "Efterhånden som AI og automatisering omformer enterprise-software, ønsker mange virksomheder at implementere intelligent ERP. Men der er én afgørende faktor, der bestemmer, hvor langt og hvor hurtigt I kan komme: dataparathed til ERP.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Gefion får 500 millioner kroner til udvidet AI-kapacitet",
-   "link": "https://www.scm.dk/gefion-far-500-millioner-kroner-til-udvidet-ai-kapacitet",
-   "published": "2026-11-17T11:00:00+00:00",
-   "summary": "Netcompany bliver medejer af Danmarks AI-supercomputer Gefion. En investering på 500 millioner kroner skal give virksomheder bedre adgang til sikker AI-infrastruktur og understøtte digitalisering af forretningsprocesser.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Maersk sender flere ruter gennem Suez – Aarhus er med",
-   "link": "https://www.scm.dk/maersk-sender-flere-ruter-gennem-suez-aarhus-er-med",
-   "published": "2026-11-17T10:46:00+00:00",
-   "summary": "A.P. Møller - Maersk og Hapag-Lloyd fortsætter tilbagevenden til Suezkanalen og Det Røde Hav. Nu omlægges yderligere tre ruter i Gemini-samarbejdet fra sejladsen syd om Afrika til den kortere rute gennem Suezkanalen.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -796,6 +766,16 @@
   },
   {
    "source": "BME",
+   "title": "23.11.2026 KI-Pilotprojekt, und dann? Systematische Integration von Künstlicher Intelligenz in Einkaufsprozesse 67 % der Unternehmen setzen mindestens ein KI-Tool im Einkauf ein, weitere 17 % bereiten die Einführung von KI vor, zeigt der Pulse Check der Procurement Initiative. Doch KI ist nicht…",
+   "link": "https://www.bme.de/news/ki-pilotprojekt-und-dann-systematische-integration-von-kuenstlicher-intelligenz-in-einkaufsprozesse/",
+   "published": "2026-11-23T00:00:00+00:00",
+   "summary": "67 % der Unternehmen setzen mindestens ein KI-Tool im Einkauf ein, weitere 17 % bereiten die Einführung von KI vor, zeigt der Pulse Check der Procurement Initiative. Doch KI ist nicht nur ein weiteres Tool: Sie verändert den Beschaffungsprozess grundlegend. Nach der ersten Experimentierphase gilt… Stellen Sie sich den Beschaffungsprozess vor, wie er Jahrzehnte funktionierte: Spezialist:innen im Einkauf sammeln Informationen händisch zusammen, prüfen Angebote einzeln, stimmen sich mit…",
+   "via": "page links, article read",
+   "lane": "planning",
+   "planning_terms": true
+  },
+  {
+   "source": "BME",
    "title": "18.11.2026 Nächster Reifegrad im Einkauf mit Agentic Procurement: Liebherr erhält den Procurement Excellence Award 2026 Vom digitalen Einkauf zum intelligenten Wertschöpfungssystem: Mit BOB – Brain of Buying und einem Netzwerk spezialisierter KI-Agenten macht Liebherr Einkaufswissen skalierbar und…",
    "link": "https://www.bme.de/news/naechster-reifegrad-im-einkauf-mit-agentic-procurement-liebherr-erhaelt-den-procurement-excellence-award-2026/",
    "published": "2026-11-18T00:00:00+00:00",
@@ -866,6 +846,16 @@
   },
   {
    "source": "produktion.de",
+   "title": "Rüstungsbeschaffung & Verteidigung Heckler & Koch: Über 70.000 neue HK416F-Sturmgewehre für die französischen Streitkräfte Frankreich baut weiter auf Heckler & Koch: Die Beschaffungsbehörde DGA bestellt im AIF-Programm über 70.000 weiterentwickelte HK416F-Sturmgewehre samt Optiken und…",
+   "link": "https://www.produktion.de/ruestung-aerospace/heckler-amp-koch-ueber-70000-neue-hk416f-sturmgewehre-fuer-die-franzoesischen-streitkraefte/2772821",
+   "published": "2026-11-23T09:23:00+00:00",
+   "summary": "Frankreich baut weiter auf Heckler & Koch: Die Beschaffungsbehörde DGA bestellt im AIF-Programm über 70.000 weiterentwickelte HK416F-Sturmgewehre samt Optiken und Signaturdämpfern für die kommenden zehn Jahre. Neuer AIF-Großauftrag: Die französische Beschaffungsbehörde Direction générale de l’armement (DGA) erteilte Heckler & Koch France am 2. November 2026 einen neuen Auftrag im Rahmen des Programms „Armement Individuel Futur“ (AIF) . Umfang und Laufzeit: Der Vertrag umfasst die Lieferung von…",
+   "via": "page links, article read",
+   "lane": "planning",
+   "planning_terms": true
+  },
+  {
+   "source": "produktion.de",
    "title": "Facturee - Smarte Beschaffung von Zeichnungsteilen",
    "link": "https://www.produktion.de/smarte-beschaffung-von-zeichnungsteilen-by-facturee",
    "published": null,
@@ -876,8 +866,8 @@
   },
   {
    "source": "produktion.de",
-   "title": "Interview mit Daniel Stengel, Kearney Fabrik des Jahres: Was die Besten anders machen Was macht die Fabrik des Jahres besser als andere Werke? Im Interview erklärt Daniel Stengel von Kearney, wie die Sieger mit KI, Automatisierung und gezielten Investitionen ihre Wettbewerbsfähigkeit stärken. Anja…",
-   "link": "https://www.produktion.de/events-fabrik-des-jahres/fabrik-des-jahres-was-die-besten-anders-machen/2771632",
+   "title": "KI-Assistent Claude in der Fertigung Infor bindet Claude an seine Fertigungssoftware an Infor und Anthropic verbinden Claude mit Infors Fertigungssoftware. Produktionsplaner, Einkäufer und Kundenservice können Betriebsdaten im Chat abfragen und Änderungen an Aufträgen oder Bestellungen zur…",
+   "link": "https://www.produktion.de/technik/infor-bindet-claude-an-seine-fertigungssoftware-an/2772872",
    "published": null,
    "summary": "",
    "via": "page links, article read",
@@ -896,10 +886,10 @@
   },
   {
    "source": "produktion.de",
-   "title": "Tarifstreit in der Metall- und Elektroindustrie Ganztägige Warnstreiks: IG Metall legt Autobauer und Werften lahm Die IG Metall eskaliert im Tarifstreit: Mit ganztägigen Warnstreiks legt die Gewerkschaft weite Teile der Industrie lahm, darunter Autobauer wie BMW und Audi. Arbeitgeber warnen vor…",
-   "link": "https://www.produktion.de/wirtschaft/ganztaegige-warnstreiks-ig-metall-legt-autobauer-und-werften-lahm/2771913",
-   "published": "2026-11-20T07:04:00+00:00",
-   "summary": "Die IG Metall eskaliert im Tarifstreit: Mit ganztägigen Warnstreiks legt die Gewerkschaft weite Teile der Industrie lahm, darunter Autobauer wie BMW und Audi. Arbeitgeber warnen vor drastischen Schäden. Die Verhandlungen stecken derweil fest. Flächendeckende Warnstreiks: Die IG Metall ruft bundesweit tausende Beschäftigte zu 24-Stunden-Streiks auf, betroffen sind unter anderem BMW , Audi , Zulieferer sowie Werften. Erstmals seit acht Jahren: Die Gewerkschaft nutzt das Instrument der…",
+   "title": "Verteidigungsindustrie & Rüstungsbeschaffung FFG erhält Großaufträge aus den Niederlanden für ACSV und Wisent 2 Nach der Übernahme durch Deutz meldet die Flensburger Fahrzeugbau Gesellschaft (FFG) den nächsten Erfolg: Die Niederlande bestellen auf der Messe NEDS weitere ACSV- und…",
+   "link": "https://www.produktion.de/ruestung-aerospace/ffg-erhaelt-grossauftraege-aus-den-niederlanden-fuer-acsv-und-wisent-2/2771946",
+   "published": "2026-11-20T07:30:00+00:00",
+   "summary": "Nach der Übernahme durch Deutz meldet die Flensburger Fahrzeugbau Gesellschaft (FFG) den nächsten Erfolg: Die Niederlande bestellen auf der Messe NEDS weitere ACSV- und Wisent-2-Fahrzeuge zum Aufbau ihrer Leopard-2A8-Panzertruppe. Auftragseingang aus den Niederlanden: Das niederländische Beschaffungsamt Commando Materieel en IT (COMMIT) hat bei der Flensburger Fahrzeugbau Gesellschaft mbH (FFG) weitere Fahrzeuge der Plattform ACSV sowie Wisent 2 Bergepanzer bestellt. Vertragsabschluss auf der…",
    "via": "page links, article read",
    "lane": "planning",
    "planning_terms": false
@@ -908,48 +898,8 @@
    "source": "produktion.de",
    "title": "Podcast Industry Insights mit Sparetech Ersatzteilmanagement: Wie KI Lagerbestände reduzieren kann Anja Ringel 18. November 2026",
    "link": "https://www.produktion.de/mediathek/ersatzteilmanagement-wie-ki-lagerbestaende-reduzieren-kann/2769671",
-   "published": null,
-   "summary": "",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "produktion.de",
-   "title": "Sponsored Ergonomie Ergonomische Arbeitsplatzgestaltung in der Produktion Effizienter, gesünder und motivierter arbeiten: Erfahren Sie jetzt, wie Sie mit Ergonomie Ihre manuelle Fertigung optimieren. item Redaktion 20. November 2026",
-   "link": "https://www.produktion.de/technik/ergonomische-arbeitsplatzgestaltung-in-der-produktion/1765976",
-   "published": null,
-   "summary": "",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "produktion.de",
-   "title": "Roboterhände für die industrielle Automatisierung Roboterhände: Schunk-Spin-off wird zu Tactilia Roboterhände sollen künftig mehr Aufgaben in Produktion und Logistik übernehmen. Das Schunk-Spin-off Tactilia Robotics entwickelt dafür eine modulare Plattform, die sich in unterschiedliche…",
-   "link": "https://www.produktion.de/technik/roboterhaende-schunk-spin-off-wird-zu-tactilia/2771157",
-   "published": null,
-   "summary": "",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "produktion.de",
-   "title": "Verteidigungsindustrie & Rüstungsbeschaffung FFG erhält Großaufträge aus den Niederlanden für ACSV und Wisent 2 Nach der Übernahme durch Deutz meldet die Flensburger Fahrzeugbau Gesellschaft (FFG) den nächsten Erfolg: Die Niederlande bestellen auf der Messe NEDS weitere ACSV- und…",
-   "link": "https://www.produktion.de/ruestung-aerospace/ffg-erhaelt-grossauftraege-aus-den-niederlanden-fuer-acsv-und-wisent-2/2771946",
-   "published": null,
-   "summary": "",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "produktion.de",
-   "title": "Industriepartnerschaft für moderne Luftverteidigung Hensoldt und ZF kooperieren: Serienfertigung von Spexer-Radaren zur Drohnenabwehr startet Wegen stark steigender Nachfrage nach Drohnenabwehr bündeln Hensoldt und ZF ihre Kräfte: ZF übernimmt die skalierbare Serienfertigung der Spexer-Radare und…",
-   "link": "https://www.produktion.de/ruestung-aerospace/hensoldt-und-zf-kooperieren-serienfertigung-von-spexer-radaren-zur-drohnenabwehr-startet/2771124",
-   "published": null,
-   "summary": "",
+   "published": "2026-11-18T06:28:00+00:00",
+   "summary": "Wie lassen sich Ersatzteilbestände reduzieren? Sparetech-Mitgründer Lukas Biedermann spricht im Podcast Industry Inisghts über KI, Kosten und Ersatzteillager. Ersatzteile sind für Industrieunternehmen eine Art Versicherung gegen Produktionsstillstände. Fällt eine Maschine aus, muss die passende Komponente möglichst schnell verfügbar sein. Doch diese Absicherung hat ihren Preis: In den Lagern großer Produktionsunternehmen liegen Ersatzteilbestände im Wert von vielen Millionen Euro. Nicht selten…",
    "via": "page links, article read",
    "lane": "planning",
    "planning_terms": false
@@ -976,13 +926,33 @@
   },
   {
    "source": "Dagens Industri",
-   "title": "Sågverksdöden sprider sig: ”Fler nedläggningar väntar”",
-   "link": "https://www.di.se/nyheter/sagverksdoden-sprider-sig-fler-nedlaggningar-vantar/",
-   "published": "2026-11-21T17:39:18+00:00",
-   "summary": "Urshult, Årjäng och Skellefteå. Sågverksdöden sprider sig över hela Sverige. ”Det har inte varit så här illa på decennier”, säger Christian Nielsen, marknadsanalytiker på Skogsindustrierna.",
+   "title": "Tyskt rus – franskt ras",
+   "link": "https://www.di.se/analys/tyskt-rus-franskt-ras/",
+   "published": "2026-11-23T10:37:34+00:00",
+   "summary": "Trycket i den tyska ekonomin är det högsta på över fem år, medan de franska företagen deppar. Skillnaden i ekonomiskt humör mellan bjässarna är nu den största sedan 2020. Det framgår av inköpschefsindex.",
    "via": "feed",
    "lane": "planning",
-   "planning_terms": true
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Industri",
+   "title": "Humöret sjönk för brittiskt näringsliv",
+   "link": "https://www.di.se/live/humoret-sjonk-for-brittiskt-naringsliv/",
+   "published": "2026-11-23T09:38:34+00:00",
+   "summary": "Det kombinerade inköpschefsindexet i Storbritannien sjönk till 52,3 i november, jämfört med 52,9 föregående månad. Det visar preliminär statistik från S&P Global.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Industri",
+   "title": "Kombinerat pmi över euroområdet oförändrat",
+   "link": "https://www.di.se/live/kombinerat-pmi-over-euroomradet-oforandrat/",
+   "published": "2026-11-23T09:09:35+00:00",
+   "summary": "Ett snabbestimat över euroområdets kombinerade inköpschefsindex uppgick till 51,7 oförändrat från föregående månad. Det visar preliminär statistik från S&P Global.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "arXiv (planning and OR preprints)",
@@ -1010,16 +980,6 @@
    "link": "https://arxiv.org/abs/2611.23699v1",
    "published": "2026-11-18T01:42:38+00:00",
    "summary": "Short-term scheduling in multi-product mineral manufacturing requires coordinating material movement and production across interconnected processing stages while addressing confirmed customer orders and longer-term production requirements. This work develops a generalized network-based, lexicographic multi-objective optimization (MOO) scheduling framework for these systems. The formulation represents the progression of material from raw-material supply through production and inventory to customer fulfillment. A sequential objective hierarchy first prioritizes fulfillment of confirmed customer orders and then progressively directs feasible production capacity toward cumulative targets supplied by the facility's demand-planning process. This approach ensures that the performance achieved for each higher-priority objective is preserved before subsequent targets are considered. Selected product-line activation decisions are represented using generalized disjunctive programming (GDP). An industrial mineral-manufacturing case study demonstrates the proposed framework's ability to generate feasible shift-level schedules and preserve the intended operational priorities with practical computational performance.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "Delayed Heuristic-Behavior-Target Coupling for Off-Policy Reinforcement Learning in Inventory Control",
-   "link": "https://arxiv.org/abs/2611.19917v1",
-   "published": "2026-11-15T10:21:13+00:00",
-   "summary": "Many reinforcement learning methods tie data collection to the task policy, while coordinating independently optimized behavior and target policies remains challenging. Policies learned by these methods can perform unreliably in long-horizon tasks under uncertainty, such as inventory control, where failures can incur extreme costs. We introduce Heuristic Behavior Policy Optimization (HBPO), an off-policy framework that routes heuristic guidance through persistent behavior learning, coupled with target-policy, updating separately with residual-based advantage estimation and emphatic weighting. Under matched environment interaction budgets on DSIS and its risk-augmented variant DSIS-RB, HBPO recovers many high-cost initial policies and improves most non-collapse comparison groups. Cold starts achieve competitive costs without final cost collapse across all tested seeds. We identify a transmission chain in the delayed heuristic-behavior-target coupling as a key driver of recovery and improvement. Generation-level diagnostics trace heuristic uptake and subsequent selective target responses, while component ablations support the contribution of this transmission mechanism to policy recovery and improvement.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
@@ -1103,6 +1063,16 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SAP News",
+   "title": "Interview with Sindhu Gangadharan: “I Want People to Say ‘That Idea Started in India'”",
+   "link": "https://news.sap.com/2026/11/interview-sindhu-gangadharan-sap-labs-india/",
+   "published": "2026-11-23T05:15:00+00:00",
+   "summary": "As SAP's biggest R&D base outside Walldorf, SAP Labs India sits at the center of the company's AI ambitions. Managing Director Sindhu Gangadharan explains why the location matters.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SAP News",
@@ -1225,86 +1195,6 @@
    "planning_terms": false
   },
   {
-   "source": "idw-online (DACH research)",
-   "title": "Von Lieferketten bis zur Krebsforschung: Wie kausale KI an der Constructor University neue Forschungswege eröffnet",
-   "link": "http://idw-online.de/de/news880934",
-   "published": "2026-11-16T12:32:00+00:00",
-   "summary": "Wie kann Forschung zu Automobil-Lieferketten eine neue Forschungsrichtung in der Krebsbehandlung informieren? Für Ishansh Gupta, Lecturer und Postdoktorand an der Constructor University, lautet die Antwort: Kausale KI – eine Form künstlicher Intelligenz, die über einfache Mustererkennung hinausgeht, um zu analysieren, warum bestimmte Muster existieren, und dabei hilft, Ergebnisse von…",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": true
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "Neue Rote Liste der Ohrwürmer: Insektengruppe weitgehend stabil",
-   "link": "http://idw-online.de/de/news881100",
-   "published": "2026-11-18T11:24:00+00:00",
-   "summary": "Zwickt nicht und läuft nicht in Dauerschleife: Einer oft missverstandenen Insektengruppe geht es weitestgehend gut, zeigt die neue Rote Liste der Ohrwürmer. Die Bestände der meisten Ohrwurm-Arten in Deutschland sind stabil. Zwei Arten wurden aufgrund einer verbesserten Datengrundlage in eine günstigere Rote-Liste-Kategorie eingestuft, bei keiner Art hat sich die Kategorie verschlechtert. Die vom…",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "Wenn KI auf menschliche Aufsicht trifft: neues Framework zur Lieferantenauswahl verbindet Algorithmen mit Verantwortung",
-   "link": "http://idw-online.de/de/news880986",
-   "published": "2026-11-17T08:46:00+00:00",
-   "summary": "Da globale Lieferketten zunehmend komplexen und unvorhersehbaren sozioökonomischen, ökologischen und regulatorischen Bedingungen ausgesetzt sind, stehen viele Unternehmen vor einem wachsenden Bedarf an schneller und effektiver Lieferantenbewertung. Deshalb haben Forscher*innen an der Constructor University ein neues Framework für Lieferantenauswahl vorgeschlagen, das die Interpretationskraft von…",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "Accountable AI: Constructor University researchers develop AI-powered, human-centered framework for supplier selection",
-   "link": "http://idw-online.de/de/news880984",
-   "published": "2026-11-17T08:43:00+00:00",
-   "summary": "With global supply chains facing increasingly complex and unpredictable socio-economic, environmental and regulatory conditions, many companies are facing a growing need for quick and effective supplier evaluation. To address this concern, a group of researchers at Constructor University have proposed a new supplier selection framework that combines the interpretive power of large language model…",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "KLU Launches Sports Award for High-Performance Student Athletes",
-   "link": "http://idw-online.de/de/news880964",
-   "published": "2026-11-17T07:00:00+00:00",
-   "summary": "Kühne Logistics University (KLU) showed how students can combine high-performance sport with a demanding degree program at the inaugural KLU Sports Award on Friday evening, November 13. Around 90 guests from Hamburg’s sports community gathered at KLU’s HafenCity campus to celebrate the sporting and academic achievements of KLU students. The first KLU Sports Award went to field hockey world…",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "Spitzensport trifft Studium: Kühne Logistics University verleiht erstmals Sports Award",
-   "link": "http://idw-online.de/de/news880963",
-   "published": "2026-11-17T07:00:00+00:00",
-   "summary": "Spitzensport und ein anspruchsvolles Studium erfolgreich miteinander verbinden: Wie das gelingt, zeigte die Kühne Logistics University (KLU) bei der Premiere des KLU Sports Award am Freitagabend, den 13. November 2026. Rund 90 Gäste aus der Hamburger Sportcommunity feierten auf dem Campus in der Hamburger HafenCity die sportlichen und akademischen Leistungen herausragender KLU-Studierender. Den…",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "From supply chains to cancer research: how causal AI is opening new research paths at Constructor University",
-   "link": "http://idw-online.de/de/news880932",
-   "published": "2026-11-16T12:24:00+00:00",
-   "summary": "How can automotive supply-chain research inform a new line of inquiry in cancer treatment research? For Constructor University Lecturer and Postdoctoral Researcher Ishansh Gupta, the answer is Causal AI—a form of artificial intelligence that goes beyond simple pattern recognition to analyze why certain patterns exist, and help predict outcomes of changes.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "idw-online (DACH research)",
-   "title": "Einladung: Experten diskutieren an der FOM über die Zukunft der Verteidigungsindustrie",
-   "link": "http://idw-online.de/de/news880908",
-   "published": "2026-11-16T10:48:00+00:00",
-   "summary": "Sehr geehrte Damen und Herren, wie kann die deutsche Sicherheits- und Verteidigungsindustrie ihre Produktionskapazitäten ausbauen, Lieferketten absichern und den steigenden Fachkräftebedarf decken? Darüber diskutieren Experten von Rheinmetall, dem Fraunhofer FKIE und weiteren Organisationen am 25. November 2026 beim FOM Live-Talk „Sicherheit & Verteidigung im Wandel“.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
    "source": "KLU newsroom",
    "title": "DisruptHR 3.0",
    "link": "https://www.klu.org/article/disrupthr-30",
@@ -1321,6 +1211,36 @@
    "published": "2026-11-17T08:01:00+00:00",
    "summary": "Kühne Logistics University (KLU) showed how students can combine high-performance sport with a demanding degree program at the inaugural KLU Sports Award on Friday evening, November 13. Around 90 guests from Hamburg’s sports community gathered at KLU’s HafenCity campus to celebrate the sporting… Five KLU students who compete at the international level were nominated for the award. The nominees were Ferdinand Steinebach, Jonas von Gersum and Johann Wehnert of Germany’s U21 national field hockey…",
    "via": "page links, article read",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "Consultancy.eu",
+   "title": "Inverto: Procurement leaders gain influence, but skills and results struggle to keep pace",
+   "link": "https://www.consultancy.eu/news/14679/inverto-procurement-leaders-gain-influence-but-skills-and-results-struggle-to-keep-pace",
+   "published": "2026-11-23T10:10:00+00:00",
+   "summary": "Procurement leaders are gaining strategic importance within organizations, yet many still struggle to translate their growing influence into measurable business value, according to a new international study by Inverto based on a survey of chief procurement officers (CPOs).",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": true
+  },
+  {
+   "source": "Consultancy.eu",
+   "title": "The next frontier of supply chain resilience is smarter decision-making",
+   "link": "https://www.consultancy.eu/news/14676/the-next-frontier-of-supply-chain-resilience-is-smarter-decision-making",
+   "published": "2026-11-23T10:08:00+00:00",
+   "summary": "After years of disruption, from pandemics and geopolitical tensions to cyber threats and energy volatility, businesses have invested heavily in building more resilient supply chains. But resilience offers more than protection against risk – it can also become a source of competitive advantage, writes Davey van Hattem, Managing Consultant at Capgemini.",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "Industriemagazin",
+   "title": "Frischelogistik auf dem nächsten Automatisierungslevel",
+   "link": "https://industriemagazin.at/logistik/frischelogistik-auf-dem-naechsten-automatisierungslevel/",
+   "published": "2026-11-23T08:52:00+00:00",
+   "summary": "Die Logistik von Fleisch- und Wurstwaren stellt hohe Anforderungen an Verfügbarkeit, Prozesssicherheit und Flexibilität. Im EDEKA NORDfrische Center in Lüttow-Valluhn sorgt eine ganzheitliche Automatisierungslösung von KNAPP für effiziente Abläufe bei konstanten +2 °C.",
+   "via": "feed",
    "lane": "management",
    "planning_terms": false
   },
@@ -1363,6 +1283,27 @@
    "via": "feed",
    "lane": "management",
    "planning_terms": false
+  },
+  {
+   "source": "STT Info (Finnish releases)",
+   "title": "Brändituotteiden hintavertailu jättää ruokakorin todellisen hinnan piiloon – Lidl pitää kiinni asemastaan kiistatta halvimpana",
+   "link": "https://www.sttinfo.fi/tiedote/72527474/brandituotteiden-hintavertailu-jattaa-ruokakorin-todellisen-hinnan-piiloon-lidl-pitaa-kiinni-asemastaan-kiistatta-halvimpana?lang=fi",
+   "published": "2026-11-23T10:48:29+00:00",
+   "summary": "Yksinomaan teollisuuden merkkituotteisiin nojaavat hintavertailut (viimeisimpänä Kaupan Tila, 18.11.2026) antavat kuluttajille helposti vääristyneen kuvan ruokakauppojen todellisesta hintatasosta. Kun vertailuissa tuijotetaan vain identtisiä brändituotteita, ohitetaan kuluttajan kannalta kaikkein olennaisin: koko ostoskorin loppusumma kassalla.",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "DACH ad hoc releases (finanznachrichten)",
+   "title": "EQS-Adhoc: centrotherm international AG verbucht Großauftrag und hebt seine Prognose für das Geschäftsjahr 2026 an",
+   "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70201903-eqs-adhoc-centrotherm-international-ag-verbucht-grossauftrag-und-hebt-seine-prognose-fuer-das-geschaeftsjahr-2026-an-022.htm",
+   "published": "2026-11-23T09:39:00+00:00",
+   "summary": "EQS-Ad-hoc: centrotherm international AG / Schlagwort(e): Prognose / Gesamtjahr/Sonstiges centrotherm international AG verbucht Großauftrag und hebt seine Prognose für das Geschäftsjahr 2026 an 23.11.2026 / 10:34 CET/CEST Veröffentlichung einer Insiderinformation nach Artikel 17 der Verordnung (EU) Nr. 596/2014, übermittelt durch EQS News - ein Service der EQS Group . Für den Inhalt der Mitteilung ist der Emittent / Herausgeber verantwortlich. Veröffentlichung einer Insiderinformation gemäß…",
+   "via": "feed, article read",
+   "lane": "management",
+   "highlights": "Vor diesem Hintergrund hat der Vorstand der centrotherm international AG heute seine Prognose zum Konzernauftragseingang mit weiteren, zu erwartenden Aufträgen anderer potenzieller Kunden aktualisiert und die Prognose für das laufende Geschäftsjahr angehoben. Er rechnet nunmehr mit einem Konzernauftragseingang von 290 bis 340 Mio. Infolgedessen hebt das Unternehmen seine Prognosen für das Geschäftsjahr 2026 deutlich an: Der erwartete Konzernauftragseingang steigt auf 290 bis 340 Mio.",
+   "planning_terms": true
   },
   {
    "source": "DACH ad hoc releases (finanznachrichten)",
@@ -1421,6 +1362,17 @@
   },
   {
    "source": "Atlas Copco",
+   "title": "South Korean vacuum valve company to become part of Atlas Copco Group",
+   "link": "https://mfn.se/cis/a/atlas-copco/south-korean-vacuum-valve-company-to-become-part-of-atlas-copco-group-5a8b75a0",
+   "published": "2026-11-23T07:30:00+00:00",
+   "summary": "Nacka, Sweden, November 23, 2026: Novasen Co., Ltd. (\"Novasen\"), a South Korean company developing and manufacturing pressure control valves for the semiconductor and flat panel display industry, will become part of Atlas Copco Group. Novasen is based in Busan, South Korea, and also has operations in China. The company develops and manufactures advanced pressure control valves and related…",
+   "via": "feed",
+   "company": "Atlas Copco",
+   "highlights": "",
+   "lane": "companies"
+  },
+  {
+   "source": "Atlas Copco",
    "title": "Atlas Copco: US based fluid handling distributor has been divested",
    "link": "https://mfn.se/cis/a/atlas-copco/atlas-copco-us-based-fluid-handling-distributor-has-been-divested-9045d187",
    "published": "2026-11-18T07:30:00+00:00",
@@ -1464,6 +1416,17 @@
    "lane": "companies"
   },
   {
+   "source": "Boliden",
+   "title": "Extra bolagsstämma i Boliden AB (publ)",
+   "link": "https://mfn.se/cis/a/boliden/extra-bolagsstamma-i-boliden-ab-publ-9088bf51",
+   "published": "2026-11-23T09:23:39+00:00",
+   "summary": "Bolidens extra bolagsstämma hölls den 23 november 2026 i Stockholm och genom förhandsröstning (poströstning). Den 27 augusti 2026 ingick Boliden AB och Votorantim S.A. ett slutgiltigt avtal enligt vilket Boliden ska förvärva samtliga Votorantims aktier i Nexa Resources S.A. mot nyemitterade aktier i Boliden. Transaktionens genomförande är villkorat av bland annat att Bolidens aktieägare vid en…",
+   "via": "feed",
+   "company": "Boliden",
+   "highlights": "",
+   "lane": "companies"
+  },
+  {
    "source": "SSAB",
    "title": "SSAB donates emergency heaters and outdoor fireplaces to Ukraine ahead of winter",
    "link": "https://mfn.se/cis/a/ssab/ssab-donates-emergency-heaters-and-outdoor-fireplaces-to-ukraine-ahead-of-winter-9ddc3e87",
@@ -1494,6 +1457,17 @@
    "via": "feed",
    "company": "Valmet",
    "highlights": "",
+   "lane": "companies"
+  },
+  {
+   "source": "Stora Enso",
+   "title": "Stora Enso Oyj: Stora Enso publishes information brochure on the demerger process and Bergslagets Skogar as a standalone company",
+   "link": "https://mfn.se/cis/a/stora-enso/stora-enso-oyj-stora-enso-publishes-information-brochure-on-the-demerger-process-and-bergslagets-skogar-as-a-standalone-company-e6939017",
+   "published": "2026-11-23T07:00:00+00:00",
+   "summary": "STORA ENSO OYJ STOCK EXCHANGE RELEASE 23 November 2026 at 9:00 EET Stora Enso has published an information brochure providing shareholders with additional information on the demerger process and Bergslagets Skogar as a standalone company. As announced on 30 October 2026, the Board of Directors of Stora Enso Oyj (\"Stora Enso\" or the \"Company\") has approved a demerger plan (the \"Demerger Plan\")…",
+   "via": "feed",
+   "company": "Stora Enso",
+   "highlights": "Building on its long-term customer arrangements, the business model is designed to preserve long-term forest value while generating recurring cash flows with limited capital expenditure requirements.",
    "lane": "companies"
   },
   {
@@ -1559,50 +1533,50 @@
   },
   {
    "source": "Splash247",
-   "title": "Subsea 7 seeks buyer for pipelay vessel ahead of Saipem merger",
-   "link": "https://splash247.com/subsea-7-seeks-buyer-for-pipelay-vessel-ahead-of-saipem-merger/",
-   "published": "2026-11-20T12:00:00+00:00",
-   "summary": "Norwegian offshore engineering contractor Subsea 7 has begun identifying a buyer for its pipelay and heavy-lift vessel Seven Borealis, which it must divest as part of its planned merger with Saipem. The company confirmed the move in its third-quarter results, after Brazil’s competition authority, CADE, conditionally approved the merger earlier this month. The regulator required …",
+   "title": "Jinhui finds new buyer for supramax at higher price",
+   "link": "https://splash247.com/jinhui-finds-new-buyer-for-supramax-at-higher-price/",
+   "published": "2026-11-23T11:10:00+00:00",
+   "summary": "Hong Kong-based dry bulk owner Jinhui Shipping and Transportation has found a new buyer for its 2012-built supramax Jin Bi, securing $17.8m for a vessel it unsuccessfully tried to sell for $14.4m earlier this year. The Oslo-listed company has signed a memorandum of agreement with Singapore-based Global Pacific Shipping for the 56,361 dwt bulker, with …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Seaway 7 lines up vessel trio for Scottish offshore wind project",
-   "link": "https://splash247.com/seaway-7-lines-up-vessel-trio-for-scottish-offshore-wind-project/",
-   "published": "2026-11-20T11:00:00+00:00",
-   "summary": "Offshore construction contractor Seaway 7 is preparing to deploy three vessels on SSE Renewables’ proposed 1.4GW Berwick Bank B offshore wind development in Scotland. The planned installation fleet comprises the Seaway Alfa Lift, Seaway Strashnov, and Seaway Phoenix, with offshore work expected during 2029 and 2030. The vessels form part of Seaway 7’s proposed engineering, …",
+   "title": "Arabian Drilling picks up $400m in long-term offshore work",
+   "link": "https://splash247.com/arabian-drilling-picks-up-400m-in-long-term-offshore-work/",
+   "published": "2026-11-23T11:00:00+00:00",
+   "summary": "Saudi Arabian drilling contractor Arabian Drilling has secured a SAR1.5bn ($400m) long-term contract from Khafji Joint Operations (KJO) to provide and operate two self-propelled offshore service units. The agreement replaces existing contracts covering two offshore service units operating for KJO. The first unit will operate under a 10-year contract, with work expected to commence in …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Scotland greenlights 1 GW floating offshore wind project",
-   "link": "https://splash247.com/scotland-greenlights-1-gw-floating-offshore-wind-project/",
-   "published": "2026-11-20T10:00:00+00:00",
-   "summary": "The Scottish Government has granted offshore planning consent for the 1GW Muir Mhòr floating wind farm being developed by Fred. Olsen Seawind off the Aberdeenshire coast. Located approximately 63 km east of Peterhead, the project will comprise up to 67 floating wind turbines capable of generating enough electricity to meet the equivalent annual consumption of …",
+   "title": "Shipping Corp of India casts $3.2bn net for 22 ships",
+   "link": "https://splash247.com/shipping-corp-of-india-casts-3-2bn-net-for-22-ships/",
+   "published": "2026-11-23T10:20:00+00:00",
+   "summary": "State-owned Shipping Corporation of India (SCI) is pressing ahead with a fleet expansion drive worth an estimated $3.2bn, launching tenders for up to 22 newbuildings across the gas carrier, tanker and container segments, alongside a separate push for secondhand tonnage. The Mumbai-listed owner has issued tenders covering eight 88,000 cu m very large gas carriers …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Hunter makes offshore move with Jacktel buyout offer",
-   "link": "https://splash247.com/hunter-makes-offshore-move-with-jacktel-buyout-offer/",
-   "published": "2026-11-20T08:25:49+00:00",
-   "summary": "Oslo-listed Hunter Group has launched a NOK1.63bn ($168m) takeover bid for Norwegian offshore accommodation player Jacktel, looking to put its windfall from lucrative VLCC charter contracts into a longer-term business. The Erik Mathiesen-led investment company has offered NOK6.30 per share in cash through wholly owned subsidiary HG Projectco 1, valuing Jacktel at an 8.6% premium …",
+   "title": "ExxonMobil greenlights $4bn Angola offshore redevelopment",
+   "link": "https://splash247.com/exxonmobil-greenlights-4bn-angola-offshore-redevelopment/",
+   "published": "2026-11-23T10:00:00+00:00",
+   "summary": "US energy major ExxonMobil and its partners have taken a final investment decision worth an estimated $4bn to redevelop the Kizomba A and B fields offshore Angola, while announcing a fresh hydrocarbon discovery in the same block. The investment decision, formalised on November 19, completes the approvals for the Block 15 Life Extension Project, following …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Yangzijiang revives $500m Chinese shipyard project",
-   "link": "https://splash247.com/yangzijiang-revives-500m-chinese-shipyard-project/",
-   "published": "2026-11-20T08:15:05+00:00",
-   "summary": "Chinese shipbuilding heavyweight Yangzijiang has brought a previously stalled shipyard expansion back onto the table, signing an investment agreement for a RMB3.38bn ($504m) construction project at Taicang in Jiangsu province. The Singapore-listed group’s wholly owned subsidiary, Jiangsu Yangzijiang Shipbuilding Group, signed the deal with the Taicang Port Economic and Technological Development…",
+   "title": "Aegean Shipping adds fresh tanker pair at COSCO yard",
+   "link": "https://splash247.com/aegean-shipping-adds-fresh-tanker-pair-at-cosco-yard/",
+   "published": "2026-11-23T09:55:00+00:00",
+   "summary": "George Melissanidis-led Aegean Shipping Management has been linked to another two LR2 tanker newbuildings at COSCO Shipping Heavy Industry’s Yangzhou yard in China, extending its tanker investment programme into 2030. Greek shipping sources have identified the latest pair as ice class 1C product tankers scheduled for delivery in the first quarter of 2030. No contract …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -1749,13 +1723,23 @@
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Weitere Ausschreibung für Lkw-Ladeinfrastruktur gestartet",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/weitere-ausschreibung-fuer-lkw-ladeinfrastruktur-gestartet-3938970",
-   "published": "2026-11-19T17:42:00+00:00",
-   "summary": "Der Bund treibt die Lkw-Ladeinfrastruktur voran. Doch Hersteller erwarten einen deutlich langsameren Markthochlauf emissionsfreier Lkw bis 2035. Der Bund treibt die Lkw-Ladeinfrastruktur an Autobahnen voran. Währenddessen korrigiert die Nutzfahrzeugindustrie ihre Prognosen für den Hochlauf emissionsfreier Lkw deutlich nach unten. In den Aufbau der öffentlichen Lkw -Schnellladeinfrastruktur kommt weiter Bewegung. Die Zuschläge für die 124 Standorte an unbewirtschafteten Rastplätzen wurden…",
+   "title": "Sicherer Lkw-Parkplatz bei Mailand erhält Gold-Zertifizierung 23.11.2026, 11:19 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/sicherer-lkw-parkplatz-bei-mailand-erhaelt-gold-zertifizierung-3939662",
+   "published": "2026-11-23T11:19:00+00:00",
+   "summary": "Ein neuer Lkw-Parkplatz bei Mailand bietet sicheres Parken und Services für Berufskraftfahrer. Der Truck Point wurde mit Gold zertifiziert. Ein neuer Truck Point bei Mailand soll sicheres Lkw-Parken mit zusätzlichen Angeboten für Berufskraftfahrer verbinden. Für den Standort hat Enilive eine besondere Zertifizierung erhalten. Der neue Lkw-Parkplatz in San Giuliano Milanese bei Mailand verfügt über 64 Stellplätze. Der Truck Point ist nach dem europäischen Sicherheitsstandard SSTPA mit Gold…",
    "via": "page links, article read",
    "lane": "freight",
-   "planning_terms": true
+   "planning_terms": false
+  },
+  {
+   "source": "VerkehrsRundschau",
+   "title": "Spritpreisdeckel: Reiche plant Ausnahme 23.11.2026, 10:17 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/spritpreisdeckel-reiche-plant-ausnahme-3939610",
+   "published": "2026-11-23T10:17:00+00:00",
+   "summary": "Der geplante Spritpreisdeckel für Benzin und Diesel soll zum 1. Januar aktiviert werden. Bundeswirtschaftsministerin Katherina Reiche plant dabei allerdings eine Ausnahme. Der Spritpreisdeckel für Benzin und Diesel soll zum 1. Januar aktiviert werden. Ein neuer Entwurf des Bundeswirtschaftsministeriums regelt, wie die Höchstpreise berechnet werden sollen und welche Ausnahmen vorgesehen sind. Bundeswirtschaftsministerin Katherina Reiche ( CDU ) will Autobahntankstellen allerdings vom geplanten…",
+   "via": "page links, article read",
+   "lane": "freight",
+   "planning_terms": false
   },
   {
    "source": "VerkehrsRundschau",
@@ -1788,22 +1772,32 @@
    "planning_terms": false
   },
   {
-   "source": "VerkehrsRundschau",
-   "title": "A26-Ost in Hamburg: Arbeiten an der Hafenpassage ruhen erneut 20.11.2026, 10:45 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/a26-ost-in-hamburg-arbeiten-an-der-hafenpassage-ruhen-erneut-3939083",
-   "published": "2026-11-20T10:45:00+00:00",
-   "summary": "Die Arbeiten an der A26-Ost in Hamburg ruhen erneut. Was hinter der Unterbrechung beim Weiterbau der Hafenpassage steckt. An der A26-Ost in Hamburg ruhen erneut die Arbeiten. Erst vor Kurzem waren bauvorbereitende Maßnahmen an der Hafenpassage wieder aufgenommen worden. Die A26-Ost, auch Hafenpassage genannt, soll im Süden Hamburgs die A7 und die A1 miteinander verbinden. Nach einem Gerichtsurteil waren Arbeiten am ersten Abschnitt zunächst unterbrochen und später wieder aufgenommen worden.…",
-   "via": "page links, article read",
+   "source": "Dagens Logistik",
+   "title": "DHL Supply Chain växer när företag ställer om leveranskedjor",
+   "link": "https://dagenslogistik.se/dhl-supply-chain-vaxer-nar-foretag-staller-om-leveranskedjor/",
+   "published": "2026-11-23T10:06:00+00:00",
+   "summary": "DHL Supply Chain, DHL:s kontraktslogistikverksamhet, växer med 12 procent globalt under tredje kvartalet och hittills i år har man tecknat nya kundavtal värda över 8 miljarder euro. Bakom utvecklingen står ett osäkert omvärldsläge och större behov av motståndskraftiga leveranskedjor.",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": true
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Black Week går mot 34 miljarder i omsättning",
+   "link": "https://dagenslogistik.se/black-week-gar-mot-34-miljarder-i-omsattning/",
+   "published": "2026-11-23T07:37:24+00:00",
+   "summary": "Branschorganisationen Svensk Handel har släppt sin prognos inför årets Black Week. 36 procent av svenskarna planerar att handla under rean och varuförsäljningen väntas uppgå till 34 miljarder kronor.",
+   "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
-   "source": "VerkehrsRundschau",
-   "title": "Winterdienst bei Schnee und Glätte: Wann Logistiker haften können 20.11.2026, 09:55 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/recht-geld/winterdienst-bei-schnee-und-glaette-wann-logistiker-haften-koennen-3938981",
-   "published": "2026-11-20T09:55:00+00:00",
-   "summary": "Winterdienst beauftragt, aber trotzdem in der Pflicht? Der Rechtsblog zeigt anhand von Urteilen, worauf Logistiker bei Schnee und Glätte achten sollten. Auch Logistiker müssen auf ihrem Gelände Räum- und Streupflichten erfüllen – wer einen Winterdienst beauftragt, ist dabei nicht aus dem Schneider, wie Rechtsanwalt Axel Salzmann im Rechtsblog an verschiedenen Urteilen aufzeigt. Wer als Logistikbetrieb seine Räum- und Streupflichten bei Schnee und Glätte an einen Winterdienst abgibt, kann unter…",
-   "via": "page links, article read",
+   "source": "Dagens Logistik",
+   "title": "Hamnbolag vinner rättstvist mot Sjöfartsverket",
+   "link": "https://dagenslogistik.se/hamnbolag-vinner-rattstvist-mot-sjofartsverket/",
+   "published": "2026-11-23T06:55:32+00:00",
+   "summary": "Stockholms Hamnar vann mot Sjöfartsverket i tingsrätten – man behöver inte betala tillbaka de 38 miljoner som betalas ut som kompensation för att yrkestrafiken fått slussa gratis. Det skriver tidningen Mitti.",
+   "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
@@ -1836,67 +1830,47 @@
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
-  },
-  {
-   "source": "Dagens Logistik",
-   "title": "Haverikommissionen kräver skärpning",
-   "link": "https://dagenslogistik.se/haverikommissionen-kraver-skarpning/",
-   "published": "2026-11-20T07:53:01+00:00",
-   "summary": "Informationen fanns – men användes inte. Statens Haverikommission kritiserar Trafikverkets hantering av skyfallen i Västernorrland i fjol och uppmanar även andra samhällsaktörer att vidta åtgärder i tid om framtida katastrofer ska kunna avvärjas. – För att bygga ett motståndskraftigt samhälle som står emot störningar och påfrestningar, i fred såväl som under höjd beredskap och ytterst krig,…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Dagens Logistik",
-   "title": "Relevator gör affärer i Dubai",
-   "link": "https://dagenslogistik.se/relevator-gor-affarer-i-dubai/",
-   "published": "2026-11-19T11:00:00+00:00",
-   "summary": "Relevator nosar ännu mer på den internationella marknaden. Företagets fjärde Autostoreuppdrag börjar i Dubai – och kan sluta var som helst. – Vi har byggt upp både erfarenhet och ett internationellt nätverk som gör att vi kan ta oss an den här typen av uppdrag oavsett var systemen finns, kommenterar Niklas Nygren, vd på Relevator.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
   }
  ],
  "rhine_gauges": [
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 515.0,
+   "level_cm": 535.0,
    "trend": null,
-   "measured_at": "2026-11-22T13:45:00+01:00",
+   "measured_at": "2026-11-23T12:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 216.0,
+   "level_cm": 224.0,
    "trend": null,
-   "measured_at": "2026-11-22T13:45:00+01:00",
+   "measured_at": "2026-11-23T12:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 364.0,
+   "level_cm": 361.0,
    "trend": null,
-   "measured_at": "2026-11-22T13:45:00+01:00",
+   "measured_at": "2026-11-23T12:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 446.0,
+   "level_cm": 467.0,
    "trend": null,
-   "measured_at": "2026-11-22T13:45:00+01:00",
+   "measured_at": "2026-11-23T12:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 257.0,
+   "level_cm": 281.0,
    "trend": null,
-   "measured_at": "2026-11-22T13:45:00+01:00",
+   "measured_at": "2026-11-23T12:00:00+01:00",
    "unit": "cm"
   }
  ]
