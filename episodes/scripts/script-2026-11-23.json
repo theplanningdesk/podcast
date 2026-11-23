@@ -1,0 +1,280 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Swedish Sawmills: Closures Spread, More Expected",
+  "week": "2026-W48",
+  "run_date": "2026-11-23",
+  "brief_file": "news-brief-daily-2026-11-23.md",
+  "target_runtime_sec": 230,
+  "word_count": 661,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-23-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Sweden's sawmills are closing from Småland to Skellefteå, and the industry's own analyst expects more."
+        },
+        {
+          "speaker": "M",
+          "text": "If your pallets or packaging start life as Swedish timber, that's your supply base getting smaller. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-23-01",
+        "2026-11-23-02",
+        "2026-11-23-F1"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Monday the twenty-third of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "Today, Swedish sawmill closures spread, a tentative deal heads off a strike at Los Angeles and Long Beach, and the Rhine is back to full loads."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-23-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Sawmill closures are spreading across Sweden, from Urshult in the south to Årjäng in the west and Skellefteå in the north, Dagens Industri reported over the weekend."
+        },
+        {
+          "speaker": "M",
+          "text": "Christian Nielsen, market analyst at the industry body Skogsindustrierna, told the paper it hasn't been this bad in decades, and he expects more mills to close."
+        },
+        {
+          "speaker": "F",
+          "text": "Start in the north. Holmen is ending sawing at Kroksjön outside Skellefteå, with about fifty people given notice, and it blames the worst sawn timber market in several decades and fierce competition for logs."
+        },
+        {
+          "speaker": "M",
+          "text": "Moelven is closing its mill in Årjäng, with thirty-eight staff and about a hundred and ten thousand cubic metres of timber a year, citing poor profitability and high raw material costs."
+        },
+        {
+          "speaker": "F",
+          "text": "And Vida already shut Urshult and Orrefors back in May, taking out two hundred and sixty-five thousand cubic metres of capacity."
+        },
+        {
+          "speaker": "M",
+          "text": "Vida's reason explains the rest. In Götaland there's more sawmill capacity than there is fibre to feed it, so the mills compete for the same logs."
+        },
+        {
+          "speaker": "F",
+          "text": "That leaves the mills squeezed from both ends, weak prices for sawn timber on one side and a bidding war for logs on the other."
+        },
+        {
+          "speaker": "M",
+          "text": "For planners, this lands on anyone buying sawn timber, pallets or wood packaging in Sweden, and that's most manufacturers and distributors who ship on wood."
+        },
+        {
+          "speaker": "F",
+          "text": "Our take, map which mills your suppliers actually depend on. A pallet maker two steps down your chain may run on wood from a single sawmill, and you won't see it on your own supplier list."
+        },
+        {
+          "speaker": "M",
+          "text": "Then line up a second source while there's still a choice of mills, before the next closure makes that choice for you, and price it into next year's plan."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-23-02",
+        "2026-11-23-F1",
+        "2026-11-23-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "In the U S, a tentative union deal has eased the immediate threat of a strike at the Port of Los Angeles and Long Beach, the country's busiest container port complex, FreightWaves reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The deal comes after more than a year of bargaining and federally mediated talks. Earlier this month a walkout by port watchmen was postponed several times while those talks went on."
+        },
+        {
+          "speaker": "M",
+          "text": "We don't have the terms or a ratification date yet, and the vote is the part to watch."
+        },
+        {
+          "speaker": "F",
+          "text": "If you built extra stock or rerouted U S imports for a stoppage, start planning how to unwind that buffer, but wait for the vote before you act on it."
+        },
+        {
+          "speaker": "M",
+          "text": "For importers already booking into the new year, a ratified deal takes one big risk off the West Coast plan."
+        },
+        {
+          "speaker": "F",
+          "text": "On the freight desk, the Rhine at Kaub stood at two hundred and sixteen centimetres on Sunday, far above what barges need for full loads. And Xeneta still expects container spot rates to fall by as much as thirty percent next year as capacity outgrows demand."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-W47-E1",
+        "2026-W47-E2",
+        "2026-W47-E3"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Two dates for the week ahead. On Wednesday, the F O M university in Germany hosts a live talk on scaling up defence production and securing its supply chains, with speakers from Rheinmetall and Fraunhofer F K I E."
+        },
+        {
+          "speaker": "F",
+          "text": "On Friday it's the record date for SKF Vertevo, the automotive bearings business splitting off from SKF. If your contracts or sourcing flows cross the new company line, check them this week."
+        },
+        {
+          "speaker": "M",
+          "text": "And a week from tomorrow, Swedbank's purchasing managers' index for November shows whether Swedish industry is still running at full stretch."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-23-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Monday."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more from the planning desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Swedish Sawmills Close, and the Industry Expects More",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Sweden's sawmills are closing, and the industry expects more to go."
+      },
+      {
+        "speaker": "M",
+        "text": "Holmen is ending sawing at Kroksjön outside Skellefteå, with about fifty people given notice, blaming the worst sawn timber market in several decades, Dagens Industri reports."
+      },
+      {
+        "speaker": "F",
+        "text": "Moelven is closing Årjäng, and Vida shut two mills in May, taking out two hundred and sixty-five thousand cubic metres of capacity."
+      },
+      {
+        "speaker": "M",
+        "text": "In southern Sweden there's more sawmill capacity than fibre to feed it, and the industry's analyst says it hasn't been this bad in decades."
+      },
+      {
+        "speaker": "F",
+        "text": "If you buy sawn timber, pallets or wood packaging in Sweden, find out which mills your suppliers depend on, and line up a second source now."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Swedish sawmill closures are spreading, from Holmen's Kroksjön mill near Skellefteå to Moelven's Årjäng and Vida's Urshult and Orrefors, and Skogsindustrierna's analyst expects more. Buyers of timber, pallets and wood packaging should map their suppliers' mills now. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "procurement",
+      "sawmills",
+      "sweden",
+      "packaging"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Sweden's sawmill industry hasn't been this bad in decades, its analyst says, and anyone buying pallets should care.\n\nHolmen is ending sawing at Kroksjön near Skellefteå, Moelven is closing Årjäng, and Vida shut Urshult and Orrefors in May, removing 265,000 m³ of capacity. Skogsindustrierna's analyst Christian Nielsen told Dagens Industri it hasn't been this bad in decades and expects more closures.\n\nFor planners buying sawn timber, pallets or wood packaging: map which mills your suppliers depend on, and line up a second source while there is still a choice.\n\nAlso on today's desk:\nA tentative union deal eases the strike threat at the Port of Los Angeles and Long Beach, pending ratification.\nXeneta still expects container spot rates to fall by up to 30% in 2027 as capacity outgrows demand.\n\nDo you know which sawmill your pallet supplier buys its timber from?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #procurement #packaging",
+    "tags": [
+      "Skogsindustrierna",
+      "Holmen",
+      "Dagens Industri"
+    ]
+  },
+  "show_notes": {
+    "summary": "Swedish sawmill closures spread from Skellefteå to Småland as Holmen, Moelven and Vida cut capacity and the industry's analyst expects more. Also: a tentative union deal eases the strike threat at the Port of Los Angeles and Long Beach, the Rhine at Kaub, Xeneta's 2027 rate outlook and SKF Vertevo's record date.",
+    "sources": [
+      {
+        "title": "Dagens Industri: Sågverksdöden sprider sig, fler nedläggningar väntar",
+        "url": "https://www.di.se/nyheter/sagverksdoden-sprider-sig-fler-nedlaggningar-vantar/"
+      },
+      {
+        "title": "TV4/TT: Holmen varslar ett 50-tal utanför Skellefteå",
+        "url": "https://www.tv4.se/artikel/tt-261103-skogsvarsel1-58bd3e99/holmen-varslar-ett-50-tal-utanfor-skelleftea"
+      },
+      {
+        "title": "EFN: Moelven lägger ned ännu ett sågverk",
+        "url": "https://efn.se/moelven-lagger-ned-annu-ett-sagverk"
+      },
+      {
+        "title": "Wood Central: Vida closes Orrefors and Urshult as Sweden's fibre squeeze bites",
+        "url": "https://woodcentral.com.au/vida-closes-orrefors-urshult-sweden-fibre-squeeze/"
+      },
+      {
+        "title": "FreightWaves: Tentative union deal averts strike at Port of LA-Long Beach",
+        "url": "https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "Seatrade Maritime: Container rates to plummet in 2027",
+        "url": "https://www.seatrade-maritime.com/containers/container-rates-to-plummet-in-2027"
+      },
+      {
+        "title": "Xeneta: Summit analysts forecast ocean freight spot rates to fall 30% in 2027",
+        "url": "https://www.xeneta.com/news/xeneta-summit-analysts-forecast-ocean-freight-spot-rates-to-fall-30-in-2027-as-red-sea-return-sees-capacity-flooding-back"
+      }
+    ]
+  }
+}

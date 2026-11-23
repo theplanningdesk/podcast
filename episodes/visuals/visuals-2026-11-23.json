@@ -1,0 +1,157 @@
+{
+  "stem": "2026-11-23",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Sweden",
+        "title": "Sawmills are closing, more expected",
+        "detail": "From Småland to Skellefteå"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Sawmill closures",
+        "title": "Closures from north to south",
+        "points": [
+          {
+            "name": "Skellefteå",
+            "lat": 64.75,
+            "lon": 20.95,
+            "alert": true
+          },
+          {
+            "name": "Årjäng",
+            "lat": 59.39,
+            "lon": 12.13,
+            "alert": true
+          },
+          {
+            "name": "Urshult",
+            "lat": 56.53,
+            "lon": 14.82,
+            "alert": true
+          },
+          {
+            "name": "Orrefors",
+            "lat": 56.84,
+            "lon": 15.75,
+            "alert": true
+          }
+        ],
+        "pad": 3
+      }
+    },
+    {
+      "line": 1,
+      "at": "about fifty",
+      "template": "stat",
+      "props": {
+        "kicker": "Holmen, Kroksjön",
+        "value": 50,
+        "label": "people given notice",
+        "source": "TT"
+      }
+    },
+    {
+      "line": 1,
+      "at": "worst sawn timber market",
+      "template": "headline",
+      "props": {
+        "kicker": "Holmen",
+        "title": "Worst sawn timber market in decades",
+        "detail": "Weak prices and fierce competition for logs"
+      }
+    },
+    {
+      "line": 2,
+      "template": "list",
+      "props": {
+        "kicker": "Closures",
+        "items": [
+          {
+            "label": "Moelven Årjäng",
+            "say": "Moelven"
+          },
+          {
+            "label": "Vida, two mills",
+            "say": "Vida"
+          }
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "at": "two hundred and sixty-five thousand",
+      "template": "stat",
+      "props": {
+        "kicker": "Vida, May",
+        "value": 265000,
+        "label": "cubic metres of capacity removed",
+        "source": "Wood Central"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "Southern Sweden",
+        "title": "More sawmill capacity than fibre",
+        "detail": "Mills compete for the same logs"
+      }
+    },
+    {
+      "line": 3,
+      "at": "hasn't been this bad",
+      "template": "voice",
+      "props": {
+        "name": "Christian Nielsen",
+        "role": "Market analyst, Skogsindustrierna",
+        "where": "Dagens Industri, 21 November",
+        "text": "It hasn't been this bad in decades, and more closures are expected."
+      }
+    },
+    {
+      "line": 4,
+      "template": "list",
+      "props": {
+        "kicker": "Who's exposed",
+        "items": [
+          {
+            "label": "Sawn timber",
+            "say": "sawn timber"
+          },
+          {
+            "label": "Pallets",
+            "say": "pallets"
+          },
+          {
+            "label": "Wood packaging",
+            "say": "wood packaging"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "at": "find out which mills",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Map your suppliers' mills and line up a second source now"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
