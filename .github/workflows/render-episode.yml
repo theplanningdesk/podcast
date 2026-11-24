@@ -58,8 +58,15 @@ jobs:
       - name: Install ffmpeg and Python deps
         timeout-minutes: 12
         run: |
-          sudo apt-get update -qq -o Acquire::Retries=3
-          sudo apt-get install -y -qq --no-install-recommends ffmpeg
+          # apt mirrors can hang: give apt 4 minutes, then fall back to a static build from GitHub.
+          if ! timeout 240 sh -c 'sudo apt-get update -qq -o Acquire::Retries=3 && sudo apt-get install -y -qq --no-install-recommends ffmpeg'; then
+            echo "apt timed out or failed, using static ffmpeg"
+            curl -fsSL --retry 3 -o /tmp/ffmpeg.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz
+            mkdir -p "$HOME/ffmpeg" && tar -xJf /tmp/ffmpeg.tar.xz -C "$HOME/ffmpeg" --strip-components=1
+            echo "$HOME/ffmpeg/bin" >> "$GITHUB_PATH"
+            export PATH="$HOME/ffmpeg/bin:$PATH"
+          fi
+          ffmpeg -version | head -1
           pip install -q -r requirements.txt
 
       - name: Restore voiced-line cache
