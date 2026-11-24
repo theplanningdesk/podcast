@@ -1,6 +1,6 @@
 # The Planning Desk: engagement scorecard
 
-Updated 2026-11-23. Numbers refresh every morning; the full data is in the CSV files on this branch.
+Updated 2026-11-24. Numbers refresh every morning; the full data is in the CSV files on this branch.
 
 OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
@@ -8,8 +8,8 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
 | Channel | Metric | Now |
 |---|---|---|
-| instagram | followers | 4 |
-| instagram | posts | 27 |
+| instagram | followers | 5 |
+| instagram | posts | 28 |
 | newsletter | last email | Plant closures in Germany, strikes, and a week of making less |
 | newsletter | last email clicks | 0 |
 | newsletter | last email deliveries | 2 |
@@ -18,11 +18,11 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 821 |
-| podcast | op3 downloads all episodes | 57 |
+| podcast | github mp3 fetches all episodes | 859 |
+| podcast | op3 downloads all episodes | 51 |
 | youtube | subscribers | 5 |
-| youtube | total views | 546 |
-| youtube | videos | 36 |
+| youtube | total views | 574 |
+| youtube | videos | 37 |
 | spotify (typed in 2026-10-30) | followers | 1 |
 | spotify (typed in 2026-10-30) | plays | 8 |
 | linkedin (typed in 2026-10-30) | followers | 3 |
@@ -37,14 +37,15 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-23 | daily | Swedish Sawmills: Closures Spread, More Expected |  | 13 |  | 3 | 13 |
-| 2026-11-22 | weekly | Supply Chain News, Week 47: Plant Closures, IG Metall Strikes, AI Capacity |  | 28 | 9 |  |  |
-| 2026-11-21 | saturday | Financial Intelligence by Berman and Knight: Book Summary |  | 29 | 4 | 4 | 76 |
-| 2026-11-20 | daily | Production Planning: Jim Beam Idles Clermont |  | 28 |  | 10 | 28 |
-| 2026-11-19 | daily | Inventory Planning: Wrangler's Owner Restocks |  | 28 |  | 8 | 2 |
+| 2026-11-24 | daily | Black Week Sweden: 34 Billion Kronor Tests Forecasts |  | 13 |  | 5 | 51 |
+| 2026-11-23 | daily | Swedish Sawmills: Closures Spread, More Expected |  | 24 |  | 8 | 20 |
+| 2026-11-22 | weekly | Supply Chain News, Week 47: Plant Closures, IG Metall Strikes, AI Capacity |  | 34 | 11 |  |  |
+| 2026-11-21 | saturday | Financial Intelligence by Berman and Knight: Book Summary |  | 32 | 6 | 7 | 76 |
+| 2026-11-20 | daily | Production Planning: Jim Beam Idles Clermont |  | 30 |  | 12 | 28 |
+| 2026-11-19 | daily | Inventory Planning: Wrangler's Owner Restocks |  | 28 |  | 9 | 2 |
 | 2026-11-18 | daily | Network Design: Conagra Shuts a Missouri Plant |  | 29 |  | 5 | 17 |
-| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 33 |  | 17 | 62 |
-| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 29 |  | 13 | 121 |
+| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 33 |  | 19 | 62 |
+| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 32 |  | 13 | 121 |
 | 2026-11-15 | weekly | Supply Chain News, Week 46: Mercedes Plants, Cyberattacks, AI Optimisation | 10 | 34 | 18 |  |  |
 | 2026-11-14 | saturday | The Box by Levinson: Book Summary |  | 30 | 4 | 25 | 23 |
 | 2026-11-13 | daily | EV Battery Sourcing: BMW Goes Local for Local | 18 | 34 |  | 19 | 9 |
@@ -53,7 +54,7 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 | 2026-11-10 | daily | Container Freight Rates: Fleet Heads for 50m TEU |  | 29 |  | 5 | 9 |
 | 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 38 |  | 37 | 51 |
 | 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 31 | 27 |  |  |
-| 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 27 | 3 | 31 | 25 |
+| 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 27 | 3 | 32 | 25 |
 | 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 24 |  | 15 | 127 |
 | 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 47 |  | 10 | 23 |
 | 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 27 |  | 37 | 8 |
@@ -77,7 +78,7 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 ## Source status
 
 - buttondown: ok
-- carried: ok: 37 numbers kept from the previous run where today's lookup came back empty
+- carried: ok: 41 numbers kept from the previous run where today's lookup came back empty
 - github: ok
 - instagram: ok
 - op3: ok
