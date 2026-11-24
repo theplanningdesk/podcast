@@ -387,5 +387,18 @@
     "duration_sec": 215,
     "pub_date": "2026-11-23T06:30:00+01:00",
     "transcript_lines": 27
+  },
+  {
+    "guid": "planning-desk-2026-11-24",
+    "stem": "2026-11-24",
+    "number": 31,
+    "format": "daily",
+    "title": "Black Week Sweden: 34 Billion Kronor Tests Forecasts",
+    "summary": "Sweden's Black Week is forecast to reach 34 billion kronor in goods sales, Svensk Handel says, the year's hardest test for retail peak forecasts. Also: a BME pulse check on AI in German procurement, Atlas Copco buys Korean valve maker Novasen, Germany's factory PMI at a multi-year high, the Rhine at Kaub and DHL Supply Chain's third-quarter growth.",
+    "notes_html": "<p>Sweden&#x27;s Black Week is forecast to reach 34 billion kronor in goods sales, Svensk Handel says, the year&#x27;s hardest test for retail peak forecasts. Also: a BME pulse check on AI in German procurement, Atlas Copco buys Korean valve maker Novasen, Germany&#x27;s factory PMI at a multi-year high, the Rhine at Kaub and DHL Supply Chain&#x27;s third-quarter growth.</p><p>Sources:</p><ul><li><a href=\"https://dagenslogistik.se/black-week-gar-mot-34-miljarder-i-omsattning/\">Dagens Logistik: Black Week går mot 34 miljarder i omsättning</a></li><li><a href=\"https://www.bme.de/news/ki-pilotprojekt-und-dann-systematische-integration-von-kuenstlicher-intelligenz-in-einkaufsprozesse/\">BME: KI-Pilotprojekt und dann? Systematische Integration von KI in Einkaufsprozesse</a></li><li><a href=\"https://mfn.se/cis/a/atlas-copco/south-korean-vacuum-valve-company-to-become-part-of-atlas-copco-group-5a8b75a0\">Atlas Copco via MFN: South Korean vacuum valve company to become part of Atlas Copco Group</a></li><li><a href=\"https://www.actionforex.com/live-comments/661769-eurozone-pmi-holds-steady-as-german-growth-hits-four-year-high-france-slumps-further/\">ActionForex: Eurozone PMI holds steady as German growth hits four-year high, France slumps further</a></li><li><a href=\"https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&amp;includeTimeseries=true&amp;includeCurrentMeasurement=true\">Pegelonline: Rhine gauges</a></li><li><a href=\"https://dagenslogistik.se/dhl-supply-chain-vaxer-nar-foretag-staller-om-leveranskedjor/\">Dagens Logistik: DHL Supply Chain växer när företag ställer om leveranskedjor</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-24.html\">https://theplanningdesk.github.io/podcast/e/2026-11-24.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 4038139,
+    "duration_sec": 252,
+    "pub_date": "2026-11-24T06:30:00+01:00",
+    "transcript_lines": 31
   }
 ]
