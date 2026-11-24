@@ -38,6 +38,7 @@ import html
 import json
 import re
 import sys
+import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -62,9 +63,13 @@ ARXIV_API = ("https://export.arxiv.org/api/query?search_query="
 # reaches Gartner and ASCM through search.
 SOURCES = [
     ("SupplyChainBrain", "https://www.supplychainbrain.com/rss/articles"),
-    ("SCMR", "https://www.scmr.com/"),
+    # 24 Nov 2026: scmr.com and theloadstar.com answer 403 to the runner since 16 Nov, so go
+    # straight to their public feeds instead of discovering them from the blocked homepage.
+    ("SCMR", ["https://feeds.feedburner.com/scmr/latest", "https://www.scmr.com/"]),
     ("Supply Chain Dive", "https://www.supplychaindive.com/feeds/news/"),
-    ("Supply Chain Digital", "https://supplychaindigital.com/news"),
+    # Supply Chain Digital blocks the runner (403 since 16 Nov) and has no open feed; replaced
+    # 24 Nov 2026 by Supply & Demand Chain Executive. Reach Supply Chain Digital through search only.
+    ("SDCExec", "https://www.sdcexec.com/rss"),
     # Added 10 Nov 2026: planning, footprint and operations sources.
     ("Manufacturing Dive", "https://www.manufacturingdive.com/feeds/news/"),
     ("demand-planning.com (IBF)", ["https://demand-planning.com/feed/", "https://demand-planning.com/"]),
@@ -89,7 +94,7 @@ SOURCES = [
 # The freight desk (moved out of the main lane 10 Nov 2026). Nordic and DACH transport
 # press stays here too, but its items that match planning terms are kept beyond the cap.
 FREIGHT_SOURCES = [
-    ("The Loadstar", "https://theloadstar.com/"),
+    ("The Loadstar", ["https://theloadstar.com/feed/", "https://theloadstar.com/"]),
     ("FreightWaves", "https://www.freightwaves.com/news"),
     ("Splash247", "https://splash247.com/"),
     ("DC Velocity", "https://www.dcvelocity.com/"),
@@ -310,9 +315,20 @@ def clean(text, limit=400):
 
 
 def get(url, timeout=TIMEOUT):
-    r = requests.get(url, headers={"User-Agent": UA, "Accept": "*/*"}, timeout=timeout)
-    r.raise_for_status()
-    return r
+    # One retry after a short pause for timeouts, rate limits and server errors (arXiv has
+    # these now and then); a 403 or 404 is final.
+    for attempt in (1, 2):
+        try:
+            r = requests.get(url, headers={"User-Agent": UA, "Accept": "*/*"}, timeout=timeout)
+            if attempt == 1 and (r.status_code == 429 or r.status_code >= 500):
+                time.sleep(8)
+                continue
+            r.raise_for_status()
+            return r
+        except (requests.Timeout, requests.ConnectionError):
+            if attempt == 2:
+                raise
+            time.sleep(8)
 
 
 def looks_like_feed(resp):
