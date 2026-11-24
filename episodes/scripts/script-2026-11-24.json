@@ -1,0 +1,288 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Black Week Sweden: 34 Billion Kronor Tests Forecasts",
+  "week": "2026-W48",
+  "run_date": "2026-11-24",
+  "brief_file": "news-brief-daily-2026-11-24.md",
+  "target_runtime_sec": 269,
+  "word_count": 776,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-24-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Svensk Handel expects Swedes to spend thirty-four billion kronor on goods in a single Black Week."
+        },
+        {
+          "speaker": "M",
+          "text": "That's the hardest test of the year for every peak forecast in Swedish retail. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-24-01",
+        "2026-11-24-02",
+        "2026-11-24-04"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Tuesday the twenty-fourth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "Today, Sweden's Black Week forecast, A I goes mainstream in German purchasing, and German factories run at their fastest pace in years."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-24-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Sweden's trade association, Svensk Handel, has published its Black Week forecast, and Dagens Logistik has the numbers."
+        },
+        {
+          "speaker": "M",
+          "text": "Thirty-six percent of Swedes say they plan to shop during the sale, so more than a third of the country is buying in the same few days."
+        },
+        {
+          "speaker": "F",
+          "text": "Svensk Handel expects goods sales for the week to reach thirty-four billion kronor. We don't have last year's figure to set it against, so read that as a size, not a growth rate."
+        },
+        {
+          "speaker": "M",
+          "text": "For planners, this is the week that shows whether the peak forecast was right, and the answer comes in store by store and item by item."
+        },
+        {
+          "speaker": "F",
+          "text": "Start with allocation, because stock that went to the wrong stores before the sale is hard to move once the rush starts, so watch sell-through daily and keep some back in the distribution centre to chase demand."
+        },
+        {
+          "speaker": "M",
+          "text": "Then the suppliers, where replenishment cut-offs for the peak are close or already past, so an order that misses one lands after the demand has gone."
+        },
+        {
+          "speaker": "F",
+          "text": "And the clean-up starts in December. Whatever doesn't sell this week turns into markdowns and returns, and that lands on the January buying plan."
+        },
+        {
+          "speaker": "M",
+          "text": "Our take, write down the forecast error on your top sellers now, while the week is fresh. It's the most useful input you'll get for next year's peak plan."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-24-02",
+        "2026-11-24-03",
+        "2026-11-24-04",
+        "2026-11-24-F1",
+        "2026-11-24-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Over to Germany, where A I is already on the buying desk. A pulse check by the Procurement Initiative, published by the purchasing association B M E, finds that sixty-seven percent of companies use at least one A I tool in procurement."
+        },
+        {
+          "speaker": "F",
+          "text": "Another seventeen percent are getting ready to bring one in. The sample size isn't given, so take it as a direction rather than a census."
+        },
+        {
+          "speaker": "M",
+          "text": "The association's point is that the pilot phase is over, and the job now is to build A I into the buying process step by step instead of adding one more tool."
+        },
+        {
+          "speaker": "F",
+          "text": "For planners, the risk is a second version of the truth. If a buying tool updates supplier lead times, prices or allocations, those numbers have to reach the supply plan, not sit in a separate system."
+        },
+        {
+          "speaker": "M",
+          "text": "Ask your procurement team which tools they run and where the output goes. If nobody can answer, that's your first integration job."
+        },
+        {
+          "speaker": "F",
+          "text": "Atlas Copco is buying Novasen, a South Korean maker of pressure control valves for the semiconductor and flat-panel display industries. Novasen is based in Busan and also has operations in China."
+        },
+        {
+          "speaker": "M",
+          "text": "No price was given, and it's a familiar move. Atlas Copco bought another Korean semiconductor valve maker, Presys, back in twenty twenty-four."
+        },
+        {
+          "speaker": "F",
+          "text": "Swedish industrials keep building close to Asia's chip plants, so more of their semiconductor supply now sits in Korea and China. If you source those parts into Europe, that's where your lead time risk lives."
+        },
+        {
+          "speaker": "M",
+          "text": "German factories are running hot. The flash manufacturing purchasing managers' index rose to fifty-five in November, and factory output hit its highest level in more than five years."
+        },
+        {
+          "speaker": "F",
+          "text": "France went the other way, with its manufacturing index down to forty-seven point nine, and input costs are easing but still high, most of all in Germany."
+        },
+        {
+          "speaker": "M",
+          "text": "If you buy parts from German suppliers, expect longer lead time quotes and firmer prices into the first quarter, because their capacity fills up first."
+        },
+        {
+          "speaker": "F",
+          "text": "On the freight desk, the Rhine at Kaub rose to two hundred and twenty-four centimetres on Monday, far above what full barges need. And DHL Supply Chain, DHL's contract logistics arm, grew twelve percent in the third quarter as companies rework their supply chains."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-W47-E1",
+        "2026-W47-E2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Two dates for the rest of the week. Tomorrow, the F O M university in Germany hosts its live talk on scaling up defence production and securing its supply chains."
+        },
+        {
+          "speaker": "F",
+          "text": "On Friday it's the record date for SKF Vertevo, the automotive bearings business splitting off from SKF. If your contracts or sourcing flows cross the new company line, check them before then."
+        },
+        {
+          "speaker": "M",
+          "text": "And next Tuesday, the first of December, Swedbank's purchasing managers' index for November shows how Swedish industry is holding up."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-24-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Tuesday."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more from the planning desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Sweden's Black Week Heads for 34 Billion Kronor",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Swedes are set to spend thirty-four billion kronor in one week."
+      },
+      {
+        "speaker": "M",
+        "text": "That's the Black Week forecast for goods sales from Svensk Handel, the Swedish trade association, as reported by Dagens Logistik."
+      },
+      {
+        "speaker": "F",
+        "text": "Thirty-six percent of Swedes say they plan to shop during the sale, so more than a third of the country is buying in the same few days."
+      },
+      {
+        "speaker": "M",
+        "text": "For retailers it's the hardest test of the year for the peak forecast, the store allocations and the supplier replenishment cut-offs."
+      },
+      {
+        "speaker": "F",
+        "text": "Watch sell-through daily, keep some stock back to chase demand, and write down your forecast error now, because December brings the markdowns and returns."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Sweden's Black Week is heading for 34 billion kronor in goods sales, according to Svensk Handel's forecast, with 36% of Swedes planning to shop. For retail planners it's the hardest test of the year for peak forecasts, store allocations and replenishment cut-offs. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "demandplanning",
+      "retail",
+      "blackweek"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Sweden's Black Week is forecast at 34 billion kronor in goods sales, the year's hardest test for any peak forecast.\n\nSvensk Handel expects 36% of Swedes to shop during the sale and goods sales for the week to reach SEK 34 billion, Dagens Logistik reports.\n\nFor retail planners, watch sell-through by store every day, hold some stock centrally to chase demand, and record the forecast error on your top sellers now. December's markdowns and returns will land on the January buying plan.\n\nAlso on today's desk:\nA BME pulse check finds 67% of German companies already use at least one AI tool in procurement.\nAtlas Copco is buying Novasen, a South Korean maker of pressure control valves for chipmakers.\n\nHow far off was your Black Week forecast on your top ten items by Monday?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #demandplanning #retail",
+    "tags": [
+      "Svensk Handel",
+      "BME",
+      "Atlas Copco"
+    ]
+  },
+  "show_notes": {
+    "summary": "Sweden's Black Week is forecast to reach 34 billion kronor in goods sales, Svensk Handel says, the year's hardest test for retail peak forecasts. Also: a BME pulse check on AI in German procurement, Atlas Copco buys Korean valve maker Novasen, Germany's factory PMI at a multi-year high, the Rhine at Kaub and DHL Supply Chain's third-quarter growth.",
+    "sources": [
+      {
+        "title": "Dagens Logistik: Black Week går mot 34 miljarder i omsättning",
+        "url": "https://dagenslogistik.se/black-week-gar-mot-34-miljarder-i-omsattning/"
+      },
+      {
+        "title": "BME: KI-Pilotprojekt und dann? Systematische Integration von KI in Einkaufsprozesse",
+        "url": "https://www.bme.de/news/ki-pilotprojekt-und-dann-systematische-integration-von-kuenstlicher-intelligenz-in-einkaufsprozesse/"
+      },
+      {
+        "title": "Atlas Copco via MFN: South Korean vacuum valve company to become part of Atlas Copco Group",
+        "url": "https://mfn.se/cis/a/atlas-copco/south-korean-vacuum-valve-company-to-become-part-of-atlas-copco-group-5a8b75a0"
+      },
+      {
+        "title": "ActionForex: Eurozone PMI holds steady as German growth hits four-year high, France slumps further",
+        "url": "https://www.actionforex.com/live-comments/661769-eurozone-pmi-holds-steady-as-german-growth-hits-four-year-high-france-slumps-further/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json?waters=RHEIN&includeTimeseries=true&includeCurrentMeasurement=true"
+      },
+      {
+        "title": "Dagens Logistik: DHL Supply Chain växer när företag ställer om leveranskedjor",
+        "url": "https://dagenslogistik.se/dhl-supply-chain-vaxer-nar-foretag-staller-om-leveranskedjor/"
+      }
+    ]
+  }
+}

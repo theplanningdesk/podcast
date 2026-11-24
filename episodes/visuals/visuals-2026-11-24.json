@@ -1,0 +1,99 @@
+{
+  "stem": "2026-11-24",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Sweden, Black Week",
+        "title": "34 billion kronor in one week",
+        "detail": "Svensk Handel forecast for goods sales"
+      }
+    },
+    {
+      "line": 1,
+      "template": "stat",
+      "props": {
+        "kicker": "Black Week forecast",
+        "value": 34,
+        "label": "billion kronor in goods sales",
+        "source": "Svensk Handel"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Svensk Handel",
+        "value": 36,
+        "label": "percent of Swedes plan to shop",
+        "source": "Svensk Handel"
+      }
+    },
+    {
+      "line": 2,
+      "at": "more than a third",
+      "template": "headline",
+      "props": {
+        "kicker": "One week",
+        "title": "A third of Sweden buying at once"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "For retailers",
+        "title": "The hardest test of the year"
+      }
+    },
+    {
+      "line": 3,
+      "at": "the peak forecast",
+      "template": "list",
+      "props": {
+        "kicker": "Under test",
+        "items": [
+          {
+            "label": "Peak forecast",
+            "say": "the peak forecast"
+          },
+          {
+            "label": "Store allocations",
+            "say": "the store allocations"
+          },
+          {
+            "label": "Supplier cut-offs",
+            "say": "replenishment cut-offs"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Watch sell-through daily and log your forecast error now"
+      }
+    },
+    {
+      "line": 4,
+      "at": "December brings",
+      "template": "headline",
+      "props": {
+        "kicker": "December",
+        "title": "Markdowns and returns come next"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
