@@ -1,6 +1,6 @@
 # The Planning Desk: engagement scorecard
 
-Updated 2026-11-24. Numbers refresh every morning; the full data is in the CSV files on this branch.
+Updated 2026-11-25. Numbers refresh every morning; the full data is in the CSV files on this branch.
 
 OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 
@@ -9,7 +9,7 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | Channel | Metric | Now |
 |---|---|---|
 | instagram | followers | 5 |
-| instagram | posts | 28 |
+| instagram | posts | 30 |
 | newsletter | last email | Plant closures in Germany, strikes, and a week of making less |
 | newsletter | last email clicks | 0 |
 | newsletter | last email deliveries | 2 |
@@ -18,11 +18,11 @@ OP3 stats page: https://op3.dev/show/4504fdaae99542b7bd32128124a381e5
 | newsletter | last email recipients | 2 |
 | newsletter | last email unsubscriptions | 0 |
 | newsletter | subscribers | 2 |
-| podcast | github mp3 fetches all episodes | 859 |
-| podcast | op3 downloads all episodes | 51 |
-| youtube | subscribers | 5 |
-| youtube | total views | 574 |
-| youtube | videos | 37 |
+| podcast | github mp3 fetches all episodes | 904 |
+| podcast | op3 downloads all episodes | 54 |
+| youtube | subscribers | 6 |
+| youtube | total views | 604 |
+| youtube | videos | 39 |
 | spotify (typed in 2026-10-30) | followers | 1 |
 | spotify (typed in 2026-10-30) | plays | 8 |
 | linkedin (typed in 2026-10-30) | followers | 3 |
@@ -37,15 +37,16 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 
 | Date | Format | Episode | Podcast 7d | Raw | YouTube | Short | IG |
 |---|---|---|---|---|---|---|---|
-| 2026-11-24 | daily | Black Week Sweden: 34 Billion Kronor Tests Forecasts |  | 13 |  | 5 | 51 |
-| 2026-11-23 | daily | Swedish Sawmills: Closures Spread, More Expected |  | 24 |  | 8 | 20 |
-| 2026-11-22 | weekly | Supply Chain News, Week 47: Plant Closures, IG Metall Strikes, AI Capacity |  | 34 | 11 |  |  |
-| 2026-11-21 | saturday | Financial Intelligence by Berman and Knight: Book Summary |  | 32 | 6 | 7 | 76 |
-| 2026-11-20 | daily | Production Planning: Jim Beam Idles Clermont |  | 30 |  | 12 | 28 |
-| 2026-11-19 | daily | Inventory Planning: Wrangler's Owner Restocks |  | 28 |  | 9 | 2 |
-| 2026-11-18 | daily | Network Design: Conagra Shuts a Missouri Plant |  | 29 |  | 5 | 17 |
-| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 33 |  | 19 | 62 |
-| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 32 |  | 13 | 121 |
+| 2026-11-25 | daily | Critical Raw Materials: German Industry Pools Buying |  | 16 |  | 1 | 1 |
+| 2026-11-24 | daily | Black Week Sweden: 34 Billion Kronor Tests Forecasts |  | 25 |  | 6 | 87 |
+| 2026-11-23 | daily | Swedish Sawmills: Closures Spread, More Expected |  | 30 |  | 15 | 20 |
+| 2026-11-22 | weekly | Supply Chain News, Week 47: Plant Closures, IG Metall Strikes, AI Capacity |  | 36 | 14 |  |  |
+| 2026-11-21 | saturday | Financial Intelligence by Berman and Knight: Book Summary |  | 34 | 6 | 7 | 76 |
+| 2026-11-20 | daily | Production Planning: Jim Beam Idles Clermont |  | 31 |  | 14 | 28 |
+| 2026-11-19 | daily | Inventory Planning: Wrangler's Owner Restocks |  | 29 |  | 9 | 2 |
+| 2026-11-18 | daily | Network Design: Conagra Shuts a Missouri Plant |  | 30 |  | 5 | 17 |
+| 2026-11-17 | daily | Mars Kellanova: $1.4bn Into US Snack Plants |  | 34 |  | 19 | 62 |
+| 2026-11-16 | daily | Mercedes Plant Review: The Five-to-One Labour Gap |  | 33 |  | 13 | 121 |
 | 2026-11-15 | weekly | Supply Chain News, Week 46: Mercedes Plants, Cyberattacks, AI Optimisation | 10 | 34 | 18 |  |  |
 | 2026-11-14 | saturday | The Box by Levinson: Book Summary |  | 30 | 4 | 25 | 23 |
 | 2026-11-13 | daily | EV Battery Sourcing: BMW Goes Local for Local | 18 | 34 |  | 19 | 9 |
@@ -55,14 +56,14 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 | 2026-11-09 | daily | Rhine Low Water: Kaub Falls to 13 cm |  | 38 |  | 37 | 51 |
 | 2026-11-08 | weekly | Supply Chain News, Week 45: Suez Return, Schaeffler Cuts, Memory Chip Prices |  | 31 | 27 |  |  |
 | 2026-11-07 | saturday | The Signal and the Noise by Silver: Book Summary |  | 27 | 3 | 32 | 25 |
-| 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 24 |  | 15 | 127 |
+| 2026-11-06 | daily | Suez Canal: Evergreen Returns, Lead Times Shift |  | 26 |  | 15 | 127 |
 | 2026-11-05 | daily | BMW Q3 Results: China Deliveries Drop a Quarter |  | 47 |  | 10 | 23 |
 | 2026-11-04 | daily | Warehouse Network Design: Hitachi Energy Goes Big |  | 27 |  | 37 | 8 |
 | 2026-11-03 | daily | Manufacturing PMI: Factories Start Stocking Up |  | 21 |  | 18 | 108 |
 | 2026-11-02 | daily | German Road Logistics: LIT Buys Duvenbeck |  | 29 |  | 44 | 18 |
 | 2026-11-01 | weekly | Supply Chain News, Week 44: AI Agents, Suez Freight Rates, Rhine Low Water |  | 27 | 16 |  |  |
-| 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 22 | 5 | 22 | 15 |
-| 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 35 |  | 45 | 24 |
+| 2026-10-31 | saturday | Book of the week: The Goal, Goldratt and Cox |  | 22 | 5 | 23 | 15 |
+| 2026-10-30 | daily | Fri 30 Oct: Robot Tariffs on Hold |  | 35 |  | 46 | 24 |
 | 2026-10-29 | daily | Thu 29 Oct: Lunar New Year Comes Early |  | 24 |  | 7 | 11 |
 | 2026-10-28 | daily | Wed 28 Oct: Audi Builds Past the Tariff |  | 19 |  | 8 | 24 |
 | 2026-10-27 | daily | Tue 27 Oct: Who Signs Off on AI |  | 19 |  | 8 | 128 |
@@ -78,7 +79,7 @@ Podcast = OP3 downloads in the first 7 days (bots removed); raw = GitHub MP3 fet
 ## Source status
 
 - buttondown: ok
-- carried: ok: 41 numbers kept from the previous run where today's lookup came back empty
+- carried: ok: 44 numbers kept from the previous run where today's lookup came back empty
 - github: ok
 - instagram: ok
 - op3: ok
