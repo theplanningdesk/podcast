@@ -1,0 +1,309 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Critical Raw Materials: German Industry Pools Buying",
+  "week": "2026-W48",
+  "run_date": "2026-11-25",
+  "brief_file": "news-brief-daily-2026-11-25.md",
+  "target_runtime_sec": 287,
+  "word_count": 831,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-25-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "German industry wants to stop buying critical raw materials from China one company at a time, and it's drafting a shared trading house to do it."
+        },
+        {
+          "speaker": "M",
+          "text": "That turns a sourcing question into a network design question. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-25-01",
+        "2026-11-25-03",
+        "2026-11-25-02"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Wednesday the twenty-fifth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "Today, a joint raw materials buyer for German industry, Procter and Gamble puts a number on automation, and Under Armour cuts its range in half."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-25-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "German industry is planning a joint trading house for critical raw materials, the trade magazine Produktion reports. The engineering association V D M A, the carmakers' association V D A and other business groups are drafting a shared concept for securing supply."
+        },
+        {
+          "speaker": "M",
+          "text": "The idea is to pool purchasing, so one buyer works for many manufacturers, with steadier supply, less risk and less dependence on China."
+        },
+        {
+          "speaker": "F",
+          "text": "What we don't have yet is a timeline, a budget or a list of materials, so this is a plan on paper, not a working channel."
+        },
+        {
+          "speaker": "M",
+          "text": "Still, it changes the question a sourcing team asks. Right now it's which Chinese supplier you pick, and soon it may be how much volume you route through a shared channel that could also hold stock."
+        },
+        {
+          "speaker": "F",
+          "text": "That hits safety stock and dual sourcing first, above all for rare earths and battery metals, where a single source is common and a shortage stops a line."
+        },
+        {
+          "speaker": "M",
+          "text": "Our take, list the critical materials you buy, who you buy them from and how many weeks of cover you hold. When the concept comes out, you'll know which ones you'd want in the pool."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-25-02",
+        "2026-11-25-03",
+        "2026-11-25-04",
+        "2026-11-25-06",
+        "2026-11-25-F1",
+        "2026-11-25-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Under Armour hit its goal of cutting its stock keeping units, its S K Us, by a quarter earlier this year, and now it wants to cut its range in half, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The brand says the aim is simpler decisions and more money behind its strongest products, and it's working to shorten lead times as well."
+        },
+        {
+          "speaker": "M",
+          "text": "A smaller range is the cheapest way to a better forecast. Each item that stays sells in bigger volumes, so demand is steadier and you need less safety stock to cover it."
+        },
+        {
+          "speaker": "F",
+          "text": "And with the long tail gone, the network has fewer items to make and move, which is how an apparel brand gets its lead times down fast."
+        },
+        {
+          "speaker": "M",
+          "text": "Procter and Gamble expects to cut as much as thirty percent of its product supply headcount by twenty thirty as automation spreads through its supply chain, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "F",
+          "text": "The Swedish wire Placera put it at twenty to thirty percent of the manufacturing workforce last week. P and G calls the programme Supply Chain three point oh, and it builds on automation and digital tools."
+        },
+        {
+          "speaker": "M",
+          "text": "When the world's biggest consumer goods maker puts a number on automation, boards elsewhere notice. Expect planning and operations leaders to be asked for their own twenty thirty numbers."
+        },
+        {
+          "speaker": "F",
+          "text": "So work out your own answer before someone hands you one, task by task rather than as a headcount target."
+        },
+        {
+          "speaker": "M",
+          "text": "In Hamburg, the copper and recycling group Aurubis has cut its outlook. It expects operating earnings before tax for the twenty twenty-six, twenty-seven financial year to come in below market expectations."
+        },
+        {
+          "speaker": "F",
+          "text": "The reason is its new plant in Richmond, Georgia, where parts of the smelting furnaces need changes, and the technical ramp-up is now expected in the second half of twenty twenty-eight."
+        },
+        {
+          "speaker": "M",
+          "text": "The lesson for any new site is to plan capacity on a ramp curve, not a start date, and keep the old supply route open until the new one proves itself."
+        },
+        {
+          "speaker": "F",
+          "text": "The E U cap on hybrid car imports from China starts on the first of December and runs for two hundred days while the E U studies the economic impact, SupplyChainBrain reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The October deal set the cap at three hundred and fifty thousand hybrids and plug-in hybrids a year, under half of what was expected this year, and Chinese brand cars built in the E U are exempt."
+        },
+        {
+          "speaker": "F",
+          "text": "So expect Chinese brands to pull their European assembly plans forward, and European carmakers to replan hybrid volumes for twenty twenty-seven."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, the Rhine at Kaub is up to two hundred and twenty-six centimetres, plenty for full barges. And Xeneta analysts expect ocean container spot rates to fall thirty percent next year as Red Sea services return, though they say that isn't guaranteed."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-25-05",
+        "2026-W47-E2"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "In Wetzlar, Hensoldt Theon NightVision has opened new production for night-vision devices, with firm orders from Germany and Belgium for more than one hundred and seventy-eight thousand sets."
+        },
+        {
+          "speaker": "M",
+          "text": "Defence orders that size tighten the market for optics, electronics and skilled assembly, and civil manufacturers share all three."
+        },
+        {
+          "speaker": "F",
+          "text": "And on Friday it's the record date for SKF Vertevo, the automotive bearings business splitting off from SKF."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-25-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Wednesday."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more from the planning desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "P&G Supply Chain Jobs: Up to 30% Cut by 2030",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "P and G may cut up to thirty percent of supply staff."
+      },
+      {
+        "speaker": "M",
+        "text": "Supply Chain Dive reports that Procter and Gamble expects to eliminate as much as thirty percent of its product supply headcount by twenty thirty, as automation spreads through its supply chain."
+      },
+      {
+        "speaker": "F",
+        "text": "Last week the Swedish wire Placera put it at twenty to thirty percent of the manufacturing workforce."
+      },
+      {
+        "speaker": "M",
+        "text": "The company calls the programme Supply Chain three point oh, and it builds on automation and digital tools."
+      },
+      {
+        "speaker": "F",
+        "text": "When the world's biggest consumer goods maker puts a number on automation, other boards will ask their planning and operations leaders for their own twenty thirty numbers, so work yours out first."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "P&G expects to cut up to 30% of its product-supply headcount by 2030 as automation spreads through its supply chain, Supply Chain Dive reports. When the biggest consumer-goods maker puts a number on automation, planning and operations leaders elsewhere will be asked for theirs. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "automation",
+      "manufacturing",
+      "workforceplanning"
+    ]
+  },
+  "linkedin": {
+    "page_post": "German industry is drafting a joint trading house for critical raw materials, and it would change how you dual-source.\n\nVDMA, VDA and other business groups are drafting a concept to pool purchasing and cut dependence on China, produktion.de reports. No timeline, budget or material list yet.\n\nFor planners, the question moves from which Chinese supplier to how much volume goes through a shared, possibly stockpiled channel. List your critical materials, suppliers and weeks of cover now, starting with rare earths and battery metals.\n\nAlso on today's desk:\nP&G expects to cut up to 30% of its product-supply headcount by 2030 as automation spreads, Supply Chain Dive reports.\nUnder Armour, after cutting SKUs by 25%, now aims to halve its assortment and shorten lead times.\n\nWhich critical material in your plan would you route through a shared industry buyer first?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #procurement #rawmaterials",
+    "tags": [
+      "VDMA",
+      "VDA",
+      "Under Armour"
+    ]
+  },
+  "show_notes": {
+    "summary": "Critical raw materials: VDMA, VDA and other German business groups are drafting a joint trading house to pool purchasing and cut reliance on China. Also: Under Armour aims to halve its assortment, P&G plans supply chain job cuts as automation spreads, Aurubis pushes its Richmond ramp-up to 2028 and the EU hybrid quota starts 1 December, plus the Rhine at Kaub and Xeneta's 2027 rate forecast.",
+    "sources": [
+      {
+        "title": "produktion.de: Kritische Rohstoffe, Industrie plant Handelshaus",
+        "url": "https://www.produktion.de/wirtschaft/kritische-rohstoffe-industrie-plant-handelshaus/2773456"
+      },
+      {
+        "title": "Supply Chain Dive: Under Armour continues efforts to trim SKUs, lead times",
+        "url": "https://www.supplychaindive.com/news/under-armour-continues-efforts-to-trim-skus-lead-times/875483/"
+      },
+      {
+        "title": "Supply Chain Dive: Procter & Gamble plans supply chain workforce cuts as automation expands",
+        "url": "https://www.supplychaindive.com/news/procter-gamble-plans-supply-chain-workforce-cuts-as-automation-expands/875533/"
+      },
+      {
+        "title": "Placera: Procter & Gamble ska kapa 20-30% av personalstyrkan inom tillverkning",
+        "url": "https://www.placera.se/telegram/procter-gamble-ska-kapa-20-30-av-personalstyrkan-inom-tillverkning-20261119"
+      },
+      {
+        "title": "Aurubis ad hoc release via finanznachrichten: extended ramp-up in Richmond",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70213261-eqs-adhoc-aurubis-ag-aurubis-erwartet-wegen-verlaengerten-hochlaufs-in-richmond-fuer-das-geschaeftsjahr-2026-27-ein-operatives-ergebnis-vor-steuern-unt-022.htm"
+      },
+      {
+        "title": "SupplyChainBrain: EU to temporarily cap hybrid vehicle imports from China",
+        "url": "https://www.supplychainbrain.com/industries/automotive/article/16542694/eu-to-temporarily-cap-hybrid-vehicle-imports-from-china"
+      },
+      {
+        "title": "Automotive World: EU caps Chinese hybrids at 350,000 but spares local plants",
+        "url": "https://www.automotiveworld.com/news-releases/eu-caps-chinese-hybrids-at-350000-but-spares-local-plants/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/"
+      },
+      {
+        "title": "Xeneta: Analysts forecast ocean freight spot rates to fall 30% in 2027",
+        "url": "https://www.xeneta.com/news/xeneta-summit-analysts-forecast-ocean-freight-spot-rates-to-fall-30-in-2027-as-red-sea-return-sees-capacity-flooding-back"
+      },
+      {
+        "title": "produktion.de: Hensoldt Theon baut Nachtsichtbrillen-Fertigung in Wetzlar aus",
+        "url": "https://www.produktion.de/ruestung-aerospace/hensoldt-theon-baut-nachtsicht-brillen-fertigung-in-wetzlar-aus/2773935"
+      }
+    ]
+  }
+}

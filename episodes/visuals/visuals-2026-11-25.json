@@ -1,0 +1,99 @@
+{
+  "stem": "2026-11-25",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "stat",
+      "props": {
+        "kicker": "P&G supply chain, by 2030",
+        "value": 30,
+        "label": "percent of supply staff may be cut",
+        "source": "Supply Chain Dive"
+      }
+    },
+    {
+      "line": 1,
+      "template": "list",
+      "props": {
+        "kicker": "Supply Chain Dive",
+        "items": [
+          {
+            "label": "Up to 30% of staff",
+            "say": "thirty percent"
+          },
+          {
+            "label": "By 2030",
+            "say": "by twenty thirty"
+          },
+          {
+            "label": "Automation spreads",
+            "say": "as automation spreads"
+          }
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "template": "bars",
+      "props": {
+        "title": "Factory staff cut, percent",
+        "items": [
+          {
+            "label": "Low end",
+            "value": 20
+          },
+          {
+            "label": "High end",
+            "value": 30,
+            "highlight": true
+          }
+        ],
+        "source": "Placera"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "P&G programme",
+        "title": "Supply Chain 3.0",
+        "detail": "Built on automation and digital tools"
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "kicker": "Consumer goods",
+        "title": "P&G puts a number on automation"
+      }
+    },
+    {
+      "line": 4,
+      "at": "other boards will ask",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Boards will ask for your own 2030 number"
+      }
+    },
+    {
+      "line": 4,
+      "at": "so work yours out first",
+      "template": "headline",
+      "props": {
+        "kicker": "For planners",
+        "title": "Work out your number first"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
