@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-26T03:13:00.323903+00:00",
+ "fetched_at": "2026-11-26T11:27:49.796750+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -11,7 +11,7 @@
    "method": "feed https://www.supplychainbrain.com/rss/articles",
    "items": 20,
    "error": null,
-   "raw_items": 39,
+   "raw_items": 35,
    "lane": "planning"
   },
   {
@@ -81,7 +81,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 36,
+   "raw_items": 37,
    "lane": "planning"
   },
   {
@@ -109,7 +109,7 @@
    "url": "https://www.bme.de/news/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 5,
+   "items": 6,
    "error": null,
    "raw_items": 24,
    "lane": "planning"
@@ -139,7 +139,7 @@
    "url": "https://www.nyteknik.se/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 2,
+   "items": 1,
    "error": null,
    "raw_items": 40,
    "lane": "planning"
@@ -149,7 +149,7 @@
    "url": "https://www.di.se/rss",
    "ok": true,
    "method": "feed https://www.di.se/rss",
-   "items": 1,
+   "items": 2,
    "error": null,
    "raw_items": 20,
    "lane": "planning"
@@ -169,9 +169,9 @@
    "url": "https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
    "ok": true,
    "method": "feed https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
-   "items": 7,
+   "items": 6,
    "error": null,
-   "raw_items": 7,
+   "raw_items": 6,
    "lane": "planning"
   },
   {
@@ -209,9 +209,9 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 12,
+   "items": 11,
    "error": null,
-   "raw_items": 12,
+   "raw_items": 11,
    "lane": "planning"
   },
   {
@@ -221,7 +221,7 @@
    "method": "feed https://techxplore.com/rss-feed/business-tech-news/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 16,
+   "raw_items": 15,
    "lane": "management"
   },
   {
@@ -249,9 +249,9 @@
    "url": "https://idw-online.de/de/pressreleasesrss",
    "ok": true,
    "method": "feed https://idw-online.de/de/pressreleasesrss",
-   "items": 4,
+   "items": 5,
    "error": null,
-   "raw_items": 381,
+   "raw_items": 388,
    "lane": "management"
   },
   {
@@ -281,7 +281,7 @@
    "method": "feed https://www.consultancy.eu/rss/consultancy_rssfeed.xml",
    "items": 2,
    "error": null,
-   "raw_items": 15,
+   "raw_items": 14,
    "lane": "management"
   },
   {
@@ -301,7 +301,7 @@
    "method": "feed https://industriemagazin.at/rss.xml",
    "items": 5,
    "error": null,
-   "raw_items": 20,
+   "raw_items": 18,
    "lane": "management"
   },
   {
@@ -309,8 +309,8 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 1,
+   "error": null,
    "raw_items": 30,
    "lane": "management"
   },
@@ -331,7 +331,7 @@
    "method": "feed https://mfn.se/all/a/swedbank.rss",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 0,
+   "raw_items": 1,
    "lane": "management"
   },
   {
@@ -339,8 +339,8 @@
    "url": "https://www.sttinfo.fi/rss/releases/latest",
    "ok": true,
    "method": "feed https://www.sttinfo.fi/rss/releases/latest",
-   "items": 0,
-   "error": "no matching posts in the window (normal for this source)",
+   "items": 3,
+   "error": null,
    "raw_items": 25,
    "lane": "management"
   },
@@ -349,7 +349,7 @@
    "url": "https://www.finanznachrichten.de/rss-aktien-adhoc/",
    "ok": true,
    "method": "feed https://www.finanznachrichten.de/rss-aktien-adhoc/",
-   "items": 4,
+   "items": 3,
    "error": null,
    "raw_items": 20,
    "lane": "management"
@@ -389,9 +389,9 @@
    "url": "https://mfn.se/all/a/atlas-copco.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/atlas-copco.rss",
-   "items": 2,
+   "items": 1,
    "error": null,
-   "raw_items": 4,
+   "raw_items": 2,
    "lane": "companies"
   },
   {
@@ -479,9 +479,9 @@
    "url": "https://mfn.se/all/a/ssab.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/ssab.rss",
-   "items": 1,
-   "error": null,
-   "raw_items": 3,
+   "items": 0,
+   "error": "no releases in the window (normal off-season)",
+   "raw_items": 0,
    "lane": "companies"
   },
   {
@@ -621,7 +621,7 @@
    "method": "feed https://mfn.se/all/a/orkla.rss",
    "items": 1,
    "error": null,
-   "raw_items": 5,
+   "raw_items": 4,
    "lane": "companies"
   },
   {

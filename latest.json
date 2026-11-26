@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-26T03:13:00.323903+00:00",
+ "fetched_at": "2026-11-26T11:27:49.796750+00:00",
  "window_days": 8,
  "sources_ok": 75,
  "sources_total": 75,
@@ -766,6 +766,56 @@
   },
   {
    "source": "SCM.dk",
+   "title": "Blue Water leverer køle- og fryseanlæg til hospitaler i Ukraine",
+   "link": "https://www.scm.dk/blue-water-leverer-kole-og-fryseanlaeg-til-hospitaler-i-ukraine",
+   "published": "2026-11-26T11:00:00+00:00",
+   "summary": "Fire ukrainske hospitaler har modtaget udstyr fra et donationsprojekt med Vestfrost Solutions. Skiftende ruteforhold og korte leveringsvinduer gjorde lokale logistikpartnere afgørende.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Fragtkøbere kan se frem til lavere containerrater i 2027. På de fleste ruter i hvert fald.",
+   "link": "https://www.scm.dk/fragtkobere-kan-se-frem-til-lavere-containerrater-i-2027-pa-de-fleste-ruter-i-hvert-fald",
+   "published": "2026-11-26T11:00:00+00:00",
+   "summary": "Spotprisen er steget 343 procent på et halvt år, og kun hver fjerde container ankommer til tiden. Alligevel er analytikerne enige om i deres spådom om, at 2027 bliver året, hvor fragtkøberen endelig får overtaget igen. Sådan nogenlunde og i gennemsnit. Men lad dig ikke narre af gennemsnittene, advarer de samme analytikere.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Ny Konecranes-truck hos SCA Rundvik uden traditionelt rat",
+   "link": "https://www.scm.dk/ny-konecranes-truck-hos-sca-rundvik-uden-traditionelt-rat",
+   "published": "2026-11-26T09:15:00+00:00",
+   "summary": "Digitaliseringen har ændret arbejdsdagen for truckførerne hos SCA Rundvik. Når flere opgaver håndteres digitalt, stiller det større krav til udsynet og arbejdsmiljøet i kabinen. Savværket har derfor sammen med N.C. Nielsen og Konecranes udviklet en løsning, hvor det traditionelle rat er fjernet for at give plads til en større skærm og bedre udsyn.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "COP31's sammenbrud gør kun behovet for handling større",
+   "link": "https://www.scm.dk/cop31s-sammenbrud-gor-kun-behovet-for-handling-storre",
+   "published": "2026-11-26T07:43:00+00:00",
+   "summary": "Uden global konsensus om fossilbrændsler og klimafinansiering står virksomheder tilbage med større usikkerhed, øget risiko og et større ansvar for egen omstilling.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
+   "title": "Elvarebiler står for over halvdelen af nye varebiler i Danmark",
+   "link": "https://www.scm.dk/elvarebiler-star-for-over-halvdelen-af-nye-varebiler-i-danmark",
+   "published": "2026-11-26T07:00:00+00:00",
+   "summary": "Elvarebiler udgjorde 51,6 procent af de danske nyregistreringer i tredje kvartal 2026. For transportvirksomheder, der overvejer ellastbiler, peger Mobility Denmark på økonomi og opladning som afgørende.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SCM.dk",
    "title": "From Design to Deployment: The Value of Certification",
    "link": "https://www.scm.dk/from-design-to-deployment-the-value-of-certification",
    "published": "2026-11-25T12:50:00+00:00",
@@ -860,56 +910,6 @@
    "link": "https://www.scm.dk/aalborg-universitet-kober-kvantecomputer-til-ingenioruddannelse",
    "published": "2026-11-24T07:00:00+00:00",
    "summary": "Fra 2027 skal ingeniørstuderende på Aalborg Universitet arbejde med fysisk kvantehardware. Anlægget skal også bruges til forskning i energi, materialer og grøn omstilling.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Hvor stiller I jeres tomme paller?",
-   "link": "https://www.scm.dk/hvor-stiller-i-jeres-tomme-paller",
-   "published": "2026-11-24T03:11:00+00:00",
-   "summary": "En tom palle skal løftes fri af stablen, vendes og flyttes hen, hvor den skal bruges. Når det foregår manuelt, kan det give tunge løft og uhensigtsmæssige arbejdsstillinger. Vores pallemagasin kan frigive pallen, så medarbejderen i stedet kan hente den med en palleløfter.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "5 måder AI-agenter i ERP skaber reel forretningsværdi",
-   "link": "https://www.scm.dk/5-mader-ai-agenter-i-erp-skaber-reel-forretningsvaerdi",
-   "published": "2026-11-23T13:11:00+00:00",
-   "summary": "AI er ikke længere begrænset til innovationslaboratorier eller langsigtede roadmap-planer – det forandrer allerede den måde, ERP-systemer fungerer på. I centrum for denne udvikling står en ny generation af intelligente assistenter: AI-agenter i ERP-systemer.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Carlsbergs Jacob Aarup-Andersen er kåret som Årets Leder 2026",
-   "link": "https://www.scm.dk/carlsbergs-jacob-aarup-andersen-er-karet-som-arets-leder-2026",
-   "published": "2026-11-23T11:00:00+00:00",
-   "summary": "Carlsbergs topchef får Ledernes pris. Siden 2023 har han ledet koncernens satsning på flere alkoholfrie drikkevarer med et opkøb og en ny fabrik.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "Spar 20.000 på PALOMAT® Greenline",
-   "link": "https://www.scm.dk/spar-20000-pa-palomat-greenline",
-   "published": "2026-11-23T09:40:00+00:00",
-   "summary": "Et tilbud der ikke tåler dagens lys.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "FREJA lejer 9.169 kvadratmeter i ny logistikejendom i Horsens",
-   "link": "https://www.scm.dk/freja-lejer-9169-kvadratmeter-i-ny-logistikejendom-i-horsens",
-   "published": "2026-11-23T07:00:00+00:00",
-   "summary": "FREJA Transport & Logistics har indgået en lejeaftale med Verdion om lager- og kontorarealer i Business Park Vega vest for Horsens med adgang til E45.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1036,6 +1036,16 @@
   },
   {
    "source": "BME",
+   "title": "26.11.2026 BME-Gehaltsreport Einkauf 2026: Digitalisierungsgrad hat Einfluss auf die Vergütung Vergleichsweise hohe Gehälter bei Finanzdienstleistung, Automotive und Bauwesen +++ Gender-Pay-Gap nach wie vor deutlich vorhanden",
+   "link": "https://www.bme.de/news/bme-gehaltsreport-einkauf-2026-digitalisierungsgrad-hat-einfluss-auf-die-verguetung/",
+   "published": "2026-11-26T00:00:00+00:00",
+   "summary": "Die Digitalisierung hat Einfluss auf die Vergütung der Einkäuferinnen und Einkäufer in Deutschland. Besonders hohe Mediangehälter weisen Beschäftigte mit Kenntnissen in Datenbanken sowie in weiterer spezialisierter Einkaufssoftware auf im Vergleich zu Personen ohne vergleichbare Kenntnisse. Dies ist das Ergebnis des BME-Gehaltsreports Einkauf 2026, einer Umfrage unter 1145 Fach- und Führungskräften aus den Bereichen Einkauf und Procurement. Besonders deutlich fällt der Unterschied bei…",
+   "via": "page links, article read",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "BME",
    "title": "25.11.2026 Industrie-Auftragsbestand wächst weiter Der Auftragsbestand im Verarbeitenden Gewerbe ist im September erneut gestiegen und liegt deutlich über dem Vorjahresniveau. Zuwächse im Maschinenbau und in der Automobilindustrie stützen die Entwicklung. Der Anstieg der Auftragspolster ist ein…",
    "link": "https://www.bme.de/news/industrie-auftragsbestand-waechst-weiter/",
    "published": "2026-11-25T00:00:00+00:00",
@@ -1066,20 +1076,30 @@
   },
   {
    "source": "produktion.de",
-   "title": "KI-Revolution in der Industrie Agentic AI im Maschinenbau: Wie autonome KI-Agenten die Produktion verändern KI-Systeme beantworten nicht mehr nur Fragen, sie handeln: Agentic AI plant mehrstufige Aufgaben in Engineering, Service und Beschaffung selbstständig. Wo liegen die Chancen und wo verlaufen…",
-   "link": "https://www.produktion.de/wirtschaft/agentic-ai-im-maschinenbau-wie-autonome-ki-agenten-die-produktion-veraendern/2760496",
-   "published": "2026-11-25T06:00:00+00:00",
-   "summary": "KI-Systeme beantworten nicht mehr nur Fragen, sie handeln: Agentic AI plant mehrstufige Aufgaben in Engineering, Service und Beschaffung selbstständig. Wo liegen die Chancen und wo verlaufen die technischen Grenzen im Maschinenbau? Handlungsfähige Systeme: Agentic AI erweitert generative KI, indem sie mehrstufige Ziele selbstständig plant, digitale Werkzeuge auswählt und Arbeitsschritte systemübergreifend ausführt. Breites Einsatzspektrum: Die Anwendung im Maschinenbau reicht von der…",
+   "title": "Autonome Lieferkette auf dem Prüfstand Unternehmen investieren verstärkt in KI-Lieferketten Unternehmen investieren verstärkt in KI-Agenten, doch die Erwartungen an die vollautonome Lieferkette sinken. Eine Capgemini-Studie zeigt, welche Rolle menschliche Entscheidungskompetenz und Datenqualität…",
+   "link": "https://www.produktion.de/wirtschaft/unternehmen-investieren-verstaerkt-in-ki-lieferketten/2774971",
+   "published": "2026-11-26T07:24:00+00:00",
+   "summary": "Unternehmen investieren verstärkt in KI-Agenten, doch die Erwartungen an die vollautonome Lieferkette sinken. Eine Capgemini-Studie zeigt, welche Rolle menschliche Entscheidungskompetenz und Datenqualität künftig spielen. 78 % der Unternehmen betrachten geopolitische Instabilität als erhebliche Herausforderung für ihre Lieferketten. 22 % der Unternehmen erproben oder nutzen bereits KI-Agenten im Supply-Chain-Management.",
    "via": "page links, article read",
    "lane": "planning",
    "planning_terms": true
   },
   {
    "source": "produktion.de",
-   "title": "Strategie für kritische Rohstoffe Kritische Rohstoffe: Industrie plant Handelshaus Die deutsche Industrie will ihre Abhängigkeit von China bei kritischen Rohstoffen reduzieren. Ein gemeinsames Rohstoffhandelshaus soll die Beschaffung bündeln, Lieferketten stabilisieren und Versorgungsrisiken…",
-   "link": "https://www.produktion.de/wirtschaft/kritische-rohstoffe-industrie-plant-handelshaus/2773456",
-   "published": "2026-11-24T07:50:00+00:00",
-   "summary": "Die deutsche Industrie will ihre Abhängigkeit von China bei kritischen Rohstoffen reduzieren. Ein gemeinsames Rohstoffhandelshaus soll die Beschaffung bündeln, Lieferketten stabilisieren und Versorgungsrisiken minimieren. VDMA, VDA und weitere Wirtschaftsverbände entwickeln ein gemeinsames Konzept zur Rohstoffsicherung. Ein deutsches Rohstoffhandelshaus soll die Beschaffung kritischer Rohstoffe koordinieren.",
+   "title": "Defence Hub Kassel-Calden Spatenstich für den Defence Hub Kassel-Calden: Rheinmetall und Panattoni bauen Logistik- und Trainingszentrum Drei Monate nach der Standortentscheidung fällt in Calden der offizielle Startschuss: Rheinmetall und Panattoni errichten am Kassel Airport ein 38.000 m² großes…",
+   "link": "https://www.produktion.de/ruestung-aerospace/spatenstich-fuer-den-defence-hub-kassel-calden-rheinmetall-und-panattoni-bauen-logistik-und-trainingszentrum/2774961",
+   "published": "2026-11-26T07:20:00+00:00",
+   "summary": "Drei Monate nach der Standortentscheidung fällt in Calden der offizielle Startschuss: Rheinmetall und Panattoni errichten am Kassel Airport ein 38.000 m² großes Logistik- und Trainingszentrum. Bis zu 200 neue Arbeitsplätze sind geplant. Projektstart am Kassel Airport: Rheinmetall und Projektentwickler Panattoni haben den offiziellen Spatenstich für den neuen Defence Hub Kassel-Calden auf einem rund 9 Hektar großen ehemaligen Flughafengrundstück gesetzt. Flächenaufteilung: Bis Ende Juni 2027…",
+   "via": "page links, article read",
+   "lane": "planning",
+   "planning_terms": true
+  },
+  {
+   "source": "produktion.de",
+   "title": "KI-Revolution in der Industrie Agentic AI im Maschinenbau: Wie autonome KI-Agenten die Produktion verändern KI-Systeme beantworten nicht mehr nur Fragen, sie handeln: Agentic AI plant mehrstufige Aufgaben in Engineering, Service und Beschaffung selbstständig. Wo liegen die Chancen und wo verlaufen…",
+   "link": "https://www.produktion.de/wirtschaft/agentic-ai-im-maschinenbau-wie-autonome-ki-agenten-die-produktion-veraendern/2760496",
+   "published": "2026-11-25T06:00:00+00:00",
+   "summary": "KI-Systeme beantworten nicht mehr nur Fragen, sie handeln: Agentic AI plant mehrstufige Aufgaben in Engineering, Service und Beschaffung selbstständig. Wo liegen die Chancen und wo verlaufen die technischen Grenzen im Maschinenbau? Handlungsfähige Systeme: Agentic AI erweitert generative KI, indem sie mehrstufige Ziele selbstständig plant, digitale Werkzeuge auswählt und Arbeitsschritte systemübergreifend ausführt. Breites Einsatzspektrum: Die Anwendung im Maschinenbau reicht von der…",
    "via": "page links, article read",
    "lane": "planning",
    "planning_terms": true
@@ -1096,10 +1116,10 @@
   },
   {
    "source": "produktion.de",
-   "title": "Strategische Allianz und Kapitalbeteiligung AMS Osram und Samsung Display schließen microLED-Partnerschaft – 210 Mio. Euro Investment für Werk Kulim 2 Strategischer Durchbruch für AMS Osram: Gemeinsam mit Samsung Display entwickelt der Konzern neuartige microLEDs. Ein Kapazitätskorridor in Kulim 2…",
-   "link": "https://www.produktion.de/wirtschaft/ams-osram-und-samsung-display-schliessen-microled-partnerschaft-210-mio-euro-investment-fuer-werk-kulim-2/2774332",
-   "published": "2026-11-25T07:46:00+00:00",
-   "summary": "Strategischer Durchbruch für AMS Osram: Gemeinsam mit Samsung Display entwickelt der Konzern neuartige microLEDs. Ein Kapazitätskorridor in Kulim 2 und ein 210-Millionen-Euro-Investment sichern Finanzierung und Verschuldungsabbau ab. Strategische Technologie-Allianz: AMS Osram und Samsung Display Co., Ltd. (SDC) entwickeln und kommerzialisieren gemeinsam eine neuartige microLED-Technologie der nächsten Generation auf Basis ultrakleiner LEDs für vielfältige Display-Anwendungen. 210 Millionen…",
+   "title": "Logistikautomatisierung mit mobilen Robotern Bis zu 30 Monate Zeitverlust, die niemand einplant Bis zu 42 statt zwölf Monate: Bei der Logistikautomatisierung unterschätzen Unternehmen den zeitlichen Vorlauf. Laut Safelog liegt das Problem weniger in der Robotertechnik als in der eigenen…",
+   "link": "https://www.produktion.de/technik/bis-zu-30-monate-zeitverlust-die-niemand-einplant/2774381",
+   "published": "2026-11-26T06:59:00+00:00",
+   "summary": "Bis zu 42 statt zwölf Monate: Bei der Logistikautomatisierung unterschätzen Unternehmen den zeitlichen Vorlauf. Laut Safelog liegt das Problem weniger in der Robotertechnik als in der eigenen Organisation. Logistikautomatisierung mit mobilen Transportrobotern benötigt laut Safelog zwischen 21 und 42 Monaten bis zum stabilen Betrieb. Unklare Zuständigkeiten, langwierige Entscheidungsprozesse und fehlende IT-Kompetenzen verzögern die Umsetzung.",
    "via": "page links, article read",
    "lane": "planning",
    "planning_terms": false
@@ -1115,26 +1135,6 @@
    "planning_terms": false
   },
   {
-   "source": "produktion.de",
-   "title": "Podcast Industry Insights mit Sparetech Ersatzteilmanagement: Wie KI Lagerbestände reduzieren kann Anja Ringel 18. November 2026",
-   "link": "https://www.produktion.de/mediathek/ersatzteilmanagement-wie-ki-lagerbestaende-reduzieren-kann/2769671",
-   "published": "2026-11-18T06:28:00+00:00",
-   "summary": "Wie lassen sich Ersatzteilbestände reduzieren? Sparetech-Mitgründer Lukas Biedermann spricht im Podcast Industry Inisghts über KI, Kosten und Ersatzteillager. Ersatzteile sind für Industrieunternehmen eine Art Versicherung gegen Produktionsstillstände. Fällt eine Maschine aus, muss die passende Komponente möglichst schnell verfügbar sein. Doch diese Absicherung hat ihren Preis: In den Lagern großer Produktionsunternehmen liegen Ersatzteilbestände im Wert von vielen Millionen Euro. Nicht selten…",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Ny Teknik",
-   "title": "ENERGI Omstarten för svensk e-metanol behöver 10 miljarder kronor Thyssenkrupp går in i två fabriksprojekt men avslöjar inte storleken på investeringen • Berg-och dalbana för nordisk elektrometanol.",
-   "link": "https://www.nyteknik.se/energi/omstart-foer-svensk-e-metanol-behoever-10-miljarder-finns-pengar-och-intresse/4515935",
-   "published": "2026-11-23T17:25:00+00:00",
-   "summary": "Thyssenkrupp går in i två fabriksprojekt men avslöjar inte storleken på investeringen • Berg-och dalbana för nordisk elektrometanol. Liquid Winds planerade e-metanolfabriker i Övik och Umeå är tillbaka på banan. Thyssenkrupp Decarbon Technologies går in i projekten men avslöjar inte hur mycket pengar de satsar. ”Vi såg en chans att kliva in i projekt som var ganska mogna.” Prova Ny Teknik – 149 kr 3 månader Tillgång till alla låsta artiklar, fördjupande kompendier, premiumnyhetsbrev, samt…",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
    "source": "Ny Teknik",
    "title": "LKAB kan bli långsiktig leverantör till Stegras stålfabrik",
    "link": "https://www.nyteknik.se/industri/lkab-kan-bli-langsiktig-leverantoer-till-stegras-stalfabrik/4515662",
@@ -1146,10 +1146,20 @@
   },
   {
    "source": "Dagens Industri",
-   "title": "Megaavgiften äter upp spararnas kapital",
-   "link": "https://www.di.se/nyheter/megaavgiften-ater-upp-spararnas-kapital/",
-   "published": "2026-11-25T21:55:17+00:00",
-   "summary": "Skenet kan bedra när det gäller fondavgifter. Di skalar bort branschens avgiftslager och visar hur slutnotan för spararna rusar till över 8 procent per år i en av marknadens värstingar.",
+   "title": "Ikeas historiska stängning uteblir – varuhuset blir kvar",
+   "link": "https://www.di.se/live/ikeas-historiska-stangning-uteblir-varuhuset-blir-kvar/",
+   "published": "2026-11-26T10:24:14+00:00",
+   "summary": "Den historiska nedläggningen blir inte av. Ikea stannar kvar på sin nuvarande plats i Borlänge – om än i ett mindre format. Det rapporterar Borlänge Tidning.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Industri",
+   "title": "Kopplingar till kriminella vid statliga inköp",
+   "link": "https://www.di.se/live/kopplingar-till-kriminella-vid-statliga-inkop/",
+   "published": "2026-11-26T10:12:01+00:00",
+   "summary": "Varje år gör statliga myndigheter inköp för stora belopp. Men man tar inte tillräcklig hänsyn till risken för korruption och jäv, enligt en granskning från Riksrevisionen som hittat flera leverantörer med kopplingar till organiserad brottslighet.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1190,16 +1200,6 @@
    "link": "https://arxiv.org/abs/2611.26175v1",
    "published": "2026-11-19T14:26:50+00:00",
    "summary": "Network congestion can hinder reserve deliverability, motivating network-aware reserve procurement. Existing adaptive robust optimization approaches overlook the dependence of uncertainty sets on reserve demand curves and renewable curtailment, which is important in systems with high levels of variable renewable energy. We address this using decisiondependent box uncertainty sets, whose bounds depend on reserve demand curves and day-ahead curtailment of variable renewable energy. We reformulate the problem using a primitive uncertainty set and solve it via column-and-constraint generation. On a 29- bus Great Britain system, the proposed method is more costeffective than the inscribed boxes method because it accounts for the potential of reserve activation to both aggravate and relieve network congestion, whereas the inscribed boxes method only captures the former. Cost savings stem from differences in energy and reserve schedules, including the beneficial simultaneous activation of upward and downward reserves for real-time balancing in some scenarios.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "Dynamic and Risk-Aware Procurement of Fast Frequency Response from Electric Vehicles and Heat Pumps",
-   "link": "https://arxiv.org/abs/2611.24026v1",
-   "published": "2026-11-18T08:14:47+00:00",
-   "summary": "Low-inertia power systems increasingly rely on Fast Frequency Response (FFR) to keep the frequency nadir above under-frequency load-shedding thresholds without oversized Frequency Containment Reserve or synchronous inertia. This paper proposes two complementary methodologies that interface with an existing day-ahead FFR capacity market. On the Transmission System Operator (TSO) side, a dynamic procurement rule maps forecasted kinetic energy and contingency magnitude onto an offline neighborhood-need surface, yielding interval-wise FFR capacity requests rather than constant seasonal or annual volumes. On the aggregator side, a risk-aware, TSO-certifiable bidding strategy quantifies reliable FFR capacity from fleets of electric vehicles (EVs) and heat pumps (HPs) by offering lower conditional quantiles of day-ahead headroom at a prescribed delivery reliability. The resulting requests and offers are cleared through a pay-as-bid capacity auction. A Cyprus 2025 case study shows that dynamic neighborhood-based procurement yields an annual clearing cost of about EUR 476,000, which is 30%-33% lower than the seasonal and annual static rules and also below the UFLS VoLL of EUR 637,500 estimated from the fifteen real 2025 events with fmin <= 49 Hz. EV and HP offers meet their target delivery reliabilities, and RMS validation finds 46 of 50 operating points above 49 Hz at both full and 85% FFR delivery.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
@@ -1375,16 +1375,6 @@
    "planning_terms": false
   },
   {
-   "source": "SAP News",
-   "title": "SAP Recognized as a Customers’ Choice in the 2026 Gartner Peer Insights™ Voice of the Customer for Talent Acquisition (Recruiting) Suites",
-   "link": "https://news.sap.com/2026/11/sap-recognized-gartner-peer-insights-talent-acquisition/",
-   "published": "2026-11-18T11:15:00+00:00",
-   "summary": "The recognition captures the experiences of the teams using our solutions to hire, develop, and grow their workforce.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "Phys.org (economics and business)",
    "title": "Sustainable procurement in multinational corporations depends on people and the operating environment",
    "link": "https://phys.org/news/2026-11-sustainable-multinational-corporations-people-environment.html",
@@ -1400,6 +1390,16 @@
    "link": "https://phys.org/news/2026-11-panic-buying-gradual-stockpiling-prepping.html",
    "published": "2026-11-24T19:50:04+00:00",
    "summary": "Soon after the government launched its \"Be Ready\" campaign, supermarket shelves were empty where the bottled water usually sits. Flashlights quickly went out of stock too.",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "idw-online (DACH research)",
+   "title": "Mit dem »Digitalen Testfeld Air Cargo« in die Luftfrachtzukunft",
+   "link": "http://idw-online.de/de/news881599",
+   "published": "2026-11-26T10:37:00+00:00",
+   "summary": "Wie lassen sich in der Luftfracht Daten nahtlos vernetzen, Frachtkapazitäten mit Künstlicher Intelligenz (KI) vorausschauend planen und Transporte autonom bewegen? Antworten liefert das Forschungsprojekt »Digitales Testfeld Air Cargo« (DTAC). Seit 2021 haben Forschende des Fraunhofer-Instituts für Materialfluss und Logistik IML gemeinsam mit der Frankfurt University of Applied Sciences und neun…",
    "via": "feed",
    "lane": "management",
    "planning_terms": false
@@ -1535,6 +1535,46 @@
    "planning_terms": false
   },
   {
+   "source": "Placera (Swedish business news)",
+   "title": "Skanska tar ny miljardorder inom datacenter",
+   "link": "https://www.placera.se/nyheter/skanska-tar-ny-miljardorder-inom-datacenter-2026-11-26",
+   "published": "2026-11-26T06:51:03+00:00",
+   "summary": "Ordervärdet uppgår till 275 miljoner dollar, motsvarande cirka 2,8 miljarder kronor, och inkluderas i orderingången för USA under fjärde kvartalet. Projektet omfattar ett datacenter med en kapacitet på 48 megawatt och en total yta på cirka 22 700 kvadratmeter. Skanska ska även uppföra byggnadens skal och inreda tekniska utrymmen, stödytor och kontor samt bygga en separat vattenreningsanläggning.…",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "STT Info (Finnish releases)",
+   "title": "Suurinvestoinnit vahvistavat kasvunäkymiä",
+   "link": "https://www.sttinfo.fi/tiedote/72537925/suurinvestoinnit-vahvistavat-kasvunakymia?lang=fi",
+   "published": "2026-11-26T11:11:55+00:00",
+   "summary": "Mittavat investoinnit datatalouteen, energiaan, teollisuuteen, kiertotalouteen ja vihreään siirtymään luovat pohjaa uudelle kasvulle ja työpaikoille Etelä-Karjalassa, Kymenlaaksossa ja Päijät-Hämeessä. Kehitystä jarruttavat kuitenkin väestökehityksen haasteet ja teollisuuden rakennemuutos sekä korkea työttömyys. Työmarkkinoilla haasteina ovat myös pitkäaikaistyöttömyys sekä työvoiman kysynnän ja…",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "STT Info (Finnish releases)",
+   "title": "Etelä-Pohjanmaan investointipotentiaali ylittää 21 miljardia euroa",
+   "link": "https://www.sttinfo.fi/tiedote/72537251/etela-pohjanmaan-investointipotentiaali-ylittaa-21-miljardia-euroa?lang=fi",
+   "published": "2026-11-26T10:30:00+00:00",
+   "summary": "Kehitysnäkymät ovat Etelä-Pohjanmaalla syksyllä 2026 myönteiset, vaikka talouden ja työmarkkinoiden tilanteessa on edelleen epävarmuutta. Teknologia- ja metalliteollisuuden vahvistuva kysyntä sekä mittavat energia- ja datakeskushankkeet avaavat uusia kasvumahdollisuuksia.",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "STT Info (Finnish releases)",
+   "title": "Meriteollisuus ja muu teknologiateollisuus vetävät Satakuntaa kasvuun",
+   "link": "https://www.sttinfo.fi/tiedote/72536364/meriteollisuus-ja-muu-teknologiateollisuus-vetavat-satakuntaa-kasvuun?lang=fi",
+   "published": "2026-11-26T10:15:00+00:00",
+   "summary": "Satakunnan elinkeinoelämän ja yritystoiminnan tilanteen arvioidaan paranevan selvästi seuraavan vuoden aikana. Talouskehitys on jo kääntynyt nousuun. Sen sijaan työttömyys alenee vasta viiveellä, vaikka merkkejä työllisyystilanteen paranemisesta onkin jo näkyvissä. Satakunnan elinkeinoelämän ja työmarkkinoiden tilannetta ja näkymiä on arvioitu syksyn Alueelliset kehitysnäkymät -raportissa.",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
    "source": "DACH ad hoc releases (finanznachrichten)",
    "title": "EQS-Adhoc: Aurubis AG: Aurubis erwartet wegen verlängerten Hochlaufs in Richmond für das Geschäftsjahr 2026/27 ein operatives Ergebnis vor Steuern unter der Markterwartung",
    "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70213261-eqs-adhoc-aurubis-ag-aurubis-erwartet-wegen-verlaengerten-hochlaufs-in-richmond-fuer-das-geschaeftsjahr-2026-27-ein-operatives-ergebnis-vor-steuern-unt-022.htm",
@@ -1554,17 +1594,6 @@
    "via": "feed, article read",
    "lane": "management",
    "highlights": "Hintergrund der Abweichung von der Prognose und den Consensus-Schätzungen sind höher als ursprünglich geplante weitere Restrukturierungsaufwendungen für Personalmaßnahmen im vierten Quartal 2025/2026 sowie Impairments in Höhe von insgesamt ca. Grund hierfür waren Sondereffekte durch höhere Restrukturierungskosten für Personalmaßnahmen und Impairments von etwa 17 Mio.",
-   "planning_terms": true
-  },
-  {
-   "source": "DACH ad hoc releases (finanznachrichten)",
-   "title": "EQS-Adhoc: centrotherm international AG: centrotherm verbucht Großauftrag und hebt seine Prognose für das Geschäftsjahr 2026 an",
-   "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70201903-eqs-adhoc-centrotherm-international-ag-centrotherm-verbucht-grossauftrag-und-hebt-seine-prognose-fuer-das-geschaeftsjahr-2026-an-022.htm",
-   "published": "2026-11-23T09:39:00+00:00",
-   "summary": "EQS-Ad-hoc: centrotherm international AG / Schlagwort(e): Prognose / Gesamtjahr/Sonstiges centrotherm international AG verbucht Großauftrag und hebt seine Prognose für das Geschäftsjahr 2026 an 23.11.2026 / 10:34 CET/CEST Veröffentlichung einer Insiderinformation nach Artikel 17 der Verordnung (EU) Nr. 596/2014, übermittelt durch EQS News - ein Service der EQS Group . Für den Inhalt der Mitteilung ist der Emittent / Herausgeber verantwortlich. Veröffentlichung einer Insiderinformation gemäß…",
-   "via": "feed, article read",
-   "lane": "management",
-   "highlights": "Vor diesem Hintergrund hat der Vorstand der centrotherm international AG heute seine Prognose zum Konzernauftragseingang mit weiteren, zu erwartenden Aufträgen anderer potenzieller Kunden aktualisiert und die Prognose für das laufende Geschäftsjahr angehoben. Er rechnet nunmehr mit einem Konzernauftragseingang von 290 bis 340 Mio. Infolgedessen hebt das Unternehmen seine Prognosen für das Geschäftsjahr 2026 deutlich an: Der erwartete Konzernauftragseingang steigt auf 290 bis 340 Mio.",
    "planning_terms": true
   },
   {
@@ -1612,17 +1641,6 @@
    "lane": "companies"
   },
   {
-   "source": "Atlas Copco",
-   "title": "Atlas Copco: US based fluid handling distributor has been divested",
-   "link": "https://mfn.se/cis/a/atlas-copco/atlas-copco-us-based-fluid-handling-distributor-has-been-divested-9045d187",
-   "published": "2026-11-18T07:30:00+00:00",
-   "summary": "Nacka, Sweden, November 18, 2026: C.H. Spencer LLC (\"C.H. Spencer\") has been divested and no longer constitutes a part of Atlas Copco Group. Following a strategic review by the service division within the Power Technique business area C.H. Spencer, located in Salt Lake City, USA, has been divested. C.H. Spencer is a distributor of fluid handling equipment, providing both equipment sales and…",
-   "via": "feed",
-   "company": "Atlas Copco",
-   "highlights": "",
-   "lane": "companies"
-  },
-  {
    "source": "Alfa Laval",
    "title": "Alfa Laval outlines strategic priorities and confirms growth ambitions at Capital Markets Day 2026",
    "link": "https://mfn.se/cis/a/alfa-laval/alfa-laval-outlines-strategic-priorities-and-confirms-growth-ambitions-at-capital-markets-day-2026-6a264983",
@@ -1652,17 +1670,6 @@
    "summary": "Bolidens extra bolagsstämma hölls den 23 november 2026 i Stockholm och genom förhandsröstning (poströstning). Den 27 augusti 2026 ingick Boliden AB och Votorantim S.A. ett slutgiltigt avtal enligt vilket Boliden ska förvärva samtliga Votorantims aktier i Nexa Resources S.A. mot nyemitterade aktier i Boliden. Transaktionens genomförande är villkorat av bland annat att Bolidens aktieägare vid en…",
    "via": "feed",
    "company": "Boliden",
-   "highlights": "",
-   "lane": "companies"
-  },
-  {
-   "source": "SSAB",
-   "title": "SSAB donates emergency heaters and outdoor fireplaces to Ukraine ahead of winter",
-   "link": "https://mfn.se/cis/a/ssab/ssab-donates-emergency-heaters-and-outdoor-fireplaces-to-ukraine-ahead-of-winter-9ddc3e87",
-   "published": "2026-11-18T07:30:00+00:00",
-   "summary": "SSAB is donating emergency heaters and outdoor fireplaces to Ukraine ahead of the winter to address the urgent need for heat caused by the war. The donation was presented during the Ukrainian ambassador's visit to SSAB in Oxelösund on November 17. Karin Palmqvist, Head of Production Oxelösund, Svitlana Zalishchuk, Ambassador of Ukraine to Sweden and Thomas Hörnfeldt, Vice President…",
-   "via": "feed",
-   "company": "SSAB",
    "highlights": "",
    "lane": "companies"
   },
@@ -1723,6 +1730,16 @@
   },
   {
    "source": "The Loadstar",
+   "title": "Alaska’s freighter expansion puts Hawaii cargo growth in focus",
+   "link": "https://theloadstar.com/alaskas-freighter-expansion-puts-hawaii-cargo-growth-in-focus/",
+   "published": "2026-11-26T11:24:31+00:00",
+   "summary": "Alaska Air Group is doubling its dedicated freighter fleet as it looks to unlock cargo demand in Hawaii and build a more substantial international freight business. However, the challenge might be turning that additional aircraft capacity into sustainable revenue growth. The airline plans to introduce four Boeing 737-800 converted freighters in the first half of next year, increasing its…",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "The Loadstar",
    "title": "APM Terminals plans 1.4m teu expansion at Rotterdam’s Maasvlakte II",
    "link": "https://theloadstar.com/apm-terminals-plans-1-4m-teu-expansion-at-rotterdams-maasvlakte-ii/",
    "published": "2026-11-25T12:43:26+00:00",
@@ -1757,16 +1774,6 @@
    "link": "https://theloadstar.com/smaller-forwarders-struggle-to-secure-alternative-terms-under-iata-air-waybill-rules/",
    "published": "2026-11-25T12:30:50+00:00",
    "summary": "Some airlines are agreeing alternative liability terms with larger freight forwarders under IATA’s revised direct air waybill (DAWB) framework, but smaller firms have little leverage to secure similar arrangements, the Airforwarders Association (AfA) has warned. “If an airline says no, the forwarder either accepts the default terms or moves the cargo to another carrier,” AfA chief executive…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "The Loadstar",
-   "title": "The ‘Bolloréisation’ of Ceva Logistics is finally underway",
-   "link": "https://theloadstar.com/the-bolloreisation-of-ceva-logistics-is-finally-underway/",
-   "published": "2026-11-25T12:14:04+00:00",
-   "summary": "The message is loud and clear: Ceva Logistics has embarked on another comprehensive corporate restructuring that looks “in essence, more Teutonic than Nordic”, sources say. (By way of background: I guess you recall ‘No stone will be left unturned‘ coverage published on 16 November.) And so After a “couple of lost years” under the previous stewardship of Mathieu Friedberg*, to “now expect…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -1823,50 +1830,50 @@
   },
   {
    "source": "Splash247",
-   "title": "Shenzhen Energy makes $44m dry bulk newbuild move",
-   "link": "https://splash247.com/shenzhen-energy-makes-44m-dry-bulk-newbuild-move/",
-   "published": "2026-11-25T12:40:00+00:00",
-   "summary": "Chinese power group Shenzhen Energy is moving ahead with the renewal of its dry bulk fleet, selecting CSSC Huangpu Wenchong Shipbuilding to build an 82,000 dwt kamsarmax in a deal worth RMB296m ($44.4m). The Shenzhen-listed company’s shipping arm, Shenzhen Energy Transportation, has named the Guangzhou-based yard as the winning bidder for the vessel, which will …",
+   "title": "Polish offshore wind rules draw Danish shipowner backlash",
+   "link": "https://splash247.com/polish-offshore-wind-rules-draw-danish-shipowner-backlash/",
+   "published": "2026-11-26T11:19:00+00:00",
+   "summary": "Danish shipowners have raised concerns at EU level over new Polish vessel certification requirements, warning that additional inspections are making it harder for foreign operators to compete for offshore wind and marine construction contracts in the Baltic Sea. Industry association Danish Shipping has challenged rules requiring certain foreign-flagged vessels below 500 gt to undergo additional …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Bonny Gas Transport adds LNG carrier double in China",
-   "link": "https://splash247.com/bonny-gas-transport-adds-lng-carrier-double-in-china/",
-   "published": "2026-11-25T12:20:00+00:00",
-   "summary": "Nigeria LNG’s shipping arm Bonny Gas Transport (BGT) has returned to China’s Hudong-Zhonghua Shipbuilding for another two LNG carriers, expanding its fleet renewal programme at the Shanghai yard to five firm vessels. The Nigerian owner has signed contracts on for a pair of 174,000 cu m newbuilds, with China Shipbuilding Trading also involved in the …",
+   "title": "Hanwha Ocean pulls out of 800MW offshore wind project",
+   "link": "https://splash247.com/hanwha-ocean-pulls-out-of-800mw-offshore-wind-project/",
+   "published": "2026-11-26T11:00:00+00:00",
+   "summary": "South Korean shipbuilding heavyweight Hanwha Ocean has pulled out of an 800MW offshore wind development off the country’s southwestern coast. The company confirmed in a regulatory filing on Wednesday that it had decided not to participate in the first phase of the Jeonbuk Southwest Offshore Wind Expansion project after reviewing the conditions surrounding the development. …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Hong Kong shipowners hail shipping tax overhaul",
-   "link": "https://splash247.com/hong-kong-shipowners-hail-shipping-tax-overhaul/",
-   "published": "2026-11-25T12:00:00+00:00",
-   "summary": "The Hong Kong Shipowners Association (HKSOA) has welcomed a package of tax reforms aimed at attracting more shipping and commodity trading businesses to the city, including a new half-rate profits tax concession for physical commodity traders. The measures, which returned to the Legislative Council for consideration on Wednesday, would reduce the profits tax rate on …",
+   "title": "Taylor Maritime hit by shareholder revolt over pay",
+   "link": "https://splash247.com/taylor-maritime-hit-by-shareholder-revolt-over-pay/",
+   "published": "2026-11-26T10:45:00+00:00",
+   "summary": "London-listed dry bulk owner Taylor Maritime has faced a shareholder backlash over directors’ remuneration, with more than 20% of votes cast against its annual pay report while the company winds down its shipping operations. The Ed Buttery-led outfit disclosed that 20.59% of votes at its November 25 annual general meeting opposed the directors’ remuneration report, …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "Neda makes VLCC comeback with Chinese order",
-   "link": "https://splash247.com/neda-makes-vlcc-comeback-with-chinese-order/",
-   "published": "2026-11-25T11:40:00+00:00",
-   "summary": "Greek shipowner Neda Maritime Agency has returned to the VLCC newbuilding market, lining up one firm vessel and an option for another at China’s New Times Shipbuilding. Shipbrokers have linked the Lykiardopoulos family-controlled company to a deal for 303,000 dwt crude carriers at the Jiangsu-based yard, with both vessels pencilled in for delivery in 2030. …",
+   "title": "NextGeo wins survey work on European hydrogen pipeline",
+   "link": "https://splash247.com/nextgeo-wins-survey-work-on-european-hydrogen-pipeline/",
+   "published": "2026-11-26T10:30:00+00:00",
+   "summary": "Italian offshore survey specialist Next Geosolutions (NextGeo) has secured an €11.6m ($12.7m) contract to survey a planned subsea hydrogen pipeline linking Spain and France. BarMar, a joint venture between French gas transmission operators NaTran and Teréga and Spain’s Enagás, awarded the contract. NextGeo will carry out a survey campaign along a 366km offshore corridor between …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "Splash247",
-   "title": "MPC Container Ships strikes $76m in fleet deals",
-   "link": "https://splash247.com/mpc-container-ships-strikes-76m-in-fleet-deals/",
-   "published": "2026-11-25T11:21:00+00:00",
-   "summary": "Oslo-listed MPC Container Ships (MPCC) has revealed $76.3m in secondhand transactions, buying a modern feeder and selling two older containerships while locking in fresh employment for two vessels. The Constantin Baack-led owner has confirmed a $35.4m deal for a 2019-built 1,800 teu containership, brokers earlier identified as Nordmaas from Germany’s Reederei Nord fleet. The Yangzijiang-built …",
+   "title": "StealthGas boosts forward cover with seven fixtures",
+   "link": "https://splash247.com/stealthgas-boosts-forward-cover-with-seven-fixtures/",
+   "published": "2026-11-26T10:12:43+00:00",
+   "summary": "Harry Vafias-led StealthGas has wrapped up seven charter deals for its LPG carriers, lifting its contracted revenue backlog to $115m and securing employment for one vessel into 2030. The Nasdaq-listed Greek owner revealed the fixtures in its latest quarterly update, with the longest deal involving the 2011-built, 5,000 cu m Gas Myth. The Japanese-built vessel …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2043,6 +2050,26 @@
   },
   {
    "source": "VerkehrsRundschau",
+   "title": "Spring GDS ruft zu mehr Konsequenz beim Klimaschutz auf 26.11.2026, 10:45 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/spring-gds-senkt-emissionen-mit-hvo100-und-elektro-lkw-3941869",
+   "published": "2026-11-26T10:45:00+00:00",
+   "summary": "Spring GDS hat mit HVO100 mehr als 20.000 Tonnen CO2e vermieden. Zudem fährt ein Elektro-Lkw täglich zwischen Breda und Pulheim. Spring GDS hat nach eigenen Angaben durch den Einsatz von rund sieben Millionen Litern HVO100 mehr als 20.000 Tonnen CO2e vermieden. Zusätzlich setzt der E-Commerce-Logistiker einen Elektro-Lkw auf der täglichen Verbindung zwischen Breda und Pulheim ein. Spring GDS setzt bei der Dekarbonisierung des grenzüberschreitenden E-Commerce -Verkehrs auf HVO100, Elektro-Lkw…",
+   "via": "page links, article read",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "VerkehrsRundschau",
+   "title": "35.000 Stellplätze: Roboter übernehmen Siemens-Lager 26.11.2026, 09:50 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/35-000-stellplaetze-roboter-uebernehmen-siemens-lager-3941806",
+   "published": "2026-11-26T09:50:00+00:00",
+   "summary": "Hellmann automatisiert die Siemens-Intralogistik in Nürnberg mit Exotec. Das Skypod-System startet mit rund 35.000 Stellplätzen. Hellmann automatisiert die Intralogistik am Siemens-Standort Nürnberg mit dem Skypod-System von Exotec. Autonome Roboter übernehmen künftig Ein- und Auslagerung sowie Behältertransporte. Zum Start stehen rund 35.000 Stellplätze bereit. Hellmann Worldwide Logistics führt am Standort von Siemens Smart Infrastructure Buildings in Nürnberg das Skypod-System von Exotec…",
+   "via": "page links, article read",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "VerkehrsRundschau",
    "title": "Kabotage: BALM setzt Schwerpunktkontrollen fort 25.11.2026, 15:57 Uhr",
    "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/kabotage-balm-setzt-schwerpunktkontrollen-fort-3941176",
    "published": "2026-11-25T15:57:00+00:00",
@@ -2072,31 +2099,51 @@
    "planning_terms": false
   },
   {
-   "source": "VerkehrsRundschau",
-   "title": "Loopario automatisiert den Palettentausch 25.11.2026, 13:29 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/loopario-automatisiert-den-palettentausch-3941466",
-   "published": "2026-11-25T13:29:00+00:00",
-   "summary": "Loopario automatisiert mit AutoMatch den Abgleich von Ladungsträgerkonten. Stimmen die Daten der Tauschpartner überein, entfällt die manuelle Prüfung. Das Dortmunder Softwareunternehmen Loopario, ehemals Logistikbude, will den manuellen Aufwand beim Tausch von Paletten , Gitterboxen und anderen Ladungsträgern reduzieren. Mit der neuen Funktion AutoMatch können Unternehmen ihre Ladungsträgerkonten automatisch miteinander abgleichen, sofern beide Tauschpartner das Load Carrier Management System…",
-   "via": "page links, article read",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "VerkehrsRundschau",
-   "title": "Künstliche Intelligenz (KI) verändert den Personalbedarf der Logistik. Braucht die Branche künftig mehr Fachkräfte, weniger oder ganz andere? Eine Expertenrunde diskutiert, ob wir heute noch die Richt",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/ki-statt-logistiker-3936554",
-   "published": "2026-11-25T13:00:00+00:00",
-   "summary": "Künstliche Intelligenz (KI) verändert den Personalbedarf der Logistik. Braucht die Branche künftig mehr Fachkräfte, weniger oder ganz andere? Eine Expertenrunde diskutiert, ob wir heute noch die Richtigen ausbilden. Noch nie haben Schüler in Deutschland schlecht bei der Pisa-Studie abgeschnitten wie in diesem Jahr. Jeder dritte Jugendliche hat demnach erhebliche Defizite in Mathematik und Lesen. Herr Reese, Sie sind Berufsschullehrer. Wie ernst ist die Lage? Dennis Reese: Ich bin seit 2007 an…",
-   "via": "page links, article read",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
    "source": "Logistik Journal",
    "title": "Umzug im Winter: Wie Glätte, Dunkelheit und Frost den Umzugstag verändern",
    "link": "https://www.logistik-journal.de/wie-glatte-dunkelheit-und-frost-den-umzugstag-verandern/",
    "published": "2026-11-24T08:17:23+00:00",
    "summary": "Viele Mietverträge enden zum Monatsende, auch im Dezember und Januar. Wer dann umzieht, hat es mit drei Dingen zu tun, die im Sommer kaum eine Rolle spielen: kurze Tage, glatte Wege und Kälte. Aus Sicht der Logistik verändern sie vor allem das Zeitfenster, die Laufwege und den Umgang mit empfindlichem Umzugsgut. Mit etwas Vorplanung bleibt [...]",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Norska LastMile väljer Pindeliver",
+   "link": "https://dagenslogistik.se/norska-lastmile-valjer-pindeliver/",
+   "published": "2026-11-26T10:00:00+00:00",
+   "summary": "LastMile, del av norska logistikkoncernen Nor-Log, väljer Pindeliver för hemleveranserna i ett nytt samarbete med matkasseleverantören Kokkeløren.",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Brittisk rekordorder för Volvo",
+   "link": "https://dagenslogistik.se/brittisk-rekordorder-for-volvo/",
+   "published": "2026-11-26T08:30:00+00:00",
+   "summary": "Volvo Lastvagnar har landat en beställning på drygt tusen FH Aero-lastbilar från Culina, en ledande aktör inom logistik och försörjningskedjor i Storbritannien. Lastbilarna beräknas köra upp till 260 000 km per år.",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Essity inviger ny logistikhubb i Falkenberg",
+   "link": "https://dagenslogistik.se/essity-inviger-ny-logistikhubb-i-falkenberg/",
+   "published": "2026-11-26T07:52:59+00:00",
+   "summary": "Hygien- och hälsobolaget Essity inviger sin nya logistikhubb i Falkenberg, där fyra externa lager samlas i en anläggning som dessutom håller på att byggas ut av fastighetsbolaget SLP. Bolaget elektrifierar samtidigt delar av transportkedjan med två ellastbilar från Einride.",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Transportrobot testas i Tavelsjö",
+   "link": "https://dagenslogistik.se/transportrobot-testas-i-tavelsjo/",
+   "published": "2026-11-26T07:26:33+00:00",
+   "summary": "Den självkörande markroboten THeMIS lastades med matvaror och tog sig sedan, helt på egen hand, från butiken till restaurangen. – Det är när vi testar tekniken i verkligheten, tillsammans med dem som ska använda den, som vi verkligen förstår vilka behov och möjligheter som finns. Och vad som behöver skruvas på för att få till magin, kommenterar Niccolas Albiz, innovationschef på Skellefteå…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2112,91 +2159,51 @@
    "planning_terms": false
   },
   {
-   "source": "Dagens Logistik",
-   "title": "Henrik Horndahl återvänder till Göteborg",
-   "link": "https://dagenslogistik.se/henrik-horndahl-atervander-till-goteborg/",
-   "published": "2026-11-25T11:00:00+00:00",
-   "summary": "Den 1 januari är Henrik Horndahl tillbaka på APM Terminals Gothenburg – nu i rollen som CCO. – Göteborg har ett stort upptagningsområde, och jag ser en stor potential att utveckla affärer tillsammans med kunder och partners, både i Sverige och i övriga Norden, kommenterar Henrik Horndahl.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Dagens Logistik",
-   "title": "Göteborgs Hamn elektrifierar järnvägen till containerterminalen",
-   "link": "https://dagenslogistik.se/goteborgs-hamn-elektrifierar-jarnvagen-till-containerterminalen/",
-   "published": "2026-11-25T08:43:50+00:00",
-   "summary": "Göteborgs Hamn bygger en kontaktledning för att elektrifiera den sista sträckan av järnvägsspåret in till containerterminalen. Investeringen gör det möjligt för ellok att trafikera terminalen utan användning av diesellok eller omväg via Skandiahamnen.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Dagens Logistik",
-   "title": "Milslång lastbilskö vid iranska gränsen",
-   "link": "https://dagenslogistik.se/milslang-lastbilsko-vid-iranska-gransen/",
-   "published": "2026-11-25T08:24:54+00:00",
-   "summary": "1 200 lastbilar bildar en ca 4 mil lång kö vid den iranska gränsen. Orsaken är USAs blockad av iranska hamnar som tvingar landet att transportera gods landsvägen. Det rapporterar The Telegraph.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Dagens Logistik",
-   "title": "Milstolpe för tålig låda",
-   "link": "https://dagenslogistik.se/milstolpe-for-talig-lada/",
-   "published": "2026-11-25T07:06:58+00:00",
-   "summary": "Svenska Retursystem firar att deras återanvändbara lådor ersatt tre miljarder engångsförpackningar. – Tre miljarder är stort, men vi vill längre, kommenterar Victoria Olsson, hållbarhets- och kvalitetschef på Svenska Retursystem.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
    "source": "MT Logistikk",
-   "title": "– Veldig vanskelig å fortsette som havnestyreleder",
-   "link": "https://www.mtlogistikk.no/havn-kristiansand-kristiansand-havn/veldig-vanskelig-a-fortsette-som-havnestyreleder/1368694",
-   "published": "2026-11-25T20:02:00+00:00",
-   "summary": "Trond Blattmann vurderer sin stilling etter at bystyret i Kristiansand vedtok havneoppgjøret med 35 mot 22 stemmer. Havnestyret har advart om mulige lovbrudd og bedt om videre forhandlinger. Havnestyrets protester nådde altså ikke frem. Onsdag kveld vedtok bystyret i Kristiansand oppgjøret som havneledelsen gjentatte ganger har advart mot. Skuffelsen var tydelig, melder Fædrelandsvennen og KRS , som fulgte møtet live. – Det er veldig vanskelig å fortsette som havnestyreleder, når jeg ikke har…",
+   "title": "Her er finalistene til IFOY Awards 2027 - for første gang er et norsk selskap nominert",
+   "link": "https://www.mtlogistikk.no/ifoy-awards-internlogistikk-kunstig-intelligens/her-er-finalistene-til-ifoy-awards-2027-for-forste-gang-er-et-norsk-selskap-nominert/1368872",
+   "published": "2026-11-26T08:05:00+00:00",
+   "summary": "26 produkter og løsninger fra 24 selskaper i ti land kjemper om internlogistikkbransjens mest prestisjefylte priser. Robotisering og kunstig intelligens preger årets finalistfelt, der også norske Sonair er representert. 2025 , 2024 , 2023, 2022 , 2021 , 2020 , 2019 , 2018 , 2017 , 2016 , 2015 , 2014 , 2013 Juryen for International Intralogistics and Forklift Truck of the Year (IFOY) Award har nominert 21 produkter og løsninger fra 19 selskaper til finalen i 2027-utgaven av kåringen.…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "MT Logistikk",
-   "title": "Hyller forslag om varebiler i kollektivfeltet",
-   "link": "https://www.mtlogistikk.no/elektriske-varebiler-kollektivfelt-oslo-handelsstands-forening/hyller-forslag-om-varebiler-i-kollektivfeltet/1367410",
-   "published": "2026-11-24T12:27:00+00:00",
-   "summary": "– Dette er en gladnyhet for medlemmene våre, sier Daniel Torkildsen Lea i Oslo Handelsstands Forening. Samferdselsminister Kamzy Gunaratnam (Ap) vil gjøre det enklere for elektriske vare- og lastebiler å benytte kollektivfeltene og har gitt Statens vegvesen i oppdrag å innføre et nytt skilt som gjør det mulig å skille mellom elektriske nyttekjøretøy og elektriske personbiler. Det skal gjøre det mulig å gi elektriske varebiler og lastebiler tilgang til kollektivfelt, selv der elektriske…",
+   "title": "Her er finalistene til IFOY Awards 2027 - for første gang er et norsk selskap nominert",
+   "link": "https://www.mtlogistikk.no/ifoy-awards-internlogistikk-kunstig-intelligens/her-er-finalistene-til-ifoy-awards-2027-for-forste-gang-er-et-norsk-selskap-nominert/1368761",
+   "published": "2026-11-26T07:43:00+00:00",
+   "summary": "26 produkter og løsninger fra 24 selskaper i ti land kjemper om internlogistikkbransjens mest prestisjefylte priser. Robotisering og kunstig intelligens preger årets finalistfelt, der også norske Sonair er representert. 2025 , 2024 , 2023, 2022 , 2021 , 2020 , 2019 , 2018 , 2017 , 2016 , 2015 , 2014 , 2013 Juryen for International Intralogistics and Forklift Truck of the Year (IFOY) Award har nominert 21 produkter og løsninger fra 19 selskaper til finalen i 2027-utgaven av kåringen.…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "MT Logistikk",
-   "title": "Transit City overrasker positivt",
-   "link": "https://www.mtlogistikk.no/elektrisk-varebil-ford-motor-norge-ford-transit-city/transit-city-overrasker-positivt/1367134",
-   "published": "2026-11-24T10:02:00+00:00",
-   "summary": "PRESIS: Ford Transit City er lett å plassere i trange gater. På spanske fartshumper og i kø merket vi hvor kontant både fjæringen og regenereringen kan være. Vi skulle stort sett holde oss i Marbella. Navigasjonen hadde derimot andre planer og sendte oss etter hvert ut på motorveien mot Fuengirola, og dermed fikk vi en lengre etappe i motorveifart. På deler av strekningen kunne vi kjøre opp mot fartsgrensen på 120 km/t, som også er bilens toppfart. Vi kjørte den korte, lave L1H1 med rundt 400…",
+   "title": "Fjernet truckrattet for å få plass til en større skjerm",
+   "link": "https://www.mtlogistikk.no/digital-logistikk-konecranes-nc-nielsen/fjernet-truckrattet-for-a-fa-plass-til-en-storre-skjerm/1368581",
+   "published": "2026-11-26T07:03:00+00:00",
+   "summary": "Hos sagbruket SCA Rundvik er truckrattet byttet ut med dataskjermer. Førerne utfører nå en rekke logistikkoppgaver direkte fra maskinen. Bedriften i Nordmaling kommune i Sverige produserer årlig rundt 250 000 kubikkmeter skurlast. For å håndtere logistikken mottok sagbruket våren 2026 en Konecranes-truck av typen SMV 16-900 C der det tradisjonelle rattet er fjernet, ifølge en pressemelding. Trevirket spores med unike ID-koder, og maskinførerne registrerer alle forflytninger fortløpende gjennom…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "MT Logistikk",
-   "title": "I dag er siste frist om du vil sende julegave til ...",
-   "link": "https://www.mtlogistikk.no/internasjonale-forsendelser-julefrister-pakkelevering/i-dag-er-siste-frist-om-du-vil-sende-julegave-til/1366930",
-   "published": "2026-11-24T08:46:00+00:00",
-   "summary": "Posten setter første frist for pakker til Elfenbenskysten og Sierra Leone. Norge-fristen er 16. desember. Allerede i dag, 24. november, går de første sendingsfristene ut for pakker som skal rekke fram før høytiden, ifølge en pressemelding fra Posten Bring. Både Elfenbenskysten og Sierra Leone har frist 24. november. Dagen etter følger land som USA, Mexico, Puerto Rico og Marokko. Til mange europeiske destinasjoner strekker tidsvinduet seg lenger inn i årets siste måned. Kunder som unnlater å…",
+   "title": "Kamerateknologi kan gi smartere fiskelogistikk",
+   "link": "https://www.mtlogistikk.no/holdbarhet-maritech-eye-maskinlaering/kamerateknologi-kan-gi-smartere-fiskelogistikk/1367832",
+   "published": "2026-11-25T07:18:00+00:00",
+   "summary": "Ved hjelp av kamerateknologi og maskinlæring kan sjømatprodusenter få bedre oversikt over fiskenes gjenværende holdbarhet. Det kan gi mer effektiv distribusjon og redusert matsvinn. Forskere ved Nofima har utviklet en metode for å anslå gjenværende holdbarhet på torskefileter allerede rett etter filetering, skriver forskningsinstituttet i en pressemelding. Teknologien kan gi sjømatbedriftene et bedre beslutningsgrunnlag for lagerstyring og distribusjon.",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "MT Logistikk",
-   "title": "Elektrifisering i Göteborg havn kutter omløpstiden for godstog",
-   "link": "https://www.mtlogistikk.no/apm-terminals-gothenburg-containerterminal-elektrifisering/elektrifisering-i-goeteborg-havn-kutter-omlopstiden-for-godstog/1366710",
-   "published": "2026-11-24T07:43:00+00:00",
-   "summary": "Göteborg havn bygger kontaktledninger helt inn til containerterminalen. Investeringen skal fjerne behovet for diesellokomotiver på den siste etappen. Havneselskapet planlegger å installere 1250 meter med kontaktledning og 38 tilhørende stolper på terminalområdet. Tiltaket gjør det mulig for godstogene å kjøre direkte inn til håndteringssporene, ifølge en pressemelding. Oppgraderingen omfatter også nye veisikringsanlegg og en reservevei. Byggestarten er berammet til neste år. Dagens løsning…",
+   "title": "LastMile digitaliserer logistikken for matkasse­leverandør",
+   "link": "https://www.mtlogistikk.no/hjemlevering-kokkeloren-lastmile/lastmile-digitaliserer-logistikken-for-matkasseleverandor/1367821",
+   "published": "2026-11-25T07:11:00+00:00",
+   "summary": "LastMile skal distribuere ferske matkasser for Kokkeløren. For å optimalisere kjøreruter og sikre ubrutt kjølekjede, tar logistikkselskapet nå i bruk programvaren pinDeliver. LastMile er en del av transportkonsernet Nor-Log AS. Nå har selskapet sikret seg ansvaret for hjemleveransene til matkasseprodusenten Kokkeløren. For oppdragsgiveren er presise tidsvinduer avgjørende for at ferskvarene skal holde seg. For å sikre kvaliteten, har LastMile valgt pinDeliver for å planlegge og gjennomføre…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
@@ -2206,41 +2213,41 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 502.0,
+   "level_cm": 491.0,
    "trend": null,
-   "measured_at": "2026-11-26T04:00:00+01:00",
+   "measured_at": "2026-11-26T12:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 236.0,
+   "level_cm": 227.0,
    "trend": null,
-   "measured_at": "2026-11-26T04:00:00+01:00",
+   "measured_at": "2026-11-26T12:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KÖLN",
    "km": 688.0,
-   "level_cm": 325.0,
+   "level_cm": 324.0,
    "trend": null,
-   "measured_at": "2026-11-26T04:00:00+01:00",
+   "measured_at": "2026-11-26T12:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 419.0,
+   "level_cm": 418.0,
    "trend": null,
-   "measured_at": "2026-11-26T04:00:00+01:00",
+   "measured_at": "2026-11-26T12:15:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 253.0,
+   "level_cm": 248.0,
    "trend": null,
-   "measured_at": "2026-11-26T04:00:00+01:00",
+   "measured_at": "2026-11-26T12:15:00+01:00",
    "unit": "cm"
   }
  ]
