@@ -1,0 +1,313 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Capacity Planning: ams OSRAM Reserves Fab for Samsung",
+  "week": "2026-W48",
+  "run_date": "2026-11-26",
+  "brief_file": "news-brief-daily-2026-11-26.md",
+  "target_runtime_sec": 283,
+  "word_count": 820,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-26-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Samsung Display has locked in a reserved slice of a chip plant in Malaysia, and every other customer competes for what's left."
+        },
+        {
+          "speaker": "M",
+          "text": "A finance deal on paper, and a load plan in practice. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-26-01",
+        "2026-11-26-06",
+        "2026-11-26-03"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Thursday the twenty-sixth of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "Today, ams OSRAM sells capacity to Samsung, Washington proposes a fifteen percent tariff on E U goods, and a survey says humans keep the last word on A I agents."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-26-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Austrian chip and sensor maker ams OSRAM has agreed a microLED development deal with Samsung Display, according to the company. Samsung takes an equity stake of two hundred and ten million euros."
+        },
+        {
+          "speaker": "M",
+          "text": "The planning part is in the fine print. The company has reserved an agreed capacity corridor for Samsung in Kulim 2, its eight-inch fab in Malaysia."
+        },
+        {
+          "speaker": "F",
+          "text": "Samsung also funds the joint development for several years. The company expects that to bring in a high double-digit number of millions of euros a year, enough to cover the programme's operating costs and part of the plant's fixed costs."
+        },
+        {
+          "speaker": "M",
+          "text": "According to ams OSRAM, the deal lifts utilisation at Kulim 2 and still leaves capacity free for other growth."
+        },
+        {
+          "speaker": "F",
+          "text": "Here's why it matters beyond the finance pages. A reserved corridor fixes part of the fab's load plan for years, and every other customer now competes for the rest."
+        },
+        {
+          "speaker": "M",
+          "text": "So if you buy sensors or optical chips from ams OSRAM, ask which plant your parts come from and how much of Kulim 2 is still open. Then check your allocation terms before your twenty twenty-seven volumes go in."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-26-03",
+        "2026-11-26-02",
+        "2026-11-26-06",
+        "2026-11-26-F1",
+        "2026-11-26-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "On the A I desk, the Capgemini Research Institute surveyed one thousand executives at companies with more than one billion dollars in revenue, across thirteen countries, in July."
+        },
+        {
+          "speaker": "F",
+          "text": "Twenty-two percent have piloted or put A I agents to work in the supply chain, up from sixteen percent last year."
+        },
+        {
+          "speaker": "M",
+          "text": "But only a quarter expect fully automated supply chains within three to five years, and eighty-four percent say humans must keep the authority to validate A I decisions."
+        },
+        {
+          "speaker": "F",
+          "text": "VerkehrsRundschau calls it fading faith in the autonomous supply chain, even as spending on agents grows."
+        },
+        {
+          "speaker": "M",
+          "text": "For planning teams, that means agents that recommend and planners who sign off. Build the approval steps and exception rules into the pilot now, rather than wait for planning that runs itself."
+        },
+        {
+          "speaker": "F",
+          "text": "Over in Norway, Norsk Hydro told its investor day that its workforce cuts are complete and deliver one billion kroner a year in run-rate savings."
+        },
+        {
+          "speaker": "M",
+          "text": "It also keeps shrinking its extrusion footprint to lift profits in weak downstream markets. At the same time it's adding metal, restarting the Slovalco smelter in Slovakia and ramping Qatalum up to about seventy percent of capacity."
+        },
+        {
+          "speaker": "F",
+          "text": "Hydro says European customers want local primary metal and recycling, because of regionalisation and supply chain disruption."
+        },
+        {
+          "speaker": "M",
+          "text": "So aluminium buyers get more local metal and fewer local profile suppliers. If you buy extrusions from Hydro, check which of your sites stay open before you set next year's sourcing plan."
+        },
+        {
+          "speaker": "F",
+          "text": "The biggest trade story of the day, the U S Trade Representative has proposed new Section three oh one tariffs on fourteen economies over structural excess manufacturing capacity, Baker McKenzie reports."
+        },
+        {
+          "speaker": "M",
+          "text": "The E U gets fifteen percent on top of normal duties, and Switzerland and Japan up to fifteen. China faces up to twenty, and Norway isn't on the list. Goods already under Section two thirty-two tariffs, like steel, aluminium, vehicles and chips, are exempt for everyone but China."
+        },
+        {
+          "speaker": "F",
+          "text": "Comments are due on the fifth of January and hearings start on the twenty-fifth, with final action expected early next year. No start date is set yet."
+        },
+        {
+          "speaker": "M",
+          "text": "That gives European exporters a rate and a timeline. Put a fifteen percent U S tariff scenario into your twenty twenty-seven sales and operations planning, your S and OP, and test whether shipping early or final assembly in the U S beats paying the duty."
+        },
+        {
+          "speaker": "F",
+          "text": "On the freight desk, the Rhine at Kaub is up to two hundred and thirty-six centimetres, and Asia to U S West Coast spot rates have slipped below eight thousand dollars per forty-foot container after a tentative port labour deal in Los Angeles and Long Beach."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-26-04",
+        "2026-11-26-05",
+        "2026-11-26-E1"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "TSMC has proposed a twenty-two point six billion dollar advanced wafer site in Texas, Manufacturing Dive reports, so European buyers of advanced chips should expect U S customers to get served first."
+        },
+        {
+          "speaker": "F",
+          "text": "Sandvik is buying Del Rey Minerals, a Brazilian maker of wear and spare parts for mining, which puts spare parts right next to the mines."
+        },
+        {
+          "speaker": "M",
+          "text": "And on Tuesday, Swedbank and Silf publish the Swedish purchasing managers' index for November, the first read on factory inventories and supplier delivery times going into twenty twenty-seven."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-26-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Thursday."
+        },
+        {
+          "speaker": "M",
+          "text": "We're back tomorrow morning with more from the planning desk."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "US Section 301 Tariffs: 15% Proposed on EU Goods",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "The U S wants a fifteen percent tariff on E U goods."
+      },
+      {
+        "speaker": "M",
+        "text": "The U S Trade Representative has proposed new Section three oh one tariffs on fourteen economies, over structural excess manufacturing capacity."
+      },
+      {
+        "speaker": "F",
+        "text": "The E U gets fifteen percent on top of normal duties, Switzerland and Japan up to fifteen, and China up to twenty."
+      },
+      {
+        "speaker": "M",
+        "text": "Comments are due on the fifth of January, and hearings start on the twenty-fifth. Goods already under Section two thirty-two tariffs, like steel, cars and chips, are exempt for everyone but China."
+      },
+      {
+        "speaker": "F",
+        "text": "So E U and Swiss exporters should put a fifteen percent scenario into next year's volume plan now, and test whether shipping early or assembling in the U S beats paying the duty."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "The US has proposed Section 301 tariffs of 15% on EU goods, up to 15% on Switzerland and Japan and up to 20% on China, with hearings from 25 January. EU and Swiss exporters now have a rate and a date to put into their 2027 volume plans. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "tariffs",
+      "sop",
+      "exports"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Samsung Display has reserved a slice of ams OSRAM's Malaysian chip fab, and other customers compete for the rest.\n\nams OSRAM says Samsung takes a EUR 210m stake in a microLED development deal and gets an agreed capacity corridor in its 8-inch Kulim 2 fab.\n\nFor planners buying sensors or optical chips from ams OSRAM: ask which plant your parts come from and how much of Kulim 2 is still open, and check allocation terms before 2027 volumes are locked.\n\nAlso on today's desk:\nThe US has proposed Section 301 tariffs of 15% on EU goods, with hearings from 25 January, Baker McKenzie reports.\nCapgemini Research Institute: 22% of large firms pilot or run supply chain AI agents, but 84% say humans must validate AI decisions.\n\nHow much of your 2027 supply plan sits on capacity a bigger customer could reserve first?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #capacityplanning #semiconductors",
+    "tags": [
+      "ams OSRAM",
+      "Samsung Display",
+      "Capgemini"
+    ]
+  },
+  "show_notes": {
+    "summary": "Capacity planning: ams OSRAM reserves a capacity corridor in its Kulim 2 fab in Malaysia for Samsung Display, which takes a €210m stake. Also: the US proposes Section 301 tariffs of 15% on EU goods, a Capgemini survey on supply chain AI agents, Norsk Hydro's savings and smaller extrusion footprint, TSMC's Texas plan, Sandvik's Brazil deal, plus the Rhine at Kaub and Asia to US West Coast spot rates.",
+    "sources": [
+      {
+        "title": "ams OSRAM ad hoc release via finanznachrichten: capacity corridor in Kulim 2 for Samsung Display",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70222052-eqs-adhoc-ams-osram-ag-ams-osram-hebt-potenzial-des-werks-kulim-2-durch-strategische-partnerschaft-mit-samsung-display-reservierten-kapazitaetskorri-022.htm"
+      },
+      {
+        "title": "produktion.de: ams OSRAM and Samsung Display, 210 million euro investment for Kulim 2",
+        "url": "https://www.produktion.de/wirtschaft/ams-osram-und-samsung-display-schliessen-microled-partnerschaft-210-mio-euro-investment-fuer-werk-kulim-2/2774332"
+      },
+      {
+        "title": "VerkehrsRundschau: Studie, vollautonome Lieferkette verliert an Zustimmung",
+        "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/studie-vollautonome-lieferkette-verliert-an-zustimmung-3941240"
+      },
+      {
+        "title": "Capgemini Research Institute: Resilient by design, supply chain executive brief",
+        "url": "https://www.capgemini.com/wp-content/uploads/2026/11/Resilient-by-design_Supply-chain-executive-brief_05112026_v2.pdf"
+      },
+      {
+        "title": "Norsk Hydro via MFN: Investor Day 2026",
+        "url": "https://mfn.se/ob/a/norsk-hydro/norsk-hydro-investor-day-2026-defining-the-future-of-aluminium-turning-leadership-into-growth-6133c391"
+      },
+      {
+        "title": "Baker McKenzie Global Import Blog: USTR proposes Section 301 tariffs on 14 economies",
+        "url": "https://globalimportblog.bakermckenzie.com/2026/11/25/us-ustr-proposes-section-301-tariffs-on-14-economies-over-structural-excess-capacity/"
+      },
+      {
+        "title": "Supply Chain Dive: US readies tariffs over manufacturing capacity, production concerns",
+        "url": "https://www.supplychaindive.com/news/us-readies-tariffs-over-manufacturing-capacity-production-concerns/875639/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/"
+      },
+      {
+        "title": "FreightWaves: Asia-US West Coast container spot rates fall below $8,000",
+        "url": "https://www.freightwaves.com/news/asia-us-west-coast-container-spot-rates-fall-below-8000-as-us-avoids-la-long-beach-port-strike"
+      },
+      {
+        "title": "Manufacturing Dive: TSMC proposes $22.6B advanced wafer fab in Texas",
+        "url": "https://www.manufacturingdive.com/news/tsmc-proposes-226b-advanced-wafer-fab-texas-AI-semiconductors/875671/"
+      },
+      {
+        "title": "Sandvik via MFN: Sandvik to acquire Del Rey Minerals",
+        "url": "https://mfn.se/cis/a/sandvik/sandvik-to-acquire-brazilian-mining-wear-and-spare-parts-manufacturer-del-rey-minerals-1c5614b5"
+      },
+      {
+        "title": "Silf: Swedbank/Silf PMI",
+        "url": "https://www.silf.se/"
+      }
+    ]
+  }
+}

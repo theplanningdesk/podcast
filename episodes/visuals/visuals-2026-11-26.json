@@ -1,0 +1,115 @@
+{
+  "stem": "2026-11-26",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "stat",
+      "props": {
+        "kicker": "US tariff proposal",
+        "value": 15,
+        "label": "percent tariff on EU goods",
+        "source": "USTR via Baker McKenzie"
+      }
+    },
+    {
+      "line": 1,
+      "template": "headline",
+      "props": {
+        "kicker": "US Trade Representative",
+        "title": "Section 301 tariffs on 14 economies",
+        "detail": "Over structural excess manufacturing capacity"
+      }
+    },
+    {
+      "line": 1,
+      "at": "fourteen economies",
+      "template": "stat",
+      "props": {
+        "kicker": "Section 301",
+        "value": 14,
+        "label": "economies on the list",
+        "source": "Baker McKenzie"
+      }
+    },
+    {
+      "line": 2,
+      "template": "bars",
+      "props": {
+        "title": "Proposed tariff, percent",
+        "items": [
+          {
+            "label": "EU",
+            "value": 15,
+            "highlight": true
+          },
+          {
+            "label": "Switzerland, up to",
+            "value": 15
+          },
+          {
+            "label": "Japan, up to",
+            "value": 15
+          },
+          {
+            "label": "China, up to",
+            "value": 20
+          }
+        ],
+        "source": "Baker McKenzie"
+      }
+    },
+    {
+      "line": 3,
+      "template": "list",
+      "props": {
+        "kicker": "Timeline",
+        "items": [
+          {
+            "label": "5 Jan: comments due",
+            "say": "fifth of January"
+          },
+          {
+            "label": "25 Jan: hearings",
+            "say": "twenty-fifth"
+          }
+        ]
+      }
+    },
+    {
+      "line": 3,
+      "at": "exempt for everyone but China",
+      "template": "headline",
+      "props": {
+        "kicker": "Exemptions",
+        "title": "Section 232 goods exempt, except China",
+        "detail": "Steel, cars, chips and others already under Section 232"
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "kicker": "EU and Swiss exporters",
+        "title": "Add a 15% US tariff scenario to 2027"
+      }
+    },
+    {
+      "line": 4,
+      "at": "test whether",
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Ship early or assemble in the US, or pay the duty?"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
