@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-25T11:41:16.871043+00:00",
+ "fetched_at": "2026-11-26T03:13:00.323903+00:00",
  "window_days": 8,
- "sources_ok": 74,
+ "sources_ok": 75,
  "sources_total": 75,
  "items": [
   {
@@ -33,6 +33,26 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "EU Decision on Biocide Anti-Foulings Prompts Objection from Manufacturer",
+   "link": "https://www.supplychainbrain.com/general-scm/sustainability-corporate-social-responsibility/article/16543062/eu-decision-on-biocide-antifoulings-prompts-objection-from-manufacturer",
+   "published": "2026-11-25T18:11:54+00:00",
+   "summary": "The IMO finds that even a light layer of small calcareous growth on a container ship can increase greenhouse gas emissions by...",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "SupplyChainBrain",
+   "title": "Retailers Face Rising AI Cyberattack Threat Ahead of Black Friday, Many Uninsured",
+   "link": "https://www.supplychainbrain.com/general-scm/sc-security-risk-mgmt/article/16543011/retailers-face-rising-ai-cyberattack-threat-ahead-of-black-friday-many-uninsured",
+   "published": "2026-11-25T14:27:03+00:00",
+   "summary": "The post-Thanksgiving spree has long represented a lucrative sales opportunity, but more frequent and sophisticated cyberattacks...",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SupplyChainBrain",
@@ -185,24 +205,14 @@
    "planning_terms": false
   },
   {
-   "source": "SupplyChainBrain",
-   "title": "EU's Hansen Says U.S. Trade Uncertainty Is Drawing Mexico, Europe Closer",
-   "link": "https://www.supplychainbrain.com/general-scm/global-trade-economics/article/16542364/eus-hansen-says-us-trade-uncertainty-is-drawing-mexico-europe-closer",
-   "published": "2026-11-21T07:39:00+00:00",
-   "summary": "On-and-off tariff threats under U.S. President Donald Trump's second term in office have thrown long-established supply chains...",
+   "source": "SCMR",
+   "title": "First Shift: Tariff escalation and cobalt controls",
+   "link": "https://www.scmr.com/article/first-shift-tariff-escalation-and-cobalt-controls",
+   "published": "2026-11-25T13:56:00+00:00",
+   "summary": "Prospective U.S. duties and a new Congolese export suspension lead a briefing on rail consolidation, airfreight capacity, manufacturing pressure, planning technology, safety enforcement and automation.",
    "via": "feed",
    "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SupplyChainBrain",
-   "title": "Bristol Community College Grant Removes Costs for Skilled-Trades Students",
-   "link": "https://www.supplychainbrain.com/general-scm/education-professional-development/article/16542326/bristol-community-college-grant-removes-costs-for-skilledtrades-students",
-   "published": "2026-11-20T17:10:06+00:00",
-   "summary": "Students will prepare for the Massachusetts 1B Hoisting License and forklift certification.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
+   "planning_terms": true
   },
   {
    "source": "SCMR",
@@ -243,6 +253,16 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SCMR",
+   "title": "AI can see what’s wrong. Can recycling facility leaders understand why?",
+   "link": "https://www.scmr.com/article/ai-recycling-facilities-operational-judgment",
+   "published": "2026-11-25T15:03:00+00:00",
+   "summary": "Researchers draw on interviews and focus groups with recycling facility leaders to explain how AI can detect patterns in equipment failures, contamination and throughput, and how managers can investigate those signals on the floor.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SCMR",
@@ -305,31 +325,41 @@
    "planning_terms": false
   },
   {
-   "source": "SCMR",
-   "title": "As warehouse AI gains authority, oversight becomes an investment priority",
-   "link": "https://www.scmr.com/article/warehouse-ai-decision-authority-governance",
-   "published": "2026-11-17T16:02:00+00:00",
-   "summary": "A joint MIT–Mecalux survey points to expanding warehouse AI autonomy, raising questions about decision authority, oversight and how companies measure results.",
+   "source": "Supply Chain Dive",
+   "title": "Molson Coors, Primo Brands use fuel hedging to tackle logistics costs",
+   "link": "https://www.supplychaindive.com/news/molson-coors-primo-brands-use-fuel-hedging-to-tackle-logistics-costs/875552/",
+   "published": "2026-11-25T18:41:00+00:00",
+   "summary": "While fuel hedging can offer predictability, it can also be costly and difficult to execute, experts said.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
   },
   {
-   "source": "SCMR",
-   "title": "Projecting constraints in multi-tier supply chain networks: What happens when you improve the bottleneck?",
-   "link": "https://www.scmr.com/article/multi-tier-supply-chain-bottlenecks-capacity-improvement",
-   "published": "2026-11-17T15:45:00+00:00",
-   "summary": "In Part 3 of a 4-part series, author Brian Kawabata explores how improving a bottleneck can shift constraints across a multi-tier supply chain and how shared network information could help suppliers prepare for what comes next.",
+   "source": "Supply Chain Dive",
+   "title": "US readies tariffs over manufacturing capacity, production concerns",
+   "link": "https://www.supplychaindive.com/news/us-readies-tariffs-over-manufacturing-capacity-production-concerns/875639/",
+   "published": "2026-11-25T16:34:26+00:00",
+   "summary": "The proposed levies, ranging from 15% to 35%, target goods from China, the European Union and 12 other partners following a Section 301 probe earlier this year.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
   },
   {
-   "source": "SCMR",
-   "title": "First Shift: AI allies secure technology supply chains as freight and manufacturing networks shift",
-   "link": "https://www.scmr.com/article/first-shift-ai-allies-secure-technology-supply-chains-as-freight-and-manufacturing-networks-shift",
-   "published": "2026-11-17T14:35:00+00:00",
-   "summary": "A multinational AI-supply-chain accord leads a briefing on steel duties, freight momentum, regionalized production, warehouse bottlenecks, air capacity and peak-season delivery operations.",
+   "source": "Supply Chain Dive",
+   "title": "PETA alleges animal abuse in PepsiCo’s supply chain",
+   "link": "https://www.supplychaindive.com/news/peta-alleges-animal-abuse-in-pepsicos-supply-chain/875654/",
+   "published": "2026-11-25T16:17:00+00:00",
+   "summary": "The group submitted a proposal on behalf of two PepsiCo shareholders that alleges its sugar sourcing practices pose risks to animal welfare.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Supply Chain Dive",
+   "title": "USPS to upgrade 16 sites just before peak season rush",
+   "link": "https://www.supplychaindive.com/news/usps-to-upgrade-16-sites-just-before-peak-season-rush/875592/",
+   "published": "2026-11-25T13:57:27+00:00",
+   "summary": "Locations including Los Angeles and Louisville could see impacts to volume flows as the agency works to complete installations and modifications by Thanksgiving.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -395,26 +425,6 @@
    "planning_terms": false
   },
   {
-   "source": "Supply Chain Dive",
-   "title": "Walgreens scales micro-fulfillment strategy with Pennsylvania site",
-   "link": "https://www.supplychaindive.com/news/walgreens-scales-micro-fulfillment-strategy-with-pennsylvania-site/875245/",
-   "published": "2026-11-23T15:19:16+00:00",
-   "summary": "The 68,000-square-foot Allentown facility can process more than 28 million prescriptions annually and will serve nearly 650 Walgreens stores.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Supply Chain Dive",
-   "title": "Tractor Supply boosts same-day delivery options",
-   "link": "https://www.supplychaindive.com/news/tractor-supply-boosts-same-day-delivery-options/875304/",
-   "published": "2026-11-23T15:06:22+00:00",
-   "summary": "The retailer is growing its delivery offerings at the same time Amazon is expanding its rural delivery network.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "SDCExec",
    "title": "The Real Cost of Factory Dependence on Third-Party Software Suppliers",
    "link": "https://www.sdcexec.com/safety-security/risk-compliance/article/22976374/esco-global-strategies-industrial-equipment-ownership-vs-software-control-rights",
@@ -423,6 +433,16 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SDCExec",
+   "title": "Turn Supply Chain Efficiency into Sustainability Gains",
+   "link": "https://www.sdcexec.com/transportation/3pl-4pl/article/22976055/rjw-logistics-group-supply-chain-efficiency-drives-sustainability-gains",
+   "published": "2026-11-25T17:30:00+00:00",
+   "summary": "By optimizing routes, consolidating loads and minimizing empty miles, logistics providers reduce carbon output, cut costs and...",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SDCExec",
@@ -505,16 +525,6 @@
    "planning_terms": false
   },
   {
-   "source": "SDCExec",
-   "title": "5 Ways to Improve Broker-Carrier Relationships",
-   "link": "https://www.sdcexec.com/transportation/fleet-management/article/22977613/descartes-systems-group-5-ways-to-improve-brokercarrier-relationships",
-   "published": "2026-11-20T17:30:00+00:00",
-   "summary": "Here are five key areas that can help freight brokers build a dependable network.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "Manufacturing Dive",
    "title": "How Lego is leveraging automation with its latest Portugal factory",
    "link": "https://www.manufacturingdive.com/news/lego-group-coo-carsten-rasmussen-manufacturing-portugal-virginia/875444/",
@@ -523,6 +533,46 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "Manufacturing Dive",
+   "title": "Qnity to pay $840M for adhesive maker’s electronics segment",
+   "link": "https://www.manufacturingdive.com/news/qnity-meridian-adhesives-group-electronics-business-semiconductor/875685/",
+   "published": "2026-11-25T17:28:53+00:00",
+   "summary": "The addition of Meridian Adhesive Group’s electronics unit aims to bolster the Dupont spinoff’s financial position in highly competitive end markets, including AI data centers, semiconductor equipment, aerospace and defense.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Manufacturing Dive",
+   "title": "Deere posts 15% decline in tractor business, offers optimistic outlook",
+   "link": "https://www.manufacturingdive.com/news/deere-posts-q4-2026-decline-tractor-business-optimistic-outlook-2027/875763/",
+   "published": "2026-11-25T17:11:00+00:00",
+   "summary": "Its overall earnings dip was partially offset by positive construction and small farm equipment sales driven by data center projects and livestock market demand.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Manufacturing Dive",
+   "title": "US readies tariffs over manufacturing capacity, production concerns",
+   "link": "https://www.manufacturingdive.com/news/us-readies-tariffs-manufacturing-capacity-production-concerns-china/875784/",
+   "published": "2026-11-25T16:54:00+00:00",
+   "summary": "The proposed levies, ranging from 15% to 35%, target goods from China, the European Union and 12 other partners following a Section 301 probe earlier this year.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Manufacturing Dive",
+   "title": "TSMC proposes $22.6B advanced wafer facility in Texas",
+   "link": "https://www.manufacturingdive.com/news/tsmc-proposes-226b-advanced-wafer-fab-texas-AI-semiconductors/875671/",
+   "published": "2026-11-25T15:48:41+00:00",
+   "summary": "The site would span more than 3,200 acres and use advanced processes to produce chips for artificial intelligence, high-performance computing and mobile devices.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "Manufacturing Dive",
@@ -565,34 +615,14 @@
    "planning_terms": false
   },
   {
-   "source": "Manufacturing Dive",
-   "title": "US Steel, United Steelworkers reach 4-year labor deal, up for vote",
-   "link": "https://www.manufacturingdive.com/news/us-steel-4-year-labor-deal-usw-vote-cleveland-cliffs/875315/",
-   "published": "2026-11-20T16:26:00+00:00",
-   "summary": "The proposal includes annual wage increases and healthcare improvements for 11,200 employees following extended negotiations. It came two weeks after Cleveland-Cliffs reached a deal with the union.",
+   "source": "Logistics Viewpoints",
+   "title": "Inventory-Light Retail Is an Order-Orchestration Problem",
+   "link": "https://logisticsviewpoints.com/2026/11/25/the-technology-architecture-behind-inventory-light-retail/",
+   "published": "2026-11-25T14:00:00+00:00",
+   "summary": "Inventory-light retail requires coordinated, cost-aware order promises across inventory, order management, WMS, transportation, and exception handling. The post Inventory-Light Retail Is an Order-Orchestration Problem appeared first on Logistics Viewpoints .",
    "via": "feed",
    "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Manufacturing Dive",
-   "title": "Tesla proposes $3.1 billion Texas polysilicon refinery",
-   "link": "https://www.manufacturingdive.com/news/LiMiK-Capital-328-million-manufacturing-plant-south-carolina/875286/",
-   "published": "2026-11-20T16:05:18+00:00",
-   "summary": "Also this week, Limik Capital, Silex Microsystems and HDI America made U.S. investment announcements.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "Manufacturing Dive",
-   "title": "Textron finds private equity buyer for industrial business at $1.2B",
-   "link": "https://www.manufacturingdive.com/news/textron-selling-specialized-vehicles-kautex-kingswood-capital-management/875269/",
-   "published": "2026-11-20T14:14:26+00:00",
-   "summary": "An affiliate of Kingswood Capital Management will oversee the industrial segment, which includes an auto supplier and specialty vehicles. This aligns with Textron’s shift to become a pure-play aerospace and defense company.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
+   "planning_terms": true
   },
   {
    "source": "Logistics Viewpoints",
@@ -620,16 +650,6 @@
    "link": "https://logisticsviewpoints.com/2026/11/21/always-on-ai-is-coming-to-supply-chains-but-who-owns-the-exception/",
    "published": "2026-11-21T19:39:58+00:00",
    "summary": "The supply chain industry has invested heavily in detecting problems sooner. Transportation visibility systems identify late shipments, planning applications flag shortages, and control towers consolidate operational alerts. Yet knowing about an exception and resolving it are two different things. The delay may be visible to everyone, while responsibility for the next action remains surprisingly…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "Logistics Viewpoints",
-   "title": "Beyond the AMR: Rockwell’s Production Logistics Strategy Connects Material Flow to Plant Autonomy",
-   "link": "https://logisticsviewpoints.com/2026/11/20/beyond-the-amr-rockwells-production-logistics-strategy-connects-material-flow-to-plant-autonomy/",
-   "published": "2026-11-20T19:24:52+00:00",
-   "summary": "An analyst perspective on why orchestration, digital twins, and plant-floor integration matter more than the robot alone Production logistics becomes a control problem Rockwell Automation’s press conference presented a clear thesis: the next major productivity opportunity lies in the space between automated processes. Many factories have sophisticated machines and well-instrumented production…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
@@ -696,6 +716,16 @@
   },
   {
    "source": "SCM.dk",
+   "title": "INTERSPORT France Selects RELEX Solutions for End-to-End Planning, Including Seasonal Assortments",
+   "link": "https://www.scm.dk/intersport-france-selects-relex-solutions-for-end-to-end-planning-including-seasonal-assortments",
+   "published": "2026-11-25T14:00:00+00:00",
+   "summary": "French sporting goods retailer will bring merchandise financial planning, assortment planning, purchasing, allocation, and in-season inventory management onto one AI-powered platform",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": true
+  },
+  {
+   "source": "SCM.dk",
    "title": "Close the gap between S&OE and S&OP with SAP IBP OBP",
    "link": "https://www.scm.dk/close-the-gap-between-soe-and-sop-with-sap-ibp-obp",
    "published": "2026-11-25T07:00:00+00:00",
@@ -733,6 +763,16 @@
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
+  },
+  {
+   "source": "SCM.dk",
+   "title": "From Design to Deployment: The Value of Certification",
+   "link": "https://www.scm.dk/from-design-to-deployment-the-value-of-certification",
+   "published": "2026-11-25T12:50:00+00:00",
+   "summary": "Discover how lifting equipment certification supports safety, compliance, and operational reliability from design and testing to offshore installation.",
+   "via": "feed",
+   "lane": "planning",
+   "planning_terms": false
   },
   {
    "source": "SCM.dk",
@@ -875,30 +915,10 @@
    "planning_terms": false
   },
   {
-   "source": "SCM.dk",
-   "title": "Industrial megatrends 2040",
-   "link": "https://www.scm.dk/industrial-megatrends-2040",
-   "published": "2026-11-23T07:00:00+00:00",
-   "summary": "Most industrial strategies were build for a world that no longer exists",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "SCM.dk",
-   "title": "AI har ikke samme viden, som planlæggere har",
-   "link": "https://www.scm.dk/ai-har-ikke-samme-viden-som-planlaeggere-har",
-   "published": "2026-11-23T04:00:00+00:00",
-   "summary": "Spørg en erfaren planlægger, om virksomhedens forsyningskæde fungerer, som procesbeskrivelserne lover. Svaret er næsten altid nej, og gabet er sjældent lille. Det tager den erfarne planlægger højde for, når supply chain planen bliver udformet. Hver dag. Og det er her, kunstig intelligens falder igennem.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
    "source": "SC Effect",
    "title": "Global logistics giants are exceeding forecasts—volumes are rebounding and margins are rising.",
    "link": "https://sceffect.se/en/de-globala-logistikjattarna-overtraffar-prognoserna-volymerna-ar-tillbaka-och-marginalerna-okar/",
-   "published": "2026-11-23T16:40:13+00:00",
+   "published": null,
    "summary": "After several years of uncertainty, global shipping volumes have rebounded, while freight costs have remained relatively high and client companies are strengthening their regional supply networks in the wake of increased nearshoring. The result is rising revenue, improved margins, and gradually revised upward earnings forecasts for 2026 ...",
    "via": "feed",
    "lane": "planning",
@@ -916,10 +936,10 @@
   },
   {
    "source": "SC Effect",
-   "title": "SCE TALKs möter Lars O Jonsson",
+   "title": "SCE TALKs Meets Lars O. Jonsson",
    "link": "https://sceffect.se/en/sce-talks-moter-lars-o-jonsson/",
-   "published": "2026-11-25T11:41:09+00:00",
-   "summary": "På Logistik & Transport i Göteborg (3-4 nov) intervjuade Supply Chain Effect brigadgeneral Lars O Jonsson, nytillträdd chef för Försvarsmaktens logistik (FMLOG). Samtalet kretsade kring säkerhetsläget i Europa, Sveriges medlemskap i Nato och dess implikationer för hur dret svenska samhället inklusive Försvarsmakten behöver utveckla och vässa arbetet med varuförsörjning och logistik ...",
+   "published": null,
+   "summary": "At the Logistics & Transport conference in Gothenburg (Nov. 3–4), Supply Chain Effect interviewed Brigadier General Lars O. Jonsson, the newly appointed head of the Swedish Armed Forces’ Logistics Command (FMLOG). The conversation centered on the security situation in Europe, Sweden’s membership in NATO, and its implications for how Swedish society—including the Swedish Armed Forces—needs to…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -928,7 +948,7 @@
    "source": "SC Effect",
    "title": "E-commerce Indicator: Low-price retail from China Halved",
    "link": "https://sceffect.se/en/e-handelsindikatorn-lagprishandeln-fran-kina-halverad/",
-   "published": "2026-11-24T08:24:14+00:00",
+   "published": null,
    "summary": "The Swedish Trade Federation’s E-commerce Indicator estimates e-commerce sales for October at 12.7 billion kronor. This represents a 3 percent decrease compared with the same month last year. Despite an unexpectedly weak performance this fall, e-commerce is still up compared with 2025 when viewed over the entire year ...",
    "via": "feed",
    "lane": "planning",
@@ -938,7 +958,7 @@
    "source": "SC Effect",
    "title": "Supply Chain Visibility—Why Is It So Difficult?",
    "link": "https://sceffect.se/en/visibilitet-i-supply-chain-varfor-ar-det-sa-svart/",
-   "published": "2026-11-24T07:10:00+00:00",
+   "published": null,
    "summary": "Fredrik Eng-Larsson is a professor of Operations Management at Stockholm University, specializing in supply chain management and logistics. His research focuses primarily on how the flow of goods and supply chains can be made more efficient, robust, and sustainable—which largely involves creating visibility and traceability in supply flows ...",
    "via": "feed",
    "lane": "planning",
@@ -1016,36 +1036,6 @@
   },
   {
    "source": "BME",
-   "title": "18.11.2026 Nächster Reifegrad im Einkauf mit Agentic Procurement: Liebherr erhält den Procurement Excellence Award 2026 Vom digitalen Einkauf zum intelligenten Wertschöpfungssystem: Mit BOB – Brain of Buying und einem Netzwerk spezialisierter KI-Agenten macht Liebherr Einkaufswissen skalierbar und…",
-   "link": "https://www.bme.de/news/naechster-reifegrad-im-einkauf-mit-agentic-procurement-liebherr-erhaelt-den-procurement-excellence-award-2026/",
-   "published": "2026-11-18T00:00:00+00:00",
-   "summary": "Vom digitalen Einkauf zum intelligenten Wertschöpfungssystem: Mit BOB – Brain of Buying und einem Netzwerk spezialisierter KI-Agenten macht Liebherr Einkaufswissen skalierbar und unterstützt Mitarbeitende direkt im Arbeitsfluss. Die Firmengruppe Liebherr hat mit ihrem Projekt „Agentic AI@Procurement“ gezeigt, wie ein global aufgestellter Einkauf auf Basis harmonisierter Prozesse und einer etablierten digitalen Infrastruktur den nächsten Entwicklungsschritt gehen kann: von der Digitalisierung…",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "BME",
-   "title": "18.11.2026 Mit KI zu Transparenz und Einsparung: WP Kemper erhält den BME Procurement Excellence Award 2026 Auszeichnung für die innovative Digitalisierung des strategischen Einkaufs von Zeichnungsteilen +++ KI-Kompetenz wird im Team aufgebaut und sorgt für wirtschaftlichen Mehrwert",
-   "link": "https://www.bme.de/news/mit-ki-zu-transparenz-und-einsparung-wp-kemper-erhaelt-den-bme-procurement-excellence-award-2026/",
-   "published": "2026-11-18T00:00:00+00:00",
-   "summary": "Auszeichnung für die innovative Digitalisierung des strategischen Einkaufs von Zeichnungsteilen +++ KI-Kompetenz wird im Team aufgebaut und sorgt für wirtschaftlichen Mehrwert Die WP Kemper GmbH hat mit dem Einsatz autonomer KI-Agenten einen bisher weitgehend intransparenten Bereich des Einkaufs systematisch analysierbar gemacht und messbare Einsparpotenziale erzielt. Für das Projekt „Agentische Analyse und Zielpreise bei Zeichnungsteilen“ erhält der Hersteller von Bäckereimaschinen den…",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "BME",
-   "title": "18.11.2026 61. BME-Symposium: Die Einkaufscommunity trifft sich in Berlin Das 61. BME-Symposium Einkauf und Logistik ist am 18. November in der STATION Berlin gestartet. Für zwei Tage kommt die Einkaufs- und Supply-Chain-Community zusammen, um über die zentralen Herausforderungen für Beschaffung…",
-   "link": "https://www.bme.de/news/61-bme-symposium-die-einkaufscommunity-trifft-sich-in-berlin/",
-   "published": "2026-11-18T00:00:00+00:00",
-   "summary": "Das 61. BME-Symposium Einkauf und Logistik ist am 18. November in der STATION Berlin gestartet. Für zwei Tage kommt die Einkaufs- und Supply-Chain-Community zusammen, um über die zentralen Herausforderungen für Beschaffung und Lieferketten zu diskutieren. Geopolitische Veränderungen, Künstliche… Zur Eröffnung des 61. BME-Symposiums beschrieb BME-Vorstandsvorsitzender Martin Müller-Raidt am Mittwochmorgen die veränderten Rahmenbedingungen, unter denen Einkauf und Supply Chain Management agieren…",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "BME",
    "title": "25.11.2026 Industrie-Auftragsbestand wächst weiter Der Auftragsbestand im Verarbeitenden Gewerbe ist im September erneut gestiegen und liegt deutlich über dem Vorjahresniveau. Zuwächse im Maschinenbau und in der Automobilindustrie stützen die Entwicklung. Der Anstieg der Auftragspolster ist ein…",
    "link": "https://www.bme.de/news/industrie-auftragsbestand-waechst-weiter/",
    "published": "2026-11-25T00:00:00+00:00",
@@ -1116,16 +1106,6 @@
   },
   {
    "source": "produktion.de",
-   "title": "Europäische Rüstungsbeschaffung Hensoldt Theon baut Nachtsicht-Brillen-Fertigung in Wetzlar aus Hensoldt Theon NightVision hat in Wetzlar eine neue Fertigung für Nachtsichtgeräte eröffnet. Deutschland und Belgien haben zusammen mehr als 178.500 Sets bestellt. Zwei weitere EU-Länder sollen dem…",
-   "link": "https://www.produktion.de/ruestung-aerospace/hensoldt-theon-baut-nachtsicht-brillen-fertigung-in-wetzlar-aus/2773935",
-   "published": "2026-11-24T12:39:00+00:00",
-   "summary": "Hensoldt Theon NightVision hat in Wetzlar eine neue Fertigung für Nachtsichtgeräte eröffnet. Deutschland und Belgien haben zusammen mehr als 178.500 Sets bestellt. Zwei weitere EU-Länder sollen dem Programm beitreten. Neue Fertigung in Wetzlar – Hensoldt Theon NightVision investiert mehrere Millionen Euro in zusätzliche Kapazitäten für die Großserienfertigung und die langfristige Betreuung der Geräte. Mehr als 178.500 fest bestellte Sets – Auf Deutschland entfallen mehr als 166.000…",
-   "via": "page links, article read",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "produktion.de",
    "title": "Mobile Instandhaltung bei Stadtwerken Flensburg Stadtwerke Flensburg digitalisieren Instandhaltung Die Stadtwerke Flensburg setzen bei der mobilen Instandhaltung auf das argvis; Maintenance Portal. Die Lösung verbindet SAP PM mit GIS-Daten, ersetzt papierbasierte Abläufe und unterstützt rund 250…",
    "link": "https://www.produktion.de/instandhaltung/stadtwerke-flensburg-digitalisieren-instandhaltung/2772497",
    "published": "2026-11-20T14:18:00+00:00",
@@ -1161,6 +1141,16 @@
    "published": "2026-11-23T08:36:00+00:00",
    "summary": "Den statliga gruvkoncernen LKAB och ståltillverkaren Stegra utökar samarbetet kring leveranser och tester av järnmalmspellets, skriver de båda bolagen i ett gemensamt pressmeddelande. En avsiktsförklaring har tecknats, som syftar till att gå vidare med det gemensamma arbetet inom kommersiella, tekniska och logistiska områden, enligt bolagen. ”Det omfattar arbete mot ett långsiktigt leveransavtal, ett strukturerat program för testning av DR-pellets samt detaljerad planering av…",
    "via": "page links, article read",
+   "lane": "planning",
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Industri",
+   "title": "Megaavgiften äter upp spararnas kapital",
+   "link": "https://www.di.se/nyheter/megaavgiften-ater-upp-spararnas-kapital/",
+   "published": "2026-11-25T21:55:17+00:00",
+   "summary": "Skenet kan bedra när det gäller fondavgifter. Di skalar bort branschens avgiftslager och visar hur slutnotan för spararna rusar till över 8 procent per år i en av marknadens värstingar.",
+   "via": "feed",
    "lane": "planning",
    "planning_terms": false
   },
@@ -1216,16 +1206,6 @@
   },
   {
    "source": "arXiv (planning and OR preprints)",
-   "title": "Optimal Production Scheduling for Multi-Product Mineral Manufacturing",
-   "link": "https://arxiv.org/abs/2611.23699v1",
-   "published": "2026-11-18T01:42:38+00:00",
-   "summary": "Short-term scheduling in multi-product mineral manufacturing requires coordinating material movement and production across interconnected processing stages while addressing confirmed customer orders and longer-term production requirements. This work develops a generalized network-based, lexicographic multi-objective optimization (MOO) scheduling framework for these systems. The formulation represents the progression of material from raw-material supply through production and inventory to customer fulfillment. A sequential objective hierarchy first prioritizes fulfillment of confirmed customer orders and then progressively directs feasible production capacity toward cumulative targets supplied by the facility's demand-planning process. This approach ensures that the performance achieved for each higher-priority objective is preserved before subsequent targets are considered. Selected product-line activation decisions are represented using generalized disjunctive programming (GDP). An industrial mineral-manufacturing case study demonstrates the proposed framework's ability to generate feasible shift-level schedules and preserve the intended operational priorities with practical computational performance.",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
    "title": "A hybrid Graph-based Machine Learning Model for predicting Delivery Times in Supply Chain Logistics",
    "link": "https://arxiv.org/abs/2611.28467v1",
    "published": "2026-11-21T01:41:13+00:00",
@@ -1240,26 +1220,6 @@
    "link": "https://arxiv.org/abs/2611.24927v1",
    "published": "2026-11-18T18:53:58+00:00",
    "summary": "AI systems are built across many organizations that contribute models, data, compute, capital, talent, and other assets. While the layers of the AI stack are relatively well understood, the relationships between actors and components across layers remains sparsely documented. In this work, we focus on the organizations that make up the AI supply chain: the complex network of actors that contribute to the development and deployment of AI. We motivate the examination of the organizational AI supply chain---highlighting concerns about concentration, power, chokepoints, cascading failures, fragmented accountability, and risk---then describe our pipeline for mapping the AI supply chain. Our pipeline yields our main contribution: a multilayered, large-scale dataset of actors and relationships in the AI ecosystem, annotated with dates, descriptions, types, tags, and more. This work takes a step toward systematically mapping and measuring the AI supply chain and its properties, cataloging how models, data, chips, infrastructure, capital, and even talent flow between organizations. This data enable critical examinations of industry relationships and yield insights into the political economy of AI development and concentration. We provide several illustrative analyses, including studying the most central actors, analyzing network concentration, and identifying communities and chokepoints. While our dataset is fairly comprehensive, it is also necessarily incomplete: public documents…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "MANGO Arena: Same Seeds, Different Chains Evaluating LLM Agents in a Disrupted Supply Chain",
-   "link": "https://arxiv.org/abs/2611.23613v1",
-   "published": "2026-11-17T23:05:05+00:00",
-   "summary": "We introduce MANGO Arena, an open-source testbed in which four LLM agents each run one company in a serial supply chain adapted from MANGO, a classroom factory-management game. The environment enforces hard rules (a truck limit, a no-credit cash constraint and production capacity), logs every blocked attempt to break them, and gives agents a public message board on which side payments are explicitly forbidden. This lets one environment measure three things at once: an economic outcome (the bullwhip effect), rule adherence under pressure, and proposals to collude. In a pilot with three small reasoning models, two scripted reference policies, two conditions (with and without a supplier fire) and three demand seeds, all LLM agents amplified demand variability as it moved upstream, by 7 to 25 times at the Retailer and 13 to 179 times at the Supplier, often more than a textbook order-up-to policy. They did so largely by ordering in batches (zero orders in up to 60% of decisions). Real rule violations were rare (at most 7 of 288 decisions per model) and no agent proposed a money side deal. The pilot's main lesson concerns evaluation method. API failures (rate limits and runaway hidden reasoning) entered the metrics silently as \"no order\" decisions. And when we reran games with the same seeds and no failed calls, upstream bullwhip changed by up to 17 times between runs. With three seeds, conclusions about how a disruption affects a given model did not survive a rerun. We report…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
-  },
-  {
-   "source": "arXiv (planning and OR preprints)",
-   "title": "Action-outcome coupling: a pre-investment feasibility audit for offline reinforcement learning in supply chain operations",
-   "link": "https://arxiv.org/abs/2611.22921v1",
-   "published": "2026-11-17T15:21:50+00:00",
-   "summary": "Prescriptive analytics initiatives in logistics, such as offline reinforcement learning and next-best-action systems, are often funded before anyone verifies that the available historical logs can support an improved decision policy. We formalise this pre-investment feasibility question via action-outcome coupling: a total-effect variance index measuring how much expected outcomes change with the logged action. Coupling provides an algorithm-independent upper bound on any policy's achievable value, expressed in monetary units per decision for both single-step and discounted sequential objectives. We also analyse the asymptotic false-licensing risk of an invalid workflow: fitting a value model and evaluating the model's greedy policy on the same data. The false-licence rate is driven mainly by the number of state cells over which selection is performed, rising from the nominal test level with one cell to near certainty with a few dozen, while overlap has a smaller effect. We then propose an audit that assigns logs to four tiers of decision support, separately for fixed and contextual policies, and returns an explicit stopping rationale. On a randomised e-commerce log, the audit endorses a fixed recommendation policy, certifying gains equal to 30 per cent of the theoretical ceiling; the remaining gap reflects bound looseness under an 80-action design. Two public logistics logs fail at different checkpoints: one because the target is an accounting identity of the action, and…",
    "via": "feed",
    "lane": "planning",
    "planning_terms": false
@@ -1300,16 +1260,6 @@
    "link": "https://www.supplychainshaman.com/defining-the-role-of-the-budget-in-supply-chain-planning/",
    "published": "2026-11-19T02:26:22+00:00",
    "summary": "A financial budget is not an operational plan, and the two should be connected without confusing financial compliance with enterprise value optimization. Achieving alignment requires leadership, trust, shared incentives, and a common understanding of how market changes, product mix, capacity, and operational decisions affect financial outcomes. Technology is the easy part; the real challenge is…",
-   "via": "feed",
-   "lane": "planning",
-   "planning_terms": true
-  },
-  {
-   "source": "SAP News",
-   "title": "Advancing Supply Chain Planning: SAP Named a Leader in Multiple 2026 IDC MarketScape Assessments",
-   "link": "https://news.sap.com/2026/11/sap-named-leader-idc-marketscape-supply-chain-assessments/",
-   "published": "2026-11-17T13:15:00+00:00",
-   "summary": "It's an important moment for supply chain leaders, with persistent disruption, changing demand, and rapid advances in AI.",
    "via": "feed",
    "lane": "planning",
    "planning_terms": true
@@ -1435,14 +1385,14 @@
    "planning_terms": false
   },
   {
-   "source": "SAP News",
-   "title": "GxP Compliance in Life Sciences Is Non-Negotiable: SAP Is Raising the Standard",
-   "link": "https://news.sap.com/2026/11/gxp-compliance-life-sciences-sap-raising-standard/",
-   "published": "2026-11-17T12:15:00+00:00",
-   "summary": "Supporting good practice across enterprise systems is more critical than ever.",
+   "source": "Phys.org (economics and business)",
+   "title": "Sustainable procurement in multinational corporations depends on people and the operating environment",
+   "link": "https://phys.org/news/2026-11-sustainable-multinational-corporations-people-environment.html",
+   "published": "2026-11-25T20:00:12+00:00",
+   "summary": "Elizabeth Jeromaa's doctoral dissertation in management, to be examined at the University of Vaasa, demonstrates that it is possible for companies to implement environmentally sustainable procurement practices, though there is no one-size-fits-all model.",
    "via": "feed",
-   "lane": "planning",
-   "planning_terms": false
+   "lane": "management",
+   "planning_terms": true
   },
   {
    "source": "Phys.org (economics and business)",
@@ -1450,6 +1400,46 @@
    "link": "https://phys.org/news/2026-11-panic-buying-gradual-stockpiling-prepping.html",
    "published": "2026-11-24T19:50:04+00:00",
    "summary": "Soon after the government launched its \"Be Ready\" campaign, supermarket shelves were empty where the bottled water usually sits. Flashlights quickly went out of stock too.",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "idw-online (DACH research)",
+   "title": "30 Jahre nach Dayton: Internationale Konferenz versammelt aktuelle Forschung zu Jugoslawienkriegen",
+   "link": "http://idw-online.de/de/news881453",
+   "published": "2026-11-24T13:52:00+00:00",
+   "summary": "Mehr als 30 Jahre nach dem Abkommen von Dayton, das den Krieg in Bosnien-Herzegowina beendete, stehen der Forschung erstmals bislang gesperrte Archivbestände zur Verfügung. Welche neuen Facetten sich daraus für das Verständnis der Jugoslawienkriege und ihrer Folgen für Europa ergeben können, diskutiert eine internationale Konferenz am Leibniz-Institut für Ost- und Südosteuropaforschung (IOS) in…",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "idw-online (DACH research)",
+   "title": "Express delivery! Local supply chain keeps nerve cells’ mitochondria in check",
+   "link": "http://idw-online.de/de/news881440",
+   "published": "2026-11-24T12:21:00+00:00",
+   "summary": "•Two production sites: Nerve cells make a protein that marks faulty mitochondria for recycling, called PINK1, next to mitochondria and a short distance away. Energy signals such as insulin affect how much is made where •Hidden chaperone: PINK1 made at a distance needs a courier protein to reach the mitochondria: When the courier is absent, damaged mitochondria are not properly cleared •Zooming…",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "idw-online (DACH research)",
+   "title": "DITF-Forschungszentrum CYCLOTEXUM fördert Kreislaufwirtschaft in der Textilbranche",
+   "link": "http://idw-online.de/de/news881424",
+   "published": "2026-11-24T10:46:00+00:00",
+   "summary": "Mit dem Forschungsprojekt CYCLOTEXUM wurde an den Deutschen Instituten für Textil- und Faserforschung Denkendorf (DITF) das gleichnamige Recyclingzentrum geschaffen. Dort werden gemeinsam mit Industriepartnern anwendungsorientierte Lösungen für mechanische und lösemittelbasierte Recyclingverfahren entwickelt. Die entwickelten Technologien leisten entlang der textilen Wertschöpfungskette einen…",
+   "via": "feed",
+   "lane": "management",
+   "planning_terms": false
+  },
+  {
+   "source": "idw-online (DACH research)",
+   "title": "Black Friday: Wenn gute Vorsätze im Warenkorb landen",
+   "link": "http://idw-online.de/de/news881354",
+   "published": "2026-11-23T12:46:00+00:00",
+   "summary": "Wissenschaftler der DHBW Karlsruhe, Jan Michael Rasimus zeigt, wie Werbung und Rabatte das Wunsch-Ich ansprechen – und worauf es beim Einkauf ankommt.",
    "via": "feed",
    "lane": "management",
    "planning_terms": false
@@ -1545,36 +1535,6 @@
    "planning_terms": false
   },
   {
-   "source": "STT Info (Finnish releases)",
-   "title": "Vihreiden Pitko: Kahden miljardin lupaus ei korvaa metsien romahdusta",
-   "link": "https://www.sttinfo.fi/tiedote/72536501/vihreiden-pitko-kahden-miljardin-lupaus-ei-korvaa-metsien-romahdusta?lang=fi",
-   "published": "2026-11-25T10:45:28+00:00",
-   "summary": "Sahateollisuus vaatii seuraavalta hallitukselta lisää hakkuita ja lupaa vastineeksi kaksi miljardia euroa vientituloja. Vihreiden varapuheenjohtaja, kansanedustaja Jenni Pitko pitää vaatimusta vastuuttomana: metsien hiilinielu on kutistunut lähes olemattomiin, niiden kasvu hidastuu ja metsäluonto on ahdingossa.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "STT Info (Finnish releases)",
-   "title": "Heikki Vuorenmaa RT:n hallituksen puheenjohtajaksi",
-   "link": "https://www.sttinfo.fi/tiedote/72534818/heikki-vuorenmaa-rtn-hallituksen-puheenjohtajaksi?lang=fi",
-   "published": "2026-11-25T10:00:00+00:00",
-   "summary": "Rakennusteollisuus RT:n hallituksen puheenjohtajaksi nimettiin YIT:n toimitusjohtaja Heikki Vuorenmaa. Kaksivuotinen puheenjohtajakausi alkaa vuoden 2027 alussa.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
-   "source": "STT Info (Finnish releases)",
-   "title": "Rakennusteollisuus RT: Suomen on uskallettava kasvaa",
-   "link": "https://www.sttinfo.fi/tiedote/72534658/rakennusteollisuus-rt-suomen-on-uskallettava-kasvaa?lang=fi",
-   "published": "2026-11-25T10:00:00+00:00",
-   "summary": "Suomella on edessään jopa 350 miljardin euron vihreän siirtymän investointipotentiaali vuoteen 2035 mennessä. Rakennusteollisuus RT muistuttaa edustajistonsa syyskokouksen yhteydessä, ettei lyhyen aikavälin huolien pidä antaa liiaksi määrittää pitkän aikavälin kasvun edellytyksiä.",
-   "via": "feed",
-   "lane": "management",
-   "planning_terms": false
-  },
-  {
    "source": "DACH ad hoc releases (finanznachrichten)",
    "title": "EQS-Adhoc: Aurubis AG: Aurubis erwartet wegen verlängerten Hochlaufs in Richmond für das Geschäftsjahr 2026/27 ein operatives Ergebnis vor Steuern unter der Markterwartung",
    "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70213261-eqs-adhoc-aurubis-ag-aurubis-erwartet-wegen-verlaengerten-hochlaufs-in-richmond-fuer-das-geschaeftsjahr-2026-27-ein-operatives-ergebnis-vor-steuern-unt-022.htm",
@@ -1617,6 +1577,17 @@
    "lane": "management",
    "highlights": "53 Kotierungsreglement der SIX Swiss Exchange ams OSRAM hebt Potenzial des Werks Kulim 2 durch strategische Partnerschaft mit Samsung Display, reservierten Kapazitätskorridor und Eigenkapitalinvestition von 210 Millionen EUR Premstätten, Österreich, und München, Deutschland (25. Die Partnerschaft vereint die umfassende Expertise von ams OSRAM in fortschrittlicher Epitaxie, LED-Miniaturisierung und der 8-Zoll-LED-Großserienfertigung mit der innovativen, proprietären und kostenoptimierten Transfertechnologie von SDC. Gleichzeitig reserviert ams OSRAM in seinem Werk Kulim 2 einen vereinbarten Kapazitätskorridor für SDC. Gleichzeitig stärkt die Partnerschaft das Auslastungsprofil von Kulim 2, während umfangreiche Kapazitäten für weitere Wachstumschancen im Bereich Digital Photonics erhalten bleiben\" , ergänzte Kamper. Ziel ist es, einen skalierbaren und kosteneffizienten Weg hin zu einer Serienfertigung zu schaffen. Im Rahmen der Partnerschaft reserviert ams OSRAM für SDC einen vereinbarten Kapazitätskorridor in seinem 8-Zoll-Werk Kulim 2. Die mehrjährige Finanzierung der gemeinsamen Entwicklung durch SDC wird in den kommenden Jahren voraussichtlich jährliche Umsätze im hohen zweistelligen Millionen-Euro-Bereich generieren und damit die programmbezogenen Betriebskosten sowie einen angemessenen Anteil der Fixkosten von Kulim 2 abdecken.",
    "planning_terms": false
+  },
+  {
+   "source": "Sandvik",
+   "title": "Sandvik to acquire Brazilian mining wear and spare parts manufacturer Del Rey Minerals",
+   "link": "https://mfn.se/cis/a/sandvik/sandvik-to-acquire-brazilian-mining-wear-and-spare-parts-manufacturer-del-rey-minerals-1c5614b5",
+   "published": "2026-11-25T12:00:00+00:00",
+   "summary": "Sandvik has signed an agreement to acquire Del Rey Minerals, a leading Brazilian provider of wear and spare parts for mineral processing. The company will become part of the Screening division within business area Rock Processing. Del Rey Minerals has a strong position in the Brazilian mining market and long-standing relationships with major mining customers, with a significant portion of…",
+   "via": "feed",
+   "company": "Sandvik",
+   "highlights": "",
+   "lane": "companies"
   },
   {
    "source": "Sandvik",
@@ -1752,100 +1723,130 @@
   },
   {
    "source": "The Loadstar",
-   "title": "Brazil’s biggest air cargo gateway hit by backlog as trucks wait days to unload",
-   "link": "https://theloadstar.com/brazils-biggest-air-cargo-gateway-hit-by-backlog-as-trucks-wait-days-to-unload/",
-   "published": "2026-11-25T11:01:49+00:00",
-   "summary": "Brazil’s busiest international air cargo hub is struggling to move freight after tighter export inspections filled its warehouse, leaving some trucks waiting days to unload and delaying the handover of imports that had already cleared customs. Kuehne+Nagel said on Tuesday that some trucks which arrived at São Paulo’s Guarulhos Airport on Friday 20 November were still waiting to unload. Some…",
+   "title": "APM Terminals plans 1.4m teu expansion at Rotterdam’s Maasvlakte II",
+   "link": "https://theloadstar.com/apm-terminals-plans-1-4m-teu-expansion-at-rotterdams-maasvlakte-ii/",
+   "published": "2026-11-25T12:43:26+00:00",
+   "summary": "APM Terminals and the port of Rotterdam have unveiled plans to add a further 1.4m teu of capacity to the operator’s flagship Maasvlakte II facility in the Dutch hub. With the terminal’s first phase of expansion recently completed, the new second phase will see a further 711 metres of quay built and 25ha of terminal yard space added. “This expansion marks the next step in the long-term…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "The Loadstar",
-   "title": "WiseTech: Richard White confirms conclusion of AFP investigation",
-   "link": "https://theloadstar.com/wisetech-richard-white-confirms-conclusion-of-afp-investigation/",
-   "published": "2026-11-25T07:54:27+00:00",
-   "summary": "ASX ANNOUNCEMENT 25 November 2026 Richard White confirms conclusion of AFP investigation WiseTech Global Limited (WiseTech or the Company) refers to the ASX announcement it made on 23 June 2026 titled “Response to media commentary” and provides an update to investors. As noted in that announcement, media commentary had been published on 22 June 2026 alleging an investigation by the Australian…",
+   "title": "Maersk warns of UK logistics bottlenecks as port congestion persists globally",
+   "link": "https://theloadstar.com/maersk-warns-of-uk-logistics-bottlenecks-as-port-congestion-persists-globally/",
+   "published": "2026-11-25T12:41:59+00:00",
+   "summary": "Maersk has warned customers of continued disruption across its UK and Ireland logistics network, as high import volumes and a combination of port and inland transport bottlenecks hamper efforts to clear cargo backlogs. In a customer advisory yesterday, the Danish carrier said sustained high import volumes, vessel schedule delays, adverse weather and recent rail disruptions had put pressure on…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "The Loadstar",
-   "title": "Flexibility the ‘real commercial value’ for shippers facing disruption",
-   "link": "https://theloadstar.com/flexibility-the-real-commercial-value-for-shippers-facing-disruption/",
-   "published": "2026-11-24T15:00:50+00:00",
-   "summary": "Shippers risk undermining their supply chain resilience by awarding transport contracts primarily on price, with increasingly little protection offered by logistics operators when costs rise or capacity constraints hinder movements. Chris Clowes, executive director of Scala, said while companies often sought to diversify transport suppliers to reduce exposure to disruption, that approach could…",
+   "title": "Cargo owners will foot the bill for IMO net-zero framework, warns FMC chair",
+   "link": "https://theloadstar.com/cargo-owners-will-foot-the-bill-for-imo-net-zero-framework-warns-fmc-chair/",
+   "published": "2026-11-25T12:34:29+00:00",
+   "summary": "Maritime decarbonisation costs will ultimately be passed on to cargo owners under the present structuring of the proposed IMO Net-Zero Framework, according to the Federal Maritime Commission’s (FMC) chair Laura Di Bella. With industry leaders backing her assessment, Ms Di Bella said the competitive nature of shipping would see additional compliance expenses eventually fed through to cargo…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "The Loadstar",
-   "title": "EXCLUSIVE: Maersk and ONE tipped to create first global north-south alliance",
-   "link": "https://theloadstar.com/maersk-and-one-tipped-to-create-first-global-north-south-alliance/",
-   "published": "2026-11-24T13:26:05+00:00",
-   "summary": "The formation of container shipping’s first global liner alliance covering the north-south trades appears to be taking shape, The Loadstar has learned. Container lines have traditionally treated the north-south trades as a set of separate marriages, on the assumption that the right partner depends on the trade. However, according to sources in Asia, Maersk and Ocean Network Express (ONE) are…",
+   "title": "Smaller forwarders struggle to secure alternative terms under IATA air waybill rules",
+   "link": "https://theloadstar.com/smaller-forwarders-struggle-to-secure-alternative-terms-under-iata-air-waybill-rules/",
+   "published": "2026-11-25T12:30:50+00:00",
+   "summary": "Some airlines are agreeing alternative liability terms with larger freight forwarders under IATA’s revised direct air waybill (DAWB) framework, but smaller firms have little leverage to secure similar arrangements, the Airforwarders Association (AfA) has warned. “If an airline says no, the forwarder either accepts the default terms or moves the cargo to another carrier,” AfA chief executive…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "The Loadstar",
-   "title": "Ransomware gang hunting Mærsk & US 3PLs – lawsuits already flying",
-   "link": "https://theloadstar.com/ransomware-gang-hunting-maersk-us-3pls-lawsuits-already-flying/",
-   "published": "2026-11-24T12:09:08+00:00",
-   "summary": "WhiteArmor emerged last month and has claimed Mærsk, JB Hunt, Ryder and Echo Global Logistics among its victims – they also acknowledged intrusions while proposed class-action lawsuits highlight the stakes. A ransomware group you’ve never heard of, called WhiteArmor, surfaced in October and quickly put four of the biggest names in global logistics on its target list. JB Hunt, Ryder, Echo Global…",
+   "title": "The ‘Bolloréisation’ of Ceva Logistics is finally underway",
+   "link": "https://theloadstar.com/the-bolloreisation-of-ceva-logistics-is-finally-underway/",
+   "published": "2026-11-25T12:14:04+00:00",
+   "summary": "The message is loud and clear: Ceva Logistics has embarked on another comprehensive corporate restructuring that looks “in essence, more Teutonic than Nordic”, sources say. (By way of background: I guess you recall ‘No stone will be left unturned‘ coverage published on 16 November.) And so After a “couple of lost years” under the previous stewardship of Mathieu Friedberg*, to “now expect…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "FreightWaves",
-   "title": "Diesel price declines picking up pace",
-   "link": "https://www.freightwaves.com/news/diesel-price-declines-picking-up-pace",
-   "published": "2026-11-24T21:49:41+00:00",
-   "summary": "Oil prices are in the middle of a massive reset and the benchmark price that is the basis for most fuel surcharges is rapidly reflecting those changes. The Department of Energy/Energy Information Administration average retail diesel price declined 24.2 cents/gallon to $5.695/g, effective Monday but published Tuesday. That is the largest one-week decline since the […] The post Diesel price…",
+   "title": "Asia-US West Coast container spot rates fall below $8,000 as US avoids LA-Long Beach port strike",
+   "link": "https://www.freightwaves.com/news/asia-us-west-coast-container-spot-rates-fall-below-8000-as-us-avoids-la-long-beach-port-strike",
+   "published": "2026-11-25T17:18:32+00:00",
+   "summary": "Trans-Pacific spot rates are slipping from peak-season highs after a tentative LA-Long Beach port labor deal. Trade-policy uncertainty and carrier capacity cuts could still keep prices elevated. The post Asia-US West Coast container spot rates fall below $8,000 as US avoids LA-Long Beach port strike appeared first on FreightWaves .",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "FreightWaves",
-   "title": "RICO Lawsuit: Are Major Freight Brokers Manipulating the Market?",
-   "link": "https://www.freightwaves.com/news/rico-lawsuit-are-major-freight-brokers-manipulating-the-market",
-   "published": "2026-11-24T19:45:31+00:00",
-   "summary": "A bombshell RICO lawsuit accuses major freight brokers C.H. Robinson and TQL of market manipulation through “forced labor.” FreightWaves expert John Kingston breaks down why these racketeering claims, traditionally used against organized crime, are hitting the logistics industry. We also explore the ongoing diesel price decline and Uber Freight’s CEO challenging Gartner’s Magic Quadrant…",
+   "title": "Shein feels impact of EU import fees as revenue slides 6%",
+   "link": "https://www.freightwaves.com/news/shein-feels-impact-of-eu-import-fees-as-revenue-slides-6",
+   "published": "2026-11-25T16:22:36+00:00",
+   "summary": "New European Union trade curbs on B2C imports took a bite out of Shein’s revenues in the third quarter. The post Shein feels impact of EU import fees as revenue slides 6% appeared first on FreightWaves .",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "FreightWaves",
-   "title": "Stop Fleet Fraud! AI Voice Agents Streamline Repairs",
-   "link": "https://www.freightwaves.com/news/stop-fleet-fraud-ai-voice-agents-streamline-repairs",
-   "published": "2026-11-24T19:44:57+00:00",
-   "summary": "ServiceUp is revolutionizing fleet repair management with AI and voice agents to tackle common industry pain points like fraud and downtime. Co-Founder Brett Dashe explains how their agtech-based platform streamlines operations, analyzes repair data for fraud detection, and challenges traditional fleet replacement cycles. Discover why fleets need to rethink their diesel and EV strategies based…",
+   "title": "Freight Volatility Moved to the P&L. Is Your2027 Budget Ready?",
+   "link": "https://www.freightwaves.com/news/freight-volatility-moved-to-the-pl-is-your2027-budget-ready",
+   "published": "2026-11-25T16:09:32+00:00",
+   "summary": "Freight volatility is now a finance problem. Insights from Supply Chain Day at F3 and SONAR data on what CFOs should do before 2027 bid season. The post Freight Volatility Moved to the P&L. Is Your2027 Budget Ready? appeared first on FreightWaves .",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "FreightWaves",
-   "title": "Trucking Tightens as Rail Volume Surges",
-   "link": "https://www.freightwaves.com/news/trucking-tightens-as-rail-volume-surges",
-   "published": "2026-11-24T19:43:35+00:00",
-   "summary": "The biggest railroad merger in decades is facing stiff opposition, with new data revealing hundreds of errors in traffic analysis. Meanwhile, rail volumes are surging, and trucking capacity is tightening nationwide. We dive into Sonar data to expose the real story behind intermodal contract savings, port rejections, and the growing gap between spot and contract […] The post Trucking Tightens as…",
+   "title": "REAL CREDENTIALS, WRONG HANDS",
+   "link": "https://www.freightwaves.com/news/real-credentials-wrong-hands",
+   "published": "2026-11-25T14:43:59+00:00",
+   "summary": "Freight fraud trends and what they cost shippers How hijacked carrier identities, a tight truckload market and a shifting liability landscape put shippers on the front line of cargo theft. EXECUTIVE SUMMARYFreight fraud no longer depends on fake carriers. In Q3 2026, more than 80% of the stolen loads reported to Highway involved real carrier […] The post REAL CREDENTIALS, WRONG HANDS appeared…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "FreightWaves",
-   "title": "J.B. Hunt urges STB to reject Union Pacific–Norfolk Southern merger",
-   "link": "https://www.freightwaves.com/news/j-b-hunt-urges-stb-to-reject-union-pacific-norfolk-southern-merger",
-   "published": "2026-11-24T19:24:27+00:00",
-   "summary": "J.B. Hunt’s STB filing challenges projected truck-to-rail conversions and seeks enforceable protections if regulators approve the merger. The post J.B. Hunt urges STB to reject Union Pacific–Norfolk Southern merger appeared first on FreightWaves .",
+   "title": "Descartes says new platform can quote 90% of freight requests within 30 seconds",
+   "link": "https://www.freightwaves.com/news/descartes-says-new-platform-can-quote-90-of-freight-requests-within-30-seconds",
+   "published": "2026-11-25T14:26:51+00:00",
+   "summary": "Descartes Spot combines carrier rates, schedules, transit times and surcharges to help freight forwarders automate spot-rate quoting. The post Descartes says new platform can quote 90% of freight requests within 30 seconds appeared first on FreightWaves .",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Splash247",
+   "title": "Shenzhen Energy makes $44m dry bulk newbuild move",
+   "link": "https://splash247.com/shenzhen-energy-makes-44m-dry-bulk-newbuild-move/",
+   "published": "2026-11-25T12:40:00+00:00",
+   "summary": "Chinese power group Shenzhen Energy is moving ahead with the renewal of its dry bulk fleet, selecting CSSC Huangpu Wenchong Shipbuilding to build an 82,000 dwt kamsarmax in a deal worth RMB296m ($44.4m). The Shenzhen-listed company’s shipping arm, Shenzhen Energy Transportation, has named the Guangzhou-based yard as the winning bidder for the vessel, which will …",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Splash247",
+   "title": "Bonny Gas Transport adds LNG carrier double in China",
+   "link": "https://splash247.com/bonny-gas-transport-adds-lng-carrier-double-in-china/",
+   "published": "2026-11-25T12:20:00+00:00",
+   "summary": "Nigeria LNG’s shipping arm Bonny Gas Transport (BGT) has returned to China’s Hudong-Zhonghua Shipbuilding for another two LNG carriers, expanding its fleet renewal programme at the Shanghai yard to five firm vessels. The Nigerian owner has signed contracts on for a pair of 174,000 cu m newbuilds, with China Shipbuilding Trading also involved in the …",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Splash247",
+   "title": "Hong Kong shipowners hail shipping tax overhaul",
+   "link": "https://splash247.com/hong-kong-shipowners-hail-shipping-tax-overhaul/",
+   "published": "2026-11-25T12:00:00+00:00",
+   "summary": "The Hong Kong Shipowners Association (HKSOA) has welcomed a package of tax reforms aimed at attracting more shipping and commodity trading businesses to the city, including a new half-rate profits tax concession for physical commodity traders. The measures, which returned to the Legislative Council for consideration on Wednesday, would reduce the profits tax rate on …",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -1871,34 +1872,14 @@
    "planning_terms": false
   },
   {
-   "source": "Splash247",
-   "title": "Safe Bulkers offloads vintage post-panamax for $15m",
-   "link": "https://splash247.com/safe-bulkers-offloads-vintage-post-panamax-for-15m/",
-   "published": "2026-11-25T11:00:00+00:00",
-   "summary": "Polys Hajioannou-led Safe Bulkers is clearing out more older tonnage, striking a $14.86m deal to sell a 20-year-old post-panamax bulk carrier. The New York- and Athens-listed owner revealed in a US securities filing that it had agreed to offload the Japanese-built, 87,000 dwt Marina, with the vessel set to change hands in January next year. …",
+   "source": "DC Velocity",
+   "title": "Frazier to build $20 million rack factory in Texas",
+   "link": "https://www.dcvelocity.com/material-handling/storage/racking/frazier-to-build-20-million-rack-factory-in-texas",
+   "published": "2026-11-25T17:22:50+00:00",
+   "summary": "Steel pallet rack manufacturer Frazier Industrial Company will build a $20 million manufacturing facility in Grand Prairie, Texas, saying the factory will strengthen its production capabilities and ability to serve customers across the United States and Latin America. When it opens in March 2027, the semi-automated facility will support fabrication services and employ approximately 130…",
    "via": "feed",
    "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Splash247",
-   "title": "Saipem bags dual offshore EPCI contracts from Aramco",
-   "link": "https://splash247.com/saipem-bags-dual-offshore-epci-contracts-from-aramco/",
-   "published": "2026-11-25T10:40:00+00:00",
-   "summary": "Italian offshore engineering and construction contractor Saipem has been awarded two offshore contracts in Saudi Arabia under its existing long-term agreement with Aramco. The approximate value of $650m covers the engineering, procurement, construction, installation, pipeline, and power-cable scope for two contracts. The first contract entails the EPCI of four production deck manifolds,…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Splash247",
-   "title": "Vantris secures $115m Petronas work package",
-   "link": "https://splash247.com/vantris-secures-115m-petronas-work-package/",
-   "published": "2026-11-25T10:25:17+00:00",
-   "summary": "Malaysian offshore contractor Vantris Energy has secured further transportation and installation work orders from Petronas Carigali, with a combined potential value of RM475m ($115m). The Kuala Lumpur-listed company said the contracts were awarded to its wholly owned subsidiary VTEB Offshore, formerly known as Sapura Offshore, under an existing agreement covering the transportation and…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
+   "planning_terms": true
   },
   {
    "source": "DC Velocity",
@@ -1932,50 +1913,50 @@
   },
   {
    "source": "DC Velocity",
+   "title": "Tech funding will rise in 2027, but AI investors will demand measurable savings",
+   "link": "https://www.dcvelocity.com/technology/artificial-intelligence/tech-funding-will-rise-in-2027-but-ai-investors-will-demand-measurable-savings",
+   "published": "2026-11-25T17:20:58+00:00",
+   "summary": "Dealmaking in logistics technology surged in 2026 and funding is on course to rise, but a softer 2027 freight market will reward only the artificial intelligence (AI) that is embedded in clear workflows and delivers measurable savings, according to a report from Norwegian logistics AI company Deep Current AS. The report examines developments across freight forwarding, container shipping,…",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "DC Velocity",
+   "title": "Lithium-ion recycling market to reach $64 billion by 2047",
+   "link": "https://www.dcvelocity.com/supply-chain/other-services/green-logistics/lithium-ion-recycling-market-to-reach-64-billion-by-2047",
+   "published": "2026-11-25T17:19:38+00:00",
+   "summary": "The global market for lithium-ion recycling is set to grow to $64 billion by 2047, driven by the collection of an increasing number of batteries from electric vehicles, according to a report from IDTechEx. Although lithium-ion battery recycling remains a relatively nascent industry, it is expanding rapidly in response to strategic, economic, and environmental drivers. Already, lithium-ion…",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "DC Velocity",
+   "title": "Dual-fuel fleet set to meet 20% of liner energy demand by 2030",
+   "link": "https://www.dcvelocity.com/supply-chain/other-services/green-logistics/dual-fuel-fleet-set-to-meet-20-of-liner-energy-demand-by-2030",
+   "published": "2026-11-25T17:16:25+00:00",
+   "summary": "By around 2030, ships already operating or on order that are capable of using renewable marine fuels are expected to account for more than 20% of liner shipping’s total energy demand, demonstrating the scale of potential demand for renewable fuels, according to the World Shipping Council (WSC). That rising investment in new container ships and vehicle carriers is creating a substantial potential…",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "DC Velocity",
+   "title": "Automating your loading docks just got easier",
+   "link": "https://www.dcvelocity.com/material-handling/automating-your-loading-docks-just-got-easier",
+   "published": "2026-11-25T14:13:08+00:00",
+   "summary": "The loading bay is one of the last areas of the warehouse to be automated, but many argue it’s the place that is most in need of a high-tech overhaul, given the physically demanding work involved in loading and unloading trailers day in and day out. Thankfully, times are changing, and advances in “physical artificial intelligence,” commonly known as “physical AI,” are beginning to effect change…",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "DC Velocity",
    "title": "USPS sees rising threat of holiday scams",
    "link": "https://www.dcvelocity.com/supply-chain/other-services/supply-chain-security/usps-sees-rising-threat-of-holiday-scams",
    "published": "2026-11-24T22:23:51+00:00",
    "summary": "The United States Postal Service (USPS) is warning customers to avoid holiday scams including counterfeit postage, brushing and imposter scams, phone charities, and mail theft. The threat of scams is now elevated because the holidays are the busiest time of year, creating an opportunity for scammers who count on people’s generosity — and distraction — during the festive season, USPS said. USPS…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "DC Velocity",
-   "title": "Cargo thieves increase plots to steal shipments over Thanksgiving holiday",
-   "link": "https://www.dcvelocity.com/supply-chain/other-services/supply-chain-security/cargo-thieves-increase-plots-to-steal-shipments-over-thanksgiving-holiday",
-   "published": "2026-11-24T22:23:15+00:00",
-   "summary": "As freight theft rates continue to rise, the supply chain risk analysis firm Verisk CargoNet is recommending that shippers, brokers, and carriers tighten their security and verification processes from Tuesday, Nov. 24, through Monday, Nov. 30. The firm is highlighting a growing scheme in which cybercriminals posing as drivers and dispatchers respond to carriers' job postings on social media,…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "DC Velocity",
-   "title": "Report: data center construction drives logistics demand",
-   "link": "https://www.dcvelocity.com/technology/artificial-intelligence/report-data-center-construction-drives-logistics-demand",
-   "published": "2026-11-24T22:19:03+00:00",
-   "summary": "Rapid growth in data center construction is creating demand for material handling equipment and warehouse automation to manage the rising volumes of technology components like servers, racks, components, and spare parts, according to a report by Interact Analysis. The rising demand for logistics services occurs because all the technical hardware that powers data center operations must be stored,…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "DC Velocity",
-   "title": "What Warehouse Leaders Need to Know Before Starting an Automation Journey",
-   "link": "https://www.dcvelocity.com/video/dcv-tv-1-news/supply-chain-short-takes/what-warehouse-leaders-need-to-know-before-starting-an-automation-journey",
-   "published": "2026-11-24T21:44:49+00:00",
-   "summary": "Automation is no longer reserved for large, high-volume operations, but determining when and where to begin can be challenging. In this episode, Ryan Borgerding, vice president of automation sales at Storage Solutions - a Jungheinrich company, joins DC Velocity 's David Maloney to discuss common misconceptions about automation, how organizations can assess their readiness, and the key factors…",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "DC Velocity",
-   "title": "The expanding role of pick-to-light technology in modern fulfillment",
-   "link": "https://www.dcvelocity.com/video/dcv-tv-1-news/supply-chain-short-takes/the-expanding-role-of-pick-to-light-technology-in-modern-fulfillment",
-   "published": "2026-11-24T21:31:57+00:00",
-   "summary": "From traditional pick-to-light to put walls, mobile carts, and put-to-store retail replenishment systems, light-directed technologies continue to play an important role in order fulfillment. Peter Gerbitz of Pyramid, a Duravant company, shares with DC Velocity 's David Maloney how decades of experience with Lightning Pick solutions are helping customers improve productivity, accommodate changing…",
    "via": "feed",
    "lane": "freight",
    "planning_terms": false
@@ -2002,30 +1983,10 @@
   },
   {
    "source": "Xeneta",
-   "title": "Xeneta Summit: Analysts forecast ocean freight spot rates to fall 30% in 2027 as Red Sea return sees capacity flooding back",
-   "link": "https://www.xeneta.com/news/xeneta-summit-analysts-forecast-ocean-freight-spot-rates-to-fall-30-in-2027-as-red-sea-return-sees-capacity-flooding-back",
-   "published": null,
-   "summary": "The Red Sea and Suez Canal return is central to Xenetaâs 2027 forecast as services ramp up through the region, but analysts warn softer rates arenât guaranteed. The return of container shipping to the Red Sea and Suez Canal is central to the Xeneta forecast for 2027 following a significant ramping up of services transiting the region in recent months - but analysts warn softening rates are not guaranteed Global ocean container shipping spot rates are forecast to fall 30% in 2027, according…",
-   "via": "page links, article read",
-   "lane": "freight",
-   "planning_terms": true
-  },
-  {
-   "source": "Xeneta",
    "title": "Weekly ocean freight market update: 20 November 2026",
    "link": "https://www.xeneta.com/news/ocean-freight-market-update-2026-11-20",
    "published": null,
    "summary": "Far East to Mediterranean spot rates move in mysterious ways as return to Red Sea stalls The Xeneta Weekly Ocean Container Shipping Market Update provides data and intelligence including the latest freight rate and capacity movements across global trades with supporting insight from Peter Sand, Xeneta Chief Analyst. âOffered capacity is increasing on all fronthauls out of the Far East to Europe and the US, with average spot rates unsurprisingly continuing to soften â with one exception.…",
-   "via": "page links, article read",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Xeneta",
-   "title": "Partners take center stage at Xeneta Summit",
-   "link": "https://www.xeneta.com/news/partners-take-center-stage-at-xeneta-summit",
-   "published": null,
-   "summary": "Archlet, BlueCargo, BuyCo, Keelvar, Vizion and Zauber joined us on stage in Munich Your challenges are industry challenges and nobody solves them alone â you need predictable cost, commitments that hold, no hidden charges and AI that can see your freight. None of that comes from one company, so we are building an ecosystem of partners who provide specialist solutions at every stage of the procure-to-pay cycle.",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
@@ -2042,16 +2003,6 @@
   },
   {
    "source": "Xeneta",
-   "title": "Xeneta Expands Collaboration with Descartes to Bring Independent Freight Rate Benchmarking into Descartes Spotâ¢",
-   "link": "https://www.xeneta.com/news/xeneta-expands-collaboration-with-descartes-to-bring-independent-freight-rate-benchmarking-into-descartes-spot",
-   "published": null,
-   "summary": "Forwarders can now check carrier pricing against Xeneta market data at the moment they quote Xeneta, the leading ocean and air freight data and market intelligence solution, announced at the Xeneta Summit that it is expanding its collaboration with Descartes Systems Group. Xenetaâs freight rate benchmarking is now available inside Descartes Spot, the spot freight rate quoting solution. Forwarders using Descartes Spot can see independent market intelligence right in the quoting process. This…",
-   "via": "page links, article read",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Xeneta",
    "title": "Weekly ocean freight market update: 23 October 2026",
    "link": "https://www.xeneta.com/news/ocean-freight-market-update-2026-10-23",
    "published": null,
@@ -2061,8 +2012,28 @@
    "planning_terms": false
   },
   {
+   "source": "Xeneta",
+   "title": "Weekly ocean freight market update: 16 October 2026",
+   "link": "https://www.xeneta.com/news/ocean-freight-market-update-2026-10-16",
+   "published": null,
+   "summary": "Carriers accelerate Red Sea return with offered capacity doubling in six weeks. The Xeneta Weekly Ocean Container Shipping Market Update provides data and intelligence including the latest freight rate and capacity movements across global trades with supporting insight from Emily StausbÃ¸ll, Xeneta Senior Shipping Analyst. âThe return of container shipping to the Red Sea is accelerating with offered capacity on services transiting or set to start transiting the region in at least one…",
+   "via": "page links, article read",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
+   "source": "Xeneta",
+   "title": "Weekly ocean freight market update: 8 October 2026",
+   "link": "https://www.xeneta.com/news/ocean-freight-market-update-2026-10-08",
+   "published": null,
+   "summary": "Falling rates welcome news for European shippers in tender season while Transpacific edges downwards The Xeneta Weekly Ocean Container Shipping Market Update provides data and intelligence including the latest freight rate and capacity movements across global trades with supporting insight from Peter Sand, Xeneta Chief Analyst. âSpot rates on the Far East to Europe trades have fallen heavily since the post-Hormuz crisis peak in July. The Mediterranean is taking the biggest hit, down 43%…",
+   "via": "page links, article read",
+   "lane": "freight",
+   "planning_terms": false
+  },
+  {
    "source": "VerkehrsRundschau",
-   "title": "Studie: Vollautonome Lieferkette verliert an Zustimmung 25.11.2026, 11:46 Uhr",
+   "title": "Studie: Vollautonome Lieferkette verliert an Zustimmung",
    "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/studie-vollautonome-lieferkette-verliert-an-zustimmung-3941240",
    "published": "2026-11-25T11:46:00+00:00",
    "summary": "Unternehmen investieren verstärkt in KI-Agenten für ihre Lieferketten. An die vollständig autonome Supply Chain glauben laut Capgemini aber immer weniger. Unternehmen setzen verstärkt auf Künstliche Intelligenz, um ihre Lieferketten widerstandsfähiger gegen geopolitische Konflikte, Engpässe und andere Störungen zu machen. Gleichzeitig schwindet die Erwartung, dass Supply Chains in absehbarer Zeit vollständig autonom funktionieren werden. Das zeigt eine aktuelle Studie des Capgemini Research…",
@@ -2072,50 +2043,50 @@
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Logistikbranche trifft sich zur WOK-Meisterschaft in Innsbruck 25.11.2026, 09:37 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/vermischtes/logistikbranche-trifft-sich-zur-wok-wm-in-innsbruck-3941019",
-   "published": "2026-11-25T09:37:00+00:00",
-   "summary": "Kunden und Partner von Translogica trafen sich zur vierten WOK-WM in Innsbruck. Neben dem Wettbewerb standen Networking und neue Softwareentwicklungen im Fokus. Auch die VerkehrsRundschau-Redaktion war dabei. Kunden und Partner des Logistiksoftware-Anbieters Translogica sind am 20. November 2026 zur vierten Translogica WOK-WM in Innsbruck zusammengekommen. Teilnehmer aus Deutschland , Österreich und der Schweiz nutzten die Veranstaltung am Olympia-Eiskanal für den persönlichen Austausch und…",
+   "title": "Kabotage: BALM setzt Schwerpunktkontrollen fort 25.11.2026, 15:57 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/kabotage-balm-setzt-schwerpunktkontrollen-fort-3941176",
+   "published": "2026-11-25T15:57:00+00:00",
+   "summary": "Das BALM hat im Oktober mehr als 2.000 Verkehrskontrollen durchgeführt. Im Fokus standen Kabotage, Wochenruhezeiten und technische Fahrzeugmängel. Das Bundesamt für Logistik und Mobilität ( BALM ) hat im Oktober 2026 bei bundesweiten Schwerpunktaktionen insgesamt 2.048 Verkehrskontrollen durchgeführt. Im Mittelpunkt standen die Einhaltung der Kabotagebestimmungen, die regelmäßige wöchentliche Ruhezeit sowie technische Mängel an Nutzfahrzeugen. Die Kontrollen fanden am 5., 14. und 15. sowie am…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Zivilschutz: BALM baut Transportnetzwerk weiter aus 25.11.2026, 08:52 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/zivilschutz-balm-baut-transportnetzwerk-weiter-aus-3941145",
-   "published": "2026-11-25T08:52:00+00:00",
-   "summary": "Das BALM will die Transportorganisation des Bundes stärken und sichtbarer machen. Mehr als 1.300 Transport-, Logistik- und Personenbeförderungsunternehmen gehören zum Netzwerk. Das Bundesamt für Logistik und Mobilität ( BALM ) will die Transportorganisation des Bundes (TOB) weiterentwickeln und stärker als Bestandteil des deutschen Zivilschutzes positionieren. Gemeinsam mit beteiligten Unternehmen und Branchenverbänden arbeitet die Behörde dafür an einem einheitlichen Markenauftritt. Die TOB…",
+   "title": "Pkw-Maut-Affäre: Urteil gegen Scheuer rückt näher 25.11.2026, 15:23 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/vermischtes/pkw-maut-affaere-urteil-gegen-scheuer-rueckt-naeher-3941274",
+   "published": "2026-11-25T15:23:00+00:00",
+   "summary": "Der Prozess gegen Ex-Verkehrsminister Andreas Scheuer zur gescheiterten Pkw-Maut nähert sich dem Ende. Die Plädoyers sind für den 10. Dezember vorgesehen. Der Prozess gegen den früheren Bundesverkehrsminister Andreas Scheuer ( CSU ) und den ehemaligen Verkehrsstaatssekretär Gerhard Schulz im Zusammenhang mit der gescheiterten Pkw-Maut geht in die Schlussphase. Das Landgericht Berlin hat die Befragung der Zeugen abgeschlossen. Nun stehen noch Dokumente im sogenannten Selbstleseverfahren auf dem…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Ladeinfrastruktur: E-Lkw erhöhen Strombedarf deutlich 25.11.2026, 08:14 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/ladeinfrastruktur-e-lkw-erhoehen-strombedarf-deutlich-3941131",
-   "published": "2026-11-25T08:14:00+00:00",
-   "summary": "Mit dem Hochlauf der E-Lkw steigt der Strombedarf der Logistik deutlich. In Hannover diskutieren Branche, Netzbetreiber und Kommunen über die nötige Infrastruktur. Die Elektrifizierung des Straßengüterverkehrs stellt Logistikstandorte und Stromnetze vor einen erheblichen Ausbau- und Planungsbedarf. Nach einer aktuellen Studie des Instituts für Kraftfahrzeuge (ika) der RWTH Aachen könnte der jährliche Strombedarf des Logistiksektors im Basisszenario von rund 22 Terawattstunden im Jahr 2025 auf…",
+   "title": "Altersteilzeit ab 58? Studie sieht große Effekte 25.11.2026, 14:53 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/recht-geld/altersteilzeit-ab-58-studie-sieht-grosse-effekte-3941594",
+   "published": "2026-11-25T14:53:00+00:00",
+   "summary": "Strengere Regeln für die Altersteilzeit könnten laut einer DIW-Analyse bis zu 110.000 Vollzeitstellen sichern. Im Fokus stehen das Eintrittsalter und das Blockmodell. Eine Reform der Altersteilzeit könnte dem deutschen Arbeitsmarkt rechnerisch Zehntausende zusätzliche Vollzeitkräfte erhalten. Zu diesem Ergebnis kommt eine Untersuchung des Deutschen Instituts für Wirtschaftsforschung (DIW) im Auftrag der Bertelsmann Stiftung. Je nach Szenario könnten durch zwei zentrale Änderungen zwischen…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Logistik-Outsourcing: Hybride Modelle gewinnen an Bedeutung",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/die-logistik-wird-neu-aufgeteilt-3936549",
-   "published": "2026-11-25T08:00:00+00:00",
-   "summary": "Welche Aufgaben selbst machen, welche fremd vergeben? In der Logistik werden die Karten neu gemischt, auch weil viele Unternehmen fürchten, sich von Dienstleistern abhängig zu machen. Bleibt Outsourcing trotzdem ein Wachstumsmarkt - und mit welchen Leistungen lässt sich künftig noch wachsen? Logistik-Outsourcing wächst weiter - das zeigt sich branchenweit ebenso wie in der Beratungspraxis bei Metroplan. Gleichzeitig ist bei zunehmend mehr Mandanten eine gegenläufige Bewegung zu beobachten: Sie…",
+   "title": "Loopario automatisiert den Palettentausch 25.11.2026, 13:29 Uhr",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/loopario-automatisiert-den-palettentausch-3941466",
+   "published": "2026-11-25T13:29:00+00:00",
+   "summary": "Loopario automatisiert mit AutoMatch den Abgleich von Ladungsträgerkonten. Stimmen die Daten der Tauschpartner überein, entfällt die manuelle Prüfung. Das Dortmunder Softwareunternehmen Loopario, ehemals Logistikbude, will den manuellen Aufwand beim Tausch von Paletten , Gitterboxen und anderen Ladungsträgern reduzieren. Mit der neuen Funktion AutoMatch können Unternehmen ihre Ladungsträgerkonten automatisch miteinander abgleichen, sofern beide Tauschpartner das Load Carrier Management System…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
   },
   {
    "source": "VerkehrsRundschau",
-   "title": "Arndt und LogCoop kooperieren bei der Fahrzeugvermietung 24.11.2026, 16:03 Uhr",
-   "link": "https://www.verkehrsrundschau.de/nachrichten/nfz-fuhrpark/arndt-und-logcoop-kooperieren-bei-der-fahrzeugvermietung-3941009",
-   "published": "2026-11-24T16:03:00+00:00",
-   "summary": "Arndt und LogCoop starten eine Kooperation: LogCoop-Mitglieder erhalten Zugang zu Pkw, Vans, schweren Nutzfahrzeugen und Kühlfahrzeugen. LogCoop-Mitglieder erhalten über eine neue Kooperation Zugang zum Fahrzeugangebot von Arndt. Für schwere Nutzfahrzeuge gelten besondere Konditionen. Die familiengeführte Fahrzeugvermietung Arndt und das mittelständische Logistiknetzwerk LogCoop haben eine Kooperation vereinbart. Wie Arndt Automobile mitteilt, erhalten Mitgliedsunternehmen von LogCoop dabei…",
+   "title": "Künstliche Intelligenz (KI) verändert den Personalbedarf der Logistik. Braucht die Branche künftig mehr Fachkräfte, weniger oder ganz andere? Eine Expertenrunde diskutiert, ob wir heute noch die Richt",
+   "link": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/ki-statt-logistiker-3936554",
+   "published": "2026-11-25T13:00:00+00:00",
+   "summary": "Künstliche Intelligenz (KI) verändert den Personalbedarf der Logistik. Braucht die Branche künftig mehr Fachkräfte, weniger oder ganz andere? Eine Expertenrunde diskutiert, ob wir heute noch die Richtigen ausbilden. Noch nie haben Schüler in Deutschland schlecht bei der Pisa-Studie abgeschnitten wie in diesem Jahr. Jeder dritte Jugendliche hat demnach erhebliche Defizite in Mathematik und Lesen. Herr Reese, Sie sind Berufsschullehrer. Wie ernst ist die Lage? Dennis Reese: Ich bin seit 2007 an…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
@@ -2132,13 +2103,23 @@
   },
   {
    "source": "Dagens Logistik",
-   "title": "DHL Supply Chain växer när företag ställer om leveranskedjor",
-   "link": "https://dagenslogistik.se/dhl-supply-chain-vaxer-nar-foretag-staller-om-leveranskedjor/",
-   "published": "2026-11-23T10:06:00+00:00",
-   "summary": "DHL Supply Chain, DHL:s kontraktslogistikverksamhet, växer med 12 procent globalt under tredje kvartalet och hittills i år har man tecknat nya kundavtal värda över 8 miljarder euro. Bakom utvecklingen står ett osäkert omvärldsläge och större behov av motståndskraftiga leveranskedjor.",
+   "title": "E-barometern: Svensk e-handel närmar sig nytt rekord",
+   "link": "https://dagenslogistik.se/e-barometern-svensk-e-handel-narmar-sig-nytt-rekord/",
+   "published": "2026-11-25T12:05:31+00:00",
+   "summary": "Den svenska e-handeln växer vidare. Under årets tredje kvartal ökade försäljningen med sju procent och inför de sista månaderna räknar en majoritet av e-handlare med ökad försäljning. Det bäddar för att e-handeln slår omsättningsrekordet från i fjol.",
    "via": "feed",
    "lane": "freight",
-   "planning_terms": true
+   "planning_terms": false
+  },
+  {
+   "source": "Dagens Logistik",
+   "title": "Henrik Horndahl återvänder till Göteborg",
+   "link": "https://dagenslogistik.se/henrik-horndahl-atervander-till-goteborg/",
+   "published": "2026-11-25T11:00:00+00:00",
+   "summary": "Den 1 januari är Henrik Horndahl tillbaka på APM Terminals Gothenburg – nu i rollen som CCO. – Göteborg har ett stort upptagningsområde, och jag ser en stor potential att utveckla affärer tillsammans med kunder och partners, både i Sverige och i övriga Norden, kommenterar Henrik Horndahl.",
+   "via": "feed",
+   "lane": "freight",
+   "planning_terms": false
   },
   {
    "source": "Dagens Logistik",
@@ -2171,31 +2152,11 @@
    "planning_terms": false
   },
   {
-   "source": "Dagens Logistik",
-   "title": "Nowaste säkrar ännu en vinimportör i Jordbro",
-   "link": "https://dagenslogistik.se/annu-en-vinimportor-till-nowaste-i-jordbro/",
-   "published": "2026-11-24T12:00:09+00:00",
-   "summary": "Kort efter att Nowaste Logistics säkrade sprit- och champagneaktören Pernod Ricard till anläggningen i Jordbro säkrar man nu en vinimportör. Derivino blir senaste tillskottet i logistikföretagets satsning på dryckeslogistik.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
-   "source": "Dagens Logistik",
-   "title": "Unika driftsdata ska växla upp elektrifieringen av transportsektorn",
-   "link": "https://dagenslogistik.se/unika-driftsdata-ska-vaxla-upp-elektrifieringen-av-transportsektorn/",
-   "published": "2026-11-24T09:28:55+00:00",
-   "summary": "45 svenska logistikaktörer har deltagit i det femåriga initiativet REEL, där tunga batterielektriska lastbilar har testats i en bredd av olika uppdrag. Nu kommer resultaten som visar att lastbilarna har hållit samma driftsäkerhet som dieseldrivna lastbilar. Nästa steg är att dela med sig av driftdata och erfarenheter till resten av branschen.",
-   "via": "feed",
-   "lane": "freight",
-   "planning_terms": false
-  },
-  {
    "source": "MT Logistikk",
-   "title": "Slik vil NLF løse budsjettfloken",
-   "link": "https://www.mtlogistikk.no/biodrivstoff-drivstoffavgifter-norges-lastebileier-forbund/slik-vil-nlf-lose-budsjettfloken/1368052",
-   "published": "2026-11-25T08:46:00+00:00",
-   "summary": "Norges Lastebileier-Forbund lanserer en målrettet refusjonsordning for diesel som en mulig utvei i budsjettforhandlingene. Forslaget kan gi bransjen store avgiftskutt. Forhandlingene om statsbudsjettet pågår på overtid, og striden om drivstoffavgifter står sentralt. Nå trekker Norges Lastebileier-Forbund (NLF) frem konseptet «professional diesel» som en løsning på utfordringen, ifølge en fersk pressemelding. Ordningen innebærer at godstransport mot vederlag, utført med kjøretøy over 7,5 tonn,…",
+   "title": "– Veldig vanskelig å fortsette som havnestyreleder",
+   "link": "https://www.mtlogistikk.no/havn-kristiansand-kristiansand-havn/veldig-vanskelig-a-fortsette-som-havnestyreleder/1368694",
+   "published": "2026-11-25T20:02:00+00:00",
+   "summary": "Trond Blattmann vurderer sin stilling etter at bystyret i Kristiansand vedtok havneoppgjøret med 35 mot 22 stemmer. Havnestyret har advart om mulige lovbrudd og bedt om videre forhandlinger. Havnestyrets protester nådde altså ikke frem. Onsdag kveld vedtok bystyret i Kristiansand oppgjøret som havneledelsen gjentatte ganger har advart mot. Skuffelsen var tydelig, melder Fædrelandsvennen og KRS , som fulgte møtet live. – Det er veldig vanskelig å fortsette som havnestyreleder, når jeg ikke har…",
    "via": "page links, article read",
    "lane": "freight",
    "planning_terms": false
@@ -2245,17 +2206,17 @@
   {
    "gauge": "MAXAU",
    "km": 362.327,
-   "level_cm": 527.0,
+   "level_cm": 502.0,
    "trend": null,
-   "measured_at": "2026-11-25T12:30:00+01:00",
+   "measured_at": "2026-11-26T04:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "KAUB",
    "km": 546.23,
-   "level_cm": 240.0,
+   "level_cm": 236.0,
    "trend": null,
-   "measured_at": "2026-11-25T12:30:00+01:00",
+   "measured_at": "2026-11-26T04:00:00+01:00",
    "unit": "cm"
   },
   {
@@ -2263,23 +2224,23 @@
    "km": 688.0,
    "level_cm": 325.0,
    "trend": null,
-   "measured_at": "2026-11-25T12:30:00+01:00",
+   "measured_at": "2026-11-26T04:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "DUISBURG-RUHRORT",
    "km": 780.8,
-   "level_cm": 425.0,
+   "level_cm": 419.0,
    "trend": null,
-   "measured_at": "2026-11-25T12:30:00+01:00",
+   "measured_at": "2026-11-26T04:00:00+01:00",
    "unit": "cm"
   },
   {
    "gauge": "EMMERICH",
    "km": 851.9,
-   "level_cm": 265.0,
+   "level_cm": 253.0,
    "trend": null,
-   "measured_at": "2026-11-25T12:30:00+01:00",
+   "measured_at": "2026-11-26T04:00:00+01:00",
    "unit": "cm"
   }
  ]
