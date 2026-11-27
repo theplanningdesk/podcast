@@ -1,0 +1,288 @@
+{
+  "show": "The Planning Desk",
+  "format": "daily",
+  "episode_title": "Defence Supply Chain: Rheinmetall Breaks Ground in Kassel",
+  "week": "2026-W48",
+  "run_date": "2026-11-27",
+  "brief_file": "news-brief-daily-2026-11-27.md",
+  "target_runtime_sec": 249,
+  "word_count": 716,
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "M": {
+      "name": "Erik"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "cold_open",
+      "type": "speech",
+      "items": [
+        "2026-11-27-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Rheinmetall has broken ground on a thirty-eight thousand square metre logistics hub at Kassel Airport, before the big orders arrive."
+        },
+        {
+          "speaker": "M",
+          "text": "Defence output is turning into network capacity in Germany. This is The Planning Desk."
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "type": "speech",
+      "items": [
+        "2026-11-27-01",
+        "2026-11-27-04",
+        "2026-11-27-05"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Good morning, it's Friday the twenty-seventh of November, and I'm Anna."
+        },
+        {
+          "speaker": "M",
+          "text": "And I'm Erik."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents gather the news, and our voices are synthetic."
+        },
+        {
+          "speaker": "M",
+          "text": "Today, Rheinmetall builds a hub in northern Hesse, two American drinks companies hedge fuel to steady freight costs, and Nvidia reportedly stops server shipments to four Southeast Asian markets."
+        }
+      ]
+    },
+    {
+      "id": "top_story",
+      "type": "speech",
+      "items": [
+        "2026-11-27-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "German defence group Rheinmetall and developer Panattoni have broken ground on the Defence Hub Kassel-Calden, produktion dot de reports. It's a logistics and training centre of thirty-eight thousand square metres, on a former airfield plot of about nine hectares at Kassel Airport."
+        },
+        {
+          "speaker": "M",
+          "text": "That's three months from site decision to spade in the ground. Up to two hundred new jobs are planned, and the first areas are due by the end of June twenty twenty-seven."
+        },
+        {
+          "speaker": "F",
+          "text": "When it picked the site in August, Rheinmetall said the hub would prepare the group for large military-vehicle orders from Germany and abroad."
+        },
+        {
+          "speaker": "M",
+          "text": "So the company is building its central node before the volumes arrive, and that's a network-design bet on the order book."
+        },
+        {
+          "speaker": "F",
+          "text": "It also moves the work for everyone around it. Suppliers in northern Hesse should expect call-offs, delivery points and lead-time agreements to be redrawn around Kassel from the middle of twenty twenty-seven."
+        },
+        {
+          "speaker": "M",
+          "text": "If you supply Rheinmetall, ask now where your parts will be delivered from next summer, and what that does to your transport plan and your safety stock."
+        }
+      ]
+    },
+    {
+      "id": "briefing",
+      "type": "speech",
+      "items": [
+        "2026-11-27-04",
+        "2026-11-27-03",
+        "2026-11-27-05",
+        "2026-11-27-F1",
+        "2026-11-27-F2"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Over in the U S, brewer Molson Coors and bottled-water maker Primo Brands are using fuel hedging to manage their logistics costs, Supply Chain Dive reports."
+        },
+        {
+          "speaker": "M",
+          "text": "Experts quoted in the piece say hedging buys predictability, but it can be costly and hard to execute. The report gives no hedge volumes or savings."
+        },
+        {
+          "speaker": "F",
+          "text": "The catch sits in the plan. A hedge fixes the freight line in the budget, but it only pays if the volumes in your sales and operations plan, your S and OP, actually hold."
+        },
+        {
+          "speaker": "M",
+          "text": "So finance and planning have to agree the volume before treasury locks the price, or you end up paying for fuel on trucks you never send."
+        },
+        {
+          "speaker": "F",
+          "text": "Erik, the tech desk is yours."
+        },
+        {
+          "speaker": "M",
+          "text": "SAP has announced a collaboration with planqc, a quantum computing company based in Munich, according to SAP. It lets SAP develop directly on planqc's quantum hardware, with the aim of a shorter path to real business applications."
+        },
+        {
+          "speaker": "F",
+          "text": "The announcement names no use cases, no timelines and no performance figures."
+        },
+        {
+          "speaker": "M",
+          "text": "Scheduling and network design are the usual first candidates for quantum. Until there's a use case on the table, treat this as a research signal from your E R P supplier, not a twenty twenty-seven planning tool."
+        },
+        {
+          "speaker": "F",
+          "text": "The biggest trade story of the day comes from chips. Following new U S export controls, Nvidia has reportedly told its manufacturing partners to stop shipping servers with its chips to Malaysia, Singapore, Thailand and Indonesia, The Loadstar reports, citing the Financial Times."
+        },
+        {
+          "speaker": "M",
+          "text": "Dell and Supermicro have told buyers in the four countries about the halt. The U S rules aim to stop advanced chips reaching China through Southeast Asia."
+        },
+        {
+          "speaker": "F",
+          "text": "If your planning, analytics or A I workloads run in data centres there, ask your cloud and hosting providers which capacity is affected, and plan for it to sit in another region."
+        },
+        {
+          "speaker": "M",
+          "text": "On the freight desk, the Rhine at Kaub dropped to two hundred and seven centimetres, still far above what full barges need. And DHL says ocean rates are up a hundred and thirty-eight percent on last year, and expects shippers to put resilience ahead of price in the coming tender season."
+        }
+      ]
+    },
+    {
+      "id": "quick_hits",
+      "type": "speech",
+      "items": [
+        "2026-11-27-02",
+        "2026-11-26-E1"
+      ],
+      "lines": [
+        {
+          "speaker": "M",
+          "text": "Germany's procurement association B M E surveyed one thousand one hundred and forty-five buyers, and those who know databases and procurement software report notably higher median pay, so budget for that premium or train for it in-house."
+        },
+        {
+          "speaker": "F",
+          "text": "And on Tuesday, Swedbank and Silf publish the Swedish purchasing managers' index for November, a first read on factory inventories and delivery times going into December."
+        }
+      ]
+    },
+    {
+      "id": "sign_off",
+      "type": "speech",
+      "items": [
+        "2026-11-27-01"
+      ],
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "That's the desk for Friday."
+        },
+        {
+          "speaker": "M",
+          "text": "Tomorrow it's the book of the week, and the full week in review is out on Sunday."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Rheinmetall Breaks Ground on Kassel Airport Logistics Hub",
+    "lines": [
+      {
+        "speaker": "F",
+        "text": "Rheinmetall is building a logistics hub before the big orders arrive."
+      },
+      {
+        "speaker": "M",
+        "text": "The German defence group and developer Panattoni have broken ground on the Defence Hub Kassel-Calden, at Kassel Airport."
+      },
+      {
+        "speaker": "F",
+        "text": "It's thirty-eight thousand square metres on a former airfield plot of about nine hectares, with up to two hundred new jobs."
+      },
+      {
+        "speaker": "M",
+        "text": "The first areas are due by the end of June twenty twenty-seven. Rheinmetall says the hub prepares it for large military-vehicle orders from Germany and abroad."
+      },
+      {
+        "speaker": "F",
+        "text": "For planners, that's network design ahead of the order book. Suppliers in northern Hesse should expect call-offs, delivery points and lead times to be redrawn around Kassel."
+      },
+      {
+        "speaker": "M",
+        "text": "More every weekday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Rheinmetall has broken ground on a 38,000 m² logistics and training hub at Kassel Airport, with the first areas due by the end of June 2027. Suppliers in northern Hesse should expect delivery points and lead times to be redrawn around it. Full episode: The Planning Desk, every weekday on Apple Podcasts and Spotify. AI-generated: AI agents gather the news and the voices are synthetic.",
+    "hashtags": [
+      "supplychain",
+      "networkdesign",
+      "logistics",
+      "defence"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Rheinmetall is building its logistics hub before the big orders arrive, and suppliers will plan around it.\n\nRheinmetall and developer Panattoni have broken ground on the Defence Hub Kassel-Calden, a 38,000 m² logistics and training centre at Kassel Airport, produktion.de reports. The first areas are due by the end of June 2027, with up to 200 new jobs.\n\nFor suppliers in northern Hesse, expect call-offs, delivery points and lead-time agreements to be redrawn around Kassel from mid-2027.\n\nAlso on today's desk:\nMolson Coors and Primo Brands hedge fuel to steady logistics costs, which only pays if S&OP volumes hold.\nA BME survey of 1,145 procurement staff in Germany finds database and procurement-software skills come with higher median pay.\n\nWhen a key customer opens a new hub, how early do you rework your delivery and stock plan?\n\nListen: The Planning Desk, every weekday on Apple Podcasts and Spotify.\n\n#supplychain #networkdesign #defence",
+    "tags": [
+      "Rheinmetall",
+      "Panattoni",
+      "BME"
+    ]
+  },
+  "show_notes": {
+    "summary": "Defence supply chain: Rheinmetall and Panattoni break ground on a 38,000 m² logistics hub at Kassel Airport, with first areas due by June 2027. Also: Molson Coors and Primo Brands hedge fuel, SAP and planqc on quantum hardware, Nvidia reportedly halts server shipments to four Southeast Asian markets, a BME salary survey, plus the Rhine at Kaub and ocean rates.",
+    "sources": [
+      {
+        "title": "produktion.de: Spatenstich für den Defence Hub Kassel-Calden",
+        "url": "https://www.produktion.de/ruestung-aerospace/spatenstich-fuer-den-defence-hub-kassel-calden-rheinmetall-und-panattoni-bauen-logistik-und-trainingszentrum/2774961"
+      },
+      {
+        "title": "Rheinmetall: new logistics centre at Kassel Airport",
+        "url": "https://www.rheinmetall.com/en/media/news-watch/news/2026/08/2026-08-27-rheinmetall-to-build-new-logistics-centre-at-kassel-airport-north-hesse-defence-hub"
+      },
+      {
+        "title": "Supply Chain Dive: Molson Coors, Primo Brands use fuel hedging to tackle logistics costs",
+        "url": "https://www.supplychaindive.com/news/molson-coors-primo-brands-use-fuel-hedging-to-tackle-logistics-costs/875552/"
+      },
+      {
+        "title": "SAP News Center: SAP and planqc bring quantum computing to business processes",
+        "url": "https://news.sap.com/2026/11/sap-planqc-bring-quantum-computing-business-processes/"
+      },
+      {
+        "title": "The Loadstar: Nvidia halts server shipments to Asian markets as new US export rules bite",
+        "url": "https://theloadstar.com/nvidia-halts-server-shipments-to-asian-markets-as-new-us-export-rules-bite/"
+      },
+      {
+        "title": "W.Media: US moves to stop chip diversion through Southeast Asia and Brazil",
+        "url": "https://w.media/us-moves-to-stop-chip-diversion-through-southeast-asia-and-brazil/"
+      },
+      {
+        "title": "Pegelonline: Rhine gauges",
+        "url": "https://www.pegelonline.wsv.de/"
+      },
+      {
+        "title": "FreightWaves: Ocean rates still double last year as congestion idles 3.6 million TEUs",
+        "url": "https://www.freightwaves.com/news/ocean-rates-still-double-last-year-as-congestion-idles-3-6-million-teus"
+      },
+      {
+        "title": "BME: Gehaltsreport Einkauf 2026",
+        "url": "https://www.bme.de/news/bme-gehaltsreport-einkauf-2026-digitalisierungsgrad-hat-einfluss-auf-die-verguetung/"
+      }
+    ]
+  }
+}

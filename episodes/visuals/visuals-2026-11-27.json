@@ -1,0 +1,140 @@
+{
+  "stem": "2026-11-27",
+  "format": "daily",
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Rheinmetall, Kassel",
+        "title": "A logistics hub before the big orders arrive"
+      }
+    },
+    {
+      "line": 1,
+      "template": "route",
+      "props": {
+        "kicker": "Northern Hesse, Germany",
+        "title": "Defence Hub Kassel-Calden",
+        "points": [
+          {
+            "name": "Kassel Airport",
+            "lat": 51.42,
+            "lon": 9.38,
+            "alert": true
+          }
+        ],
+        "pad": 3
+      }
+    },
+    {
+      "line": 1,
+      "at": "broken ground",
+      "template": "headline",
+      "props": {
+        "kicker": "Rheinmetall and Panattoni",
+        "title": "Ground broken at Kassel Airport",
+        "detail": "Three months after the site decision in August"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Logistics and training centre",
+        "value": 38000,
+        "label": "square metres",
+        "source": "produktion.de"
+      }
+    },
+    {
+      "line": 2,
+      "at": "nine hectares",
+      "template": "headline",
+      "props": {
+        "kicker": "Former airfield plot",
+        "title": "About 9 hectares at Kassel Airport"
+      }
+    },
+    {
+      "line": 2,
+      "at": "two hundred new jobs",
+      "template": "stat",
+      "props": {
+        "kicker": "Jobs",
+        "value": 200,
+        "label": "new jobs planned, up to",
+        "source": "produktion.de"
+      }
+    },
+    {
+      "line": 3,
+      "template": "headline",
+      "props": {
+        "kicker": "Timeline",
+        "title": "First areas due by end of June 2027"
+      }
+    },
+    {
+      "line": 3,
+      "at": "military-vehicle orders",
+      "template": "list",
+      "props": {
+        "kicker": "Built for",
+        "items": [
+          {
+            "label": "Vehicle orders",
+            "detail": "Large military-vehicle orders",
+            "say": "military-vehicle orders"
+          },
+          {
+            "label": "Germany",
+            "say": "Germany"
+          },
+          {
+            "label": "Abroad",
+            "say": "abroad"
+          }
+        ]
+      }
+    },
+    {
+      "line": 4,
+      "template": "takeaway",
+      "props": {
+        "kicker": "For planners",
+        "text": "Network design ahead of the order book"
+      }
+    },
+    {
+      "line": 4,
+      "at": "Suppliers in northern Hesse",
+      "template": "list",
+      "props": {
+        "kicker": "Redrawn around Kassel",
+        "items": [
+          {
+            "label": "Call-offs",
+            "say": "call-offs"
+          },
+          {
+            "label": "Delivery points",
+            "say": "delivery points"
+          },
+          {
+            "label": "Lead times",
+            "say": "lead times"
+          }
+        ]
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "Supply chain news every weekday"
+      }
+    }
+  ]
+}
