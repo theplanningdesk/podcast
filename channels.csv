@@ -415,3 +415,18 @@ date,channel,metric,value
 2026-11-26,newsletter,last_email_open_rate_pct,0.0
 2026-11-26,podcast,op3_downloads_all_episodes,57.0
 2026-11-26,podcast,github_mp3_fetches_all_episodes,934.0
+2026-11-27,youtube,subscribers,6
+2026-11-27,youtube,total_views,618
+2026-11-27,youtube,videos,41
+2026-11-27,instagram,followers,5
+2026-11-27,instagram,posts,32
+2026-11-27,newsletter,subscribers,2
+2026-11-27,newsletter,last_email,"Plant closures in Germany, strikes, and a week of making less"
+2026-11-27,newsletter,last_email_recipients,2
+2026-11-27,newsletter,last_email_deliveries,2
+2026-11-27,newsletter,last_email_opens,0
+2026-11-27,newsletter,last_email_clicks,0
+2026-11-27,newsletter,last_email_unsubscriptions,0
+2026-11-27,newsletter,last_email_open_rate_pct,0.0
+2026-11-27,podcast,op3_downloads_all_episodes,57.0
+2026-11-27,podcast,github_mp3_fetches_all_episodes,976.0
