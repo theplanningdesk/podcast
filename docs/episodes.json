@@ -426,5 +426,18 @@
     "duration_sec": 277,
     "pub_date": "2026-11-26T06:30:00+01:00",
     "transcript_lines": 31
+  },
+  {
+    "guid": "planning-desk-2026-11-27",
+    "stem": "2026-11-27",
+    "number": 34,
+    "format": "daily",
+    "title": "Defence Supply Chain: Rheinmetall Breaks Ground in Kassel",
+    "summary": "Defence supply chain: Rheinmetall and Panattoni break ground on a 38,000 m² logistics hub at Kassel Airport, with first areas due by June 2027. Also: Molson Coors and Primo Brands hedge fuel, SAP and planqc on quantum hardware, Nvidia reportedly halts server shipments to four Southeast Asian markets, a BME salary survey, plus the Rhine at Kaub and ocean rates.",
+    "notes_html": "<p>Defence supply chain: Rheinmetall and Panattoni break ground on a 38,000 m² logistics hub at Kassel Airport, with first areas due by June 2027. Also: Molson Coors and Primo Brands hedge fuel, SAP and planqc on quantum hardware, Nvidia reportedly halts server shipments to four Southeast Asian markets, a BME salary survey, plus the Rhine at Kaub and ocean rates.</p><p>Sources:</p><ul><li><a href=\"https://www.produktion.de/ruestung-aerospace/spatenstich-fuer-den-defence-hub-kassel-calden-rheinmetall-und-panattoni-bauen-logistik-und-trainingszentrum/2774961\">produktion.de: Spatenstich für den Defence Hub Kassel-Calden</a></li><li><a href=\"https://www.rheinmetall.com/en/media/news-watch/news/2026/08/2026-08-27-rheinmetall-to-build-new-logistics-centre-at-kassel-airport-north-hesse-defence-hub\">Rheinmetall: new logistics centre at Kassel Airport</a></li><li><a href=\"https://www.supplychaindive.com/news/molson-coors-primo-brands-use-fuel-hedging-to-tackle-logistics-costs/875552/\">Supply Chain Dive: Molson Coors, Primo Brands use fuel hedging to tackle logistics costs</a></li><li><a href=\"https://news.sap.com/2026/11/sap-planqc-bring-quantum-computing-business-processes/\">SAP News Center: SAP and planqc bring quantum computing to business processes</a></li><li><a href=\"https://theloadstar.com/nvidia-halts-server-shipments-to-asian-markets-as-new-us-export-rules-bite/\">The Loadstar: Nvidia halts server shipments to Asian markets as new US export rules bite</a></li><li><a href=\"https://w.media/us-moves-to-stop-chip-diversion-through-southeast-asia-and-brazil/\">W.Media: US moves to stop chip diversion through Southeast Asia and Brazil</a></li><li><a href=\"https://www.pegelonline.wsv.de/\">Pegelonline: Rhine gauges</a></li><li><a href=\"https://www.freightwaves.com/news/ocean-rates-still-double-last-year-as-congestion-idles-3-6-million-teus\">FreightWaves: Ocean rates still double last year as congestion idles 3.6 million TEUs</a></li><li><a href=\"https://www.bme.de/news/bme-gehaltsreport-einkauf-2026-digitalisierungsgrad-hat-einfluss-auf-die-verguetung/\">BME: Gehaltsreport Einkauf 2026</a></li></ul><p>Full transcript: <a href=\"https://theplanningdesk.github.io/podcast/e/2026-11-27.html\">https://theplanningdesk.github.io/podcast/e/2026-11-27.html</a></p><p><em>The Planning Desk is produced with AI. AI agents gather and summarise news and books from public sources, and the hosts&#x27; voices are synthetic.</em></p>",
+    "bytes": 3827075,
+    "duration_sec": 239,
+    "pub_date": "2026-11-27T06:30:00+01:00",
+    "transcript_lines": 28
   }
 ]
