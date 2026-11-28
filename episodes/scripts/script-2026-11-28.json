@@ -1,0 +1,389 @@
+{
+  "show": "The Planning Desk",
+  "format": "saturday",
+  "episode_title": "S&OP: The How-To Handbook by Wallace and Stahl",
+  "week": "2026-W48",
+  "run_date": "2026-11-28",
+  "target_runtime_sec": 481,
+  "word_count": 1412,
+  "book": {
+    "key": "wallacehowto",
+    "title": "Sales and Operations Planning: The How-To Handbook",
+    "author": "Thomas F. Wallace and Robert A. Stahl",
+    "year": 2008,
+    "edition": "3rd edition, T.F. Wallace & Co., 2008"
+  },
+  "hosts": {
+    "F": {
+      "name": "Anna"
+    },
+    "N": {
+      "name": "Narrator"
+    }
+  },
+  "segments": [
+    {
+      "id": "intro_music",
+      "type": "music",
+      "duration_sec": 5
+    },
+    {
+      "id": "book_intro",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "It's Saturday, the twenty-eighth of November. I'm Anna, and this is the book of the week on The Planning Desk."
+        },
+        {
+          "speaker": "F",
+          "text": "Quick note, this show is made with A I. A I agents research the book, and the voices are synthetic."
+        },
+        {
+          "speaker": "F",
+          "text": "Today it's Sales and Operations Planning, The How-To Handbook, by Thomas Wallace and Robert Stahl, a practical manual in its third edition from two thousand and eight. Here's our narrator."
+        }
+      ]
+    },
+    {
+      "id": "book_open",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Sales and operations planning, S and OP, is a decision process, not a forecast and not a meeting. Get the total volume right each month, and the detailed mix becomes a far easier problem."
+        }
+      ]
+    },
+    {
+      "id": "book_context",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "This is a field manual, written for the people who have to make S and OP work in a real company. It's practical and not long, a little over two hundred pages in the third edition."
+        },
+        {
+          "speaker": "N",
+          "text": "Thomas Wallace was one of the early pioneers of manufacturing resource planning, known as M R P two. He edited three editions of the A P I C S dictionary, taught more than ten thousand managers in seminars and wrote more than a dozen books."
+        },
+        {
+          "speaker": "N",
+          "text": "Wallace died in March twenty twenty-one, aged eighty-five."
+        },
+        {
+          "speaker": "N",
+          "text": "Robert Stahl held line management jobs in manufacturing before he became a consultant. He left industry in nineteen eighty-one, has coached hundreds of companies since, and was the first S and OP editor of Foresight, the practitioner journal of the International Institute of Forecasters."
+        },
+        {
+          "speaker": "N",
+          "text": "The pair wrote a whole shelf of S and OP books together, from an executive's guide to a self-audit workbook. This one is the how-to volume, the one you hand to the person who has to run the process."
+        },
+        {
+          "speaker": "N",
+          "text": "S and OP grew out of the Oliver Wight consultancy in the nineteen eighties, and this book turns that thinking into a monthly routine you can copy."
+        },
+        {
+          "speaker": "N",
+          "text": "It's an easy read for a planner, and the implementation chapters reward a second, slower pass."
+        }
+      ]
+    },
+    {
+      "id": "big_ideas",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "The first big idea is volume before mix. S and OP decides how much of each product family to make and sell in total, and leaves the individual items to the master schedule."
+        },
+        {
+          "speaker": "N",
+          "text": "In a journal article from the same year, Wallace and Stahl argue that forecasts should start at volume level, for financial reasons and because totals are what operations can check against capacity."
+        },
+        {
+          "speaker": "N",
+          "text": "There's sound statistics behind it too. A forecast for a whole family is more accurate than the forecast for any single item inside it, because item errors partly cancel out."
+        },
+        {
+          "speaker": "N",
+          "text": "Here's an example from planning practice, not from the book. A paint maker might carry thousands of colour and pack combinations, but its executives can only steer a handful of families, such as interior, exterior and industrial coatings."
+        },
+        {
+          "speaker": "N",
+          "text": "The lesson for planners is direct. If your executive pack lists items, the meeting drowns in detail and nobody decides anything about capacity."
+        },
+        {
+          "speaker": "N",
+          "text": "The second idea is the heart of the book, a five-step cycle that repeats every month."
+        },
+        {
+          "speaker": "N",
+          "text": "Step one is data gathering, closing the month and refreshing actual sales, production and inventory. Step two is demand planning, where sales and marketing turn the statistical forecast into a demand plan they own."
+        },
+        {
+          "speaker": "N",
+          "text": "Step three is supply planning, where operations checks that plan against capacity and flags what it can't meet. Step four is the pre-meeting, where demand, supply and finance settle what they can and prepare choices for the rest."
+        },
+        {
+          "speaker": "N",
+          "text": "Step five is the executive meeting, where senior leaders approve the plan or choose another course."
+        },
+        {
+          "speaker": "N",
+          "text": "The horizon runs well past the budget year, with a forecast that covers the next fifteen months and beyond."
+        },
+        {
+          "speaker": "N",
+          "text": "Each step hands a cleaner plan to the next, like a relay. By the time the leaders meet, most of the arguing is done, and they decide rather than discover."
+        },
+        {
+          "speaker": "N",
+          "text": "For planners, the pre-meeting is where your influence sits. Arrive with options and what each one costs, not just a list of problems."
+        },
+        {
+          "speaker": "N",
+          "text": "The third idea is plain arithmetic. Between demand and supply sits a buffer, finished stock if you make to stock, or the order backlog if you make to order."
+        },
+        {
+          "speaker": "N",
+          "text": "Plan more supply than demand and the buffer grows, plan less and it shrinks. S and OP is where management decides which way to let it move, and does it on purpose."
+        },
+        {
+          "speaker": "N",
+          "text": "The choices are the classic ones. Chase demand and flex capacity with overtime and temporary staff, level production and let stock or backlog take the swings, or shift demand with pricing and promotion timing."
+        },
+        {
+          "speaker": "N",
+          "text": "Another example from practice. A garden furniture maker that levels production through winter builds stock on purpose, ready for the spring peak."
+        },
+        {
+          "speaker": "N",
+          "text": "That's a fine policy if the leaders chose it and funded the cash. It's a problem if it simply happened because the plants kept running."
+        },
+        {
+          "speaker": "N",
+          "text": "So show the projected stock or backlog line for every family, months ahead, against a target range. That one line turns a debate into a decision."
+        },
+        {
+          "speaker": "N",
+          "text": "The fourth idea is about getting it live. The authors favour a live pilot first, so executives see how the process would work in their own company."
+        },
+        {
+          "speaker": "N",
+          "text": "Then comes expansion, bringing the remaining product families into executive S and OP. Last of all comes full financial integration, so the plan in units and the plan in money tell the same story."
+        },
+        {
+          "speaker": "N",
+          "text": "They also say the aim during implementation is to get the process working, rather than to hit a date."
+        },
+        {
+          "speaker": "N",
+          "text": "In practice, a company with eight families might start with its two biggest, run a few full monthly cycles with rough numbers, and only then add the rest."
+        },
+        {
+          "speaker": "N",
+          "text": "The point for planners is to start before the data is perfect. The rhythm teaches the organisation, and the numbers improve once people start to use them."
+        }
+      ]
+    },
+    {
+      "id": "for_planners",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Why read it now? Plenty of companies say they run S and OP, but many hold a monthly meeting without the steps that feed it."
+        },
+        {
+          "speaker": "N",
+          "text": "This book is a clean reference for what the full process looks like, and a quick way to check which steps your company skips."
+        },
+        {
+          "speaker": "N",
+          "text": "Much of it still holds. Volume before mix, a fixed monthly rhythm and decisions taken by people who own the resources are as sound now as in two thousand and eight."
+        },
+        {
+          "speaker": "N",
+          "text": "It has dated in places. It comes from before scenario tools and A I forecasts were common, so don't expect guidance on running several what-if plans inside one cycle."
+        },
+        {
+          "speaker": "N",
+          "text": "It also assumes one business with one leadership team. A twenty twenty-one study of a multinational manufacturer, published in the journal PLOS One, kept the five classic steps and added two more, a global roll-up and a global executive meeting."
+        },
+        {
+          "speaker": "N",
+          "text": "That's a fair pointer for network designers. If your plants serve several regions, expect to extend the cycle beyond what the book describes."
+        },
+        {
+          "speaker": "N",
+          "text": "Readers who use the newer term, integrated business planning or I B P, will recognise much of the ground, since the link to the financial plan is already the last stage of the authors' path."
+        }
+      ]
+    },
+    {
+      "id": "reading_guide",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Who should read it? Demand and supply planners, S and OP process owners, and any finance or sales leader who has been asked to join the executive meeting."
+        },
+        {
+          "speaker": "N",
+          "text": "Network designers will get the most from the parts on product families and capacity checks, since those decide which choices ever reach the leaders."
+        },
+        {
+          "speaker": "N",
+          "text": "Read the opening chapters on what S and OP is and on the five steps first. Save the implementation part for when you're about to start, or restart, a process."
+        },
+        {
+          "speaker": "N",
+          "text": "Get the third edition, from two thousand and eight, and allow a weekend."
+        },
+        {
+          "speaker": "N",
+          "text": "For a shorter taste first, Robert Stahl's articles in Foresight cover the principles and the pre-meeting in a few pages each."
+        }
+      ]
+    },
+    {
+      "id": "shelf",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "N",
+          "text": "Also on the shelf, two books that pair well with today's."
+        },
+        {
+          "speaker": "N",
+          "text": "Orchestrating Success, by Richard Ling and Walter Goddard, is one of the first books on sales and operations planning. Ling's biography credits him with creating the process at Oliver Wight, so this is where today's ideas come from."
+        },
+        {
+          "speaker": "N",
+          "text": "Master Planning and Scheduling, by John Proud and Eric Deutsch, picks up where S and OP stops. Its fourth edition, from twenty twenty-one, covers the master schedule, the level where family plans turn into item plans."
+        },
+        {
+          "speaker": "N",
+          "text": "Read Ling and Goddard for where the process came from, and Proud and Deutsch for what happens after the executive meeting signs off."
+        }
+      ]
+    },
+    {
+      "id": "book_sign_off",
+      "type": "speech",
+      "lines": [
+        {
+          "speaker": "F",
+          "text": "Next Saturday it's The Resilient Enterprise, by Yossi Sheffi."
+        },
+        {
+          "speaker": "F",
+          "text": "News is back Monday morning, and the week in review is out tomorrow. I'm Anna, thanks for listening."
+        }
+      ]
+    },
+    {
+      "id": "outro_music",
+      "type": "music",
+      "duration_sec": 5
+    }
+  ],
+  "short": {
+    "title": "Sales and Operations Planning: Volume Before Mix",
+    "lines": [
+      {
+        "speaker": "N",
+        "text": "Your S and OP meeting shouldn't be about single products at all."
+      },
+      {
+        "speaker": "N",
+        "text": "In their handbook, Thomas Wallace and Robert Stahl say S and OP plans total volume by product family. Get the volume right, and the mix of items gets much easier."
+      },
+      {
+        "speaker": "N",
+        "text": "They set out five steps every month. Data gathering, demand planning, supply planning and a pre-meeting, then the executive meeting where leaders decide."
+      },
+      {
+        "speaker": "N",
+        "text": "To get started, run a live pilot first, and get the monthly rhythm working before you chase perfect data."
+      },
+      {
+        "speaker": "N",
+        "text": "Read it if you run S and OP, or if you've just been asked to join the executive meeting."
+      },
+      {
+        "speaker": "F",
+        "text": "A book every Saturday on The Planning Desk podcast."
+      }
+    ],
+    "caption": "Book of the week: Sales and Operations Planning: The How-To Handbook by Thomas F. Wallace and Robert A. Stahl (3rd ed., 2008). It sets out S&OP as a five-step monthly decision cycle that plans total volume by product family before anyone argues about item mix. It's the practical manual to hand whoever has to run, or restart, the process. Full episode: The Planning Desk, every Saturday on Apple Podcasts and Spotify. AI-generated: AI agents research the book and the voices are synthetic.",
+    "hashtags": [
+      "books",
+      "supplychain",
+      "sop",
+      "demandplanning"
+    ]
+  },
+  "linkedin": {
+    "page_post": "Your S&OP meeting shouldn't be about single products. Plan volume first and the mix gets easier.\n\nBook of the week: Sales and Operations Planning: The How-To Handbook by Thomas F. Wallace and Robert A. Stahl, 3rd edition, 2008.\n\nVolume before mix. S&OP plans product families in total and leaves items to the master schedule. If your executive pack lists SKUs, nobody decides anything about capacity.\n\nA five-step monthly cycle: data gathering, demand planning, supply planning, a pre-meeting and the executive meeting. Planners have the most influence in the pre-meeting, so bring options with costs.\n\nStart with a live pilot, then add the other families, then link the plan to the financial plan. The rhythm matters more than the date.\n\nFor planners, S&OP owners and leaders new to the executive meeting.\n\nWhich step of the monthly S&OP cycle does your company skip most often?\n\nListen: The Planning Desk, a book every Saturday on Apple Podcasts and Spotify.\n\n#SupplyChain #SOP #DemandPlanning",
+    "tags": []
+  },
+  "show_notes": {
+    "summary": "S&OP: The How-To Handbook by Thomas Wallace and Robert Stahl, summarised for supply chain planners. It explains the five-step monthly S&OP cycle, why volume comes before mix, and how to start with a live pilot. For planners, S&OP process owners and leaders joining the executive meeting.",
+    "sources": [
+      {
+        "title": "Texas A&M Libraries: catalogue record, Sales & Operations Planning: The How-To Handbook, 3rd ed.",
+        "url": "https://libcat.library.tamu.edu/Record/in00004002657/Description"
+      },
+      {
+        "title": "Lavoisier: Sales and Operations Planning, The How-to Handbook (3rd Ed.)",
+        "url": "https://www.lavoisier.fr/livre/economie/sales-and-operations-planning-the-how-to-handbook-3rd-ed/wallace/descriptif_2551860"
+      },
+      {
+        "title": "SAS forecasting blog: Tom Wallace 1935-2021",
+        "url": "https://blogs.sas.com/content/forecasting/2021/03/11/tom-wallace-1935-2021"
+      },
+      {
+        "title": "SCDigest: expert profile, Tom Wallace",
+        "url": "https://www.scdigest.com/assets/experts/Supply_Chain_Expert_Tom_Wallace.php"
+      },
+      {
+        "title": "AbeBooks: Robert A. Stahl author page",
+        "url": "https://www.abebooks.com/author/b071gpg3p3/robert-a-stahl"
+      },
+      {
+        "title": "AbeBooks: MRP II, Making It Happen by Thomas F. Wallace",
+        "url": "https://www.abebooks.fr/9780471132257/M.R.P-Making-Happen-Implementers-Guide-047113225X/plp"
+      },
+      {
+        "title": "Journal of Business Forecasting via IBF: The Demand Planning Process in Executive S&OP (Wallace and Stahl, 2008)",
+        "url": "https://ibf.org/knowledge/jbf-articles/the-demand-planning-process-in-executive-sop-857"
+      },
+      {
+        "title": "Chalmers University: Towards Integrated Planning, a case study of S&OP",
+        "url": "https://odr.chalmers.se/server/api/core/bitstreams/19a2dc1c-a4c3-4f45-8fc3-dc9e07b8530a/content"
+      },
+      {
+        "title": "PLOS One: Global sales and operations planning, a multinational manufacturing company perspective (2021)",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0257572"
+      },
+      {
+        "title": "Oliver Wight Americas: company history",
+        "url": "https://www.oliverwight-americas.com/?p=1213"
+      },
+      {
+        "title": "AbeBooks: Richard C. Ling author page",
+        "url": "https://www.abebooks.co.uk/author/b001kcd3b0/richard-c-ling"
+      },
+      {
+        "title": "Oliver Wight Americas: Walter E. Goddard, 1935-2024",
+        "url": "https://oliverwight-americas.com/?p=10320"
+      },
+      {
+        "title": "O'Reilly: Master Planning and Scheduling, 4th Edition (Wiley, 2021)",
+        "url": "https://www.oreilly.com/library/view/master-planning-and/9781119809418/b11.xhtml"
+      }
+    ]
+  }
+}

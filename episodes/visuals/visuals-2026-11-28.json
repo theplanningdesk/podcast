@@ -1,0 +1,605 @@
+{
+  "stem": "2026-11-28",
+  "cues": [
+    {
+      "line": 0,
+      "kicker": "Book of the week",
+      "headline": "S&OP: The How-To Handbook, by Wallace and Stahl",
+      "sub": "A practical field manual, third edition 2008"
+    },
+    {
+      "line": 1,
+      "kicker": "AI disclosure",
+      "headline": "Researched by AI agents, read by synthetic voices"
+    },
+    {
+      "line": 2,
+      "kicker": "Book of the week",
+      "headline": "Sales and Operations Planning: The How-To Handbook",
+      "sub": "Thomas F. Wallace and Robert A. Stahl, 3rd edition, 2008",
+      "source": "Texas A&M library catalogue"
+    },
+    {
+      "line": 3,
+      "kicker": "The big claim",
+      "headline": "S&OP is a decision process, not a forecast or a meeting",
+      "sub": "Get total volume right and the mix becomes easier"
+    },
+    {
+      "line": 4,
+      "kicker": "The book",
+      "headline": "A field manual for the people who run S&OP",
+      "sub": "Third edition, T.F. Wallace & Co., Cincinnati",
+      "source": "Texas A&M library catalogue"
+    },
+    {
+      "line": 5,
+      "kicker": "Author",
+      "headline": "Thomas F. Wallace, an early MRP II pioneer",
+      "sub": "Editor of three APICS Dictionary editions, author of over a dozen books",
+      "kpis": [
+        {
+          "value": 10000,
+          "prefix": "over ",
+          "label": "managers taught in seminars"
+        }
+      ],
+      "source": "SCDigest"
+    },
+    {
+      "line": 6,
+      "keep": false,
+      "kicker": "Author",
+      "headline": "Tom Wallace, 1935 to 2021",
+      "sub": "Died in March 2021, aged 85",
+      "source": "SAS forecasting blog"
+    },
+    {
+      "line": 7,
+      "kicker": "Author",
+      "headline": "Robert A. Stahl, from line manager to S&OP coach",
+      "sub": "Left industry in 1981, first S&OP editor of Foresight",
+      "source": "AbeBooks author page"
+    },
+    {
+      "line": 8,
+      "kicker": "The Wallace and Stahl shelf",
+      "headline": "This is the how-to volume of a series",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Wallace and Stahl titles",
+          "items": [
+            {
+              "label": "The Executive's Guide",
+              "say": "executive's guide"
+            },
+            {
+              "label": "The Self-Audit Workbook",
+              "say": "self-audit workbook"
+            },
+            {
+              "label": "The How-To Handbook",
+              "say": "how-to volume"
+            }
+          ]
+        }
+      },
+      "source": "AbeBooks"
+    },
+    {
+      "line": 9,
+      "kicker": "Origins",
+      "headline": "S&OP grew out of the Oliver Wight school in the 1980s",
+      "sub": "The handbook turns it into a monthly routine you can copy",
+      "source": "Oliver Wight Americas"
+    },
+    {
+      "line": 10,
+      "kicker": "Reading time",
+      "headline": "An easy read for a planner, about a weekend"
+    },
+    {
+      "line": 11,
+      "kicker": "Big idea 1",
+      "headline": "Volume before mix",
+      "sub": "S&OP plans product families in total, items go to the master schedule",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "Two levels",
+          "title": "Where each decision lives",
+          "steps": [
+            {
+              "label": "Product families",
+              "detail": "S&OP, total volume",
+              "say": "product family"
+            },
+            {
+              "label": "Master schedule",
+              "detail": "items and mix",
+              "say": "master schedule"
+            },
+            {
+              "label": "Capacity check",
+              "detail": "totals against resources",
+              "say": "capacity"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 12,
+      "keep": true,
+      "kicker": "Why volume first",
+      "headline": "Totals matter for finance and for capacity checks",
+      "source": "Journal of Business Forecasting, 2008"
+    },
+    {
+      "line": 13,
+      "keep": true,
+      "kicker": "Forecast accuracy",
+      "headline": "Family forecasts beat item forecasts",
+      "sub": "Item errors partly cancel out in the total"
+    },
+    {
+      "line": 14,
+      "kicker": "Example from practice",
+      "headline": "Thousands of items, a handful of families",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Paint maker, illustrative families",
+          "items": [
+            {
+              "label": "Interior",
+              "say": "interior"
+            },
+            {
+              "label": "Exterior",
+              "say": "exterior"
+            },
+            {
+              "label": "Industrial coatings",
+              "say": "industrial coatings"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 15,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Item lists in the executive pack stop decisions"
+    },
+    {
+      "line": 16,
+      "kicker": "Big idea 2",
+      "headline": "A five-step cycle, every month",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "Monthly S&OP",
+          "title": "Five steps",
+          "steps": [
+            {
+              "label": "Data gathering",
+              "say": "data gathering"
+            },
+            {
+              "label": "Demand planning",
+              "say": "demand planning"
+            },
+            {
+              "label": "Supply planning",
+              "say": "supply planning"
+            },
+            {
+              "label": "Pre-meeting",
+              "say": "pre-meeting"
+            },
+            {
+              "label": "Executive meeting",
+              "say": "executive meeting"
+            }
+          ]
+        }
+      },
+      "source": "Wallace and Stahl, via Chalmers and PLOS One"
+    },
+    {
+      "line": 17,
+      "keep": true,
+      "kicker": "Steps 1 and 2",
+      "headline": "Close the month, then sales owns the demand plan"
+    },
+    {
+      "line": 18,
+      "keep": true,
+      "kicker": "Steps 3 and 4",
+      "headline": "Check capacity, then settle what you can"
+    },
+    {
+      "line": 19,
+      "keep": true,
+      "kicker": "Step 5",
+      "headline": "Leaders approve the plan or choose another course"
+    },
+    {
+      "line": 20,
+      "keep": true,
+      "kicker": "Horizon",
+      "headline": "A forecast for the next 15 months and beyond",
+      "kpis": [
+        {
+          "value": 15,
+          "suffix": " months",
+          "label": "forecast horizon, at least"
+        }
+      ],
+      "source": "Chalmers thesis citing Wallace and Stahl"
+    },
+    {
+      "line": 21,
+      "keep": true,
+      "kicker": "How it works",
+      "headline": "Each step hands a cleaner plan to the next"
+    },
+    {
+      "line": 22,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Bring options and their costs to the pre-meeting"
+    },
+    {
+      "line": 23,
+      "kicker": "Big idea 3",
+      "headline": "Demand, supply and the buffer between them",
+      "sub": "Finished stock if you make to stock, backlog if you make to order"
+    },
+    {
+      "line": 24,
+      "keep": true,
+      "kicker": "The rule",
+      "headline": "More supply grows the buffer, less shrinks it"
+    },
+    {
+      "line": 25,
+      "kicker": "Classic choices",
+      "headline": "Three ways to close the gap",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Balancing options",
+          "items": [
+            {
+              "label": "Chase demand",
+              "detail": "flex capacity",
+              "say": "Chase demand"
+            },
+            {
+              "label": "Level production",
+              "detail": "stock or backlog absorbs swings",
+              "say": "level production"
+            },
+            {
+              "label": "Shift demand",
+              "detail": "pricing and promotions",
+              "say": "shift demand"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 26,
+      "keep": true,
+      "kicker": "Example from practice",
+      "headline": "Level through winter, stock up for spring"
+    },
+    {
+      "line": 27,
+      "keep": true,
+      "kicker": "Policy or accident",
+      "headline": "Fine if chosen and funded, a problem if it just happened"
+    },
+    {
+      "line": 28,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Show every family's stock line against a target range"
+    },
+    {
+      "line": 29,
+      "kicker": "Big idea 4",
+      "headline": "Start with a live pilot",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "Implementation",
+          "title": "The authors' path",
+          "steps": [
+            {
+              "label": "Live pilot",
+              "say": "live pilot"
+            },
+            {
+              "label": "Expansion",
+              "detail": "remaining families",
+              "say": "expansion"
+            },
+            {
+              "label": "Financial integration",
+              "say": "financial integration"
+            }
+          ]
+        }
+      },
+      "source": "Chalmers thesis citing Wallace and Stahl"
+    },
+    {
+      "line": 30,
+      "keep": true,
+      "kicker": "Then",
+      "headline": "Add the other families, then link the plan to money"
+    },
+    {
+      "line": 31,
+      "keep": true,
+      "kicker": "Priority",
+      "headline": "Get the process working before chasing a date"
+    },
+    {
+      "line": 32,
+      "keep": true,
+      "kicker": "Example from practice",
+      "headline": "Start with the two biggest families"
+    },
+    {
+      "line": 33,
+      "keep": true,
+      "kicker": "For planners",
+      "headline": "Don't wait for perfect data, the rhythm teaches"
+    },
+    {
+      "line": 34,
+      "kicker": "Why now",
+      "headline": "Many firms hold the meeting but skip the steps"
+    },
+    {
+      "line": 35,
+      "kicker": "Use it as",
+      "headline": "A checklist for which steps your company skips"
+    },
+    {
+      "line": 36,
+      "kicker": "Still holds",
+      "headline": "What has aged well",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Still sound",
+          "items": [
+            {
+              "label": "Volume before mix",
+              "say": "Volume before mix"
+            },
+            {
+              "label": "A fixed monthly rhythm",
+              "say": "monthly rhythm"
+            },
+            {
+              "label": "Decisions by resource owners",
+              "say": "own the resources"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 37,
+      "kicker": "Dated",
+      "headline": "Little on scenarios and AI forecasts"
+    },
+    {
+      "line": 38,
+      "kicker": "PLOS One, 2021",
+      "headline": "A global case adds two steps to the five",
+      "visual": {
+        "template": "flow",
+        "props": {
+          "kicker": "Global S&OP",
+          "title": "Five steps plus two",
+          "steps": [
+            {
+              "label": "Classic five steps",
+              "say": "five classic steps"
+            },
+            {
+              "label": "Global roll-up",
+              "say": "global roll-up"
+            },
+            {
+              "label": "Global executive meeting",
+              "say": "global executive meeting"
+            }
+          ]
+        }
+      },
+      "source": "Seeling et al., PLOS One"
+    },
+    {
+      "line": 39,
+      "keep": true,
+      "kicker": "For network designers",
+      "headline": "Several regions means extending the cycle"
+    },
+    {
+      "line": 40,
+      "kicker": "S&OP and IBP",
+      "headline": "IBP readers will recognise much of the ground"
+    },
+    {
+      "line": 41,
+      "kicker": "Who should read it",
+      "headline": "Planners, process owners, and new meeting members"
+    },
+    {
+      "line": 42,
+      "kicker": "For network designers",
+      "headline": "Read the parts on families and capacity checks"
+    },
+    {
+      "line": 43,
+      "kicker": "How to read it",
+      "headline": "Start with the five steps, keep implementation for later"
+    },
+    {
+      "line": 44,
+      "kicker": "Edition",
+      "headline": "The third edition, about a weekend of reading"
+    },
+    {
+      "line": 45,
+      "kicker": "Free start",
+      "headline": "Stahl's Foresight articles, a few pages each"
+    },
+    {
+      "line": 46,
+      "kicker": "Also on the shelf",
+      "headline": "Two books to pair with this one",
+      "visual": {
+        "template": "list",
+        "props": {
+          "title": "Also on the shelf",
+          "items": [
+            {
+              "label": "Orchestrating Success",
+              "detail": "Richard C. Ling and Walter E. Goddard",
+              "say": "Orchestrating Success"
+            },
+            {
+              "label": "Master Planning and Scheduling",
+              "detail": "John F. Proud and Eric Deutsch, 4th ed., 2021",
+              "say": "Master Planning and Scheduling"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 50,
+      "kicker": "Next Saturday",
+      "headline": "The Resilient Enterprise, by Yossi Sheffi"
+    }
+  ],
+  "short_cues": [
+    {
+      "line": 0,
+      "template": "headline",
+      "props": {
+        "kicker": "Book of the week",
+        "title": "Your S&OP meeting isn't about single products",
+        "detail": "S&OP: The How-To Handbook, Wallace and Stahl"
+      }
+    },
+    {
+      "line": 0,
+      "at": "single products",
+      "template": "takeaway",
+      "props": {
+        "kicker": "The idea",
+        "text": "Plan total volume by product family"
+      }
+    },
+    {
+      "line": 1,
+      "template": "headline",
+      "props": {
+        "kicker": "Wallace and Stahl",
+        "title": "S&OP plans volume by product family",
+        "detail": "3rd edition, 2008"
+      }
+    },
+    {
+      "line": 1,
+      "at": "Get the volume right",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Volume before mix",
+        "text": "Get volume right and the item mix gets easier"
+      }
+    },
+    {
+      "line": 2,
+      "template": "stat",
+      "props": {
+        "kicker": "Every month",
+        "value": 5,
+        "label": "steps in the S&OP cycle",
+        "source": "Wallace and Stahl"
+      }
+    },
+    {
+      "line": 2,
+      "at": "Data gathering",
+      "template": "list",
+      "props": {
+        "title": "The five steps",
+        "items": [
+          "Data gathering",
+          "Demand planning",
+          "Supply planning",
+          "Pre-meeting"
+        ]
+      }
+    },
+    {
+      "line": 2,
+      "at": "executive meeting",
+      "template": "headline",
+      "props": {
+        "kicker": "Step 5",
+        "title": "Executive meeting",
+        "detail": "Leaders approve the plan or choose another course"
+      }
+    },
+    {
+      "line": 3,
+      "template": "takeaway",
+      "props": {
+        "kicker": "Getting started",
+        "text": "Run a live pilot first"
+      }
+    },
+    {
+      "line": 3,
+      "at": "before you chase",
+      "template": "takeaway",
+      "props": {
+        "kicker": "Getting started",
+        "text": "Rhythm before perfect data"
+      }
+    },
+    {
+      "line": 4,
+      "template": "headline",
+      "props": {
+        "kicker": "Who should read it",
+        "title": "S&OP owners and planners",
+        "detail": "And anyone new to the executive meeting"
+      }
+    },
+    {
+      "line": 5,
+      "template": "headline",
+      "props": {
+        "kicker": "The Planning Desk",
+        "title": "A book every Saturday",
+        "detail": "Apple Podcasts and Spotify"
+      }
+    }
+  ]
+}
