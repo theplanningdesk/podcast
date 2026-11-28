@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-27T11:23:22.634675+00:00",
+ "fetched_at": "2026-11-28T10:50:57.433946+00:00",
  "window_days": 8,
- "sources_ok": 72,
+ "sources_ok": 70,
  "sources_total": 75,
  "sources": [
   {
@@ -11,7 +11,7 @@
    "method": "feed https://www.supplychainbrain.com/rss/articles",
    "items": 20,
    "error": null,
-   "raw_items": 26,
+   "raw_items": 21,
    "lane": "planning"
   },
   {
@@ -19,9 +19,9 @@
    "url": "https://feeds.feedburner.com/scmr/latest",
    "ok": true,
    "method": "feed https://feeds.feedburner.com/scmr/latest",
-   "items": 10,
+   "items": 9,
    "error": null,
-   "raw_items": 10,
+   "raw_items": 9,
    "lane": "planning"
   },
   {
@@ -80,7 +80,7 @@
    "method": "feed https://scm.dk/feeds/articles",
    "items": 20,
    "error": null,
-   "raw_items": 34,
+   "raw_items": 30,
    "lane": "planning"
   },
   {
@@ -108,7 +108,7 @@
    "url": "https://www.bme.de/news/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 6,
+   "items": 5,
    "error": null,
    "raw_items": 24,
    "lane": "planning"
@@ -128,19 +128,18 @@
    "url": "https://www.produktion.de/",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 6,
+   "items": 10,
    "error": null,
    "raw_items": 31,
    "lane": "planning"
   },
   {
    "source": "Ny Teknik",
-   "url": "https://www.nyteknik.se/",
-   "ok": true,
-   "method": "page links (articles opened for dates)",
-   "items": 1,
-   "error": null,
-   "raw_items": 40,
+   "url": "https://www.nyteknik.se/rss",
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://www.nyteknik.se/rss/feed/: HTTPError; https://www.nyteknik.se/rss: no feed and no article links; https://www.nyteknik.se/: no feed and no article links",
    "lane": "planning"
   },
   {
@@ -168,9 +167,9 @@
    "url": "https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
    "ok": true,
    "method": "feed https://export.arxiv.org/api/query?search_query=%28ti%3A%22supply%20chain%22%20OR%20ti%3Ainventory%20OR%20ti%3A%22lot%20sizing%22%20OR%20ti%3A%22production%20planning%22%20OR%20ti%3A%22production%20scheduling%22%20OR%20ti%3A%22demand%20forecasting%22%20OR%20ti%3A%22sales%20and%20operations%22%20OR%20ti%3A%22job%20shop%22%20OR%20ti%3A%22network%20design%22%20OR%20ti%3A%22facility%20location%22%20OR%20ti%3Areplenishment%20OR%20ti%3Anewsvendor%20OR%20ti%3A%22safety%20stock%22%20OR%20ti%3A%22capacity%20planning%22%20OR%20ti%3A%22multi-echelon%22%20OR%20ti%3Aprocurement%29%20AND%20%28cat%3Amath.OC%20OR%20cat%3Acs.AI%20OR%20cat%3Acs.LG%20OR%20cat%3Acs.MA%20OR%20cat%3Astat.ML%20OR%20cat%3Astat.AP%20OR%20cat%3Aecon.GN%20OR%20cat%3Aecon.EM%20OR%20cat%3Aeess.SY%20OR%20cat%3Aq-fin.RM%29&sortBy=submittedDate&sortOrder=descending&max_results=60",
-   "items": 5,
+   "items": 4,
    "error": null,
-   "raw_items": 5,
+   "raw_items": 4,
    "lane": "planning"
   },
   {
@@ -180,7 +179,7 @@
    "method": "feed https://developer.nvidia.com/blog/feed/",
    "items": 1,
    "error": null,
-   "raw_items": 11,
+   "raw_items": 7,
    "lane": "planning"
   },
   {
@@ -208,9 +207,9 @@
    "url": "https://news.sap.com/",
    "ok": true,
    "method": "feed https://news.sap.com/feed/",
-   "items": 13,
+   "items": 12,
    "error": null,
-   "raw_items": 13,
+   "raw_items": 12,
    "lane": "planning"
   },
   {
@@ -220,7 +219,7 @@
    "method": "feed https://techxplore.com/rss-feed/business-tech-news/",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 14,
+   "raw_items": 10,
    "lane": "management"
   },
   {
@@ -228,7 +227,7 @@
    "url": "https://techxplore.com/rss-feed/",
    "ok": true,
    "method": "feed https://techxplore.com/rss-feed/",
-   "items": 1,
+   "items": 2,
    "error": null,
    "raw_items": 30,
    "lane": "management"
@@ -246,11 +245,10 @@
   {
    "source": "idw-online (DACH research)",
    "url": "https://idw-online.de/de/pressreleasesrss",
-   "ok": true,
-   "method": "feed https://idw-online.de/de/pressreleasesrss",
-   "items": 5,
-   "error": null,
-   "raw_items": 396,
+   "ok": false,
+   "method": null,
+   "items": 0,
+   "error": "https://idw-online.de/de/pressreleasesrss: ConnectTimeout: HTTPSConnectionPool(host='idw-online.de', port=443): Max retries exceeded with url: /de/pressreleasesrss (Caused by ConnectTimeoutError(<HTTP",
    "lane": "management"
   },
   {
@@ -270,7 +268,7 @@
    "method": "feed https://theconversation.com/uk/business/articles.atom",
    "items": 0,
    "error": "no matching posts in the window (normal for this source)",
-   "raw_items": 6,
+   "raw_items": 5,
    "lane": "management"
   },
   {
@@ -280,7 +278,7 @@
    "method": "feed https://www.consultancy.eu/rss/consultancy_rssfeed.xml",
    "items": 2,
    "error": null,
-   "raw_items": 14,
+   "raw_items": 12,
    "lane": "management"
   },
   {
@@ -298,9 +296,9 @@
    "url": "https://industriemagazin.at/rss.xml",
    "ok": true,
    "method": "feed https://industriemagazin.at/rss.xml",
-   "items": 5,
+   "items": 4,
    "error": null,
-   "raw_items": 16,
+   "raw_items": 15,
    "lane": "management"
   },
   {
@@ -308,8 +306,8 @@
    "url": "https://www.placera.se/artiklar/rss.xml",
    "ok": true,
    "method": "feed https://www.placera.se/artiklar/rss.xml",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "raw_items": 30,
    "lane": "management"
   },
@@ -338,8 +336,8 @@
    "url": "https://www.sttinfo.fi/rss/releases/latest",
    "ok": true,
    "method": "feed https://www.sttinfo.fi/rss/releases/latest",
-   "items": 1,
-   "error": null,
+   "items": 0,
+   "error": "no matching posts in the window (normal for this source)",
    "raw_items": 25,
    "lane": "management"
   },
@@ -598,9 +596,9 @@
    "url": "https://mfn.se/all/a/upm-kymmene.rss",
    "ok": true,
    "method": "feed https://mfn.se/all/a/upm-kymmene.rss",
-   "items": 0,
-   "error": "no releases in the window (normal off-season)",
-   "raw_items": 2,
+   "items": 1,
+   "error": null,
+   "raw_items": 4,
    "lane": "companies"
   },
   {
@@ -677,9 +675,9 @@
    "url": "https://www.dcvelocity.com/",
    "ok": true,
    "method": "feed https://www.dcvelocity.com/feeds/feed.rss",
-   "items": 9,
+   "items": 7,
    "error": null,
-   "raw_items": 23,
+   "raw_items": 18,
    "lane": "freight"
   },
   {
@@ -687,9 +685,9 @@
    "url": "https://www.sea-intelligence.com/press-room",
    "ok": true,
    "method": "feed https://www.sea-intelligence.com/press-room?format=feed&type=rss",
-   "items": 3,
+   "items": 2,
    "error": null,
-   "raw_items": 3,
+   "raw_items": 2,
    "lane": "freight"
   },
   {
@@ -707,7 +705,7 @@
    "url": "https://www.verkehrsrundschau.de/nachrichten",
    "ok": true,
    "method": "page links (articles opened for dates)",
-   "items": 5,
+   "items": 6,
    "error": null,
    "raw_items": 40,
    "lane": "freight"
